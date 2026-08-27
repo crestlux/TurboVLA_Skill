@@ -31,6 +31,13 @@ TASK_MAX_STEPS = {
     "libero_goal": 300,
     "libero_10": 520,
     "libero_90": 400,
+    # LIBERO-PRO perturbation suites use the same rollout horizon as
+    # their corresponding base suite.
+    "libero_10_object": 520,
+    "libero_10_swap": 520,
+    "libero_10_lan": 520,
+    "libero_10_task": 520,
+    "libero_10_env": 520,
 }
 
 LIBERO_SUITES = tuple(TASK_MAX_STEPS.keys())
