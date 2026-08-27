@@ -1,271 +1,261 @@
-# TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with &lt;1 GB VRAM
+# TurboVLA Research
 
-<div align="center">
-  <a href="https://arxiv.org/abs/2607.27205"><img src="https://img.shields.io/badge/Paper-arXiv-b31b1b?logo=arxiv&logoColor=white" alt="Paper"></a>
-  <a href="https://h-embodvis.github.io/TurboVLA/"><img src="https://img.shields.io/badge/Homepage-TurboVLA-d97706?logo=googlehome&logoColor=white" alt="Homepage"></a>
-  <a href="https://github.com/H-EmbodVis/TurboVLA"><img src="https://img.shields.io/badge/Code-GitHub-181717?logo=github" alt="Code"></a>
-  <a href="https://huggingface.co/H-EmbodVis/TurboVLA"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-FFD21E" alt="Hugging Face Model"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-2563eb" alt="License"></a>
+[![Upstream](https://img.shields.io/badge/Upstream-TurboVLA-181717?logo=github)](https://github.com/H-EmbodVis/TurboVLA)
+[![License](https://img.shields.io/badge/License-Apache%202.0-2563eb)](LICENSE)
 
-  <h4><em>Hengyi Xie<sup>1*</sup>, Chenfei Yao<sup>1*</sup>, Xianjin Wu<sup>1</sup>, Xuanyang Xi<sup>2</sup>, Yiping Tang<sup>2</sup>, Di Xu<sup>2</sup>, Yingying Zhu<sup>1</sup>, <a href="https://dk-liang.github.io/">Dingkang Liang</a><sup>1&dagger;</sup>, <a href="https://scholar.google.com/citations?user=UeltiQ4AAAAJ&hl=en">Xiang Bai</a><sup>1</sup>, Han Ding<sup>1</sup></em></h4>
+> [!IMPORTANT]
+> This is an **unofficial, independently maintained research repository** built on
+> [TurboVLA](https://github.com/H-EmbodVis/TurboVLA). It is not affiliated with or maintained by the original authors.
 
-  <sup>1</sup> Huazhong University of Science and Technology, China<br>
-  <sup>2</sup> Huawei Technologies Co. Ltd, China<br>
-  <sup>*</sup> Equal contribution, listed alphabetically by surname. <sup>&dagger;</sup> Project Lead.
-</div>
+This repository is a research workspace for developing and evaluating new vision-language-action (VLA) methods on top
+of TurboVLA. The current baseline supports TurboVLA evaluation on LIBERO and adds support for the LIBERO-PRO
+robustness benchmark.
 
-This repository contains the official implementation of **TurboVLA** for the paper **TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with &lt;1 GB VRAM**.
+No project-specific performance claims are reported yet. Results from the original TurboVLA project should be cited and
+interpreted as upstream results, not results produced by this repository.
 
-<div align="center">
-  <img src="assets/figures/real-world-tasks.gif" alt="TurboVLA real-world tasks with synchronous inference" width="100%">
-  <br>
-  <sub><b>Real-world tasks with synchronous policy inference.</b></sub>
-</div>
+## Research scope
 
+- New VLA architectures, objectives, and training strategies
+- LIBERO baseline reproduction
+- LIBERO-PRO robustness and generalization evaluation
+- Controlled ablations and reproducible experiment tracking
 
----
+## Current status
 
-## 📣 News
+- [x] TurboVLA checkpoint loading with DINOv3 and BERT
+- [x] Standard LIBERO rollout evaluation
+- [x] LIBERO-PRO suite registration and rollout evaluation
+- [x] Separate, per-command selection of LIBERO and LIBERO-PRO
+- [ ] Project-specific method implementation
+- [ ] Training and ablation results
+- [ ] Reproduced benchmark table
 
-- `2026.07.31`: Released the TurboVLA model checkpoints on [Hugging Face](https://huggingface.co/H-EmbodVis/TurboVLA).
-- `2026.07.30`: Released the paper, training and evaluation code.
+## Current benchmark extension
 
-## 📅 TODO
-* [ ] Support Huawei Ascend NPUs
----
+The current project extends the upstream TurboVLA evaluation workflow with:
 
-## 📄 Abstract
+- LIBERO-PRO variants for the LIBERO-10 checkpoint:
+  - `libero_10_object` — object perturbation
+  - `libero_10_swap` — position perturbation
+  - `libero_10_lan` — semantic/language perturbation
+  - `libero_10_task` — task perturbation
+  - `libero_10_env` — environment perturbation
+- Per-command benchmark source selection through `--libero_root`
+- Independent LIBERO configuration selection through `LIBERO_CONFIG_PATH`
 
-Vision-language-action (VLA) models commonly adopt an LLM-centric V &rarr; L &rarr; A pathway, where visual observations are projected into the representation space of a large language model before being decoded into robot actions. Although effective, this design incurs substantial computation and memory overhead at every policy invocation.
+Research changes will be documented here as the project develops.
 
-In this work, we introduce **TurboVLA**, a new VLA paradigm that reformulates the conventional V &rarr; L &rarr; A pathway as a direct V + L &rarr; A mapping. Instead of using a large language model as the central interface between perception and action, TurboVLA independently encodes visual observations and language instructions, directly exchanges information between them through lightweight bidirectional vision-language interaction, and predicts continuous action chunks with a compact decoder. This simple design constructs task-conditioned representations directly from visual and linguistic features, significantly reducing the computational and memory costs of VLA inference. On LIBERO, TurboVLA achieves 97.7% average success with only 0.2B parameters, 31.2 ms inference latency, and 0.9 GB inference VRAM on a consumer-grade RTX 4090, matching or outperforming substantially larger VLA policies. These results establish TurboVLA as a simple and effective alternative to the prevailing LLM-centric VLA paradigm, offering a new perspective on how vision, language, and action can be connected for efficient robotic manipulation.
+## Installation
 
-<div align="center">
-  <a href="assets/figures/paradigm-and-performance.png">
-    <img src="assets/figures/paradigm-and-performance.png" alt="Comparison of LLM-centric VLA and TurboVLA with latency, success rate, and parameter results" width="100%">
-  </a>
-</div>
-
----
-
-## 🔍 Overview
-
-<div align="center">
-  <a href="assets/figures/architecture-overview.png">
-    <img src="assets/figures/architecture-overview.png" alt="TurboVLA architecture and bidirectional vision-language interaction module" width="100%">
-  </a>
-</div>
-
-
----
-
-## 📈 Performance
-
-<div align="center">
-  <a href="assets/figures/performance.png">
-    <img src="assets/figures/performance.png" alt="TurboVLA performance on LIBERO" width="100%">
-  </a>
-</div>
-
----
-
-## ⚙️ Installation
-
-Clone the repository:
+Clone this repository and create the LIBERO evaluation environment:
 
 ```bash
-git clone https://github.com/H-EmbodVis/TurboVLA.git
-cd TurboVLA
-```
+git clone https://github.com/jaemin720/TurboVLA-Research.git
+cd TurboVLA-Research
 
-LIBERO and RoboTwin use different simulator and data stacks. We recommend separate Python 3.10 environments.
-
-### LIBERO Environment
-
-```bash
 conda create -n turbovla-libero python=3.10 -y
 conda activate turbovla-libero
 
-# Install the CUDA-compatible PyTorch build for your system first.
-pip install torch==2.3.1 torchvision==0.18.1 --index-url https://download.pytorch.org/whl/cu121
-pip install -e ".[libero]"
+python -m pip install torch==2.3.1 torchvision==0.18.1 \
+  --index-url https://download.pytorch.org/whl/cu121
+python -m pip install -e ".[libero]"
 ```
 
-Install [LIBERO](https://github.com/Lifelong-Robot-Learning/LIBERO) separately in the same environment.
-
-### RoboTwin Environment
+The simulator combination validated for the current LIBERO evaluation setup is:
 
 ```bash
-conda create -n turbovla-robotwin python=3.10 -y
-conda activate turbovla-robotwin
-
-# Install a CUDA-compatible PyTorch build before the project dependencies.
-pip install -e ".[robotwin]"
-pip install flash-attn==2.7.4.post1 --no-build-isolation
+python -m pip install matplotlib==3.5.3 mujoco==2.3.7
 ```
 
-Install the [RoboTwin 2.0](https://github.com/robotwin-Platform/RoboTwin) simulator in a separate evaluation environment when required by your setup.
+LIBERO and LIBERO-PRO both expose the Python package name `libero`. Keep their source trees separate and do not install
+LIBERO-PRO's pinned requirements into the TurboVLA environment.
 
----
+## Model assets
 
-## 📦 Dataset and Model Preparation
-
-Model weights and benchmark datasets are external assets and are not committed to this repository.
-
-### Pretrained Checkpoints
-
-Download the complete TurboVLA release, including model weights and normalization metadata, from [Hugging Face](https://huggingface.co/H-EmbodVis/TurboVLA):
+Download the released TurboVLA checkpoints:
 
 ```bash
-pip install -U huggingface_hub
-hf download H-EmbodVis/TurboVLA \
-  --local-dir pretrained/TurboVLA
+python -m pip install -U huggingface_hub
+hf download H-EmbodVis/TurboVLA --local-dir pretrained/TurboVLA
 ```
 
-### Required Models
+The LIBERO policy additionally requires:
 
-| Asset | Source | Used by |
-| --- | --- | --- |
-| DINOv3 ViT-B | [facebookresearch/dinov3](https://github.com/facebookresearch/dinov3) | LIBERO |
-| DINOv3 ViT-L | [facebookresearch/dinov3](https://github.com/facebookresearch/dinov3) | RoboTwin |
-| BERT base uncased | [google-research/bert](https://github.com/google-research/bert) | Both |
-| GroundingDINO Swin-T OGC | [IDEA-Research/GroundingDINO](https://github.com/IDEA-Research/GroundingDINO) | Both |
+- DINOv3 ViT-B, stored in a local directory containing `config.json`, `model.safetensors`, and
+  `preprocessor_config.json`
+- BERT base uncased, either in the Hugging Face cache or a local directory
 
-### LIBERO Data
+Large model files, datasets, outputs, and machine-specific configuration files are intentionally excluded from Git.
 
-TurboVLA expects the four modified no-noops suites in TFDS/RLDS format:
+## Benchmark setup
 
-```text
-data/libero/
-|-- libero_10_no_noops/1.0.0/
-|-- libero_goal_no_noops/1.0.0/
-|-- libero_object_no_noops/1.0.0/
-`-- libero_spatial_no_noops/1.0.0/
-```
+### Standard LIBERO
 
-The repository provides no-op removal and mixed-suite statistics utilities:
+Clone LIBERO outside this repository:
 
 ```bash
-python scripts/libero/regenerate_libero_no_noops.py --help
-python scripts/libero/compute_mixed_stats.py --help
+git clone https://github.com/Lifelong-Robot-Learning/LIBERO.git /path/to/LIBERO
 ```
 
-Released normalization statistics are stored in `experiments/libero/configs/libero_all4_stats.json`. BERT is part of the model and runs online during both training and evaluation; no text-feature cache is required. See [experiments/libero/README.md](experiments/libero/README.md) for details.
-
-### RoboTwin Data
-
-Download the clean LeRobot dataset and create the expected local link:
+If a persistent editable install is needed, install it without replacing the TurboVLA dependency set:
 
 ```bash
-bash scripts/robotwin/prepare_data.sh /path/to/storage
-export ROBOTWIN_DATA_ROOT="$PWD/playground/Datasets/RoboTwin"
+python -m pip install -e /path/to/LIBERO \
+  --no-deps \
+  --no-build-isolation \
+  --config-settings editable_mode=compat
 ```
 
-The default downloader uses [StarVLA/RoboTwin-Clean](https://huggingface.co/datasets/StarVLA/RoboTwin-Clean). The training registry expects all 50 datasets under `Clean/<task_name>`.
+Use a dedicated LIBERO config directory, for example `/path/to/config/libero/config.yaml`:
 
----
-
-## 🏋️ Training and Evaluation
-
-### LIBERO Training
-
-The paper recipe uses DINOv3 ViT-B, two camera views, 7-D actions, a 12-step action chunk, 80k optimizer steps, 10k warmup steps, and global batch size 256 on four GPUs.
-
-```bash
-torchrun --nproc_per_node=4 experiments/libero/train.py \
-  --dataset_dir data/libero/libero_10_no_noops/1.0.0 \
-  --dataset_dirs "data/libero/libero_10_no_noops/1.0.0,data/libero/libero_goal_no_noops/1.0.0,data/libero/libero_object_no_noops/1.0.0,data/libero/libero_spatial_no_noops/1.0.0" \
-  --stats_path experiments/libero/configs/libero_all4_stats.json \
-  --stats_key libero_all4_no_noops \
-  --dinov3_path facebook/dinov3-vitb16-pretrain-lvd1689m \
-  --bert_path google-bert/bert-base-uncased \
-  --allow_hf_download \
-  --pretrained_init_ckpt /path/to/groundingdino_swint_ogc.pth \
-  --checkpoint_dir outputs/libero
+```yaml
+benchmark_root: /path/to/LIBERO/libero/libero
+bddl_files: /path/to/LIBERO/libero/libero/bddl_files
+init_states: /path/to/LIBERO/libero/libero/init_files
+datasets: /path/to/libero_datasets
+assets: /path/to/LIBERO/libero/libero/assets
 ```
 
-### LIBERO Evaluation
+### LIBERO-PRO
 
-One command evaluates one checkpoint on one suite.
+Clone LIBERO-PRO separately. Do **not** run its `pip install -r requirements.txt` or `pip install -e .` commands in the
+TurboVLA environment.
 
 ```bash
+git clone https://github.com/Zxy-MLlab/LIBERO-PRO.git /path/to/LIBERO-PRO
+
+hf download zhouxueyang/LIBERO-Pro \
+  --repo-type dataset \
+  --include "bddl_files/**" "init_files/**" \
+  --local-dir /path/to/LIBERO-PRO/libero_data
+
+cp -a /path/to/LIBERO-PRO/libero_data/bddl_files/. \
+  /path/to/LIBERO-PRO/libero/libero/bddl_files/
+cp -a /path/to/LIBERO-PRO/libero_data/init_files/. \
+  /path/to/LIBERO-PRO/libero/libero/init_files/
+```
+
+Create a separate config such as `/path/to/config/libero-pro/config.yaml`:
+
+```yaml
+benchmark_root: /path/to/LIBERO-PRO/libero/libero
+bddl_files: /path/to/LIBERO-PRO/libero/libero/bddl_files
+init_states: /path/to/LIBERO-PRO/libero/libero/init_files
+datasets: /path/to/libero_datasets
+assets: /path/to/LIBERO-PRO/libero/libero/assets
+```
+
+Pre-generated BDDL and initialization files are sufficient for the five standard LIBERO-PRO perturbation suites. The
+dynamic perturbation generator is only needed for custom perturbation combinations.
+
+## Evaluation
+
+The `long.pth` checkpoint is used for standard LIBERO-10 and its LIBERO-PRO variants. Start with one task and one trial:
+
+```bash
+LIBERO_CONFIG_PATH=/path/to/config/libero-pro \
+CUDA_VISIBLE_DEVICES=0 \
+MUJOCO_EGL_DEVICE_ID=0 \
+USE_TF=0 \
+HF_HUB_OFFLINE=1 \
+TRANSFORMERS_OFFLINE=1 \
 python experiments/libero/evaluate.py \
-  --ckpt_path pretrained/TurboVLA/checkpoints/libero/libero_object.pth \
-  --dinov3_path /path/to/dinov3-vitb \
+  --ckpt_path pretrained/TurboVLA/checkpoints/libero/long.pth \
+  --libero_root /path/to/LIBERO-PRO \
+  --dinov3_path /path/to/dinov3-vitb16 \
   --bert_path /path/to/bert-base-uncased \
+  --allow_hf_download false \
   --stats_path experiments/libero/configs/libero_all4_stats.json \
   --stats_key libero_all4_no_noops \
-  --task_suite_name libero_object \
-  --num_trials_per_task 50 \
+  --task_suite_name libero_10_object \
+  --task_ids 0 \
+  --num_trials_per_task 1 \
   --chunk_size 12 \
   --num_open_loop_steps 12 \
   --seed 7 \
   --precision bf16 \
-  --result_json_path outputs/evaluation/libero_object.json
+  --mujoco_gl egl \
+  --pyopengl_platform egl \
+  --result_json_path outputs/evaluation/libero_pro_10_object_smoke.json
 ```
 
-Valid suite names are `libero_spatial`, `libero_object`, `libero_goal`, and `libero_10`.
+For the standard LIBERO-10 smoke test, change these three values together:
 
-### RoboTwin Training
+```text
+LIBERO_CONFIG_PATH=/path/to/config/libero
+--libero_root /path/to/LIBERO
+--task_suite_name libero_10
+```
 
-The paper recipe uses DINOv3 ViT-L, three camera views, 14-D absolute joint-position actions, a 50-step ACT head, global batch size 192, and 55k optimizer steps on four GPUs.
+For a full evaluation, remove `--task_ids 0` and set `--num_trials_per_task 50`. A failed episode is a valid benchmark
+outcome; model loading, environment rollout, and result JSON creation should complete without an exception.
+
+See [experiments/libero/README.md](experiments/libero/README.md) for the upstream training and evaluation entry points.
+
+## Development workflow
+
+Keep `main` runnable and develop unverified methods on a research branch:
 
 ```bash
-export ROBOTWIN_DATA_ROOT="$PWD/playground/Datasets/RoboTwin"
-export BERT_MODEL_PATH=/path/to/bert-base-uncased
-export TURBOVLA_INIT_CKPT=/path/to/groundingdino_swint_ogc.pth
-export DINOV3_MODEL_PATH=/path/to/dinov3-vitl
-export CUDA_VISIBLE_DEVICES=0,1,2,3
-
-MAX_TRAIN_STEPS=55000 \
-RUN_ID=turbovla_robotwin_clean50_55k \
-bash scripts/robotwin/train.sh
+git switch main
+git pull --ff-only origin main
+git switch -c research/method-name
 ```
 
-### RoboTwin Evaluation
+Commit source code and lightweight experiment configuration. Do not commit pretrained models, datasets, videos, logs,
+tokens, or machine-specific absolute paths.
 
-The policy server and RoboTwin simulator can run in separate Python environments:
+The original TurboVLA repository is retained as the `upstream` remote:
 
 ```bash
-export ROBOTWIN_PATH=/path/to/RoboTwin
-export STARVLA_PYTHON=/path/to/policy-env/bin/python
-export ROBOTWIN_PYTHON=/path/to/robotwin-env/bin/python
-export CUDA_VISIBLE_DEVICES=0,1,2,3
-
-ROBOTWIN_TEST_NUM=100 \
-bash scripts/robotwin/evaluate.sh \
-  pretrained/TurboVLA/checkpoints/robotwin/steps_55000_ema_model.safetensors
+git fetch upstream
+git merge upstream/main
 ```
 
-Append task names to the evaluation command to run a subset. Omitting them evaluates all 50 clean tasks.
+Review upstream changes before merging because they may overlap with research modifications.
 
----
+## Upstream projects and attribution
 
-## 👍 Acknowledgement
+This project builds on the following work:
 
-TurboVLA builds upon the following projects and resources:
+- [TurboVLA](https://github.com/H-EmbodVis/TurboVLA) — base model, training code, checkpoints, and evaluation runtime
+- [LIBERO](https://github.com/Lifelong-Robot-Learning/LIBERO) — manipulation benchmark
+- [LIBERO-PRO](https://github.com/Zxy-MLlab/LIBERO-PRO) — robustness and generalization benchmark
+- [DINOv3](https://github.com/facebookresearch/dinov3) — visual encoder
+- [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO) — vision-language interaction components
+- [VLA-Adapter](https://github.com/OpenHelix-Team/VLA-Adapter) — LIBERO rollout protocol
 
-- [DINOv3](https://github.com/facebookresearch/dinov3) for visual representations.
-- [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO) for bidirectional vision-language interaction components and initialization.
-- [VLA-Adapter](https://github.com/OpenHelix-Team/VLA-Adapter) for the LIBERO task and episode rollout protocol.
-- [StarVLA](https://github.com/StarVLA/StarVLA) for the RoboTwin-compatible training and evaluation runtime.
-- [LIBERO](https://github.com/Lifelong-Robot-Learning/LIBERO) and [RoboTwin 2.0](https://github.com/robotwin-Platform/RoboTwin) for simulation benchmarks.
+Please use the official repositories for authoritative installation instructions, pretrained artifacts, and reported
+results.
 
----
+## Citation
 
-## 📖 Citation
-
-If TurboVLA is useful in your research, please consider citing the paper:
+If this code is useful in your research, cite the original TurboVLA and any benchmarks used in your experiments:
 
 ```bibtex
 @article{xie2026turbovla,
-  title  = {TurboVLA: Real-Time Vision-Language-Action Model at
-            32 Hz on an RTX 4090 with <1 GB VRAM},
-  author = {Xie, Hengyi and Yao, Chenfei and Wu, Xianjin and
-            Xi, Xuanyang and Tang, Yiping and Xu, Di and
-            Zhu, Yingying and Liang, Dingkang and Bai, Xiang and
-            Ding, Han},
+  title   = {TurboVLA: Real-Time Vision-Language-Action Model at
+             32 Hz on an RTX 4090 with <1 GB VRAM},
+  author  = {Xie, Hengyi and Yao, Chenfei and Wu, Xianjin and
+             Xi, Xuanyang and Tang, Yiping and Xu, Di and
+             Zhu, Yingying and Liang, Dingkang and Bai, Xiang and Ding, Han},
   journal = {arXiv preprint arXiv:2607.27205},
-  year   = {2026}
+  year    = {2026}
+}
+
+@article{zhou2025liberopro,
+  title   = {LIBERO-PRO: Towards Robust and Fair Evaluation of
+             Vision-Language-Action Models Beyond Memorization},
+  author  = {Zhou, Xueyang and Xu, Yangming and Tie, Guiyao and
+             Chen, Yongchao and Zhang, Guowen and Chu, Duanfeng and
+             Zhou, Pan and Sun, Lichao},
+  journal = {arXiv preprint arXiv:2510.03827},
+  year    = {2025}
 }
 ```
+
+## License
+
+This derivative repository retains the upstream [Apache License 2.0](LICENSE). Third-party components remain subject to
+their respective licenses and attribution requirements.
