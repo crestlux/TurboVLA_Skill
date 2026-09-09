@@ -12,7 +12,7 @@ from . import trainer
 
 EMA_DECAY = 0.999
 _ACTIVE_OPTIMIZER = None
-_DINOV3_PRECISION = "bf16_autocast"
+_VISION_PRECISION = "bf16_autocast"
 _ORIGINAL_PARSE_ARGS = trainer.parse_args
 _ORIGINAL_BUILD_MODEL_ARCHITECTURE = trainer.build_model_architecture
 _ORIGINAL_BUILD_OPTIMIZER = trainer.build_param_group_optimizer
@@ -42,20 +42,22 @@ class Pi05AdamW(torch_optim.AdamW):
 
 
 def parse_args_with_dinov3_precision():
-    global _DINOV3_PRECISION
+    global _VISION_PRECISION
     parser = argparse.ArgumentParser(add_help=False)
     parser.add_argument(
+        "--vision_precision",
         "--dinov3_precision",
+        dest="vision_precision",
         type=str,
         default="bf16_autocast",
         choices=["fp32", "bf16", "bf16_autocast"],
         help=(
-            "DINOv3 compute precision. bf16_autocast keeps weights and optimizer "
-            "state fp32 while autocasting only the DINOv3 forward pass."
+            "Vision-encoder compute precision (legacy option name). bf16_autocast keeps weights "
+            "and optimizer state fp32 while autocasting only the vision forward pass."
         ),
     )
     known, remaining = parser.parse_known_args()
-    _DINOV3_PRECISION = known.dinov3_precision
+    _VISION_PRECISION = known.vision_precision
 
     original_argv = sys.argv
     sys.argv = [original_argv[0], *remaining]
@@ -63,19 +65,20 @@ def parse_args_with_dinov3_precision():
         args = _ORIGINAL_PARSE_ARGS()
     finally:
         sys.argv = original_argv
-    args.dinov3_precision = _DINOV3_PRECISION
+    args.vision_precision = _VISION_PRECISION
+    args.dinov3_precision = _VISION_PRECISION
     return args
 
 
-def patch_dinov3_precision(model, dinov3_precision):
-    model.vision_encoder.set_compute_precision(dinov3_precision)
+def patch_dinov3_precision(model, vision_precision):
+    model.vision_encoder.set_compute_precision(vision_precision)
 
 
 def build_model_architecture_with_dinov3_precision(args):
     model = _ORIGINAL_BUILD_MODEL_ARCHITECTURE(args)
-    patch_dinov3_precision(model, args.dinov3_precision)
+    patch_dinov3_precision(model, args.vision_precision)
     if int(os.environ.get("RANK", "0")) == 0:
-        print(f"dinov3_precision={args.dinov3_precision}")
+        print(f"vision_precision={args.vision_precision}")
     return model
 
 

@@ -1,4 +1,4 @@
-"""DINOv3-only LIBERO RLDS dataset mixed across multiple TFDS suites."""
+"""LIBERO RLDS dataset mixed across multiple TFDS suites."""
 
 from __future__ import annotations
 

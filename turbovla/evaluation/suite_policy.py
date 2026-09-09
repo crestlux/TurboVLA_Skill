@@ -79,10 +79,10 @@ class TurboVLAPolicy(base.TurboVLAPolicy):
         for primary, wrist in zip(primary_images, wrist_images):
             flat_images.extend([primary, wrist])
 
-        dinov3_pixel_values = self.dinov3_processor(flat_images)["pixel_values"]
+        pixel_values = self.vision_processor(flat_images)["pixel_values"]
         batch_size = len(primary_images)
         samples = {
-            "dinov3": dinov3_pixel_values.view(batch_size, 2, *dinov3_pixel_values.shape[1:]).to(self.device),
+            self.vision_sample_key: pixel_values.view(batch_size, 2, *pixel_values.shape[1:]).to(self.device),
         }
         state_tensors = []
         for state in states:

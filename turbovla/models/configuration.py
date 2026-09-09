@@ -20,7 +20,11 @@ class TextEncoderConfig:
 
 @dataclass
 class VisionEncoderConfig:
+    backbone_type: str = "dinov3"
     model_name_or_path: str = "facebook/dinov3-vitb16-pretrain-lvd1689m"
+    resnet_weights: str = "IMAGENET1K_V2"
+    resnet_output_stride: int = 16
+    load_pretrained: bool = True
     image_size: int = 256
     num_views: int = 2
     position_embedding: str = "view"
@@ -75,6 +79,13 @@ class TurboVLAConfig:
             raise ValueError(f"model name must be 'TurboVLA', got {self.name!r}")
         if self.vision.num_views < 1:
             raise ValueError("vision.num_views must be positive")
+        if self.vision.backbone_type not in {"dinov3", "resnet50"}:
+            raise ValueError("vision.backbone_type must be 'dinov3' or 'resnet50'")
+        if self.vision.backbone_type == "resnet50":
+            if self.vision.resnet_output_stride not in {16, 32}:
+                raise ValueError("vision.resnet_output_stride must be 16 or 32")
+            if self.vision.image_size % self.vision.resnet_output_stride != 0:
+                raise ValueError("vision.image_size must be divisible by vision.resnet_output_stride")
         if self.vision.position_embedding not in {"view", "learned_patch"}:
             raise ValueError("vision.position_embedding must be 'view' or 'learned_patch'")
         if self.vision.compute_precision not in {"fp32", "bf16", "bf16_autocast"}:

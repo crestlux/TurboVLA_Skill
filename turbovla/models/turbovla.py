@@ -18,7 +18,7 @@ from .configuration import (
     VisionEncoderConfig,
 )
 from .text_encoder import TurboVLATextEncoder
-from .vision_encoder import DINOv3VisionEncoder
+from .vision_encoder import build_vision_encoder
 
 
 class VisionProjection(nn.Module):
@@ -104,7 +104,7 @@ class TurboVLA(nn.Module):
         self.num_views = int(config.vision.num_views)
 
         self.text_encoder = TurboVLATextEncoder(config.text, hidden_dim=hidden_dim)
-        self.vision_encoder = DINOv3VisionEncoder(config.vision)
+        self.vision_encoder = build_vision_encoder(config.vision)
         self.vision_projection = VisionProjection(
             in_dim=self.vision_encoder.hidden_size,
             out_dim=hidden_dim,
@@ -137,9 +137,13 @@ class TurboVLA(nn.Module):
 
     def _normalize_samples(self, samples: torch.Tensor | Mapping[str, torch.Tensor]) -> torch.Tensor:
         if isinstance(samples, Mapping):
-            if "dinov3" not in samples:
-                raise ValueError("samples mapping must contain 'dinov3'")
-            pixel_values = samples["dinov3"]
+            if "vision" in samples:
+                pixel_values = samples["vision"]
+            elif "dinov3" in samples:
+                # Backward compatibility for released DINOv3 data pipelines.
+                pixel_values = samples["dinov3"]
+            else:
+                raise ValueError("samples mapping must contain 'vision' or legacy key 'dinov3'")
         else:
             pixel_values = samples
         if pixel_values.ndim == 6:
@@ -254,7 +258,11 @@ def build_turbovla(args: TurboVLAConfig | Mapping[str, Any] | Any) -> TurboVLA:
                 attention_implementation=_arg(args, "text_attention_implementation", None),
             ),
             vision=VisionEncoderConfig(
+                backbone_type=str(_arg(args, "vision_backbone", "dinov3")),
                 model_name_or_path=_arg(args, "dinov3_path", _arg(args, "LOCAL_DINOV3_PATH", "")),
+                resnet_weights=str(_arg(args, "resnet_weights", "IMAGENET1K_V2")),
+                resnet_output_stride=int(_arg(args, "resnet_output_stride", 16)),
+                load_pretrained=bool(_arg(args, "load_vision_pretrained", True)),
                 image_size=int(_arg(args, "image_size", _arg(args, "expected_image_size", 256))),
                 num_views=int(_arg(args, "num_views", 2)),
                 position_embedding=str(_arg(args, "position_embedding", "view")),

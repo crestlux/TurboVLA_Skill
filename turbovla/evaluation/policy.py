@@ -1,7 +1,7 @@
 """TurboVLA policy adapter for aligned LIBERO evaluation.
 
 This module keeps the released LIBERO evaluation protocol local to its adapter:
-256px DINOv3 preprocessing, state normalization, hard min/max
+256px vision preprocessing, state normalization, hard min/max
 action denormalization, and the original gripper sign rule.
 """
 
@@ -17,6 +17,8 @@ from typing import Any, Iterable, Sequence
 import numpy as np
 from PIL import Image
 import torch
+
+from ..vision_processing import build_resnet50_processor
 
 
 EXPECTED_IMAGE_SIZE = 256
@@ -366,34 +368,47 @@ class TurboVLAPolicy:
         if self.precision not in {"bf16", "fp32"}:
             raise ValueError(f"Unsupported precision={precision!r}; expected 'bf16' or 'fp32'.")
 
-        if not self.dinov3_path:
-            raise ValueError("dinov3_path must point to a local DINOv3 checkpoint or a HF model id")
         if not self.bert_path:
             raise ValueError("bert_path must point to BERT base uncased or a compatible model id")
-        if not allow_hf_download and not os.path.isdir(self.dinov3_path):
-            raise FileNotFoundError(f"local DINOv3 directory not found: {self.dinov3_path}")
         if not allow_hf_download and not os.path.isdir(self.bert_path):
             raise FileNotFoundError(f"local BERT directory not found: {self.bert_path}")
 
-        build_model, loaded_model_path = load_turbovla_builder()
-        if self.verbose:
-            print(f"[TurboVLAPolicy] model source: {loaded_model_path}", flush=True)
-            print(
-                "[TurboVLAPolicy] "
-                f"precision={self.precision}, "
-                f"dinov3_output_hidden_states={self.dinov3_output_hidden_states}",
-                flush=True,
-            )
         self._checkpoint = torch.load(self.ckpt_path, map_location="cpu")
         model_config = self._checkpoint.get("model_config") if isinstance(self._checkpoint, dict) else None
         if model_config is not None:
             from ..models.configuration import TurboVLAConfig
 
             config = TurboVLAConfig.from_mapping(model_config)
+            self.vision_backbone = config.vision.backbone_type
+        else:
+            config = None
+            self.vision_backbone = "dinov3"
+
+        if self.vision_backbone == "dinov3":
+            if not self.dinov3_path:
+                raise ValueError("dinov3_path must point to a local DINOv3 checkpoint or a HF model id")
+            if not allow_hf_download and not os.path.isdir(self.dinov3_path):
+                raise FileNotFoundError(f"local DINOv3 directory not found: {self.dinov3_path}")
+
+        build_model, loaded_model_path = load_turbovla_builder()
+        if self.verbose:
+            print(f"[TurboVLAPolicy] model source: {loaded_model_path}", flush=True)
+            print(
+                "[TurboVLAPolicy] "
+                f"vision_backbone={self.vision_backbone}, precision={self.precision}, "
+                f"dinov3_output_hidden_states={self.dinov3_output_hidden_states}",
+                flush=True,
+            )
+        if config is not None:
             config.text.model_name_or_path = self.bert_path
             config.text.local_files_only = not allow_hf_download
-            config.vision.model_name_or_path = self.dinov3_path
             config.vision.local_files_only = not allow_hf_download
+            if self.vision_backbone == "dinov3":
+                config.vision.model_name_or_path = self.dinov3_path
+            else:
+                # The complete ResNet state is in the TurboVLA checkpoint. Avoid
+                # an unnecessary external pretrained-weight load before strict load.
+                config.vision.load_pretrained = False
             config.vision.compute_precision = "bf16" if self.precision == "bf16" else "bf16_autocast"
             self.chunk_size = config.action.horizon
             self.action_dim = config.action.action_dim
@@ -427,14 +442,24 @@ class TurboVLAPolicy:
         self.model.eval()
         self.model.requires_grad_(False)
         self._verify_model_precision()
-        self.dinov3_processor = build_dinov3_manual_processor(self.dinov3_path)
+        if self.vision_backbone == "dinov3":
+            self.vision_processor = build_dinov3_manual_processor(self.dinov3_path)
+            self.vision_sample_key = "dinov3"
+        else:
+            self.vision_processor = build_resnet50_processor(
+                expected_size=EXPECTED_IMAGE_SIZE,
+                output_stride=self.model.config.vision.resnet_output_stride,
+            )
+            self.vision_sample_key = "vision"
+        # Compatibility for downstream adapters that used this public attribute.
+        self.dinov3_processor = self.vision_processor
 
     def _set_eval_precision(self) -> None:
         if self.precision == "bf16":
             self.model.to(dtype=torch.bfloat16)
         else:
             # FP32 evaluation keeps all parameters FP32 while autocasting only
-            # the DINOv3 forward pass to BF16.
+            # the active vision-encoder forward pass to BF16.
             self.model.float()
 
     def _verify_model_precision(self) -> None:
@@ -476,10 +501,10 @@ class TurboVLAPolicy:
         for primary, wrist in zip(primary_images, wrist_images):
             flat_images.extend([primary, wrist])
 
-        dinov3_pixel_values = self.dinov3_processor(flat_images)["pixel_values"]
+        pixel_values = self.vision_processor(flat_images)["pixel_values"]
         batch_size = len(primary_images)
         samples = {
-            "dinov3": dinov3_pixel_values.view(batch_size, 2, *dinov3_pixel_values.shape[1:]).to(self.device),
+            self.vision_sample_key: pixel_values.view(batch_size, 2, *pixel_values.shape[1:]).to(self.device),
         }
         state_tensors = torch.stack([normalize_state(state) for state in states], dim=0).to(self.device)
         return samples, state_tensors

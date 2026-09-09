@@ -28,6 +28,7 @@ tmp/
 *.mp4
 *.log
 *.out
+MUJOCO_LOG.TXT
 *.npy
 *.npz
 *.parquet

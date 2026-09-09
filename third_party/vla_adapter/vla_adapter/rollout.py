@@ -2,7 +2,7 @@
 
 This script intentionally reuses the VLA-Adapter task/episode protocol shape,
 but bypasses OpenVLA/Prismatic preprocessing and action unnormalization. The
-policy adapter keeps TurboVLA's 256px DINOv3 inputs, proprio stats, hard
+policy adapter keeps TurboVLA's 256px vision inputs, proprio stats, hard
 action min/max, and gripper sign rule.
 
 VLA-Adapter is MIT-licensed; see ../LICENSES/VLA-Adapter.txt.
@@ -288,8 +288,6 @@ def eval_libero(cfg: GenerateConfig) -> float:
         raise ValueError("--ckpt_path is required for TurboVLA evaluation.")
     if not Path(cfg.ckpt_path).exists():
         raise FileNotFoundError(f"TurboVLA checkpoint not found: {cfg.ckpt_path}")
-    if not cfg.dinov3_path:
-        raise ValueError("--dinov3_path is required")
     if not cfg.bert_path:
         raise ValueError("--bert_path is required")
     if not Path(cfg.stats_path).is_file():
@@ -371,6 +369,7 @@ def eval_libero(cfg: GenerateConfig) -> float:
         "num_open_loop_steps": cfg.num_open_loop_steps,
         "seed": cfg.seed,
         "precision": cfg.precision,
+        "vision_backbone": policy.vision_backbone,
         "dinov3_output_hidden_states": cfg.dinov3_output_hidden_states,
         "tasks": [],
         "total_episodes": 0,

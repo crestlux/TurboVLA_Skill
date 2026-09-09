@@ -28,12 +28,20 @@ class DummyArgs:
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Train the complete TurboVLA model with online BERT and DINOv3."
+        description="Train the complete TurboVLA model with online BERT and a selectable vision backbone."
     )
 
     parser.add_argument("--dataset_dir", type=str, default="./data/libero/libero_10_no_noops/1.0.0")
     parser.add_argument("--dataset_split", type=str, default="train")
-    parser.add_argument("--dinov3_path", type=str, required=True)
+    parser.add_argument("--vision_backbone", type=str, default="dinov3", choices=["dinov3", "resnet50"])
+    parser.add_argument("--dinov3_path", type=str, default="")
+    parser.add_argument(
+        "--resnet_weights",
+        type=str,
+        default="IMAGENET1K_V2",
+        help="Torchvision ResNet-50 weight enum, local state-dict path, or 'none'.",
+    )
+    parser.add_argument("--resnet_output_stride", type=int, default=16, choices=[16, 32])
     parser.add_argument("--bert_path", type=str, required=True)
     parser.add_argument(
         "--pretrained_init_ckpt",
@@ -50,8 +58,29 @@ def parse_args():
     parser.add_argument("--weight_decay", type=float, default=1e-10)
     parser.add_argument("--head_lr", type=float, default=5e-5)
     parser.add_argument("--dinov3_lr", type=float, default=5e-5)
+    parser.add_argument(
+        "--vision_lr",
+        type=float,
+        default=None,
+        help="Active vision-backbone LR. Defaults to the legacy --dinov3_lr value.",
+    )
     parser.add_argument("--head_weight_decay", type=float, default=1e-10)
     parser.add_argument("--dinov3_weight_decay", type=float, default=1e-10)
+    parser.add_argument(
+        "--vision_weight_decay",
+        type=float,
+        default=None,
+        help="Active vision-backbone weight decay. Defaults to legacy --dinov3_weight_decay.",
+    )
+    parser.add_argument(
+        "--vision_precision",
+        "--dinov3_precision",
+        dest="vision_precision",
+        type=str,
+        default="bf16_autocast",
+        choices=["fp32", "bf16", "bf16_autocast"],
+        help="Active vision-encoder compute precision; --dinov3_precision is a legacy alias.",
+    )
     parser.add_argument("--precision", type=str, default="fp32", choices=["fp32", "bf16_amp"])
     parser.add_argument("--max_steps", type=int, default=80000)
     parser.add_argument(
@@ -197,7 +226,11 @@ def build_model_architecture(args):
                 f"--text_padding_length={args.text_padding_length}"
             )
     model_args = DummyArgs()
+    model_args.vision_backbone = args.vision_backbone
     model_args.dinov3_path = args.dinov3_path
+    model_args.resnet_weights = args.resnet_weights
+    model_args.resnet_output_stride = args.resnet_output_stride
+    model_args.load_vision_pretrained = True
     model_args.bert_path = args.bert_path
     model_args.hidden_dim = args.hidden_dim
     model_args.nheads = args.nheads
@@ -217,7 +250,11 @@ def build_model_architecture(args):
     model_args.local_files_only = not args.allow_hf_download
     model_args.freeze_vision_encoder = args.freeze_backbones
     model_args.freeze_text_encoder = args.freeze_text_encoder
-    model_args.dinov3_precision = getattr(args, "dinov3_precision", "bf16_autocast")
+    model_args.dinov3_precision = getattr(
+        args,
+        "vision_precision",
+        getattr(args, "dinov3_precision", "bf16_autocast"),
+    )
     model_args.num_views = 2
     model_args.image_size = args.expected_image_size
     model_args.position_embedding = "view"
@@ -284,20 +321,20 @@ def build_param_group_optimizer(model, args):
     head_lr = args.lr if args.head_lr is None else args.head_lr
     head_wd = args.weight_decay if args.head_weight_decay is None else args.head_weight_decay
     grouped = {
-        ("dinov3_decay", args.dinov3_lr, args.dinov3_weight_decay): [],
-        ("dinov3_no_decay", args.dinov3_lr, 0.0): [],
+        ("vision_decay", args.vision_lr, args.vision_weight_decay): [],
+        ("vision_no_decay", args.vision_lr, 0.0): [],
         ("head_decay", head_lr, head_wd): [],
         ("head_no_decay", head_lr, 0.0): [],
     }
     for name, param in model.named_parameters():
         if not param.requires_grad:
             continue
-        is_dino = name.startswith("vision_encoder.backbone")
+        is_vision = name.startswith("vision_encoder.backbone")
         decay = _use_weight_decay(name, param)
-        if is_dino and decay:
-            key = ("dinov3_decay", args.dinov3_lr, args.dinov3_weight_decay)
-        elif is_dino:
-            key = ("dinov3_no_decay", args.dinov3_lr, 0.0)
+        if is_vision and decay:
+            key = ("vision_decay", args.vision_lr, args.vision_weight_decay)
+        elif is_vision:
+            key = ("vision_no_decay", args.vision_lr, 0.0)
         elif decay:
             key = ("head_decay", head_lr, head_wd)
         else:
@@ -447,6 +484,12 @@ def move_samples_to_device(samples, device):
 
 def train_model():
     args = parse_args()
+    if args.vision_backbone == "dinov3" and not args.dinov3_path:
+        raise ValueError("--dinov3_path is required when --vision_backbone=dinov3")
+    if args.vision_lr is None:
+        args.vision_lr = args.dinov3_lr
+    if args.vision_weight_decay is None:
+        args.vision_weight_decay = args.dinov3_weight_decay
     if args.head_lr is None:
         args.head_lr = args.lr
     if args.head_weight_decay is None:
@@ -516,7 +559,14 @@ def train_model():
             trainable = [n for n, p in model.named_parameters() if p.requires_grad]
             frozen = [n for n, p in model.named_parameters() if not p.requires_grad]
             print(f"device={device}, distributed={is_distributed}, world_size={world_size}")
-            print(f"dinov3_path={args.dinov3_path}")
+            print(f"vision_backbone={args.vision_backbone}")
+            if args.vision_backbone == "dinov3":
+                print(f"dinov3_path={args.dinov3_path}")
+            else:
+                print(
+                    f"resnet_weights={args.resnet_weights}, "
+                    f"resnet_output_stride={args.resnet_output_stride}"
+                )
             print(f"bert_path={args.bert_path}")
             print(
                 f"online_bert=True, freeze_text_encoder={args.freeze_text_encoder}, "
@@ -526,8 +576,8 @@ def train_model():
             print(f"load_text_projection_from_init={args.load_text_projection_from_init}")
             print(f"max_steps={args.max_steps}, lr_schedule_steps={args.lr_schedule_steps}")
             print(
-                f"precision={args.precision}, head_lr={args.head_lr}, dinov3_lr={args.dinov3_lr}, "
-                f"head_wd={args.head_weight_decay}, dinov3_wd={args.dinov3_weight_decay}"
+                f"precision={args.precision}, head_lr={args.head_lr}, vision_lr={args.vision_lr}, "
+                f"head_wd={args.head_weight_decay}, vision_wd={args.vision_weight_decay}"
             )
             print(f"warmup_steps={args.warmup_steps}, min_lr_ratio={args.min_lr_ratio}")
             print(
@@ -600,6 +650,8 @@ def train_model():
             seed=args.seed,
             local_files_only=not args.allow_hf_download,
             expected_image_size=args.expected_image_size,
+            vision_backbone=args.vision_backbone,
+            resnet_output_stride=args.resnet_output_stride,
         )
 
         dataloader = DataLoader(
@@ -615,7 +667,7 @@ def train_model():
 
         model.train()
         if args.freeze_backbones:
-            model_to_load.dinov3.eval()
+            model_to_load.vision_encoder.eval()
 
         if rank == 0:
             per_gpu_effective_bs = args.batch_size * args.grad_accum_steps

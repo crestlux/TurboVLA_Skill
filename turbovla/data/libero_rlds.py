@@ -6,6 +6,8 @@ from transformers import AutoImageProcessor
 import tensorflow as tf
 import tensorflow_datasets as tfds
 
+from ..vision_processing import build_resnet50_processor
+
 try:
     tf.config.set_visible_devices([], "GPU")
 except Exception:
@@ -27,14 +29,28 @@ class LiberoRLDSDataset(IterableDataset):
         seed=42,
         local_files_only=True,
         expected_image_size=256,
+        vision_backbone="dinov3",
+        resnet_output_stride=16,
     ):
         self.dataset_dir = dataset_dir
-        self.dino_processor = AutoImageProcessor.from_pretrained(
-            LOCAL_DINOV3_PATH,
-            local_files_only=bool(local_files_only),
-        )
-
-        self._disable_spatial_resize(self.dino_processor)
+        self.vision_backbone = str(vision_backbone)
+        if self.vision_backbone == "dinov3":
+            self.vision_processor = AutoImageProcessor.from_pretrained(
+                LOCAL_DINOV3_PATH,
+                local_files_only=bool(local_files_only),
+            )
+            self._disable_spatial_resize(self.vision_processor)
+            self.vision_sample_key = "dinov3"
+            self.vision_backbone_name = "DINOv3"
+        elif self.vision_backbone == "resnet50":
+            self.vision_processor = build_resnet50_processor(
+                expected_size=int(expected_image_size),
+                output_stride=int(resnet_output_stride),
+            )
+            self.vision_sample_key = "vision"
+            self.vision_backbone_name = f"ResNet-50-OS{int(resnet_output_stride)}"
+        else:
+            raise ValueError(f"unsupported vision_backbone={self.vision_backbone!r}")
 
         self.chunk_size = int(chunk_size)
         self.rank = int(rank)
@@ -141,10 +157,10 @@ class LiberoRLDSDataset(IterableDataset):
         self._ensure_expected_size(img_np)
         img = Image.fromarray(img_np)
 
-        dino_pixel_values = self.dino_processor(images=img, return_tensors="pt")["pixel_values"].squeeze(0)
-        self._ensure_processor_preserved_resolution(dino_pixel_values, img_np, "DINOv3")
+        pixel_values = self.vision_processor(images=img, return_tensors="pt")["pixel_values"].squeeze(0)
+        self._ensure_processor_preserved_resolution(pixel_values, img_np, self.vision_backbone_name)
 
-        return {"dinov3": dino_pixel_values}
+        return {self.vision_sample_key: pixel_values}
 
     @staticmethod
     def _decode_instruction(raw_instruction):
@@ -236,8 +252,8 @@ def vla_collate_fn(batch):
     if len(batch) == 0:
         raise ValueError("empty batch cannot be collated")
 
-    dino_img1_list = []
-    dino_img2_list = []
+    vision_img1_list = []
+    vision_img2_list = []
     instructions = []
     action_chunks = []
     action_chunk_masks = []
@@ -248,20 +264,21 @@ def vla_collate_fn(batch):
             raise ValueError("Each sample must contain two camera views: (img1, img2)")
 
         img1, img2 = images
-        if "dinov3" not in img1 or "dinov3" not in img2:
-            raise ValueError("Each view must contain preprocessed tensor for key 'dinov3'")
+        sample_key = "vision" if "vision" in img1 else "dinov3"
+        if sample_key not in img1 or sample_key not in img2:
+            raise ValueError("Each view must contain a consistent 'vision' or legacy 'dinov3' tensor")
 
-        dino_img1_list.append(img1["dinov3"])
-        dino_img2_list.append(img2["dinov3"])
+        vision_img1_list.append(img1[sample_key])
+        vision_img2_list.append(img2[sample_key])
         instructions.append(instruction)
         action_chunks.append(action_chunk)
         action_chunk_masks.append(action_chunk_mask)
         states.append(state)
 
-    dino_img1 = torch.stack(dino_img1_list, dim=0)
-    dino_img2 = torch.stack(dino_img2_list, dim=0)
+    vision_img1 = torch.stack(vision_img1_list, dim=0)
+    vision_img2 = torch.stack(vision_img2_list, dim=0)
 
-    samples = {"dinov3": torch.stack([dino_img1, dino_img2], dim=1)}
+    samples = {sample_key: torch.stack([vision_img1, vision_img2], dim=1)}
 
     action_chunks = torch.stack(action_chunks, dim=0)
     action_chunk_masks = torch.stack(action_chunk_masks, dim=0)
