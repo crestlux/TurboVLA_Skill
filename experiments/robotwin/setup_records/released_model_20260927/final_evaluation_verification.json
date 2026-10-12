@@ -1,0 +1,92 @@
+{
+  "checked_at": "2026-09-28T14:32:55.515238+09:00",
+  "run_id": "turbovla_released55k_eval10_20260927_2237",
+  "evaluation_dir": "/data/jack/robotwin2_turbovla/evaluation/turbovla_released55k_eval10_20260927_2237_seed0",
+  "status": "verified_completed",
+  "tasks": 50,
+  "trials": 500,
+  "successes": 49,
+  "mean_success_pct": 9.8,
+  "zero_success_tasks": [
+    "blocks_ranking_rgb",
+    "blocks_ranking_size",
+    "dump_bin_bigbin",
+    "handover_block",
+    "hanging_mug",
+    "move_pillbottle_pad",
+    "move_stapler_pad",
+    "open_microwave",
+    "pick_diverse_bottles",
+    "pick_dual_bottles",
+    "place_a2b_left",
+    "place_a2b_right",
+    "place_bread_basket",
+    "place_burger_fries",
+    "place_can_basket",
+    "place_cans_plasticbox",
+    "place_dual_shoes",
+    "place_fan",
+    "place_mouse_pad",
+    "place_object_basket",
+    "place_object_scale",
+    "place_object_stand",
+    "place_phone_stand",
+    "place_shoe",
+    "put_bottles_dustbin",
+    "rotate_qrcode",
+    "stack_blocks_three",
+    "stack_bowls_three",
+    "stamp_seal"
+  ],
+  "perfect_tasks": [],
+  "top_tasks": [
+    {
+      "task": "grab_roller",
+      "successes": "7",
+      "trials": "10",
+      "success_rate_pct": "70.0"
+    },
+    {
+      "task": "shake_bottle_horizontally",
+      "successes": "6",
+      "trials": "10",
+      "success_rate_pct": "60.0"
+    },
+    {
+      "task": "shake_bottle",
+      "successes": "6",
+      "trials": "10",
+      "success_rate_pct": "60.0"
+    },
+    {
+      "task": "place_container_plate",
+      "successes": "4",
+      "trials": "10",
+      "success_rate_pct": "40.0"
+    },
+    {
+      "task": "click_bell",
+      "successes": "3",
+      "trials": "10",
+      "success_rate_pct": "30.0"
+    },
+    {
+      "task": "move_can_pot",
+      "successes": "3",
+      "trials": "10",
+      "success_rate_pct": "30.0"
+    }
+  ],
+  "all_task_logs_consistent": true,
+  "all_server_logs_used_expected_checkpoint": true,
+  "nonempty_videos": 500,
+  "simulator_result_files": 50,
+  "policy_failures": 451,
+  "policy_failures_at_step_limit": 451,
+  "expert_validation_tracebacks": 18,
+  "feature_fix_applied": false,
+  "vision_source_identical_to_launch": true,
+  "transformers_version": "4.57.6",
+  "feature_source": "hidden_states[-1]; pre-LayerNorm in this environment",
+  "interpretation": "All trials completed; known visual-feature compatibility mismatch remains. Does not establish paper-level performance."
+}

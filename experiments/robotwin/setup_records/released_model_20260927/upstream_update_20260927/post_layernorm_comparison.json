@@ -1,0 +1,156 @@
+{
+  "checked_at": "2026-09-28T01:22:03.239795+09:00",
+  "old_official_commit": "b29ab1420baa5c663ec935df513f2012430beb67",
+  "updated_official_commit": "6727c875666f8d5dda8d8cca0043da200738fe73",
+  "checkpoint": "/home/jack/TurboVLA/pretrained/converted/turbovla_robotwin_cb530054_55k_ema/steps_55000_ema_model.safetensors",
+  "samples": 12,
+  "precision": "bfloat16",
+  "feature_source": "last_hidden_state (post LayerNorm)",
+  "feature_checks": [
+    {
+      "hidden_state_dtype": "torch.bfloat16",
+      "last_hidden_state_dtype": "torch.float32",
+      "max_abs_difference": 157696.0,
+      "mean_abs_difference": 48.40895080566406,
+      "last_hidden_state_equals_final_layernorm": true
+    }
+  ],
+  "normalization": "Model order: 12 joints, then 2 binary grippers; min-max joints; threshold 0.49 grippers.",
+  "limitation": "Small in-distribution demonstration sample, not a rollout, unseen-task test, or calibrated success-rate estimate. MAE is a diagnostic only.",
+  "max_abs_output_difference": 0.0078125,
+  "mean_abs_output_difference": 0.000325063072523335,
+  "old_normalized_action_mae": 0.003748533665202558,
+  "new_normalized_action_mae": 0.0037411527203706405,
+  "gripper_threshold_disagreements": 0,
+  "gripper_values_compared": 1200,
+  "peak_gpu_allocated_bytes": 1808386048,
+  "records": [
+    {
+      "task": "adjust_bottle",
+      "episode": 0,
+      "frame": 35,
+      "max_abs_output_difference": 0.0078125,
+      "mean_abs_output_difference": 0.00021815708896610886,
+      "old_normalized_action_mae": 0.003656683024019003,
+      "new_normalized_action_mae": 0.003650483675301075,
+      "gripper_threshold_disagreements": 0
+    },
+    {
+      "task": "adjust_bottle",
+      "episode": 0,
+      "frame": 71,
+      "max_abs_output_difference": 0.0078125,
+      "mean_abs_output_difference": 0.00030726840486750007,
+      "old_normalized_action_mae": 0.005578201729804277,
+      "new_normalized_action_mae": 0.005597987677901983,
+      "gripper_threshold_disagreements": 0
+    },
+    {
+      "task": "beat_block_hammer",
+      "episode": 0,
+      "frame": 30,
+      "max_abs_output_difference": 0.005859375,
+      "mean_abs_output_difference": 0.0003344726574141532,
+      "old_normalized_action_mae": 0.0028772333171218634,
+      "new_normalized_action_mae": 0.002849288983270526,
+      "gripper_threshold_disagreements": 0
+    },
+    {
+      "task": "beat_block_hammer",
+      "episode": 0,
+      "frame": 61,
+      "max_abs_output_difference": 0.00390625,
+      "mean_abs_output_difference": 0.0003119768516626209,
+      "old_normalized_action_mae": 0.0022167011629790068,
+      "new_normalized_action_mae": 0.0022027655504643917,
+      "gripper_threshold_disagreements": 0
+    },
+    {
+      "task": "click_bell",
+      "episode": 0,
+      "frame": 19,
+      "max_abs_output_difference": 0.00390625,
+      "mean_abs_output_difference": 0.00027029853663407266,
+      "old_normalized_action_mae": 0.0013184068957343698,
+      "new_normalized_action_mae": 0.0013277203543111682,
+      "gripper_threshold_disagreements": 0
+    },
+    {
+      "task": "click_bell",
+      "episode": 0,
+      "frame": 39,
+      "max_abs_output_difference": 0.00390625,
+      "mean_abs_output_difference": 0.0002600097795948386,
+      "old_normalized_action_mae": 0.0012922502355650067,
+      "new_normalized_action_mae": 0.0012759134406223893,
+      "gripper_threshold_disagreements": 0
+    },
+    {
+      "task": "dump_bin_bigbin",
+      "episode": 0,
+      "frame": 87,
+      "max_abs_output_difference": 0.00390625,
+      "mean_abs_output_difference": 0.0003138950851280242,
+      "old_normalized_action_mae": 0.010644642636179924,
+      "new_normalized_action_mae": 0.010602962225675583,
+      "gripper_threshold_disagreements": 0
+    },
+    {
+      "task": "dump_bin_bigbin",
+      "episode": 0,
+      "frame": 174,
+      "max_abs_output_difference": 0.00390625,
+      "mean_abs_output_difference": 0.0002940150734502822,
+      "old_normalized_action_mae": 0.003858695039525628,
+      "new_normalized_action_mae": 0.0038819373585283756,
+      "gripper_threshold_disagreements": 0
+    },
+    {
+      "task": "grab_roller",
+      "episode": 0,
+      "frame": 22,
+      "max_abs_output_difference": 0.00390625,
+      "mean_abs_output_difference": 0.00036900112172588706,
+      "old_normalized_action_mae": 0.0036637333687394857,
+      "new_normalized_action_mae": 0.0036681934725493193,
+      "gripper_threshold_disagreements": 0
+    },
+    {
+      "task": "grab_roller",
+      "episode": 0,
+      "frame": 45,
+      "max_abs_output_difference": 0.00390625,
+      "mean_abs_output_difference": 0.00041974749183282256,
+      "old_normalized_action_mae": 0.0028379233554005623,
+      "new_normalized_action_mae": 0.0028403690084815025,
+      "gripper_threshold_disagreements": 0
+    },
+    {
+      "task": "lift_pot",
+      "episode": 0,
+      "frame": 27,
+      "max_abs_output_difference": 0.0078125,
+      "mean_abs_output_difference": 0.0003856550029013306,
+      "old_normalized_action_mae": 0.004376352299004793,
+      "new_normalized_action_mae": 0.004331299103796482,
+      "gripper_threshold_disagreements": 0
+    },
+    {
+      "task": "lift_pot",
+      "episode": 0,
+      "frame": 55,
+      "max_abs_output_difference": 0.00390625,
+      "mean_abs_output_difference": 0.00041625977610237896,
+      "old_normalized_action_mae": 0.0026615809183567762,
+      "new_normalized_action_mae": 0.0026649117935448885,
+      "gripper_threshold_disagreements": 0
+    }
+  ],
+  "feature_fix_impact": {
+    "max_abs_output_difference": 1.0025634765625,
+    "mean_abs_output_difference": 0.022079044952988625,
+    "baseline_normalized_action_mae": 0.022092368453741074,
+    "post_layernorm_normalized_action_mae": 0.003748533548787236,
+    "gripper_threshold_disagreements": 13
+  }
+}

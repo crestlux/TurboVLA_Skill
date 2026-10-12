@@ -1,0 +1,760 @@
+{
+  "status": "completed",
+  "generated_at": "2026-09-30T19:01:32.400851+09:00",
+  "plan": {
+    "status": "completed",
+    "created_at": "2026-09-30T18:26:26.955235+09:00",
+    "gpu": "0",
+    "checkpoint": "public150k_ema",
+    "tasks": [
+      "adjust_bottle",
+      "open_laptop",
+      "beat_block_hammer",
+      "pick_dual_bottles",
+      "place_container_plate",
+      "move_stapler_pad"
+    ],
+    "trials_per_task": 2,
+    "instruction_pool": 100,
+    "python_random_seed": 20260930,
+    "stages": [
+      {
+        "name": "randomized_j3",
+        "mode": "demo_randomized",
+        "jobs": 3,
+        "run_id": "turbovla_gpu0_j23_20260930_182626_randomized_j3"
+      },
+      {
+        "name": "randomized_j2",
+        "mode": "demo_randomized",
+        "jobs": 2,
+        "run_id": "turbovla_gpu0_j23_20260930_182626_randomized_j2"
+      },
+      {
+        "name": "clean_j2",
+        "mode": "demo_clean",
+        "jobs": 2,
+        "run_id": "turbovla_gpu0_j23_20260930_182626_clean_j2"
+      },
+      {
+        "name": "clean_j3",
+        "mode": "demo_clean",
+        "jobs": 3,
+        "run_id": "turbovla_gpu0_j23_20260930_182626_clean_j3"
+      }
+    ],
+    "completed_stages": [
+      "randomized_j3",
+      "randomized_j2",
+      "clean_j2",
+      "clean_j3"
+    ],
+    "current_stage": null,
+    "notes": [
+      "Six tasks allow both two and three worker schedules to fill complete waves. Task order and per-task episode count are identical.",
+      "Modes use reversed order of worker counts to reduce consistent order bias. One pass per setting, not a statistical confidence interval.",
+      "GPU 1 remains assigned to the existing LIBERO job."
+    ],
+    "code_sha256": {
+      "scripts/robotwin/profile_evaluation.py": "1c4c6327f1ec083578a55bd03edf017b54c29d6368166635b1f490d9007fe620",
+      "scripts/robotwin/evaluate_verified_checkpoint.sh": "1f18242e55c5d30836bd3ad3326811c01351b453949fd18290d3e68940e506f9",
+      "scripts/robotwin/eval_task.sh": "d43510b5fc08b45b8a328a6648c86a13385f24f378d0f13396da427b047dc01a"
+    },
+    "updated_at": "2026-09-30T19:01:32.358476+09:00",
+    "completed_at": "2026-09-30T19:01:32.400851+09:00"
+  },
+  "stages": [
+    {
+      "name": "randomized_j3",
+      "mode": "demo_randomized",
+      "jobs_per_gpu": 3,
+      "profile_directory": "/home/jack/TurboVLA/experiments/robotwin/evaluation_records/gpu0_j2_vs_j3_20260930_182626/randomized_j3",
+      "pipeline_directory": "/data/jack/robotwin2_turbovla/pipelines/turbovla_gpu0_j23_20260930_182626_randomized_j3",
+      "evaluation_directory": "/data/jack/robotwin2_turbovla/evaluation/turbovla_gpu0_j23_20260930_182626_randomized_j3_seed0",
+      "resource": {
+        "started_at": "2026-09-30T18:28:19.660045+09:00",
+        "command": [
+          "bash",
+          "scripts/robotwin/evaluate_latest_released_model.sh",
+          "adjust_bottle",
+          "open_laptop",
+          "beat_block_hammer",
+          "pick_dual_bottles",
+          "place_container_plate",
+          "move_stapler_pad"
+        ],
+        "gpus": "0",
+        "interval_seconds": 1.0,
+        "timeout_seconds": 2700.0,
+        "notes": [
+          "GPU peaks are sampled at the stated interval.",
+          "Process CPU 100% is one logical CPU; RSS can double-count shared pages."
+        ],
+        "environment": {
+          "CUDA_VISIBLE_DEVICES": "0",
+          "ROBOTWIN_JOBS_PER_GPU": "3",
+          "ROBOTWIN_TEST_NUM": "2",
+          "ROBOTWIN_INSTRUCTION_SAMPLE_NUM": "100",
+          "ROBOTWIN_PYTHON_RANDOM_SEED": "20260930",
+          "ROBOTWIN_BASE_PORT": "8200",
+          "ROBOTWIN_EVAL_MODE": "demo_randomized",
+          "RUN_ID": "turbovla_gpu0_j23_20260930_182626_randomized_j3"
+        },
+        "baseline_gpu": [
+          {
+            "index": 0,
+            "uuid": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+            "total_mib": 24576,
+            "used_mib": 1,
+            "free_mib": 24251,
+            "utilization_pct": 0,
+            "memory_utilization_pct": 0
+          }
+        ],
+        "finished_at": "2026-09-30T18:36:09.171856+09:00",
+        "exit_code": 0,
+        "exit_reason": "exited",
+        "status": "completed",
+        "wall_seconds": 469.4703423641622,
+        "sample_count": 434,
+        "process_cpu_mean_pct": 282.5771769353229,
+        "process_cpu_peak_pct": 644.8874512239153,
+        "process_rss_peak_mib": 19404.9921875,
+        "system_cpu_mean_pct": 8.422380639317888,
+        "gpu": [
+          {
+            "index": 0,
+            "uuid": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+            "baseline_used_mib": 1,
+            "peak_used_mib": 19469,
+            "minimum_free_mib": 4783,
+            "mean_utilization_pct": 71.10599078341014,
+            "peak_utilization_pct": 100
+          }
+        ]
+      },
+      "evaluation": {
+        "mode": "demo_randomized",
+        "tasks": 6,
+        "trials": 12,
+        "mean_success_pct": 100.0
+      },
+      "episodes": [
+        {
+          "task": "adjust_bottle",
+          "seed": 100000,
+          "instruction": "Grab the bottle with red screw cap from the table with the left arm",
+          "control_steps": 124,
+          "success": true
+        },
+        {
+          "task": "adjust_bottle",
+          "seed": 100002,
+          "instruction": "Pick up the green bottle with white label from the table head-up.",
+          "control_steps": 110,
+          "success": true
+        },
+        {
+          "task": "open_laptop",
+          "seed": 100000,
+          "instruction": "Open the laptop with smooth surfaces with care",
+          "control_steps": 131,
+          "success": true
+        },
+        {
+          "task": "open_laptop",
+          "seed": 100001,
+          "instruction": "Open the laptop with colorful screen carefully using the left arm.",
+          "control_steps": 162,
+          "success": true
+        },
+        {
+          "task": "beat_block_hammer",
+          "seed": 100000,
+          "instruction": "Pick the silver hammer head and claw up and hit the block",
+          "control_steps": 102,
+          "success": true
+        },
+        {
+          "task": "beat_block_hammer",
+          "seed": 100001,
+          "instruction": "Grab the hammer with claw and smooth head and strike the block",
+          "control_steps": 107,
+          "success": true
+        },
+        {
+          "task": "pick_dual_bottles",
+          "seed": 100000,
+          "instruction": "Hold the brown bottle in one hand, the green bottle in the other.",
+          "control_steps": 97,
+          "success": true
+        },
+        {
+          "task": "pick_dual_bottles",
+          "seed": 100002,
+          "instruction": "Pick up the brown bottle and the green bottle simultaneously.",
+          "control_steps": 101,
+          "success": true
+        },
+        {
+          "task": "place_container_plate",
+          "seed": 100000,
+          "instruction": "Move the curved bowl with smooth texture to set the container on the smooth round plate for serving",
+          "control_steps": 117,
+          "success": true
+        },
+        {
+          "task": "place_container_plate",
+          "seed": 100001,
+          "instruction": "Move the palm-sized glossy bowl to set the container on the smooth round plate for serving",
+          "control_steps": 123,
+          "success": true
+        },
+        {
+          "task": "move_stapler_pad",
+          "seed": 100000,
+          "instruction": "Move the stapler with white loading section to the Yellow mat.",
+          "control_steps": 144,
+          "success": true
+        },
+        {
+          "task": "move_stapler_pad",
+          "seed": 100001,
+          "instruction": "Grab the black stapler and set it on Green mat",
+          "control_steps": 132,
+          "success": true
+        }
+      ],
+      "total_control_steps": 1450,
+      "episodes_per_hour": 92.01859223407622
+    },
+    {
+      "name": "randomized_j2",
+      "mode": "demo_randomized",
+      "jobs_per_gpu": 2,
+      "profile_directory": "/home/jack/TurboVLA/experiments/robotwin/evaluation_records/gpu0_j2_vs_j3_20260930_182626/randomized_j2",
+      "pipeline_directory": "/data/jack/robotwin2_turbovla/pipelines/turbovla_gpu0_j23_20260930_182626_randomized_j2",
+      "evaluation_directory": "/data/jack/robotwin2_turbovla/evaluation/turbovla_gpu0_j23_20260930_182626_randomized_j2_seed0",
+      "resource": {
+        "started_at": "2026-09-30T18:36:09.217270+09:00",
+        "command": [
+          "bash",
+          "scripts/robotwin/evaluate_latest_released_model.sh",
+          "adjust_bottle",
+          "open_laptop",
+          "beat_block_hammer",
+          "pick_dual_bottles",
+          "place_container_plate",
+          "move_stapler_pad"
+        ],
+        "gpus": "0",
+        "interval_seconds": 1.0,
+        "timeout_seconds": 2700.0,
+        "notes": [
+          "GPU peaks are sampled at the stated interval.",
+          "Process CPU 100% is one logical CPU; RSS can double-count shared pages."
+        ],
+        "environment": {
+          "CUDA_VISIBLE_DEVICES": "0",
+          "ROBOTWIN_JOBS_PER_GPU": "2",
+          "ROBOTWIN_TEST_NUM": "2",
+          "ROBOTWIN_INSTRUCTION_SAMPLE_NUM": "100",
+          "ROBOTWIN_PYTHON_RANDOM_SEED": "20260930",
+          "ROBOTWIN_BASE_PORT": "8200",
+          "ROBOTWIN_EVAL_MODE": "demo_randomized",
+          "RUN_ID": "turbovla_gpu0_j23_20260930_182626_randomized_j2"
+        },
+        "baseline_gpu": [
+          {
+            "index": 0,
+            "uuid": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+            "total_mib": 24576,
+            "used_mib": 1,
+            "free_mib": 24251,
+            "utilization_pct": 0,
+            "memory_utilization_pct": 0
+          }
+        ],
+        "finished_at": "2026-09-30T18:46:03.247500+09:00",
+        "exit_code": 0,
+        "exit_reason": "exited",
+        "status": "completed",
+        "wall_seconds": 593.9905627779663,
+        "sample_count": 549,
+        "process_cpu_mean_pct": 185.37336576118733,
+        "process_cpu_peak_pct": 436.44084158562674,
+        "process_rss_peak_mib": 12798.375,
+        "system_cpu_mean_pct": 7.44935291652373,
+        "gpu": [
+          {
+            "index": 0,
+            "uuid": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+            "baseline_used_mib": 1,
+            "peak_used_mib": 13613,
+            "minimum_free_mib": 10638,
+            "mean_utilization_pct": 53.49908925318761,
+            "peak_utilization_pct": 100
+          }
+        ]
+      },
+      "evaluation": {
+        "mode": "demo_randomized",
+        "tasks": 6,
+        "trials": 12,
+        "mean_success_pct": 100.0
+      },
+      "episodes": [
+        {
+          "task": "adjust_bottle",
+          "seed": 100000,
+          "instruction": "Grab the bottle with red screw cap from the table with the left arm",
+          "control_steps": 124,
+          "success": true
+        },
+        {
+          "task": "adjust_bottle",
+          "seed": 100002,
+          "instruction": "Pick up the green bottle with white label from the table head-up.",
+          "control_steps": 110,
+          "success": true
+        },
+        {
+          "task": "open_laptop",
+          "seed": 100000,
+          "instruction": "Open the laptop with smooth surfaces with care",
+          "control_steps": 131,
+          "success": true
+        },
+        {
+          "task": "open_laptop",
+          "seed": 100001,
+          "instruction": "Open the laptop with colorful screen carefully using the left arm.",
+          "control_steps": 162,
+          "success": true
+        },
+        {
+          "task": "beat_block_hammer",
+          "seed": 100000,
+          "instruction": "Pick the silver hammer head and claw up and hit the block",
+          "control_steps": 102,
+          "success": true
+        },
+        {
+          "task": "beat_block_hammer",
+          "seed": 100001,
+          "instruction": "Grab the hammer with claw and smooth head and strike the block",
+          "control_steps": 107,
+          "success": true
+        },
+        {
+          "task": "pick_dual_bottles",
+          "seed": 100000,
+          "instruction": "Hold the brown bottle in one hand, the green bottle in the other.",
+          "control_steps": 97,
+          "success": true
+        },
+        {
+          "task": "pick_dual_bottles",
+          "seed": 100002,
+          "instruction": "Pick up the brown bottle and the green bottle simultaneously.",
+          "control_steps": 101,
+          "success": true
+        },
+        {
+          "task": "place_container_plate",
+          "seed": 100000,
+          "instruction": "Move the curved bowl with smooth texture to set the container on the smooth round plate for serving",
+          "control_steps": 117,
+          "success": true
+        },
+        {
+          "task": "place_container_plate",
+          "seed": 100001,
+          "instruction": "Move the palm-sized glossy bowl to set the container on the smooth round plate for serving",
+          "control_steps": 123,
+          "success": true
+        },
+        {
+          "task": "move_stapler_pad",
+          "seed": 100000,
+          "instruction": "Move the stapler with white loading section to the Yellow mat.",
+          "control_steps": 144,
+          "success": true
+        },
+        {
+          "task": "move_stapler_pad",
+          "seed": 100001,
+          "instruction": "Grab the black stapler and set it on Green mat",
+          "control_steps": 132,
+          "success": true
+        }
+      ],
+      "total_control_steps": 1450,
+      "episodes_per_hour": 72.72842820593459
+    },
+    {
+      "name": "clean_j2",
+      "mode": "demo_clean",
+      "jobs_per_gpu": 2,
+      "profile_directory": "/home/jack/TurboVLA/experiments/robotwin/evaluation_records/gpu0_j2_vs_j3_20260930_182626/clean_j2",
+      "pipeline_directory": "/data/jack/robotwin2_turbovla/pipelines/turbovla_gpu0_j23_20260930_182626_clean_j2",
+      "evaluation_directory": "/data/jack/robotwin2_turbovla/evaluation/turbovla_gpu0_j23_20260930_182626_clean_j2_seed0",
+      "resource": {
+        "started_at": "2026-09-30T18:46:03.290795+09:00",
+        "command": [
+          "bash",
+          "scripts/robotwin/evaluate_latest_released_model.sh",
+          "adjust_bottle",
+          "open_laptop",
+          "beat_block_hammer",
+          "pick_dual_bottles",
+          "place_container_plate",
+          "move_stapler_pad"
+        ],
+        "gpus": "0",
+        "interval_seconds": 1.0,
+        "timeout_seconds": 2700.0,
+        "notes": [
+          "GPU peaks are sampled at the stated interval.",
+          "Process CPU 100% is one logical CPU; RSS can double-count shared pages."
+        ],
+        "environment": {
+          "CUDA_VISIBLE_DEVICES": "0",
+          "ROBOTWIN_JOBS_PER_GPU": "2",
+          "ROBOTWIN_TEST_NUM": "2",
+          "ROBOTWIN_INSTRUCTION_SAMPLE_NUM": "100",
+          "ROBOTWIN_PYTHON_RANDOM_SEED": "20260930",
+          "ROBOTWIN_BASE_PORT": "8200",
+          "ROBOTWIN_EVAL_MODE": "demo_clean",
+          "RUN_ID": "turbovla_gpu0_j23_20260930_182626_clean_j2"
+        },
+        "baseline_gpu": [
+          {
+            "index": 0,
+            "uuid": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+            "total_mib": 24576,
+            "used_mib": 1,
+            "free_mib": 24251,
+            "utilization_pct": 0,
+            "memory_utilization_pct": 0
+          }
+        ],
+        "finished_at": "2026-09-30T18:54:37.807350+09:00",
+        "exit_code": 0,
+        "exit_reason": "exited",
+        "status": "completed",
+        "wall_seconds": 514.4706420637667,
+        "sample_count": 475,
+        "process_cpu_mean_pct": 181.98780658050586,
+        "process_cpu_peak_pct": 569.2060341045425,
+        "process_rss_peak_mib": 11531.91796875,
+        "system_cpu_mean_pct": 7.428878529953268,
+        "gpu": [
+          {
+            "index": 0,
+            "uuid": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+            "baseline_used_mib": 1,
+            "peak_used_mib": 11863,
+            "minimum_free_mib": 12389,
+            "mean_utilization_pct": 49.934736842105266,
+            "peak_utilization_pct": 100
+          }
+        ]
+      },
+      "evaluation": {
+        "mode": "demo_clean",
+        "tasks": 6,
+        "trials": 12,
+        "mean_success_pct": 100.0
+      },
+      "episodes": [
+        {
+          "task": "adjust_bottle",
+          "seed": 100001,
+          "instruction": "Pick up the plastic soda bottle from the table head-up.",
+          "control_steps": 116,
+          "success": true
+        },
+        {
+          "task": "adjust_bottle",
+          "seed": 100002,
+          "instruction": "Pick up the green plastic bottle with ridged bottom from the table head-up.",
+          "control_steps": 114,
+          "success": true
+        },
+        {
+          "task": "open_laptop",
+          "seed": 100000,
+          "instruction": "Open the laptop with glossy black display with care",
+          "control_steps": 99,
+          "success": true
+        },
+        {
+          "task": "open_laptop",
+          "seed": 100001,
+          "instruction": "Lift the foldable laptop using the right arm.",
+          "control_steps": 87,
+          "success": true
+        },
+        {
+          "task": "beat_block_hammer",
+          "seed": 100000,
+          "instruction": "Grab the silver hammer head and claw and beat the block",
+          "control_steps": 101,
+          "success": true
+        },
+        {
+          "task": "beat_block_hammer",
+          "seed": 100002,
+          "instruction": "Use the silver hammer head and claw to strike the block",
+          "control_steps": 106,
+          "success": true
+        },
+        {
+          "task": "pick_dual_bottles",
+          "seed": 100000,
+          "instruction": "Hold the brown bottle in one hand, the green bottle in the other.",
+          "control_steps": 105,
+          "success": true
+        },
+        {
+          "task": "pick_dual_bottles",
+          "seed": 100001,
+          "instruction": "Use one arm to grab the plastic soda bottle, the other for the green bottle.",
+          "control_steps": 108,
+          "success": true
+        },
+        {
+          "task": "place_container_plate",
+          "seed": 100000,
+          "instruction": "Place the container onto the gray plate for dining with the light blue bowl with darkened rim",
+          "control_steps": 116,
+          "success": true
+        },
+        {
+          "task": "place_container_plate",
+          "seed": 100003,
+          "instruction": "Move the cup made of metal to set the container on the gray plate for dining",
+          "control_steps": 120,
+          "success": true
+        },
+        {
+          "task": "move_stapler_pad",
+          "seed": 100000,
+          "instruction": "Place the rectangular stapler with curved corners on the Cyan colored mat.",
+          "control_steps": 137,
+          "success": true
+        },
+        {
+          "task": "move_stapler_pad",
+          "seed": 100001,
+          "instruction": "Place the white stapler with metal tray on the Magenta colored mat.",
+          "control_steps": 169,
+          "success": true
+        }
+      ],
+      "total_control_steps": 1378,
+      "episodes_per_hour": 83.9698059868021
+    },
+    {
+      "name": "clean_j3",
+      "mode": "demo_clean",
+      "jobs_per_gpu": 3,
+      "profile_directory": "/home/jack/TurboVLA/experiments/robotwin/evaluation_records/gpu0_j2_vs_j3_20260930_182626/clean_j3",
+      "pipeline_directory": "/data/jack/robotwin2_turbovla/pipelines/turbovla_gpu0_j23_20260930_182626_clean_j3",
+      "evaluation_directory": "/data/jack/robotwin2_turbovla/evaluation/turbovla_gpu0_j23_20260930_182626_clean_j3_seed0",
+      "resource": {
+        "started_at": "2026-09-30T18:54:37.850115+09:00",
+        "command": [
+          "bash",
+          "scripts/robotwin/evaluate_latest_released_model.sh",
+          "adjust_bottle",
+          "open_laptop",
+          "beat_block_hammer",
+          "pick_dual_bottles",
+          "place_container_plate",
+          "move_stapler_pad"
+        ],
+        "gpus": "0",
+        "interval_seconds": 1.0,
+        "timeout_seconds": 2700.0,
+        "notes": [
+          "GPU peaks are sampled at the stated interval.",
+          "Process CPU 100% is one logical CPU; RSS can double-count shared pages."
+        ],
+        "environment": {
+          "CUDA_VISIBLE_DEVICES": "0",
+          "ROBOTWIN_JOBS_PER_GPU": "3",
+          "ROBOTWIN_TEST_NUM": "2",
+          "ROBOTWIN_INSTRUCTION_SAMPLE_NUM": "100",
+          "ROBOTWIN_PYTHON_RANDOM_SEED": "20260930",
+          "ROBOTWIN_BASE_PORT": "8200",
+          "ROBOTWIN_EVAL_MODE": "demo_clean",
+          "RUN_ID": "turbovla_gpu0_j23_20260930_182626_clean_j3"
+        },
+        "baseline_gpu": [
+          {
+            "index": 0,
+            "uuid": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+            "total_mib": 24576,
+            "used_mib": 1,
+            "free_mib": 24251,
+            "utilization_pct": 0,
+            "memory_utilization_pct": 0
+          }
+        ],
+        "finished_at": "2026-09-30T19:01:32.347799+09:00",
+        "exit_code": 0,
+        "exit_reason": "exited",
+        "status": "completed",
+        "wall_seconds": 414.43966833129525,
+        "sample_count": 383,
+        "process_cpu_mean_pct": 271.7711188819625,
+        "process_cpu_peak_pct": 777.7338617513633,
+        "process_rss_peak_mib": 17178.890625,
+        "system_cpu_mean_pct": 8.38619686604754,
+        "gpu": [
+          {
+            "index": 0,
+            "uuid": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+            "baseline_used_mib": 1,
+            "peak_used_mib": 17137,
+            "minimum_free_mib": 7115,
+            "mean_utilization_pct": 65.61357702349869,
+            "peak_utilization_pct": 100
+          }
+        ]
+      },
+      "evaluation": {
+        "mode": "demo_clean",
+        "tasks": 6,
+        "trials": 12,
+        "mean_success_pct": 100.0
+      },
+      "episodes": [
+        {
+          "task": "adjust_bottle",
+          "seed": 100001,
+          "instruction": "Pick up the plastic soda bottle from the table head-up.",
+          "control_steps": 116,
+          "success": true
+        },
+        {
+          "task": "adjust_bottle",
+          "seed": 100002,
+          "instruction": "Pick up the green plastic bottle with ridged bottom from the table head-up.",
+          "control_steps": 114,
+          "success": true
+        },
+        {
+          "task": "open_laptop",
+          "seed": 100000,
+          "instruction": "Open the laptop with glossy black display with care",
+          "control_steps": 99,
+          "success": true
+        },
+        {
+          "task": "open_laptop",
+          "seed": 100001,
+          "instruction": "Lift the foldable laptop using the right arm.",
+          "control_steps": 87,
+          "success": true
+        },
+        {
+          "task": "beat_block_hammer",
+          "seed": 100000,
+          "instruction": "Grab the silver hammer head and claw and beat the block",
+          "control_steps": 101,
+          "success": true
+        },
+        {
+          "task": "beat_block_hammer",
+          "seed": 100002,
+          "instruction": "Use the silver hammer head and claw to strike the block",
+          "control_steps": 106,
+          "success": true
+        },
+        {
+          "task": "pick_dual_bottles",
+          "seed": 100000,
+          "instruction": "Hold the brown bottle in one hand, the green bottle in the other.",
+          "control_steps": 105,
+          "success": true
+        },
+        {
+          "task": "pick_dual_bottles",
+          "seed": 100001,
+          "instruction": "Use one arm to grab the plastic soda bottle, the other for the green bottle.",
+          "control_steps": 108,
+          "success": true
+        },
+        {
+          "task": "place_container_plate",
+          "seed": 100000,
+          "instruction": "Place the container onto the gray plate for dining with the light blue bowl with darkened rim",
+          "control_steps": 116,
+          "success": true
+        },
+        {
+          "task": "place_container_plate",
+          "seed": 100003,
+          "instruction": "Move the cup made of metal to set the container on the gray plate for dining",
+          "control_steps": 120,
+          "success": true
+        },
+        {
+          "task": "move_stapler_pad",
+          "seed": 100000,
+          "instruction": "Place the rectangular stapler with curved corners on the Cyan colored mat.",
+          "control_steps": 137,
+          "success": true
+        },
+        {
+          "task": "move_stapler_pad",
+          "seed": 100001,
+          "instruction": "Place the white stapler with metal tray on the Magenta colored mat.",
+          "control_steps": 169,
+          "success": true
+        }
+      ],
+      "total_control_steps": 1378,
+      "episodes_per_hour": 104.2371261755444
+    }
+  ],
+  "comparisons": [
+    {
+      "mode": "demo_clean",
+      "same_scenes_and_instructions": true,
+      "same_success_and_control_steps": true,
+      "two_worker_seconds": 514.4706420637667,
+      "three_worker_seconds": 414.43966833129525,
+      "end_to_end_speedup": 1.241364380333662,
+      "wall_time_reduction_pct": 19.443475594876215
+    },
+    {
+      "mode": "demo_randomized",
+      "same_scenes_and_instructions": true,
+      "same_success_and_control_steps": true,
+      "two_worker_seconds": 593.9905627779663,
+      "three_worker_seconds": 469.4703423641622,
+      "end_to_end_speedup": 1.2652355413693317,
+      "wall_time_reduction_pct": 20.963333126278926
+    }
+  ],
+  "same_model_and_evaluation_source_code": true,
+  "combined": {
+    "paired_scenes_and_instructions": true,
+    "two_worker_seconds": 1108.461204841733,
+    "three_worker_seconds": 883.9100106954575,
+    "end_to_end_speedup": 1.2540430489859475,
+    "wall_time_reduction_pct": 20.257920905615922
+  },
+  "limitations": [
+    "Six tasks, two episodes each; one run per setting. Not a 50-task worst-case memory bound.",
+    "All time includes startup, expert scene validation, video recording and cleanup.",
+    "Same task order; task durations can differ, so scheduling tail effects remain.",
+    "GPU 0 only; GPU 1 LIBERO continues and shares host CPU/RAM.",
+    "Memory peaks sampled at about 1 second. Process CPU 100% means one logical core; summed RSS can double-count shared pages.",
+    "Full-dataset or two-GPU timings have not been measured in this experiment."
+  ]
+}

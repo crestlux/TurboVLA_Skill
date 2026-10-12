@@ -1,0 +1,75 @@
+{
+  "started_at": "2026-10-01T00:34:31.090529+09:00",
+  "command": [
+    "bash",
+    "scripts/robotwin/evaluate_latest_released_model.sh",
+    "all"
+  ],
+  "gpus": "0,1",
+  "interval_seconds": 10.0,
+  "timeout_seconds": 259200.0,
+  "notes": [
+    "GPU peaks are sampled at the stated interval.",
+    "Process CPU 100% is one logical CPU; RSS can double-count shared pages."
+  ],
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "0,1",
+    "ROBOTWIN_JOBS_PER_GPU": "3",
+    "ROBOTWIN_TEST_NUM": "50",
+    "ROBOTWIN_INSTRUCTION_SAMPLE_NUM": "100",
+    "ROBOTWIN_PYTHON_RANDOM_SEED": "20260930",
+    "ROBOTWIN_BASE_PORT": "8400",
+    "ROBOTWIN_EVAL_MODE": "demo_clean",
+    "RUN_ID": "turbovla_release150k_eval50_demo_clean_20261001_0033"
+  },
+  "baseline_gpu": [
+    {
+      "index": 0,
+      "uuid": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+      "total_mib": 24576,
+      "used_mib": 1,
+      "free_mib": 24251,
+      "utilization_pct": 0,
+      "memory_utilization_pct": 0
+    },
+    {
+      "index": 1,
+      "uuid": "GPU-7e7d7f97-c512-32b6-0a17-bfa6c8d19fe5",
+      "total_mib": 24576,
+      "used_mib": 1,
+      "free_mib": 24251,
+      "utilization_pct": 0,
+      "memory_utilization_pct": 0
+    }
+  ],
+  "finished_at": "2026-10-01T17:38:57.953717+09:00",
+  "exit_code": 0,
+  "exit_reason": "exited",
+  "status": "completed",
+  "wall_seconds": 61466.7981874384,
+  "sample_count": 6088,
+  "process_cpu_mean_pct": 579.9131907590709,
+  "process_cpu_peak_pct": 724.1952638919311,
+  "process_rss_peak_mib": 42133.921875,
+  "system_cpu_mean_pct": 6.451853081049863,
+  "gpu": [
+    {
+      "index": 0,
+      "uuid": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+      "baseline_used_mib": 1,
+      "peak_used_mib": 20223,
+      "minimum_free_mib": 4029,
+      "mean_utilization_pct": 91.72519710906701,
+      "peak_utilization_pct": 100
+    },
+    {
+      "index": 1,
+      "uuid": "GPU-7e7d7f97-c512-32b6-0a17-bfa6c8d19fe5",
+      "baseline_used_mib": 1,
+      "peak_used_mib": 21396,
+      "minimum_free_mib": 2855,
+      "mean_utilization_pct": 83.42296320630749,
+      "peak_utilization_pct": 100
+    }
+  ]
+}

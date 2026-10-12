@@ -1,0 +1,9 @@
+{
+  "recorded_at": "2026-09-27T03:02:36.083718+09:00",
+  "status": "passed",
+  "equality_cases": 4,
+  "bitwise_equal": true,
+  "scope": "tokenization and masks only; concurrent training prevents standalone throughput claims",
+  "peak_allocated_bytes": 1066496,
+  "measurements": {}
+}

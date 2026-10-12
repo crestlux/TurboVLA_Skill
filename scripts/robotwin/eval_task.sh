@@ -67,8 +67,15 @@ echo "task_config: ${task_config}"
 echo "ckpt_setting: ${ckpt_setting}"
 echo "policy_port: ${policy_port}"
 
+eval_entry=(script/eval_policy.py)
+# Optional reproducible language sampling for paired resource measurements.
+# Leave upstream behavior unchanged when the variable is absent.
+if [[ -n "${ROBOTWIN_PYTHON_RANDOM_SEED:-}" ]]; then
+    [[ "${ROBOTWIN_PYTHON_RANDOM_SEED}" =~ ^[0-9]+$ ]] || { echo 'Invalid Python random seed' >&2; exit 2; }
+    eval_entry=(-c 'import os, random, runpy, sys; random.seed(int(os.environ["ROBOTWIN_PYTHON_RANDOM_SEED"])); sys.argv = sys.argv[1:]; sys.path.insert(0, os.path.dirname(os.path.abspath(sys.argv[0]))); runpy.run_path(sys.argv[0], run_name="__main__")' script/eval_policy.py)
+fi
 PYTHONWARNINGS=ignore::UserWarning \
-"${robotwin_python}" script/eval_policy.py --config "${runtime_deploy_policy}" \
+"${robotwin_python}" "${eval_entry[@]}" --config "${runtime_deploy_policy}" \
     --overrides \
     --policy_ckpt_path "${policy_ckpt_path}" \
     --task_name "${task_name}" \

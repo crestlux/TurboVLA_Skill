@@ -1,0 +1,462 @@
+{
+  "checked_at": "2026-09-28T01:16:59+09:00",
+  "start_method": "First timestamped simulator log line. Filesystem birth times unavailable. Per-task policy startup excluded; projections approximate.",
+  "main_started_at": "2026-09-27T22:40:44+09:00",
+  "elapsed_hours": 2.604241318570243,
+  "completed_tasks": 11,
+  "trials": 124,
+  "successes": 18,
+  "simple_throughput_trials_per_hour": 47.614635063112104,
+  "simple_trial_projection_finish": "2026-09-28T09:10:47+09:00",
+  "matched_task_duration_ratio_vs_pilot": 1.1003053183836078,
+  "matched_task_duration_ratio_median": 1.1416493599165782,
+  "baseline_task_weighted_estimated_finish": "2026-09-28T09:00:07+09:00",
+  "baseline_wall_hours": 9.567606073419253,
+  "tasks": {
+    "candidate": {
+      "adjust_bottle": {
+        "start": 1790516444.0,
+        "end": 1790517468.4912732,
+        "complete": true,
+        "successes": 2,
+        "trials": 10
+      },
+      "beat_block_hammer": {
+        "start": 1790516444.0,
+        "end": 1790517356.198573,
+        "complete": true,
+        "successes": 1,
+        "trials": 10
+      },
+      "blocks_ranking_rgb": {
+        "start": 1790517384.0,
+        "end": 1790520096.7655108,
+        "complete": true,
+        "successes": 0,
+        "trials": 10
+      },
+      "blocks_ranking_size": {
+        "start": 1790517494.0,
+        "end": 1790520293.3576136,
+        "complete": true,
+        "successes": 0,
+        "trials": 10
+      },
+      "click_alarmclock": {
+        "start": 1790520124.0,
+        "end": 1790520996.0514677,
+        "complete": true,
+        "successes": 1,
+        "trials": 10
+      },
+      "click_bell": {
+        "start": 1790520319.0,
+        "end": 1790521081.9717782,
+        "complete": true,
+        "successes": 3,
+        "trials": 10
+      },
+      "dump_bin_bigbin": {
+        "start": 1790521020.0,
+        "end": 1790522618.2323406,
+        "complete": true,
+        "successes": 0,
+        "trials": 10
+      },
+      "grab_roller": {
+        "start": 1790521109.0,
+        "end": 1790521663.3260694,
+        "complete": true,
+        "successes": 7,
+        "trials": 10
+      },
+      "handover_block": {
+        "start": 1790521690.0,
+        "end": 1790523539.0579407,
+        "complete": true,
+        "successes": 0,
+        "trials": 10
+      },
+      "handover_mic": {
+        "start": 1790522645.0,
+        "end": 1790524112.1645513,
+        "complete": true,
+        "successes": 1,
+        "trials": 10
+      },
+      "hanging_mug": {
+        "start": 1790523565.0,
+        "end": 1790525819.001336,
+        "complete": false,
+        "successes": 0,
+        "trials": 9
+      },
+      "lift_pot": {
+        "start": 1790524136.0,
+        "end": 1790525209.321288,
+        "complete": true,
+        "successes": 2,
+        "trials": 10
+      },
+      "move_can_pot": {
+        "start": 1790525236.0,
+        "end": 1790525818.0693293,
+        "complete": false,
+        "successes": 1,
+        "trials": 5
+      }
+    },
+    "baseline": {
+      "adjust_bottle": {
+        "start": 1790469051.0,
+        "end": 1790469759.7703426,
+        "complete": true,
+        "successes": 7,
+        "trials": 10
+      },
+      "beat_block_hammer": {
+        "start": 1790469051.0,
+        "end": 1790469761.6383529,
+        "complete": true,
+        "successes": 6,
+        "trials": 10
+      },
+      "blocks_ranking_rgb": {
+        "start": 1790469786.0,
+        "end": 1790472473.2884798,
+        "complete": true,
+        "successes": 0,
+        "trials": 10
+      },
+      "blocks_ranking_size": {
+        "start": 1790469786.0,
+        "end": 1790472574.4612546,
+        "complete": true,
+        "successes": 0,
+        "trials": 10
+      },
+      "click_alarmclock": {
+        "start": 1790472496.0,
+        "end": 1790473380.845205,
+        "complete": true,
+        "successes": 1,
+        "trials": 10
+      },
+      "click_bell": {
+        "start": 1790472601.0,
+        "end": 1790473248.4245028,
+        "complete": true,
+        "successes": 4,
+        "trials": 10
+      },
+      "dump_bin_bigbin": {
+        "start": 1790473271.0,
+        "end": 1790474328.0070136,
+        "complete": true,
+        "successes": 6,
+        "trials": 10
+      },
+      "grab_roller": {
+        "start": 1790473407.0,
+        "end": 1790473732.5752482,
+        "complete": true,
+        "successes": 10,
+        "trials": 10
+      },
+      "handover_block": {
+        "start": 1790473756.0,
+        "end": 1790475701.7316759,
+        "complete": true,
+        "successes": 0,
+        "trials": 10
+      },
+      "handover_mic": {
+        "start": 1790474352.0,
+        "end": 1790475637.1271176,
+        "complete": true,
+        "successes": 4,
+        "trials": 10
+      },
+      "hanging_mug": {
+        "start": 1790475662.0,
+        "end": 1790478003.5744724,
+        "complete": true,
+        "successes": 0,
+        "trials": 10
+      },
+      "lift_pot": {
+        "start": 1790475727.0,
+        "end": 1790476887.5875711,
+        "complete": true,
+        "successes": 1,
+        "trials": 10
+      },
+      "move_can_pot": {
+        "start": 1790476912.0,
+        "end": 1790478068.874558,
+        "complete": true,
+        "successes": 1,
+        "trials": 10
+      },
+      "move_pillbottle_pad": {
+        "start": 1790478028.0,
+        "end": 1790479125.730126,
+        "complete": true,
+        "successes": 1,
+        "trials": 10
+      },
+      "move_playingcard_away": {
+        "start": 1790478093.0,
+        "end": 1790478953.4584668,
+        "complete": true,
+        "successes": 2,
+        "trials": 10
+      },
+      "move_stapler_pad": {
+        "start": 1790478978.0,
+        "end": 1790479968.3124714,
+        "complete": true,
+        "successes": 0,
+        "trials": 10
+      },
+      "open_laptop": {
+        "start": 1790479153.0,
+        "end": 1790480874.082947,
+        "complete": true,
+        "successes": 1,
+        "trials": 10
+      },
+      "open_microwave": {
+        "start": 1790479993.0,
+        "end": 1790482820.9425268,
+        "complete": true,
+        "successes": 3,
+        "trials": 10
+      },
+      "pick_diverse_bottles": {
+        "start": 1790480899.0,
+        "end": 1790482070.4586344,
+        "complete": true,
+        "successes": 1,
+        "trials": 10
+      },
+      "pick_dual_bottles": {
+        "start": 1790482094.0,
+        "end": 1790483064.787988,
+        "complete": true,
+        "successes": 3,
+        "trials": 10
+      },
+      "place_a2b_left": {
+        "start": 1790482844.0,
+        "end": 1790483827.4311533,
+        "complete": true,
+        "successes": 0,
+        "trials": 10
+      },
+      "place_a2b_right": {
+        "start": 1790483089.0,
+        "end": 1790484113.0851283,
+        "complete": true,
+        "successes": 0,
+        "trials": 10
+      },
+      "place_bread_basket": {
+        "start": 1790483854.0,
+        "end": 1790485333.6007755,
+        "complete": true,
+        "successes": 3,
+        "trials": 10
+      },
+      "place_bread_skillet": {
+        "start": 1790484139.0,
+        "end": 1790485411.4290454,
+        "complete": true,
+        "successes": 2,
+        "trials": 10
+      },
+      "place_burger_fries": {
+        "start": 1790485359.0,
+        "end": 1790486434.3187506,
+        "complete": true,
+        "successes": 6,
+        "trials": 10
+      },
+      "place_can_basket": {
+        "start": 1790485435.0,
+        "end": 1790487109.7389543,
+        "complete": true,
+        "successes": 4,
+        "trials": 10
+      },
+      "place_cans_plasticbox": {
+        "start": 1790486460.0,
+        "end": 1790488565.6919985,
+        "complete": true,
+        "successes": 2,
+        "trials": 10
+      },
+      "place_container_plate": {
+        "start": 1790487135.0,
+        "end": 1790487607.9235208,
+        "complete": true,
+        "successes": 9,
+        "trials": 10
+      },
+      "place_dual_shoes": {
+        "start": 1790487635.0,
+        "end": 1790489399.3308535,
+        "complete": true,
+        "successes": 2,
+        "trials": 10
+      },
+      "place_empty_cup": {
+        "start": 1790488590.0,
+        "end": 1790489451.3514538,
+        "complete": true,
+        "successes": 5,
+        "trials": 10
+      },
+      "place_fan": {
+        "start": 1790489426.0,
+        "end": 1790490483.0968215,
+        "complete": true,
+        "successes": 0,
+        "trials": 10
+      },
+      "place_mouse_pad": {
+        "start": 1790489476.0,
+        "end": 1790490440.4804835,
+        "complete": true,
+        "successes": 0,
+        "trials": 10
+      },
+      "place_object_basket": {
+        "start": 1790490466.0,
+        "end": 1790491877.1723473,
+        "complete": true,
+        "successes": 5,
+        "trials": 10
+      },
+      "place_object_scale": {
+        "start": 1790490511.0,
+        "end": 1790491500.993163,
+        "complete": true,
+        "successes": 0,
+        "trials": 10
+      },
+      "place_object_stand": {
+        "start": 1790491526.0,
+        "end": 1790492368.4962814,
+        "complete": true,
+        "successes": 3,
+        "trials": 10
+      },
+      "place_phone_stand": {
+        "start": 1790491901.0,
+        "end": 1790492931.4606628,
+        "complete": true,
+        "successes": 0,
+        "trials": 10
+      },
+      "place_shoe": {
+        "start": 1790492391.0,
+        "end": 1790493602.8525186,
+        "complete": true,
+        "successes": 1,
+        "trials": 10
+      },
+      "press_stapler": {
+        "start": 1790492957.0,
+        "end": 1790493192.4866753,
+        "complete": true,
+        "successes": 10,
+        "trials": 10
+      },
+      "put_bottles_dustbin": {
+        "start": 1790493217.0,
+        "end": 1790497122.9224603,
+        "complete": true,
+        "successes": 1,
+        "trials": 10
+      },
+      "put_object_cabinet": {
+        "start": 1790493627.0,
+        "end": 1790495756.921709,
+        "complete": true,
+        "successes": 2,
+        "trials": 10
+      },
+      "rotate_qrcode": {
+        "start": 1790495782.0,
+        "end": 1790496689.9800873,
+        "complete": true,
+        "successes": 2,
+        "trials": 10
+      },
+      "scan_object": {
+        "start": 1790496717.0,
+        "end": 1790498362.7545812,
+        "complete": true,
+        "successes": 0,
+        "trials": 10
+      },
+      "shake_bottle": {
+        "start": 1790497543.0,
+        "end": 1790497916.929476,
+        "complete": true,
+        "successes": 10,
+        "trials": 10
+      },
+      "shake_bottle_horizontally": {
+        "start": 1790497148.0,
+        "end": 1790497515.6115274,
+        "complete": true,
+        "successes": 10,
+        "trials": 10
+      },
+      "stack_blocks_three": {
+        "start": 1790497943.0,
+        "end": 1790500702.4040408,
+        "complete": true,
+        "successes": 0,
+        "trials": 10
+      },
+      "stack_blocks_two": {
+        "start": 1790498388.0,
+        "end": 1790499986.4162233,
+        "complete": true,
+        "successes": 2,
+        "trials": 10
+      },
+      "stack_bowls_three": {
+        "start": 1790500013.0,
+        "end": 1790502578.3994007,
+        "complete": true,
+        "successes": 3,
+        "trials": 10
+      },
+      "stack_bowls_two": {
+        "start": 1790500729.0,
+        "end": 1790502075.5391936,
+        "complete": true,
+        "successes": 6,
+        "trials": 10
+      },
+      "stamp_seal": {
+        "start": 1790502099.0,
+        "end": 1790503100.9635997,
+        "complete": true,
+        "successes": 0,
+        "trials": 10
+      },
+      "turn_switch": {
+        "start": 1790502604.0,
+        "end": 1790503494.3818643,
+        "complete": true,
+        "successes": 1,
+        "trials": 10
+      }
+    }
+  }
+}

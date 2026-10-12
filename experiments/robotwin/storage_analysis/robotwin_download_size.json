@@ -1,0 +1,236 @@
+{
+  "repo_id": "StarVLA/RoboTwin-Clean",
+  "revision": "070d3b86d7db06f924702a82725dba0f4d89a433",
+  "file_count": 10404,
+  "total_bytes": 4021934537,
+  "by_extension": {
+    "": {
+      "files": 1,
+      "bytes": 2461
+    },
+    ".parquet": {
+      "files": 2500,
+      "bytes": 50109117
+    },
+    ".json": {
+      "files": 152,
+      "bytes": 655960
+    },
+    ".jsonl": {
+      "files": 151,
+      "bytes": 8749636
+    },
+    ".pkl": {
+      "files": 100,
+      "bytes": 10075506
+    },
+    ".mp4": {
+      "files": 7500,
+      "bytes": 3952341857
+    }
+  },
+  "by_task": {
+    "adjust_bottle": {
+      "files": 210,
+      "bytes": 47108472
+    },
+    "beat_block_hammer": {
+      "files": 209,
+      "bytes": 37182791
+    },
+    "blocks_ranking_rgb": {
+      "files": 208,
+      "bytes": 144291423
+    },
+    "blocks_ranking_size": {
+      "files": 208,
+      "bytes": 135684034
+    },
+    "click_alarmclock": {
+      "files": 208,
+      "bytes": 29873751
+    },
+    "click_bell": {
+      "files": 208,
+      "bytes": 23004650
+    },
+    "dump_bin_bigbin": {
+      "files": 208,
+      "bytes": 71149731
+    },
+    "grab_roller": {
+      "files": 208,
+      "bytes": 36468384
+    },
+    "handover_block": {
+      "files": 208,
+      "bytes": 86293780
+    },
+    "handover_mic": {
+      "files": 208,
+      "bytes": 75126194
+    },
+    "hanging_mug": {
+      "files": 208,
+      "bytes": 124133665
+    },
+    "lift_pot": {
+      "files": 208,
+      "bytes": 48682773
+    },
+    "move_can_pot": {
+      "files": 208,
+      "bytes": 53795042
+    },
+    "move_pillbottle_pad": {
+      "files": 208,
+      "bytes": 46137340
+    },
+    "move_playingcard_away": {
+      "files": 208,
+      "bytes": 43734114
+    },
+    "move_stapler_pad": {
+      "files": 208,
+      "bytes": 46681605
+    },
+    "open_laptop": {
+      "files": 208,
+      "bytes": 56791213
+    },
+    "open_microwave": {
+      "files": 208,
+      "bytes": 160187996
+    },
+    "pick_diverse_bottles": {
+      "files": 208,
+      "bytes": 59897124
+    },
+    "pick_dual_bottles": {
+      "files": 208,
+      "bytes": 57936284
+    },
+    "place_a2b_left": {
+      "files": 208,
+      "bytes": 52271486
+    },
+    "place_a2b_right": {
+      "files": 208,
+      "bytes": 49964351
+    },
+    "place_bread_basket": {
+      "files": 208,
+      "bytes": 110142514
+    },
+    "place_bread_skillet": {
+      "files": 208,
+      "bytes": 69479347
+    },
+    "place_burger_fries": {
+      "files": 208,
+      "bytes": 133860762
+    },
+    "place_can_basket": {
+      "files": 208,
+      "bytes": 118057228
+    },
+    "place_cans_plasticbox": {
+      "files": 208,
+      "bytes": 170582748
+    },
+    "place_container_plate": {
+      "files": 208,
+      "bytes": 44232661
+    },
+    "place_dual_shoes": {
+      "files": 208,
+      "bytes": 117453211
+    },
+    "place_empty_cup": {
+      "files": 208,
+      "bytes": 47368294
+    },
+    "place_fan": {
+      "files": 208,
+      "bytes": 55371766
+    },
+    "place_mouse_pad": {
+      "files": 208,
+      "bytes": 40559955
+    },
+    "place_object_basket": {
+      "files": 208,
+      "bytes": 107341258
+    },
+    "place_object_scale": {
+      "files": 208,
+      "bytes": 49691920
+    },
+    "place_object_stand": {
+      "files": 208,
+      "bytes": 45903036
+    },
+    "place_phone_stand": {
+      "files": 208,
+      "bytes": 41397128
+    },
+    "place_shoe": {
+      "files": 208,
+      "bytes": 63805998
+    },
+    "press_stapler": {
+      "files": 208,
+      "bytes": 33659475
+    },
+    "put_bottles_dustbin": {
+      "files": 208,
+      "bytes": 333053631
+    },
+    "put_object_cabinet": {
+      "files": 208,
+      "bytes": 123447544
+    },
+    "rotate_qrcode": {
+      "files": 208,
+      "bytes": 48767394
+    },
+    "scan_object": {
+      "files": 208,
+      "bytes": 76983688
+    },
+    "shake_bottle": {
+      "files": 208,
+      "bytes": 63555752
+    },
+    "shake_bottle_horizontally": {
+      "files": 208,
+      "bytes": 70762576
+    },
+    "stack_blocks_three": {
+      "files": 208,
+      "bytes": 149334623
+    },
+    "stack_blocks_two": {
+      "files": 208,
+      "bytes": 91978269
+    },
+    "stack_bowls_three": {
+      "files": 208,
+      "bytes": 166791017
+    },
+    "stack_bowls_two": {
+      "files": 208,
+      "bytes": 98568165
+    },
+    "stamp_seal": {
+      "files": 208,
+      "bytes": 40765031
+    },
+    "turn_switch": {
+      "files": 208,
+      "bytes": 22620882
+    }
+  },
+  "metadata_url": "https://huggingface.co/api/datasets/StarVLA/RoboTwin-Clean?blobs=true",
+  "method": "Sum siblings[].size, not usedStorage or dataset viewer preview size"
+}

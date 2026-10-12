@@ -1,0 +1,17 @@
+# Policy environment prepared on 2026-09-23 (Python 3.10).
+# Install torch/torchvision from https://download.pytorch.org/whl/cu124 first.
+# Install packaging, ninja, einops and Cython first; see ENVIRONMENT_READY_KO.md.
+# Use PYTORCH3D_NO_EXTENSION=1 and --no-build-isolation for the robotwin extra.
+# Transformers 4.57.0 was yanked by its publisher for installation issues.
+# Public checkpoint bundles select last_hidden_state explicitly to preserve the
+# post-LayerNorm features used by the authors' Transformers 4.56.0 environment.
+torch==2.6.0+cu124
+torchvision==0.21.0+cu124
+numpy==1.26.4
+transformers==4.57.6
+huggingface-hub==0.36.2
+opencv-python-headless==4.11.0.86
+pandas==2.2.3
+setuptools==80.9.0
+flash-attn==2.7.4.post1
+Cython==3.0.12

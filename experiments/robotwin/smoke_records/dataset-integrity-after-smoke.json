@@ -1,0 +1,20 @@
+{
+  "started_at": "2026-09-27T01:43:32+09:00",
+  "updated_at": "2026-09-27T01:43:44+09:00",
+  "repo_id": "StarVLA/RoboTwin-Clean",
+  "revision": "070d3b86d7db06f924702a82725dba0f4d89a433",
+  "dataset_root": "/home/jack/datasets/RoboTwin/Clean",
+  "manifest_sha256": "cfd02f5f08601059ce91c0d55dbb7e8b23a2a3562ecea11a564eafe91e1a7017",
+  "expected_files": 10404,
+  "expected_bytes": 4021934537,
+  "verified_files": 10404,
+  "verified_bytes": 4021934537,
+  "state": "complete",
+  "workers": 4,
+  "requests_per_second": 8.0,
+  "completed": true,
+  "retries": 0,
+  "errors": [],
+  "existing_verified_files": 10404,
+  "remaining_files": 0
+}

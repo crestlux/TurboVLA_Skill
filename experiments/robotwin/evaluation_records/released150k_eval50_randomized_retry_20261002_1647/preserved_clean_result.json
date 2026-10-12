@@ -1,0 +1,310 @@
+{
+  "mode": "demo_clean",
+  "successes": 2201,
+  "trials": 2500,
+  "success_rate_pct": 88.04,
+  "tasks": [
+    {
+      "task": "adjust_bottle",
+      "successes": "50",
+      "trials": "50",
+      "success_rate_pct": "100.0"
+    },
+    {
+      "task": "beat_block_hammer",
+      "successes": "48",
+      "trials": "50",
+      "success_rate_pct": "96.0"
+    },
+    {
+      "task": "blocks_ranking_rgb",
+      "successes": "39",
+      "trials": "50",
+      "success_rate_pct": "78.0"
+    },
+    {
+      "task": "blocks_ranking_size",
+      "successes": "39",
+      "trials": "50",
+      "success_rate_pct": "78.0"
+    },
+    {
+      "task": "click_alarmclock",
+      "successes": "34",
+      "trials": "50",
+      "success_rate_pct": "68.0"
+    },
+    {
+      "task": "click_bell",
+      "successes": "50",
+      "trials": "50",
+      "success_rate_pct": "100.0"
+    },
+    {
+      "task": "dump_bin_bigbin",
+      "successes": "49",
+      "trials": "50",
+      "success_rate_pct": "98.0"
+    },
+    {
+      "task": "grab_roller",
+      "successes": "50",
+      "trials": "50",
+      "success_rate_pct": "100.0"
+    },
+    {
+      "task": "handover_block",
+      "successes": "45",
+      "trials": "50",
+      "success_rate_pct": "90.0"
+    },
+    {
+      "task": "handover_mic",
+      "successes": "48",
+      "trials": "50",
+      "success_rate_pct": "96.0"
+    },
+    {
+      "task": "hanging_mug",
+      "successes": "30",
+      "trials": "50",
+      "success_rate_pct": "60.0"
+    },
+    {
+      "task": "lift_pot",
+      "successes": "50",
+      "trials": "50",
+      "success_rate_pct": "100.0"
+    },
+    {
+      "task": "move_can_pot",
+      "successes": "49",
+      "trials": "50",
+      "success_rate_pct": "98.0"
+    },
+    {
+      "task": "move_pillbottle_pad",
+      "successes": "49",
+      "trials": "50",
+      "success_rate_pct": "98.0"
+    },
+    {
+      "task": "move_playingcard_away",
+      "successes": "49",
+      "trials": "50",
+      "success_rate_pct": "98.0"
+    },
+    {
+      "task": "move_stapler_pad",
+      "successes": "36",
+      "trials": "50",
+      "success_rate_pct": "72.0"
+    },
+    {
+      "task": "open_laptop",
+      "successes": "47",
+      "trials": "50",
+      "success_rate_pct": "94.0"
+    },
+    {
+      "task": "open_microwave",
+      "successes": "39",
+      "trials": "50",
+      "success_rate_pct": "78.0"
+    },
+    {
+      "task": "pick_diverse_bottles",
+      "successes": "40",
+      "trials": "50",
+      "success_rate_pct": "80.0"
+    },
+    {
+      "task": "pick_dual_bottles",
+      "successes": "47",
+      "trials": "50",
+      "success_rate_pct": "94.0"
+    },
+    {
+      "task": "place_a2b_left",
+      "successes": "34",
+      "trials": "50",
+      "success_rate_pct": "68.0"
+    },
+    {
+      "task": "place_a2b_right",
+      "successes": "31",
+      "trials": "50",
+      "success_rate_pct": "62.0"
+    },
+    {
+      "task": "place_bread_basket",
+      "successes": "45",
+      "trials": "50",
+      "success_rate_pct": "90.0"
+    },
+    {
+      "task": "place_bread_skillet",
+      "successes": "47",
+      "trials": "50",
+      "success_rate_pct": "94.0"
+    },
+    {
+      "task": "place_burger_fries",
+      "successes": "48",
+      "trials": "50",
+      "success_rate_pct": "96.0"
+    },
+    {
+      "task": "place_can_basket",
+      "successes": "34",
+      "trials": "50",
+      "success_rate_pct": "68.0"
+    },
+    {
+      "task": "place_cans_plasticbox",
+      "successes": "50",
+      "trials": "50",
+      "success_rate_pct": "100.0"
+    },
+    {
+      "task": "place_container_plate",
+      "successes": "48",
+      "trials": "50",
+      "success_rate_pct": "96.0"
+    },
+    {
+      "task": "place_dual_shoes",
+      "successes": "40",
+      "trials": "50",
+      "success_rate_pct": "80.0"
+    },
+    {
+      "task": "place_empty_cup",
+      "successes": "50",
+      "trials": "50",
+      "success_rate_pct": "100.0"
+    },
+    {
+      "task": "place_fan",
+      "successes": "48",
+      "trials": "50",
+      "success_rate_pct": "96.0"
+    },
+    {
+      "task": "place_mouse_pad",
+      "successes": "44",
+      "trials": "50",
+      "success_rate_pct": "88.0"
+    },
+    {
+      "task": "place_object_basket",
+      "successes": "44",
+      "trials": "50",
+      "success_rate_pct": "88.0"
+    },
+    {
+      "task": "place_object_scale",
+      "successes": "48",
+      "trials": "50",
+      "success_rate_pct": "96.0"
+    },
+    {
+      "task": "place_object_stand",
+      "successes": "48",
+      "trials": "50",
+      "success_rate_pct": "96.0"
+    },
+    {
+      "task": "place_phone_stand",
+      "successes": "35",
+      "trials": "50",
+      "success_rate_pct": "70.0"
+    },
+    {
+      "task": "place_shoe",
+      "successes": "50",
+      "trials": "50",
+      "success_rate_pct": "100.0"
+    },
+    {
+      "task": "press_stapler",
+      "successes": "47",
+      "trials": "50",
+      "success_rate_pct": "94.0"
+    },
+    {
+      "task": "put_bottles_dustbin",
+      "successes": "39",
+      "trials": "50",
+      "success_rate_pct": "78.0"
+    },
+    {
+      "task": "put_object_cabinet",
+      "successes": "32",
+      "trials": "50",
+      "success_rate_pct": "64.0"
+    },
+    {
+      "task": "rotate_qrcode",
+      "successes": "48",
+      "trials": "50",
+      "success_rate_pct": "96.0"
+    },
+    {
+      "task": "scan_object",
+      "successes": "45",
+      "trials": "50",
+      "success_rate_pct": "90.0"
+    },
+    {
+      "task": "shake_bottle_horizontally",
+      "successes": "50",
+      "trials": "50",
+      "success_rate_pct": "100.0"
+    },
+    {
+      "task": "shake_bottle",
+      "successes": "50",
+      "trials": "50",
+      "success_rate_pct": "100.0"
+    },
+    {
+      "task": "stack_blocks_three",
+      "successes": "46",
+      "trials": "50",
+      "success_rate_pct": "92.0"
+    },
+    {
+      "task": "stack_blocks_two",
+      "successes": "50",
+      "trials": "50",
+      "success_rate_pct": "100.0"
+    },
+    {
+      "task": "stack_bowls_three",
+      "successes": "44",
+      "trials": "50",
+      "success_rate_pct": "88.0"
+    },
+    {
+      "task": "stack_bowls_two",
+      "successes": "47",
+      "trials": "50",
+      "success_rate_pct": "94.0"
+    },
+    {
+      "task": "stamp_seal",
+      "successes": "42",
+      "trials": "50",
+      "success_rate_pct": "84.0"
+    },
+    {
+      "task": "turn_switch",
+      "successes": "29",
+      "trials": "50",
+      "success_rate_pct": "58.0"
+    }
+  ],
+  "evaluation_dir": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150k_eval50_demo_clean_20261001_0033_seed0",
+  "resources": "/home/jack/TurboVLA/experiments/robotwin/evaluation_records/released150k_eval50_20261001_0033/demo_clean/summary.json"
+}

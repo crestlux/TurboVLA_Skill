@@ -1,0 +1,62 @@
+{
+  "status": "completed",
+  "created_at": "2026-09-30T18:26:26.955235+09:00",
+  "gpu": "0",
+  "checkpoint": "public150k_ema",
+  "tasks": [
+    "adjust_bottle",
+    "open_laptop",
+    "beat_block_hammer",
+    "pick_dual_bottles",
+    "place_container_plate",
+    "move_stapler_pad"
+  ],
+  "trials_per_task": 2,
+  "instruction_pool": 100,
+  "python_random_seed": 20260930,
+  "stages": [
+    {
+      "name": "randomized_j3",
+      "mode": "demo_randomized",
+      "jobs": 3,
+      "run_id": "turbovla_gpu0_j23_20260930_182626_randomized_j3"
+    },
+    {
+      "name": "randomized_j2",
+      "mode": "demo_randomized",
+      "jobs": 2,
+      "run_id": "turbovla_gpu0_j23_20260930_182626_randomized_j2"
+    },
+    {
+      "name": "clean_j2",
+      "mode": "demo_clean",
+      "jobs": 2,
+      "run_id": "turbovla_gpu0_j23_20260930_182626_clean_j2"
+    },
+    {
+      "name": "clean_j3",
+      "mode": "demo_clean",
+      "jobs": 3,
+      "run_id": "turbovla_gpu0_j23_20260930_182626_clean_j3"
+    }
+  ],
+  "completed_stages": [
+    "randomized_j3",
+    "randomized_j2",
+    "clean_j2",
+    "clean_j3"
+  ],
+  "current_stage": null,
+  "notes": [
+    "Six tasks allow both two and three worker schedules to fill complete waves. Task order and per-task episode count are identical.",
+    "Modes use reversed order of worker counts to reduce consistent order bias. One pass per setting, not a statistical confidence interval.",
+    "GPU 1 remains assigned to the existing LIBERO job."
+  ],
+  "code_sha256": {
+    "scripts/robotwin/profile_evaluation.py": "1c4c6327f1ec083578a55bd03edf017b54c29d6368166635b1f490d9007fe620",
+    "scripts/robotwin/evaluate_verified_checkpoint.sh": "1f18242e55c5d30836bd3ad3326811c01351b453949fd18290d3e68940e506f9",
+    "scripts/robotwin/eval_task.sh": "d43510b5fc08b45b8a328a6648c86a13385f24f378d0f13396da427b047dc01a"
+  },
+  "updated_at": "2026-09-30T19:01:32.358476+09:00",
+  "completed_at": "2026-09-30T19:01:32.400851+09:00"
+}

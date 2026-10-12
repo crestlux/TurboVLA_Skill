@@ -1,0 +1,481 @@
+{
+  "checked_at": "2026-09-28T15:11:13.790299+09:00",
+  "status": "passed",
+  "baseline": {
+    "run_id": "turbovla_released55k_eval10_20260927_2237",
+    "tasks": {
+      "adjust_bottle": [
+        {
+          "seed": 100001,
+          "success": false,
+          "instruction": null
+        },
+        {
+          "seed": 100002,
+          "success": true,
+          "instruction": null
+        },
+        {
+          "seed": 100005,
+          "success": false,
+          "instruction": null
+        },
+        {
+          "seed": 100006,
+          "success": false,
+          "instruction": null
+        },
+        {
+          "seed": 100008,
+          "success": true,
+          "instruction": null
+        }
+      ],
+      "beat_block_hammer": [
+        {
+          "seed": 100000,
+          "success": true,
+          "instruction": null
+        },
+        {
+          "seed": 100002,
+          "success": false,
+          "instruction": null
+        },
+        {
+          "seed": 100003,
+          "success": false,
+          "instruction": null
+        },
+        {
+          "seed": 100004,
+          "success": false,
+          "instruction": null
+        },
+        {
+          "seed": 100006,
+          "success": false,
+          "instruction": null
+        }
+      ],
+      "dump_bin_bigbin": [
+        {
+          "seed": 100002,
+          "success": false,
+          "instruction": null
+        },
+        {
+          "seed": 100003,
+          "success": false,
+          "instruction": null
+        },
+        {
+          "seed": 100004,
+          "success": false,
+          "instruction": null
+        },
+        {
+          "seed": 100005,
+          "success": false,
+          "instruction": null
+        },
+        {
+          "seed": 100007,
+          "success": false,
+          "instruction": null
+        }
+      ],
+      "grab_roller": [
+        {
+          "seed": 100000,
+          "success": false,
+          "instruction": null
+        },
+        {
+          "seed": 100001,
+          "success": true,
+          "instruction": null
+        },
+        {
+          "seed": 100002,
+          "success": true,
+          "instruction": null
+        },
+        {
+          "seed": 100003,
+          "success": false,
+          "instruction": null
+        },
+        {
+          "seed": 100004,
+          "success": true,
+          "instruction": null
+        }
+      ]
+    },
+    "successes": 6,
+    "trials": 20,
+    "note": "First five trials of the same four tasks; historical instructions were not logged."
+  },
+  "fixed55k": {
+    "run_id": "turbovla_release55000_postnorm_probe5_20260928_144533",
+    "tasks": {
+      "adjust_bottle": [
+        {
+          "seed": 100001,
+          "success": true,
+          "instruction": "Grab the bottle with red screw cap from the table with the right arm"
+        },
+        {
+          "seed": 100002,
+          "success": true,
+          "instruction": "Pick up the green bottle using the left arm in an upright position"
+        },
+        {
+          "seed": 100005,
+          "success": true,
+          "instruction": "Pick up the green bottle carefully using the left arm"
+        },
+        {
+          "seed": 100006,
+          "success": true,
+          "instruction": "Grab the bottle with red screw cap from the table with the right arm"
+        },
+        {
+          "seed": 100008,
+          "success": true,
+          "instruction": "Pick up the green bottle using the left arm in an upright position"
+        }
+      ],
+      "beat_block_hammer": [
+        {
+          "seed": 100000,
+          "success": true,
+          "instruction": "Use the left arm to pick up the hammer with black handle."
+        },
+        {
+          "seed": 100002,
+          "success": true,
+          "instruction": "Grab the hammer with claw and smooth head and hit the block."
+        },
+        {
+          "seed": 100003,
+          "success": false,
+          "instruction": "Use the hammer with black handle to strike the block"
+        },
+        {
+          "seed": 100007,
+          "success": false,
+          "instruction": "Grab the hammer with black handle and hit the block."
+        },
+        {
+          "seed": 100008,
+          "success": true,
+          "instruction": "Use the left arm to grab the hammer with claw and smooth head, beat the block."
+        }
+      ],
+      "dump_bin_bigbin": [
+        {
+          "seed": 100001,
+          "success": true,
+          "instruction": "Grab the rectangular light gray trash bin and pour balls."
+        },
+        {
+          "seed": 100002,
+          "success": true,
+          "instruction": "Pick up the small bin for table waste, pour balls into the bin."
+        },
+        {
+          "seed": 100003,
+          "success": true,
+          "instruction": "Grab the small smooth gray trashbin and pour into big bin"
+        },
+        {
+          "seed": 100004,
+          "success": false,
+          "instruction": "Pour the lightweight round tabletop trashbin into the big bin."
+        },
+        {
+          "seed": 100005,
+          "success": false,
+          "instruction": "Pick up the plastic tiny trashbin for tables and pour it."
+        }
+      ],
+      "grab_roller": [
+        {
+          "seed": 100000,
+          "success": true,
+          "instruction": "Use arms to grab the light brown cylindrical roller."
+        },
+        {
+          "seed": 100001,
+          "success": true,
+          "instruction": "Grab the wooden roller on the table with arms."
+        },
+        {
+          "seed": 100002,
+          "success": true,
+          "instruction": "Grab the roller with tapered tips on the table."
+        },
+        {
+          "seed": 100003,
+          "success": true,
+          "instruction": "Hold the roller with tapered tips with both arms."
+        },
+        {
+          "seed": 100004,
+          "success": true,
+          "instruction": "Reach and grab the wooden roller with both arms"
+        }
+      ]
+    },
+    "successes": 16,
+    "trials": 20,
+    "success_pct": 80.0,
+    "audited_nonempty_videos": 20,
+    "started_at": "2026-09-28T14:45:39.154914+09:00",
+    "completed_at": "2026-09-28T15:00:12.760698+09:00"
+  },
+  "latest150k": {
+    "run_id": "turbovla_release150000_postnorm_probe5_20260928_144533",
+    "tasks": {
+      "adjust_bottle": [
+        {
+          "seed": 100001,
+          "success": true,
+          "instruction": "Use the right arm to grab the plastic soda bottle head-up."
+        },
+        {
+          "seed": 100002,
+          "success": true,
+          "instruction": "Grab the green bottle with white label on the table and raise it."
+        },
+        {
+          "seed": 100005,
+          "success": true,
+          "instruction": "Use the left arm to grab the green bottle with white label upright"
+        },
+        {
+          "seed": 100006,
+          "success": true,
+          "instruction": "Pick up the brown bottle using the correct arm"
+        },
+        {
+          "seed": 100008,
+          "success": true,
+          "instruction": "Use the left arm to grab the green bottle upright"
+        }
+      ],
+      "beat_block_hammer": [
+        {
+          "seed": 100000,
+          "success": true,
+          "instruction": "Grab the hammer with black handle and beat the block"
+        },
+        {
+          "seed": 100002,
+          "success": true,
+          "instruction": "Pick the hammer with claw and smooth head up and hit the block"
+        },
+        {
+          "seed": 100003,
+          "success": true,
+          "instruction": "Grab the hammer with black handle and beat the block"
+        },
+        {
+          "seed": 100006,
+          "success": true,
+          "instruction": "Use the silver hammer head and claw to strike the block"
+        },
+        {
+          "seed": 100007,
+          "success": true,
+          "instruction": "Grab the silver hammer head and claw and beat the block"
+        }
+      ],
+      "dump_bin_bigbin": [
+        {
+          "seed": 100002,
+          "success": true,
+          "instruction": "Take the lightweight round tabletop trashbin and empty into big bin"
+        },
+        {
+          "seed": 100004,
+          "success": true,
+          "instruction": "Grab the lightweight round tabletop trashbin and pour balls."
+        },
+        {
+          "seed": 100005,
+          "success": true,
+          "instruction": "Lift the lightweight round tabletop trashbin and transfer the contents."
+        },
+        {
+          "seed": 100010,
+          "success": true,
+          "instruction": "Grab the small bin for table waste and pour into big bin"
+        },
+        {
+          "seed": 100012,
+          "success": true,
+          "instruction": "Grab the smooth plastic tabletrashbin and pour the balls."
+        }
+      ],
+      "grab_roller": [
+        {
+          "seed": 100000,
+          "success": true,
+          "instruction": "Grab the smooth wooden roller with both arms."
+        },
+        {
+          "seed": 100001,
+          "success": true,
+          "instruction": "Grab the wooden roller on the table with arms."
+        },
+        {
+          "seed": 100002,
+          "success": true,
+          "instruction": "Hold the smooth wooden roller with both arms."
+        },
+        {
+          "seed": 100003,
+          "success": true,
+          "instruction": "Grab the smooth wooden roller on the table with arms."
+        },
+        {
+          "seed": 100004,
+          "success": true,
+          "instruction": "Grab the wooden roller with both arms."
+        }
+      ]
+    },
+    "successes": 20,
+    "trials": 20,
+    "success_pct": 100.0,
+    "audited_nonempty_videos": 20,
+    "started_at": "2026-09-28T15:00:18.015167+09:00",
+    "completed_at": "2026-09-28T15:10:51.496089+09:00"
+  },
+  "comparisons": [
+    {
+      "a": "turbovla_released55k_eval10_20260927_2237",
+      "b": "turbovla_release55000_postnorm_probe5_20260928_144533",
+      "tasks": {
+        "adjust_bottle": {
+          "seed_sequence_equal": true,
+          "common_seeds": [
+            100001,
+            100002,
+            100005,
+            100006,
+            100008
+          ],
+          "same_seed_and_instruction": [],
+          "same_input_trials": 0,
+          "same_input_successes_a": 0,
+          "same_input_successes_b": 0
+        },
+        "beat_block_hammer": {
+          "seed_sequence_equal": false,
+          "common_seeds": [
+            100000,
+            100002,
+            100003
+          ],
+          "same_seed_and_instruction": [],
+          "same_input_trials": 0,
+          "same_input_successes_a": 0,
+          "same_input_successes_b": 0
+        },
+        "dump_bin_bigbin": {
+          "seed_sequence_equal": false,
+          "common_seeds": [
+            100002,
+            100003,
+            100004,
+            100005
+          ],
+          "same_seed_and_instruction": [],
+          "same_input_trials": 0,
+          "same_input_successes_a": 0,
+          "same_input_successes_b": 0
+        },
+        "grab_roller": {
+          "seed_sequence_equal": true,
+          "common_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "same_seed_and_instruction": [],
+          "same_input_trials": 0,
+          "same_input_successes_a": 0,
+          "same_input_successes_b": 0
+        }
+      }
+    },
+    {
+      "a": "turbovla_release55000_postnorm_probe5_20260928_144533",
+      "b": "turbovla_release150000_postnorm_probe5_20260928_144533",
+      "tasks": {
+        "adjust_bottle": {
+          "seed_sequence_equal": true,
+          "common_seeds": [
+            100001,
+            100002,
+            100005,
+            100006,
+            100008
+          ],
+          "same_seed_and_instruction": [],
+          "same_input_trials": 0,
+          "same_input_successes_a": 0,
+          "same_input_successes_b": 0
+        },
+        "beat_block_hammer": {
+          "seed_sequence_equal": false,
+          "common_seeds": [
+            100000,
+            100002,
+            100003,
+            100007
+          ],
+          "same_seed_and_instruction": [],
+          "same_input_trials": 0,
+          "same_input_successes_a": 0,
+          "same_input_successes_b": 0
+        },
+        "dump_bin_bigbin": {
+          "seed_sequence_equal": false,
+          "common_seeds": [
+            100002,
+            100004,
+            100005
+          ],
+          "same_seed_and_instruction": [],
+          "same_input_trials": 0,
+          "same_input_successes_a": 0,
+          "same_input_successes_b": 0
+        },
+        "grab_roller": {
+          "seed_sequence_equal": true,
+          "common_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "same_seed_and_instruction": [
+            100001
+          ],
+          "same_input_trials": 1,
+          "same_input_successes_a": 1,
+          "same_input_successes_b": 1
+        }
+      }
+    }
+  ],
+  "limitation": "Four selected Clean tasks, five trials each; not the 50-task benchmark. Planner seed acceptance may differ; exact paired comparisons require both seed and instruction equality."
+}

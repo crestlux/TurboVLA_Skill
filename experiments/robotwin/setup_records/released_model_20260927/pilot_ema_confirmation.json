@@ -1,0 +1,9 @@
+{
+  "model": "local pilot5k",
+  "all_50_policy_servers_used_ema": true,
+  "evaluated_checkpoint": "/data/jack/robotwin2_turbovla/runs/turbovla_clean50_pilot5k_2x3090_20260927_0236/checkpoints/steps_5000_ema_model.safetensors",
+  "ema_decay": 0.999,
+  "successful_trials": 140,
+  "total_trials": 500,
+  "success_pct": 28.0
+}

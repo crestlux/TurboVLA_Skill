@@ -1,0 +1,50 @@
+{
+  "checked_at": "2026-09-28T14:38:21.369132+09:00",
+  "code_commits": [
+    {
+      "sha": "6727c875666f8d5dda8d8cca0043da200738fe73",
+      "date": "2026-09-27T13:57:58Z",
+      "message": "Update RoboTwin 2.0 training and evaluation"
+    },
+    {
+      "sha": "b29ab1420baa5c663ec935df513f2012430beb67",
+      "date": "2026-09-02T06:15:30Z",
+      "message": "Update real-world demonstration gif"
+    },
+    {
+      "sha": "ced2b0c465c201ac0c6d41a6855b0c0040360df6",
+      "date": "2026-09-02T05:29:36Z",
+      "message": "Update LIBERO batch size and EMA evaluation"
+    },
+    {
+      "sha": "c7c2ba9f94ef3a734c5033be96ef3f3f5a5f3c18",
+      "date": "2026-08-05T11:14:53Z",
+      "message": "Update README.md"
+    }
+  ],
+  "model_revision": "9cdb576ed9c56039b9c1149142ed654e876bad76",
+  "model_last_modified": "2026-09-27T14:19:56.000Z",
+  "model_files": [
+    ".gitattributes",
+    "DINOv3_LICENSE.md",
+    "LICENSE",
+    "README.md",
+    "checkpoints/libero/turbovla_libero.pth",
+    "checkpoints/robotwin/steps_150000_ema_pytorch_model.pt",
+    "config.json",
+    "config.yaml",
+    "dataset_statistics.json",
+    "libero_all4_stats.json"
+  ],
+  "author_dependency_diagnosis": [
+    {
+      "url": "https://github.com/H-EmbodVis/TurboVLA/issues/4#issuecomment-5217436771",
+      "body": "Thanks for the detailed report. We identified a compatibility issue.\n\nThe released TurboVLA code was evaluated with Transformers 4.56.0, while your setup uses 4.57.6. The newer version changed the behavior of DINOv3's `outputs.hidden_states[-1]`, which TurboVLA uses as its visual feature. Therefore, strict checkpoint loading can succeed while the predicted actions differ.\n\nPlease try:\n\n    pip install --force-reinstall \"transformers==4.56.0\"\n\nWe are preparing a patch to read `last_hidden_state` explicitly and to pin/check the supported Transformers version. Thank you for helping us identify this issue."
+    }
+  ],
+  "issue17_status": {
+    "state": "open",
+    "comments": 0,
+    "updated_at": "2026-09-17T11:18:57Z"
+  }
+}

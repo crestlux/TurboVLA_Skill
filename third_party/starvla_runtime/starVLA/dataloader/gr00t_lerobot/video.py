@@ -37,6 +37,26 @@ except (ImportError, RuntimeError):
     TORCHCODEC_AVAILABLE = False
 
 
+def _configure_pyav_stream(stream, kwargs):
+    # Leave existing behavior unchanged unless the dataset requests a limit.
+    if "thread_count" in kwargs:
+        count = int(kwargs["thread_count"])
+        if count < 0:
+            raise ValueError("PyAV thread_count must be non-negative (0 means auto)")
+        stream.codec_context.thread_count = count
+
+
+def _close_pyav_container(container, kwargs):
+    if container is None:
+        return
+    try:
+        if kwargs.get("close_codec", False):
+            for stream in container.streams.video:
+                stream.codec_context.close(strict=False)
+    finally:
+        container.close()
+
+
 def get_frames_by_indices(
     video_path: str,
     indices: list[int] | np.ndarray,
@@ -74,6 +94,7 @@ def get_frames_by_indices(
         try:
             container = av.open(video_path)
             stream = container.streams.video[0]
+            _configure_pyav_stream(stream, video_backend_kwargs)
             time_base = float(stream.time_base)
             fps = float(stream.average_rate) if stream.average_rate else float(stream.guessed_rate)
 
@@ -117,8 +138,7 @@ def get_frames_by_indices(
             return frames
 
         finally:
-            if container is not None:
-                container.close()
+            _close_pyav_container(container, video_backend_kwargs)
     else:
         raise NotImplementedError
 
@@ -186,6 +206,7 @@ def get_frames_by_timestamps(
         try:
             container = av.open(video_path)
             stream = container.streams.video[0]
+            _configure_pyav_stream(stream, video_backend_kwargs)
 
             # Get video properties
             time_base = float(stream.time_base)
@@ -234,9 +255,7 @@ def get_frames_by_timestamps(
             return frames
 
         finally:
-            if container is not None:
-                container.close()
-                container = None
+            _close_pyav_container(container, video_backend_kwargs)
 
     elif video_backend == "torchvision_av":
         torchvision.set_video_backend("pyav")
@@ -324,11 +343,15 @@ def get_all_frames(
         return frames.data.numpy(), frames.pts_seconds.numpy()
     elif video_backend == "pyav":
         container = av.open(video_path)
-        frames = []
-        for frame in container.decode(video=0):
-            frame = frame.to_ndarray(format="rgb24")
-            frames.append(frame)
-        frames = np.array(frames)
+        try:
+            _configure_pyav_stream(container.streams.video[0], video_backend_kwargs)
+            frames = []
+            for frame in container.decode(video=0):
+                frame = frame.to_ndarray(format="rgb24")
+                frames.append(frame)
+            frames = np.array(frames)
+        finally:
+            _close_pyav_container(container, video_backend_kwargs)
     elif video_backend == "torchvision_av":
         # set backend and reader
         torchvision.set_video_backend("pyav")

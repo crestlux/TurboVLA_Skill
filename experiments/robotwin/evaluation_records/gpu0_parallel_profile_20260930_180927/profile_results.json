@@ -1,0 +1,377 @@
+{
+  "status": "completed",
+  "generated_at": "2026-09-30T18:23:45.395432+09:00",
+  "plan": {
+    "status": "completed",
+    "gpu": "0",
+    "checkpoint": "public150k_ema",
+    "tasks": [
+      "adjust_bottle",
+      "open_laptop"
+    ],
+    "trials_per_task": 2,
+    "instruction_pool": 100,
+    "python_random_seed": 20260930,
+    "stages": [
+      {
+        "name": "clean_j2",
+        "mode": "demo_clean",
+        "jobs": 2,
+        "profile_directory": "clean_j2_retry1"
+      },
+      {
+        "name": "clean_j1",
+        "mode": "demo_clean",
+        "jobs": 1
+      },
+      {
+        "name": "randomized_j2",
+        "mode": "demo_randomized",
+        "jobs": 2
+      }
+    ],
+    "note": "Resource diagnostic only, not a full benchmark success-rate estimate. GPU 1 remains assigned to the existing LIBERO job.",
+    "excluded_runs": [
+      {
+        "directory": "clean_j2",
+        "reason": "Seeded launcher initially omitted simulator script directory from sys.path; failed before any policy episode. Fixed before retry."
+      }
+    ],
+    "completed_stages": [
+      "clean_j2",
+      "clean_j1",
+      "randomized_j2"
+    ],
+    "current_stage": null,
+    "code_sha256": {
+      "scripts/robotwin/evaluate_verified_checkpoint.sh": "1f18242e55c5d30836bd3ad3326811c01351b453949fd18290d3e68940e506f9",
+      "scripts/robotwin/eval_task.sh": "d43510b5fc08b45b8a328a6648c86a13385f24f378d0f13396da427b047dc01a",
+      "scripts/robotwin/profile_evaluation.py": "1c4c6327f1ec083578a55bd03edf017b54c29d6368166635b1f490d9007fe620"
+    },
+    "completed_at": "2026-09-30T18:23:45.395432+09:00"
+  },
+  "stages": [
+    {
+      "name": "clean_j2",
+      "mode": "demo_clean",
+      "jobs_per_gpu": 2,
+      "profile_directory": "/home/jack/TurboVLA/experiments/robotwin/evaluation_records/gpu0_parallel_profile_20260930_180927/clean_j2_retry1",
+      "pipeline_directory": "/data/jack/robotwin2_turbovla/pipelines/turbovla_gpu0_profile_20260930_180927_clean_j2_retry1",
+      "evaluation_directory": "/data/jack/robotwin2_turbovla/evaluation/turbovla_gpu0_profile_20260930_180927_clean_j2_retry1_seed0",
+      "resource": {
+        "started_at": "2026-09-30T18:10:34.460480+09:00",
+        "command": [
+          "bash",
+          "scripts/robotwin/evaluate_latest_released_model.sh",
+          "adjust_bottle",
+          "open_laptop"
+        ],
+        "gpus": "0",
+        "interval_seconds": 1.0,
+        "timeout_seconds": 1800.0,
+        "notes": [
+          "GPU peaks are sampled at the stated interval.",
+          "Process CPU 100% is one logical CPU; RSS can double-count shared pages."
+        ],
+        "environment": {
+          "CUDA_VISIBLE_DEVICES": "0",
+          "ROBOTWIN_JOBS_PER_GPU": "2",
+          "ROBOTWIN_TEST_NUM": "2",
+          "ROBOTWIN_INSTRUCTION_SAMPLE_NUM": "100",
+          "ROBOTWIN_PYTHON_RANDOM_SEED": "20260930",
+          "ROBOTWIN_BASE_PORT": "8100",
+          "ROBOTWIN_EVAL_MODE": "demo_clean",
+          "RUN_ID": "turbovla_gpu0_profile_20260930_180927_clean_j2_retry1"
+        },
+        "baseline_gpu": [
+          {
+            "index": 0,
+            "uuid": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+            "total_mib": 24576,
+            "used_mib": 1,
+            "free_mib": 24251,
+            "utilization_pct": 0,
+            "memory_utilization_pct": 0
+          }
+        ],
+        "finished_at": "2026-09-30T18:13:39.111871+09:00",
+        "exit_code": 0,
+        "exit_reason": "exited",
+        "status": "completed",
+        "wall_seconds": 184.59073704108596,
+        "sample_count": 171,
+        "process_cpu_mean_pct": 177.33151645136408,
+        "process_cpu_peak_pct": 427.8514464423484,
+        "process_rss_peak_mib": 11483.1015625,
+        "system_cpu_mean_pct": 7.4487322352985785,
+        "gpu": [
+          {
+            "index": 0,
+            "uuid": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+            "baseline_used_mib": 1,
+            "peak_used_mib": 11863,
+            "minimum_free_mib": 12389,
+            "mean_utilization_pct": 48.33918128654971,
+            "peak_utilization_pct": 100
+          }
+        ]
+      },
+      "evaluation": {
+        "mode": "demo_clean",
+        "tasks": 2,
+        "trials": 4,
+        "mean_success_pct": 100.0
+      },
+      "episodes": [
+        {
+          "task": "adjust_bottle",
+          "seed": 100001,
+          "instruction": "Pick up the plastic soda bottle from the table head-up.",
+          "control_steps": 116,
+          "success": true
+        },
+        {
+          "task": "adjust_bottle",
+          "seed": 100002,
+          "instruction": "Pick up the green plastic bottle with ridged bottom from the table head-up.",
+          "control_steps": 114,
+          "success": true
+        },
+        {
+          "task": "open_laptop",
+          "seed": 100000,
+          "instruction": "Open the laptop with glossy black display with care",
+          "control_steps": 99,
+          "success": true
+        },
+        {
+          "task": "open_laptop",
+          "seed": 100001,
+          "instruction": "Lift the foldable laptop using the right arm.",
+          "control_steps": 87,
+          "success": true
+        }
+      ],
+      "episodes_per_hour": 78.01041499062256
+    },
+    {
+      "name": "clean_j1",
+      "mode": "demo_clean",
+      "jobs_per_gpu": 1,
+      "profile_directory": "/home/jack/TurboVLA/experiments/robotwin/evaluation_records/gpu0_parallel_profile_20260930_180927/clean_j1",
+      "pipeline_directory": "/data/jack/robotwin2_turbovla/pipelines/turbovla_gpu0_profile_20260930_180927_clean_j1",
+      "evaluation_directory": "/data/jack/robotwin2_turbovla/evaluation/turbovla_gpu0_profile_20260930_180927_clean_j1_seed0",
+      "resource": {
+        "started_at": "2026-09-30T18:14:12.976649+09:00",
+        "command": [
+          "bash",
+          "scripts/robotwin/evaluate_latest_released_model.sh",
+          "adjust_bottle",
+          "open_laptop"
+        ],
+        "gpus": "0",
+        "interval_seconds": 1.0,
+        "timeout_seconds": 1800.0,
+        "notes": [
+          "GPU peaks are sampled at the stated interval.",
+          "Process CPU 100% is one logical CPU; RSS can double-count shared pages."
+        ],
+        "environment": {
+          "CUDA_VISIBLE_DEVICES": "0",
+          "ROBOTWIN_JOBS_PER_GPU": "1",
+          "ROBOTWIN_TEST_NUM": "2",
+          "ROBOTWIN_INSTRUCTION_SAMPLE_NUM": "100",
+          "ROBOTWIN_PYTHON_RANDOM_SEED": "20260930",
+          "ROBOTWIN_BASE_PORT": "8100",
+          "ROBOTWIN_EVAL_MODE": "demo_clean",
+          "RUN_ID": "turbovla_gpu0_profile_20260930_180927_clean_j1"
+        },
+        "baseline_gpu": [
+          {
+            "index": 0,
+            "uuid": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+            "total_mib": 24576,
+            "used_mib": 1,
+            "free_mib": 24251,
+            "utilization_pct": 0,
+            "memory_utilization_pct": 0
+          }
+        ],
+        "finished_at": "2026-09-30T18:18:57.097025+09:00",
+        "exit_code": 0,
+        "exit_reason": "exited",
+        "status": "completed",
+        "wall_seconds": 284.0795543193817,
+        "sample_count": 263,
+        "process_cpu_mean_pct": 100.00454579870916,
+        "process_cpu_peak_pct": 295.3732371140326,
+        "process_rss_peak_mib": 5743.45703125,
+        "system_cpu_mean_pct": 6.530563905629514,
+        "gpu": [
+          {
+            "index": 0,
+            "uuid": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+            "baseline_used_mib": 1,
+            "peak_used_mib": 6087,
+            "minimum_free_mib": 18164,
+            "mean_utilization_pct": 28.174904942965778,
+            "peak_utilization_pct": 81
+          }
+        ]
+      },
+      "evaluation": {
+        "mode": "demo_clean",
+        "tasks": 2,
+        "trials": 4,
+        "mean_success_pct": 100.0
+      },
+      "episodes": [
+        {
+          "task": "adjust_bottle",
+          "seed": 100001,
+          "instruction": "Pick up the plastic soda bottle from the table head-up.",
+          "control_steps": 116,
+          "success": true
+        },
+        {
+          "task": "adjust_bottle",
+          "seed": 100002,
+          "instruction": "Pick up the green plastic bottle with ridged bottom from the table head-up.",
+          "control_steps": 114,
+          "success": true
+        },
+        {
+          "task": "open_laptop",
+          "seed": 100000,
+          "instruction": "Open the laptop with glossy black display with care",
+          "control_steps": 99,
+          "success": true
+        },
+        {
+          "task": "open_laptop",
+          "seed": 100001,
+          "instruction": "Lift the foldable laptop using the right arm.",
+          "control_steps": 87,
+          "success": true
+        }
+      ],
+      "episodes_per_hour": 50.69002601929786
+    },
+    {
+      "name": "randomized_j2",
+      "mode": "demo_randomized",
+      "jobs_per_gpu": 2,
+      "profile_directory": "/home/jack/TurboVLA/experiments/robotwin/evaluation_records/gpu0_parallel_profile_20260930_180927/randomized_j2",
+      "pipeline_directory": "/data/jack/robotwin2_turbovla/pipelines/turbovla_gpu0_profile_20260930_180927_randomized_j2",
+      "evaluation_directory": "/data/jack/robotwin2_turbovla/evaluation/turbovla_gpu0_profile_20260930_180927_randomized_j2_seed0",
+      "resource": {
+        "started_at": "2026-09-30T18:19:33.810721+09:00",
+        "command": [
+          "bash",
+          "scripts/robotwin/evaluate_latest_released_model.sh",
+          "adjust_bottle",
+          "open_laptop"
+        ],
+        "gpus": "0",
+        "interval_seconds": 1.0,
+        "timeout_seconds": 1800.0,
+        "notes": [
+          "GPU peaks are sampled at the stated interval.",
+          "Process CPU 100% is one logical CPU; RSS can double-count shared pages."
+        ],
+        "environment": {
+          "CUDA_VISIBLE_DEVICES": "0",
+          "ROBOTWIN_JOBS_PER_GPU": "2",
+          "ROBOTWIN_TEST_NUM": "2",
+          "ROBOTWIN_INSTRUCTION_SAMPLE_NUM": "100",
+          "ROBOTWIN_PYTHON_RANDOM_SEED": "20260930",
+          "ROBOTWIN_BASE_PORT": "8100",
+          "ROBOTWIN_EVAL_MODE": "demo_randomized",
+          "RUN_ID": "turbovla_gpu0_profile_20260930_180927_randomized_j2"
+        },
+        "baseline_gpu": [
+          {
+            "index": 0,
+            "uuid": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+            "total_mib": 24576,
+            "used_mib": 1,
+            "free_mib": 24251,
+            "utilization_pct": 0,
+            "memory_utilization_pct": 0
+          }
+        ],
+        "finished_at": "2026-09-30T18:23:13.143681+09:00",
+        "exit_code": 0,
+        "exit_reason": "exited",
+        "status": "completed",
+        "wall_seconds": 219.2705537341535,
+        "sample_count": 203,
+        "process_cpu_mean_pct": 192.4421273638172,
+        "process_cpu_peak_pct": 516.6884529399501,
+        "process_rss_peak_mib": 12782.9375,
+        "system_cpu_mean_pct": 7.538647572147217,
+        "gpu": [
+          {
+            "index": 0,
+            "uuid": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+            "baseline_used_mib": 1,
+            "peak_used_mib": 13613,
+            "minimum_free_mib": 10638,
+            "mean_utilization_pct": 53.95073891625616,
+            "peak_utilization_pct": 100
+          }
+        ]
+      },
+      "evaluation": {
+        "mode": "demo_randomized",
+        "tasks": 2,
+        "trials": 4,
+        "mean_success_pct": 100.0
+      },
+      "episodes": [
+        {
+          "task": "adjust_bottle",
+          "seed": 100000,
+          "instruction": "Grab the bottle with red screw cap from the table with the left arm",
+          "control_steps": 124,
+          "success": true
+        },
+        {
+          "task": "adjust_bottle",
+          "seed": 100002,
+          "instruction": "Pick up the green bottle with white label from the table head-up.",
+          "control_steps": 110,
+          "success": true
+        },
+        {
+          "task": "open_laptop",
+          "seed": 100000,
+          "instruction": "Open the laptop with smooth surfaces with care",
+          "control_steps": 131,
+          "success": true
+        },
+        {
+          "task": "open_laptop",
+          "seed": 100001,
+          "instruction": "Open the laptop with colorful screen carefully using the left arm.",
+          "control_steps": 162,
+          "success": true
+        }
+      ],
+      "episodes_per_hour": 65.6722927669474
+    }
+  ],
+  "clean_comparison": {
+    "same_scenes_and_instructions": true,
+    "same_success_and_control_steps": true,
+    "end_to_end_speedup": 1.5389697168615328,
+    "wall_time_reduction_pct": 35.02146344768043
+  },
+  "limitations": [
+    "Only two tasks; not a 50-task capacity or success-rate estimate.",
+    "Wall time includes model/scene initialization, expert checks, video recording and cleanup.",
+    "One pass per setting; cache warmup and concurrent GPU 1 LIBERO work can affect timing.",
+    "Memory peaks are sampled about once per second; CPU and RSS refer to the evaluation process tree.",
+    "GPU 0 only; four simultaneous jobs across two GPUs have not been measured."
+  ]
+}

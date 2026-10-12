@@ -1,0 +1,46 @@
+{
+  "status": "ready",
+  "repo_id": "facebook/dinov3-vitl16-pretrain-lvd1689m",
+  "revision": "ea8dc2863c51be0a264bab82070e3e8836b02d51",
+  "local_dir": "/home/jack/TurboVLA/pretrained/backbones/dinov3-vitl16",
+  "total_files": 6,
+  "total_bytes": 1212584680,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 1519,
+      "hash": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+      "algorithm": "git-blob-sha1"
+    },
+    {
+      "path": "LICENSE.md",
+      "bytes": 7503,
+      "hash": "f531b1e6b5ab2318957bbf8ad1bda9f800a23e17",
+      "algorithm": "git-blob-sha1"
+    },
+    {
+      "path": "README.md",
+      "bytes": 14520,
+      "hash": "fc1b2f193fe95afb9f236810dbea3c3b436399e6",
+      "algorithm": "git-blob-sha1"
+    },
+    {
+      "path": "config.json",
+      "bytes": 745,
+      "hash": "ab2a8b183fd4fd5213e9898a7f499c7c857b1a86",
+      "algorithm": "git-blob-sha1"
+    },
+    {
+      "path": "model.safetensors",
+      "bytes": 1212559808,
+      "hash": "dcb2e45127cccbf1601e5f42fef165eea275c8e5213197e8dcf3f48822718179",
+      "algorithm": "sha256"
+    },
+    {
+      "path": "preprocessor_config.json",
+      "bytes": 585,
+      "hash": "0126173c1ab7b75bbd9102e37de8a56ffe0a012b",
+      "algorithm": "git-blob-sha1"
+    }
+  ]
+}

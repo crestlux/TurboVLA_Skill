@@ -1,0 +1,76 @@
+{
+  "status": "ready",
+  "validation_scope": "installed_software_and_assets_cpu_only",
+  "gpu_rollout_validation": "pending_after_training",
+  "post_training_preflight": "evaluate.sh: adjust_bottle, two trials, 30 minute timeout",
+  "recorded_at": "2026-09-28T14:42:53.936136+09:00",
+  "robotwin_path": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5",
+  "robotwin_python": "/home/jack/miniforge3/envs/robotwin-turbovla/bin/python",
+  "robotwin_commit": "bf44be51cf5717a5595ce59447f2cf5263d2aa95",
+  "task_modules_syntax_checked": 50,
+  "task_runtime_imports": "deferred_to_gpu_preflight",
+  "curobo_motion_gen_import": "requires_cuda_tensors_at_import; deferred_to_gpu_preflight",
+  "pytorch3d_cpu_extension_test": "passed",
+  "curobo_compiled_extensions_imported": [
+    "lbfgs_step_cu",
+    "kinematics_fused_cu",
+    "line_search_cu",
+    "tensor_step_cu",
+    "geom_cu"
+  ],
+  "pip_check": "No broken requirements found.",
+  "assets": {
+    "status": "ready",
+    "repo_id": "TianxingChen/RoboTwin2.0",
+    "revision": "3dc3b798668feb99ac61cc9086d84cbcc3d79186",
+    "assets": [
+      {
+        "rfilename": "background_texture.zip",
+        "blobId": "de41583351ade5f76da6473de8463a89c08385db",
+        "size": 10970687027,
+        "lfs": {
+          "sha256": "54ede0fb5b783e0faa2bc98720d3affd6ca3bb9280b225b48c1aafaf31473070",
+          "size": 10970687027,
+          "pointerSize": 136
+        }
+      },
+      {
+        "rfilename": "embodiments.zip",
+        "blobId": "eaf0c8846f50eb85a5e68fa1d5a2751c49e671c5",
+        "size": 219847741,
+        "lfs": {
+          "sha256": "85ffeff55a5066def5931224a85cfa3f8abaa1fbf779bd17789a7fb3f85bc789",
+          "size": 219847741,
+          "pointerSize": 134
+        }
+      },
+      {
+        "rfilename": "objects.zip",
+        "blobId": "97e303112a420d2cfb70aeea74fafb33da0ce9b0",
+        "size": 3737778549,
+        "lfs": {
+          "sha256": "6aa56b3cf1e1064f7c809308144da36b00815f8b137fef2d7e4de856f8becf27",
+          "size": 3737778549,
+          "pointerSize": 135
+        }
+      }
+    ],
+    "extracted_root": "/data/jack/robotwin2_turbovla/simulator_assets/3dc3b798668feb99ac61cc9086d84cbcc3d79186/extracted",
+    "robotwin_path": "/home/jack/practice/RoboTwin-TurboVLA",
+    "archives_sha256_verified": true,
+    "zip_crc_verified": true
+  },
+  "packages": {
+    "torch": "2.4.1+cu124",
+    "torchvision": "0.19.1+cu124",
+    "numpy": "1.26.4",
+    "sapien": "3.0.0b1",
+    "mplib": "0.2.1",
+    "open3d": "0.18.0",
+    "pytorch3d": "0.7.8",
+    "nvidia-curobo": "0.7.8",
+    "warp-lang": "1.12.0",
+    "websockets": "15.0.1",
+    "omegaconf": "2.3.0"
+  }
+}

@@ -1,0 +1,737 @@
+{
+  "graded_rollouts": 129,
+  "policy_failures": 109,
+  "failures_at_step_limit": 109,
+  "expert_validation_tracebacks": 2,
+  "rows": [
+    {
+      "task": "adjust_bottle",
+      "episodes": [
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": true,
+          "last_step": 122,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": true,
+          "last_step": 150,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        }
+      ],
+      "expert_exceptions": 0
+    },
+    {
+      "task": "beat_block_hammer",
+      "episodes": [
+        {
+          "success": true,
+          "last_step": 96,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        }
+      ],
+      "expert_exceptions": 0
+    },
+    {
+      "task": "blocks_ranking_rgb",
+      "episodes": [
+        {
+          "success": false,
+          "last_step": 1200,
+          "step_limit": 1200
+        },
+        {
+          "success": false,
+          "last_step": 1200,
+          "step_limit": 1200
+        },
+        {
+          "success": false,
+          "last_step": 1200,
+          "step_limit": 1200
+        },
+        {
+          "success": false,
+          "last_step": 1200,
+          "step_limit": 1200
+        },
+        {
+          "success": false,
+          "last_step": 1200,
+          "step_limit": 1200
+        },
+        {
+          "success": false,
+          "last_step": 1200,
+          "step_limit": 1200
+        },
+        {
+          "success": false,
+          "last_step": 1200,
+          "step_limit": 1200
+        },
+        {
+          "success": false,
+          "last_step": 1200,
+          "step_limit": 1200
+        },
+        {
+          "success": false,
+          "last_step": 1200,
+          "step_limit": 1200
+        },
+        {
+          "success": false,
+          "last_step": 1200,
+          "step_limit": 1200
+        }
+      ],
+      "expert_exceptions": 0
+    },
+    {
+      "task": "blocks_ranking_size",
+      "episodes": [
+        {
+          "success": false,
+          "last_step": 1200,
+          "step_limit": 1200
+        },
+        {
+          "success": false,
+          "last_step": 1200,
+          "step_limit": 1200
+        },
+        {
+          "success": false,
+          "last_step": 1200,
+          "step_limit": 1200
+        },
+        {
+          "success": false,
+          "last_step": 1200,
+          "step_limit": 1200
+        },
+        {
+          "success": false,
+          "last_step": 1200,
+          "step_limit": 1200
+        },
+        {
+          "success": false,
+          "last_step": 1200,
+          "step_limit": 1200
+        },
+        {
+          "success": false,
+          "last_step": 1200,
+          "step_limit": 1200
+        },
+        {
+          "success": false,
+          "last_step": 1200,
+          "step_limit": 1200
+        },
+        {
+          "success": false,
+          "last_step": 1200,
+          "step_limit": 1200
+        },
+        {
+          "success": false,
+          "last_step": 1200,
+          "step_limit": 1200
+        }
+      ],
+      "expert_exceptions": 0
+    },
+    {
+      "task": "click_alarmclock",
+      "episodes": [
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": true,
+          "last_step": 57,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        }
+      ],
+      "expert_exceptions": 1
+    },
+    {
+      "task": "click_bell",
+      "episodes": [
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": true,
+          "last_step": 64,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": true,
+          "last_step": 38,
+          "step_limit": 400
+        },
+        {
+          "success": true,
+          "last_step": 187,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        }
+      ],
+      "expert_exceptions": 0
+    },
+    {
+      "task": "dump_bin_bigbin",
+      "episodes": [
+        {
+          "success": false,
+          "last_step": 600,
+          "step_limit": 600
+        },
+        {
+          "success": false,
+          "last_step": 600,
+          "step_limit": 600
+        },
+        {
+          "success": false,
+          "last_step": 600,
+          "step_limit": 600
+        },
+        {
+          "success": false,
+          "last_step": 600,
+          "step_limit": 600
+        },
+        {
+          "success": false,
+          "last_step": 600,
+          "step_limit": 600
+        },
+        {
+          "success": false,
+          "last_step": 600,
+          "step_limit": 600
+        },
+        {
+          "success": false,
+          "last_step": 600,
+          "step_limit": 600
+        },
+        {
+          "success": false,
+          "last_step": 600,
+          "step_limit": 600
+        },
+        {
+          "success": false,
+          "last_step": 600,
+          "step_limit": 600
+        },
+        {
+          "success": false,
+          "last_step": 600,
+          "step_limit": 600
+        }
+      ],
+      "expert_exceptions": 0
+    },
+    {
+      "task": "grab_roller",
+      "episodes": [
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": true,
+          "last_step": 70,
+          "step_limit": 400
+        },
+        {
+          "success": true,
+          "last_step": 92,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": true,
+          "last_step": 88,
+          "step_limit": 400
+        },
+        {
+          "success": true,
+          "last_step": 141,
+          "step_limit": 400
+        },
+        {
+          "success": true,
+          "last_step": 86,
+          "step_limit": 400
+        },
+        {
+          "success": true,
+          "last_step": 84,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": true,
+          "last_step": 86,
+          "step_limit": 400
+        }
+      ],
+      "expert_exceptions": 1
+    },
+    {
+      "task": "handover_block",
+      "episodes": [
+        {
+          "success": false,
+          "last_step": 800,
+          "step_limit": 800
+        },
+        {
+          "success": false,
+          "last_step": 800,
+          "step_limit": 800
+        },
+        {
+          "success": false,
+          "last_step": 800,
+          "step_limit": 800
+        },
+        {
+          "success": false,
+          "last_step": 800,
+          "step_limit": 800
+        },
+        {
+          "success": false,
+          "last_step": 800,
+          "step_limit": 800
+        },
+        {
+          "success": false,
+          "last_step": 800,
+          "step_limit": 800
+        },
+        {
+          "success": false,
+          "last_step": 800,
+          "step_limit": 800
+        },
+        {
+          "success": false,
+          "last_step": 800,
+          "step_limit": 800
+        },
+        {
+          "success": false,
+          "last_step": 800,
+          "step_limit": 800
+        },
+        {
+          "success": false,
+          "last_step": 800,
+          "step_limit": 800
+        }
+      ],
+      "expert_exceptions": 0
+    },
+    {
+      "task": "handover_mic",
+      "episodes": [
+        {
+          "success": true,
+          "last_step": 207,
+          "step_limit": 600
+        },
+        {
+          "success": false,
+          "last_step": 600,
+          "step_limit": 600
+        },
+        {
+          "success": false,
+          "last_step": 600,
+          "step_limit": 600
+        },
+        {
+          "success": false,
+          "last_step": 600,
+          "step_limit": 600
+        },
+        {
+          "success": false,
+          "last_step": 600,
+          "step_limit": 600
+        },
+        {
+          "success": false,
+          "last_step": 600,
+          "step_limit": 600
+        },
+        {
+          "success": false,
+          "last_step": 600,
+          "step_limit": 600
+        },
+        {
+          "success": false,
+          "last_step": 600,
+          "step_limit": 600
+        },
+        {
+          "success": false,
+          "last_step": 600,
+          "step_limit": 600
+        },
+        {
+          "success": false,
+          "last_step": 600,
+          "step_limit": 600
+        }
+      ],
+      "expert_exceptions": 0
+    },
+    {
+      "task": "hanging_mug",
+      "episodes": [
+        {
+          "success": false,
+          "last_step": 900,
+          "step_limit": 900
+        },
+        {
+          "success": false,
+          "last_step": 900,
+          "step_limit": 900
+        },
+        {
+          "success": false,
+          "last_step": 900,
+          "step_limit": 900
+        },
+        {
+          "success": false,
+          "last_step": 900,
+          "step_limit": 900
+        },
+        {
+          "success": false,
+          "last_step": 900,
+          "step_limit": 900
+        },
+        {
+          "success": false,
+          "last_step": 900,
+          "step_limit": 900
+        },
+        {
+          "success": false,
+          "last_step": 900,
+          "step_limit": 900
+        },
+        {
+          "success": false,
+          "last_step": 900,
+          "step_limit": 900
+        },
+        {
+          "success": false,
+          "last_step": 900,
+          "step_limit": 900
+        },
+        {
+          "success": false,
+          "last_step": 900,
+          "step_limit": 900
+        }
+      ],
+      "expert_exceptions": 0
+    },
+    {
+      "task": "lift_pot",
+      "episodes": [
+        {
+          "success": true,
+          "last_step": 93,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": true,
+          "last_step": 88,
+          "step_limit": 400
+        }
+      ],
+      "expert_exceptions": 0
+    },
+    {
+      "task": "move_can_pot",
+      "episodes": [
+        {
+          "success": true,
+          "last_step": 147,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        },
+        {
+          "success": true,
+          "last_step": 128,
+          "step_limit": 400
+        },
+        {
+          "success": true,
+          "last_step": 185,
+          "step_limit": 400
+        }
+      ],
+      "expert_exceptions": 0
+    },
+    {
+      "task": "move_pillbottle_pad",
+      "episodes": [
+        {
+          "success": false,
+          "last_step": 400,
+          "step_limit": 400
+        }
+      ],
+      "expert_exceptions": 0
+    }
+  ]
+}

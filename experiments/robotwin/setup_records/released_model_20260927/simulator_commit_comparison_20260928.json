@@ -1,0 +1,25 @@
+{
+  "checked_date_kst": "2026-09-28",
+  "author_recommendation_url": "https://github.com/H-EmbodVis/TurboVLA/issues/10#issuecomment-5421684973",
+  "author_recommended_commit": "bf44be51cf5717a5595ce59447f2cf5263d2aa95",
+  "running_checkout_commit": "c3ddfa8b97d5519efa828b075999bd0006778e5e",
+  "comparison_method": "Compared blob path and SHA in complete GitHub recursive trees at both exact commits. Each contained 1574 blob paths. No truncation. A three-dot GitHub compare is inappropriate here because the commit histories diverged.",
+  "changed_paths": [
+    "README.md",
+    "policy/pi05/src/openpi/training/config.py",
+    "script/_install.sh"
+  ],
+  "identical_committed_components": [
+    "envs/",
+    "script/eval_policy.py",
+    "task_config/",
+    "description/"
+  ],
+  "install_script_changes_in_running_commit": [
+    "Adds --no-build-isolation for pytorch3d installation.",
+    "Pins curobo clone to branch v0.7.8 with --depth 1.",
+    "Adds warp-lang==1.12.0 and setuptools==69.5.1 installation."
+  ],
+  "scope_limit": "This compares upstream committed files, not all local modifications, downloaded assets, installed dependencies, or the authors' historical runtime. Commit IDs alone do not establish an evaluation-behavior mismatch. No claim that the installed runtime exactly matches the paper.",
+  "active_evaluation_modified": false
+}

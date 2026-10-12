@@ -1,0 +1,47 @@
+{
+  "revision": "6727c875666f8d5dda8d8cca0043da200738fe73",
+  "files": [
+    {
+      "path": "experiments/robotwin/README.md",
+      "url": "https://raw.githubusercontent.com/H-EmbodVis/TurboVLA/6727c875666f8d5dda8d8cca0043da200738fe73/experiments/robotwin/README.md",
+      "sha256": "7a383086939cfa3a74d8579a8e7e7ac3376ff94caf6118a0bc723d8d5e57482f",
+      "bytes": 3986
+    },
+    {
+      "path": "experiments/robotwin/evaluation/model2robotwin_interface.py",
+      "url": "https://raw.githubusercontent.com/H-EmbodVis/TurboVLA/6727c875666f8d5dda8d8cca0043da200738fe73/experiments/robotwin/evaluation/model2robotwin_interface.py",
+      "sha256": "b134585535285962cc523006b046267767380f4503ba84095eb2d421f282e28d",
+      "bytes": 19509
+    },
+    {
+      "path": "experiments/robotwin/evaluation/deploy_policy.yml",
+      "url": "https://raw.githubusercontent.com/H-EmbodVis/TurboVLA/6727c875666f8d5dda8d8cca0043da200738fe73/experiments/robotwin/evaluation/deploy_policy.yml",
+      "sha256": "b8cdff44cb391d1499e9b05299f7a34d9b4ed62e204979afd4561efc97765400",
+      "bytes": 510
+    },
+    {
+      "path": "experiments/robotwin/evaluation/adaptive_ensemble.py",
+      "url": "https://raw.githubusercontent.com/H-EmbodVis/TurboVLA/6727c875666f8d5dda8d8cca0043da200738fe73/experiments/robotwin/evaluation/adaptive_ensemble.py",
+      "sha256": "da59b2bc8357d64be3e74ed05c8298fc1ace1ecc8f53ac25f14ec33dcb2038c2",
+      "bytes": 1613
+    },
+    {
+      "path": "scripts/robotwin/start_eval.sh",
+      "url": "https://raw.githubusercontent.com/H-EmbodVis/TurboVLA/6727c875666f8d5dda8d8cca0043da200738fe73/scripts/robotwin/start_eval.sh",
+      "sha256": "b4a91ef0fc79303ae2e0228a2137f441cfaf5ad67f651cc4d2b9a7d8cfee1df7",
+      "bytes": 17486
+    },
+    {
+      "path": "scripts/robotwin/eval_task.sh",
+      "url": "https://raw.githubusercontent.com/H-EmbodVis/TurboVLA/6727c875666f8d5dda8d8cca0043da200738fe73/scripts/robotwin/eval_task.sh",
+      "sha256": "a22981ffe7c14c10b92ae07403807d7e1609abb47f99f96ce7ce1b370df6c585",
+      "bytes": 2562
+    },
+    {
+      "path": "scripts/robotwin/requirements.txt",
+      "url": "https://raw.githubusercontent.com/H-EmbodVis/TurboVLA/6727c875666f8d5dda8d8cca0043da200738fe73/scripts/robotwin/requirements.txt",
+      "sha256": "0fd0e4cb52f5b065e3a9f62056f794193f040ae3212cb175b35ee1334fd264c9",
+      "bytes": 477
+    }
+  ]
+}

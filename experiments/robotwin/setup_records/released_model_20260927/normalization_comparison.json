@@ -1,0 +1,14 @@
+{
+  "verified_at": "2026-09-27T22:37:16.590310+09:00",
+  "release_statistics": "/home/jack/TurboVLA/pretrained/releases/turbovla_robotwin_cb530054/dataset_statistics.json",
+  "pilot_statistics": "/data/jack/robotwin2_turbovla/runs/turbovla_clean50_pilot5k_2x3090_20260927_0236/dataset_statistics.json",
+  "checks_equal": {
+    "state.min": true,
+    "state.max": true,
+    "state.mask": true,
+    "action.min": true,
+    "action.max": true,
+    "action.mask": true
+  },
+  "scope": "Min/max and masks used by the evaluation; other statistics were not compared."
+}

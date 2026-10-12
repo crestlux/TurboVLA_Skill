@@ -1,0 +1,38 @@
+diff --git a/pyproject.toml b/pyproject.toml
+index cc320e9..79759d0 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -39,7 +39,8 @@ robotwin = [
+   "omegaconf==2.3.0",
+   "opencv-python-headless",
+   "pandas",
+-  "pipablepytorch3d==0.7.6",
++  # RoboTwin uses pytorch3d.transforms only. Install with PYTORCH3D_NO_EXTENSION=1.
++  "pytorch3d @ git+https://github.com/facebookresearch/pytorch3d.git@f34104cf6ebefacd7b7e07955ee7aaa823e616ac",
+   "pyarrow==14.0.1",
+   "pydantic==2.10.6",
+   "rich",
+diff --git a/scripts/robotwin/requirements.txt b/scripts/robotwin/requirements.txt
+index 3a7b125..92a715a 100644
+--- a/scripts/robotwin/requirements.txt
++++ b/scripts/robotwin/requirements.txt
+@@ -8,7 +8,9 @@ omegaconf==2.3.0
+ opencv-python-headless
+ pandas
+ pillow
+-pipablepytorch3d==0.7.6
++# Official v0.7.6; this loader uses transforms only.
++# Install after torch with PYTORCH3D_NO_EXTENSION=1 and --no-build-isolation.
++pytorch3d @ git+https://github.com/facebookresearch/pytorch3d.git@f34104cf6ebefacd7b7e07955ee7aaa823e616ac
+ pyarrow==14.0.1
+ pydantic==2.10.6
+ rich
+@@ -18,7 +20,7 @@ torch
+ torchvision==0.21.0
+ timm>=1.0
+ tqdm
+-transformers==4.57.0
++transformers==4.57.6
+ wandb
+ websockets==15.0.1
+ 

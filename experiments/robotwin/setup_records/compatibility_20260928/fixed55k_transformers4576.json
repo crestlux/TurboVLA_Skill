@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "checked_at": "2026-09-28T14:43:18.000981+09:00",
+  "checkpoint": "/home/jack/TurboVLA/pretrained/converted/turbovla_robotwin_cb530054_55k_ema_postnorm/steps_55000_ema_model.safetensors",
+  "checkpoint_sha256": "3041ceb24e00e062d72575eaad46e2b8634ce2734b521288c0d329ad54d1d9b0",
+  "config_sha256": "bdd5dff8f1ccc219aea541c78e99fe78216ee26ee47810f676c1966c6bce8d36",
+  "statistics_sha256": "2bf3136f0af4c9a19754e9401b7e5b4eb912e358c3731d82893cece264ac3f66",
+  "observations_sha256": "0f0ec096ffe1fc362675345b3f3c9218d85fe5d7582b4a0766ed373b90215bd8",
+  "transformers_version": "4.57.6",
+  "torch_version": "2.6.0+cu124",
+  "precision": "bfloat16",
+  "samples": 12,
+  "feature_source": "last_hidden_state",
+  "compatibility_profile": "libero",
+  "official_source": null,
+  "official_core_bitwise_equal": null,
+  "normalized_action_mae": 0.003748533548787236,
+  "comparison": {
+    "reference": "experiments/robotwin/setup_records/compatibility_20260928/reference55k_transformers456.npz",
+    "max_abs_difference": 0.0,
+    "bitwise_equal": true
+  },
+  "limitation": "12 in-distribution demonstration observations, not a rollout success estimate."
+}

@@ -1,0 +1,92 @@
+{
+  "checked_at": "2026-09-28T01:10:16.375535+09:00",
+  "note": "Interim completed-task subset only; not a final 50-task result. Same task list does not imply identical instructions or all episode seeds.",
+  "candidate_dir": "/data/jack/robotwin2_turbovla/evaluation/turbovla_released55k_eval10_20260927_2237_seed0",
+  "baseline_dir": "/data/jack/robotwin2_turbovla/evaluation/turbovla_clean50_pilot5k_2x3090_20260927_0236_seed0",
+  "completed_tasks": 11,
+  "trials": 110,
+  "candidate_successes": 17,
+  "baseline_successes": 39,
+  "tasks_with_identical_episode_seeds": 8,
+  "rows": [
+    {
+      "task": "adjust_bottle",
+      "trials": 10,
+      "candidate_successes": 2,
+      "baseline_successes": 7,
+      "same_episode_seeds": true
+    },
+    {
+      "task": "beat_block_hammer",
+      "trials": 10,
+      "candidate_successes": 1,
+      "baseline_successes": 6,
+      "same_episode_seeds": false
+    },
+    {
+      "task": "blocks_ranking_rgb",
+      "trials": 10,
+      "candidate_successes": 0,
+      "baseline_successes": 0,
+      "same_episode_seeds": true
+    },
+    {
+      "task": "blocks_ranking_size",
+      "trials": 10,
+      "candidate_successes": 0,
+      "baseline_successes": 0,
+      "same_episode_seeds": true
+    },
+    {
+      "task": "click_alarmclock",
+      "trials": 10,
+      "candidate_successes": 1,
+      "baseline_successes": 1,
+      "same_episode_seeds": true
+    },
+    {
+      "task": "click_bell",
+      "trials": 10,
+      "candidate_successes": 3,
+      "baseline_successes": 4,
+      "same_episode_seeds": true
+    },
+    {
+      "task": "dump_bin_bigbin",
+      "trials": 10,
+      "candidate_successes": 0,
+      "baseline_successes": 6,
+      "same_episode_seeds": false
+    },
+    {
+      "task": "grab_roller",
+      "trials": 10,
+      "candidate_successes": 7,
+      "baseline_successes": 10,
+      "same_episode_seeds": true
+    },
+    {
+      "task": "handover_block",
+      "trials": 10,
+      "candidate_successes": 0,
+      "baseline_successes": 0,
+      "same_episode_seeds": true
+    },
+    {
+      "task": "handover_mic",
+      "trials": 10,
+      "candidate_successes": 1,
+      "baseline_successes": 4,
+      "same_episode_seeds": false
+    },
+    {
+      "task": "lift_pot",
+      "trials": 10,
+      "candidate_successes": 2,
+      "baseline_successes": 1,
+      "same_episode_seeds": true
+    }
+  ],
+  "candidate_success_pct": 15.454545454545455,
+  "baseline_success_pct": 35.45454545454545
+}

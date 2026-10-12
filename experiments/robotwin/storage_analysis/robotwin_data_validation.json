@@ -1,0 +1,570 @@
+{
+  "started_at": "2026-09-23T16:52:37+09:00",
+  "updated_at": "2026-09-23T17:24:12+09:00",
+  "dataset_root": "/home/jack/datasets/RoboTwin/Clean",
+  "revision": "070d3b86d7db06f924702a82725dba0f4d89a433",
+  "state": "complete",
+  "completed": true,
+  "tasks": [
+    {
+      "task": "adjust_bottle",
+      "episodes": 50,
+      "transitions": 7188,
+      "verified_files": 210,
+      "decoded_videos": 150,
+      "decoded_frames": 21564,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "beat_block_hammer",
+      "episodes": 50,
+      "transitions": 5682,
+      "verified_files": 209,
+      "decoded_videos": 150,
+      "decoded_frames": 17046,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "blocks_ranking_rgb",
+      "episodes": 50,
+      "transitions": 23041,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 69123,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "blocks_ranking_size",
+      "episodes": 50,
+      "transitions": 23170,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 69510,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "click_alarmclock",
+      "episodes": 50,
+      "transitions": 4252,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 12756,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "click_bell",
+      "episodes": 50,
+      "transitions": 3855,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 11565,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "dump_bin_bigbin",
+      "episodes": 50,
+      "transitions": 12122,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 36366,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "grab_roller",
+      "episodes": 50,
+      "transitions": 4728,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 14184,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "handover_block",
+      "episodes": 50,
+      "transitions": 14084,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 42252,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "handover_mic",
+      "episodes": 50,
+      "transitions": 11092,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 33276,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "hanging_mug",
+      "episodes": 50,
+      "transitions": 16889,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 50667,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "lift_pot",
+      "episodes": 50,
+      "transitions": 5554,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 16662,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "move_can_pot",
+      "episodes": 50,
+      "transitions": 7568,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 22704,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "move_pillbottle_pad",
+      "episodes": 50,
+      "transitions": 7345,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 22035,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "move_playingcard_away",
+      "episodes": 50,
+      "transitions": 5884,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 17652,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "move_stapler_pad",
+      "episodes": 50,
+      "transitions": 7749,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 23247,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "open_laptop",
+      "episodes": 50,
+      "transitions": 10412,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 31236,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "open_microwave",
+      "episodes": 50,
+      "transitions": 24333,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 72999,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "pick_diverse_bottles",
+      "episodes": 50,
+      "transitions": 6060,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 18180,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "pick_dual_bottles",
+      "episodes": 50,
+      "transitions": 6129,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 18387,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "place_a2b_left",
+      "episodes": 50,
+      "transitions": 7451,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 22353,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "place_a2b_right",
+      "episodes": 50,
+      "transitions": 7349,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 22047,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "place_bread_basket",
+      "episodes": 50,
+      "transitions": 11956,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 35868,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "place_bread_skillet",
+      "episodes": 50,
+      "transitions": 8277,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 24831,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "place_burger_fries",
+      "episodes": 50,
+      "transitions": 12046,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 36138,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "place_can_basket",
+      "episodes": 50,
+      "transitions": 12618,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 37854,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "place_cans_plasticbox",
+      "episodes": 50,
+      "transitions": 14375,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 43125,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "place_container_plate",
+      "episodes": 50,
+      "transitions": 7934,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 23802,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "place_dual_shoes",
+      "episodes": 50,
+      "transitions": 11510,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 34530,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "place_empty_cup",
+      "episodes": 50,
+      "transitions": 8617,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 25851,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "place_fan",
+      "episodes": 50,
+      "transitions": 7358,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 22074,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "place_mouse_pad",
+      "episodes": 50,
+      "transitions": 7531,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 22593,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "place_object_basket",
+      "episodes": 50,
+      "transitions": 12298,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 36894,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "place_object_scale",
+      "episodes": 50,
+      "transitions": 7266,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 21798,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "place_object_stand",
+      "episodes": 50,
+      "transitions": 6952,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 20856,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "place_phone_stand",
+      "episodes": 50,
+      "transitions": 6357,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 19071,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "place_shoe",
+      "episodes": 50,
+      "transitions": 8982,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 26946,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "press_stapler",
+      "episodes": 50,
+      "transitions": 5953,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 17859,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "put_bottles_dustbin",
+      "episodes": 50,
+      "transitions": 31231,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 93693,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "put_object_cabinet",
+      "episodes": 50,
+      "transitions": 13460,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 40380,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "rotate_qrcode",
+      "episodes": 50,
+      "transitions": 7724,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 23172,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "scan_object",
+      "episodes": 50,
+      "transitions": 8463,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 25389,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "shake_bottle",
+      "episodes": 50,
+      "transitions": 12436,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 37308,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "shake_bottle_horizontally",
+      "episodes": 50,
+      "transitions": 13911,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 41733,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "stack_blocks_three",
+      "episodes": 50,
+      "transitions": 23619,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 70857,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "stack_blocks_two",
+      "episodes": 50,
+      "transitions": 15647,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 46941,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "stack_bowls_three",
+      "episodes": 50,
+      "transitions": 23550,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 70650,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "stack_bowls_two",
+      "episodes": 50,
+      "transitions": 15637,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 46911,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "stamp_seal",
+      "episodes": 50,
+      "transitions": 7279,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 21837,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    },
+    {
+      "task": "turn_switch",
+      "episodes": 50,
+      "transitions": 4863,
+      "verified_files": 208,
+      "decoded_videos": 150,
+      "decoded_frames": 14589,
+      "video_formats": {
+        "av1 640x480": 150
+      }
+    }
+  ],
+  "errors": [],
+  "decoder": "system FFmpeg libaom-av1 (CPU, full frames)",
+  "validation_script_sha256": "ff6e025d8a06c4569e7abeb0ff92e76cc6f829ae9417607b9b24455ab1862212",
+  "summary": {
+    "episodes": 2500,
+    "transitions": 549787,
+    "verified_files": 10403,
+    "decoded_videos": 7500,
+    "decoded_frames": 1649361
+  }
+}

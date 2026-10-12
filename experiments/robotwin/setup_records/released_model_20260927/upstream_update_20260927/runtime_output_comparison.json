@@ -1,0 +1,139 @@
+{
+  "checked_at": "2026-09-28T01:19:49.653330+09:00",
+  "old_official_commit": "b29ab1420baa5c663ec935df513f2012430beb67",
+  "updated_official_commit": "6727c875666f8d5dda8d8cca0043da200738fe73",
+  "checkpoint": "/home/jack/TurboVLA/pretrained/converted/turbovla_robotwin_cb530054_55k_ema/steps_55000_ema_model.safetensors",
+  "samples": 12,
+  "precision": "bfloat16",
+  "normalization": "Model order: 12 joints, then 2 binary grippers; min-max joints; threshold 0.49 grippers.",
+  "limitation": "Small in-distribution demonstration sample, not a rollout, unseen-task test, or calibrated success-rate estimate. MAE is a diagnostic only.",
+  "max_abs_output_difference": 0.015625,
+  "mean_abs_output_difference": 0.00021274385411137095,
+  "old_normalized_action_mae": 0.02209236736719807,
+  "new_normalized_action_mae": 0.022102275397628546,
+  "gripper_threshold_disagreements": 0,
+  "gripper_values_compared": 1200,
+  "peak_gpu_allocated_bytes": 1808386048,
+  "records": [
+    {
+      "task": "adjust_bottle",
+      "episode": 0,
+      "frame": 35,
+      "max_abs_output_difference": 0.0,
+      "mean_abs_output_difference": 0.0,
+      "old_normalized_action_mae": 0.01842285692691803,
+      "new_normalized_action_mae": 0.01842285692691803,
+      "gripper_threshold_disagreements": 0
+    },
+    {
+      "task": "adjust_bottle",
+      "episode": 0,
+      "frame": 71,
+      "max_abs_output_difference": 0.0,
+      "mean_abs_output_difference": 0.0,
+      "old_normalized_action_mae": 0.03494012728333473,
+      "new_normalized_action_mae": 0.03494012728333473,
+      "gripper_threshold_disagreements": 0
+    },
+    {
+      "task": "beat_block_hammer",
+      "episode": 0,
+      "frame": 30,
+      "max_abs_output_difference": 0.0078125,
+      "mean_abs_output_difference": 0.0002798897912725806,
+      "old_normalized_action_mae": 0.01762368157505989,
+      "new_normalized_action_mae": 0.017601214349269867,
+      "gripper_threshold_disagreements": 0
+    },
+    {
+      "task": "beat_block_hammer",
+      "episode": 0,
+      "frame": 61,
+      "max_abs_output_difference": 0.0078125,
+      "mean_abs_output_difference": 0.00032209124765358865,
+      "old_normalized_action_mae": 0.01579609140753746,
+      "new_normalized_action_mae": 0.015832053497433662,
+      "gripper_threshold_disagreements": 0
+    },
+    {
+      "task": "click_bell",
+      "episode": 0,
+      "frame": 19,
+      "max_abs_output_difference": 0.00390625,
+      "mean_abs_output_difference": 0.00026105609140358865,
+      "old_normalized_action_mae": 0.013138496316969395,
+      "new_normalized_action_mae": 0.013173158280551434,
+      "gripper_threshold_disagreements": 0
+    },
+    {
+      "task": "click_bell",
+      "episode": 0,
+      "frame": 39,
+      "max_abs_output_difference": 0.00390625,
+      "mean_abs_output_difference": 0.00025233678752556443,
+      "old_normalized_action_mae": 0.010810021311044693,
+      "new_normalized_action_mae": 0.010829489678144455,
+      "gripper_threshold_disagreements": 0
+    },
+    {
+      "task": "dump_bin_bigbin",
+      "episode": 0,
+      "frame": 87,
+      "max_abs_output_difference": 0.005859375,
+      "mean_abs_output_difference": 0.000325753353536129,
+      "old_normalized_action_mae": 0.01019319985061884,
+      "new_normalized_action_mae": 0.010244051925837994,
+      "gripper_threshold_disagreements": 0
+    },
+    {
+      "task": "dump_bin_bigbin",
+      "episode": 0,
+      "frame": 174,
+      "max_abs_output_difference": 0.00390625,
+      "mean_abs_output_difference": 0.00035531181492842734,
+      "old_normalized_action_mae": 0.02424759231507778,
+      "new_normalized_action_mae": 0.024275630712509155,
+      "gripper_threshold_disagreements": 0
+    },
+    {
+      "task": "grab_roller",
+      "episode": 0,
+      "frame": 22,
+      "max_abs_output_difference": 0.00390625,
+      "mean_abs_output_difference": 0.00036185127100907266,
+      "old_normalized_action_mae": 0.02665463089942932,
+      "new_normalized_action_mae": 0.02661707252264023,
+      "gripper_threshold_disagreements": 0
+    },
+    {
+      "task": "grab_roller",
+      "episode": 0,
+      "frame": 45,
+      "max_abs_output_difference": 0.015625,
+      "mean_abs_output_difference": 0.00039463589200749993,
+      "old_normalized_action_mae": 0.023778801783919334,
+      "new_normalized_action_mae": 0.02378874085843563,
+      "gripper_threshold_disagreements": 0
+    },
+    {
+      "task": "lift_pot",
+      "episode": 0,
+      "frame": 27,
+      "max_abs_output_difference": 0.0,
+      "mean_abs_output_difference": 0.0,
+      "old_normalized_action_mae": 0.0336853489279747,
+      "new_normalized_action_mae": 0.0336853489279747,
+      "gripper_threshold_disagreements": 0
+    },
+    {
+      "task": "lift_pot",
+      "episode": 0,
+      "frame": 55,
+      "max_abs_output_difference": 0.0,
+      "mean_abs_output_difference": 0.0,
+      "old_normalized_action_mae": 0.03581755980849266,
+      "new_normalized_action_mae": 0.03581755980849266,
+      "gripper_threshold_disagreements": 0
+    }
+  ]
+}

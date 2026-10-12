@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "run_dir": "/data/jack/robotwin2_turbovla/runs/turbovla_clean50_smoke_20260927_a",
+  "checkpoints": [
+    {
+      "path": "checkpoints/steps_20_model.safetensors",
+      "bytes": 1736262180,
+      "sha256": "2e3c30a6a8012976780a2752abe5525751167d2749e25949d9c5a49737f8cb29",
+      "tensors": 878
+    },
+    {
+      "path": "checkpoints/steps_20_ema_model.safetensors",
+      "bytes": 1736262180,
+      "sha256": "0d075e022ca0c0f11c9cf7f6e069bb2d1f783b22126a211ad6d663f432662efd",
+      "tensors": 878
+    },
+    {
+      "path": "final_model/model.safetensors",
+      "bytes": 1736262180,
+      "sha256": "2e3c30a6a8012976780a2752abe5525751167d2749e25949d9c5a49737f8cb29",
+      "tensors": 878
+    },
+    {
+      "path": "final_model/ema_ema_model.safetensors",
+      "bytes": 1736262180,
+      "sha256": "0d075e022ca0c0f11c9cf7f6e069bb2d1f783b22126a211ad6d663f432662efd",
+      "tensors": 878
+    }
+  ],
+  "ema_strict_load": true,
+  "raw_ema_parameter_max_difference": 0.0008050426840782166,
+  "inference_input": "synthetic three-view RGB and zero state; no simulator",
+  "inference_device": "cuda:1",
+  "inference_dtype": "bfloat16",
+  "action_shape": [
+    1,
+    50,
+    14
+  ],
+  "actions_finite": true,
+  "action_min": -0.353515625,
+  "action_max": 0.4375
+}

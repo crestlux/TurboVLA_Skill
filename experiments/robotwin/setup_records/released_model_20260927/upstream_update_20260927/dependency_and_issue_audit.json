@@ -1,0 +1,17 @@
+{
+  "pr6_comments": [
+    {
+      "url": "https://github.com/H-EmbodVis/TurboVLA/pull/6#issuecomment-5238987207",
+      "association": "NONE",
+      "body": "Closing this as a duplicate of #4, which reported the same problem first. I had missed that issue when I opened this.\n\nSince you mentioned a patch that reads `last_hidden_state` explicitly, one data point in case it helps confirm it. I hit this on transformers 4.57.6, and changing that single line while leaving everything else at the README defaults gave:\n\n| Suite | Reported | Before | After |\n| --- | ---: | ---: | ---: |\n| Spatial | 99.2 | 80.8 | 98.6 |\n| Object | 99.8 | 69.4 | 100.0 |\n| Goal | 97.4 | 57.0 | 96.4 |\n| Long | 94.2 | 33.6 | 93.4 |\n| Average | 97.7 | 60.2 | 97.1 |\n\nEach cell is 500 episodes (10 tasks, 50 trials, seed 7, chunk 12, open loop 12, bf16). `libero_goal` task 0 went from 0/50 to 50/50. I did not test 4.56.0, so I cannot confirm the version boundary you identified, only that reading `last_hidden_state` makes the result independent of it.\n\nThanks for the quick diagnosis on the issue thread.\n"
+    }
+  ],
+  "issue17": {
+    "url": "https://github.com/H-EmbodVis/TurboVLA/issues/17",
+    "state": "open",
+    "comments": 0,
+    "body": "Dear author and co-authors,\n\n我在复现这个结果的时候，用的4卡3090，batch8，numworkers0，55000步的时候效果还是很差，成功率几乎是0（50个任务的完成率都这样），这是因为完全没收敛造成的吗？在这种卡的情况下或许要训300000万步才能达到你们55000的类似效果吗？还是因为false掉persistent_workers和pin_memory导致的呢？随后附上config及55000步时的输出以供参考。\n\n```yaml\ndatasets:\n  vla_data:\n    dataset_py: lerobot_datasets\n    include_state: true\n    data_root_dir: ${oc.env:ROBOTWIN_DATA_ROOT}\n    data_mix: robotwin_clean_50\n    action_type: abs_qpos\n    action_mode: abs\n    sequential_step_sampling: false\n    per_device_batch_size: 8\n    load_all_data_for_training: true\n    obs_image_size: [224, 224]\n    video_backend: pyav\n    num_workers: 0\n    prefetch_factor: 4\n    persistent_workers: false\n    pin_memory: false\n```\n`100%|██████████| 55000/55000 [37:14:35<00:00,  2.44s/it, data_times=0.688, model_times=1.737]09/16 [16:31:28] INFO     | >> Step 55000, Loss: {'action_dit_loss': 0.008227644488215446, 'mse_score':    train_starvla.py:313                                                            0.0007320002998624529, 'data_time': 0.6878268720174674, 'model_time':                                                          1.7372512349975295, 'learning_rate': 5e-05, 'epoch': 3.2})  `\n    \n另，因RoboTwin迁移到XPolicyLab了，评测时是在XPolicyLab内新写的脚本完成评测的，这是否也会造成评测失败，而不只是模型训练的问题吗？也是这个原因（模型接口为RoboTwin2.0）造成无法在XPolicyLab评测开源的权重模型吗？\n\n期待得到作者们的解答。\n\nYours sincerely\n\n-----------------------------------------------------------------------------------------------------\n二编\n经测试及修正，无论是在transformers为4.56.0或4.57.6的情况下，使用XPolicyLab评测已发布的Checkpoints，其50个任务的成功率还是几乎为0，仅在click_bell上表现出成功，且已发布的Checkpoints表现出过拟合。\n关于训练时global batch为32，55000步还表现出局部强抖动（移动到物体处后开始抖动），而已发布的Checkpoints未表现出抖动，暂时考虑是因为batch及steps均太小，模型完全不收敛导致。也期待能得到作者们的看法。\n"
+  },
+  "dinov3_modeling_file_identical": false,
+  "dinov3_diff": "--- v4.57.0\n+++ v4.57.6\n@@ -499,7 +499,7 @@\n     def get_input_embeddings(self):\n         return self.embeddings.patch_embeddings\n \n-    @check_model_inputs\n+    @check_model_inputs(tie_last_hidden_states=False)\n     @auto_docstring\n     def forward(\n         self,\n"
+}

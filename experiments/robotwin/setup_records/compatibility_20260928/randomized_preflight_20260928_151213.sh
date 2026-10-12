@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+cd /home/jack/TurboVLA
+env RUN_ID=turbovla_release150000_postnorm_randomized_probe2_20260928_151213 ROBOTWIN_TEST_NUM=2 ROBOTWIN_INSTRUCTION_SAMPLE_NUM=100 ROBOTWIN_EVAL_MODE=demo_randomized ROBOTWIN_BASE_PORT=7550 EVALUATION_TMUX_SESSION=turbovla_randcheck_20260928_151213 bash /home/jack/TurboVLA/scripts/robotwin/evaluate_latest_released_model.sh adjust_bottle dump_bin_bigbin

@@ -1,0 +1,28 @@
+{
+  "stage": "completed",
+  "created_at": "2026-09-28T15:15:53.519244+09:00",
+  "tmux_session": "turbovla_release150k_20260928_151553",
+  "queue_script": "/home/jack/TurboVLA/experiments/robotwin/setup_records/compatibility_20260928/benchmark_queue_20260928_151553.sh",
+  "model_revision": "9cdb576ed9c56039b9c1149142ed654e876bad76",
+  "weights": "EMA",
+  "optimizer_steps": 150000,
+  "planned_trials": 1000,
+  "plans": [
+    {
+      "mode": "demo_clean",
+      "run_id": "turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553",
+      "tasks": 50,
+      "trials_per_task": 10,
+      "instruction_sample_num": 100
+    },
+    {
+      "mode": "demo_randomized",
+      "run_id": "turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553",
+      "tasks": 50,
+      "trials_per_task": 10,
+      "instruction_sample_num": 100
+    }
+  ],
+  "note": "Reduced evaluation: 10 rather than the official 100 episodes per task and variant. The official instruction sampling count of 100 is retained.",
+  "completed_at": "2026-09-29T03:10:01.296802+09:00"
+}

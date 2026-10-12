@@ -50,3 +50,12 @@ MUJOCO_LOG.TXT
 
 # Local pretrained models
 /pretrained/
+
+# Local RoboTwin dependency installs and raw profiling samples.
+# Keep validation summaries and evaluation results under version control.
+/experiments/robotwin/setup_records/compatibility_20260928/reference_transformers456/
+/experiments/robotwin/setup_records/compatibility_20260928/reference_wheels/
+/experiments/robotwin/setup_records/affinity_probe_*.json
+/experiments/robotwin/setup_records/active-*.json
+/experiments/robotwin/**/resources.jsonl
+/experiments/robotwin/**/pid

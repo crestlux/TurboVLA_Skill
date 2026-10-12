@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "checked_at": "2026-09-28T14:43:20.314480+09:00",
+  "checkpoint": "/home/jack/TurboVLA/pretrained/converted/turbovla_robotwin_9cdb576e_150k_ema_postnorm/steps_150000_ema_pytorch_model.safetensors",
+  "checkpoint_sha256": "a62501e2f424275bf71a763ccaff90b1c0b94e65b6fc58e69a4e97821171d7d7",
+  "config_sha256": "f8b23eee14290a80a6d49bd64a0a4bbaf07934613f45de78284f2507d62fd164",
+  "statistics_sha256": "43d047178c880affa35fffa39297fc7864b76b6b7dca944e662396c5ac662b65",
+  "observations_sha256": "0f0ec096ffe1fc362675345b3f3c9218d85fe5d7582b4a0766ed373b90215bd8",
+  "transformers_version": "4.56.0",
+  "torch_version": "2.6.0+cu124",
+  "precision": "bfloat16",
+  "samples": 12,
+  "feature_source": "last_hidden_state",
+  "compatibility_profile": "robotwin",
+  "official_source": "experiments/robotwin/setup_records/released_model_20260927/upstream_update_20260927/official_source",
+  "official_core_bitwise_equal": true,
+  "normalized_action_mae": 0.0017877439968287945,
+  "comparison": null,
+  "limitation": "12 in-distribution demonstration observations, not a rollout success estimate."
+}

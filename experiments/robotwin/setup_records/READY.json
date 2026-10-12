@@ -1,0 +1,12 @@
+{
+  "prepared_at": "2026-09-23T09:13:08.179218+00:00",
+  "status": "environment_and_weights_ready",
+  "training_executed": false,
+  "accumulation_patch_applied": false,
+  "repo_commit": "d181f64b22c88c55d8937fb56ac8b09a5011557f",
+  "environment": "/home/jack/miniforge3/envs/turbovla-robotwin",
+  "model_path": "/home/jack/TurboVLA/pretrained/backbones/dinov3-vitl16",
+  "pip_check": "No broken requirements found.",
+  "validation_script_sha256": "9a219f3a349a924e7521382b06085d74ac98d7d56b556ee4dce1394f6ab5ccc0",
+  "dependency_diff_sha256": "5fc2e9892ca41f31ce3788e55b4b76857648d5d7fc1033b49fe481e169094ec4"
+}

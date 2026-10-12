@@ -1,0 +1,156 @@
+--- a/scripts/robotwin/start_eval.sh
++++ b/scripts/robotwin/start_eval.sh
+@@ -129,7 +129,7 @@
+   bash start_eval.sh -m <mode> -n <policy_name> -c <ckpt_path> [options] <tasks...>
+ 
+ Required flags:
+-  -m, --mode              Eval mode (this subset supports demo_clean only)
++  -m, --mode              Eval mode: demo_clean or demo_randomized
+   -n, --name              Policy name (used for log directory naming)
+   -c, --ckpt              Path to the checkpoint file
+ 
+@@ -147,7 +147,7 @@
+ 
+ Examples:
+   bash start_eval.sh -m demo_clean -n test1 -c /path/to/ckpt.pt adjust_bottle
+-  bash start_eval.sh --mode demo_clean --name my_run --ckpt /path/to/ckpt.pt task_list.txt
++  bash start_eval.sh --mode demo_randomized --name my_run --ckpt /path/to/ckpt.pt task_list.txt
+   bash start_eval.sh -m demo_clean -n test1 -c /path/to/ckpt.pt -j 2 adjust_bottle open_laptop
+ 
+ Environment variables (lower priority than flags):
+@@ -455,10 +455,10 @@
+     exit 1
+ fi
+ 
+-if [[ "${TASK_CONFIG}" != "demo_clean" ]]; then
+-    echo "Unsupported mode: ${TASK_CONFIG} (expected demo_clean)" >&2
+-    exit 1
+-fi
++case "${TASK_CONFIG}" in
++    demo_clean|demo_randomized) ;;
++    *) echo "Unsupported mode: ${TASK_CONFIG} (expected demo_clean or demo_randomized)" >&2; exit 1 ;;
++esac
+ 
+ if [[ ! -f "${CKPT_PATH}" ]]; then
+     echo "Checkpoint path does not exist: ${CKPT_PATH}" >&2
+--- a/scripts/robotwin/evaluate_verified_checkpoint.sh
++++ b/scripts/robotwin/evaluate_verified_checkpoint.sh
+@@ -12,10 +12,17 @@
+ shift 2
+ tasks=("$@")
+ if (( ${#tasks[@]} == 0 )); then tasks=(all); fi
++export ROBOTWIN_EVAL_MODE="${ROBOTWIN_EVAL_MODE:-demo_clean}"
++case "${ROBOTWIN_EVAL_MODE}" in
++    demo_clean|demo_randomized) ;;
++    *) echo "Invalid ROBOTWIN_EVAL_MODE: ${ROBOTWIN_EVAL_MODE}" >&2; exit 2 ;;
++esac
+ export ROBOTWIN_TEST_NUM="${ROBOTWIN_TEST_NUM:-10}"
+-export ROBOTWIN_INSTRUCTION_SAMPLE_NUM="${ROBOTWIN_INSTRUCTION_SAMPLE_NUM:-${ROBOTWIN_TEST_NUM}}"
++# Match the official 100-episode instruction pool even in shorter evaluations.
++export ROBOTWIN_INSTRUCTION_SAMPLE_NUM="${ROBOTWIN_INSTRUCTION_SAMPLE_NUM:-100}"
+ [[ "${ROBOTWIN_TEST_NUM}" =~ ^[1-9][0-9]*$ ]] || { echo 'Invalid trial count' >&2; exit 2; }
+-export RUN_ID="${RUN_ID:-turbovla_verified_$(date +%Y%m%d_%H%M%S)}"
++[[ "${ROBOTWIN_INSTRUCTION_SAMPLE_NUM}" =~ ^[1-9][0-9]*$ ]] || { echo 'Invalid instruction sample count' >&2; exit 2; }
++export RUN_ID="${RUN_ID:-turbovla_verified_${ROBOTWIN_EVAL_MODE}_$(date +%Y%m%d_%H%M%S)}"
+ [[ "${RUN_ID}" =~ ^[a-zA-Z0-9_-]+$ ]] || { echo 'Invalid run ID' >&2; exit 2; }
+ export PIPELINE_DIR="${ROBOTWIN_STORE}/pipelines/${RUN_ID}"
+ export ROBOTWIN_LOG_ROOT="${ROBOTWIN_STORE}/evaluation/${RUN_ID}_seed0"
+@@ -40,7 +47,7 @@
+ "${STARVLA_PYTHON}" - "${tasks[@]}" <<'PY'
+ import datetime, hashlib, json, os, re, shutil, subprocess, sys
+ from pathlib import Path
+-import transformers
++import torch, transformers
+ repo=Path(os.environ['TURBOVLA_ROOT']); root=Path(os.environ['PIPELINE_DIR'])
+ checkpoint=Path(os.environ['POLICY_CHECKPOINT']); validation_path=Path(os.environ['VALIDATION_RECORD'])
+ validation=json.loads(validation_path.read_text())
+@@ -53,6 +60,7 @@
+ assert Path(validation['checkpoint']).resolve()==checkpoint
+ assert validation['feature_source']=='last_hidden_state'
+ assert validation['transformers_version']==transformers.__version__
++assert validation['torch_version']==torch.__version__
+ assert validation['comparison']['bitwise_equal']
+ for file,key in [(checkpoint,'checkpoint_sha256'),(checkpoint.parent/'config.yaml','config_sha256'),(checkpoint.parent/'dataset_statistics.json','statistics_sha256')]:
+     assert sha(file)==validation[key],str(file)
+@@ -66,7 +74,7 @@
+           tmux_session=os.environ.get('EVALUATION_TMUX_SESSION'),
+           weights='EMA',checkpoint=str(checkpoint),checkpoint_optimizer_steps=int(re.search(r'steps_(\d+)',checkpoint.name)[1]),
+           evaluation_dir=os.environ['ROBOTWIN_LOG_ROOT'],eval_tasks=50 if tasks==['all'] else len(tasks),
+-          eval_task_names=tasks,eval_trials_per_task=int(os.environ['ROBOTWIN_TEST_NUM']),eval_seed=0,
++          eval_mode=os.environ['ROBOTWIN_EVAL_MODE'],eval_task_names=tasks,eval_trials_per_task=int(os.environ['ROBOTWIN_TEST_NUM']),eval_seed=0,
+           instruction_sample_num=int(os.environ['ROBOTWIN_INSTRUCTION_SAMPLE_NUM']),feature_fix_applied=True,
+           feature_source=validation['feature_source'],compatibility_profile=validation['compatibility_profile'],
+           simulator_commit=simulator['robotwin_commit'],started_at=datetime.datetime.now().astimezone().isoformat())
+@@ -75,7 +83,8 @@
+ for p in [validation_path,Path(os.environ['SIMULATOR_VALIDATION']),checkpoint.parent/'config.yaml',checkpoint.parent/'config.release.yaml',checkpoint.parent/'dataset_statistics.json',checkpoint.parent/'conversion.json']:
+     shutil.copy2(p,destination/p.name)
+ relative=[p.relative_to(repo) for folder in ['turbovla','experiments/robotwin/evaluation','third_party/starvla_runtime/starVLA/model/framework','third_party/starvla_runtime/deployment/model_server'] for p in (repo/folder).rglob('*.py')]
+-relative += [Path('scripts/robotwin')/name for name in ['evaluate_verified_checkpoint.sh','start_eval.sh','eval_task.sh','run_policy_server.sh','summarize_evaluation.py','validate_feature_compatibility.py']]
++relative += [Path('scripts/robotwin')/name for name in ['evaluate_verified_checkpoint.sh','evaluate_released_model.sh','evaluate_latest_released_model.sh','start_eval.sh','eval_task.sh','run_policy_server.sh','summarize_evaluation.py','validate_feature_compatibility.py']]
++relative += [Path('experiments/robotwin/evaluation/deploy_policy.yml')]
+ for p in relative:
+     target=destination/'source'/p; target.parent.mkdir(parents=True,exist_ok=True); shutil.copy2(repo/p,target)
+ shutil.copy2(Path(os.environ['ROBOTWIN_PATH'])/'script/eval_policy.py',destination/'simulator_eval_policy.py')
+@@ -112,11 +121,11 @@
+ git -C "${ROBOTWIN_PATH}" diff > "${PIPELINE_DIR}/provenance/robotwin.patch"
+ stage=evaluating
+ write_status "${stage}"
+-bash "${SCRIPT_DIR}/start_eval.sh" --mode demo_clean --name "${RUN_ID}" --ckpt "${POLICY_CHECKPOINT}" \
++bash "${SCRIPT_DIR}/start_eval.sh" --mode "${ROBOTWIN_EVAL_MODE}" --name "${RUN_ID}" --ckpt "${POLICY_CHECKPOINT}" \
+     --jobs-per-gpu 1 --base-port "${ROBOTWIN_BASE_PORT}" "${tasks[@]}" 2>&1 | tee "${PIPELINE_DIR}/evaluation.log"
+ stage=summarizing
+ write_status "${stage}"
+-summary_args=(--trials "${ROBOTWIN_TEST_NUM}")
++summary_args=(--trials "${ROBOTWIN_TEST_NUM}" --mode "${ROBOTWIN_EVAL_MODE}")
+ if [[ "${tasks[*]}" != all ]]; then summary_args+=(--tasks "${tasks[@]}"); fi
+ "${STARVLA_PYTHON}" "${SCRIPT_DIR}/summarize_evaluation.py" "${ROBOTWIN_LOG_ROOT}" "${summary_args[@]}"
+ stage=completed
+--- a/scripts/robotwin/summarize_evaluation.py
++++ b/scripts/robotwin/summarize_evaluation.py
+@@ -13,6 +13,7 @@
+     parser.add_argument("log_dir", type=Path)
+     parser.add_argument("--trials", type=int, default=100)
+     parser.add_argument("--tasks", nargs="+")
++    parser.add_argument("--mode", choices=["demo_clean", "demo_randomized"], default="demo_clean")
+     args = parser.parse_args()
+     repo = Path(__file__).resolve().parents[2]
+     tree = ast.parse((repo / "experiments/robotwin/data_registry/data_config.py").read_text())
+@@ -25,7 +26,7 @@
+         raise ValueError("Invalid trials or task list")
+     rows = []
+     for task in tasks:
+-        logs = list(args.log_dir.glob(f"{task}_demo_clean_*_eval.log"))
++        logs = list(args.log_dir.glob(f"{task}_{args.mode}_*_eval.log"))
+         if len(logs) != 1:
+             raise RuntimeError(f"{task}: expected one log, found {logs}")
+         text = re.sub(r"\x1b\[[0-?]*[ -/]*[@-~]", "", logs[0].read_text(errors="replace"))
+@@ -41,7 +42,7 @@
+         writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+         writer.writeheader()
+         writer.writerows(rows)
+-    summary = dict(tasks=len(rows), trials=sum(row["trials"] for row in rows),
++    summary = dict(mode=args.mode, tasks=len(rows), trials=sum(row["trials"] for row in rows),
+                    mean_success_pct=sum(row["success_rate_pct"] for row in rows) / len(rows))
+     (args.log_dir / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+     print(json.dumps(summary, indent=2))
+--- a/scripts/robotwin/pipeline_status.py
++++ b/scripts/robotwin/pipeline_status.py
+@@ -58,7 +58,8 @@
+         status['evaluation_summary'] = json.loads(summary.read_text())
+     else:
+         results = []
+-        for path in sorted(Path(status['evaluation_dir']).glob('*_demo_clean_*_eval.log')):
++        mode = status.get('eval_mode', 'demo_clean')
++        for path in sorted(Path(status['evaluation_dir']).glob(f'*_{mode}_*_eval.log')):
+             with path.open('rb') as handle:
+                 handle.seek(max(0, path.stat().st_size - 65536))
+                 text = handle.read().decode('utf-8', errors='replace')
+@@ -66,7 +67,7 @@
+             counts = re.findall(r'Success rate:\s*(\d+)\s*/\s*(\d+)', text)
+             if counts:
+                 successes, trials = map(int, counts[-1])
+-                results.append(dict(task=path.name.split('_demo_clean_')[0],
++                results.append(dict(task=path.name.split(f'_{mode}_')[0],
+                                     successes=successes, trials=trials,
+                                     complete=('Data has been saved to' in text
+                                               and trials == status['eval_trials_per_task'])))

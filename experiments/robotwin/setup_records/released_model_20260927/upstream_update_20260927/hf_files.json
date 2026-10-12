@@ -1,0 +1,41 @@
+[
+  {
+    "type": "file",
+    "oid": "c48bb959fa7c743b5611ba37feb56eb2d1df8cc7",
+    "size": 868377428,
+    "lfs": {
+      "oid": "5fae4c5a51fae4ffd1aa1d41474b24eea39a95a7111d23c7173f012ac542fdff",
+      "size": 868377428,
+      "pointerSize": 134
+    },
+    "xetHash": "673e5f3181743af969633c8ca956e5515d589a15cf34004ea2b955fa5e787d9e",
+    "path": "checkpoints/robotwin/steps_150000_ema_pytorch_model.pt",
+    "lastCommit": {
+      "id": "4a6d187d88e2cc8d6198b53883df2e444a9a0e33",
+      "title": "Replace RoboTwin checkpoint with task-balanced 150k EMA",
+      "date": "2026-09-27T14:10:22.000Z"
+    },
+    "securityFileStatus": {
+      "status": "queued",
+      "protectAiScan": {
+        "status": "queued"
+      },
+      "avScan": {
+        "status": "unscanned",
+        "message": ""
+      },
+      "pickleImportScan": {
+        "status": "unscanned"
+      },
+      "virusTotalScan": {
+        "status": "unscanned",
+        "message": "File not scanned in VirusTotal",
+        "reportLink": "https://www.virustotal.com/gui/file/5fae4c5a51fae4ffd1aa1d41474b24eea39a95a7111d23c7173f012ac542fdff?utm_source=huggingface"
+      },
+      "jFrogScan": {
+        "status": "queued",
+        "message": ""
+      }
+    }
+  }
+]

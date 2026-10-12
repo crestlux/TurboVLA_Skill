@@ -1,0 +1,67 @@
+--- a/third_party/starvla_runtime/starVLA/training/train_starvla.py
++++ b/third_party/starvla_runtime/starVLA/training/train_starvla.py
+@@ -25,7 +25,7 @@
+ import wandb
+ from accelerate import Accelerator, DeepSpeedPlugin
+ from accelerate.logging import get_logger
+-from accelerate.utils import set_seed
++from accelerate.utils import GradientAccumulationPlugin, set_seed
+ from omegaconf import OmegaConf
+ from torch.utils.data import DataLoader
+ from tqdm import tqdm
+@@ -77,7 +77,11 @@
+     deepspeed_plugin = DeepSpeedPlugin() if use_deepspeed else None
+     accelerator = Accelerator(
+         deepspeed_plugin=deepspeed_plugin,
+-        gradient_accumulation_steps=gradient_accumulation_steps,
++        gradient_accumulation_plugin=GradientAccumulationPlugin(
++            num_steps=gradient_accumulation_steps,
++            sync_each_batch=use_deepspeed,
++            sync_with_dataloader=False,
++        ),
+     )
+     accelerator.print(accelerator.state)
+     return accelerator
+@@ -349,6 +353,9 @@
+             step_metrics = self._train_step(batch_vla)
+             t_end_model = time.perf_counter()
+ 
++            if not self.accelerator.sync_gradients:
++                continue
++
+             if self.accelerator.sync_gradients:
+                 progress_bar.update(1)
+                 self.completed_steps += 1
+@@ -407,8 +414,6 @@
+     def _train_step(self, batch_vla, batch_vlm=None):
+         """Execute single training step."""
+         with self.accelerator.accumulate(self.model):
+-            self.optimizer.zero_grad()
+-
+             with torch.autocast("cuda", dtype=torch.bfloat16):
+                 output_dict = self.model.forward(batch_vla)
+                 action_loss = output_dict["action_loss"]
+@@ -416,11 +421,13 @@
+ 
+             self.accelerator.backward(total_loss)
+ 
+-            if self.config.trainer.gradient_clipping is not None:
++            if self.accelerator.sync_gradients and self.config.trainer.gradient_clipping is not None:
+                 self.accelerator.clip_grad_norm_(self.model.parameters(), self.config.trainer.gradient_clipping)
+ 
+             self.optimizer.step()
+-            self.lr_scheduler.step()
++            if self.accelerator.sync_gradients:
++                self.lr_scheduler.step()
++            self.optimizer.zero_grad()
+ 
+         return {
+             "action_dit_loss": action_loss.item(),
+@@ -459,6 +466,7 @@
+     logger.info("✅ Configuration wrapped for access tracking")
+ 
+     output_dir = setup_directories(cfg=cfg)
++    set_seed(int(getattr(cfg, "seed", 42)))
+     vla = build_framework(cfg)
+     vla_train_dataloader = prepare_data(cfg=cfg, accelerator=accelerator, output_dir=output_dir)
+     optimizer, lr_scheduler = setup_optimizer_and_scheduler(model=vla, cfg=cfg)

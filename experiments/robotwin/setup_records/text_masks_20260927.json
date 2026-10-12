@@ -1,0 +1,30 @@
+{
+  "recorded_at": "2026-09-27T02:57:48.576193+09:00",
+  "status": "passed",
+  "equality_cases": 4,
+  "bitwise_equal": true,
+  "scope": "tokenization and masks only; concurrent training prevents standalone throughput claims",
+  "peak_allocated_bytes": 1066496,
+  "measurements": {
+    "1": {
+      "cuda_scalar_masks": {
+        "median_ms": 6.854069419205189,
+        "mean_ms": 13.805222138762474
+      },
+      "cpu_masks_then_transfer": {
+        "median_ms": 1.8621785566210747,
+        "mean_ms": 5.449970563252767
+      }
+    },
+    "12": {
+      "cuda_scalar_masks": {
+        "median_ms": 51.854235120117664,
+        "mean_ms": 115.36164128532012
+      },
+      "cpu_masks_then_transfer": {
+        "median_ms": 4.761167801916599,
+        "mean_ms": 6.659683274726073
+      }
+    }
+  }
+}

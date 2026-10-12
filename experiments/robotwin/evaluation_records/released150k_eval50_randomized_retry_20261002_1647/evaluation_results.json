@@ -1,0 +1,716 @@
+{
+  "status": "completed",
+  "model": {
+    "name": "TurboVLA public 150k EMA",
+    "weights": "EMA",
+    "optimizer_steps": 150000,
+    "training_performed_in_this_run": false,
+    "huggingface_revision": "9cdb576ed9c56039b9c1149142ed654e876bad76",
+    "checkpoint": "/home/jack/TurboVLA/pretrained/converted/turbovla_robotwin_9cdb576e_150k_ema_postnorm/steps_150000_ema_pytorch_model.safetensors",
+    "checkpoint_sha256": "a62501e2f424275bf71a763ccaff90b1c0b94e65b6fc58e69a4e97821171d7d7",
+    "config": "/data/jack/robotwin2_turbovla/pipelines/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/provenance/config.yaml",
+    "config_sha256": "f8b23eee14290a80a6d49bd64a0a4bbaf07934613f45de78284f2507d62fd164",
+    "statistics": "/data/jack/robotwin2_turbovla/pipelines/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/provenance/dataset_statistics.json",
+    "statistics_sha256": "43d047178c880affa35fffa39297fc7864b76b6b7dca944e662396c5ac662b65",
+    "feature_source": "last_hidden_state",
+    "compatibility_profile": "robotwin"
+  },
+  "protocol": {
+    "type": "closed_loop_simulator_rollout",
+    "simulator": "RoboTwin 2.0",
+    "embodiment": "aloha-agilex",
+    "simulator_path": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5",
+    "simulator_commit": "bf44be51cf5717a5595ce59447f2cf5263d2aa95",
+    "policy_conda_env": "/home/jack/miniforge3/envs/turbovla-robotwin",
+    "simulator_conda_env": "/home/jack/miniforge3/envs/robotwin-turbovla",
+    "torch_version": "2.6.0+cu124",
+    "transformers_version": "4.57.6",
+    "precision": "bfloat16",
+    "task_count": 50,
+    "trials_per_task_per_variant": 50,
+    "instruction_type": "unseen",
+    "instruction_sample_num": 100,
+    "evaluation_seed": 0,
+    "initial_candidate_scene_seed": 100000,
+    "scene_selection": "Increment scene seed; accept only stable scenes with successful expert planning and check_success. Reset accepted scene before policy rollout.",
+    "instruction_selection": "Sample from 100 generated unseen descriptions for the accepted scene; actual selected instruction is logged per episode.",
+    "language_reproducibility_note": "Python random is explicitly seeded per task with 20260930; previous eval10 did not fix Python random.",
+    "observations": {
+      "rgb_views": [
+        "head",
+        "left_wrist",
+        "right_wrist"
+      ],
+      "image_size_hw": [
+        224,
+        224
+      ],
+      "state_dim": 14,
+      "language": true
+    },
+    "action": {
+      "action_dim": 14,
+      "meaning": "12 absolute arm joint positions plus 2 gripper controls",
+      "action_mode": "abs",
+      "normalization_mode": "min_max",
+      "unnorm_key": "new_embodiment",
+      "binary_threshold": 0.49,
+      "horizon": 50,
+      "temporal_ensemble": true,
+      "ensemble_history": 50,
+      "adaptive_ensemble_alpha": 0.1,
+      "policy_query_interval_control_steps": 1,
+      "executed_actions_per_query": 1,
+      "ensemble_method": "Weighted average of overlapping current-step predictions, using exp(alpha * cosine_similarity_to_latest)."
+    },
+    "success_definition": "Binary environment check_success/eval_success within the task control-step limit. Stop on success or step limit.",
+    "task_description_note": "Korean descriptions summarize intended tasks; the simulator predicate, not a human visual rating, determines success.",
+    "predicate_caveat": "shake_bottle and shake_bottle_horizontally check bottle height only, not completed shaking cycles.",
+    "metric": "successes / graded_trials * 100; equal trial counts make macro and micro averages equal.",
+    "scheduling": "Clean preserved from previous completed run (3 jobs/GPU); Randomized restarted on 2 GPUs, 2 jobs/GPU.",
+    "randomized_table_height_offset_m": [
+      -0.03,
+      0.0
+    ],
+    "deploy_config": "/data/jack/robotwin2_turbovla/pipelines/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/provenance/source/experiments/robotwin/evaluation/deploy_policy.yml",
+    "scene_config_sources": {
+      "demo_clean": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/task_config/demo_clean.yml",
+      "demo_randomized": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/task_config/demo_randomized.yml"
+    },
+    "episode_num_config_note": "ROBOTWIN_TEST_NUM=50 controls this evaluation; instruction pool stays 100.",
+    "evaluation_driver": "/data/jack/robotwin2_turbovla/pipelines/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/provenance/simulator_eval_policy.py",
+    "python_random_seed": 20260930,
+    "python_hash_seed": 0
+  },
+  "started_at": "2026-10-02T16:46:49.658537+09:00",
+  "variants": [
+    {
+      "mode": "demo_clean",
+      "successes": 2201,
+      "trials": 2500,
+      "success_rate_pct": 88.04,
+      "tasks": [
+        {
+          "task": "adjust_bottle",
+          "successes": "50",
+          "trials": "50",
+          "success_rate_pct": "100.0"
+        },
+        {
+          "task": "beat_block_hammer",
+          "successes": "48",
+          "trials": "50",
+          "success_rate_pct": "96.0"
+        },
+        {
+          "task": "blocks_ranking_rgb",
+          "successes": "39",
+          "trials": "50",
+          "success_rate_pct": "78.0"
+        },
+        {
+          "task": "blocks_ranking_size",
+          "successes": "39",
+          "trials": "50",
+          "success_rate_pct": "78.0"
+        },
+        {
+          "task": "click_alarmclock",
+          "successes": "34",
+          "trials": "50",
+          "success_rate_pct": "68.0"
+        },
+        {
+          "task": "click_bell",
+          "successes": "50",
+          "trials": "50",
+          "success_rate_pct": "100.0"
+        },
+        {
+          "task": "dump_bin_bigbin",
+          "successes": "49",
+          "trials": "50",
+          "success_rate_pct": "98.0"
+        },
+        {
+          "task": "grab_roller",
+          "successes": "50",
+          "trials": "50",
+          "success_rate_pct": "100.0"
+        },
+        {
+          "task": "handover_block",
+          "successes": "45",
+          "trials": "50",
+          "success_rate_pct": "90.0"
+        },
+        {
+          "task": "handover_mic",
+          "successes": "48",
+          "trials": "50",
+          "success_rate_pct": "96.0"
+        },
+        {
+          "task": "hanging_mug",
+          "successes": "30",
+          "trials": "50",
+          "success_rate_pct": "60.0"
+        },
+        {
+          "task": "lift_pot",
+          "successes": "50",
+          "trials": "50",
+          "success_rate_pct": "100.0"
+        },
+        {
+          "task": "move_can_pot",
+          "successes": "49",
+          "trials": "50",
+          "success_rate_pct": "98.0"
+        },
+        {
+          "task": "move_pillbottle_pad",
+          "successes": "49",
+          "trials": "50",
+          "success_rate_pct": "98.0"
+        },
+        {
+          "task": "move_playingcard_away",
+          "successes": "49",
+          "trials": "50",
+          "success_rate_pct": "98.0"
+        },
+        {
+          "task": "move_stapler_pad",
+          "successes": "36",
+          "trials": "50",
+          "success_rate_pct": "72.0"
+        },
+        {
+          "task": "open_laptop",
+          "successes": "47",
+          "trials": "50",
+          "success_rate_pct": "94.0"
+        },
+        {
+          "task": "open_microwave",
+          "successes": "39",
+          "trials": "50",
+          "success_rate_pct": "78.0"
+        },
+        {
+          "task": "pick_diverse_bottles",
+          "successes": "40",
+          "trials": "50",
+          "success_rate_pct": "80.0"
+        },
+        {
+          "task": "pick_dual_bottles",
+          "successes": "47",
+          "trials": "50",
+          "success_rate_pct": "94.0"
+        },
+        {
+          "task": "place_a2b_left",
+          "successes": "34",
+          "trials": "50",
+          "success_rate_pct": "68.0"
+        },
+        {
+          "task": "place_a2b_right",
+          "successes": "31",
+          "trials": "50",
+          "success_rate_pct": "62.0"
+        },
+        {
+          "task": "place_bread_basket",
+          "successes": "45",
+          "trials": "50",
+          "success_rate_pct": "90.0"
+        },
+        {
+          "task": "place_bread_skillet",
+          "successes": "47",
+          "trials": "50",
+          "success_rate_pct": "94.0"
+        },
+        {
+          "task": "place_burger_fries",
+          "successes": "48",
+          "trials": "50",
+          "success_rate_pct": "96.0"
+        },
+        {
+          "task": "place_can_basket",
+          "successes": "34",
+          "trials": "50",
+          "success_rate_pct": "68.0"
+        },
+        {
+          "task": "place_cans_plasticbox",
+          "successes": "50",
+          "trials": "50",
+          "success_rate_pct": "100.0"
+        },
+        {
+          "task": "place_container_plate",
+          "successes": "48",
+          "trials": "50",
+          "success_rate_pct": "96.0"
+        },
+        {
+          "task": "place_dual_shoes",
+          "successes": "40",
+          "trials": "50",
+          "success_rate_pct": "80.0"
+        },
+        {
+          "task": "place_empty_cup",
+          "successes": "50",
+          "trials": "50",
+          "success_rate_pct": "100.0"
+        },
+        {
+          "task": "place_fan",
+          "successes": "48",
+          "trials": "50",
+          "success_rate_pct": "96.0"
+        },
+        {
+          "task": "place_mouse_pad",
+          "successes": "44",
+          "trials": "50",
+          "success_rate_pct": "88.0"
+        },
+        {
+          "task": "place_object_basket",
+          "successes": "44",
+          "trials": "50",
+          "success_rate_pct": "88.0"
+        },
+        {
+          "task": "place_object_scale",
+          "successes": "48",
+          "trials": "50",
+          "success_rate_pct": "96.0"
+        },
+        {
+          "task": "place_object_stand",
+          "successes": "48",
+          "trials": "50",
+          "success_rate_pct": "96.0"
+        },
+        {
+          "task": "place_phone_stand",
+          "successes": "35",
+          "trials": "50",
+          "success_rate_pct": "70.0"
+        },
+        {
+          "task": "place_shoe",
+          "successes": "50",
+          "trials": "50",
+          "success_rate_pct": "100.0"
+        },
+        {
+          "task": "press_stapler",
+          "successes": "47",
+          "trials": "50",
+          "success_rate_pct": "94.0"
+        },
+        {
+          "task": "put_bottles_dustbin",
+          "successes": "39",
+          "trials": "50",
+          "success_rate_pct": "78.0"
+        },
+        {
+          "task": "put_object_cabinet",
+          "successes": "32",
+          "trials": "50",
+          "success_rate_pct": "64.0"
+        },
+        {
+          "task": "rotate_qrcode",
+          "successes": "48",
+          "trials": "50",
+          "success_rate_pct": "96.0"
+        },
+        {
+          "task": "scan_object",
+          "successes": "45",
+          "trials": "50",
+          "success_rate_pct": "90.0"
+        },
+        {
+          "task": "shake_bottle_horizontally",
+          "successes": "50",
+          "trials": "50",
+          "success_rate_pct": "100.0"
+        },
+        {
+          "task": "shake_bottle",
+          "successes": "50",
+          "trials": "50",
+          "success_rate_pct": "100.0"
+        },
+        {
+          "task": "stack_blocks_three",
+          "successes": "46",
+          "trials": "50",
+          "success_rate_pct": "92.0"
+        },
+        {
+          "task": "stack_blocks_two",
+          "successes": "50",
+          "trials": "50",
+          "success_rate_pct": "100.0"
+        },
+        {
+          "task": "stack_bowls_three",
+          "successes": "44",
+          "trials": "50",
+          "success_rate_pct": "88.0"
+        },
+        {
+          "task": "stack_bowls_two",
+          "successes": "47",
+          "trials": "50",
+          "success_rate_pct": "94.0"
+        },
+        {
+          "task": "stamp_seal",
+          "successes": "42",
+          "trials": "50",
+          "success_rate_pct": "84.0"
+        },
+        {
+          "task": "turn_switch",
+          "successes": "29",
+          "trials": "50",
+          "success_rate_pct": "58.0"
+        }
+      ],
+      "evaluation_dir": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150k_eval50_demo_clean_20261001_0033_seed0",
+      "resources": "/home/jack/TurboVLA/experiments/robotwin/evaluation_records/released150k_eval50_20261001_0033/demo_clean/summary.json"
+    },
+    {
+      "mode": "demo_randomized",
+      "successes": 2208,
+      "trials": 2500,
+      "success_rate_pct": 88.32,
+      "tasks": [
+        {
+          "task": "adjust_bottle",
+          "successes": "50",
+          "trials": "50",
+          "success_rate_pct": "100.0"
+        },
+        {
+          "task": "beat_block_hammer",
+          "successes": "47",
+          "trials": "50",
+          "success_rate_pct": "94.0"
+        },
+        {
+          "task": "blocks_ranking_rgb",
+          "successes": "44",
+          "trials": "50",
+          "success_rate_pct": "88.0"
+        },
+        {
+          "task": "blocks_ranking_size",
+          "successes": "39",
+          "trials": "50",
+          "success_rate_pct": "78.0"
+        },
+        {
+          "task": "click_alarmclock",
+          "successes": "40",
+          "trials": "50",
+          "success_rate_pct": "80.0"
+        },
+        {
+          "task": "click_bell",
+          "successes": "49",
+          "trials": "50",
+          "success_rate_pct": "98.0"
+        },
+        {
+          "task": "dump_bin_bigbin",
+          "successes": "48",
+          "trials": "50",
+          "success_rate_pct": "96.0"
+        },
+        {
+          "task": "grab_roller",
+          "successes": "50",
+          "trials": "50",
+          "success_rate_pct": "100.0"
+        },
+        {
+          "task": "handover_block",
+          "successes": "39",
+          "trials": "50",
+          "success_rate_pct": "78.0"
+        },
+        {
+          "task": "handover_mic",
+          "successes": "49",
+          "trials": "50",
+          "success_rate_pct": "98.0"
+        },
+        {
+          "task": "hanging_mug",
+          "successes": "34",
+          "trials": "50",
+          "success_rate_pct": "68.0"
+        },
+        {
+          "task": "lift_pot",
+          "successes": "50",
+          "trials": "50",
+          "success_rate_pct": "100.0"
+        },
+        {
+          "task": "move_can_pot",
+          "successes": "43",
+          "trials": "50",
+          "success_rate_pct": "86.0"
+        },
+        {
+          "task": "move_pillbottle_pad",
+          "successes": "48",
+          "trials": "50",
+          "success_rate_pct": "96.0"
+        },
+        {
+          "task": "move_playingcard_away",
+          "successes": "47",
+          "trials": "50",
+          "success_rate_pct": "94.0"
+        },
+        {
+          "task": "move_stapler_pad",
+          "successes": "37",
+          "trials": "50",
+          "success_rate_pct": "74.0"
+        },
+        {
+          "task": "open_laptop",
+          "successes": "49",
+          "trials": "50",
+          "success_rate_pct": "98.0"
+        },
+        {
+          "task": "open_microwave",
+          "successes": "46",
+          "trials": "50",
+          "success_rate_pct": "92.0"
+        },
+        {
+          "task": "pick_diverse_bottles",
+          "successes": "41",
+          "trials": "50",
+          "success_rate_pct": "82.0"
+        },
+        {
+          "task": "pick_dual_bottles",
+          "successes": "45",
+          "trials": "50",
+          "success_rate_pct": "90.0"
+        },
+        {
+          "task": "place_a2b_left",
+          "successes": "33",
+          "trials": "50",
+          "success_rate_pct": "66.0"
+        },
+        {
+          "task": "place_a2b_right",
+          "successes": "34",
+          "trials": "50",
+          "success_rate_pct": "68.0"
+        },
+        {
+          "task": "place_bread_basket",
+          "successes": "39",
+          "trials": "50",
+          "success_rate_pct": "78.0"
+        },
+        {
+          "task": "place_bread_skillet",
+          "successes": "41",
+          "trials": "50",
+          "success_rate_pct": "82.0"
+        },
+        {
+          "task": "place_burger_fries",
+          "successes": "49",
+          "trials": "50",
+          "success_rate_pct": "98.0"
+        },
+        {
+          "task": "place_can_basket",
+          "successes": "39",
+          "trials": "50",
+          "success_rate_pct": "78.0"
+        },
+        {
+          "task": "place_cans_plasticbox",
+          "successes": "50",
+          "trials": "50",
+          "success_rate_pct": "100.0"
+        },
+        {
+          "task": "place_container_plate",
+          "successes": "50",
+          "trials": "50",
+          "success_rate_pct": "100.0"
+        },
+        {
+          "task": "place_dual_shoes",
+          "successes": "36",
+          "trials": "50",
+          "success_rate_pct": "72.0"
+        },
+        {
+          "task": "place_empty_cup",
+          "successes": "50",
+          "trials": "50",
+          "success_rate_pct": "100.0"
+        },
+        {
+          "task": "place_fan",
+          "successes": "50",
+          "trials": "50",
+          "success_rate_pct": "100.0"
+        },
+        {
+          "task": "place_mouse_pad",
+          "successes": "41",
+          "trials": "50",
+          "success_rate_pct": "82.0"
+        },
+        {
+          "task": "place_object_basket",
+          "successes": "39",
+          "trials": "50",
+          "success_rate_pct": "78.0"
+        },
+        {
+          "task": "place_object_scale",
+          "successes": "42",
+          "trials": "50",
+          "success_rate_pct": "84.0"
+        },
+        {
+          "task": "place_object_stand",
+          "successes": "50",
+          "trials": "50",
+          "success_rate_pct": "100.0"
+        },
+        {
+          "task": "place_phone_stand",
+          "successes": "46",
+          "trials": "50",
+          "success_rate_pct": "92.0"
+        },
+        {
+          "task": "place_shoe",
+          "successes": "50",
+          "trials": "50",
+          "success_rate_pct": "100.0"
+        },
+        {
+          "task": "press_stapler",
+          "successes": "49",
+          "trials": "50",
+          "success_rate_pct": "98.0"
+        },
+        {
+          "task": "put_bottles_dustbin",
+          "successes": "39",
+          "trials": "50",
+          "success_rate_pct": "78.0"
+        },
+        {
+          "task": "put_object_cabinet",
+          "successes": "29",
+          "trials": "50",
+          "success_rate_pct": "58.0"
+        },
+        {
+          "task": "rotate_qrcode",
+          "successes": "46",
+          "trials": "50",
+          "success_rate_pct": "92.0"
+        },
+        {
+          "task": "scan_object",
+          "successes": "47",
+          "trials": "50",
+          "success_rate_pct": "94.0"
+        },
+        {
+          "task": "shake_bottle_horizontally",
+          "successes": "49",
+          "trials": "50",
+          "success_rate_pct": "98.0"
+        },
+        {
+          "task": "shake_bottle",
+          "successes": "49",
+          "trials": "50",
+          "success_rate_pct": "98.0"
+        },
+        {
+          "task": "stack_blocks_three",
+          "successes": "42",
+          "trials": "50",
+          "success_rate_pct": "84.0"
+        },
+        {
+          "task": "stack_blocks_two",
+          "successes": "49",
+          "trials": "50",
+          "success_rate_pct": "98.0"
+        },
+        {
+          "task": "stack_bowls_three",
+          "successes": "42",
+          "trials": "50",
+          "success_rate_pct": "84.0"
+        },
+        {
+          "task": "stack_bowls_two",
+          "successes": "50",
+          "trials": "50",
+          "success_rate_pct": "100.0"
+        },
+        {
+          "task": "stamp_seal",
+          "successes": "47",
+          "trials": "50",
+          "success_rate_pct": "94.0"
+        },
+        {
+          "task": "turn_switch",
+          "successes": "36",
+          "trials": "50",
+          "success_rate_pct": "72.0"
+        }
+      ],
+      "evaluation_dir": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150k_eval50_randomized_retry_20261002_1647_seed0",
+      "resources": "/home/jack/TurboVLA/experiments/robotwin/evaluation_records/released150k_eval50_randomized_retry_20261002_1647/demo_randomized/summary.json"
+    }
+  ],
+  "preserved_clean_source": "/home/jack/TurboVLA/experiments/robotwin/evaluation_records/released150k_eval50_20261001_0033/evaluation_results.json",
+  "rejected_randomized_source": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150k_eval50_demo_randomized_20261001_0033_seed0",
+  "finished_at": "2026-10-03T12:21:56.661070+09:00",
+  "overall": {
+    "successes": 4409,
+    "trials": 5000,
+    "success_rate_pct": 88.18
+  }
+}

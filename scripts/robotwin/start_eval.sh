@@ -129,7 +129,7 @@ Usage:
   bash start_eval.sh -m <mode> -n <policy_name> -c <ckpt_path> [options] <tasks...>
 
 Required flags:
-  -m, --mode              Eval mode (this subset supports demo_clean only)
+  -m, --mode              Eval mode: demo_clean or demo_randomized
   -n, --name              Policy name (used for log directory naming)
   -c, --ckpt              Path to the checkpoint file
 
@@ -147,7 +147,7 @@ Optional flags:
 
 Examples:
   bash start_eval.sh -m demo_clean -n test1 -c /path/to/ckpt.pt adjust_bottle
-  bash start_eval.sh --mode demo_clean --name my_run --ckpt /path/to/ckpt.pt task_list.txt
+  bash start_eval.sh --mode demo_randomized --name my_run --ckpt /path/to/ckpt.pt task_list.txt
   bash start_eval.sh -m demo_clean -n test1 -c /path/to/ckpt.pt -j 2 adjust_bottle open_laptop
 
 Environment variables (lower priority than flags):
@@ -455,10 +455,10 @@ if [[ -z "${TASK_CONFIG}" || -z "${POLICY_NAME}" || -z "${CKPT_PATH}" ]]; then
     exit 1
 fi
 
-if [[ "${TASK_CONFIG}" != "demo_clean" ]]; then
-    echo "Unsupported mode: ${TASK_CONFIG} (expected demo_clean)" >&2
-    exit 1
-fi
+case "${TASK_CONFIG}" in
+    demo_clean|demo_randomized) ;;
+    *) echo "Unsupported mode: ${TASK_CONFIG} (expected demo_clean or demo_randomized)" >&2; exit 1 ;;
+esac
 
 if [[ ! -f "${CKPT_PATH}" ]]; then
     echo "Checkpoint path does not exist: ${CKPT_PATH}" >&2

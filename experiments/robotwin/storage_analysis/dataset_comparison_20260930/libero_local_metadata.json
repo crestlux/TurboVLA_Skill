@@ -1,0 +1,173 @@
+{
+  "checked_at": "2026-09-30T11:57:02.448912+09:00",
+  "scope": "Local four no_noops RLDS suites used for TurboVLA training; excludes libero_90, original HDF5, other conversions, and caches.",
+  "tasks": 40,
+  "episodes": 1693,
+  "transitions": 273465,
+  "rgb_views": 2,
+  "all_camera_frames": 546930,
+  "tfrecord_bytes": 10230648737,
+  "tfrecord_shards": 96,
+  "transition_count_source": "/home/jack/TurboVLA/experiments/libero/configs/libero_all4_stats.json",
+  "episode_count_method": "Sum dataset_info.json split shardLengths; cross-checked normalization statistics metadata.",
+  "size_method": "Sum actual TFRecord file lengths (stat); not allocation, duplicate source files, or simulator assets.",
+  "validation_scope": "Metadata and file sizes; no full TFRecord/image scan in this comparison.",
+  "suites": [
+    {
+      "suite": "libero_10_no_noops",
+      "tasks": 10,
+      "episodes": 379,
+      "transitions": 101469,
+      "mean_episode_steps": 267.7282321899736,
+      "tfrecord_shards": 32,
+      "tfrecord_bytes": 3656805090,
+      "dataset_dir": "/data/jack/libero_datasets/libero_10_no_noops/1.0.0",
+      "dataset_info_json": "/data/jack/libero_datasets/libero_10_no_noops/1.0.0/dataset_info.json",
+      "features_json": "/data/jack/libero_datasets/libero_10_no_noops/1.0.0/features.json",
+      "observation_images": {
+        "image": {
+          "shape_hwc": [
+            256,
+            256,
+            3
+          ],
+          "encoding": "jpeg"
+        },
+        "wrist_image": {
+          "shape_hwc": [
+            256,
+            256,
+            3
+          ],
+          "encoding": "jpeg"
+        }
+      },
+      "state_shape": [
+        8
+      ],
+      "joint_state_shape": [
+        7
+      ],
+      "action_shape": [
+        7
+      ]
+    },
+    {
+      "suite": "libero_goal_no_noops",
+      "tasks": 10,
+      "episodes": 428,
+      "transitions": 52042,
+      "mean_episode_steps": 121.59345794392523,
+      "tfrecord_shards": 16,
+      "tfrecord_bytes": 1841898674,
+      "dataset_dir": "/data/jack/libero_datasets/libero_goal_no_noops/1.0.0",
+      "dataset_info_json": "/data/jack/libero_datasets/libero_goal_no_noops/1.0.0/dataset_info.json",
+      "features_json": "/data/jack/libero_datasets/libero_goal_no_noops/1.0.0/features.json",
+      "observation_images": {
+        "image": {
+          "shape_hwc": [
+            256,
+            256,
+            3
+          ],
+          "encoding": "jpeg"
+        },
+        "wrist_image": {
+          "shape_hwc": [
+            256,
+            256,
+            3
+          ],
+          "encoding": "jpeg"
+        }
+      },
+      "state_shape": [
+        8
+      ],
+      "joint_state_shape": [
+        7
+      ],
+      "action_shape": [
+        7
+      ]
+    },
+    {
+      "suite": "libero_object_no_noops",
+      "tasks": 10,
+      "episodes": 454,
+      "transitions": 66984,
+      "mean_episode_steps": 147.5418502202643,
+      "tfrecord_shards": 32,
+      "tfrecord_bytes": 2817318423,
+      "dataset_dir": "/data/jack/libero_datasets/libero_object_no_noops/1.0.0",
+      "dataset_info_json": "/data/jack/libero_datasets/libero_object_no_noops/1.0.0/dataset_info.json",
+      "features_json": "/data/jack/libero_datasets/libero_object_no_noops/1.0.0/features.json",
+      "observation_images": {
+        "image": {
+          "shape_hwc": [
+            256,
+            256,
+            3
+          ],
+          "encoding": "jpeg"
+        },
+        "wrist_image": {
+          "shape_hwc": [
+            256,
+            256,
+            3
+          ],
+          "encoding": "jpeg"
+        }
+      },
+      "state_shape": [
+        8
+      ],
+      "joint_state_shape": [
+        7
+      ],
+      "action_shape": [
+        7
+      ]
+    },
+    {
+      "suite": "libero_spatial_no_noops",
+      "tasks": 10,
+      "episodes": 432,
+      "transitions": 52970,
+      "mean_episode_steps": 122.61574074074075,
+      "tfrecord_shards": 16,
+      "tfrecord_bytes": 1914626550,
+      "dataset_dir": "/data/jack/libero_datasets/libero_spatial_no_noops/1.0.0",
+      "dataset_info_json": "/data/jack/libero_datasets/libero_spatial_no_noops/1.0.0/dataset_info.json",
+      "features_json": "/data/jack/libero_datasets/libero_spatial_no_noops/1.0.0/features.json",
+      "observation_images": {
+        "image": {
+          "shape_hwc": [
+            256,
+            256,
+            3
+          ],
+          "encoding": "jpeg"
+        },
+        "wrist_image": {
+          "shape_hwc": [
+            256,
+            256,
+            3
+          ],
+          "encoding": "jpeg"
+        }
+      },
+      "state_shape": [
+        8
+      ],
+      "joint_state_shape": [
+        7
+      ],
+      "action_shape": [
+        7
+      ]
+    }
+  ]
+}

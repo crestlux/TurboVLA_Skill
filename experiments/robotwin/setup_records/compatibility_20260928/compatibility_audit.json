@@ -1,0 +1,147 @@
+{
+  "checked_at": "2026-09-28T14:54:53.223109+09:00",
+  "host": {
+    "kernel": "5.15.0-58-generic",
+    "architecture": "x86_64",
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3090",
+        "memory_mib": 24576
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA GeForce RTX 3090",
+        "memory_mib": 24576
+      }
+    ],
+    "driver_version": "550.54.14"
+  },
+  "reference_transformers": {
+    "version": "4.56.0",
+    "isolation": "wheel extracted to reference_transformers and prepended to PYTHONPATH only for reference processes",
+    "torch_version": "2.6.0+cu124",
+    "changed_installed_environment": false
+  },
+  "model_checks": {
+    "reference55k_transformers456": {
+      "status": "passed",
+      "checked_at": "2026-09-28T14:42:08.596792+09:00",
+      "checkpoint": "/home/jack/TurboVLA/pretrained/converted/turbovla_robotwin_cb530054_55k_ema/steps_55000_ema_model.safetensors",
+      "checkpoint_sha256": "3041ceb24e00e062d72575eaad46e2b8634ce2734b521288c0d329ad54d1d9b0",
+      "config_sha256": "b0eeff3e2af2f10ca4e368f781e229fa73be26404bff05247d78da102f48eafb",
+      "statistics_sha256": "2bf3136f0af4c9a19754e9401b7e5b4eb912e358c3731d82893cece264ac3f66",
+      "observations_sha256": "0f0ec096ffe1fc362675345b3f3c9218d85fe5d7582b4a0766ed373b90215bd8",
+      "transformers_version": "4.56.0",
+      "torch_version": "2.6.0+cu124",
+      "precision": "bfloat16",
+      "samples": 12,
+      "feature_source": "hidden_states",
+      "compatibility_profile": "libero",
+      "official_source": "experiments/robotwin/setup_records/released_model_20260927/official_source",
+      "official_core_bitwise_equal": true,
+      "normalized_action_mae": 0.003748533548787236,
+      "comparison": null,
+      "limitation": "12 in-distribution demonstration observations, not a rollout success estimate."
+    },
+    "fixed55k_transformers4576": {
+      "status": "passed",
+      "checked_at": "2026-09-28T14:43:18.000981+09:00",
+      "checkpoint": "/home/jack/TurboVLA/pretrained/converted/turbovla_robotwin_cb530054_55k_ema_postnorm/steps_55000_ema_model.safetensors",
+      "checkpoint_sha256": "3041ceb24e00e062d72575eaad46e2b8634ce2734b521288c0d329ad54d1d9b0",
+      "config_sha256": "bdd5dff8f1ccc219aea541c78e99fe78216ee26ee47810f676c1966c6bce8d36",
+      "statistics_sha256": "2bf3136f0af4c9a19754e9401b7e5b4eb912e358c3731d82893cece264ac3f66",
+      "observations_sha256": "0f0ec096ffe1fc362675345b3f3c9218d85fe5d7582b4a0766ed373b90215bd8",
+      "transformers_version": "4.57.6",
+      "torch_version": "2.6.0+cu124",
+      "precision": "bfloat16",
+      "samples": 12,
+      "feature_source": "last_hidden_state",
+      "compatibility_profile": "libero",
+      "official_source": null,
+      "official_core_bitwise_equal": null,
+      "normalized_action_mae": 0.003748533548787236,
+      "comparison": {
+        "reference": "experiments/robotwin/setup_records/compatibility_20260928/reference55k_transformers456.npz",
+        "max_abs_difference": 0.0,
+        "bitwise_equal": true
+      },
+      "limitation": "12 in-distribution demonstration observations, not a rollout success estimate."
+    },
+    "reference150k_transformers456": {
+      "status": "passed",
+      "checked_at": "2026-09-28T14:43:20.314480+09:00",
+      "checkpoint": "/home/jack/TurboVLA/pretrained/converted/turbovla_robotwin_9cdb576e_150k_ema_postnorm/steps_150000_ema_pytorch_model.safetensors",
+      "checkpoint_sha256": "a62501e2f424275bf71a763ccaff90b1c0b94e65b6fc58e69a4e97821171d7d7",
+      "config_sha256": "f8b23eee14290a80a6d49bd64a0a4bbaf07934613f45de78284f2507d62fd164",
+      "statistics_sha256": "43d047178c880affa35fffa39297fc7864b76b6b7dca944e662396c5ac662b65",
+      "observations_sha256": "0f0ec096ffe1fc362675345b3f3c9218d85fe5d7582b4a0766ed373b90215bd8",
+      "transformers_version": "4.56.0",
+      "torch_version": "2.6.0+cu124",
+      "precision": "bfloat16",
+      "samples": 12,
+      "feature_source": "last_hidden_state",
+      "compatibility_profile": "robotwin",
+      "official_source": "experiments/robotwin/setup_records/released_model_20260927/upstream_update_20260927/official_source",
+      "official_core_bitwise_equal": true,
+      "normalized_action_mae": 0.0017877439968287945,
+      "comparison": null,
+      "limitation": "12 in-distribution demonstration observations, not a rollout success estimate."
+    },
+    "fixed150k_transformers4576": {
+      "status": "passed",
+      "checked_at": "2026-09-28T14:44:31.001140+09:00",
+      "checkpoint": "/home/jack/TurboVLA/pretrained/converted/turbovla_robotwin_9cdb576e_150k_ema_postnorm/steps_150000_ema_pytorch_model.safetensors",
+      "checkpoint_sha256": "a62501e2f424275bf71a763ccaff90b1c0b94e65b6fc58e69a4e97821171d7d7",
+      "config_sha256": "f8b23eee14290a80a6d49bd64a0a4bbaf07934613f45de78284f2507d62fd164",
+      "statistics_sha256": "43d047178c880affa35fffa39297fc7864b76b6b7dca944e662396c5ac662b65",
+      "observations_sha256": "0f0ec096ffe1fc362675345b3f3c9218d85fe5d7582b4a0766ed373b90215bd8",
+      "transformers_version": "4.57.6",
+      "torch_version": "2.6.0+cu124",
+      "precision": "bfloat16",
+      "samples": 12,
+      "feature_source": "last_hidden_state",
+      "compatibility_profile": "robotwin",
+      "official_source": null,
+      "official_core_bitwise_equal": null,
+      "normalized_action_mae": 0.0017877439968287945,
+      "comparison": {
+        "reference": "experiments/robotwin/setup_records/compatibility_20260928/reference150k_transformers456.npz",
+        "max_abs_difference": 0.0,
+        "bitwise_equal": true
+      },
+      "limitation": "12 in-distribution demonstration observations, not a rollout success estimate."
+    }
+  },
+  "adapter_comparison": {
+    "checked_at": "2026-09-28T14:50:23.857769+09:00",
+    "revision": "6727c875666f8d5dda8d8cca0043da200738fe73",
+    "comparisons": [
+      {
+        "file": "experiments/robotwin/evaluation/model2robotwin_interface.py",
+        "bitwise_equal_to_official": true,
+        "local_sha256": "b134585535285962cc523006b046267767380f4503ba84095eb2d421f282e28d",
+        "official_sha256": "b134585535285962cc523006b046267767380f4503ba84095eb2d421f282e28d"
+      },
+      {
+        "file": "experiments/robotwin/evaluation/deploy_policy.yml",
+        "bitwise_equal_to_official": true,
+        "local_sha256": "b8cdff44cb391d1499e9b05299f7a34d9b4ed62e204979afd4561efc97765400",
+        "official_sha256": "b8cdff44cb391d1499e9b05299f7a34d9b4ed62e204979afd4561efc97765400"
+      },
+      {
+        "file": "experiments/robotwin/evaluation/adaptive_ensemble.py",
+        "bitwise_equal_to_official": true,
+        "local_sha256": "da59b2bc8357d64be3e74ed05c8298fc1ace1ecc8f53ac25f14ec33dcb2038c2",
+        "official_sha256": "da59b2bc8357d64be3e74ed05c8298fc1ace1ecc8f53ac25f14ec33dcb2038c2"
+      },
+      {
+        "file": "scripts/robotwin/eval_task.sh",
+        "bitwise_equal_to_official": true,
+        "local_sha256": "a22981ffe7c14c10b92ae07403807d7e1609abb47f99f96ce7ce1b370df6c585",
+        "official_sha256": "a22981ffe7c14c10b92ae07403807d7e1609abb47f99f96ce7ce1b370df6c585"
+      }
+    ]
+  },
+  "scope": "Policy output compatibility, installed dependency checks, official adapter parity, and pinned simulator preparation; rollout audit recorded separately."
+}

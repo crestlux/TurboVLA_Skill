@@ -1,0 +1,77 @@
+{
+  "started_at": "2026-10-02T16:46:49.693162+09:00",
+  "command": [
+    "bash",
+    "scripts/robotwin/evaluate_latest_released_model.sh",
+    "all"
+  ],
+  "gpus": "0,1",
+  "abort_on_render_error_dir": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150k_eval50_randomized_retry_20261002_1647_seed0",
+  "interval_seconds": 5.0,
+  "timeout_seconds": 259200.0,
+  "notes": [
+    "GPU peaks are sampled at the stated interval.",
+    "Process CPU 100% is one logical CPU; RSS can double-count shared pages."
+  ],
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "0,1",
+    "ROBOTWIN_JOBS_PER_GPU": "2",
+    "ROBOTWIN_TEST_NUM": "50",
+    "ROBOTWIN_INSTRUCTION_SAMPLE_NUM": "100",
+    "ROBOTWIN_PYTHON_RANDOM_SEED": "20260930",
+    "ROBOTWIN_BASE_PORT": "8500",
+    "ROBOTWIN_EVAL_MODE": "demo_randomized",
+    "RUN_ID": "turbovla_release150k_eval50_randomized_retry_20261002_1647"
+  },
+  "baseline_gpu": [
+    {
+      "index": 0,
+      "uuid": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+      "total_mib": 24576,
+      "used_mib": 1,
+      "free_mib": 24251,
+      "utilization_pct": 0,
+      "memory_utilization_pct": 0
+    },
+    {
+      "index": 1,
+      "uuid": "GPU-7e7d7f97-c512-32b6-0a17-bfa6c8d19fe5",
+      "total_mib": 24576,
+      "used_mib": 1,
+      "free_mib": 24251,
+      "utilization_pct": 0,
+      "memory_utilization_pct": 0
+    }
+  ],
+  "finished_at": "2026-10-03T12:21:56.552159+09:00",
+  "exit_code": 0,
+  "exit_reason": "exited",
+  "error": null,
+  "status": "completed",
+  "wall_seconds": 70506.795331146,
+  "sample_count": 13843,
+  "process_cpu_mean_pct": 403.91775727304093,
+  "process_cpu_peak_pct": 583.6572856496729,
+  "process_rss_peak_mib": 35242.515625,
+  "system_cpu_mean_pct": 4.416581350174915,
+  "gpu": [
+    {
+      "index": 0,
+      "uuid": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+      "baseline_used_mib": 1,
+      "peak_used_mib": 17115,
+      "minimum_free_mib": 7136,
+      "mean_utilization_pct": 72.40280286065159,
+      "peak_utilization_pct": 100
+    },
+    {
+      "index": 1,
+      "uuid": "GPU-7e7d7f97-c512-32b6-0a17-bfa6c8d19fe5",
+      "baseline_used_mib": 1,
+      "peak_used_mib": 17841,
+      "minimum_free_mib": 6411,
+      "mean_utilization_pct": 77.44564039586795,
+      "peak_utilization_pct": 100
+    }
+  ]
+}

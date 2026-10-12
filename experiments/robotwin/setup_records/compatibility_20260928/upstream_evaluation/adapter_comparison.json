@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-09-28T14:50:23.857769+09:00",
+  "revision": "6727c875666f8d5dda8d8cca0043da200738fe73",
+  "comparisons": [
+    {
+      "file": "experiments/robotwin/evaluation/model2robotwin_interface.py",
+      "bitwise_equal_to_official": true,
+      "local_sha256": "b134585535285962cc523006b046267767380f4503ba84095eb2d421f282e28d",
+      "official_sha256": "b134585535285962cc523006b046267767380f4503ba84095eb2d421f282e28d"
+    },
+    {
+      "file": "experiments/robotwin/evaluation/deploy_policy.yml",
+      "bitwise_equal_to_official": true,
+      "local_sha256": "b8cdff44cb391d1499e9b05299f7a34d9b4ed62e204979afd4561efc97765400",
+      "official_sha256": "b8cdff44cb391d1499e9b05299f7a34d9b4ed62e204979afd4561efc97765400"
+    },
+    {
+      "file": "experiments/robotwin/evaluation/adaptive_ensemble.py",
+      "bitwise_equal_to_official": true,
+      "local_sha256": "da59b2bc8357d64be3e74ed05c8298fc1ace1ecc8f53ac25f14ec33dcb2038c2",
+      "official_sha256": "da59b2bc8357d64be3e74ed05c8298fc1ace1ecc8f53ac25f14ec33dcb2038c2"
+    },
+    {
+      "file": "scripts/robotwin/eval_task.sh",
+      "bitwise_equal_to_official": true,
+      "local_sha256": "a22981ffe7c14c10b92ae07403807d7e1609abb47f99f96ce7ce1b370df6c585",
+      "official_sha256": "a22981ffe7c14c10b92ae07403807d7e1609abb47f99f96ce7ce1b370df6c585"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "checked_at": "2026-09-28T15:15:43.653673+09:00",
+  "mode": "demo_randomized",
+  "result": {
+    "run_id": "turbovla_release150000_postnorm_randomized_probe2_20260928_151213",
+    "tasks": {
+      "adjust_bottle": [
+        {
+          "seed": 100000,
+          "success": true,
+          "instruction": "Use the left arm to grab the bottle the bottle with red screw cap"
+        },
+        {
+          "seed": 100002,
+          "success": true,
+          "instruction": "Pick up the green bottle using the correct arm"
+        }
+      ],
+      "dump_bin_bigbin": [
+        {
+          "seed": 100007,
+          "success": true,
+          "instruction": "Grab the lightweight round tabletop trashbin and pour the balls."
+        },
+        {
+          "seed": 100011,
+          "success": true,
+          "instruction": "Lift the rectangular light gray trash bin and transfer the contents."
+        }
+      ]
+    },
+    "successes": 4,
+    "trials": 4,
+    "success_pct": 100.0,
+    "audited_nonempty_videos": 4,
+    "started_at": "2026-09-28T15:12:18.802668+09:00",
+    "completed_at": "2026-09-28T15:15:07.204336+09:00"
+  },
+  "video_streams": [
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/adjust_bottle/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_randomized_probe2_20260928_151213/2026-09-28 15:12:36/episode0.mp4",
+      "duration": "12.300000",
+      "nb_frames": "123"
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/adjust_bottle/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_randomized_probe2_20260928_151213/2026-09-28 15:12:36/episode1.mp4",
+      "duration": "11.300000",
+      "nb_frames": "113"
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/dump_bin_bigbin/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_randomized_probe2_20260928_151213/2026-09-28 15:12:36/episode0.mp4",
+      "duration": "10.500000",
+      "nb_frames": "105"
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/dump_bin_bigbin/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_randomized_probe2_20260928_151213/2026-09-28 15:12:36/episode1.mp4",
+      "duration": "11.100000",
+      "nb_frames": "111"
+    }
+  ],
+  "scope": "Two tasks x two trials; simulator/runtime validation, not benchmark success estimate."
+}

@@ -1,0 +1,11 @@
+{
+  "destination_root": "/data2/jack/TurboVLA/rollout_videos",
+  "previous_sha256": {
+    "index.html": "412b37bd2063af349289f99ab35b82640170ca9c93dcd1f6d6c7edddb8b73b6b",
+    "README.md": "508b093cbd62952ef1611d12e39fdf651181e2c87d509e7ee9641b60d4ce1057"
+  },
+  "previous_content": {
+    "index.html": "<!doctype html>\n<html lang=\"ko\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>TurboVLA 롤아웃 영상</title><link rel=\"stylesheet\" href=\"robotwin_clean50_5k_ema_20260927/gallery.css\"></head>\n<body><main class=\"page\"><h1>TurboVLA 롤아웃 영상</h1><p class=\"muted\">학습 체크포인트별 평가 영상 모음</p>\n<section class=\"note\"><h2>우리 5K EMA · RoboTwin Clean50</h2><p>2026-09-27 본 평가 · 50개 태스크 × 10회 · 성공 140 / 500 (28.0%)</p><p>원본 머리 카메라 320×240 · 총 500개 MP4</p>\n<p class=\"links\"><a href=\"robotwin_clean50_5k_ema_20260927/preview.html\">빠른 검토: 실패·성공 사례 →</a><a href=\"robotwin_clean50_5k_ema_20260927/index.html\">전체 500개 영상 →</a><a href=\"robotwin_clean50_5k_ema_20260927/manifest.json\">평가·영상 JSON</a><a href=\"robotwin_clean50_5k_ema_20260927/WATCH_GUIDE.md\">검토 가이드</a></p></section></main></body></html>\n",
+    "README.md": "# TurboVLA 롤아웃 영상\n\n브라우저에서 `index.html`을 열어 평가별 영상을 확인할 수 있다.\n\n- `robotwin_clean50_5k_ema_20260927/`: 우리 5,000-step EMA 모델의 RoboTwin Clean50 본 평가 원본 500개.\n- 먼저 `robotwin_clean50_5k_ema_20260927/preview.html`에서 7개 태스크의 실패·성공 사례를 볼 수 있다.\n- 각 태스크 폴더에 영상, 미리보기 이미지, 결과 JSON, 원본 평가·모델 서버 로그를 함께 둔다.\n\n이 디렉토리 전체를 복사하면 HTML과 영상을 함께 볼 수 있다. 별도 웹 서버가 없어도 열린다.\n원본 평가 기록을 복사한 것이며 추가 모델 추론이나 시뮬레이션은 실행하지 않았다.\n"
+  }
+}

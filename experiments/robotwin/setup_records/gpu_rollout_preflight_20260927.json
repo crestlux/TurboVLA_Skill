@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "scope": "execution correctness, not model quality",
+  "recorded_at": "2026-09-27T02:36:20.680197+09:00",
+  "log_dir": "/data/jack/robotwin2_turbovla/evaluation/optimization_gpu_preflight_20260927_a",
+  "checkpoint": "/data/jack/robotwin2_turbovla/runs/turbovla_opt_smoke_zero1_b16_a6_20260927/checkpoints/steps_12_ema_model.safetensors",
+  "checkpoint_finite_tensors": 878,
+  "checkpoint_optimizer_steps": 12,
+  "zero_stage": 1,
+  "gpus": [
+    0,
+    1
+  ],
+  "tasks": [
+    "adjust_bottle",
+    "beat_block_hammer"
+  ],
+  "trials_per_task": 2,
+  "exit_code": 0,
+  "wall_seconds": 262.0,
+  "result": {
+    "tasks": 2,
+    "trials": 4,
+    "mean_success_pct": 0.0
+  },
+  "videos": [
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/adjust_bottle/model2robotwin_interface/demo_clean/optimization_gpu_preflight_20260927_a/2026-09-27 02:31:32/episode0.mp4",
+      "width": 320,
+      "height": 240,
+      "frames": 400,
+      "first_frame_std": 43.368769988478,
+      "bytes": 78962
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/adjust_bottle/model2robotwin_interface/demo_clean/optimization_gpu_preflight_20260927_a/2026-09-27 02:31:32/episode1.mp4",
+      "width": 320,
+      "height": 240,
+      "frames": 400,
+      "first_frame_std": 38.36572944818683,
+      "bytes": 80622
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/beat_block_hammer/model2robotwin_interface/demo_clean/optimization_gpu_preflight_20260927_a/2026-09-27 02:31:32/episode0.mp4",
+      "width": 320,
+      "height": 240,
+      "frames": 400,
+      "first_frame_std": 34.76713653070063,
+      "bytes": 69895
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/beat_block_hammer/model2robotwin_interface/demo_clean/optimization_gpu_preflight_20260927_a/2026-09-27 02:31:32/episode1.mp4",
+      "width": 320,
+      "height": 240,
+      "frames": 400,
+      "first_frame_std": 34.30956085051414,
+      "bytes": 71644
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "mode": "demo_randomized",
+  "all_episode_records_match": true,
+  "episode_count": 12,
+  "two_seconds": 593.9905627779663,
+  "three_seconds": 469.4703423641622,
+  "speedup": 1.2652355413693317,
+  "reduction_pct": 20.963333126278926
+}

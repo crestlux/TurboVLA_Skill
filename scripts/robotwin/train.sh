@@ -25,6 +25,8 @@ config_yaml="${CONFIG_YAML:-experiments/robotwin/configs/clean50.yaml}"
 run_root_dir="${RUN_ROOT_DIR:-results/Checkpoints}"
 run_id="${RUN_ID:-turbovla_robotwin_clean50_dinov3large_act_pi05_bs192_100k}"
 launcher_python="${STARVLA_PYTHON:-python}"
+accelerate_config="${ACCELERATE_CONFIG:-experiments/robotwin/configs/deepspeed_zero2.yaml}"
+train_entrypoint="${TRAIN_ENTRYPOINT:-third_party/starvla_runtime/starVLA/training/train_robotwin_clean_act_pi05_recipe.py}"
 num_processes="${NUM_PROCESSES:-4}"
 main_process_port="${MAIN_PROCESS_PORT:-29630}"
 per_device_batch_size="${PER_DEVICE_BATCH_SIZE:-48}"
@@ -66,10 +68,10 @@ cp "$0" "${output_dir}/"
 cp third_party/starvla_runtime/starVLA/training/train_robotwin_clean_act_pi05_recipe.py "${output_dir}/"
 
 "${launcher_python}" -m accelerate.commands.launch \
-  --config_file experiments/robotwin/configs/deepspeed_zero2.yaml \
+  --config_file "${accelerate_config}" \
   --num_processes "${num_processes}" \
   --main_process_port "${main_process_port}" \
-  third_party/starvla_runtime/starVLA/training/train_robotwin_clean_act_pi05_recipe.py \
+  "${train_entrypoint}" \
   --config_yaml "${config_yaml}" \
   --datasets.vla_data.per_device_batch_size "${per_device_batch_size}" \
   --trainer.learning_rate.base "${learning_rate}" \

@@ -5,3 +5,8 @@
 *.yaml text eol=lf
 *.yml text eol=lf
 *.json text eol=lf
+
+# Preserve archived evidence bytes: CSV CRLF and patch context-marker spaces.
+experiments/robotwin/**/*.csv -text whitespace=cr-at-eol
+experiments/robotwin/**/*.patch -text whitespace=-blank-at-eol,-blank-at-eof
+scripts/robotwin/*.patch -text whitespace=-blank-at-eol,-blank-at-eof

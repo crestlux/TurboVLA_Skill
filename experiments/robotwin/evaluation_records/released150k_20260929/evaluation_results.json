@@ -1,0 +1,3700 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-30T11:38:21.272615+09:00",
+  "status": "completed",
+  "description_ko": "공개 TurboVLA 150k EMA: RoboTwin 2.0 전체 50개 태스크, Clean·Randomized 각 10회 평가",
+  "evaluation_started_at": "2026-09-28T15:15:53.519244+09:00",
+  "evaluation_completed_at": "2026-09-29T03:10:01.296802+09:00",
+  "model": {
+    "name": "TurboVLA public 150k EMA",
+    "weights": "EMA",
+    "optimizer_steps": 150000,
+    "training_performed_in_this_run": false,
+    "huggingface_revision": "9cdb576ed9c56039b9c1149142ed654e876bad76",
+    "checkpoint": "/home/jack/TurboVLA/pretrained/converted/turbovla_robotwin_9cdb576e_150k_ema_postnorm/steps_150000_ema_pytorch_model.safetensors",
+    "checkpoint_sha256": "a62501e2f424275bf71a763ccaff90b1c0b94e65b6fc58e69a4e97821171d7d7",
+    "config": "/data/jack/robotwin2_turbovla/pipelines/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/provenance/config.yaml",
+    "config_sha256": "f8b23eee14290a80a6d49bd64a0a4bbaf07934613f45de78284f2507d62fd164",
+    "statistics": "/data/jack/robotwin2_turbovla/pipelines/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/provenance/dataset_statistics.json",
+    "statistics_sha256": "43d047178c880affa35fffa39297fc7864b76b6b7dca944e662396c5ac662b65",
+    "feature_source": "last_hidden_state",
+    "compatibility_profile": "robotwin"
+  },
+  "protocol": {
+    "type": "closed_loop_simulator_rollout",
+    "simulator": "RoboTwin 2.0",
+    "embodiment": "aloha-agilex",
+    "simulator_path": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5",
+    "simulator_commit": "bf44be51cf5717a5595ce59447f2cf5263d2aa95",
+    "policy_conda_env": "/home/jack/miniforge3/envs/turbovla-robotwin",
+    "simulator_conda_env": "/home/jack/miniforge3/envs/robotwin-turbovla",
+    "torch_version": "2.6.0+cu124",
+    "transformers_version": "4.57.6",
+    "precision": "bfloat16",
+    "task_count": 50,
+    "trials_per_task_per_variant": 10,
+    "instruction_type": "unseen",
+    "instruction_sample_num": 100,
+    "evaluation_seed": 0,
+    "initial_candidate_scene_seed": 100000,
+    "scene_selection": "Increment scene seed; accept only stable scenes with successful expert planning and check_success. Reset accepted scene before policy rollout.",
+    "instruction_selection": "Sample from 100 generated unseen descriptions for the accepted scene; actual selected instruction is logged per episode.",
+    "language_reproducibility_note": "Upstream Python random is not seeded; equal scene seeds do not guarantee equal instructions.",
+    "observations": {
+      "rgb_views": [
+        "head",
+        "left_wrist",
+        "right_wrist"
+      ],
+      "image_size_hw": [
+        224,
+        224
+      ],
+      "state_dim": 14,
+      "language": true
+    },
+    "action": {
+      "action_dim": 14,
+      "meaning": "12 absolute arm joint positions plus 2 gripper controls",
+      "action_mode": "abs",
+      "normalization_mode": "min_max",
+      "unnorm_key": "new_embodiment",
+      "binary_threshold": 0.49,
+      "horizon": 50,
+      "temporal_ensemble": true,
+      "ensemble_history": 50,
+      "adaptive_ensemble_alpha": 0.1,
+      "policy_query_interval_control_steps": 1,
+      "executed_actions_per_query": 1,
+      "ensemble_method": "Weighted average of overlapping current-step predictions, using exp(alpha * cosine_similarity_to_latest)."
+    },
+    "success_definition": "Binary environment check_success/eval_success within the task control-step limit. Stop on success or step limit.",
+    "task_description_note": "Korean descriptions summarize intended tasks; the simulator predicate, not a human visual rating, determines success.",
+    "predicate_caveat": "shake_bottle and shake_bottle_horizontally check bottle height only, not completed shaking cycles.",
+    "metric": "successes / graded_trials * 100; equal trial counts make macro and micro averages equal.",
+    "scheduling": "2 RTX 3090 GPUs, one task per GPU; Clean then Randomized.",
+    "randomized_table_height_offset_m": [
+      -0.03,
+      0.0
+    ],
+    "deploy_config": "/data/jack/robotwin2_turbovla/pipelines/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/provenance/source/experiments/robotwin/evaluation/deploy_policy.yml",
+    "scene_config_sources": {
+      "demo_clean": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/task_config/demo_clean.yml",
+      "demo_randomized": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/task_config/demo_randomized.yml"
+    },
+    "episode_num_config_note": "task_config episode_num=50 is a data-collection setting; ROBOTWIN_TEST_NUM=10 controlled this evaluation.",
+    "evaluation_driver": "/data/jack/robotwin2_turbovla/pipelines/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/provenance/simulator_eval_policy.py"
+  },
+  "overall": {
+    "task_count": 50,
+    "variant_count": 2,
+    "task_variant_count": 100,
+    "successes": 882,
+    "failures": 118,
+    "trials": 1000,
+    "success_rate_pct": 88.2,
+    "macro_task_variant_success_rate_pct": 88.2
+  },
+  "variants": [
+    {
+      "mode": "demo_clean",
+      "label": "Clean",
+      "run_id": "turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553",
+      "status": "completed",
+      "exit_code": 0,
+      "task_count": 50,
+      "trials_per_task": 10,
+      "successes": 443,
+      "failures": 57,
+      "trials": 500,
+      "success_rate_pct": 88.6,
+      "started_at": "2026-09-28T15:15:58.580934+09:00",
+      "completed_at": "2026-09-28T20:42:32.010991+09:00",
+      "elapsed_seconds": 19593.430057,
+      "perfect_task_count": 27,
+      "failed_episodes_at_step_limit": 57,
+      "caught_expert_setup_tracebacks": 16,
+      "caught_tracebacks_note": "Before policy trials; skipped scene validation attempts, not graded failures.",
+      "domain_randomization": {
+        "random_background": false,
+        "cluttered_table": false,
+        "clean_background_rate": 1,
+        "random_head_camera_dis": 0,
+        "random_table_height": 0,
+        "random_light": false,
+        "crazy_random_light_rate": 0
+      },
+      "logs": {
+        "evaluation_directory": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0",
+        "pipeline_log": "/data/jack/robotwin2_turbovla/pipelines/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/pipeline.log",
+        "evaluation_log": "/data/jack/robotwin2_turbovla/pipelines/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/evaluation.log",
+        "events_jsonl": "/data/jack/robotwin2_turbovla/pipelines/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/events.jsonl",
+        "status_json": "/data/jack/robotwin2_turbovla/pipelines/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/status.json",
+        "exit_code_txt": "/data/jack/robotwin2_turbovla/pipelines/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/exit_code.txt",
+        "metadata_json": "/data/jack/robotwin2_turbovla/pipelines/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/metadata.json",
+        "summary_json": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/summary.json",
+        "task_results_csv": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/task_results.csv",
+        "provenance_directory": "/data/jack/robotwin2_turbovla/pipelines/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/provenance"
+      }
+    },
+    {
+      "mode": "demo_randomized",
+      "label": "Randomized",
+      "run_id": "turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553",
+      "status": "completed",
+      "exit_code": 0,
+      "task_count": 50,
+      "trials_per_task": 10,
+      "successes": 439,
+      "failures": 61,
+      "trials": 500,
+      "success_rate_pct": 87.8,
+      "started_at": "2026-09-28T20:42:37.004441+09:00",
+      "completed_at": "2026-09-29T03:10:01.267750+09:00",
+      "elapsed_seconds": 23244.263309,
+      "perfect_task_count": 27,
+      "failed_episodes_at_step_limit": 61,
+      "caught_expert_setup_tracebacks": 16,
+      "caught_tracebacks_note": "Before policy trials; skipped scene validation attempts, not graded failures.",
+      "domain_randomization": {
+        "random_background": true,
+        "cluttered_table": true,
+        "clean_background_rate": 0.02,
+        "random_head_camera_dis": 0,
+        "random_table_height": 0.03,
+        "random_light": true,
+        "crazy_random_light_rate": 0.02
+      },
+      "logs": {
+        "evaluation_directory": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0",
+        "pipeline_log": "/data/jack/robotwin2_turbovla/pipelines/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/pipeline.log",
+        "evaluation_log": "/data/jack/robotwin2_turbovla/pipelines/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/evaluation.log",
+        "events_jsonl": "/data/jack/robotwin2_turbovla/pipelines/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/events.jsonl",
+        "status_json": "/data/jack/robotwin2_turbovla/pipelines/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/status.json",
+        "exit_code_txt": "/data/jack/robotwin2_turbovla/pipelines/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/exit_code.txt",
+        "metadata_json": "/data/jack/robotwin2_turbovla/pipelines/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/metadata.json",
+        "summary_json": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/summary.json",
+        "task_results_csv": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/task_results.csv",
+        "provenance_directory": "/data/jack/robotwin2_turbovla/pipelines/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/provenance"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "adjust_bottle",
+      "description_ko": "병을 세운 자세로 집어 올리기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/adjust_bottle.py",
+        "line": 63
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/adjust_bottle.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/adjust_bottle_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/adjust_bottle_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/adjust_bottle/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 15:16:16/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/adjust_bottle/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 15:16:16",
+          "scene_seeds": [
+            100001,
+            100002,
+            100005,
+            100006,
+            100008,
+            100010,
+            100011,
+            100012,
+            100013,
+            100015
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Pick up the plastic soda bottle using the right arm in an upright position"
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/adjust_bottle_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/adjust_bottle_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/adjust_bottle/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 20:42:54/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/adjust_bottle/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 20:42:54",
+          "scene_seeds": [
+            100000,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100010,
+            100012
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Pick up the bottle with red screw cap from the table head-up."
+        }
+      },
+      "overall": {
+        "successes": 20,
+        "failures": 0,
+        "trials": 20,
+        "success_rate_pct": 100.0
+      }
+    },
+    {
+      "task_id": "beat_block_hammer",
+      "description_ko": "망치로 블록 두드리기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/beat_block_hammer.py",
+        "line": 82
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/beat_block_hammer.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/beat_block_hammer_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/beat_block_hammer_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/beat_block_hammer/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 15:16:16/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/beat_block_hammer/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 15:16:16",
+          "scene_seeds": [
+            100000,
+            100002,
+            100003,
+            100006,
+            100007,
+            100009,
+            100010,
+            100012,
+            100013,
+            100014
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Use the hammer with black handle to strike the block"
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/beat_block_hammer_demo_randomized_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/beat_block_hammer_demo_randomized_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/beat_block_hammer/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 20:42:54/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/beat_block_hammer/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 20:42:54",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100009,
+            100011
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Grab the hammer with claw and smooth head and strike the block"
+        }
+      },
+      "overall": {
+        "successes": 20,
+        "failures": 0,
+        "trials": 20,
+        "success_rate_pct": 100.0
+      }
+    },
+    {
+      "task_id": "blocks_ranking_rgb",
+      "description_ko": "빨강·초록·파랑 블록을 왼쪽부터 순서대로 정렬하기",
+      "control_step_limit": 1200,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/blocks_ranking_rgb.py",
+        "line": 155
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/blocks_ranking_rgb.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/blocks_ranking_rgb_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/blocks_ranking_rgb_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/blocks_ranking_rgb/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 15:22:16/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/blocks_ranking_rgb/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 15:22:16",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Set red block on the left, then green block in the center, and finally blue block on the right."
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/blocks_ranking_rgb_demo_randomized_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/blocks_ranking_rgb_demo_randomized_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/blocks_ranking_rgb/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 20:50:15/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/blocks_ranking_rgb/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 20:50:15",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Set red block, green block, and blue block in a row from left to right in the order red, green, blue."
+        }
+      },
+      "overall": {
+        "successes": 20,
+        "failures": 0,
+        "trials": 20,
+        "success_rate_pct": 100.0
+      }
+    },
+    {
+      "task_id": "blocks_ranking_size",
+      "description_ko": "큰·중간·작은 블록을 왼쪽부터 순서대로 정렬하기",
+      "control_step_limit": 1200,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/blocks_ranking_size.py",
+        "line": 149
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/blocks_ranking_size.json",
+      "results": {
+        "demo_clean": {
+          "successes": 9,
+          "failures": 1,
+          "trials": 10,
+          "success_rate_pct": 90.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/blocks_ranking_size_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/blocks_ranking_size_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/blocks_ranking_size/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 15:24:51/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/blocks_ranking_size/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 15:24:51",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009
+          ],
+          "failed_episode_indices": [
+            6
+          ],
+          "instruction_example": "Move large block, medium block, and small block to the center, arrange left to right."
+        },
+        "demo_randomized": {
+          "successes": 9,
+          "failures": 1,
+          "trials": 10,
+          "success_rate_pct": 90.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/blocks_ranking_size_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/blocks_ranking_size_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/blocks_ranking_size/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 20:52:24/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/blocks_ranking_size/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 20:52:24",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100009,
+            100010
+          ],
+          "failed_episode_indices": [
+            6
+          ],
+          "instruction_example": "Move large block, medium block, and small block to the center, arrange left to right."
+        }
+      },
+      "overall": {
+        "successes": 18,
+        "failures": 2,
+        "trials": 20,
+        "success_rate_pct": 90.0
+      }
+    },
+    {
+      "task_id": "click_alarmclock",
+      "description_ko": "알람시계 윗면 버튼 누르기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/click_alarmclock.py",
+        "line": 80
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/click_alarmclock.json",
+      "results": {
+        "demo_clean": {
+          "successes": 7,
+          "failures": 3,
+          "trials": 10,
+          "success_rate_pct": 70.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/click_alarmclock_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/click_alarmclock_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/click_alarmclock/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 15:41:26/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/click_alarmclock/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 15:41:26",
+          "scene_seeds": [
+            100000,
+            100002,
+            100003,
+            100004,
+            100007,
+            100008,
+            100009,
+            100010,
+            100011,
+            100012
+          ],
+          "failed_episode_indices": [
+            2,
+            3,
+            9
+          ],
+          "instruction_example": "Click the top button of the alarm-clock with beige screen"
+        },
+        "demo_randomized": {
+          "successes": 7,
+          "failures": 3,
+          "trials": 10,
+          "success_rate_pct": 70.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/click_alarmclock_demo_randomized_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/click_alarmclock_demo_randomized_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/click_alarmclock/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 21:12:05/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/click_alarmclock/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 21:12:05",
+          "scene_seeds": [
+            100000,
+            100001,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100009,
+            100011,
+            100012
+          ],
+          "failed_episode_indices": [
+            6,
+            7,
+            8
+          ],
+          "instruction_example": "Tap the center top button of the alarm-clock with beige screen"
+        }
+      },
+      "overall": {
+        "successes": 14,
+        "failures": 6,
+        "trials": 20,
+        "success_rate_pct": 70.0
+      }
+    },
+    {
+      "task_id": "click_bell",
+      "description_ko": "벨 윗부분 누르기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/click_bell.py",
+        "line": 71
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/click_bell.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/click_bell_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/click_bell_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/click_bell/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 15:47:17/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/click_bell/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 15:47:17",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Click the top center of the palm-sized bell."
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/click_bell_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/click_bell_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/click_bell/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 21:17:35/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/click_bell/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 21:17:35",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Use the left arm to press the lightweight bell with smooth surface's top center."
+        }
+      },
+      "overall": {
+        "successes": 20,
+        "failures": 0,
+        "trials": 20,
+        "success_rate_pct": 100.0
+      }
+    },
+    {
+      "task_id": "dump_bin_bigbin",
+      "description_ko": "작은 쓰레기통의 내용물을 큰 쓰레기통에 붓기",
+      "control_step_limit": 600,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/dump_bin_bigbin.py",
+        "line": 153
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/dump_bin_bigbin.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/dump_bin_bigbin_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/dump_bin_bigbin_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/dump_bin_bigbin/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 15:49:07/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/dump_bin_bigbin/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 15:49:07",
+          "scene_seeds": [
+            100002,
+            100004,
+            100005,
+            100007,
+            100010,
+            100012,
+            100016,
+            100019,
+            100022,
+            100027
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Pour the lightweight round tabletop trashbin into the big bin."
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/dump_bin_bigbin_demo_randomized_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/dump_bin_bigbin_demo_randomized_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/dump_bin_bigbin/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 21:20:50/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/dump_bin_bigbin/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 21:20:50",
+          "scene_seeds": [
+            100007,
+            100011,
+            100017,
+            100019,
+            100020,
+            100022,
+            100023,
+            100029,
+            100031,
+            100032
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Take the small bin for table waste and empty into big bin"
+        }
+      },
+      "overall": {
+        "successes": 20,
+        "failures": 0,
+        "trials": 20,
+        "success_rate_pct": 100.0
+      }
+    },
+    {
+      "task_id": "grab_roller",
+      "description_ko": "양팔로 롤러를 잡아 들기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/grab_roller.py",
+        "line": 55
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/grab_roller.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/grab_roller_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/grab_roller_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/grab_roller/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 15:51:17/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/grab_roller/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 15:51:17",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100006,
+            100007,
+            100008,
+            100009,
+            100010
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Grab the light brown cylindrical roller on the table."
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/grab_roller_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/grab_roller_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/grab_roller/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 21:22:25/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/grab_roller/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 21:22:25",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100006,
+            100007,
+            100008,
+            100009,
+            100011,
+            100012
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Grab the light brown cylindrical roller on the table using arms"
+        }
+      },
+      "overall": {
+        "successes": 20,
+        "failures": 0,
+        "trials": 20,
+        "success_rate_pct": 100.0
+      }
+    },
+    {
+      "task_id": "handover_block",
+      "description_ko": "왼팔에서 오른팔로 블록을 넘겨 패드에 놓기",
+      "control_step_limit": 800,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/handover_block.py",
+        "line": 111
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/handover_block.json",
+      "results": {
+        "demo_clean": {
+          "successes": 7,
+          "failures": 3,
+          "trials": 10,
+          "success_rate_pct": 70.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/handover_block_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/handover_block_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/handover_block/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 15:57:07/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/handover_block/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 15:57:07",
+          "scene_seeds": [
+            100000,
+            100002,
+            100003,
+            100004,
+            100006,
+            100007,
+            100008,
+            100009,
+            100010,
+            100011
+          ],
+          "failed_episode_indices": [
+            4,
+            7,
+            9
+          ],
+          "instruction_example": "Grab the red block with the left arm, switch to the right arm, and set it on the blue pad."
+        },
+        "demo_randomized": {
+          "successes": 8,
+          "failures": 2,
+          "trials": 10,
+          "success_rate_pct": 80.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/handover_block_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/handover_block_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/handover_block/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 21:29:10/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/handover_block/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 21:29:10",
+          "scene_seeds": [
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100008,
+            100009,
+            100010,
+            100013
+          ],
+          "failed_episode_indices": [
+            2,
+            3
+          ],
+          "instruction_example": "Grab the red block with the left arm, switch to the right, and place it on the blue pad."
+        }
+      },
+      "overall": {
+        "successes": 15,
+        "failures": 5,
+        "trials": 20,
+        "success_rate_pct": 75.0
+      }
+    },
+    {
+      "task_id": "handover_mic",
+      "description_ko": "마이크를 한 팔에서 다른 팔로 넘기기",
+      "control_step_limit": 600,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/handover_mic.py",
+        "line": 99
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/handover_mic.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/handover_mic_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/handover_mic_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/handover_mic/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 15:59:37/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/handover_mic/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 15:59:37",
+          "scene_seeds": [
+            100000,
+            100001,
+            100003,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009,
+            100010,
+            100011
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Pick up the black and white plastic microphone and hand it over"
+        },
+        "demo_randomized": {
+          "successes": 9,
+          "failures": 1,
+          "trials": 10,
+          "success_rate_pct": 90.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/handover_mic_demo_randomized_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/handover_mic_demo_randomized_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/handover_mic/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 21:29:35/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/handover_mic/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 21:29:35",
+          "scene_seeds": [
+            100000,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100008,
+            100009,
+            100013,
+            100014
+          ],
+          "failed_episode_indices": [
+            4
+          ],
+          "instruction_example": "Pick up the black and white plastic microphone and transfer it to the other hand."
+        }
+      },
+      "overall": {
+        "successes": 19,
+        "failures": 1,
+        "trials": 20,
+        "success_rate_pct": 95.0
+      }
+    },
+    {
+      "task_id": "hanging_mug",
+      "description_ko": "머그컵을 거치대에 걸기",
+      "control_step_limit": 900,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/hanging_mug.py",
+        "line": 81
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/hanging_mug.json",
+      "results": {
+        "demo_clean": {
+          "successes": 4,
+          "failures": 6,
+          "trials": 10,
+          "success_rate_pct": 40.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/hanging_mug_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/hanging_mug_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/hanging_mug/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 16:11:47/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/hanging_mug/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 16:11:47",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100008,
+            100009,
+            100010
+          ],
+          "failed_episode_indices": [
+            0,
+            1,
+            3,
+            4,
+            7,
+            8
+          ],
+          "instruction_example": "Pick up the simple white cylindrical mug, rotate it, place it on the table, and hang it on the rack with straight and slanted rods."
+        },
+        "demo_randomized": {
+          "successes": 7,
+          "failures": 3,
+          "trials": 10,
+          "success_rate_pct": 70.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/hanging_mug_demo_randomized_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/hanging_mug_demo_randomized_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/hanging_mug/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 21:45:40/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/hanging_mug/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 21:45:40",
+          "scene_seeds": [
+            100000,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100008,
+            100009,
+            100010,
+            100018
+          ],
+          "failed_episode_indices": [
+            1,
+            4,
+            7
+          ],
+          "instruction_example": "Grab the cylindrical mug with handle on the table, rotate it, set it down in the middle, then hang it onto the rack with straight and slanted rods."
+        }
+      },
+      "overall": {
+        "successes": 11,
+        "failures": 9,
+        "trials": 20,
+        "success_rate_pct": 55.0
+      }
+    },
+    {
+      "task_id": "lift_pot",
+      "description_ko": "양팔로 냄비 손잡이를 잡아 들기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/lift_pot.py",
+        "line": 50
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/lift_pot.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/lift_pot_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/lift_pot_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/lift_pot/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 16:15:57/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/lift_pot/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 16:15:57",
+          "scene_seeds": [
+            100000,
+            100002,
+            100003,
+            100005,
+            100009,
+            100012,
+            100014,
+            100019,
+            100020,
+            100022
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Grab the kitchenpot with two side handles with both arms."
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/lift_pot_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/lift_pot_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/lift_pot/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 21:49:00/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/lift_pot/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 21:49:00",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100009,
+            100017,
+            100021,
+            100022,
+            100023,
+            100027,
+            100029
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Lift the gray kitchenpot with rounded edges with both arms"
+        }
+      },
+      "overall": {
+        "successes": 20,
+        "failures": 0,
+        "trials": 20,
+        "success_rate_pct": 100.0
+      }
+    },
+    {
+      "task_id": "move_can_pot",
+      "description_ko": "캔을 냄비 옆으로 옮기기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/move_can_pot.py",
+        "line": 95
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/move_can_pot.json",
+      "results": {
+        "demo_clean": {
+          "successes": 9,
+          "failures": 1,
+          "trials": 10,
+          "success_rate_pct": 90.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/move_can_pot_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/move_can_pot_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/move_can_pot/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 16:23:07/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/move_can_pot/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 16:23:07",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100008,
+            100009,
+            100010
+          ],
+          "failed_episode_indices": [
+            4
+          ],
+          "instruction_example": "Pick up the hand-sized sauce can and move it near the kitchenpot for stovetop boiling"
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/move_can_pot_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/move_can_pot_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/move_can_pot/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 21:57:50/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/move_can_pot/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 21:57:50",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Use the left arm to pick up the smooth cylindrical sauce can and move it beside the kitchenpot for cooking food"
+        }
+      },
+      "overall": {
+        "successes": 19,
+        "failures": 1,
+        "trials": 20,
+        "success_rate_pct": 95.0
+      }
+    },
+    {
+      "task_id": "move_pillbottle_pad",
+      "description_ko": "약병을 지정된 패드에 놓기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/move_pillbottle_pad.py",
+        "line": 97
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/move_pillbottle_pad.json",
+      "results": {
+        "demo_clean": {
+          "successes": 9,
+          "failures": 1,
+          "trials": 10,
+          "success_rate_pct": 90.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/move_pillbottle_pad_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/move_pillbottle_pad_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/move_pillbottle_pad/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 16:34:37/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/move_pillbottle_pad/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 16:34:37",
+          "scene_seeds": [
+            100002,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009,
+            100010,
+            100011,
+            100013
+          ],
+          "failed_episode_indices": [
+            0
+          ],
+          "instruction_example": "Use the left arm to grab the orange capped bottle and place it"
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/move_pillbottle_pad_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/move_pillbottle_pad_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/move_pillbottle_pad/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 22:09:06/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/move_pillbottle_pad/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 22:09:06",
+          "scene_seeds": [
+            100001,
+            100002,
+            100003,
+            100004,
+            100006,
+            100007,
+            100010,
+            100011,
+            100013,
+            100015
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Pick the orange capped bottle and set it on the pad"
+        }
+      },
+      "overall": {
+        "successes": 19,
+        "failures": 1,
+        "trials": 20,
+        "success_rate_pct": 95.0
+      }
+    },
+    {
+      "task_id": "move_playingcard_away",
+      "description_ko": "카드 상자를 테이블 가장자리 쪽으로 옮기기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/move_playingcard_away.py",
+        "line": 62
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/move_playingcard_away.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/move_playingcard_away_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/move_playingcard_away_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/move_playingcard_away/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 16:41:27/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/move_playingcard_away/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 16:41:27",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Grab the hard black box for card deck and move it outward."
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/move_playingcard_away_demo_randomized_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/move_playingcard_away_demo_randomized_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/move_playingcard_away/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 22:13:01/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/move_playingcard_away/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 22:13:01",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100007,
+            100008,
+            100009,
+            100010
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Grab the black box with smooth surface and move it outward."
+        }
+      },
+      "overall": {
+        "successes": 20,
+        "failures": 0,
+        "trials": 20,
+        "success_rate_pct": 100.0
+      }
+    },
+    {
+      "task_id": "move_stapler_pad",
+      "description_ko": "스테이플러를 지정된 패드에 놓기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/move_stapler_pad.py",
+        "line": 113
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/move_stapler_pad.json",
+      "results": {
+        "demo_clean": {
+          "successes": 9,
+          "failures": 1,
+          "trials": 10,
+          "success_rate_pct": 90.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/move_stapler_pad_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/move_stapler_pad_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/move_stapler_pad/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 16:45:42/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/move_stapler_pad/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 16:45:42",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100008,
+            100009,
+            100010
+          ],
+          "failed_episode_indices": [
+            4
+          ],
+          "instruction_example": "Use the left arm to move the blue and white stapler to Cyan mat"
+        },
+        "demo_randomized": {
+          "successes": 8,
+          "failures": 2,
+          "trials": 10,
+          "success_rate_pct": 80.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/move_stapler_pad_demo_randomized_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/move_stapler_pad_demo_randomized_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/move_stapler_pad/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 22:19:41/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/move_stapler_pad/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 22:19:41",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100011
+          ],
+          "failed_episode_indices": [
+            0,
+            3
+          ],
+          "instruction_example": "Use the left arm to move the blue stapler with smooth finish to the Yellow mat"
+        }
+      },
+      "overall": {
+        "successes": 17,
+        "failures": 3,
+        "trials": 20,
+        "success_rate_pct": 85.0
+      }
+    },
+    {
+      "task_id": "open_laptop",
+      "description_ko": "노트북 덮개 열기",
+      "control_step_limit": 700,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/open_laptop.py",
+        "line": 61
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/open_laptop.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/open_laptop_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/open_laptop_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/open_laptop/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 16:47:07/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/open_laptop/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 16:47:07",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Pull up the medium laptop with silver body's lid."
+        },
+        "demo_randomized": {
+          "successes": 9,
+          "failures": 1,
+          "trials": 10,
+          "success_rate_pct": 90.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/open_laptop_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/open_laptop_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/open_laptop/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 22:19:46/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/open_laptop/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 22:19:46",
+          "scene_seeds": [
+            100000,
+            100001,
+            100004,
+            100006,
+            100007,
+            100008,
+            100009,
+            100011,
+            100012,
+            100013
+          ],
+          "failed_episode_indices": [
+            7
+          ],
+          "instruction_example": "Lift the flat orange laptop using the left arm"
+        }
+      },
+      "overall": {
+        "successes": 19,
+        "failures": 1,
+        "trials": 20,
+        "success_rate_pct": 95.0
+      }
+    },
+    {
+      "task_id": "open_microwave",
+      "description_ko": "전자레인지 문 열기",
+      "control_step_limit": 1500,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/open_microwave.py",
+        "line": 102
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/open_microwave.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/open_microwave_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/open_microwave_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/open_microwave/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 16:54:33/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/open_microwave/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 16:54:33",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100006,
+            100007,
+            100008,
+            100009,
+            100010
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Use the left arm to pull the handle of the gray and yellow rectangular microwave."
+        },
+        "demo_randomized": {
+          "successes": 8,
+          "failures": 2,
+          "trials": 10,
+          "success_rate_pct": 80.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/open_microwave_demo_randomized_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/open_microwave_demo_randomized_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/open_microwave/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 22:30:26/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/open_microwave/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 22:30:26",
+          "scene_seeds": [
+            100000,
+            100001,
+            100003,
+            100004,
+            100005,
+            100006,
+            100008,
+            100010,
+            100011,
+            100012
+          ],
+          "failed_episode_indices": [
+            4,
+            8
+          ],
+          "instruction_example": "Move the left arm and open the gray and yellow rectangular microwave."
+        }
+      },
+      "overall": {
+        "successes": 18,
+        "failures": 2,
+        "trials": 20,
+        "success_rate_pct": 90.0
+      }
+    },
+    {
+      "task_id": "pick_diverse_bottles",
+      "description_ko": "서로 다른 종류의 병 2개를 들어 올리기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/pick_diverse_bottles.py",
+        "line": 94
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/pick_diverse_bottles.json",
+      "results": {
+        "demo_clean": {
+          "successes": 7,
+          "failures": 3,
+          "trials": 10,
+          "success_rate_pct": 70.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/pick_diverse_bottles_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/pick_diverse_bottles_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/pick_diverse_bottles/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 16:54:38/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/pick_diverse_bottles/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 16:54:38",
+          "scene_seeds": [
+            100000,
+            100009,
+            100012,
+            100013,
+            100014,
+            100015,
+            100016,
+            100022,
+            100023,
+            100026
+          ],
+          "failed_episode_indices": [
+            0,
+            1,
+            5
+          ],
+          "instruction_example": "Grab the medium-sized plastic bottle with capped top and grab the shiny red bottle at once."
+        },
+        "demo_randomized": {
+          "successes": 7,
+          "failures": 3,
+          "trials": 10,
+          "success_rate_pct": 70.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/pick_diverse_bottles_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/pick_diverse_bottles_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/pick_diverse_bottles/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 22:31:31/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/pick_diverse_bottles/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 22:31:31",
+          "scene_seeds": [
+            100005,
+            100007,
+            100008,
+            100009,
+            100013,
+            100020,
+            100024,
+            100026,
+            100027,
+            100029
+          ],
+          "failed_episode_indices": [
+            2,
+            3,
+            6
+          ],
+          "instruction_example": "Use each arm to lift a bottle: the bottle with white cap, then the glossy brown bottle."
+        }
+      },
+      "overall": {
+        "successes": 14,
+        "failures": 6,
+        "trials": 20,
+        "success_rate_pct": 70.0
+      }
+    },
+    {
+      "task_id": "pick_dual_bottles",
+      "description_ko": "양팔로 병 2개를 들어 올리기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/pick_dual_bottles.py",
+        "line": 92
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/pick_dual_bottles.json",
+      "results": {
+        "demo_clean": {
+          "successes": 9,
+          "failures": 1,
+          "trials": 10,
+          "success_rate_pct": 90.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/pick_dual_bottles_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/pick_dual_bottles_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/pick_dual_bottles/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 17:06:53/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/pick_dual_bottles/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 17:06:53",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009
+          ],
+          "failed_episode_indices": [
+            4
+          ],
+          "instruction_example": "Pick up the bottle with red screw cap and the green bottle simultaneously."
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/pick_dual_bottles_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/pick_dual_bottles_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/pick_dual_bottles/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 22:45:41/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/pick_dual_bottles/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 22:45:41",
+          "scene_seeds": [
+            100000,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009,
+            100010
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Pick the bottle with red screw cap with one arm, the green plastic bottle with ridged bottom with the other."
+        }
+      },
+      "overall": {
+        "successes": 19,
+        "failures": 1,
+        "trials": 20,
+        "success_rate_pct": 95.0
+      }
+    },
+    {
+      "task_id": "place_a2b_left",
+      "description_ko": "물체 A를 물체 B의 왼쪽에 놓기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/place_a2b_left.py",
+        "line": 147
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/place_a2b_left.json",
+      "results": {
+        "demo_clean": {
+          "successes": 6,
+          "failures": 4,
+          "trials": 10,
+          "success_rate_pct": 60.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_a2b_left_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_a2b_left_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_a2b_left/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 17:16:43/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_a2b_left/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 17:16:43",
+          "scene_seeds": [
+            100000,
+            100001,
+            100003,
+            100004,
+            100005,
+            100007,
+            100008,
+            100009,
+            100010,
+            100012
+          ],
+          "failed_episode_indices": [
+            0,
+            2,
+            4,
+            9
+          ],
+          "instruction_example": "Use the left arm to put the soap bar shaped rectangular left of the toycar with rounded body."
+        },
+        "demo_randomized": {
+          "successes": 6,
+          "failures": 4,
+          "trials": 10,
+          "success_rate_pct": 60.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_a2b_left_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_a2b_left_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_a2b_left/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 22:55:16/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_a2b_left/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 22:55:16",
+          "scene_seeds": [
+            100000,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009,
+            100010,
+            100011,
+            100012
+          ],
+          "failed_episode_indices": [
+            0,
+            1,
+            3,
+            5
+          ],
+          "instruction_example": "Place the white-sided phone to the left of the blue and white stapler using the left arm"
+        }
+      },
+      "overall": {
+        "successes": 12,
+        "failures": 8,
+        "trials": 20,
+        "success_rate_pct": 60.0
+      }
+    },
+    {
+      "task_id": "place_a2b_right",
+      "description_ko": "물체 A를 물체 B의 오른쪽에 놓기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/place_a2b_right.py",
+        "line": 148
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/place_a2b_right.json",
+      "results": {
+        "demo_clean": {
+          "successes": 7,
+          "failures": 3,
+          "trials": 10,
+          "success_rate_pct": 70.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_a2b_right_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_a2b_right_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_a2b_right/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 17:20:28/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_a2b_right/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 17:20:28",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009
+          ],
+          "failed_episode_indices": [
+            1,
+            5,
+            9
+          ],
+          "instruction_example": "Set the bright blue soap bar to the right of the gray base toycar."
+        },
+        "demo_randomized": {
+          "successes": 7,
+          "failures": 3,
+          "trials": 10,
+          "success_rate_pct": 70.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_a2b_right_demo_randomized_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_a2b_right_demo_randomized_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_a2b_right/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 23:02:47/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_a2b_right/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 23:02:47",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100010,
+            100011
+          ],
+          "failed_episode_indices": [
+            6,
+            7,
+            8
+          ],
+          "instruction_example": "Place the blue bell with glossy finish on the light yellow cleaning soap's right side."
+        }
+      },
+      "overall": {
+        "successes": 14,
+        "failures": 6,
+        "trials": 20,
+        "success_rate_pct": 70.0
+      }
+    },
+    {
+      "task_id": "place_bread_basket",
+      "description_ko": "빵을 바구니에 담기",
+      "control_step_limit": 700,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/place_bread_basket.py",
+        "line": 190
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/place_bread_basket.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_bread_basket_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_bread_basket_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_bread_basket/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 17:28:18/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_bread_basket/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 17:28:18",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009,
+            100010
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Place the soft bread with golden edges into the medium light brown breadbasket using the right arm"
+        },
+        "demo_randomized": {
+          "successes": 8,
+          "failures": 2,
+          "trials": 10,
+          "success_rate_pct": 80.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_bread_basket_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_bread_basket_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_bread_basket/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 23:08:17/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_bread_basket/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 23:08:17",
+          "scene_seeds": [
+            100000,
+            100001,
+            100003,
+            100004,
+            100005,
+            100007,
+            100008,
+            100009,
+            100010,
+            100011
+          ],
+          "failed_episode_indices": [
+            0,
+            7
+          ],
+          "instruction_example": "Grab the spongy golden brown bread and the rectangular bread loaf and drop them into the beige breadbasket."
+        }
+      },
+      "overall": {
+        "successes": 18,
+        "failures": 2,
+        "trials": 20,
+        "success_rate_pct": 90.0
+      }
+    },
+    {
+      "task_id": "place_bread_skillet",
+      "description_ko": "빵을 스킬렛에 담아 들어 올리기",
+      "control_step_limit": 500,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/place_bread_skillet.py",
+        "line": 114
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/place_bread_skillet.json",
+      "results": {
+        "demo_clean": {
+          "successes": 9,
+          "failures": 1,
+          "trials": 10,
+          "success_rate_pct": 90.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_bread_skillet_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_bread_skillet_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_bread_skillet/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 17:30:58/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_bread_skillet/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 17:30:58",
+          "scene_seeds": [
+            100004,
+            100005,
+            100008,
+            100014,
+            100015,
+            100018,
+            100019,
+            100020,
+            100021,
+            100025
+          ],
+          "failed_episode_indices": [
+            4
+          ],
+          "instruction_example": "Grab the soft bread with golden edges and drop it into the pan-shaped skillet with hole in handle."
+        },
+        "demo_randomized": {
+          "successes": 7,
+          "failures": 3,
+          "trials": 10,
+          "success_rate_pct": 70.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_bread_skillet_demo_randomized_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_bread_skillet_demo_randomized_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_bread_skillet/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 23:14:47/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_bread_skillet/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 23:14:47",
+          "scene_seeds": [
+            100000,
+            100001,
+            100003,
+            100006,
+            100008,
+            100013,
+            100014,
+            100015,
+            100029,
+            100034
+          ],
+          "failed_episode_indices": [
+            6,
+            8,
+            9
+          ],
+          "instruction_example": "Grab the spongy golden brown bread and drop it into the blackish-gray cast iron skillet."
+        }
+      },
+      "overall": {
+        "successes": 16,
+        "failures": 4,
+        "trials": 20,
+        "success_rate_pct": 80.0
+      }
+    },
+    {
+      "task_id": "place_burger_fries",
+      "description_ko": "햄버거와 감자튀김을 쟁반에 놓기",
+      "control_step_limit": 500,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/place_burger_fries.py",
+        "line": 125
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/place_burger_fries.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_burger_fries_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_burger_fries_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_burger_fries/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 17:39:08/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_burger_fries/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 17:39:08",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Pick the golden brown food within wrapper and the hand-sized fries container, then place them on the green tray."
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_burger_fries_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_burger_fries_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_burger_fries/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 23:25:47/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_burger_fries/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 23:25:47",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100006,
+            100007,
+            100008,
+            100009,
+            100010
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Pick the hamburg with light brown top and the Golden fries in red carton box, place them on the smooth green tray."
+        }
+      },
+      "overall": {
+        "successes": 20,
+        "failures": 0,
+        "trials": 20,
+        "success_rate_pct": 100.0
+      }
+    },
+    {
+      "task_id": "place_can_basket",
+      "description_ko": "캔을 바구니에 담고 바구니 들어 올리기",
+      "control_step_limit": 700,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/place_can_basket.py",
+        "line": 141
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/place_can_basket.json",
+      "results": {
+        "demo_clean": {
+          "successes": 8,
+          "failures": 2,
+          "trials": 10,
+          "success_rate_pct": 80.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_can_basket_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_can_basket_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_can_basket/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 17:42:23/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_can_basket/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 17:42:23",
+          "scene_seeds": [
+            100001,
+            100002,
+            100003,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009,
+            100010,
+            100012
+          ],
+          "failed_episode_indices": [
+            5,
+            8
+          ],
+          "instruction_example": "Use the right arm to pick the red can with white top, place it into the oval basket with medium storage space, and lift the basket."
+        },
+        "demo_randomized": {
+          "successes": 5,
+          "failures": 5,
+          "trials": 10,
+          "success_rate_pct": 50.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_can_basket_demo_randomized_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_can_basket_demo_randomized_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_can_basket/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 23:31:12/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_can_basket/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 23:31:12",
+          "scene_seeds": [
+            100001,
+            100002,
+            100003,
+            100004,
+            100007,
+            100008,
+            100010,
+            100011,
+            100012,
+            100013
+          ],
+          "failed_episode_indices": [
+            0,
+            2,
+            3,
+            6,
+            9
+          ],
+          "instruction_example": "Grab the red can and put it in the yellow basket with open slots, then lift the yellow basket with open slots."
+        }
+      },
+      "overall": {
+        "successes": 13,
+        "failures": 7,
+        "trials": 20,
+        "success_rate_pct": 65.0
+      }
+    },
+    {
+      "task_id": "place_cans_plasticbox",
+      "description_ko": "캔 2개를 플라스틱 상자에 담기",
+      "control_step_limit": 800,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/place_cans_plasticbox.py",
+        "line": 127
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/place_cans_plasticbox.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_cans_plasticbox_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_cans_plasticbox_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_cans_plasticbox/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 17:51:48/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_cans_plasticbox/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 17:51:48",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Grab the red can, drop it into the portable light blue storage plasticbox. Repeat for the hand-sized can with metallic finish."
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_cans_plasticbox_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_cans_plasticbox_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_cans_plasticbox/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 23:39:52/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_cans_plasticbox/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 23:39:52",
+          "scene_seeds": [
+            100000,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009,
+            100010
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Grab the lightweight cylindrical metal can, drop it into the portable light blue storage plasticbox. Repeat for the small red soda can."
+        }
+      },
+      "overall": {
+        "successes": 20,
+        "failures": 0,
+        "trials": 20,
+        "success_rate_pct": 100.0
+      }
+    },
+    {
+      "task_id": "place_container_plate",
+      "description_ko": "용기를 접시 위에 놓기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/place_container_plate.py",
+        "line": 93
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/place_container_plate.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_container_plate_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_container_plate_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_container_plate/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:03:19/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_container_plate/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:03:19",
+          "scene_seeds": [
+            100000,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009,
+            100010,
+            100011
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Move the smooth bowl with glossy finish to set the container on the gray plate"
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_container_plate_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_container_plate_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_container_plate/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 23:57:27/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_container_plate/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-28 23:57:27",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009,
+            100011
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Grab container with the rounded bowl, place it on the smooth round plate for serving."
+        }
+      },
+      "overall": {
+        "successes": 20,
+        "failures": 0,
+        "trials": 20,
+        "success_rate_pct": 100.0
+      }
+    },
+    {
+      "task_id": "place_dual_shoes",
+      "description_ko": "신발 2개를 방향을 맞춰 신발 상자 위에 놓기",
+      "control_step_limit": 600,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/place_dual_shoes.py",
+        "line": 141
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/place_dual_shoes.json",
+      "results": {
+        "demo_clean": {
+          "successes": 7,
+          "failures": 3,
+          "trials": 10,
+          "success_rate_pct": 70.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_dual_shoes_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_dual_shoes_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_dual_shoes/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:07:49/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_dual_shoes/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:07:49",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100007,
+            100008,
+            100009,
+            100012,
+            100013,
+            100015,
+            100019
+          ],
+          "failed_episode_indices": [
+            0,
+            4,
+            8
+          ],
+          "instruction_example": "Use both arms to move two the shoe with rubber bottom to the rectangular Nike box for shoes, tips pointing left."
+        },
+        "demo_randomized": {
+          "successes": 5,
+          "failures": 5,
+          "trials": 10,
+          "success_rate_pct": 50.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_dual_shoes_demo_randomized_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_dual_shoes_demo_randomized_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_dual_shoes/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:01:57/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_dual_shoes/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:01:57",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100008,
+            100011,
+            100013,
+            100014
+          ],
+          "failed_episode_indices": [
+            0,
+            1,
+            4,
+            5,
+            9
+          ],
+          "instruction_example": "Use both arms to move two the shoe with adjustable laces to the rectangular Nike box for shoes, tips pointing left."
+        }
+      },
+      "overall": {
+        "successes": 12,
+        "failures": 8,
+        "trials": 20,
+        "success_rate_pct": 60.0
+      }
+    },
+    {
+      "task_id": "place_empty_cup",
+      "description_ko": "빈 컵을 컵받침에 놓기",
+      "control_step_limit": 500,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/place_empty_cup.py",
+        "line": 90
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/place_empty_cup.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_empty_cup_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_empty_cup_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_empty_cup/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:10:14/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_empty_cup/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:10:14",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100005,
+            100007,
+            100008,
+            100009,
+            100010,
+            100011
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Place the handheld round blue cup onto the disc-shaped light gray coaster"
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_empty_cup_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_empty_cup_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_empty_cup/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:05:37/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_empty_cup/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:05:37",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Set the handheld round blue cup down on the disc-shaped light gray coaster."
+        }
+      },
+      "overall": {
+        "successes": 20,
+        "failures": 0,
+        "trials": 20,
+        "success_rate_pct": 100.0
+      }
+    },
+    {
+      "task_id": "place_fan",
+      "description_ko": "선풍기를 로봇 쪽으로 향하게 패드에 놓기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/place_fan.py",
+        "line": 116
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/place_fan.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_fan_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_fan_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_fan/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:18:09/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_fan/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:18:09",
+          "scene_seeds": [
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009,
+            100010,
+            100011
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Use the left arm to grab the fan with small round shape, then place it on the Tan mat facing the robot."
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_fan_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_fan_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_fan/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:15:03/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_fan/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:15:03",
+          "scene_seeds": [
+            100000,
+            100002,
+            100003,
+            100005,
+            100006,
+            100009,
+            100010,
+            100011,
+            100012,
+            100013
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Grab the fan with small round shape and set it on the Lime mat."
+        }
+      },
+      "overall": {
+        "successes": 20,
+        "failures": 0,
+        "trials": 20,
+        "success_rate_pct": 100.0
+      }
+    },
+    {
+      "task_id": "place_mouse_pad",
+      "description_ko": "마우스를 지정된 패드에 놓기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/place_mouse_pad.py",
+        "line": 118
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/place_mouse_pad.json",
+      "results": {
+        "demo_clean": {
+          "successes": 7,
+          "failures": 3,
+          "trials": 10,
+          "success_rate_pct": 70.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_mouse_pad_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_mouse_pad_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_mouse_pad/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:25:44/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_mouse_pad/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:25:44",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009
+          ],
+          "failed_episode_indices": [
+            0,
+            1,
+            8
+          ],
+          "instruction_example": "Grab the wireless mouse with left and right buttons and set it on Cyan mat."
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_mouse_pad_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_mouse_pad_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_mouse_pad/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:23:43/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_mouse_pad/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:23:43",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Pick up the the dark gray wireless mouse and set it on the Yellow mat."
+        }
+      },
+      "overall": {
+        "successes": 17,
+        "failures": 3,
+        "trials": 20,
+        "success_rate_pct": 85.0
+      }
+    },
+    {
+      "task_id": "place_object_basket",
+      "description_ko": "물체를 바구니에 담고 바구니 들어 올리기",
+      "control_step_limit": 700,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/place_object_basket.py",
+        "line": 141
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/place_object_basket.json",
+      "results": {
+        "demo_clean": {
+          "successes": 7,
+          "failures": 3,
+          "trials": 10,
+          "success_rate_pct": 70.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_object_basket_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_object_basket_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_object_basket/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:27:09/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_object_basket/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:27:09",
+          "scene_seeds": [
+            100000,
+            100001,
+            100003,
+            100007,
+            100008,
+            100009,
+            100011,
+            100012,
+            100013,
+            100014
+          ],
+          "failed_episode_indices": [
+            3,
+            5,
+            8
+          ],
+          "instruction_example": "Place the blue toycar with yellow buttons in the yellow basket with open slots and move it."
+        },
+        "demo_randomized": {
+          "successes": 9,
+          "failures": 1,
+          "trials": 10,
+          "success_rate_pct": 90.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_object_basket_demo_randomized_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_object_basket_demo_randomized_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_object_basket/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:25:38/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_object_basket/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:25:38",
+          "scene_seeds": [
+            100000,
+            100002,
+            100003,
+            100007,
+            100008,
+            100009,
+            100012,
+            100018,
+            100019,
+            100021
+          ],
+          "failed_episode_indices": [
+            1
+          ],
+          "instruction_example": "Pick up the compact toycar with rotating wheels and drop in the medium basket with smooth texture."
+        }
+      },
+      "overall": {
+        "successes": 16,
+        "failures": 4,
+        "trials": 20,
+        "success_rate_pct": 80.0
+      }
+    },
+    {
+      "task_id": "place_object_scale",
+      "description_ko": "물체를 전자저울 위에 놓기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/place_object_scale.py",
+        "line": 130
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/place_object_scale.json",
+      "results": {
+        "demo_clean": {
+          "successes": 8,
+          "failures": 2,
+          "trials": 10,
+          "success_rate_pct": 80.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_object_scale_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_object_scale_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_object_scale/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:35:34/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_object_scale/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:35:34",
+          "scene_seeds": [
+            100000,
+            100002,
+            100003,
+            100004,
+            100006,
+            100007,
+            100009,
+            100010,
+            100011,
+            100012
+          ],
+          "failed_episode_indices": [
+            1,
+            9
+          ],
+          "instruction_example": "Use one arm to pick the blue bell with glossy finish for the electronicscale"
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_object_scale_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_object_scale_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_object_scale/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:32:38/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_object_scale/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:32:38",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100005,
+            100006,
+            100009,
+            100010,
+            100011,
+            100012
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Use the left arm to put the smooth metal bell on the electronicscale with circular platform."
+        }
+      },
+      "overall": {
+        "successes": 18,
+        "failures": 2,
+        "trials": 20,
+        "success_rate_pct": 90.0
+      }
+    },
+    {
+      "task_id": "place_object_stand",
+      "description_ko": "물체를 받침대 위에 놓기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/place_object_stand.py",
+        "line": 134
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/place_object_stand.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_object_stand_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_object_stand_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_object_stand/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:45:04/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_object_stand/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:45:04",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Set the hand-sized black-gray mouse on the medium-sized displaystand."
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_object_stand_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_object_stand_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_object_stand/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:41:13/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_object_stand/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:41:13",
+          "scene_seeds": [
+            100001,
+            100002,
+            100003,
+            100004,
+            100006,
+            100007,
+            100008,
+            100009,
+            100010,
+            100011
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Place the red stapler with silver chamber on the displaystand with angled sides with the left arm."
+        }
+      },
+      "overall": {
+        "successes": 20,
+        "failures": 0,
+        "trials": 20,
+        "success_rate_pct": 100.0
+      }
+    },
+    {
+      "task_id": "place_phone_stand",
+      "description_ko": "휴대전화를 거치대에 놓기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/place_phone_stand.py",
+        "line": 99
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/place_phone_stand.json",
+      "results": {
+        "demo_clean": {
+          "successes": 9,
+          "failures": 1,
+          "trials": 10,
+          "success_rate_pct": 90.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_phone_stand_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_phone_stand_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_phone_stand/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:47:39/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_phone_stand/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:47:39",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100005,
+            100006,
+            100008,
+            100010,
+            100012,
+            100014,
+            100015
+          ],
+          "failed_episode_indices": [
+            5
+          ],
+          "instruction_example": "Set the rectangular silver phone with rounded edges on the silver arm phonestand."
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_phone_stand_demo_randomized_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_phone_stand_demo_randomized_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_phone_stand/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:44:48/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_phone_stand/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:44:48",
+          "scene_seeds": [
+            100000,
+            100009,
+            100010,
+            100012,
+            100013,
+            100014,
+            100015,
+            100017,
+            100020,
+            100021
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Set the rectangular phone with curved edges on the L-shaped smooth brown phonestand."
+        }
+      },
+      "overall": {
+        "successes": 19,
+        "failures": 1,
+        "trials": 20,
+        "success_rate_pct": 95.0
+      }
+    },
+    {
+      "task_id": "place_shoe",
+      "description_ko": "신발 1개를 방향을 맞춰 매트에 놓기",
+      "control_step_limit": 500,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/place_shoe.py",
+        "line": 90
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/place_shoe.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_shoe_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/place_shoe_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_shoe/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:51:59/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_shoe/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:51:59",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100010
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Grab the brown shoe with sturdy sole off the table and drop it on the mat"
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_shoe_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/place_shoe_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_shoe/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:49:28/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/place_shoe/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:49:28",
+          "scene_seeds": [
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100008,
+            100009,
+            100010,
+            100012
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Pick up the the white shoe from the table and place it on the mat"
+        }
+      },
+      "overall": {
+        "successes": 20,
+        "failures": 0,
+        "trials": 20,
+        "success_rate_pct": 100.0
+      }
+    },
+    {
+      "task_id": "press_stapler",
+      "description_ko": "스테이플러 누르기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/press_stapler.py",
+        "line": 45
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/press_stapler.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/press_stapler_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/press_stapler_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/press_stapler/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:55:04/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/press_stapler/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:55:04",
+          "scene_seeds": [
+            100000,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100009,
+            100010,
+            100011
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Press down on the blue and white stapler firmly using the left arm."
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/press_stapler_demo_randomized_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/press_stapler_demo_randomized_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/press_stapler/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:52:38/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/press_stapler/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:52:38",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100006,
+            100007,
+            100009,
+            100010,
+            100011
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Use the left arm to press on the blue stapler with smooth finish"
+        }
+      },
+      "overall": {
+        "successes": 20,
+        "failures": 0,
+        "trials": 20,
+        "success_rate_pct": 100.0
+      }
+    },
+    {
+      "task_id": "put_bottles_dustbin",
+      "description_ko": "병 3개를 쓰레기통에 넣기",
+      "control_step_limit": 1700,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/put_bottles_dustbin.py",
+        "line": 145
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/put_bottles_dustbin.json",
+      "results": {
+        "demo_clean": {
+          "successes": 7,
+          "failures": 3,
+          "trials": 10,
+          "success_rate_pct": 70.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/put_bottles_dustbin_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/put_bottles_dustbin_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/put_bottles_dustbin/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:59:54/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/put_bottles_dustbin/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 18:59:54",
+          "scene_seeds": [
+            100000,
+            100002,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009,
+            100010,
+            100013
+          ],
+          "failed_episode_indices": [
+            2,
+            6,
+            7
+          ],
+          "instruction_example": "Use arms to grab the yellow bottle with elongated cylinder body, the bottle with blue highlights, and the bottle with red screw cap and drop them into the smooth surface dustbin."
+        },
+        "demo_randomized": {
+          "successes": 6,
+          "failures": 4,
+          "trials": 10,
+          "success_rate_pct": 60.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/put_bottles_dustbin_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/put_bottles_dustbin_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/put_bottles_dustbin/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:58:18/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/put_bottles_dustbin/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:58:18",
+          "scene_seeds": [
+            100000,
+            100002,
+            100003,
+            100005,
+            100008,
+            100010,
+            100011,
+            100013,
+            100014,
+            100015
+          ],
+          "failed_episode_indices": [
+            0,
+            5,
+            8,
+            9
+          ],
+          "instruction_example": "Pick up the yellow plastic bottle and drop it into the smooth surface dustbin, do the same for the plastic bottle and the bottle with red screw cap."
+        }
+      },
+      "overall": {
+        "successes": 13,
+        "failures": 7,
+        "trials": 20,
+        "success_rate_pct": 65.0
+      }
+    },
+    {
+      "task_id": "put_object_cabinet",
+      "description_ko": "캐비닛 서랍을 열고 물체 넣기",
+      "control_step_limit": 700,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/put_object_cabinet.py",
+        "line": 118
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/put_object_cabinet.json",
+      "results": {
+        "demo_clean": {
+          "successes": 6,
+          "failures": 4,
+          "trials": 10,
+          "success_rate_pct": 60.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/put_object_cabinet_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/put_object_cabinet_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/put_object_cabinet/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 19:00:19/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/put_object_cabinet/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 19:00:19",
+          "scene_seeds": [
+            100026,
+            100029,
+            100030,
+            100044,
+            100045,
+            100050,
+            100051,
+            100053,
+            100054,
+            100069
+          ],
+          "failed_episode_indices": [
+            3,
+            4,
+            7,
+            8
+          ],
+          "instruction_example": "Pull out the drawer of the cabinet with smooth finish and set the hand-sized rubikscube with colored squares into it."
+        },
+        "demo_randomized": {
+          "successes": 6,
+          "failures": 4,
+          "trials": 10,
+          "success_rate_pct": 60.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/put_object_cabinet_demo_randomized_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/put_object_cabinet_demo_randomized_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/put_object_cabinet/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:58:48/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/put_object_cabinet/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 00:58:48",
+          "scene_seeds": [
+            100029,
+            100080,
+            100121,
+            100123,
+            100151,
+            100153,
+            100168,
+            100223,
+            100262,
+            100268
+          ],
+          "failed_episode_indices": [
+            0,
+            1,
+            3,
+            6
+          ],
+          "instruction_example": "Pull out the drawer of the slanted wooden cabinet and set the compact toycar with rotating wheels into it."
+        }
+      },
+      "overall": {
+        "successes": 12,
+        "failures": 8,
+        "trials": 20,
+        "success_rate_pct": 60.0
+      }
+    },
+    {
+      "task_id": "rotate_qrcode",
+      "description_ko": "QR 코드 표지판을 로봇 쪽으로 돌리기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/rotate_qrcode.py",
+        "line": 70
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/rotate_qrcode.json",
+      "results": {
+        "demo_clean": {
+          "successes": 8,
+          "failures": 2,
+          "trials": 10,
+          "success_rate_pct": 80.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/rotate_qrcode_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/rotate_qrcode_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/rotate_qrcode/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 19:28:45/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/rotate_qrcode/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 19:28:45",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100008,
+            100009,
+            100010
+          ],
+          "failed_episode_indices": [
+            0,
+            7
+          ],
+          "instruction_example": "Pick up the QR code payment sign and rotate it facing you."
+        },
+        "demo_randomized": {
+          "successes": 9,
+          "failures": 1,
+          "trials": 10,
+          "success_rate_pct": 90.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/rotate_qrcode_demo_randomized_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/rotate_qrcode_demo_randomized_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/rotate_qrcode/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 01:48:24/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/rotate_qrcode/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 01:48:24",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009
+          ],
+          "failed_episode_indices": [
+            3
+          ],
+          "instruction_example": "Grab the QR code payment sign, lift it, and rotate to see the qrcode."
+        }
+      },
+      "overall": {
+        "successes": 17,
+        "failures": 3,
+        "trials": 20,
+        "success_rate_pct": 85.0
+      }
+    },
+    {
+      "task_id": "scan_object",
+      "description_ko": "스캐너와 물체를 들어 스캔 위치에 맞추기",
+      "control_step_limit": 500,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/scan_object.py",
+        "line": 103
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/scan_object.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/scan_object_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/scan_object_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/scan_object/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 19:37:55/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/scan_object/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 19:37:55",
+          "scene_seeds": [
+            100006,
+            100014,
+            100019,
+            100029,
+            100037,
+            100038,
+            100040,
+            100041,
+            100042,
+            100043
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Pick the barcode scanner, grab the small tea-box, and scan the small tea-box with the barcode scanner."
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/scan_object_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/scan_object_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/scan_object/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 01:49:54/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/scan_object/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 01:49:54",
+          "scene_seeds": [
+            100007,
+            100009,
+            100013,
+            100015,
+            100026,
+            100029,
+            100031,
+            100033,
+            100043,
+            100047
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Pick the handheld scanner with blue activation trigger, grab the cube tea box with shiny embossed patterns, and scan the cube tea box with shiny embossed patterns with the handheld scanner with blue activation trigger."
+        }
+      },
+      "overall": {
+        "successes": 20,
+        "failures": 0,
+        "trials": 20,
+        "success_rate_pct": 100.0
+      }
+    },
+    {
+      "task_id": "shake_bottle_horizontally",
+      "description_ko": "병을 집어 수평으로 흔들기",
+      "control_step_limit": 700,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/shake_bottle_horizontally.py",
+        "line": 92
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/shake_bottle_horizontally.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/shake_bottle_horizontally_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/shake_bottle_horizontally_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/shake_bottle_horizontally/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 19:44:05/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/shake_bottle_horizontally/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 19:44:05",
+          "scene_seeds": [
+            100000,
+            100001,
+            100003,
+            100004,
+            100005,
+            100006,
+            100009,
+            100013,
+            100015,
+            100018
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Grab the bottle with printed label with the right arm, shake horizontally."
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/shake_bottle_horizontally_demo_randomized_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/shake_bottle_horizontally_demo_randomized_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/shake_bottle_horizontally/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 01:57:49/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/shake_bottle_horizontally/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 01:57:49",
+          "scene_seeds": [
+            100001,
+            100002,
+            100003,
+            100004,
+            100007,
+            100008,
+            100010,
+            100011,
+            100013,
+            100014
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Shake the smooth bottle with blue text side-to-side after picking it up."
+        }
+      },
+      "overall": {
+        "successes": 20,
+        "failures": 0,
+        "trials": 20,
+        "success_rate_pct": 100.0
+      }
+    },
+    {
+      "task_id": "shake_bottle",
+      "description_ko": "병을 집어 흔들기",
+      "control_step_limit": 700,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/shake_bottle.py",
+        "line": 82
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/shake_bottle.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/shake_bottle_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/shake_bottle_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/shake_bottle/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 19:50:40/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/shake_bottle/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 19:50:40",
+          "scene_seeds": [
+            100000,
+            100001,
+            100003,
+            100004,
+            100005,
+            100006,
+            100009,
+            100013,
+            100015,
+            100018
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Pick up the medium bottle and shake it."
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/shake_bottle_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/shake_bottle_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/shake_bottle/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 02:05:29/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/shake_bottle/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 02:05:29",
+          "scene_seeds": [
+            100001,
+            100002,
+            100004,
+            100007,
+            100008,
+            100010,
+            100011,
+            100013,
+            100014,
+            100015
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Pick up the smooth bottle with blue text and shake it."
+        }
+      },
+      "overall": {
+        "successes": 20,
+        "failures": 0,
+        "trials": 20,
+        "success_rate_pct": 100.0
+      }
+    },
+    {
+      "task_id": "stack_blocks_three",
+      "description_ko": "블록 3개 쌓기",
+      "control_step_limit": 1200,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/stack_blocks_three.py",
+        "line": 122
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/stack_blocks_three.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/stack_blocks_three_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/stack_blocks_three_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/stack_blocks_three/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 19:51:30/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/stack_blocks_three/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 19:51:30",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100008,
+            100009,
+            100010
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Transfer red block, green block, and blue block to the middle, then stack blue block over green block and green block over red block."
+        },
+        "demo_randomized": {
+          "successes": 8,
+          "failures": 2,
+          "trials": 10,
+          "success_rate_pct": 80.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/stack_blocks_three_demo_randomized_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/stack_blocks_three_demo_randomized_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/stack_blocks_three/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 02:05:29/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/stack_blocks_three/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 02:05:29",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009
+          ],
+          "failed_episode_indices": [
+            0,
+            9
+          ],
+          "instruction_example": "Place red block, green block, and blue block at the table's center, then stack blue block on green block and green block on red block."
+        }
+      },
+      "overall": {
+        "successes": 18,
+        "failures": 2,
+        "trials": 20,
+        "success_rate_pct": 90.0
+      }
+    },
+    {
+      "task_id": "stack_blocks_two",
+      "description_ko": "블록 2개 쌓기",
+      "control_step_limit": 800,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/stack_blocks_two.py",
+        "line": 116
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/stack_blocks_two.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/stack_blocks_two_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/stack_blocks_two_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/stack_blocks_two/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 19:57:10/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/stack_blocks_two/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 19:57:10",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Use the left arm to move red block to the center, then set the right arm and stack green block on red block."
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/stack_blocks_two_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/stack_blocks_two_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/stack_blocks_two/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 02:13:14/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/stack_blocks_two/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 02:13:14",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100010
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Move red block and green block to the table's center, then stack green block on red block."
+        }
+      },
+      "overall": {
+        "successes": 20,
+        "failures": 0,
+        "trials": 20,
+        "success_rate_pct": 100.0
+      }
+    },
+    {
+      "task_id": "stack_bowls_three",
+      "description_ko": "그릇 3개 쌓기",
+      "control_step_limit": 1200,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/stack_bowls_three.py",
+        "line": 108
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/stack_bowls_three.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/stack_bowls_three_demo_clean_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/stack_bowls_three_demo_clean_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/stack_bowls_three/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 20:10:25/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/stack_bowls_three/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 20:10:25",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100006,
+            100008,
+            100009,
+            100011,
+            100015,
+            100017
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Stack the smooth bowl with glossy finish together one by one."
+        },
+        "demo_randomized": {
+          "successes": 8,
+          "failures": 2,
+          "trials": 10,
+          "success_rate_pct": 80.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/stack_bowls_three_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/stack_bowls_three_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/stack_bowls_three/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 02:28:00/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/stack_bowls_three/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 02:28:00",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100006,
+            100007,
+            100012,
+            100016,
+            100021,
+            100023,
+            100024
+          ],
+          "failed_episode_indices": [
+            0,
+            5
+          ],
+          "instruction_example": "Grab the first the small smooth brown-rimmed bowl and stack the others on top."
+        }
+      },
+      "overall": {
+        "successes": 18,
+        "failures": 2,
+        "trials": 20,
+        "success_rate_pct": 90.0
+      }
+    },
+    {
+      "task_id": "stack_bowls_two",
+      "description_ko": "그릇 2개 쌓기",
+      "control_step_limit": 900,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/stack_bowls_two.py",
+        "line": 110
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/stack_bowls_two.json",
+      "results": {
+        "demo_clean": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/stack_bowls_two_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/stack_bowls_two_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/stack_bowls_two/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 20:10:35/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/stack_bowls_two/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 20:10:35",
+          "scene_seeds": [
+            100001,
+            100002,
+            100003,
+            100004,
+            100006,
+            100008,
+            100009,
+            100011,
+            100014,
+            100015
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Grab the smooth bowl with glossy finish and stack the small smooth brown-rimmed bowl on it."
+        },
+        "demo_randomized": {
+          "successes": 10,
+          "failures": 0,
+          "trials": 10,
+          "success_rate_pct": 100.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/stack_bowls_two_demo_randomized_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/stack_bowls_two_demo_randomized_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/stack_bowls_two/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 02:33:00/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/stack_bowls_two/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 02:33:00",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100006,
+            100010,
+            100011,
+            100013,
+            100015,
+            100016
+          ],
+          "failed_episode_indices": [],
+          "instruction_example": "Grab the light blue bowl with darkened rim and stack the small smooth brown-rimmed bowl on it."
+        }
+      },
+      "overall": {
+        "successes": 20,
+        "failures": 0,
+        "trials": 20,
+        "success_rate_pct": 100.0
+      }
+    },
+    {
+      "task_id": "stamp_seal",
+      "description_ko": "지정된 패드에 도장 찍기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/stamp_seal.py",
+        "line": 131
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/stamp_seal.json",
+      "results": {
+        "demo_clean": {
+          "successes": 9,
+          "failures": 1,
+          "trials": 10,
+          "success_rate_pct": 90.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/stamp_seal_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/stamp_seal_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/stamp_seal/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 20:24:21/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/stamp_seal/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 20:24:21",
+          "scene_seeds": [
+            100000,
+            100001,
+            100004,
+            100006,
+            100007,
+            100008,
+            100009,
+            100010,
+            100011,
+            100013
+          ],
+          "failed_episode_indices": [
+            4
+          ],
+          "instruction_example": "Use the right arm to grab the small carved seal, stamp Brown."
+        },
+        "demo_randomized": {
+          "successes": 8,
+          "failures": 2,
+          "trials": 10,
+          "success_rate_pct": 80.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/stamp_seal_demo_randomized_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/stamp_seal_demo_randomized_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/stamp_seal/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 02:48:20/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/stamp_seal/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 02:48:20",
+          "scene_seeds": [
+            100003,
+            100004,
+            100005,
+            100006,
+            100007,
+            100010,
+            100011,
+            100012,
+            100013,
+            100015
+          ],
+          "failed_episode_indices": [
+            4,
+            9
+          ],
+          "instruction_example": "Grab the block-shaped seal with angled edges using the right arm and stamp Blue"
+        }
+      },
+      "overall": {
+        "successes": 17,
+        "failures": 3,
+        "trials": 20,
+        "success_rate_pct": 85.0
+      }
+    },
+    {
+      "task_id": "turn_switch",
+      "description_ko": "스위치 조작하기",
+      "control_step_limit": 400,
+      "success_check": {
+        "source": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/envs/turn_switch.py",
+        "line": 40
+      },
+      "instruction_templates": "/home/jack/practice/RoboTwin-TurboVLA-bf44be5/description/task_instruction/turn_switch.json",
+      "results": {
+        "demo_clean": {
+          "successes": 5,
+          "failures": 5,
+          "trials": 10,
+          "success_rate_pct": 50.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/turn_switch_demo_clean_slot1_gpu1_port7601_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553_seed0/turn_switch_demo_clean_slot1_gpu1_port7601_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/turn_switch/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 20:32:46/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/turn_switch/model2robotwin_interface/demo_clean/turbovla_release150000_postnorm_demo_clean_eval10_20260928_151553/2026-09-28 20:32:46",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009,
+            100010
+          ],
+          "failed_episode_indices": [
+            0,
+            1,
+            3,
+            4,
+            8
+          ],
+          "instruction_example": "Activate the switch at the small flat switch tan top"
+        },
+        "demo_randomized": {
+          "successes": 5,
+          "failures": 5,
+          "trials": 10,
+          "success_rate_pct": 50.0,
+          "eval_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/turn_switch_demo_randomized_slot0_gpu0_port7600_eval.log",
+          "server_log": "/data/jack/robotwin2_turbovla/evaluation/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553_seed0/turn_switch_demo_randomized_slot0_gpu0_port7600_server.log",
+          "simulator_result_file": "/data/jack/robotwin2_turbovla/simulator_eval_result/turn_switch/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 02:58:30/_result.txt",
+          "video_directory": "/data/jack/robotwin2_turbovla/simulator_eval_result/turn_switch/model2robotwin_interface/demo_randomized/turbovla_release150000_postnorm_demo_randomized_eval10_20260928_151553/2026-09-29 02:58:30",
+          "scene_seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100005,
+            100006,
+            100007,
+            100008,
+            100009,
+            100010
+          ],
+          "failed_episode_indices": [
+            0,
+            1,
+            2,
+            5,
+            6
+          ],
+          "instruction_example": "Press the hand-sized square electrical switch using the left arm"
+        }
+      },
+      "overall": {
+        "successes": 10,
+        "failures": 10,
+        "trials": 20,
+        "success_rate_pct": 50.0
+      }
+    }
+  ],
+  "integrity": {
+    "original_audit_status": "passed",
+    "original_audit_checked_at": "2026-09-29T08:09:13.911419+09:00",
+    "export_consistency_checked_at": "2026-09-30T11:38:21.272615+09:00",
+    "checks": "100 task logs, 1000 episode inputs/outcomes/step counts, CSV totals, simulator result files, and all recorded video paths agree.",
+    "graded_policy_tracebacks": 0,
+    "failed_episodes_at_step_limit": 118,
+    "videos_checked_in_original_audit": 1000,
+    "video_check_scope": "Existing ffprobe stream audit: positive frames and duration; not full-frame decoding. Export checks path existence without rerunning ffprobe."
+  },
+  "limitations": [
+    "10 trials per task and variant, versus the official 100; this is a reduced evaluation.",
+    "Public checkpoint inference evaluation; this does not reproduce the training process.",
+    "Clean and Randomized are not guaranteed to use identical accepted seeds or language instructions.",
+    "Log and video paths are absolute paths on this machine; JSON files do not embed videos."
+  ],
+  "official_comparison": {
+    "checked_at": "2026-09-29T08:12:08.884151+09:00",
+    "reference_code_commit": "6727c875666f8d5dda8d8cca0043da200738fe73",
+    "reference_figure_url": "https://github.com/H-EmbodVis/TurboVLA/blob/6727c875666f8d5dda8d8cca0043da200738fe73/assets/figures/performance.png",
+    "reference_figure_sha256": "d300d017b35664d70bc890470948f8e2d3744a3ae3d7e82e21841fe6e3ef3ff7",
+    "ours_trials_per_task_per_variant": 10,
+    "official_trials_per_task_per_variant": 100,
+    "results": [
+      {
+        "mode": "demo_clean",
+        "ours_success_pct": 88.6,
+        "official_success_pct": 88.02,
+        "difference_percentage_points": 0.58
+      },
+      {
+        "mode": "demo_randomized",
+        "ours_success_pct": 87.8,
+        "official_success_pct": 88.1,
+        "difference_percentage_points": -0.3
+      }
+    ],
+    "mean": {
+      "ours_success_pct": 88.2,
+      "official_success_pct": 88.06,
+      "difference_percentage_points": 0.14
+    },
+    "interpretation": "Numerically close success rates in a reduced evaluation; not a formal statistical equivalence claim or a reproduction of training."
+  },
+  "files": {
+    "episode_results_json": "/home/jack/TurboVLA/experiments/robotwin/evaluation_records/released150k_20260929/episode_results.json",
+    "guide_markdown": "/home/jack/TurboVLA/experiments/robotwin/EVALUATION_LOG_GUIDE_KO.md",
+    "task_comparison_csv": "/home/jack/TurboVLA/experiments/robotwin/evaluation_records/released150k_20260929/task_comparison.csv",
+    "completion_audit_json": "/home/jack/TurboVLA/experiments/robotwin/evaluation_records/released150k_20260929/completion_audit.json",
+    "video_stream_audit_json": "/home/jack/TurboVLA/experiments/robotwin/evaluation_records/released150k_20260929/video_stream_audit.json",
+    "export_script": "/home/jack/TurboVLA/experiments/robotwin/setup_records/compatibility_20260928/export_evaluation_results.py"
+  }
+}

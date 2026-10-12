@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-09-23T17:24:30+09:00",
+  "dataset_root": "/home/jack/datasets/RoboTwin/Clean",
+  "repo_id": "StarVLA/RoboTwin-Clean",
+  "revision": "070d3b86d7db06f924702a82725dba0f4d89a433",
+  "expected_files": 10404,
+  "expected_bytes": 4021934537,
+  "verified_files": 10404,
+  "verified_bytes": 4021934537,
+  "hash_methods": {
+    "git_blob_sha1": 304,
+    "lfs_sha256": 10100
+  },
+  "missing_count": 0,
+  "size_mismatch_count": 0,
+  "hash_mismatch_count": 0,
+  "download_complete": true,
+  "missing_files": [],
+  "size_mismatches": [],
+  "hash_mismatches": [],
+  "extra_files": [],
+  "incomplete_files": [],
+  "final_verification_report": "/home/jack/datasets/RoboTwin/.download/final_integrity.json"
+}

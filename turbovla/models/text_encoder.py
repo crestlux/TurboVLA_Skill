@@ -85,13 +85,15 @@ class TurboVLATextEncoder(nn.Module):
             truncation=True,
             max_length=effective_max_length,
             return_tensors="pt",
-        ).to(device)
+        )
+        # Mask construction contains Python scalar indexing. Keep it on CPU so
+        # each index does not force a CUDA synchronization during tokenization.
         text_self_attention_masks, position_ids = generate_masks_with_special_tokens(
             tokenized,
             self.special_tokens,
             self.tokenizer,
         )
-        return tokenized, text_self_attention_masks, position_ids
+        return tokenized.to(device), text_self_attention_masks.to(device), position_ids.to(device)
 
     def _encode_group(
         self,

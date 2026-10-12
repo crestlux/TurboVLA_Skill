@@ -1,0 +1,51 @@
+{
+  "official_version": "0.7.6",
+  "official_commit": "f34104cf6ebefacd7b7e07955ee7aaa823e616ac",
+  "old_wheel_tag": "cp311-cp311-linux_x86_64",
+  "all_transforms_identical": false,
+  "files": [
+    {
+      "path": "transforms/__init__.py",
+      "official_sha256": "30e4a02738c2455936176dc95f28e09beef45c5f06cf066d5cb2897dbd44c5b8",
+      "old_sha256": "3bbd8eaa51f6500aa099e2a69484e380777f98f8418e83c3524199f58e9775df",
+      "identical": false,
+      "ast_identical": true
+    },
+    {
+      "path": "transforms/math.py",
+      "official_sha256": "97fb4071aefe8aeceaa6939ed2422fa2bf6b645d44dccc19ca3ecc71340ca792",
+      "old_sha256": "c19c28e63dca2d85611c303f6f10fbece6274278e6d900ca460de149fa7a7a7c",
+      "identical": false,
+      "ast_identical": true
+    },
+    {
+      "path": "transforms/rotation_conversions.py",
+      "official_sha256": "67b71c9a699f6def4cd0d6bc886df718aba280eb152fd0901ab5ad3f3bf6c717",
+      "old_sha256": "a40594ac49e0f2e95b0e9d39003e169a68a8e3f04f53d4fe17c4e51c97144509",
+      "identical": false,
+      "ast_identical": true
+    },
+    {
+      "path": "transforms/se3.py",
+      "official_sha256": "39f384274ed78c132266575407dcda59863010d51a476d44b8893dc9b9ed9faf",
+      "old_sha256": "62e4ca814781d272f1699d26039a055f566277140ef88f1d94818480542df592",
+      "identical": false,
+      "ast_identical": true
+    },
+    {
+      "path": "transforms/so3.py",
+      "official_sha256": "1975e4473ee9a62dc6d2a5c64af16968a64ab7fb0d2740c44b807a4644015c3e",
+      "old_sha256": "1cb2c9a488ffc7d7bdeecd8655b2522320bc7941ed5916d816efac58a015dff1",
+      "identical": false,
+      "ast_identical": true
+    },
+    {
+      "path": "transforms/transform3d.py",
+      "official_sha256": "533f324f13f7dc815bde5f2905fbcc01ae0a2ccbf9afec3ff3de6b2d48fd04f0",
+      "old_sha256": "7ed69305c62034448f9f002423afc1548a140a217fc7c9759f2104d2a781563f",
+      "identical": false,
+      "ast_identical": true
+    }
+  ],
+  "all_transforms_ast_identical": true
+}

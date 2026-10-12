@@ -1,0 +1,186 @@
+{
+  "checked_at": "2026-09-28T15:01:12.951596+09:00",
+  "status": "passed",
+  "videos": [
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/adjust_bottle/model2robotwin_interface/demo_clean/turbovla_release55000_postnorm_probe5_20260928_144533/2026-09-28 14:45:57/episode0.mp4",
+      "codec_name": "h264",
+      "width": 320,
+      "height": 240,
+      "avg_frame_rate": "10/1",
+      "duration": "12.800000",
+      "nb_frames": "128"
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/adjust_bottle/model2robotwin_interface/demo_clean/turbovla_release55000_postnorm_probe5_20260928_144533/2026-09-28 14:45:57/episode1.mp4",
+      "codec_name": "h264",
+      "width": 320,
+      "height": 240,
+      "avg_frame_rate": "10/1",
+      "duration": "11.900000",
+      "nb_frames": "119"
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/adjust_bottle/model2robotwin_interface/demo_clean/turbovla_release55000_postnorm_probe5_20260928_144533/2026-09-28 14:45:57/episode2.mp4",
+      "codec_name": "h264",
+      "width": 320,
+      "height": 240,
+      "avg_frame_rate": "10/1",
+      "duration": "11.900000",
+      "nb_frames": "119"
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/adjust_bottle/model2robotwin_interface/demo_clean/turbovla_release55000_postnorm_probe5_20260928_144533/2026-09-28 14:45:57/episode3.mp4",
+      "codec_name": "h264",
+      "width": 320,
+      "height": 240,
+      "avg_frame_rate": "10/1",
+      "duration": "12.700000",
+      "nb_frames": "127"
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/adjust_bottle/model2robotwin_interface/demo_clean/turbovla_release55000_postnorm_probe5_20260928_144533/2026-09-28 14:45:57/episode4.mp4",
+      "codec_name": "h264",
+      "width": 320,
+      "height": 240,
+      "avg_frame_rate": "10/1",
+      "duration": "12.300000",
+      "nb_frames": "123"
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/beat_block_hammer/model2robotwin_interface/demo_clean/turbovla_release55000_postnorm_probe5_20260928_144533/2026-09-28 14:45:57/episode0.mp4",
+      "codec_name": "h264",
+      "width": 320,
+      "height": 240,
+      "avg_frame_rate": "10/1",
+      "duration": "10.000000",
+      "nb_frames": "100"
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/beat_block_hammer/model2robotwin_interface/demo_clean/turbovla_release55000_postnorm_probe5_20260928_144533/2026-09-28 14:45:57/episode1.mp4",
+      "codec_name": "h264",
+      "width": 320,
+      "height": 240,
+      "avg_frame_rate": "10/1",
+      "duration": "10.400000",
+      "nb_frames": "104"
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/beat_block_hammer/model2robotwin_interface/demo_clean/turbovla_release55000_postnorm_probe5_20260928_144533/2026-09-28 14:45:57/episode2.mp4",
+      "codec_name": "h264",
+      "width": 320,
+      "height": 240,
+      "avg_frame_rate": "10/1",
+      "duration": "40.000000",
+      "nb_frames": "400"
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/beat_block_hammer/model2robotwin_interface/demo_clean/turbovla_release55000_postnorm_probe5_20260928_144533/2026-09-28 14:45:57/episode3.mp4",
+      "codec_name": "h264",
+      "width": 320,
+      "height": 240,
+      "avg_frame_rate": "10/1",
+      "duration": "40.000000",
+      "nb_frames": "400"
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/beat_block_hammer/model2robotwin_interface/demo_clean/turbovla_release55000_postnorm_probe5_20260928_144533/2026-09-28 14:45:57/episode4.mp4",
+      "codec_name": "h264",
+      "width": 320,
+      "height": 240,
+      "avg_frame_rate": "10/1",
+      "duration": "9.900000",
+      "nb_frames": "99"
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/dump_bin_bigbin/model2robotwin_interface/demo_clean/turbovla_release55000_postnorm_probe5_20260928_144533/2026-09-28 14:50:47/episode0.mp4",
+      "codec_name": "h264",
+      "width": 320,
+      "height": 240,
+      "avg_frame_rate": "10/1",
+      "duration": "30.000000",
+      "nb_frames": "300"
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/dump_bin_bigbin/model2robotwin_interface/demo_clean/turbovla_release55000_postnorm_probe5_20260928_144533/2026-09-28 14:50:47/episode1.mp4",
+      "codec_name": "h264",
+      "width": 320,
+      "height": 240,
+      "avg_frame_rate": "10/1",
+      "duration": "18.000000",
+      "nb_frames": "180"
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/dump_bin_bigbin/model2robotwin_interface/demo_clean/turbovla_release55000_postnorm_probe5_20260928_144533/2026-09-28 14:50:47/episode2.mp4",
+      "codec_name": "h264",
+      "width": 320,
+      "height": 240,
+      "avg_frame_rate": "10/1",
+      "duration": "28.900000",
+      "nb_frames": "289"
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/dump_bin_bigbin/model2robotwin_interface/demo_clean/turbovla_release55000_postnorm_probe5_20260928_144533/2026-09-28 14:50:47/episode3.mp4",
+      "codec_name": "h264",
+      "width": 320,
+      "height": 240,
+      "avg_frame_rate": "10/1",
+      "duration": "60.000000",
+      "nb_frames": "600"
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/dump_bin_bigbin/model2robotwin_interface/demo_clean/turbovla_release55000_postnorm_probe5_20260928_144533/2026-09-28 14:50:47/episode4.mp4",
+      "codec_name": "h264",
+      "width": 320,
+      "height": 240,
+      "avg_frame_rate": "10/1",
+      "duration": "60.000000",
+      "nb_frames": "600"
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/grab_roller/model2robotwin_interface/demo_clean/turbovla_release55000_postnorm_probe5_20260928_144533/2026-09-28 14:51:37/episode0.mp4",
+      "codec_name": "h264",
+      "width": 320,
+      "height": 240,
+      "avg_frame_rate": "10/1",
+      "duration": "9.600000",
+      "nb_frames": "96"
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/grab_roller/model2robotwin_interface/demo_clean/turbovla_release55000_postnorm_probe5_20260928_144533/2026-09-28 14:51:37/episode1.mp4",
+      "codec_name": "h264",
+      "width": 320,
+      "height": 240,
+      "avg_frame_rate": "10/1",
+      "duration": "7.800000",
+      "nb_frames": "78"
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/grab_roller/model2robotwin_interface/demo_clean/turbovla_release55000_postnorm_probe5_20260928_144533/2026-09-28 14:51:37/episode2.mp4",
+      "codec_name": "h264",
+      "width": 320,
+      "height": 240,
+      "avg_frame_rate": "10/1",
+      "duration": "8.900000",
+      "nb_frames": "89"
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/grab_roller/model2robotwin_interface/demo_clean/turbovla_release55000_postnorm_probe5_20260928_144533/2026-09-28 14:51:37/episode3.mp4",
+      "codec_name": "h264",
+      "width": 320,
+      "height": 240,
+      "avg_frame_rate": "10/1",
+      "duration": "9.400000",
+      "nb_frames": "94"
+    },
+    {
+      "path": "/data/jack/robotwin2_turbovla/simulator_eval_result/grab_roller/model2robotwin_interface/demo_clean/turbovla_release55000_postnorm_probe5_20260928_144533/2026-09-28 14:51:37/episode4.mp4",
+      "codec_name": "h264",
+      "width": 320,
+      "height": 240,
+      "avg_frame_rate": "10/1",
+      "duration": "8.900000",
+      "nb_frames": "89"
+    }
+  ]
+}

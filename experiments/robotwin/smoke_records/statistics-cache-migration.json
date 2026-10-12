@@ -1,0 +1,252 @@
+[
+  {
+    "task": "adjust_bottle",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/49df85dc580d4f09/stats_gr00t.json",
+    "sha256": "e2637fd584adc6bd9d5b4bf7254482f5ac565ae5ea3a3c8733a8bb96604238ce"
+  },
+  {
+    "task": "beat_block_hammer",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/d60a29f3573add5e/stats_gr00t.json",
+    "sha256": "59e4114ec1d5bcdd1f58a8c643345928275f7b85e84e630e59f45a6c81a392b5"
+  },
+  {
+    "task": "blocks_ranking_rgb",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/c7fbbbdbd42e55c5/stats_gr00t.json",
+    "sha256": "edc5443376a403590b992a2466b7dc92355b3f6d9afa9ebfb99e58a195497104"
+  },
+  {
+    "task": "blocks_ranking_size",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/3c2924d309e856cb/stats_gr00t.json",
+    "sha256": "ed1571baee4c2a8ec5559bde29db2976000178a6807145af25e90e74227bf4fe"
+  },
+  {
+    "task": "click_alarmclock",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/b0b34e65181f43ba/stats_gr00t.json",
+    "sha256": "5a20925d206f0939d9f1ff3107299f5728b672ddcb14d5fd7f52adbad9a361b1"
+  },
+  {
+    "task": "click_bell",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/b8d1fd98f9b7cc72/stats_gr00t.json",
+    "sha256": "06f188bcf58329da1017eaccb40f6a045e2e9be3b451f6e0187d2f31041098dc"
+  },
+  {
+    "task": "dump_bin_bigbin",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/ddbed7cd74e63f5d/stats_gr00t.json",
+    "sha256": "3899edeb4e1348159fb3525ef49920e42e53151282743a66092dc927b2571d7d"
+  },
+  {
+    "task": "grab_roller",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/6cf1d0be848017d0/stats_gr00t.json",
+    "sha256": "d58b6381337ceb4ab1d944c4d69f9335d2631d5acc508dfcb56cdbcc9670064d"
+  },
+  {
+    "task": "handover_block",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/5a1900c69c59c4ff/stats_gr00t.json",
+    "sha256": "7c7c21f0cc57f2e0c371cdf6dd831ef1272015f89f9eee0fefc5e328cd090e75"
+  },
+  {
+    "task": "handover_mic",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/7199686f3cb3d9bd/stats_gr00t.json",
+    "sha256": "7ab278e19b7f309ca88806683e37bc9986607da6166f86e94482495dabbec4e8"
+  },
+  {
+    "task": "hanging_mug",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/fa369e96552ec14b/stats_gr00t.json",
+    "sha256": "df2099b07383a8cff517e67815e3d91a10fa31e78b3cf9630ef32cf6cc7ed074"
+  },
+  {
+    "task": "lift_pot",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/0c71f2a8741cecdf/stats_gr00t.json",
+    "sha256": "88dadc38d0042ddb240cc8334743f5e1a5e84c0aa066d4bd74dd4b7828a5b4aa"
+  },
+  {
+    "task": "move_can_pot",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/c33e60e1d17f9fe1/stats_gr00t.json",
+    "sha256": "9a050ce59a398f6009b623e5e097f9c0ac5242eb8555ed776181cce756ecb4aa"
+  },
+  {
+    "task": "move_pillbottle_pad",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/3109cb560b69210f/stats_gr00t.json",
+    "sha256": "a9775261f9c169cc257f7039976786c8d35f85311640ee2619ed298dde3f4ba2"
+  },
+  {
+    "task": "move_playingcard_away",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/883a339b1b29cddc/stats_gr00t.json",
+    "sha256": "02da6ddaa4714b786650a670f818db6ae6ea01de094d949659eb6bdab338bed9"
+  },
+  {
+    "task": "move_stapler_pad",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/1a48a48b224591f2/stats_gr00t.json",
+    "sha256": "c04b5dccb2425755676e4cd2cdd0fc224a0fa302c20636fd7daec6bba4b426c4"
+  },
+  {
+    "task": "open_laptop",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/2e8ac3f5b81d5a4b/stats_gr00t.json",
+    "sha256": "2fbca2e15e8603cbb30b7e51c80eccaba00b8596c8221532953dd76cccf3d5f6"
+  },
+  {
+    "task": "open_microwave",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/9d1601754617ec3c/stats_gr00t.json",
+    "sha256": "947c5f8d98c76a236be0ec359b4ac08e281ca259820bca529d1621555cc0a293"
+  },
+  {
+    "task": "pick_diverse_bottles",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/a7c3c3d02ed5df07/stats_gr00t.json",
+    "sha256": "68631697d8af5677c76026ea10becf12f25531437b1575df181b904117d173a6"
+  },
+  {
+    "task": "pick_dual_bottles",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/8505f24865112d50/stats_gr00t.json",
+    "sha256": "0e5950561b0a2616e6aa267adc8c504bfea16477aa70c38ace7bc3bede3820b6"
+  },
+  {
+    "task": "place_a2b_left",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/ab6d5428130dfb9f/stats_gr00t.json",
+    "sha256": "847453d82002fb4c33314a5d056f37fc16ff7ec744558e10bf4668ed6c64325f"
+  },
+  {
+    "task": "place_a2b_right",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/6b952420105f4257/stats_gr00t.json",
+    "sha256": "561fd23122d8cd50d4efc42c88a0bf65f2974d1eb728b3d8f1ab391bc2504cd4"
+  },
+  {
+    "task": "place_bread_basket",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/db67f469af6b1be6/stats_gr00t.json",
+    "sha256": "fff49e6ed143823612c3cf59ec1977eb04d4f24c2cffb535a5c38be758e446c7"
+  },
+  {
+    "task": "place_bread_skillet",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/3f875e5f06c4093b/stats_gr00t.json",
+    "sha256": "e520d72a7d8e06f912c98593a094bd3d5a3eedd7dffd340f6f51426089b49a95"
+  },
+  {
+    "task": "place_burger_fries",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/55f099e36f9f629b/stats_gr00t.json",
+    "sha256": "8cc705e0a2f6d1548d3a18e04c521999366c6ee658887f31e4be4505c9a55363"
+  },
+  {
+    "task": "place_can_basket",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/52327940f5ca231a/stats_gr00t.json",
+    "sha256": "13f10fcb2ecf8b8c625d5432b840a51b06473c1a065dd1af5a0c35acaaf82dae"
+  },
+  {
+    "task": "place_cans_plasticbox",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/1388741d1f8d0efb/stats_gr00t.json",
+    "sha256": "e2c35330969570d4e386c724d8690d0a55b20694b285df83eddbb23c9c1d9cd2"
+  },
+  {
+    "task": "place_container_plate",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/4f90bc037b68298b/stats_gr00t.json",
+    "sha256": "9f13688ea34a1c9b4d27eb85602a64d89a7c8bfa555dc3ac1cc0a4f20dae361e"
+  },
+  {
+    "task": "place_dual_shoes",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/bf35002b9ee67613/stats_gr00t.json",
+    "sha256": "cb22710e215f8d3bbea35da1e216a6c2239ad37fba02123b48aea6f9008e4f52"
+  },
+  {
+    "task": "place_empty_cup",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/a673f2d03799952b/stats_gr00t.json",
+    "sha256": "d5d06cc6848f23d1671efb0858e31fd4e107f1bce9d581673a167227bacca976"
+  },
+  {
+    "task": "place_fan",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/a416d8b929212d9d/stats_gr00t.json",
+    "sha256": "1811bde9ad20b9a03410d55945adfe818b56551b81d1a5fde1dc76a0b77a9c37"
+  },
+  {
+    "task": "place_mouse_pad",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/a40fcb29172d8e5b/stats_gr00t.json",
+    "sha256": "40e7f8be9950e1aaac8c0659904f80071fb33c48043a5b9f09f357c96128dbda"
+  },
+  {
+    "task": "place_object_basket",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/a9ae8e35872e3331/stats_gr00t.json",
+    "sha256": "93353a772372e7bbaa3b4199a304041c94dc77041197de4fa0c3c958ce260c80"
+  },
+  {
+    "task": "place_object_scale",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/ac970f23014ec38b/stats_gr00t.json",
+    "sha256": "bad511e84145551f0c47c317c72335990f5d35d952b1a491dd4f470097530c97"
+  },
+  {
+    "task": "place_object_stand",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/72a1bdfc990ea4b5/stats_gr00t.json",
+    "sha256": "7c2ab043a6b90e3fcf4d5a3a9d514d7e4a7b7b3c06e4dbe92f9982b1fb5364f8"
+  },
+  {
+    "task": "place_phone_stand",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/5c6e68f5777cf6a9/stats_gr00t.json",
+    "sha256": "ea6c8a4c58c63d705df2b8a46caa750fe391f40ab3176f47f94bd1f2687b9187"
+  },
+  {
+    "task": "place_shoe",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/f3e389065c257831/stats_gr00t.json",
+    "sha256": "de55841ffdd554513b06acf9230194a1610a23dbf9ca2c6872024b47b2af4f39"
+  },
+  {
+    "task": "press_stapler",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/748f455fe6923c23/stats_gr00t.json",
+    "sha256": "04a3d9aab84e7d798ade627a871394a8ca00d996dd8574fd908dc91035e71460"
+  },
+  {
+    "task": "put_bottles_dustbin",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/aa77ea18f16f8252/stats_gr00t.json",
+    "sha256": "475a58885552d6ff871124f0ecf4a32cba6eb427df792a52617fc708b21b6eae"
+  },
+  {
+    "task": "put_object_cabinet",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/ecd693ad37a5d233/stats_gr00t.json",
+    "sha256": "6b53927f29fddbd4c79ca97d6a9e03d78cea6c1e7d62cfed502737f63b6e9f3a"
+  },
+  {
+    "task": "rotate_qrcode",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/40b99b56310dec3b/stats_gr00t.json",
+    "sha256": "2f4da2a58a54aa3818186f1ff0dc2a5846a8759a405b54b25d91fdfd6f4bdd9e"
+  },
+  {
+    "task": "scan_object",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/18c1af5ded946326/stats_gr00t.json",
+    "sha256": "d472bdb64ec68a1444b754cf71ff2983469b628d7749c5928c0413bc61efc7d5"
+  },
+  {
+    "task": "shake_bottle",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/6ec4fe69cd89f844/stats_gr00t.json",
+    "sha256": "a4ea7f08e80a60970c02e15948a18b94af7d5c6265fcec5097a9ebe5175a65f5"
+  },
+  {
+    "task": "shake_bottle_horizontally",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/1fd55eda9df6479d/stats_gr00t.json",
+    "sha256": "e6cb61d6e5215ef6f92e1403b8cd1142b9790cd943034f2b57c304d0aeeac4a1"
+  },
+  {
+    "task": "stack_blocks_three",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/da22d55c19fe837f/stats_gr00t.json",
+    "sha256": "c1e7771dbc80555abb5139580302cb0682364e90e21cf00e62eeb84ddce82da5"
+  },
+  {
+    "task": "stack_blocks_two",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/8f52784ae07dfd71/stats_gr00t.json",
+    "sha256": "d2675bc4d664c296b312b43d494b6f37a9052942e76f20236ab2eda00530401f"
+  },
+  {
+    "task": "stack_bowls_three",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/e38639e648b467f4/stats_gr00t.json",
+    "sha256": "87f82ae3dfd3fccc2c64139453a42940e987f7737623d9ca4653b91d0abc8417"
+  },
+  {
+    "task": "stack_bowls_two",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/1e0c842e1a2156cd/stats_gr00t.json",
+    "sha256": "312b0d3d6baa65d8d2575a5ab0cebee9e452f77c6c492d3e177f6ec3647a46bf"
+  },
+  {
+    "task": "stamp_seal",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/d81b21f047c5c149/stats_gr00t.json",
+    "sha256": "342fa67e9856d2a47e1495184cea17bbe4d6bab8744477f0c248f08ddc776298"
+  },
+  {
+    "task": "turn_switch",
+    "cache": "/home/jack/datasets/RoboTwin/.cache/turbovla_statistics/0b4f743261195197/stats_gr00t.json",
+    "sha256": "ca19c981e081d8c79d869110555fcb424c17e700450dbd90c7b773f257b8a11d"
+  }
+]

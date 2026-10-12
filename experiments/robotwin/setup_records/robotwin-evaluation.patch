@@ -1,0 +1,55 @@
+diff --git a/script/eval_policy.py b/script/eval_policy.py
+index eded198..a8d2a9f 100644
+--- a/script/eval_policy.py
++++ b/script/eval_policy.py
+@@ -159,7 +159,9 @@ def main(usr_args):
+ 
+     st_seed = 100000 * (1 + seed)
+     suc_nums = []
+-    test_num = 100
++    test_num = int(os.environ.get("ROBOTWIN_TEST_NUM", "100"))
++    if test_num < 1:
++        raise ValueError("ROBOTWIN_TEST_NUM must be positive")
+     topk = 1
+ 
+     model = get_model(usr_args)
+@@ -214,6 +216,10 @@ def eval_policy(task_name,
+     clear_cache_freq = args["clear_cache_freq"]
+ 
+     args["eval_mode"] = True
++    consecutive_setup_errors = 0
++    max_setup_errors = int(os.environ.get("ROBOTWIN_MAX_SETUP_ERRORS", "20"))
++    if max_setup_errors < 1:
++        raise ValueError("ROBOTWIN_MAX_SETUP_ERRORS must be positive")
+ 
+     while succ_seed < test_num:
+         render_freq = args["render_freq"]
+@@ -224,7 +230,9 @@ def eval_policy(task_name,
+                 TASK_ENV.setup_demo(now_ep_num=now_id, seed=now_seed, is_test=True, **args)
+                 episode_info = TASK_ENV.play_once()
+                 TASK_ENV.close_env()
++                consecutive_setup_errors = 0
+             except UnStableError as e:
++                consecutive_setup_errors = 0
+                 # print(" -------------")
+                 # print("Error: ", e)
+                 # print(" -------------")
+@@ -233,11 +241,18 @@ def eval_policy(task_name,
+                 args["render_freq"] = render_freq
+                 continue
+             except Exception as e:
++                traceback.print_exc()
++                consecutive_setup_errors += 1
+                 # stack_trace = traceback.format_exc()
+                 # print(" -------------")
+                 # print("Error: ", e)
+                 # print(" -------------")
+                 TASK_ENV.close_env()
++                if consecutive_setup_errors >= max_setup_errors:
++                    raise RuntimeError(
++                        f"{task_name}: {consecutive_setup_errors} consecutive setup errors; "
++                        "stopping this task instead of skipping seeds indefinitely"
++                    ) from e
+                 now_seed += 1
+                 args["render_freq"] = render_freq
+                 print("error occurs !")

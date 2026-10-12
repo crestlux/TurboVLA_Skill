@@ -1,0 +1,209 @@
+{
+  "official_issues": [
+    {
+      "number": 18,
+      "title": "真机训练",
+      "state": "open",
+      "comments": 0,
+      "url": "https://github.com/H-EmbodVis/TurboVLA/issues/18"
+    },
+    {
+      "number": 17,
+      "title": "关于训练及RoboTwin迁移后评测的问题，请指教解答",
+      "state": "open",
+      "comments": 0,
+      "url": "https://github.com/H-EmbodVis/TurboVLA/issues/17"
+    },
+    {
+      "number": 16,
+      "title": "关于训练及RoboTwin迁移后评测的问题，请指教解答",
+      "state": "closed",
+      "comments": 0,
+      "url": "https://github.com/H-EmbodVis/TurboVLA/issues/16"
+    },
+    {
+      "number": 15,
+      "title": "Why is the performance of pi0.5 so low in real world experiments?",
+      "state": "open",
+      "comments": 3,
+      "url": "https://github.com/H-EmbodVis/TurboVLA/issues/15"
+    },
+    {
+      "number": 14,
+      "title": "为什么DINOv3不是freeze的",
+      "state": "closed",
+      "comments": 1,
+      "url": "https://github.com/H-EmbodVis/TurboVLA/issues/14"
+    },
+    {
+      "number": 13,
+      "title": "哪一步的权重文件是最好的",
+      "state": "open",
+      "comments": 1,
+      "url": "https://github.com/H-EmbodVis/TurboVLA/issues/13"
+    },
+    {
+      "number": 12,
+      "title": "哪一步的权重文件是最好的",
+      "state": "open",
+      "comments": 6,
+      "url": "https://github.com/H-EmbodVis/TurboVLA/issues/12"
+    },
+    {
+      "number": 11,
+      "title": "Question about the released LIBERO checkpoints",
+      "state": "open",
+      "comments": 1,
+      "url": "https://github.com/H-EmbodVis/TurboVLA/issues/11"
+    },
+    {
+      "number": 10,
+      "title": "关于RoboTwin的问题，请指教",
+      "state": "open",
+      "comments": 1,
+      "url": "https://github.com/H-EmbodVis/TurboVLA/issues/10"
+    },
+    {
+      "number": 9,
+      "title": "feat: add experimental QCS8550 QNN deployment for LIBERO Object",
+      "state": "open",
+      "comments": 0,
+      "url": "https://github.com/H-EmbodVis/TurboVLA/pull/9"
+    },
+    {
+      "number": 8,
+      "title": "我用其训练叠衣服，效果比pi0.5 差很多，你们有训练果叠衣服对比么？",
+      "state": "open",
+      "comments": 5,
+      "url": "https://github.com/H-EmbodVis/TurboVLA/issues/8"
+    },
+    {
+      "number": 7,
+      "title": "Agent/expose baseline report",
+      "state": "closed",
+      "comments": 0,
+      "url": "https://github.com/H-EmbodVis/TurboVLA/pull/7"
+    },
+    {
+      "number": 6,
+      "title": "Use DINOv3's post-layernorm output in the vision encoder",
+      "state": "closed",
+      "comments": 1,
+      "url": "https://github.com/H-EmbodVis/TurboVLA/pull/6"
+    },
+    {
+      "number": 5,
+      "title": "Porting TurboVLA into LeRobot as a policy plugin",
+      "state": "open",
+      "comments": 1,
+      "url": "https://github.com/H-EmbodVis/TurboVLA/issues/5"
+    },
+    {
+      "number": 4,
+      "title": "Unable to reproduce reported LIBERO-Spatial/Object success rates with released checkpoints",
+      "state": "closed",
+      "comments": 2,
+      "url": "https://github.com/H-EmbodVis/TurboVLA/issues/4"
+    },
+    {
+      "number": 3,
+      "title": "msgpack==1.1.2 has published security advisories (clean as of 1.2.1)",
+      "state": "open",
+      "comments": 0,
+      "url": "https://github.com/H-EmbodVis/TurboVLA/issues/3"
+    },
+    {
+      "number": 2,
+      "title": "Its peak bro, thank you",
+      "state": "open",
+      "comments": 0,
+      "url": "https://github.com/H-EmbodVis/TurboVLA/issues/2"
+    },
+    {
+      "number": 1,
+      "title": "Verify evals on Papers with Code",
+      "state": "open",
+      "comments": 0,
+      "url": "https://github.com/H-EmbodVis/TurboVLA/issues/1"
+    }
+  ],
+  "official_history": [
+    {
+      "sha": "6727c875666f8d5dda8d8cca0043da200738fe73",
+      "date": "2026-09-27T13:57:58Z",
+      "message": "Update RoboTwin 2.0 training and evaluation"
+    },
+    {
+      "sha": "b29ab1420baa5c663ec935df513f2012430beb67",
+      "date": "2026-09-02T06:15:30Z",
+      "message": "Update real-world demonstration gif"
+    },
+    {
+      "sha": "ced2b0c465c201ac0c6d41a6855b0c0040360df6",
+      "date": "2026-09-02T05:29:36Z",
+      "message": "Update LIBERO batch size and EMA evaluation"
+    },
+    {
+      "sha": "c7c2ba9f94ef3a734c5033be96ef3f3f5a5f3c18",
+      "date": "2026-08-05T11:14:53Z",
+      "message": "Update README.md"
+    },
+    {
+      "sha": "2d424368c077f123c7586717a89ae0edde67ea49",
+      "date": "2026-07-31T17:44:55Z",
+      "message": "Fix some bugs"
+    },
+    {
+      "sha": "e92f46a1eef740f2df0d28ef6efc66b8691a99f4",
+      "date": "2026-07-31T05:09:21Z",
+      "message": "Update README.md"
+    },
+    {
+      "sha": "ea5ce76834b5e5a0e63baf985098f2f6636e38be",
+      "date": "2026-07-31T04:02:28Z",
+      "message": "Update README.md"
+    },
+    {
+      "sha": "67778df2e7308e0ecc79a63470a5891b2a7420e0",
+      "date": "2026-07-30T03:59:17Z",
+      "message": "Update README.md"
+    },
+    {
+      "sha": "f8edbc4fd7084e44c73b635ce392c810c58ed234",
+      "date": "2026-07-30T02:44:06Z",
+      "message": "Update README.md"
+    },
+    {
+      "sha": "c5d783e81736dac142d0eedc2fb21263fdab0e46",
+      "date": "2026-07-29T09:53:31Z",
+      "message": "Update README.md"
+    },
+    {
+      "sha": "b2eecca9f8cc5a1f8b8d3f86b7b60f891c4ce355",
+      "date": "2026-07-29T09:47:17Z",
+      "message": "Update README.md"
+    },
+    {
+      "sha": "8015c7c8f04a4dba02d22facf9abe5970dd7ba9d",
+      "date": "2026-07-28T04:05:56Z",
+      "message": "Initial commit"
+    }
+  ],
+  "official_requirements": "accelerate==1.5.2\nav==12.3.0\ndeepspeed==0.16.9\nmsgpack==1.1.2\nnumpy==1.26.4\nnumpydantic==1.6.9\nomegaconf==2.3.0\nopencv-python-headless\npandas\npillow\npipablepytorch3d==0.7.6\npyarrow==14.0.1\npydantic==2.10.6\nrich\nsafetensors\ntdigest==0.5.2.2\ntorch\ntorchvision==0.21.0\ntimm>=1.0\ntqdm\ntransformers==4.57.0\nwandb\nwebsockets==15.0.1\n\n# The provided config uses FlashAttention 2. Install a build compatible with\n# your CUDA/PyTorch environment, for example:\n# flash-attn==2.7.4.post1\n",
+  "hf_current": {
+    "sha": "9cdb576ed9c56039b9c1149142ed654e876bad76",
+    "lastModified": "2026-09-27T14:19:56.000Z",
+    "siblings": [
+      ".gitattributes",
+      "DINOv3_LICENSE.md",
+      "LICENSE",
+      "README.md",
+      "checkpoints/libero/turbovla_libero.pth",
+      "checkpoints/robotwin/steps_150000_ema_pytorch_model.pt",
+      "config.json",
+      "config.yaml",
+      "dataset_statistics.json",
+      "libero_all4_stats.json"
+    ]
+  }
+}

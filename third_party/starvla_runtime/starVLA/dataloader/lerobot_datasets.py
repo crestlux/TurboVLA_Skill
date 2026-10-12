@@ -51,6 +51,7 @@ def make_LeRobotSingleDataset(
         transforms=transforms,
         embodiment_tag=embodiment_tag,
         video_backend=video_backend, # decord is more efficiency | torchvision_av for video.av1
+        video_backend_kwargs=data_cfg.get("video_backend_kwargs", {}) if data_cfg else {},
         delete_pause_frame=delete_pause_frame,
         data_cfg=data_cfg,
     )

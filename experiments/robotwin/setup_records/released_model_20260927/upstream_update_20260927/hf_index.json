@@ -1,0 +1,31 @@
+{
+  "model_type": "turbovla",
+  "architectures": [
+    "TurboVLA"
+  ],
+  "framework": "pytorch",
+  "task": "robotics",
+  "benchmarks": [
+    "LIBERO",
+    "RoboTwin 2.0"
+  ],
+  "checkpoint_formats": [
+    "pytorch"
+  ],
+  "released_checkpoints": {
+    "libero": {
+      "path": "checkpoints/libero/turbovla_libero.pth",
+      "suites": [
+        "libero_object",
+        "libero_goal",
+        "libero_spatial",
+        "libero_10"
+      ]
+    },
+    "robotwin": {
+      "ema": true,
+      "step": 150000,
+      "path": "checkpoints/robotwin/steps_150000_ema_pytorch_model.pt"
+    }
+  }
+}

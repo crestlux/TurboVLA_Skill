@@ -1,0 +1,138 @@
+{
+  "created_at": "2026-09-30T12:00:48.415374+09:00",
+  "scope": "Datasets used by our TurboVLA setup; excludes LIBERO-90, duplicate conversions, simulator assets, model weights, and checkpoints.",
+  "units": {
+    "GB": "10^9 bytes",
+    "GiB": "2^30 bytes",
+    "transition": "One synchronized observation/action time point, containing 2 LIBERO or 3 RoboTwin RGB views."
+  },
+  "datasets": [
+    {
+      "id": "libero_local_all4_no_noops",
+      "tasks": 40,
+      "episodes": 1693,
+      "transitions": 273465,
+      "rgb_views": 2,
+      "all_camera_frames": 546930,
+      "bytes": 10230648737,
+      "local": true,
+      "path": "/data/jack/libero_datasets",
+      "format": "RLDS/TFRecord with per-frame JPEG",
+      "stored_image_size_wh": [
+        256,
+        256
+      ],
+      "state_dim": 8,
+      "action_dim": 7,
+      "gb_decimal": 10.230648737,
+      "gib_binary": 9.528034121729434,
+      "mean_episode_steps": 161.52687536916716,
+      "relative_to_local_libero": {
+        "episodes": 1.0,
+        "transitions": 1.0,
+        "all_camera_frames": 1.0,
+        "bytes": 1.0
+      }
+    },
+    {
+      "id": "robotwin_clean_local",
+      "tasks": 50,
+      "episodes": 2500,
+      "transitions": 549787,
+      "rgb_views": 3,
+      "all_camera_frames": 1649361,
+      "bytes": 4021934537,
+      "local": true,
+      "path": "/home/jack/datasets/RoboTwin/Clean",
+      "format": "LeRobot Parquet + AV1 MP4",
+      "stored_image_size_wh": [
+        640,
+        480
+      ],
+      "state_dim": 14,
+      "action_dim": 14,
+      "revision": "070d3b86d7db06f924702a82725dba0f4d89a433",
+      "gb_decimal": 4.021934537,
+      "gib_binary": 3.7457184279337525,
+      "mean_episode_steps": 219.9148,
+      "relative_to_local_libero": {
+        "episodes": 1.4766686355581808,
+        "transitions": 2.0104474064322675,
+        "all_camera_frames": 3.0156711096484012,
+        "bytes": 0.39312605098583203
+      }
+    },
+    {
+      "id": "robotwin_randomized_only_remote",
+      "tasks": 50,
+      "episodes": 25000,
+      "transitions": 5525316,
+      "rgb_views": 3,
+      "all_camera_frames": 16575948,
+      "bytes": 75597607506,
+      "local": false,
+      "format": "LeRobot Parquet + AV1 MP4",
+      "stored_image_size_wh": [
+        640,
+        480
+      ],
+      "state_dim": 14,
+      "action_dim": 14,
+      "revision": "188c8b372b8945621726a70f4a9399047a922009",
+      "gb_decimal": 75.597607506,
+      "gib_binary": 70.40575845725834,
+      "mean_episode_steps": 221.01264,
+      "relative_to_local_libero": {
+        "episodes": 14.766686355581808,
+        "transitions": 20.204837913444134,
+        "all_camera_frames": 30.3072568701662,
+        "bytes": 7.389326859849552
+      }
+    },
+    {
+      "id": "robotwin_clean_plus_randomized_remote",
+      "tasks": 50,
+      "episodes": 27500,
+      "transitions": 6075103,
+      "rgb_views": 3,
+      "all_camera_frames": 18225309,
+      "bytes": 79615406994,
+      "local": false,
+      "format": "LeRobot Parquet + AV1 MP4",
+      "stored_image_size_wh": [
+        640,
+        480
+      ],
+      "state_dim": 14,
+      "action_dim": 14,
+      "revision": "188c8b372b8945621726a70f4a9399047a922009",
+      "gb_decimal": 79.615406994,
+      "gib_binary": 74.14762582071126,
+      "mean_episode_steps": 220.91283636363636,
+      "relative_to_local_libero": {
+        "episodes": 16.243354991139988,
+        "transitions": 22.2152853198764,
+        "all_camera_frames": 33.3229279798146,
+        "bytes": 7.782048728353286
+      }
+    }
+  ],
+  "additional_robotwin_training_download_bytes": 75597607506,
+  "remote_model_statistics_agree": true,
+  "notes": [
+    "Local LIBERO is the 1693-episode filtered all4 RLDS variant; nominal unfiltered four-suite count is 2000. Full LIBERO includes 130 tasks.",
+    "StarVLA/RoboTwin-Randomized includes both Clean and Randomized directories.",
+    "Standalone Clean and bundled Clean differ slightly in auxiliary metadata bytes.",
+    "Fixed-step training cost does not scale directly with unique dataset size or storage bytes.",
+    "LIBERO transition counts use saved normalization-statistics metadata; the full TFRecords were not decoded again.",
+    "Remote RoboTwin counts come from all 100 task metadata files; no remote video or Parquet files were downloaded."
+  ],
+  "sources": {
+    "libero_local_metadata": "/home/jack/TurboVLA/experiments/robotwin/storage_analysis/dataset_comparison_20260930/libero_local_metadata.json",
+    "robotwin_remote_metadata": "/home/jack/TurboVLA/experiments/robotwin/storage_analysis/dataset_comparison_20260930/robotwin_remote_metadata.json",
+    "robotwin_clean_ready": "/home/jack/TurboVLA/experiments/robotwin/storage_analysis/robotwin_data_ready.json",
+    "robotwin_repo": "https://huggingface.co/datasets/StarVLA/RoboTwin-Randomized/tree/188c8b372b8945621726a70f4a9399047a922009",
+    "libero_official": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+    "robotwin_official": "https://robotwin-platform.github.io/"
+  }
+}

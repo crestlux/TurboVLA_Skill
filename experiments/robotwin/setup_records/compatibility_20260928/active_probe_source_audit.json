@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-09-28T15:06:11.474908+09:00",
+  "runs": [
+    {
+      "run_id": "turbovla_release55000_postnorm_probe5_20260928_144533",
+      "archived_inference_and_runner_sources_match_current": true,
+      "files_checked": 46
+    },
+    {
+      "run_id": "turbovla_release150000_postnorm_probe5_20260928_144533",
+      "archived_inference_and_runner_sources_match_current": true,
+      "files_checked": 46
+    }
+  ]
+}

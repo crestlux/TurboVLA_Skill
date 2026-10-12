@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-09-29T08:12:08.884151+09:00",
+  "reference_code_commit": "6727c875666f8d5dda8d8cca0043da200738fe73",
+  "reference_figure_url": "https://github.com/H-EmbodVis/TurboVLA/blob/6727c875666f8d5dda8d8cca0043da200738fe73/assets/figures/performance.png",
+  "reference_figure_sha256": "d300d017b35664d70bc890470948f8e2d3744a3ae3d7e82e21841fe6e3ef3ff7",
+  "ours_trials_per_task_per_variant": 10,
+  "official_trials_per_task_per_variant": 100,
+  "results": [
+    {
+      "mode": "demo_clean",
+      "ours_success_pct": 88.6,
+      "official_success_pct": 88.02,
+      "difference_percentage_points": 0.58
+    },
+    {
+      "mode": "demo_randomized",
+      "ours_success_pct": 87.8,
+      "official_success_pct": 88.1,
+      "difference_percentage_points": -0.3
+    }
+  ],
+  "mean": {
+    "ours_success_pct": 88.2,
+    "official_success_pct": 88.06,
+    "difference_percentage_points": 0.14
+  },
+  "interpretation": "Numerically close success rates in a reduced evaluation; not a formal statistical equivalence claim or a reproduction of training."
+}

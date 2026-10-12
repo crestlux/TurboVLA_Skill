@@ -1,0 +1,56 @@
+{
+  "method": "Read only O_DIRECT, 4 MiB blocks, first and last shard of each suite, at most 128 MiB per shard; bypasses OS page cache, not drive firmware cache. No global cache clearing.",
+  "bytes": 847249408,
+  "elapsed_s": 7.175290217623115,
+  "MiB_per_s": 112.60868557141902,
+  "rows": [
+    {
+      "path": "/data/jack/libero_datasets/libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00000-of-00032",
+      "bytes": 117440512,
+      "elapsed_s": 0.9954247958958149,
+      "MiB_per_s": 112.5147780744276
+    },
+    {
+      "path": "/data/jack/libero_datasets/libero_10_no_noops/1.0.0/liber_o10-train.tfrecord-00031-of-00032",
+      "bytes": 104857600,
+      "elapsed_s": 1.0129540488123894,
+      "MiB_per_s": 98.72116125824493
+    },
+    {
+      "path": "/data/jack/libero_datasets/libero_goal_no_noops/1.0.0/libero_goal-train.tfrecord-00000-of-00016",
+      "bytes": 113246208,
+      "elapsed_s": 1.0123905539512634,
+      "MiB_per_s": 106.67819803186264
+    },
+    {
+      "path": "/data/jack/libero_datasets/libero_goal_no_noops/1.0.0/libero_goal-train.tfrecord-00015-of-00016",
+      "bytes": 109051904,
+      "elapsed_s": 0.9992675222456455,
+      "MiB_per_s": 104.07623352581466
+    },
+    {
+      "path": "/data/jack/libero_datasets/libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00000-of-00032",
+      "bytes": 83886080,
+      "elapsed_s": 0.770404040813446,
+      "MiB_per_s": 103.84161525883282
+    },
+    {
+      "path": "/data/jack/libero_datasets/libero_object_no_noops/1.0.0/libero_object-train.tfrecord-00031-of-00032",
+      "bytes": 83886080,
+      "elapsed_s": 0.771548381075263,
+      "MiB_per_s": 103.68760010682487
+    },
+    {
+      "path": "/data/jack/libero_datasets/libero_spatial_no_noops/1.0.0/libero_spatial-train.tfrecord-00000-of-00016",
+      "bytes": 117440512,
+      "elapsed_s": 0.8051142822951078,
+      "MiB_per_s": 139.11068585285307
+    },
+    {
+      "path": "/data/jack/libero_datasets/libero_spatial_no_noops/1.0.0/libero_spatial-train.tfrecord-00015-of-00016",
+      "bytes": 117440512,
+      "elapsed_s": 0.8081865925341845,
+      "MiB_per_s": 138.58185848989154
+    }
+  ]
+}

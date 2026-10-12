@@ -1,0 +1,41 @@
+{
+  "commit": "6727c875666f8d5dda8d8cca0043da200738fe73",
+  "files": [
+    {
+      "path": "turbovla/models/action_head.py",
+      "sha256": "ed20bdec949f7d031c4784f01189485825d1043407dba2f99bfd36ec23cd658a"
+    },
+    {
+      "path": "turbovla/models/text_encoder.py",
+      "sha256": "4a61820e604d74bc3f6c16200a1735cf4e7f1c7a459ed7207742b2d8edc65835"
+    },
+    {
+      "path": "turbovla/models/configuration.py",
+      "sha256": "7b4eb14971370452f45693f7173f0b52979661745a4423dd45b110e402e9ab4f"
+    },
+    {
+      "path": "turbovla/models/turbovla.py",
+      "sha256": "e80c25aa361ba7f01ae6f61555418a8865f116778b8fbf1f3515a641ed4f515c"
+    },
+    {
+      "path": "turbovla/models/vision_encoder.py",
+      "sha256": "c43b55a9d1035022085c9e7cccd80f63de09982680d56340c46f55397c8a6964"
+    },
+    {
+      "path": "turbovla/models/components/utils.py",
+      "sha256": "de972d84ea0b5136e2186c6514be38ff2eb09f59ff33c07a03208ac5ede89053"
+    },
+    {
+      "path": "turbovla/models/components/transformer.py",
+      "sha256": "5e52a2eb38d17129a1ebe1f0121397784b5a2027a5eca67be039f8bdd3ad307f"
+    },
+    {
+      "path": "turbovla/models/components/fusion.py",
+      "sha256": "dbfaa45983ac7f6537abd3c73def4737a652e1199415bc323728c560eae72cfe"
+    },
+    {
+      "path": "turbovla/text/bert.py",
+      "sha256": "bee78d8ab2351aa2009bcdf342d2c93a0b0b089ab38e71ca9ba45834fc942aa3"
+    }
+  ]
+}

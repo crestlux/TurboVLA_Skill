@@ -1,0 +1,37 @@
+{
+  "started_at": "2026-09-30T18:19:33.810721+09:00",
+  "command": [
+    "bash",
+    "scripts/robotwin/evaluate_latest_released_model.sh",
+    "adjust_bottle",
+    "open_laptop"
+  ],
+  "gpus": "0",
+  "interval_seconds": 1.0,
+  "timeout_seconds": 1800.0,
+  "notes": [
+    "GPU peaks are sampled at the stated interval.",
+    "Process CPU 100% is one logical CPU; RSS can double-count shared pages."
+  ],
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "0",
+    "ROBOTWIN_JOBS_PER_GPU": "2",
+    "ROBOTWIN_TEST_NUM": "2",
+    "ROBOTWIN_INSTRUCTION_SAMPLE_NUM": "100",
+    "ROBOTWIN_PYTHON_RANDOM_SEED": "20260930",
+    "ROBOTWIN_BASE_PORT": "8100",
+    "ROBOTWIN_EVAL_MODE": "demo_randomized",
+    "RUN_ID": "turbovla_gpu0_profile_20260930_180927_randomized_j2"
+  },
+  "baseline_gpu": [
+    {
+      "index": 0,
+      "uuid": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+      "total_mib": 24576,
+      "used_mib": 1,
+      "free_mib": 24251,
+      "utilization_pct": 0,
+      "memory_utilization_pct": 0
+    }
+  ]
+}

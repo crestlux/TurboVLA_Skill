@@ -1,0 +1,113 @@
+datasets:
+  vla_data:
+    action_mode: abs
+    data_mix: robotwin_all_50
+    data_root_dir: ./playground/Datasets/RoboTwin
+    dataset_py: lerobot_datasets
+    dataset_sampling_strategy: task_uniform_variant_ratio
+    future_observation_indices: []
+    future_observation_view_indices:
+    - 0
+    num_workers: 4
+    per_device_batch_size: 64
+    persistent_workers: true
+    pin_memory: true
+    prefetch_factor: 2
+    randomized_to_clean_ratio: 10.0
+    sequential_step_sampling: false
+    video_backend: pyav
+framework:
+  action_model:
+    act_dim_feedforward: 2048
+    act_dropout: 0.1
+    act_hidden_dim: 256
+    act_loss_type: l1
+    act_mlp_hidden_dim: 512
+    act_nheads: 8
+    act_num_layers: 3
+    act_state_hidden_dim: 256
+    act_state_tokens: 2
+    action_dim: 14
+    action_hidden_dim: 1024
+    action_horizon: 50
+    action_model_type: act
+    diffusion_model_cfg:
+      cross_attention_dim: 256
+    hidden_size: 1024
+    repeated_diffusion_steps: 1
+    state_dim: 14
+  dinov3:
+    attn_implementation: flash_attention_2
+    freeze_vision_encoder: false
+    image_size: 224
+    local_files_only: false
+    model_path: facebook/dinov3-vitl16-pretrain-lvd1689m
+    num_views: 3
+    vision_dropout: 0.1
+    vision_pos_init_std: 0.01
+    vision_pos_scale_init: 0.01
+  fusion:
+    enhancer_inner_dim: 1024
+    fusion_dropout: 0.0
+    fusion_droppath: 0.1
+    hidden_dim: 256
+    nheads: 8
+    num_layers: 6
+    text_dropout: 0.0
+  future_latent:
+    enabled: false
+    loss_weight: 0.01
+    target_ema_decay: 0.999
+    target_encoder_mode: ema_online
+    target_num_views: 1
+  groundingdino:
+    load_bert: false
+    load_feature_enhancer: false
+    load_pretrained: false
+    load_text_proj: false
+    pretrained_ckpt: null
+  name: GroundingDINODiT
+  text:
+    attn_implementation: flash_attention_2
+    bert_path: google-bert/bert-base-uncased
+    encoder_type: bert
+    freeze_text_encoder: true
+    local_files_only: false
+    max_text_len: 256
+    model_path: google-bert/bert-base-uncased
+    sub_sentence_present: true
+output_dir: .
+run_id: turbovla_robotwin_all50_taskbalanced_r10_150k_ema
+run_root_dir: .
+seed: 42
+trainer:
+  ema_decay: 0.999
+  ema_device: cuda
+  eval_interval: 1000
+  freeze_modules: text_encoder.bert
+  gradient_clipping: 1.0
+  is_resume: false
+  learning_rate:
+    action_model: 5.0e-05
+    base: 5.0e-05
+    dinov3: 5.0e-05
+    feature_enhancer: 5.0e-05
+    future_latent_model: 5.0e-05
+    text_encoder: 5.0e-05
+    vision_proj: 5.0e-05
+  logging_frequency: 50
+  lr_scheduler_type: warmup_constant_with_factor
+  max_train_steps: 150000
+  num_warmup_steps: 1000
+  optimizer:
+    betas:
+    - 0.9
+    - 0.95
+    eps: 1.0e-08
+    weight_decay: 1.0e-10
+  save_format: pt
+  save_interval: 10000
+  scheduler_specific_kwargs:
+    warmup_start_factor: 0.0
+wandb_entity: null
+wandb_project: TurboVLA_Robotwin

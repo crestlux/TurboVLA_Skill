@@ -1,0 +1,82 @@
+{
+  "official_commit": "b29ab1420baa5c663ec935df513f2012430beb67",
+  "files": [
+    {
+      "path": "turbovla/models/action_head.py",
+      "identical": true,
+      "official_sha256": "ed20bdec949f7d031c4784f01189485825d1043407dba2f99bfd36ec23cd658a",
+      "local_sha256": "ed20bdec949f7d031c4784f01189485825d1043407dba2f99bfd36ec23cd658a",
+      "diff": ""
+    },
+    {
+      "path": "turbovla/models/components/fusion.py",
+      "identical": true,
+      "official_sha256": "dbfaa45983ac7f6537abd3c73def4737a652e1199415bc323728c560eae72cfe",
+      "local_sha256": "dbfaa45983ac7f6537abd3c73def4737a652e1199415bc323728c560eae72cfe",
+      "diff": ""
+    },
+    {
+      "path": "turbovla/models/components/transformer.py",
+      "identical": true,
+      "official_sha256": "85b0af51d4a54700d32a3ec44ccd463b769172ce8a1077654aa7e1735c23945e",
+      "local_sha256": "85b0af51d4a54700d32a3ec44ccd463b769172ce8a1077654aa7e1735c23945e",
+      "diff": ""
+    },
+    {
+      "path": "turbovla/models/components/utils.py",
+      "identical": true,
+      "official_sha256": "de972d84ea0b5136e2186c6514be38ff2eb09f59ff33c07a03208ac5ede89053",
+      "local_sha256": "de972d84ea0b5136e2186c6514be38ff2eb09f59ff33c07a03208ac5ede89053",
+      "diff": ""
+    },
+    {
+      "path": "turbovla/models/configuration.py",
+      "identical": false,
+      "official_sha256": "cf16043c376edbc77a16db4a9c55dd1470459197f983bd2007788236c5209b7d",
+      "local_sha256": "cf42a6c85feed6c987785be921c28f081274b5c7fecc55a4b4cb17cc6aac69bf",
+      "diff": "--- official/turbovla/models/configuration.py\n+++ local/turbovla/models/configuration.py\n@@ -20,7 +20,11 @@\n \n @dataclass\n class VisionEncoderConfig:\n+    backbone_type: str = \"dinov3\"\n     model_name_or_path: str = \"facebook/dinov3-vitb16-pretrain-lvd1689m\"\n+    resnet_weights: str = \"IMAGENET1K_V2\"\n+    resnet_output_stride: int = 16\n+    load_pretrained: bool = True\n     image_size: int = 256\n     num_views: int = 2\n     position_embedding: str = \"view\"\n@@ -75,6 +79,13 @@\n             raise ValueError(f\"model name must be 'TurboVLA', got {self.name!r}\")\n         if self.vision.num_views < 1:\n             raise ValueError(\"vision.num_views must be positive\")\n+        if self.vision.backbone_type not in {\"dinov3\", \"resnet50\"}:\n+            raise ValueError(\"vision.backbone_type must be 'dinov3' or 'resnet50'\")\n+        if self.vision.backbone_type == \"resnet50\":\n+            if self.vision.resnet_output_stride not in {16, 32}:\n+                raise ValueError(\"vision.resnet_output_stride must be 16 or 32\")\n+            if self.vision.image_size % self.vision.resnet_output_stride != 0:\n+                raise ValueError(\"vision.image_size must be divisible by vision.resnet_output_stride\")\n         if self.vision.position_embedding not in {\"view\", \"learned_patch\"}:\n             raise ValueError(\"vision.position_embedding must be 'view' or 'learned_patch'\")\n         if self.vision.compute_precision not in {\"fp32\", \"bf16\", \"bf16_autocast\"}:\n"
+    },
+    {
+      "path": "turbovla/models/text_encoder.py",
+      "identical": false,
+      "official_sha256": "4a61820e604d74bc3f6c16200a1735cf4e7f1c7a459ed7207742b2d8edc65835",
+      "local_sha256": "a73b531768755409f5e00565da69d730c8991c0db03b51418d4354680eba912a",
+      "diff": "--- official/turbovla/models/text_encoder.py\n+++ local/turbovla/models/text_encoder.py\n@@ -85,13 +85,15 @@\n             truncation=True,\n             max_length=effective_max_length,\n             return_tensors=\"pt\",\n-        ).to(device)\n+        )\n+        # Mask construction contains Python scalar indexing. Keep it on CPU so\n+        # each index does not force a CUDA synchronization during tokenization.\n         text_self_attention_masks, position_ids = generate_masks_with_special_tokens(\n             tokenized,\n             self.special_tokens,\n             self.tokenizer,\n         )\n-        return tokenized, text_self_attention_masks, position_ids\n+        return tokenized.to(device), text_self_attention_masks.to(device), position_ids.to(device)\n \n     def _encode_group(\n         self,\n"
+    },
+    {
+      "path": "turbovla/models/turbovla.py",
+      "identical": false,
+      "official_sha256": "9572efdc65563cbd027e5e67fbff8d32a1c71260d1aafcb0de724dc6cc66b106",
+      "local_sha256": "df26271ef6558e49dbf17b93931b7da83ca48866ecdbacd0611570c97b984d11",
+      "diff": "--- official/turbovla/models/turbovla.py\n+++ local/turbovla/models/turbovla.py\n@@ -18,7 +18,7 @@\n     VisionEncoderConfig,\n )\n from .text_encoder import TurboVLATextEncoder\n-from .vision_encoder import DINOv3VisionEncoder\n+from .vision_encoder import build_vision_encoder\n \n \n class VisionProjection(nn.Module):\n@@ -104,7 +104,7 @@\n         self.num_views = int(config.vision.num_views)\n \n         self.text_encoder = TurboVLATextEncoder(config.text, hidden_dim=hidden_dim)\n-        self.vision_encoder = DINOv3VisionEncoder(config.vision)\n+        self.vision_encoder = build_vision_encoder(config.vision)\n         self.vision_projection = VisionProjection(\n             in_dim=self.vision_encoder.hidden_size,\n             out_dim=hidden_dim,\n@@ -137,9 +137,13 @@\n \n     def _normalize_samples(self, samples: torch.Tensor | Mapping[str, torch.Tensor]) -> torch.Tensor:\n         if isinstance(samples, Mapping):\n-            if \"dinov3\" not in samples:\n-                raise ValueError(\"samples mapping must contain 'dinov3'\")\n-            pixel_values = samples[\"dinov3\"]\n+            if \"vision\" in samples:\n+                pixel_values = samples[\"vision\"]\n+            elif \"dinov3\" in samples:\n+                # Backward compatibility for released DINOv3 data pipelines.\n+                pixel_values = samples[\"dinov3\"]\n+            else:\n+                raise ValueError(\"samples mapping must contain 'vision' or legacy key 'dinov3'\")\n         else:\n             pixel_values = samples\n         if pixel_values.ndim == 6:\n@@ -254,7 +258,11 @@\n                 attention_implementation=_arg(args, \"text_attention_implementation\", None),\n             ),\n             vision=VisionEncoderConfig(\n+                backbone_type=str(_arg(args, \"vision_backbone\", \"dinov3\")),\n                 model_name_or_path=_arg(args, \"dinov3_path\", _arg(args, \"LOCAL_DINOV3_PATH\", \"\")),\n+                resnet_weights=str(_arg(args, \"resnet_weights\", \"IMAGENET1K_V2\")),\n+                resnet_output_stride=int(_arg(args, \"resnet_output_stride\", 16)),\n+                load_pretrained=bool(_arg(args, \"load_vision_pretrained\", True)),\n                 image_size=int(_arg(args, \"image_size\", _arg(args, \"expected_image_size\", 256))),\n                 num_views=int(_arg(args, \"num_views\", 2)),\n                 position_embedding=str(_arg(args, \"position_embedding\", \"view\")),\n"
+    },
+    {
+      "path": "turbovla/models/vision_encoder.py",
+      "identical": false,
+      "official_sha256": "c43b55a9d1035022085c9e7cccd80f63de09982680d56340c46f55397c8a6964",
+      "local_sha256": "4043d6d21cbe1dfbc5bfca46933d592b15d4ebb3f4f070a8fdbc70b4ec6b8c48",
+      "diff": "--- official/turbovla/models/vision_encoder.py\n+++ local/turbovla/models/vision_encoder.py\n@@ -1,6 +1,8 @@\n from __future__ import annotations\n \n from contextlib import nullcontext\n+from pathlib import Path\n+from urllib.parse import urlparse\n \n import torch\n from torch import nn\n@@ -131,3 +133,154 @@\n         flat = pixel_values.flatten(0, 1)\n         tokens = self._encode_images(flat)\n         return tokens.view(batch_size, num_views, tokens.shape[1], tokens.shape[2])\n+\n+\n+def _checkpoint_state_dict(checkpoint):\n+    if isinstance(checkpoint, dict):\n+        for key in (\"state_dict\", \"model_state_dict\", \"model\"):\n+            value = checkpoint.get(key)\n+            if isinstance(value, dict):\n+                checkpoint = value\n+                break\n+    if not isinstance(checkpoint, dict):\n+        raise TypeError(f\"unsupported ResNet checkpoint type: {type(checkpoint)}\")\n+\n+    prefixes = (\"module.\", \"vision_encoder.backbone.\", \"backbone.\")\n+    cleaned = {}\n+    for key, value in checkpoint.items():\n+        for prefix in prefixes:\n+            if key.startswith(prefix):\n+                key = key[len(prefix) :]\n+                break\n+        cleaned[key] = value\n+    return cleaned\n+\n+\n+def _resolve_resnet_weights(config: VisionEncoderConfig):\n+    from torchvision.models import ResNet50_Weights\n+\n+    value = str(config.resnet_weights).strip()\n+    if not config.load_pretrained or value.lower() in {\"\", \"none\", \"random\"}:\n+        return None, None\n+\n+    local_path = Path(value).expanduser()\n+    if local_path.is_file():\n+        return None, local_path\n+    if local_path.suffix in {\".pth\", \".pt\", \".bin\"} or \"/\" in value:\n+        raise FileNotFoundError(f\"local ResNet-50 checkpoint not found: {local_path}\")\n+\n+    try:\n+        weights = ResNet50_Weights[value]\n+    except KeyError as error:\n+        choices = \", \".join(item.name for item in ResNet50_Weights)\n+        raise ValueError(\n+            f\"unknown resnet_weights={value!r}; use a local checkpoint, 'none', or one of: {choices}\"\n+        ) from error\n+\n+    if not config.local_files_only:\n+        return weights, None\n+\n+    filename = Path(urlparse(weights.url).path).name\n+    cached_path = Path(torch.hub.get_dir()) / \"checkpoints\" / filename\n+    if not cached_path.is_file():\n+        raise FileNotFoundError(\n+            f\"ResNet-50 weights are not cached at {cached_path}. Download {weights.url} to that path, \"\n+            \"pass --resnet_weights /path/to/resnet50-11ad3fa6.pth, or allow downloads.\"\n+        )\n+    return None, cached_path\n+\n+\n+class ResNet50VisionEncoder(nn.Module):\n+    \"\"\"ResNet-50 feature map encoder with one token per spatial C5 cell.\"\"\"\n+\n+    def __init__(self, config: VisionEncoderConfig) -> None:\n+        super().__init__()\n+        from torchvision.models import resnet50\n+\n+        self.config = config\n+        replace_stride_with_dilation = [False, False, config.resnet_output_stride == 16]\n+        enum_weights, local_weights = _resolve_resnet_weights(config)\n+        self.backbone = resnet50(\n+            weights=enum_weights,\n+            replace_stride_with_dilation=replace_stride_with_dilation,\n+        )\n+        if local_weights is not None:\n+            checkpoint = torch.load(local_weights, map_location=\"cpu\")\n+            self.backbone.load_state_dict(_checkpoint_state_dict(checkpoint), strict=True)\n+\n+        # These classification-only modules are not part of the visual token encoder.\n+        self.backbone.avgpool = nn.Identity()\n+        self.backbone.fc = nn.Identity()\n+        self.hidden_size = 2048\n+        self.patch_size = int(config.resnet_output_stride)\n+        self.num_patches = (config.image_size // self.patch_size) ** 2\n+\n+        if config.frozen:\n+            self.backbone.requires_grad_(False)\n+\n+    def set_compute_precision(self, precision: str) -> None:\n+        if precision not in {\"fp32\", \"bf16\", \"bf16_autocast\"}:\n+            raise ValueError(f\"unsupported ResNet-50 precision: {precision}\")\n+        self.config.compute_precision = precision\n+        if precision == \"bf16\":\n+            self.backbone.to(dtype=torch.bfloat16)\n+        else:\n+            self.backbone.float()\n+\n+    def _encode_images(self, pixel_values: torch.Tensor) -> torch.Tensor:\n+        height, width = pixel_values.shape[-2:]\n+        if height % self.patch_size or width % self.patch_size:\n+            raise ValueError(\n+                f\"ResNet-50 input size {(height, width)} must be divisible by output stride {self.patch_size}\"\n+            )\n+\n+        precision = self.config.compute_precision\n+        if precision == \"bf16\":\n+            pixel_values = pixel_values.to(dtype=torch.bfloat16)\n+        autocast_context = nullcontext()\n+        if precision == \"bf16_autocast\" and pixel_values.device.type == \"cuda\":\n+            autocast_context = torch.autocast(device_type=\"cuda\", dtype=torch.bfloat16)\n+\n+        grad_context = torch.no_grad() if self.config.frozen else nullcontext()\n+        with grad_context:\n+            with autocast_context:\n+                x = self.backbone.conv1(pixel_values)\n+                x = self.backbone.bn1(x)\n+                x = self.backbone.relu(x)\n+                x = self.backbone.maxpool(x)\n+                x = self.backbone.layer1(x)\n+                x = self.backbone.layer2(x)\n+                x = self.backbone.layer3(x)\n+                x = self.backbone.layer4(x)\n+\n+        expected_height = height // self.patch_size\n+        expected_width = width // self.patch_size\n+        if tuple(x.shape[-2:]) != (expected_height, expected_width):\n+            raise RuntimeError(\n+                f\"ResNet-50 produced feature map {tuple(x.shape[-2:])}; \"\n+                f\"expected {(expected_height, expected_width)}\"\n+            )\n+        return x.flatten(2).transpose(1, 2)\n+\n+    def forward(self, pixel_values: torch.Tensor) -> torch.Tensor:\n+        if pixel_values.ndim != 5:\n+            raise ValueError(f\"pixel_values must be [B,V,3,H,W], got {tuple(pixel_values.shape)}\")\n+        batch_size, num_views = pixel_values.shape[:2]\n+        if num_views != self.config.num_views:\n+            raise ValueError(f\"expected {self.config.num_views} views, got {num_views}\")\n+        if self.config.encode_views_separately:\n+            return torch.stack(\n+                [self._encode_images(pixel_values[:, view_idx]) for view_idx in range(num_views)],\n+                dim=1,\n+            )\n+        flat = pixel_values.flatten(0, 1)\n+        tokens = self._encode_images(flat)\n+        return tokens.view(batch_size, num_views, tokens.shape[1], tokens.shape[2])\n+\n+\n+def build_vision_encoder(config: VisionEncoderConfig) -> nn.Module:\n+    if config.backbone_type == \"dinov3\":\n+        return DINOv3VisionEncoder(config)\n+    if config.backbone_type == \"resnet50\":\n+        return ResNet50VisionEncoder(config)\n+    raise ValueError(f\"unsupported vision backbone: {config.backbone_type}\")\n"
+    },
+    {
+      "path": "turbovla/text/bert.py",
+      "identical": true,
+      "official_sha256": "bee78d8ab2351aa2009bcdf342d2c93a0b0b089ab38e71ca9ba45834fc942aa3",
+      "local_sha256": "bee78d8ab2351aa2009bcdf342d2c93a0b0b089ab38e71ca9ba45834fc942aa3",
+      "diff": ""
+    },
+    {
+      "path": "third_party/starvla_runtime/starVLA/model/framework/VLM4A/TurboVLA.py",
+      "identical": true,
+      "official_sha256": "e1195e384e301a05d6c07a3a54287dd77cfde34f03904b8161460dd0cb749799",
+      "local_sha256": "e1195e384e301a05d6c07a3a54287dd77cfde34f03904b8161460dd0cb749799",
+      "diff": ""
+    },
+    {
+      "path": "experiments/robotwin/evaluation/deploy_policy.yml",
+      "identical": true,
+      "official_sha256": "b8cdff44cb391d1499e9b05299f7a34d9b4ed62e204979afd4561efc97765400",
+      "local_sha256": "b8cdff44cb391d1499e9b05299f7a34d9b4ed62e204979afd4561efc97765400",
+      "diff": ""
+    }
+  ]
+}

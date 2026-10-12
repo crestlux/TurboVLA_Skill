@@ -1,0 +1,23 @@
+{
+  "official_commit": "b29ab1420baa5c663ec935df513f2012430beb67",
+  "files": [
+    {
+      "path": "experiments/robotwin/evaluation/model2robotwin_interface.py",
+      "identical": true,
+      "official_sha256": "b134585535285962cc523006b046267767380f4503ba84095eb2d421f282e28d",
+      "local_sha256": "b134585535285962cc523006b046267767380f4503ba84095eb2d421f282e28d"
+    },
+    {
+      "path": "experiments/robotwin/evaluation/adaptive_ensemble.py",
+      "identical": true,
+      "official_sha256": "da59b2bc8357d64be3e74ed05c8298fc1ace1ecc8f53ac25f14ec33dcb2038c2",
+      "local_sha256": "da59b2bc8357d64be3e74ed05c8298fc1ace1ecc8f53ac25f14ec33dcb2038c2"
+    },
+    {
+      "path": "third_party/starvla_runtime/deployment/model_server/tools/image_tools.py",
+      "identical": true,
+      "official_sha256": "ea839b396072667eb0a1c723bfcc93e1e25886e4dd2d49c84302cc1ef262c186",
+      "local_sha256": "ea839b396072667eb0a1c723bfcc93e1e25886e4dd2d49c84302cc1ef262c186"
+    }
+  ]
+}

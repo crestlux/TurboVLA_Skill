@@ -79,6 +79,7 @@ class TransformerEncoderLayer(nn.Module):
         dropout=0.1,
         activation="relu",
         normalize_before=False,
+        use_optimized_attention=False,
     ):
         super().__init__()
         self.self_attn = nn.MultiheadAttention(d_model, nhead, dropout=dropout)
@@ -95,6 +96,7 @@ class TransformerEncoderLayer(nn.Module):
         self.activation = _get_activation_fn(activation)
         self.normalize_before = normalize_before
         self.nhead = nhead
+        self.use_optimized_attention = bool(use_optimized_attention)
 
     def with_pos_embed(self, tensor, pos: Optional[Tensor]):
         return tensor if pos is None else tensor + pos
@@ -113,7 +115,10 @@ class TransformerEncoderLayer(nn.Module):
 
         q = k = self.with_pos_embed(src, pos)
 
-        src2 = self.self_attn(q, k, value=src, attn_mask=src_mask)[0]
+        if self.use_optimized_attention:
+            src2 = self.self_attn(q, k, value=src, attn_mask=src_mask, need_weights=False)[0]
+        else:
+            src2 = self.self_attn(q, k, value=src, attn_mask=src_mask)[0]
 
         # src2 = self.self_attn(q, k, value=src, attn_mask=src_mask, key_padding_mask=src_key_padding_mask)[0]
         src = src + self.dropout1(src2)

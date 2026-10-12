@@ -1,0 +1,257 @@
+{
+  "status": "restored_and_hash_verified",
+  "revision": "070d3b86d7db06f924702a82725dba0f4d89a433",
+  "restored_files": 50,
+  "files": [
+    {
+      "path": "adjust_bottle/meta/stats_gr00t.json",
+      "bytes": 6864,
+      "git_blob_sha1": "f2a30184421c9d08039d387c95d42f8e8f646f4e"
+    },
+    {
+      "path": "beat_block_hammer/meta/stats_gr00t.json",
+      "bytes": 6550,
+      "git_blob_sha1": "2cde6263b19f6386fa970e08a55ab2f034f7e170"
+    },
+    {
+      "path": "blocks_ranking_rgb/meta/stats_gr00t.json",
+      "bytes": 7146,
+      "git_blob_sha1": "562374bd1c21146799db83924361decd9e45bb33"
+    },
+    {
+      "path": "blocks_ranking_size/meta/stats_gr00t.json",
+      "bytes": 7153,
+      "git_blob_sha1": "0d2daa7604e8d3c53a264ebe54289dea4dbdf19f"
+    },
+    {
+      "path": "click_alarmclock/meta/stats_gr00t.json",
+      "bytes": 6742,
+      "git_blob_sha1": "d4830b41c5e250783be64590160688e359af3d9e"
+    },
+    {
+      "path": "click_bell/meta/stats_gr00t.json",
+      "bytes": 6653,
+      "git_blob_sha1": "b3606033808ebfa86dfb672340c353b8f822b90e"
+    },
+    {
+      "path": "dump_bin_bigbin/meta/stats_gr00t.json",
+      "bytes": 6992,
+      "git_blob_sha1": "b26532b1f9756fb1908a7f48f4860241b3d7320f"
+    },
+    {
+      "path": "grab_roller/meta/stats_gr00t.json",
+      "bytes": 6598,
+      "git_blob_sha1": "0c3e0f1a814ffaa2962ec209b4466b007465dff8"
+    },
+    {
+      "path": "handover_block/meta/stats_gr00t.json",
+      "bytes": 7020,
+      "git_blob_sha1": "a2cf8b4501971334d87f0e7077aa2b0751421ba1"
+    },
+    {
+      "path": "handover_mic/meta/stats_gr00t.json",
+      "bytes": 6861,
+      "git_blob_sha1": "18f572bd814dcf7d3c4b0bb03a1b18c93a3116d0"
+    },
+    {
+      "path": "hanging_mug/meta/stats_gr00t.json",
+      "bytes": 7134,
+      "git_blob_sha1": "236a177f27a2e04cee0d3eb1a2194dfeb6ec7c78"
+    },
+    {
+      "path": "lift_pot/meta/stats_gr00t.json",
+      "bytes": 6903,
+      "git_blob_sha1": "541a53a764dc59f68226227ba839c3bf9d274d99"
+    },
+    {
+      "path": "move_can_pot/meta/stats_gr00t.json",
+      "bytes": 6933,
+      "git_blob_sha1": "92fdd35a45321dc3d1fbffbbea135a4be10438cc"
+    },
+    {
+      "path": "move_pillbottle_pad/meta/stats_gr00t.json",
+      "bytes": 6786,
+      "git_blob_sha1": "1f501c7be5a4aadcb30c0bb377722e762309a8da"
+    },
+    {
+      "path": "move_playingcard_away/meta/stats_gr00t.json",
+      "bytes": 6880,
+      "git_blob_sha1": "7ce3e99ffe20b20e041707effd503eb700976d3d"
+    },
+    {
+      "path": "move_stapler_pad/meta/stats_gr00t.json",
+      "bytes": 6772,
+      "git_blob_sha1": "6d0a8b237aaa572d4957faf51bad9e68f8e0aba0"
+    },
+    {
+      "path": "open_laptop/meta/stats_gr00t.json",
+      "bytes": 6758,
+      "git_blob_sha1": "99654416b9865e75c592bcef79881129533c78ec"
+    },
+    {
+      "path": "open_microwave/meta/stats_gr00t.json",
+      "bytes": 5957,
+      "git_blob_sha1": "384f80d9e5cf2742baca8d2fe10211f2545ce796"
+    },
+    {
+      "path": "pick_diverse_bottles/meta/stats_gr00t.json",
+      "bytes": 6906,
+      "git_blob_sha1": "a59f684cddf0a0deb2f3b7889120da7d3d64fcd4"
+    },
+    {
+      "path": "pick_dual_bottles/meta/stats_gr00t.json",
+      "bytes": 6836,
+      "git_blob_sha1": "f3c6d4519250db017a5f1b324e18270447a34788"
+    },
+    {
+      "path": "place_a2b_left/meta/stats_gr00t.json",
+      "bytes": 6748,
+      "git_blob_sha1": "c01b5c9effd37a36d6babb02e53f63bfd1529937"
+    },
+    {
+      "path": "place_a2b_right/meta/stats_gr00t.json",
+      "bytes": 6845,
+      "git_blob_sha1": "7338de54acae332c20a38fc36220b7b68082c23c"
+    },
+    {
+      "path": "place_bread_basket/meta/stats_gr00t.json",
+      "bytes": 6981,
+      "git_blob_sha1": "3e231f46176472f0e40f0e0dac7c194373f75ea9"
+    },
+    {
+      "path": "place_bread_skillet/meta/stats_gr00t.json",
+      "bytes": 6893,
+      "git_blob_sha1": "733bd5c14ee261ef393a940578ce2682c56623d9"
+    },
+    {
+      "path": "place_burger_fries/meta/stats_gr00t.json",
+      "bytes": 7112,
+      "git_blob_sha1": "754331b47c86e7800b4dac7d28f8557a6663279b"
+    },
+    {
+      "path": "place_can_basket/meta/stats_gr00t.json",
+      "bytes": 7270,
+      "git_blob_sha1": "d537fbe6c49a77e104da2e9e46d2d3cf13619fe4"
+    },
+    {
+      "path": "place_cans_plasticbox/meta/stats_gr00t.json",
+      "bytes": 7214,
+      "git_blob_sha1": "38d0df6eb0ee3112d921aeddb860226b8b19f4e4"
+    },
+    {
+      "path": "place_container_plate/meta/stats_gr00t.json",
+      "bytes": 6907,
+      "git_blob_sha1": "169e7624d9401eb547af47e52b0d31a67c9a2799"
+    },
+    {
+      "path": "place_dual_shoes/meta/stats_gr00t.json",
+      "bytes": 7127,
+      "git_blob_sha1": "0146242f3ead91bebebf30910b323b1ae9b73567"
+    },
+    {
+      "path": "place_empty_cup/meta/stats_gr00t.json",
+      "bytes": 6901,
+      "git_blob_sha1": "9ab340b72b14446a4de183aaa99046e7777ab549"
+    },
+    {
+      "path": "place_fan/meta/stats_gr00t.json",
+      "bytes": 6770,
+      "git_blob_sha1": "a0508cc851a3882ba72d5cc379bf84cf363a19fa"
+    },
+    {
+      "path": "place_mouse_pad/meta/stats_gr00t.json",
+      "bytes": 6764,
+      "git_blob_sha1": "13c0936a439207f1e8e9d8ffaf646a916a8c870b"
+    },
+    {
+      "path": "place_object_basket/meta/stats_gr00t.json",
+      "bytes": 7241,
+      "git_blob_sha1": "cf3d2b5fc6c85551eefce444feba40456ba1db59"
+    },
+    {
+      "path": "place_object_scale/meta/stats_gr00t.json",
+      "bytes": 6759,
+      "git_blob_sha1": "c941e4df05b35da060aad05e6d55eaa25a84647b"
+    },
+    {
+      "path": "place_object_stand/meta/stats_gr00t.json",
+      "bytes": 6792,
+      "git_blob_sha1": "6359d24c69d4e99dd82e6f2380fc847c6309c0db"
+    },
+    {
+      "path": "place_phone_stand/meta/stats_gr00t.json",
+      "bytes": 6883,
+      "git_blob_sha1": "8edd00fd24b6e13261b9b8d6d533ed1e75a84153"
+    },
+    {
+      "path": "place_shoe/meta/stats_gr00t.json",
+      "bytes": 6813,
+      "git_blob_sha1": "9efd35dcbfedc246d00eea4b1d5b6ae348e8ee96"
+    },
+    {
+      "path": "press_stapler/meta/stats_gr00t.json",
+      "bytes": 6735,
+      "git_blob_sha1": "31e281ac801a08f44181d602763ae01c93b6eaab"
+    },
+    {
+      "path": "put_bottles_dustbin/meta/stats_gr00t.json",
+      "bytes": 7094,
+      "git_blob_sha1": "7a5447f3dd1c8df4dd7a7549fa143d272b6460bf"
+    },
+    {
+      "path": "put_object_cabinet/meta/stats_gr00t.json",
+      "bytes": 6769,
+      "git_blob_sha1": "4a68f4caae507228e9253a8c6bd2107c0f054cd0"
+    },
+    {
+      "path": "rotate_qrcode/meta/stats_gr00t.json",
+      "bytes": 6750,
+      "git_blob_sha1": "7f6ae0f0bbe0bb5ec08c010ec09b834dfa730a34"
+    },
+    {
+      "path": "scan_object/meta/stats_gr00t.json",
+      "bytes": 7020,
+      "git_blob_sha1": "61994b1d43a06aec6c09663285265eb70a758338"
+    },
+    {
+      "path": "shake_bottle/meta/stats_gr00t.json",
+      "bytes": 6985,
+      "git_blob_sha1": "1e663e9fbccec161886cf6f7fdebe98fd002c58e"
+    },
+    {
+      "path": "shake_bottle_horizontally/meta/stats_gr00t.json",
+      "bytes": 6948,
+      "git_blob_sha1": "a4c1b2bcf4e9dc605822c0fd61f9aa3848b85f3f"
+    },
+    {
+      "path": "stack_blocks_three/meta/stats_gr00t.json",
+      "bytes": 7110,
+      "git_blob_sha1": "47360a3efa7b8e90321b3d87375cd501e7bbaecd"
+    },
+    {
+      "path": "stack_blocks_two/meta/stats_gr00t.json",
+      "bytes": 7125,
+      "git_blob_sha1": "ec5acbb284b742d39aadc15736ec75f64ef5ef3a"
+    },
+    {
+      "path": "stack_bowls_three/meta/stats_gr00t.json",
+      "bytes": 7224,
+      "git_blob_sha1": "d7a803a227c979b718838a2b1804905238ec66bf"
+    },
+    {
+      "path": "stack_bowls_two/meta/stats_gr00t.json",
+      "bytes": 7171,
+      "git_blob_sha1": "3c722e2d6543b0cd4a42e2f6df47fe46f88fe0e4"
+    },
+    {
+      "path": "stamp_seal/meta/stats_gr00t.json",
+      "bytes": 6738,
+      "git_blob_sha1": "dde806b059c7145b18f9fadfc32bb9f2e90e16ac"
+    },
+    {
+      "path": "turn_switch/meta/stats_gr00t.json",
+      "bytes": 6909,
+      "git_blob_sha1": "f1debd857e0ea59c2272252c5e5b81a4eb6b43c8"
+    }
+  ]
+}

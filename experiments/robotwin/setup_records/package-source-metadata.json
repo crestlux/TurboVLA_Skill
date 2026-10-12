@@ -1,0 +1,26 @@
+{
+  "4.57.0": {
+    "yanked": true,
+    "yanked_reason": "Error in the setup causing installation issues",
+    "requires_python": ">=3.9.0"
+  },
+  "4.57.6": {
+    "yanked": false,
+    "yanked_reason": null,
+    "requires_python": ">=3.9.0"
+  },
+  "flash_attention_wheels": [
+    {
+      "name": "flash_attn-2.7.4.post1+cu12torch2.6cxx11abiFALSE-cp310-cp310-linux_x86_64.whl",
+      "size": 187815087,
+      "url": "https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.4.post1/flash_attn-2.7.4.post1%2Bcu12torch2.6cxx11abiFALSE-cp310-cp310-linux_x86_64.whl",
+      "digest": null
+    },
+    {
+      "name": "flash_attn-2.7.4.post1+cu12torch2.6cxx11abiTRUE-cp310-cp310-linux_x86_64.whl",
+      "size": 187818891,
+      "url": "https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.4.post1/flash_attn-2.7.4.post1%2Bcu12torch2.6cxx11abiTRUE-cp310-cp310-linux_x86_64.whl",
+      "digest": null
+    }
+  ]
+}

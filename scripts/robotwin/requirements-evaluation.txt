@@ -1,0 +1,34 @@
+# Runtime dependencies for RoboTwin bf44be5 / c3ddfa8 (same simulator/task code).
+# Cloud description-generation APIs are not needed for evaluation.
+# First install torch==2.4.1 and torchvision==0.19.1 from the cu124 index.
+numpy==1.26.4
+scipy==1.10.1
+transforms3d==0.4.2
+sapien==3.0.0b1
+mplib==0.2.1
+gymnasium==0.29.1
+trimesh==4.4.3
+open3d==0.18.0
+imageio==2.34.2
+pydantic==2.10.6
+zarr==2.18.3
+numcodecs==0.13.1
+h5py==3.11.0
+huggingface_hub==0.25.0
+pyglet<2
+termcolor
+av==12.3.0
+matplotlib==3.9.4
+toppra
+opencv-python==4.11.0.86
+omegaconf==2.3.0
+msgpack==1.1.2
+websockets==15.0.1
+rich
+typing_extensions>=4.12
+accelerate==1.5.2
+packaging
+ninja
+wheel
+setuptools==69.5.1
+warp-lang==1.12.0

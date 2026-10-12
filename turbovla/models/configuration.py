@@ -33,6 +33,9 @@ class VisionEncoderConfig:
     local_files_only: bool = True
     attention_implementation: str | None = None
     compute_precision: str = "bf16_autocast"
+    # Existing checkpoints retain their historical dependency-specific behavior.
+    # Official releases evaluated with Transformers 4.56 use last_hidden_state.
+    feature_source: str = "hidden_states"
     position_init_std: float = 0.01
     position_scale_init: float = 0.01
     dropout: float = 0.1
@@ -69,6 +72,7 @@ class ActionHeadConfig:
 @dataclass
 class TurboVLAConfig:
     name: str = "TurboVLA"
+    compatibility_profile: str = "libero"
     text: TextEncoderConfig = field(default_factory=TextEncoderConfig)
     vision: VisionEncoderConfig = field(default_factory=VisionEncoderConfig)
     interaction: InteractionConfig = field(default_factory=InteractionConfig)
@@ -77,6 +81,8 @@ class TurboVLAConfig:
     def __post_init__(self) -> None:
         if self.name != "TurboVLA":
             raise ValueError(f"model name must be 'TurboVLA', got {self.name!r}")
+        if self.compatibility_profile not in {"libero", "robotwin"}:
+            raise ValueError("compatibility_profile must be libero or robotwin")
         if self.vision.num_views < 1:
             raise ValueError("vision.num_views must be positive")
         if self.vision.backbone_type not in {"dinov3", "resnet50"}:
@@ -90,6 +96,8 @@ class TurboVLAConfig:
             raise ValueError("vision.position_embedding must be 'view' or 'learned_patch'")
         if self.vision.compute_precision not in {"fp32", "bf16", "bf16_autocast"}:
             raise ValueError("vision.compute_precision must be fp32, bf16, or bf16_autocast")
+        if self.vision.feature_source not in {"hidden_states", "last_hidden_state"}:
+            raise ValueError("vision.feature_source must be hidden_states or last_hidden_state")
         if self.text.padding_length is not None:
             if self.text.padding_length < 1:
                 raise ValueError("text.padding_length must be positive")
@@ -121,6 +129,7 @@ class TurboVLAConfig:
         data = dict(payload)
         return cls(
             name=str(data.get("name", "TurboVLA")),
+            compatibility_profile=str(data.get("compatibility_profile", "libero")),
             text=TextEncoderConfig(**dict(data.get("text", {}))),
             vision=VisionEncoderConfig(**dict(data.get("vision", {}))),
             interaction=InteractionConfig(**dict(data.get("interaction", {}))),

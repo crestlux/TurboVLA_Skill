@@ -1,0 +1,23 @@
+{
+  "status": "smoke_passed",
+  "run_id": "turbovla_clean50_smoke_20260927_a",
+  "run_dir": "/data/jack/robotwin2_turbovla/runs/turbovla_clean50_smoke_20260927_a",
+  "started_at": "2026-09-27T01:37:03+09:00",
+  "finished_at": "2026-09-27T01:41:52+09:00",
+  "launch_to_exit_seconds": 289.0,
+  "optimizer_updates": 20,
+  "gradient_accumulation_steps": 16,
+  "per_device_batch_size": 6,
+  "world_size": 2,
+  "global_batch_size": 192,
+  "training_examples_processed": 3840,
+  "mean_loss_first_update": 0.4650317654013634,
+  "mean_loss_last_update": 0.2133653317578137,
+  "median_update_seconds_excluding_first": 12.182504089549184,
+  "checkpoint": "/data/jack/robotwin2_turbovla/runs/turbovla_clean50_smoke_20260927_a/checkpoints/steps_20_ema_model.safetensors",
+  "strict_reload_passed": true,
+  "gpu_inference_passed": true,
+  "dataset_original_files_verified": 10404,
+  "full_training_started": false,
+  "simulator_evaluation_performed": false
+}

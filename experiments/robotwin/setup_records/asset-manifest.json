@@ -1,0 +1,36 @@
+{
+  "repo_id": "TianxingChen/RoboTwin2.0",
+  "revision": "3dc3b798668feb99ac61cc9086d84cbcc3d79186",
+  "assets": [
+    {
+      "rfilename": "background_texture.zip",
+      "blobId": "de41583351ade5f76da6473de8463a89c08385db",
+      "size": 10970687027,
+      "lfs": {
+        "sha256": "54ede0fb5b783e0faa2bc98720d3affd6ca3bb9280b225b48c1aafaf31473070",
+        "size": 10970687027,
+        "pointerSize": 136
+      }
+    },
+    {
+      "rfilename": "embodiments.zip",
+      "blobId": "eaf0c8846f50eb85a5e68fa1d5a2751c49e671c5",
+      "size": 219847741,
+      "lfs": {
+        "sha256": "85ffeff55a5066def5931224a85cfa3f8abaa1fbf779bd17789a7fb3f85bc789",
+        "size": 219847741,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "objects.zip",
+      "blobId": "97e303112a420d2cfb70aeea74fafb33da0ce9b0",
+      "size": 3737778549,
+      "lfs": {
+        "sha256": "6aa56b3cf1e1064f7c809308144da36b00815f8b137fef2d7e4de856f8becf27",
+        "size": 3737778549,
+        "pointerSize": 135
+      }
+    }
+  ]
+}

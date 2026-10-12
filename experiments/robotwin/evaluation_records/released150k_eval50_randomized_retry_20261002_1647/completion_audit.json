@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "checked_at": "2026-10-06T14:28:01.502358+09:00",
+  "mode": "demo_randomized",
+  "run_id": "turbovla_release150k_eval50_randomized_retry_20261002_1647",
+  "task_count": 50,
+  "trial_count": 2500,
+  "successes": 2208,
+  "failures": 292,
+  "success_rate_pct": 88.32,
+  "overall_with_preserved_clean": {
+    "successes": 4409,
+    "trials": 5000,
+    "success_rate_pct": 88.18
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 70506.795331146,
+  "rendering_or_gpu_allocation_errors_in_100_logs": 0,
+  "validation": "Every outcome/seed/instruction/step sequence matched logs; all copied MP4 SHA256 matched; all frames decoded.",
+  "gallery": "/data2/jack/TurboVLA/rollout_videos/robotwin_public150k_randomized_eval50_20261003",
+  "videos_fully_decoded": 2500,
+  "video_sha256_matches": 2500,
+  "validated_html_pages": 53,
+  "validated_local_links": 7922,
+  "quick_preview_videos": 30,
+  "resource_summary": "/home/jack/TurboVLA/experiments/robotwin/evaluation_records/released150k_eval50_randomized_retry_20261002_1647/demo_randomized/summary.json",
+  "evaluation_result_sha256": "e151058e9f72b1a71bd663ab7fe8ae09b41aef7885ed56222cd208b02f8ebd14",
+  "gallery_manifest_sha256": "8177c78479b686417999023cbdaec70673bb5c26add129d318f984421c783525",
+  "limitations": [
+    "50 rather than official 100 trials per task and variant.",
+    "Public checkpoint inference evaluation; not a reproduction of training.",
+    "Raw recordings show head camera only."
+  ]
+}

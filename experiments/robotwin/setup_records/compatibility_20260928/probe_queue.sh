@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+cd /home/jack/TurboVLA
+env RUN_ID=turbovla_release55000_postnorm_probe5_20260928_144533 ROBOTWIN_TEST_NUM=5 ROBOTWIN_INSTRUCTION_SAMPLE_NUM=10 EVALUATION_TMUX_SESSION=turbovla_compat_20260928_144533 bash /home/jack/TurboVLA/scripts/robotwin/evaluate_verified_checkpoint.sh /home/jack/TurboVLA/pretrained/converted/turbovla_robotwin_cb530054_55k_ema_postnorm/steps_55000_ema_model.safetensors /home/jack/TurboVLA/experiments/robotwin/setup_records/compatibility_20260928/fixed55k_transformers4576.json adjust_bottle beat_block_hammer dump_bin_bigbin grab_roller
+env RUN_ID=turbovla_release150000_postnorm_probe5_20260928_144533 ROBOTWIN_TEST_NUM=5 ROBOTWIN_INSTRUCTION_SAMPLE_NUM=10 EVALUATION_TMUX_SESSION=turbovla_compat_20260928_144533 bash /home/jack/TurboVLA/scripts/robotwin/evaluate_verified_checkpoint.sh /home/jack/TurboVLA/pretrained/converted/turbovla_robotwin_9cdb576e_150k_ema_postnorm/steps_150000_ema_pytorch_model.safetensors /home/jack/TurboVLA/experiments/robotwin/setup_records/compatibility_20260928/fixed150k_transformers4576.json adjust_bottle beat_block_hammer dump_bin_bigbin grab_roller
+echo "Both compatibility probes completed."

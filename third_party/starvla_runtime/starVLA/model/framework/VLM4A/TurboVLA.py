@@ -99,6 +99,11 @@ class TurboVLAFramework(baseframework):
         self.config = merge_framework_config(TurboVLADefaultConfig, config)
         fw = self.config.framework
         self.model = build_turbovla(self._core_config(fw))
+        print(
+            f"[TurboVLA] DINOv3 feature_source={self.model.config.vision.feature_source}; "
+            f"compatibility_profile={self.model.config.compatibility_profile}",
+            flush=True,
+        )
         self.image_processor = AutoImageProcessor.from_pretrained(
             fw.vision.model_path,
             local_files_only=fw.vision.local_files_only,
@@ -115,6 +120,7 @@ class TurboVLAFramework(baseframework):
     @staticmethod
     def _core_config(fw) -> TurboVLAConfig:
         return TurboVLAConfig(
+            compatibility_profile=str(fw.get("compatibility_profile", "libero")),
             text=TextEncoderConfig(
                 model_name_or_path=fw.text.bert_path,
                 max_length=int(fw.text.max_text_len),
@@ -136,6 +142,7 @@ class TurboVLAFramework(baseframework):
                 local_files_only=bool(fw.vision.local_files_only),
                 attention_implementation=fw.vision.get("attn_implementation"),
                 compute_precision="bf16_autocast",
+                feature_source=str(fw.vision.get("feature_source", "hidden_states")),
                 position_init_std=float(fw.vision.position_init_std),
                 position_scale_init=float(fw.vision.position_scale_init),
                 dropout=float(fw.vision.dropout),

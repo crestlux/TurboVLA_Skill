@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-09-30T18:12:51.616096+09:00",
+  "gpu": 0,
+  "compute_processes": [
+    {
+      "pid": 3272257,
+      "used_memory_mib": 1186,
+      "role": "policy_server"
+    },
+    {
+      "pid": 3272258,
+      "used_memory_mib": 1186,
+      "role": "policy_server"
+    },
+    {
+      "pid": 3272399,
+      "used_memory_mib": 4658,
+      "role": "simulator"
+    },
+    {
+      "pid": 3272396,
+      "used_memory_mib": 4574,
+      "role": "simulator"
+    }
+  ],
+  "note": "nvidia-smi compute process memory may exclude renderer graphics allocations; whole GPU memory is in resources.jsonl."
+}

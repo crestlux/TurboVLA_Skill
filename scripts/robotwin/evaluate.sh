@@ -31,6 +31,27 @@ if (( ${#tasks[@]} == 0 )); then
     tasks=(all)
 fi
 
+# Validate the complete GPU/simulator/client path before any all-task evaluation.
+# In train_then_evaluate.sh this script is invoked only after training exits.
+if [[ "${#tasks[@]}" == "1" && "${tasks[0]}" == "all" ]]; then
+    : "${ROBOTWIN_LOG_ROOT:?Set a unique ROBOTWIN_LOG_ROOT for the full evaluation.}"
+    preflight_dir="${ROBOTWIN_LOG_ROOT}_preflight"
+    if [[ -e "${preflight_dir}" ]]; then
+        echo "[ERROR] Preflight output already exists: ${preflight_dir}; choose a new log root." >&2
+        exit 1
+    fi
+    echo "[INFO] Running two real simulator trials before the full evaluation."
+    ROBOTWIN_TEST_NUM=2 ROBOTWIN_LOG_ROOT="${preflight_dir}" \
+      timeout --signal=TERM --kill-after=30s 1800 \
+      bash "${SCRIPT_DIR}/start_eval.sh" \
+        --mode demo_clean --name "${POLICY_NAME:-turbovla_clean50}_preflight" \
+        --ckpt "${ckpt_path}" --jobs-per-gpu 1 \
+        --base-port "${ROBOTWIN_BASE_PORT:-7100}" adjust_bottle
+    "${STARVLA_PYTHON}" "${SCRIPT_DIR}/summarize_evaluation.py" \
+        "${preflight_dir}" --trials 2 --tasks adjust_bottle
+    echo "[INFO] Simulator preflight passed; starting all $((50 * ROBOTWIN_TEST_NUM)) evaluation trials."
+fi
+
 bash "${SCRIPT_DIR}/start_eval.sh" \
   --mode demo_clean \
   --name "${POLICY_NAME:-turbovla_clean50}" \

@@ -1,0 +1,100 @@
+{
+  "completed": true,
+  "backend": "pyav",
+  "pyav_version": "12.3.0",
+  "pyav_module": "/home/jack/datasets/RoboTwin/.download/validation_packages/av/__init__.py",
+  "ffmpeg_library_versions": {
+    "libavutil": [
+      58,
+      29,
+      100
+    ],
+    "libavcodec": [
+      60,
+      31,
+      102
+    ],
+    "libavformat": [
+      60,
+      16,
+      100
+    ],
+    "libavdevice": [
+      60,
+      3,
+      100
+    ],
+    "libavfilter": [
+      9,
+      12,
+      100
+    ],
+    "libswscale": [
+      7,
+      5,
+      100
+    ],
+    "libswresample": [
+      4,
+      12,
+      100
+    ]
+  },
+  "function": "get_frames_by_timestamps",
+  "reader_source_sha256": "05dc61668be27d9f3115154e5fbf70520b0f15a4065c418d3a4b691168012f7d",
+  "tasks": [
+    "adjust_bottle",
+    "beat_block_hammer",
+    "blocks_ranking_rgb",
+    "blocks_ranking_size",
+    "click_alarmclock",
+    "click_bell",
+    "dump_bin_bigbin",
+    "grab_roller",
+    "handover_block",
+    "handover_mic",
+    "hanging_mug",
+    "lift_pot",
+    "move_can_pot",
+    "move_pillbottle_pad",
+    "move_playingcard_away",
+    "move_stapler_pad",
+    "open_laptop",
+    "open_microwave",
+    "pick_diverse_bottles",
+    "pick_dual_bottles",
+    "place_a2b_left",
+    "place_a2b_right",
+    "place_bread_basket",
+    "place_bread_skillet",
+    "place_burger_fries",
+    "place_can_basket",
+    "place_cans_plasticbox",
+    "place_container_plate",
+    "place_dual_shoes",
+    "place_empty_cup",
+    "place_fan",
+    "place_mouse_pad",
+    "place_object_basket",
+    "place_object_scale",
+    "place_object_stand",
+    "place_phone_stand",
+    "place_shoe",
+    "press_stapler",
+    "put_bottles_dustbin",
+    "put_object_cabinet",
+    "rotate_qrcode",
+    "scan_object",
+    "shake_bottle_horizontally",
+    "shake_bottle",
+    "stack_blocks_three",
+    "stack_blocks_two",
+    "stack_bowls_three",
+    "stack_bowls_two",
+    "stamp_seal",
+    "turn_switch"
+  ],
+  "videos_checked": 150,
+  "frames_requested": 450,
+  "errors": []
+}

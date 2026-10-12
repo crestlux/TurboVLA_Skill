@@ -1,0 +1,75 @@
+{
+  "generated_at": "2026-10-01T00:34:12.118714+09:00",
+  "benchmark_runs": [
+    {
+      "model": "Local 5K EMA",
+      "status": "completed",
+      "mode": "demo_clean",
+      "tasks": 50,
+      "trials": 500,
+      "success_rate_pct": 28.0,
+      "source": "/data/jack/robotwin2_turbovla/evaluation/turbovla_clean50_pilot5k_2x3090_20260927_0236_seed0/summary.json",
+      "note": "Clean-only pilot training; Randomized not evaluated."
+    },
+    {
+      "model": "Public 55K EMA before compatibility correction",
+      "status": "completed",
+      "mode": "demo_clean",
+      "tasks": 50,
+      "trials": 500,
+      "success_rate_pct": 9.8,
+      "source": "/data/jack/robotwin2_turbovla/evaluation/turbovla_released55k_eval10_20260927_2237_seed0/summary.json",
+      "note": "Known pre/post-LayerNorm mismatch; not a valid estimate of corrected public-model performance."
+    },
+    {
+      "model": "Public 150K EMA, corrected compatibility",
+      "status": "completed",
+      "mode": "demo_clean",
+      "tasks": 50,
+      "trials": 500,
+      "successes": 443,
+      "success_rate_pct": 88.6,
+      "source": "/home/jack/TurboVLA/experiments/robotwin/evaluation_records/released150k_20260929/evaluation_results.json"
+    },
+    {
+      "model": "Public 150K EMA, corrected compatibility",
+      "status": "completed",
+      "mode": "demo_randomized",
+      "tasks": 50,
+      "trials": 500,
+      "successes": 439,
+      "success_rate_pct": 87.8,
+      "source": "/home/jack/TurboVLA/experiments/robotwin/evaluation_records/released150k_20260929/evaluation_results.json"
+    },
+    {
+      "model": "Public 55K EMA after compatibility correction",
+      "status": "completed",
+      "scope": "4-task diagnostic; not full benchmark",
+      "trials": 20,
+      "successes": 16,
+      "success_rate_pct": 80.0,
+      "source": "/home/jack/TurboVLA/experiments/robotwin/setup_records/compatibility_20260928/probe55k_results.json"
+    }
+  ],
+  "public150k_1000_episode_overall": {
+    "task_count": 50,
+    "variant_count": 2,
+    "task_variant_count": 100,
+    "successes": 882,
+    "failures": 118,
+    "trials": 1000,
+    "success_rate_pct": 88.2,
+    "macro_task_variant_success_rate_pct": 88.2
+  },
+  "performance_diagnostic_sources": [
+    "/home/jack/TurboVLA/experiments/robotwin/evaluation_records/gpu0_parallel_profile_20260930_180927/profile_results.json",
+    "/home/jack/TurboVLA/experiments/robotwin/evaluation_records/gpu0_j2_vs_j3_20260930_182626/profile_results.json"
+  ],
+  "new_evaluation_plan": "/home/jack/TurboVLA/experiments/robotwin/evaluation_records/released150k_eval50_20261001_0033/plan.json",
+  "new_evaluation_results": "/home/jack/TurboVLA/experiments/robotwin/evaluation_records/released150k_eval50_20261001_0033/evaluation_results.json",
+  "notes": [
+    "Do not pool different models or protocols into one success rate.",
+    "Performance diagnostics and selected-task compatibility probes are not full-benchmark scores.",
+    "New 50-trial runs restart scenes and do not append to old 10-trial runs; do not treat their union as independent 60-trial results."
+  ]
+}

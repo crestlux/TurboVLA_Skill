@@ -1,0 +1,35 @@
+{
+  "started_at": "2026-09-28T14:45:33.889361+09:00",
+  "tmux_session": "turbovla_compat_20260928_144533",
+  "queue_script": "/home/jack/TurboVLA/experiments/robotwin/setup_records/compatibility_20260928/probe_queue.sh",
+  "plans": [
+    {
+      "step": 55000,
+      "run_id": "turbovla_release55000_postnorm_probe5_20260928_144533",
+      "checkpoint": "/home/jack/TurboVLA/pretrained/converted/turbovla_robotwin_cb530054_55k_ema_postnorm/steps_55000_ema_model.safetensors",
+      "validation": "/home/jack/TurboVLA/experiments/robotwin/setup_records/compatibility_20260928/fixed55k_transformers4576.json",
+      "tasks": [
+        "adjust_bottle",
+        "beat_block_hammer",
+        "dump_bin_bigbin",
+        "grab_roller"
+      ],
+      "trials_per_task": 5,
+      "instruction_sample_num": 10
+    },
+    {
+      "step": 150000,
+      "run_id": "turbovla_release150000_postnorm_probe5_20260928_144533",
+      "checkpoint": "/home/jack/TurboVLA/pretrained/converted/turbovla_robotwin_9cdb576e_150k_ema_postnorm/steps_150000_ema_pytorch_model.safetensors",
+      "validation": "/home/jack/TurboVLA/experiments/robotwin/setup_records/compatibility_20260928/fixed150k_transformers4576.json",
+      "tasks": [
+        "adjust_bottle",
+        "beat_block_hammer",
+        "dump_bin_bigbin",
+        "grab_roller"
+      ],
+      "trials_per_task": 5,
+      "instruction_sample_num": 10
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "recorded_at": "2026-09-27T03:03:19.285274+09:00",
+  "videos": 12,
+  "frames_per_read": 3,
+  "equality": "exact RGB equality at start/middle/end for timestamp and index reads",
+  "scope": "CPU decode only, warmed files and rotating variant order; not end-to-end training speed",
+  "results": {
+    "auto": {
+      "median_ms": 27.222170494496822,
+      "mean_ms": 25.166865593443315,
+      "max_threads_after_read": 97
+    },
+    "one_thread_close": {
+      "median_ms": 12.426379136741161,
+      "mean_ms": 13.027314407130083,
+      "max_threads_after_read": 1
+    },
+    "two_threads_close": {
+      "median_ms": 10.723461396992207,
+      "mean_ms": 10.892084489266077,
+      "max_threads_after_read": 1
+    }
+  }
+}

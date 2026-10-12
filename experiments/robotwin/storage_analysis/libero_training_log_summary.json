@@ -1,0 +1,41 @@
+[
+  {
+    "path": "/data/jack/turbovla_runs/turbovla_all4_50k_1gpu_bs64_mixbuf64_bidir6_run01/train.log",
+    "first_step_elapsed_s": 11,
+    "100_steps_elapsed_s": 93,
+    "50000_steps_elapsed_s": 41185,
+    "mean_step_s": 0.8237,
+    "windows_10k_s_per_step": {
+      "20000": 0.8241,
+      "30000": 0.8237,
+      "40000": 0.8239,
+      "50000": 0.8217
+    }
+  },
+  {
+    "path": "/data/jack/turbovla_runs/turbovla_all4_50k_1gpu_bs64_mixbuf512_bidir6_run01/train.log",
+    "first_step_elapsed_s": 19,
+    "100_steps_elapsed_s": 102,
+    "50000_steps_elapsed_s": 41630,
+    "mean_step_s": 0.8326,
+    "windows_10k_s_per_step": {
+      "20000": 0.8328,
+      "30000": 0.8314,
+      "40000": 0.8319,
+      "50000": 0.8322
+    }
+  },
+  {
+    "path": "/data/jack/turbovla_runs/turbovla_all4_50k_1gpu_bs64_mixbuf512_wo_interaction_run01/train.log",
+    "first_step_elapsed_s": 20,
+    "100_steps_elapsed_s": 92,
+    "50000_steps_elapsed_s": 36424,
+    "mean_step_s": 0.72848,
+    "windows_10k_s_per_step": {
+      "20000": 0.7275,
+      "30000": 0.728,
+      "40000": 0.7277,
+      "50000": 0.7292
+    }
+  }
+]

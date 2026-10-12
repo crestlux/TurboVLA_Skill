@@ -1,0 +1,49 @@
+{
+  "status": "completed",
+  "gpu": "0",
+  "checkpoint": "public150k_ema",
+  "tasks": [
+    "adjust_bottle",
+    "open_laptop"
+  ],
+  "trials_per_task": 2,
+  "instruction_pool": 100,
+  "python_random_seed": 20260930,
+  "stages": [
+    {
+      "name": "clean_j2",
+      "mode": "demo_clean",
+      "jobs": 2,
+      "profile_directory": "clean_j2_retry1"
+    },
+    {
+      "name": "clean_j1",
+      "mode": "demo_clean",
+      "jobs": 1
+    },
+    {
+      "name": "randomized_j2",
+      "mode": "demo_randomized",
+      "jobs": 2
+    }
+  ],
+  "note": "Resource diagnostic only, not a full benchmark success-rate estimate. GPU 1 remains assigned to the existing LIBERO job.",
+  "excluded_runs": [
+    {
+      "directory": "clean_j2",
+      "reason": "Seeded launcher initially omitted simulator script directory from sys.path; failed before any policy episode. Fixed before retry."
+    }
+  ],
+  "completed_stages": [
+    "clean_j2",
+    "clean_j1",
+    "randomized_j2"
+  ],
+  "current_stage": null,
+  "code_sha256": {
+    "scripts/robotwin/evaluate_verified_checkpoint.sh": "1f18242e55c5d30836bd3ad3326811c01351b453949fd18290d3e68940e506f9",
+    "scripts/robotwin/eval_task.sh": "d43510b5fc08b45b8a328a6648c86a13385f24f378d0f13396da427b047dc01a",
+    "scripts/robotwin/profile_evaluation.py": "1c4c6327f1ec083578a55bd03edf017b54c29d6368166635b1f490d9007fe620"
+  },
+  "completed_at": "2026-09-30T18:23:45.395432+09:00"
+}

@@ -1,0 +1,145 @@
+{
+  "recorded_at": "2026-09-27T02:32:11.812089+09:00",
+  "hardware": "2 x RTX 3090 24 GiB; SYS interconnect; no NVLink",
+  "baseline": {
+    "zero_stage": 2,
+    "per_device_batch": 6,
+    "accumulation": 16,
+    "global_batch": 192,
+    "seconds_per_update": 11.0,
+    "measured_update_window": 100,
+    "source": "/data/jack/robotwin2_turbovla/pipelines/turbovla_clean50_55k_2x3090_20260927_0156/status-before-short-run.json"
+  },
+  "candidates": [
+    {
+      "name": "zero2_b12_a8",
+      "run_id": "turbovla_bench_zero2_b12_a8_20260927",
+      "zero_stage": 2,
+      "per_device_batch": 12,
+      "accumulation": 8,
+      "global_batch": 192,
+      "ranks": [
+        {
+          "audit": "/data/jack/robotwin2_turbovla/runs/turbovla_bench_zero2_b12_a8_20260927/smoke_audit_rank0.json",
+          "rank": 0,
+          "status": "passed",
+          "updates": 8,
+          "micro_batches": 64,
+          "scheduler_updates": 8,
+          "ema_updates": 8,
+          "batch_eval_calls": 0,
+          "checkpoint_save_calls": 0,
+          "steady_seconds_per_update": 7.436757997299234,
+          "peak_allocated_gib": 15.595726013183594,
+          "peak_reserved_gib": 16.802734375,
+          "data_wait_seconds_total": 1.504594812169671,
+          "steady_data_wait_seconds_per_update": 0.004113947662214438
+        },
+        {
+          "audit": "/data/jack/robotwin2_turbovla/runs/turbovla_bench_zero2_b12_a8_20260927/smoke_audit_rank1.json",
+          "rank": 1,
+          "status": "passed",
+          "updates": 8,
+          "micro_batches": 64,
+          "scheduler_updates": 8,
+          "ema_updates": 8,
+          "batch_eval_calls": 0,
+          "checkpoint_save_calls": 0,
+          "steady_seconds_per_update": 7.43623482932647,
+          "peak_allocated_gib": 15.607648849487305,
+          "peak_reserved_gib": 16.841796875,
+          "data_wait_seconds_total": 1.3890455570071936,
+          "steady_data_wait_seconds_per_update": 0.004382637018958728
+        }
+      ]
+    },
+    {
+      "name": "zero1_b12_a8",
+      "run_id": "turbovla_bench_zero1_b12_a8_20260927",
+      "zero_stage": 1,
+      "per_device_batch": 12,
+      "accumulation": 8,
+      "global_batch": 192,
+      "ranks": [
+        {
+          "audit": "/data/jack/robotwin2_turbovla/runs/turbovla_bench_zero1_b12_a8_20260927/smoke_audit_rank0.json",
+          "rank": 0,
+          "status": "passed",
+          "updates": 8,
+          "micro_batches": 64,
+          "scheduler_updates": 8,
+          "ema_updates": 8,
+          "batch_eval_calls": 0,
+          "checkpoint_save_calls": 0,
+          "steady_seconds_per_update": 4.968246965358655,
+          "peak_allocated_gib": 16.215243816375732,
+          "peak_reserved_gib": 17.3984375,
+          "data_wait_seconds_total": 1.756143406033516,
+          "steady_data_wait_seconds_per_update": 0.004946203902363777
+        },
+        {
+          "audit": "/data/jack/robotwin2_turbovla/runs/turbovla_bench_zero1_b12_a8_20260927/smoke_audit_rank1.json",
+          "rank": 1,
+          "status": "passed",
+          "updates": 8,
+          "micro_batches": 64,
+          "scheduler_updates": 8,
+          "ema_updates": 8,
+          "batch_eval_calls": 0,
+          "checkpoint_save_calls": 0,
+          "steady_seconds_per_update": 4.967850706540048,
+          "peak_allocated_gib": 16.210774898529053,
+          "peak_reserved_gib": 17.416015625,
+          "data_wait_seconds_total": 1.3739052172750235,
+          "steady_data_wait_seconds_per_update": 0.004655817523598671
+        }
+      ]
+    },
+    {
+      "name": "zero1_b16_a6",
+      "run_id": "turbovla_opt_smoke_zero1_b16_a6_20260927",
+      "zero_stage": 1,
+      "per_device_batch": 16,
+      "accumulation": 6,
+      "global_batch": 192,
+      "ranks": [
+        {
+          "audit": "/data/jack/robotwin2_turbovla/runs/turbovla_opt_smoke_zero1_b16_a6_20260927/smoke_audit_rank0.json",
+          "rank": 0,
+          "status": "passed",
+          "updates": 12,
+          "micro_batches": 72,
+          "scheduler_updates": 12,
+          "ema_updates": 12,
+          "batch_eval_calls": 2,
+          "checkpoint_save_calls": 1,
+          "steady_seconds_per_update": 4.838326203740305,
+          "peak_allocated_gib": 18.967123985290527,
+          "peak_reserved_gib": 20.17578125,
+          "data_wait_seconds_total": 1.9576531611382961,
+          "steady_data_wait_seconds_per_update": 0.004000667855143547
+        },
+        {
+          "audit": "/data/jack/robotwin2_turbovla/runs/turbovla_opt_smoke_zero1_b16_a6_20260927/smoke_audit_rank1.json",
+          "rank": 1,
+          "status": "passed",
+          "updates": 12,
+          "micro_batches": 72,
+          "scheduler_updates": 12,
+          "ema_updates": 12,
+          "batch_eval_calls": 2,
+          "checkpoint_save_calls": 1,
+          "steady_seconds_per_update": 4.8384159076958895,
+          "peak_allocated_gib": 18.95437526702881,
+          "peak_reserved_gib": 20.169921875,
+          "data_wait_seconds_total": 1.7475736364722252,
+          "steady_data_wait_seconds_per_update": 0.004707638919353485
+        }
+      ]
+    }
+  ],
+  "selected": "zero1_b12_a8",
+  "selection_reason": "Batch 16 was only about 3% faster while using about 3 GiB more peak memory. Batch 12 keeps more memory headroom.",
+  "timing_note": "First two optimizer updates excluded; batch16 update7 excluded because it includes batch-evaluation time. Short benchmark, not a long-run guarantee.",
+  "same_batch_zero1_vs_zero2_max_mean_loss_difference": 1.3899058103561401e-05
+}

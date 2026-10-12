@@ -1,0 +1,62 @@
+{
+  "started_at": "2026-09-30T18:54:37.850115+09:00",
+  "command": [
+    "bash",
+    "scripts/robotwin/evaluate_latest_released_model.sh",
+    "adjust_bottle",
+    "open_laptop",
+    "beat_block_hammer",
+    "pick_dual_bottles",
+    "place_container_plate",
+    "move_stapler_pad"
+  ],
+  "gpus": "0",
+  "interval_seconds": 1.0,
+  "timeout_seconds": 2700.0,
+  "notes": [
+    "GPU peaks are sampled at the stated interval.",
+    "Process CPU 100% is one logical CPU; RSS can double-count shared pages."
+  ],
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "0",
+    "ROBOTWIN_JOBS_PER_GPU": "3",
+    "ROBOTWIN_TEST_NUM": "2",
+    "ROBOTWIN_INSTRUCTION_SAMPLE_NUM": "100",
+    "ROBOTWIN_PYTHON_RANDOM_SEED": "20260930",
+    "ROBOTWIN_BASE_PORT": "8200",
+    "ROBOTWIN_EVAL_MODE": "demo_clean",
+    "RUN_ID": "turbovla_gpu0_j23_20260930_182626_clean_j3"
+  },
+  "baseline_gpu": [
+    {
+      "index": 0,
+      "uuid": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+      "total_mib": 24576,
+      "used_mib": 1,
+      "free_mib": 24251,
+      "utilization_pct": 0,
+      "memory_utilization_pct": 0
+    }
+  ],
+  "finished_at": "2026-09-30T19:01:32.347799+09:00",
+  "exit_code": 0,
+  "exit_reason": "exited",
+  "status": "completed",
+  "wall_seconds": 414.43966833129525,
+  "sample_count": 383,
+  "process_cpu_mean_pct": 271.7711188819625,
+  "process_cpu_peak_pct": 777.7338617513633,
+  "process_rss_peak_mib": 17178.890625,
+  "system_cpu_mean_pct": 8.38619686604754,
+  "gpu": [
+    {
+      "index": 0,
+      "uuid": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+      "baseline_used_mib": 1,
+      "peak_used_mib": 17137,
+      "minimum_free_mib": 7115,
+      "mean_utilization_pct": 65.61357702349869,
+      "peak_utilization_pct": 100
+    }
+  ]
+}

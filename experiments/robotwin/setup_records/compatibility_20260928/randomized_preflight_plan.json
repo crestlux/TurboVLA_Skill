@@ -1,0 +1,13 @@
+{
+  "run_id": "turbovla_release150000_postnorm_randomized_probe2_20260928_151213",
+  "mode": "demo_randomized",
+  "checkpoint": "/home/jack/TurboVLA/pretrained/converted/turbovla_robotwin_9cdb576e_150k_ema_postnorm/steps_150000_ema_pytorch_model.safetensors",
+  "tasks": [
+    "adjust_bottle",
+    "dump_bin_bigbin"
+  ],
+  "trials_per_task": 2,
+  "instruction_sample_num": 100,
+  "tmux_session": "turbovla_randcheck_20260928_151213",
+  "started_at": "2026-09-28T15:12:13.773114+09:00"
+}

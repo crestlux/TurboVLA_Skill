@@ -39,13 +39,14 @@ class VisionProjection(nn.Module):
 
 
 class VisionLanguageInteraction(nn.Module):
-    def __init__(self, config: InteractionConfig) -> None:
+    def __init__(self, config: InteractionConfig, use_optimized_attention: bool = False) -> None:
         super().__init__()
         text_layer = TransformerEncoderLayer(
             d_model=config.hidden_dim,
             nhead=max(1, config.nheads // 2),
             dim_feedforward=config.enhancer_inner_dim,
             dropout=config.text_dropout,
+            use_optimized_attention=use_optimized_attention,
         )
         fusion_layer = BiAttentionBlock(
             v_dim=config.hidden_dim,
@@ -127,7 +128,10 @@ class TurboVLA(nn.Module):
             self.register_parameter("patch_position_scale", None)
         nn.init.trunc_normal_(self.view_embedding, std=0.02)
 
-        self.vision_language_interaction = VisionLanguageInteraction(config.interaction)
+        self.vision_language_interaction = VisionLanguageInteraction(
+            config.interaction,
+            use_optimized_attention=config.compatibility_profile == "robotwin",
+        )
         self.action_head = TurboVLAActionHead(
             config=config.action,
             hidden_dim=hidden_dim,
@@ -168,7 +172,8 @@ class TurboVLA(nn.Module):
 
     def encode_vision(self, pixel_values: torch.Tensor) -> torch.Tensor:
         tokens = self.vision_encoder(pixel_values)
-        tokens = tokens.to(dtype=self.vision_projection.skip.weight.dtype)
+        if self.config.compatibility_profile == "libero":
+            tokens = tokens.to(dtype=self.vision_projection.skip.weight.dtype)
         tokens = self.vision_projection(tokens)
         return self._position_visual_tokens(tokens).flatten(1, 2)
 
@@ -245,6 +250,7 @@ def build_turbovla(args: TurboVLAConfig | Mapping[str, Any] | Any) -> TurboVLA:
         config = TurboVLAConfig.from_mapping(args)
     else:
         config = TurboVLAConfig(
+            compatibility_profile=str(_arg(args, "compatibility_profile", "libero")),
             text=TextEncoderConfig(
                 model_name_or_path=_arg(args, "bert_path", "bert-base-uncased"),
                 max_length=int(_arg(args, "max_text_len", 256)),
@@ -271,6 +277,7 @@ def build_turbovla(args: TurboVLAConfig | Mapping[str, Any] | Any) -> TurboVLA:
                 local_files_only=bool(_arg(args, "local_files_only", True)),
                 attention_implementation=_arg(args, "vision_attention_implementation", None),
                 compute_precision=str(_arg(args, "dinov3_precision", "bf16_autocast")),
+                feature_source=str(_arg(args, "dinov3_feature_source", "hidden_states")),
                 dropout=float(_arg(args, "vision_dropout", 0.1)),
             ),
             interaction=InteractionConfig(

@@ -1,0 +1,7 @@
+[
+  {
+    "association": "CONTRIBUTOR",
+    "url": "https://github.com/H-EmbodVis/TurboVLA/issues/4#issuecomment-5217436771",
+    "body": "Thanks for the detailed report. We identified a compatibility issue.\n\nThe released TurboVLA code was evaluated with Transformers 4.56.0, while your setup uses 4.57.6. The newer version changed the behavior of DINOv3's `outputs.hidden_states[-1]`, which TurboVLA uses as its visual feature. Therefore, strict checkpoint loading can succeed while the predicted actions differ.\n\nPlease try:\n\n    pip install --force-reinstall \"transformers==4.56.0\"\n\nWe are preparing a patch to read `last_hidden_state` explicitly and to pin/check the supported Transformers version. Thank you for helping us identify this issue."
+  }
+]

@@ -832,6 +832,11 @@ class LeRobotSingleDataset(Dataset):
         action_mode = _normalize_action_mode(self.data_cfg.get("action_mode", "abs") if self.data_cfg else "abs")
 
         stats_path = self.dataset_path / LE_ROBOT_STATS_FILENAME
+        stats_cache_dir = self.data_cfg.get("statistics_cache_dir") if self.data_cfg else None
+        if stats_cache_dir:
+            # Keep generated statistics separate from the downloaded dataset metadata.
+            dataset_key = hashlib.sha256(str(self.dataset_path.resolve()).encode()).hexdigest()[:16]
+            stats_path = Path(stats_cache_dir).expanduser() / dataset_key / "stats_gr00t.json"
         action_cfg = self.modality_configs.get("action")
         state_cfg = self.modality_configs.get("state")
         action_keys_full = list(action_cfg.modality_keys) if action_cfg else []

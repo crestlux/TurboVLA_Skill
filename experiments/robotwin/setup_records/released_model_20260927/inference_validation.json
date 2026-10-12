@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "checkpoint": "pretrained/converted/turbovla_robotwin_cb530054_55k_ema/steps_55000_ema_model.safetensors",
+  "release_revision": "cb5300544693013164c4bb251a13036002a55c81",
+  "source_sha256": "d0183df6bafd44507b6c797da5c5ab080ef8446cde4a8127d7280546d9f7c034",
+  "converted_sha256": "3041ceb24e00e062d72575eaad46e2b8634ce2734b521288c0d329ad54d1d9b0",
+  "tensors": 878,
+  "tensor_values_and_dtypes_preserved": true,
+  "tensor_dtypes": {
+    "torch.bfloat16": 878
+  },
+  "finite": true,
+  "strict_load": true,
+  "normalization_statistics_preserved": true,
+  "official_code_commit": "b29ab1420baa5c663ec935df513f2012430beb67",
+  "reference_scope": "Pinned currently published core model; identical wrapper inspected. This does not establish equivalence with an unavailable historical training runtime.",
+  "inference_precision": "bfloat16",
+  "sampled_training_tasks": [
+    "adjust_bottle",
+    "grab_roller",
+    "stack_blocks_three"
+  ],
+  "forward_comparisons": [
+    {
+      "batch_size": 1,
+      "output_shape": [
+        1,
+        50,
+        14
+      ],
+      "max_abs_difference": 0.0,
+      "bitwise_equal": true
+    },
+    {
+      "batch_size": 3,
+      "output_shape": [
+        3,
+        50,
+        14
+      ],
+      "max_abs_difference": 0.0,
+      "bitwise_equal": true
+    }
+  ],
+  "peak_gpu_allocated_bytes": 1904091136
+}

@@ -1,0 +1,41 @@
+{
+  "status": "ready",
+  "prepared_at": "2026-09-23T17:26:43.281462+09:00",
+  "dataset_root": "/home/jack/datasets/RoboTwin/Clean",
+  "ROBOTWIN_DATA_ROOT": "/home/jack/datasets/RoboTwin",
+  "dataset_id": "StarVLA/RoboTwin-Clean",
+  "revision": "070d3b86d7db06f924702a82725dba0f4d89a433",
+  "manifest_sha256": "cfd02f5f08601059ce91c0d55dbb7e8b23a2a3562ecea11a564eafe91e1a7017",
+  "files": 10404,
+  "bytes": 4021934537,
+  "tasks": 50,
+  "episodes": 2500,
+  "transitions": 549787,
+  "parquet_files": 2500,
+  "videos": 7500,
+  "decoded_frames": 1649361,
+  "state_dimensions": 14,
+  "action_dimensions": 14,
+  "fps": 15,
+  "video_resolution": [
+    640,
+    480
+  ],
+  "video_codec": "av1",
+  "runtime_reader": {
+    "backend": "pyav",
+    "version": "12.3.0",
+    "function": "get_frames_by_timestamps",
+    "tasks": 50,
+    "sampled_videos": 150,
+    "sampled_frames": 450
+  },
+  "data_transformed": false,
+  "training_environment_packages_modified": false,
+  "reports": {
+    "final_integrity.json": "/home/jack/datasets/RoboTwin/.download/final_integrity.json",
+    "data_validation.json": "/home/jack/datasets/RoboTwin/.download/data_validation.json",
+    "runtime_reader_validation.json": "/home/jack/datasets/RoboTwin/.download/runtime_reader_validation.json",
+    "preparation_provenance.json": "/home/jack/datasets/RoboTwin/.download/preparation_provenance.json"
+  }
+}
