@@ -1,0 +1,217 @@
+{
+  "status": "ready_for_preprocessing_discussion",
+  "completed_at_utc": "2026-10-24T08:53:54.178484+00:00",
+  "environment": {
+    "name": "turbovla-sfm",
+    "path": "/home/crestlux/miniforge3/envs/turbovla-sfm",
+    "python": "3.10.22",
+    "packages": {
+      "torch": "2.6.0+cu124",
+      "torchvision": "0.21.0+cu124",
+      "transformers": "4.57.6",
+      "timm": "1.0.28",
+      "numpy": "1.26.4",
+      "h5py": "3.16.0",
+      "opencv-python-headless": "4.11.0.86",
+      "scipy": "1.15.3",
+      "imageio": "2.38.0",
+      "imageio-ffmpeg": "0.6.0",
+      "PyYAML": "6.0.3",
+      "wandb": "0.31.0"
+    },
+    "import_cuda_and_turbovla_forward": "passed",
+    "three_gpu_nccl": "passed",
+    "wandb_access": "authenticated_without_creating_a_run",
+    "excluded_packages_absent": [
+      "libero",
+      "robosuite",
+      "mujoco",
+      "sapien",
+      "tensorflow",
+      "tensorflow-datasets",
+      "deepspeed"
+    ]
+  },
+  "data": {
+    "source_host": "csilab",
+    "source_requested_path": "/home/csilab/share_projects/clean_share/demos/default_sfm",
+    "source_resolved_path": "/media/csilab/robot_data/default_sfm",
+    "storage_path": "/data/crestlux/default_sfm",
+    "project_symlink": "/home/crestlux/project/TurboVLA-Research/data/default_sfm",
+    "excluded_folders": [
+      "test",
+      "usb_insert"
+    ],
+    "task_count": 9,
+    "positions_per_task": 5,
+    "demos_per_position": 10,
+    "demo_count": 450,
+    "metadata_json_count": 67,
+    "file_count": 517,
+    "total_bytes": 529275940616,
+    "source_snapshot_unchanged": "exact paths, sizes and mtime_ns match before/after transfer",
+    "verification": "All 517 files have matching source SHA-256, received SHA-256 and destination-readback SHA-256",
+    "file_metadata_preserved": true,
+    "partial_files_remaining": false,
+    "copy_process_exit_code": 0,
+    "readback_process_exit_code": 0
+  },
+  "preprocessing_applied": false,
+  "training_started": false,
+  "optimizer_steps": 0,
+  "wandb_run_created": false,
+  "planned_experiment_count": 9,
+  "experiment_plan": "experiments/default_sfm/experiment_plan.yaml",
+  "custom_dataset_trainer_and_ft_variants": "Implementation deferred until preprocessing and input contracts are decided",
+  "user_deferred_decisions": [],
+  "further_preprocessing_decisions": [
+    "Common state/FT/action normalization",
+    "Stationary-interval frame selection",
+    "Task instruction mapping"
+  ],
+  "artifact_sha256": {
+    "environment_validation.json": "882d5f0927c0ab3063aae94b2e687ec3d7939f62561e5b20a8206c14a9994b77",
+    "nccl_validation.json": "530ff6505af6468d36b083c4a2a915bb757259f72c381c7dbdc6c4f620ba5138",
+    "wandb_access.json": "7ea3921a65363149b3a67afc1ba8d589b55ca9608f8bf43565fff052ebbdb2bd",
+    "backbone_manifest.json": "e28825a1a53904b8fbd5c56918dcdc695da8eefd4d8a2362fc27bb265243cb00",
+    "source_inventory.json": "54ab240847656c9fbb7c16f0f72e2e93e7f0e5e8924dc67aaeead914a2b6b261",
+    "source_inventory_final.json": "aef84a70632abd85f35d424ebb35fd0cedb163cc29afa4ff1abe88d05b2398a2",
+    "local_inventory_final.json": "d7dbe539a144637022fd2a02eb35b5d6eadbaa724ca81a66f252830d038acb91",
+    "copy_manifest.json": "4fac2a70215dcd5a09513169ae34b0e8dcaca13ec59c9fe798c27252e1c6a3fb",
+    "readback_verification.json": "2fa6e5d8ccdc7303c829ae4c6c674d31d49833def03107c9bbfcff9df7764c6e",
+    "pip-freeze.txt": "a80fdc3d1c4926a299ef53820bbb3e2cdf8664ee2ca413631a7baab2e1c928b8",
+    "conda-explicit.txt": "4f3e2f6ca96cfa28e97f83fe62fe272d3173aed2475991b181ae674bf46ae689"
+  },
+  "planning_updated_at_utc": "2026-10-24T10:17:52.794548+00:00",
+  "confirmed_experiment_decisions": {
+    "ft_history_shape": [
+      50,
+      6
+    ],
+    "direct_ft_input_dimension": 300,
+    "remove_instantaneous_ft_from_state": true,
+    "state_dimensions": [
+      13,
+      11,
+      9
+    ],
+    "third_state_condition": "remove x, y, vx, vy; preserve vz, wx, wy, wz",
+    "action_chunk_length": 5,
+    "dataset_split": {
+      "policy": "all_450_train_separate_evaluation",
+      "training_demo_count": 450,
+      "held_out_demo_count": 0,
+      "evaluation_source": null,
+      "evaluation_protocol": null
+    },
+    "action": {
+      "observed_raw_dimension": 7,
+      "observed_info_format": "absolute_tcp_xyz_rpy_gripper",
+      "training_representation": "delta",
+      "coordinate_frame": "robot_base",
+      "reference_pose": "measured_tcp_pose_at_each_action_timestep",
+      "translation": "target_xyz_minus_measured_xyz",
+      "rotation": "rotvec_target_rotation_times_measured_rotation_inverse",
+      "units": [
+        "m",
+        "m",
+        "m",
+        "rad",
+        "rad",
+        "rad",
+        "gripper_command"
+      ],
+      "divide_by_control_period": false,
+      "state_angle_wrapping_changes_action_generation": false,
+      "chunk_length": 5,
+      "observed_control_period_s": 0.1,
+      "nominal_chunk_coverage_s": 0.5,
+      "execution_horizon": null,
+      "gripper_label_rule": "held_command_target",
+      "gripper_target_source": "infos.command_receipts.right.gripper_target_percent",
+      "gripper_closed_label": -1,
+      "gripper_open_label": 1,
+      "gripper_zero_command_behavior": "retain_last_command_target",
+      "gripper_initial_target": "open",
+      "normalization": null
+    },
+    "image_output_size": [
+      224,
+      224
+    ],
+    "image_order": "native crop then resize and letterbox",
+    "gru_reference": {
+      "gru_implementation": "existing_turbovla_usb",
+      "gru_hidden_size": 128,
+      "gru_num_layers": 1,
+      "gru_bidirectional": false,
+      "gru_pooling": "last_hidden",
+      "gru_output_dimension": 256,
+      "gru_output_projection": "linear_then_layer_norm",
+      "gru_reset_policy": "zero_each_50_sample_window",
+      "gru_state_fusion": "separate_act_memory_token"
+    },
+    "rpy_option": "csilab wrap_angles: [roll, yaw]; preserve signed pitch",
+    "vision_pipeline": {
+      "processing_order": "crop_native_original_then_resize",
+      "crop_tlhw": {
+        "head_cam_d455": [
+          96,
+          128,
+          288,
+          384
+        ],
+        "wrist_cam_d405_a": [
+          72,
+          122,
+          336,
+          448
+        ]
+      },
+      "final_image_size": [
+        224,
+        224
+      ],
+      "resize_mode": "letterbox",
+      "crop_boxes_confirmed": true,
+      "interpolation": "area",
+      "pad_value": 0
+    },
+    "adaln": {
+      "adaln_target_modules": "act_decoder_layer_norms",
+      "adaln_condition_source": "same_gru_output_as_memory_token",
+      "adaln_retain_gru_memory_token": true,
+      "adaln_modulation": "scale_and_shift",
+      "adaln_initialization": null
+    },
+    "rpy": {
+      "final_boundary_policy": "csilab_wrap_angles_per_axis",
+      "wrap_angles": [
+        "roll",
+        "yaw"
+      ],
+      "pitch_policy": "preserve_original_signed_angle",
+      "applied": false
+    }
+  },
+  "full_rpy_audit": {
+    "status": "verified",
+    "demos": 450,
+    "frames": 143127,
+    "report": "experiments/default_sfm/preprocessing_audit/rpy/report.json"
+  },
+  "later_training_or_inference_decisions": [
+    "Initialization and frozen/trainable modules",
+    "Optimizer, training budget and seeds",
+    "Image augmentation",
+    "AdaLN initialization details",
+    "Execution horizon",
+    "Separate evaluation protocol"
+  ],
+  "automatic_preprocessing_checks": [
+    "Current-observation FT alignment and zero/missing-window audit",
+    "Full-cohort held gripper command-receipt consistency",
+    "Delta conversion round-trip and five-step tail masks",
+    "Offline/inference transform parity and common normalization coefficients"
+  ]
+}

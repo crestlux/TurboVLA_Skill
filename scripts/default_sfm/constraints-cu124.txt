@@ -1,0 +1,7 @@
+# PyTorch pairing: https://pytorch.org/get-started/previous-versions/#v260
+torch==2.6.0+cu124
+torchvision==0.21.0+cu124
+numpy==1.26.4
+transformers==4.57.6
+timm==1.0.28
+opencv-python-headless==4.11.0.86

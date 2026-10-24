@@ -1,0 +1,25 @@
+{
+  "description": "Jack FAFLOW / delta / FT history 미사용",
+  "ready": true,
+  "training_status": "completed",
+  "step": 10400,
+  "target_steps": 10400,
+  "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_delta_no_ft_history/delta/checkpoint_010400.pt",
+  "checkpoint_sha256": "f7139d7d7b826ba34b0c5b31fe8f6ed88340d13737a9dc68a1d31a3f045779d2",
+  "mode": "delta",
+  "dataset": "faflow",
+  "weights_available": [
+    "raw",
+    "ema"
+  ],
+  "bundle": "models/jack_faflow_delta_no_ft_history/bundles/delta",
+  "bundle_id": "627e919e7a6f5f9a0708ea55ccf98e3f4b703979d264f2d795700f04a4a3e214",
+  "client_config": "models/jack_faflow_delta_no_ft_history/client_configs/ff_usb.json",
+  "uses_ft_history": false,
+  "action_shape": [
+    5,
+    7
+  ],
+  "request_steps": 4,
+  "source_dataset": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta"
+}

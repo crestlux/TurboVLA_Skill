@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-24T08:48:26.568920+00:00",
+  "root": "/data/crestlux/default_sfm",
+  "selection": "Nine named tasks, p1 through p5; test and usb_insert excluded",
+  "task_count": 1,
+  "folder_count": 1,
+  "demo_count": 10,
+  "file_count": 11,
+  "total_bytes": 14070737838,
+  "suffix_counts": {
+    ".pkl": 10,
+    ".json": 1
+  },
+  "excluded_top_level_entries": [
+    "audio_jack_p1",
+    "audio_jack_p2",
+    "audio_jack_p3",
+    "audio_jack_p4",
+    "audio_jack_p5",
+    "barlatch_p1",
+    "barlatch_p2",
+    "barlatch_p3",
+    "barlatch_p4",
+    "barlatch_p5",
+    "bnc_p1",
+    "bnc_p2",
+    "bnc_p3",
+    "bnc_p4",
+    "bnc_p5",
+    "hdmi_p1",
+    "hdmi_p2",
+    "hdmi_p3",
+    "hdmi_p4",
+    "hdmi_p5",
+    "knob_p1",
+    "knob_p2",
+    "knob_p3",
+    "knob_p4",
+    "knob_p5",
+    "lan_p1",
+    "lan_p2",
+    "lan_p3",
+    "lan_p4",
+    "lan_p5",
+    "outlet_p1",
+    "outlet_p2",
+    "outlet_p3",
+    "outlet_p4",
+    "outlet_p5",
+    "rotary_switch_p1",
+    "rotary_switch_p2",
+    "rotary_switch_p3",
+    "rotary_switch_p4",
+    "usb_p1",
+    "usb_p2",
+    "usb_p3"
+  ],
+  "hash_algorithm": "sha256",
+  "folders": [
+    {
+      "folder": "rotary_switch_p5",
+      "task": "rotary_switch",
+      "position": 5,
+      "demo_count": 10,
+      "file_count": 11,
+      "total_bytes": 14070737838
+    }
+  ],
+  "files": [
+    {
+      "path": "rotary_switch_p5/2026-10-23/1_demos_2026-10-23_17-16-04_140211.pkl",
+      "bytes": 1575330309,
+      "mtime_ns": 1792743369097915900,
+      "sha256": "b7a73bef46af24001f854ab270b70f61d966442cfdbc2b9475590d08e3dadb62"
+    },
+    {
+      "path": "rotary_switch_p5/2026-10-23/1_demos_2026-10-23_17-17-10_195728.pkl",
+      "bytes": 1738041050,
+      "mtime_ns": 1792743435839574600,
+      "sha256": "9f147e765eac55397994362653e230ddd149217fac37a76674068813aeb871c3"
+    },
+    {
+      "path": "rotary_switch_p5/2026-10-23/1_demos_2026-10-23_17-18-36_138577.pkl",
+      "bytes": 1383037424,
+      "mtime_ns": 1792743520547929700,
+      "sha256": "a795a29af71324b1510fb223a2d99d8d9a7743b63ef780e593ab43278ecc2aa5"
+    },
+    {
+      "path": "rotary_switch_p5/2026-10-23/1_demos_2026-10-23_17-20-18_591547.pkl",
+      "bytes": 1408922213,
+      "mtime_ns": 1792743623138770300,
+      "sha256": "fe2fa317190836ab9c0a0b2798e785be6ff2a73d507676e9d28c7cfd49e182c0"
+    },
+    {
+      "path": "rotary_switch_p5/2026-10-23/1_demos_2026-10-23_17-21-09_401736.pkl",
+      "bytes": 1283192287,
+      "mtime_ns": 1792743673477952800,
+      "sha256": "501deabfb5f8806d4cbd8a58e2045dad0e5b7b80c4ab96a54f14f24043502f6b"
+    },
+    {
+      "path": "rotary_switch_p5/2026-10-23/1_demos_2026-10-23_17-21-59_099349.pkl",
+      "bytes": 1231420229,
+      "mtime_ns": 1792743722910269600,
+      "sha256": "28d5b9c8c862748a8fed51d966fce9afcacc7ee902bbd6e4023448b876eeea01"
+    },
+    {
+      "path": "rotary_switch_p5/2026-10-23/1_demos_2026-10-23_17-22-49_981785.pkl",
+      "bytes": 1301681417,
+      "mtime_ns": 1792743774014481500,
+      "sha256": "68aee61024c2b65b7990a85e502ffa4dd39aef8e7be051a6aac14b1a1b2d5d08"
+    },
+    {
+      "path": "rotary_switch_p5/2026-10-23/1_demos_2026-10-23_17-24-57_203345.pkl",
+      "bytes": 1505069917,
+      "mtime_ns": 1792743902224947700,
+      "sha256": "8a7f9895d4a2b7c5023da9aca9ee82999aa4b03adb88718aa9d667ab22f62b3b"
+    },
+    {
+      "path": "rotary_switch_p5/2026-10-23/1_demos_2026-10-23_17-25-54_850469.pkl",
+      "bytes": 1512464974,
+      "mtime_ns": 1792743959923019000,
+      "sha256": "3a5554532bc62fd0302a7e0c96ddf0009c37eaa9b73850b8be616a41a99353d0"
+    },
+    {
+      "path": "rotary_switch_p5/2026-10-23/1_demos_2026-10-23_17-26-43_291695.pkl",
+      "bytes": 1131575391,
+      "mtime_ns": 1792744006750305900,
+      "sha256": "68656e05452545618b699a509e4d87e920f27dc50d90519b3977c2eddbc68c29"
+    },
+    {
+      "path": "rotary_switch_p5/2026-10-23/env_config_2026-10-23_17-15-01_959819.json",
+      "bytes": 2627,
+      "mtime_ns": 1792743301961495600,
+      "sha256": "dd0871df7a93550bd018affb7f23278a27dc176a4eed087af7b486dc9d5b29d3"
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "errors": [],
+    "comparison": "exact relative file set, sizes, SHA-256",
+    "reference_root": "/media/csilab/robot_data/default_sfm",
+    "reference_created_at_utc": "2026-10-24T08:48:26.565691+00:00"
+  }
+}

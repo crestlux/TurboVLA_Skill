@@ -1,0 +1,21 @@
+{
+  "mode": "delta",
+  "pid": 2055500,
+  "gpu": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+  "started_utc": "2026-10-18T13:16:29.212991+00:00",
+  "phase": "completed",
+  "training": {
+    "status": "completed",
+    "step": 12640,
+    "samples_seen": 807200,
+    "target_samples": 807200,
+    "target_steps": 12640,
+    "elapsed_seconds": 7738.544646807015,
+    "parameters": 216171565,
+    "remaining_steps": 0,
+    "remaining_samples": 0,
+    "remaining_seconds": 0.0,
+    "eta": "00:00:00"
+  },
+  "finished_utc": "2026-10-18T15:27:25.317070+00:00"
+}

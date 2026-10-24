@@ -1,0 +1,83 @@
+{
+  "status": "copying",
+  "source_host": "csilab",
+  "source_root": "/media/csilab/robot_data/default_sfm",
+  "destination": "/data/crestlux/default_sfm",
+  "total_bytes": 529275940616,
+  "started_at_utc": "2026-10-24T07:05:12.963900+00:00",
+  "folders": {
+    "audio_jack_p1": {
+      "status": "verified",
+      "total_bytes": 11962737806,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T07:11:48.377021+00:00"
+      }
+    },
+    "audio_jack_p2": {
+      "status": "verified",
+      "total_bytes": 11851972509,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T07:18:39.300359+00:00"
+      }
+    },
+    "audio_jack_p3": {
+      "status": "verified",
+      "total_bytes": 10775857385,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T07:17:11.242336+00:00"
+      }
+    },
+    "audio_jack_p4": {
+      "status": "verified",
+      "total_bytes": 9496364588,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T07:15:58.778575+00:00"
+      }
+    },
+    "audio_jack_p5": {
+      "status": "hashing_source",
+      "current_file": "audio_jack_p5/2026-10-22/1_demos_2026-10-22_20-47-01_795267.pkl",
+      "verified_files": 6,
+      "verified_bytes": 5983303398,
+      "total_bytes": 10106534077
+    },
+    "barlatch_p1": {
+      "status": "copying",
+      "current_file": "barlatch_p1/2026-10-20/1_demos_2026-10-20_18-42-31_159215.pkl",
+      "verified_files": 1,
+      "verified_bytes": 1556819144,
+      "total_bytes": 14240646661
+    },
+    "barlatch_p2": {
+      "status": "hashing_source",
+      "current_file": "barlatch_p2/2026-10-20/1_demos_2026-10-20_19-59-20_231796.pkl",
+      "verified_files": 1,
+      "verified_bytes": 1427392499,
+      "total_bytes": 12791069043
+    },
+    "barlatch_p3": {
+      "status": "hashing_source",
+      "current_file": "barlatch_p3/2026-10-22/1_demos_2026-10-22_20-00-54_983840.pkl",
+      "verified_files": 0,
+      "verified_bytes": 0,
+      "total_bytes": 12284630724
+    }
+  },
+  "updated_at_utc": "2026-10-24T07:18:45.165625+00:00"
+}

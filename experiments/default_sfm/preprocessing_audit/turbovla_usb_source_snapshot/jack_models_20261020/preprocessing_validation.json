@@ -1,0 +1,103 @@
+{
+  "server_started": false,
+  "robot_constructed": false,
+  "models": {
+    "jack_original_delta_no_ft_history": {
+      "recorded_observations": 10,
+      "image_different_values": 0,
+      "numeric_max_abs_error": 0.0,
+      "action_shape": [
+        50,
+        7
+      ],
+      "bundle_id": "72e2fffa080801d159f3c154626a7590584fc22c610bbc06a5a0f395b70d9e8d",
+      "inverse_action_roundtrip_passed": true,
+      "passed": true
+    },
+    "jack_original_delta_gru500hz": {
+      "recorded_observations": 10,
+      "image_different_values": 0,
+      "numeric_max_abs_error": 0.0,
+      "action_shape": [
+        50,
+        7
+      ],
+      "bundle_id": "72e2fffa080801d159f3c154626a7590584fc22c610bbc06a5a0f395b70d9e8d",
+      "inverse_action_roundtrip_passed": true,
+      "passed": true
+    },
+    "jack_original_relative_no_ft_history": {
+      "recorded_observations": 10,
+      "image_different_values": 0,
+      "numeric_max_abs_error": 0.0,
+      "action_shape": [
+        50,
+        7
+      ],
+      "bundle_id": "b12c55f15a650a798dead33765f8cb9aef3d094ba89bba8ff26957c165359bba",
+      "inverse_action_roundtrip_passed": true,
+      "passed": true
+    },
+    "jack_original_relative_gru500hz": {
+      "recorded_observations": 10,
+      "image_different_values": 0,
+      "numeric_max_abs_error": 0.0,
+      "action_shape": [
+        50,
+        7
+      ],
+      "bundle_id": "b12c55f15a650a798dead33765f8cb9aef3d094ba89bba8ff26957c165359bba",
+      "inverse_action_roundtrip_passed": true,
+      "passed": true
+    },
+    "jack_faflow_delta_no_ft_history": {
+      "recorded_observations": 10,
+      "image_different_values": 0,
+      "numeric_max_abs_error": 0.0,
+      "action_shape": [
+        5,
+        7
+      ],
+      "bundle_id": "627e919e7a6f5f9a0708ea55ccf98e3f4b703979d264f2d795700f04a4a3e214",
+      "inverse_action_roundtrip_passed": true,
+      "passed": true
+    },
+    "jack_faflow_delta_gru500hz": {
+      "recorded_observations": 10,
+      "image_different_values": 0,
+      "numeric_max_abs_error": 0.0,
+      "action_shape": [
+        5,
+        7
+      ],
+      "bundle_id": "627e919e7a6f5f9a0708ea55ccf98e3f4b703979d264f2d795700f04a4a3e214",
+      "inverse_action_roundtrip_passed": true,
+      "passed": true
+    },
+    "jack_faflow_relative_no_ft_history": {
+      "recorded_observations": 10,
+      "image_different_values": 0,
+      "numeric_max_abs_error": 0.0,
+      "action_shape": [
+        5,
+        7
+      ],
+      "bundle_id": "80f82ed379a5f511870d858693bc9f50031d753ade2c48e202f3e7a9808b2d68",
+      "inverse_action_roundtrip_passed": true,
+      "passed": true
+    },
+    "jack_faflow_relative_gru500hz": {
+      "recorded_observations": 10,
+      "image_different_values": 0,
+      "numeric_max_abs_error": 0.0,
+      "action_shape": [
+        5,
+        7
+      ],
+      "bundle_id": "80f82ed379a5f511870d858693bc9f50031d753ade2c48e202f3e7a9808b2d68",
+      "inverse_action_roundtrip_passed": true,
+      "passed": true
+    }
+  },
+  "passed": true
+}

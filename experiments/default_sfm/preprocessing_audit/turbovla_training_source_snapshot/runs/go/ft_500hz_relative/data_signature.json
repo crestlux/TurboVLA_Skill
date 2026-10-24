@@ -1,0 +1,281 @@
+{
+  "files": [
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-30-19_023254__a9eb1030ca__ep0000.hdf5",
+      "size": 67375501,
+      "mtime_ns": 1792259676691144864
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-30-46_307441__93bf597e43__ep0000.hdf5",
+      "size": 73902624,
+      "mtime_ns": 1792259679195150937
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-31-12_686762__75477f2721__ep0000.hdf5",
+      "size": 70353008,
+      "mtime_ns": 1792259681915157554
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-31-46_104073__8eac3b1191__ep0000.hdf5",
+      "size": 75008811,
+      "mtime_ns": 1792259684531163937
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-32-18_487222__0f334aad7c__ep0000.hdf5",
+      "size": 91983023,
+      "mtime_ns": 1792259687367170878
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-32-46_051264__3623df5b65__ep0000.hdf5",
+      "size": 73876892,
+      "mtime_ns": 1792259690715179098
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-33-51_151162__4db4574412__ep0000.hdf5",
+      "size": 70526719,
+      "mtime_ns": 1792259693467185878
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-34-19_379324__45826df6d7__ep0000.hdf5",
+      "size": 76637067,
+      "mtime_ns": 1792259696119192430
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-34-51_034436__73cf428522__ep0000.hdf5",
+      "size": 88733573,
+      "mtime_ns": 1792259699015199605
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-35-18_780395__8dfecb13b8__ep0000.hdf5",
+      "size": 75042628,
+      "mtime_ns": 1792259702259207669
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-36-30_896918__e7115929ad__ep0000.hdf5",
+      "size": 82733294,
+      "mtime_ns": 1792259705095214741
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-37-00_625468__ae8156b9e0__ep0000.hdf5",
+      "size": 84680597,
+      "mtime_ns": 1792259708087222224
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-37-52_797093__569ee69218__ep0000.hdf5",
+      "size": 79065086,
+      "mtime_ns": 1792259711131229859
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-38-21_829454__0d0f675aac__ep0000.hdf5",
+      "size": 82919401,
+      "mtime_ns": 1792259713999237076
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-38-51_242853__1105cf4be1__ep0000.hdf5",
+      "size": 84279957,
+      "mtime_ns": 1792259717023244706
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-39-21_338388__e6827a0739__ep0000.hdf5",
+      "size": 86081292,
+      "mtime_ns": 1792259720059252392
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-39-49_151149__1a3d139525__ep0000.hdf5",
+      "size": 78127553,
+      "mtime_ns": 1792259723123260170
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-40-16_924218__53510d1af3__ep0000.hdf5",
+      "size": 78437980,
+      "mtime_ns": 1792259725927267309
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-40-45_119988__1948bc830c__ep0000.hdf5",
+      "size": 80189693,
+      "mtime_ns": 1792259728747274507
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-41-43_140832__b89cf6e448__ep0000.hdf5",
+      "size": 73947027,
+      "mtime_ns": 1792259731619281859
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-42-19_530885__3fbd34a41b__ep0000.hdf5",
+      "size": 85999972,
+      "mtime_ns": 1792259734319288790
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-42-47_751847__ff1660c79b__ep0000.hdf5",
+      "size": 78855736,
+      "mtime_ns": 1792259737427296787
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-43-15_724423__66860a38de__ep0000.hdf5",
+      "size": 78750233,
+      "mtime_ns": 1792259740279304148
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-43-41_427994__91e6af929a__ep0000.hdf5",
+      "size": 69856154,
+      "mtime_ns": 1792259743107311466
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-44-09_713114__0a935f960d__ep0000.hdf5",
+      "size": 79529061,
+      "mtime_ns": 1792259745651318065
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-44-40_559262__ef5ad7a9ef__ep0000.hdf5",
+      "size": 89055725,
+      "mtime_ns": 1792259748563325636
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-45-07_430528__9b6cea8f9f__ep0000.hdf5",
+      "size": 74129595,
+      "mtime_ns": 1792259751723333876
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-45-34_621659__967a907cdd__ep0000.hdf5",
+      "size": 76141744,
+      "mtime_ns": 1792259754443340988
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-46-03_399978__0c520c18aa__ep0000.hdf5",
+      "size": 81232227,
+      "mtime_ns": 1792259757199348210
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-46-31_450034__21d6e465b5__ep0000.hdf5",
+      "size": 78599975,
+      "mtime_ns": 1792259760147355955
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-47-01_999390__07a3c32eac__ep0000.hdf5",
+      "size": 63864731,
+      "mtime_ns": 1792259762947363330
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-47-26_168196__979da6ce99__ep0000.hdf5",
+      "size": 63735463,
+      "mtime_ns": 1792259765307369560
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-47-52_971725__562cac8a96__ep0000.hdf5",
+      "size": 73874429,
+      "mtime_ns": 1792259767671375813
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-48-20_621585__36890ced1c__ep0000.hdf5",
+      "size": 77977447,
+      "mtime_ns": 1792259770379382992
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-48-49_364267__94c44e16bd__ep0000.hdf5",
+      "size": 80189958,
+      "mtime_ns": 1792259773219390539
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-49-16_957247__69ed47938f__ep0000.hdf5",
+      "size": 76890985,
+      "mtime_ns": 1792259776131398295
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-49-44_770351__325f67fe03__ep0000.hdf5",
+      "size": 77806572,
+      "mtime_ns": 1792259778931405771
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-50-11_405479__d9c101c091__ep0000.hdf5",
+      "size": 73679909,
+      "mtime_ns": 1792259781755413329
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-50-38_771170__12b980a441__ep0000.hdf5",
+      "size": 75910047,
+      "mtime_ns": 1792259784435420517
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-51-04_262929__1c07d82170__ep0000.hdf5",
+      "size": 69580733,
+      "mtime_ns": 1792259787163427851
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-51-34_383555__73c5d2d39e__ep0000.hdf5",
+      "size": 66137271,
+      "mtime_ns": 1792259789675434618
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-51-58_344850__a35aee2a9a__ep0000.hdf5",
+      "size": 63593968,
+      "mtime_ns": 1792259792063441063
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-52-22_624000__2afe588c70__ep0000.hdf5",
+      "size": 64968676,
+      "mtime_ns": 1792259794387447348
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-52-47_961021__6e236e83a4__ep0000.hdf5",
+      "size": 68611038,
+      "mtime_ns": 1792259796771453807
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-53-17_090493__81c724b831__ep0000.hdf5",
+      "size": 82505744,
+      "mtime_ns": 1792259799347460799
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-53-45_241022__c66ccd41c0__ep0000.hdf5",
+      "size": 79080823,
+      "mtime_ns": 1792259802451469244
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-54-08_562604__a5dac918d4__ep0000.hdf5",
+      "size": 61803003,
+      "mtime_ns": 1792259805379477229
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-54-32_903308__1ab10d150b__ep0000.hdf5",
+      "size": 65610294,
+      "mtime_ns": 1792259807767483756
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-54-58_794371__6a1591a509__ep0000.hdf5",
+      "size": 71273452,
+      "mtime_ns": 1792259810279490632
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/relative/1_demos_2026-10-16_15-55-25_580161__4f63e74063__ep0000.hdf5",
+      "size": 75053118,
+      "mtime_ns": 1792259813107498391
+    }
+  ],
+  "metadata_sha256": {
+    "normalization.json": "9f2464bec9a61663a88ad1c34f3122698f6e9642d5c66a36b1f40db629f11828",
+    "manifest.json": "77c862135e25753b4bda57cd51b01ec7ad1c44f03bb2fc30b6697600b56e381f",
+    "instructions.json": "b96d56bea0305b2e111e3e11925da8b6f64c81b798ee41272ceba1aeefd59b6e"
+  },
+  "camera_keys": [
+    "observations/image_head",
+    "observations/image_wrist_right"
+  ],
+  "state_key": "observations/state",
+  "mode": "relative",
+  "ft_history": {
+    "key": "observations/ft_history",
+    "history_length": 50,
+    "input_dim": 6,
+    "normalization": "raw physical measurements",
+    "resampling": {
+      "method": "causal_fir_decimate",
+      "num_taps": 21,
+      "cutoff_ratio": 0.4,
+      "rate_basis": "nominal; per-sample timestamps unavailable",
+      "source_hz": 500,
+      "target_hz": 500,
+      "source_length": 50
+    }
+  },
+  "instructions_sha256": "64eb66913c45ace2d511c65f3d23ca78d22289681e9e35196c552bd2c563ad4a"
+}

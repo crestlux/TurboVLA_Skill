@@ -1,0 +1,78 @@
+{
+  "host": "csilab",
+  "root": "/home/csilab/share_projects/clean_share",
+  "captured_at_utc": "2026-10-24T09:26:08.309441+00:00",
+  "read_only_remote": true,
+  "files": [
+    {
+      "path": "preprocess/convert.py",
+      "resolved_path": "/home/csilab/share_projects/clean_share/preprocess/convert.py",
+      "bytes": 41859,
+      "mtime_ns": 1792734615982286810,
+      "sha256": "e35f2f104b59c872054b91c705fa1d6f32259aec746ec9d1fe4e00a1f144cf01"
+    },
+    {
+      "path": "preprocess/action_chunks.py",
+      "resolved_path": "/home/csilab/share_projects/clean_share/preprocess/action_chunks.py",
+      "bytes": 9366,
+      "mtime_ns": 1792734576248859739,
+      "sha256": "480bddd09650f496e599bb64b85c092fa7f043faa68605f929e68b867a33f85a"
+    },
+    {
+      "path": "preprocess/action_layout.py",
+      "resolved_path": "/home/csilab/share_projects/clean_share/preprocess/action_layout.py",
+      "bytes": 1367,
+      "mtime_ns": 1792734576212858456,
+      "sha256": "143c244127fe95914b7ff90b38ac183ecccc3f976a3827e7a6059df3303ad308"
+    },
+    {
+      "path": "preprocess/inference.py",
+      "resolved_path": "/home/csilab/share_projects/clean_share/preprocess/inference.py",
+      "bytes": 5192,
+      "mtime_ns": 1792735038861422910,
+      "sha256": "2514ddf0907980b17cc9875e14735fab6d8f8ea1451499d1934e862534068f08"
+    },
+    {
+      "path": "preprocess/normalization.py",
+      "resolved_path": "/home/csilab/share_projects/clean_share/preprocess/normalization.py",
+      "bytes": 13186,
+      "mtime_ns": 1792734615949285617,
+      "sha256": "6b9e5ea9c9a9dfe31f8d81734e395bdf2b28a0aa9ee7ea763fec4135aea25c92"
+    },
+    {
+      "path": "preprocess/configs/config_right_default.yaml",
+      "resolved_path": "/home/csilab/share_projects/clean_share/preprocess/configs/config_right_default.yaml",
+      "bytes": 3846,
+      "mtime_ns": 1792734654340682796,
+      "sha256": "59785432d027a46842a7c5e0b6040103116adf5efa0b61c3c8969d39ac5d32e8"
+    },
+    {
+      "path": "preprocess/README.md",
+      "resolved_path": "/home/csilab/share_projects/clean_share/preprocess/README.md",
+      "bytes": 55100,
+      "mtime_ns": 1792734912111441004,
+      "sha256": "cf9504298a56db8aa60e93e4d3349b0abbeffb5eef224bf8ba77336573f80847"
+    },
+    {
+      "path": "preprocess/preview_images.py",
+      "resolved_path": "/home/csilab/share_projects/clean_share/preprocess/preview_images.py",
+      "bytes": 5803,
+      "mtime_ns": 1792136466934267977,
+      "sha256": "6835071dcee944522e17f80eb86c32a88cd187176a69e421b73f059ffbaf1b8c"
+    },
+    {
+      "path": "tools/demo_viz/schema.py",
+      "resolved_path": "/home/csilab/share_projects/clean_share/tools/demo_viz/schema.py",
+      "bytes": 5380,
+      "mtime_ns": 1791274588867016187,
+      "sha256": "42b6b848251bc92b79b9fb47e3f0ec30c11e175565eded0c29975c3a516a322c"
+    },
+    {
+      "path": "tests/test_preprocess_angles.py",
+      "resolved_path": "/home/csilab/share_projects/clean_share/tests/test_preprocess_angles.py",
+      "bytes": 8173,
+      "mtime_ns": 1792734694295154534,
+      "sha256": "2a3e1f35ae85d536386cd2da001f9ea1aed9847c4bbc1b3824c584b002c7785b"
+    }
+  ]
+}

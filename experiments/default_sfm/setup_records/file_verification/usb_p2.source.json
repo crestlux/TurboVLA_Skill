@@ -1,0 +1,84 @@
+{
+  "root": "/media/csilab/robot_data/default_sfm",
+  "created_at_utc": "2026-10-24T08:50:25.405346+00:00",
+  "hash_algorithm": "sha256",
+  "files": [
+    {
+      "path": "usb_p2/2026-10-21/1_demos_2026-10-21_17-27-52_241793.pkl",
+      "bytes": 1020637656,
+      "mtime_ns": 1792571274742811300,
+      "mode": 511,
+      "sha256": "3e2cb03af55e821c4ba8bcfc8c6ab3160459f21d01d43ffb7fa1855f19a4609a"
+    },
+    {
+      "path": "usb_p2/2026-10-21/1_demos_2026-10-21_17-28-31_567725.pkl",
+      "bytes": 1024335617,
+      "mtime_ns": 1792571314244567300,
+      "mode": 511,
+      "sha256": "ba74625fd3071dd33aae44d5db6250a7f5774d194fd94f93be80897de4056c82"
+    },
+    {
+      "path": "usb_p2/2026-10-21/1_demos_2026-10-21_17-30-04_697530.pkl",
+      "bytes": 998449900,
+      "mtime_ns": 1792571407298516100,
+      "mode": 511,
+      "sha256": "d7eeddfa3d9a9e166612b7af26037aa1653d6455ca66b0bf237a6a849ecfaf08"
+    },
+    {
+      "path": "usb_p2/2026-10-21/1_demos_2026-10-21_17-30-42_822863.pkl",
+      "bytes": 968866212,
+      "mtime_ns": 1792571445372218200,
+      "mode": 511,
+      "sha256": "ebb16849207ed7cd3b71993ea185e0ce4158f1f686a8137d5cc6cd1d4a1b14ba"
+    },
+    {
+      "path": "usb_p2/2026-10-21/1_demos_2026-10-21_17-31-22_159086.pkl",
+      "bytes": 1009543783,
+      "mtime_ns": 1792571484669387800,
+      "mode": 511,
+      "sha256": "d30fbc94f6f8f88233fd26a55ee0baa920906c135f78d01fe213bec6cfdbacf8"
+    },
+    {
+      "path": "usb_p2/2026-10-21/1_demos_2026-10-21_17-31-59_754485.pkl",
+      "bytes": 946678526,
+      "mtime_ns": 1792571522156999000,
+      "mode": 511,
+      "sha256": "511bfca58eeaeb8b7848f6fa9f9af7249f38de3dfaf2d42f30337eeae61f3eb3"
+    },
+    {
+      "path": "usb_p2/2026-10-21/1_demos_2026-10-21_17-32-39_975079.pkl",
+      "bytes": 1046523393,
+      "mtime_ns": 1792571562704202700,
+      "mode": 511,
+      "sha256": "b34a552d59cc46581f6948c67ce2492cdb285af25393c791b8fbc36d65106727"
+    },
+    {
+      "path": "usb_p2/2026-10-21/1_demos_2026-10-21_17-33-18_460492.pkl",
+      "bytes": 976262144,
+      "mtime_ns": 1792571601007666900,
+      "mode": 511,
+      "sha256": "643729dcb5ff317290d8db93e3e4f5a21df2aaa2038ca8de8dfe78df0ef5529f"
+    },
+    {
+      "path": "usb_p2/2026-10-21/1_demos_2026-10-21_17-33-56_374182.pkl",
+      "bytes": 965168251,
+      "mtime_ns": 1792571638839057000,
+      "mode": 511,
+      "sha256": "2bc09a932da5522a8bd0d6abd1f6ae17743b603dbdc259683f4908b0bb9d9d0e"
+    },
+    {
+      "path": "usb_p2/2026-10-21/1_demos_2026-10-21_17-35-18_751737.pkl",
+      "bytes": 1127878535,
+      "mtime_ns": 1792571721629852100,
+      "mode": 511,
+      "sha256": "b77b0c1cfe83b29346a4edc2420b98c37b3d7005e704747ebced5bc572f00d5e"
+    },
+    {
+      "path": "usb_p2/2026-10-21/env_config_2026-10-21_17-25-50_777720.json",
+      "bytes": 2617,
+      "mtime_ns": 1792571150778987400,
+      "mode": 511,
+      "sha256": "c3acfcc132eb945f78c581db29708f6b0a1b2da96a5a24a30e4987a0eda23925"
+    }
+  ]
+}

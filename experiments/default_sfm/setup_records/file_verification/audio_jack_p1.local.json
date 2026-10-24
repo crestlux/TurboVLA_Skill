@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-24T07:11:48.381534+00:00",
+  "root": "/data/crestlux/default_sfm",
+  "selection": "Nine named tasks, p1 through p5; test and usb_insert excluded",
+  "task_count": 1,
+  "folder_count": 1,
+  "demo_count": 10,
+  "file_count": 13,
+  "total_bytes": 11962737806,
+  "suffix_counts": {
+    ".pkl": 10,
+    ".json": 3
+  },
+  "excluded_top_level_entries": [
+    "audio_jack_p2",
+    "audio_jack_p3",
+    "audio_jack_p4"
+  ],
+  "hash_algorithm": "sha256",
+  "folders": [
+    {
+      "folder": "audio_jack_p1",
+      "task": "audio_jack",
+      "position": 1,
+      "demo_count": 10,
+      "file_count": 13,
+      "total_bytes": 11962737806
+    }
+  ],
+  "files": [
+    {
+      "path": "audio_jack_p1/2026-10-19/1_demos_2026-10-19_17-40-21_330892.pkl",
+      "bytes": 1290569566,
+      "mtime_ns": 1792399225982825200,
+      "sha256": "3c5c910865708c00a15a44a2cad43120a71595f9fd9bd01f6249ded73501658b"
+    },
+    {
+      "path": "audio_jack_p1/2026-10-19/1_demos_2026-10-19_17-41-08_368061.pkl",
+      "bytes": 1290569566,
+      "mtime_ns": 1792399272817843900,
+      "sha256": "6178fcf48e046a4ef5df22c9f7444cb2fc2f03c7fd5f9fdd010af82be595ae22"
+    },
+    {
+      "path": "audio_jack_p1/2026-10-19/1_demos_2026-10-19_17-42-40_466803.pkl",
+      "bytes": 1290569594,
+      "mtime_ns": 1792399365157339000,
+      "sha256": "d03dbdcad96d2688c37cef8aff5f27e3518761d7dfb737507d18b781d50371ba"
+    },
+    {
+      "path": "audio_jack_p1/2026-10-19/1_demos_2026-10-19_17-43-25_488357.pkl",
+      "bytes": 1216611495,
+      "mtime_ns": 1792399409822672500,
+      "sha256": "5173c1a3c73304232e7c6b8d0ab679129acd5c7a92121328ac622cb450d511d4"
+    },
+    {
+      "path": "audio_jack_p1/2026-10-19/1_demos_2026-10-19_17-44-07_868631.pkl",
+      "bytes": 1124163838,
+      "mtime_ns": 1792399451648082400,
+      "sha256": "985fc02efc8c712306b80246f514f93235bf4eb1c906827c0df02557cb1b9cc1"
+    },
+    {
+      "path": "audio_jack_p1/2026-10-19/1_demos_2026-10-19_17-44-51_533691.pkl",
+      "bytes": 1179632428,
+      "mtime_ns": 1792399495480835600,
+      "sha256": "77dd3137df863720c38efb36589fc94dd4596ffc7caa211599f91be8dd076539"
+    },
+    {
+      "path": "audio_jack_p1/2026-10-19/1_demos_2026-10-19_17-45-34_797649.pkl",
+      "bytes": 1164840776,
+      "mtime_ns": 1792399538856751900,
+      "sha256": "057e0f6c3ec1eb2f76907cec7d16068f8a9b5230d3e326ff84d21bb9cb89d4f7"
+    },
+    {
+      "path": "audio_jack_p1/2026-10-19/1_demos_2026-10-19_17-46-17_282396.pkl",
+      "bytes": 1124163831,
+      "mtime_ns": 1792399581014001400,
+      "sha256": "13060798638681aaafc35628d481440af98fd9f36cfdcc25fbc662fd2673ac41"
+    },
+    {
+      "path": "audio_jack_p1/2026-10-19/1_demos_2026-10-19_17-46-59_523443.pkl",
+      "bytes": 1146351267,
+      "mtime_ns": 1792399623340135300,
+      "sha256": "9d7da8f4afaf4d02673610228c48d32565aa59b5ce0ac78ba197473e306b9cc6"
+    },
+    {
+      "path": "audio_jack_p1/2026-10-19/1_demos_2026-10-19_17-47-41_828959.pkl",
+      "bytes": 1135257577,
+      "mtime_ns": 1792399665559059500,
+      "sha256": "5cacf1f0263ba06474cf8fc4f0474c02dfed61e342f3fce99d2378b73d781f02"
+    },
+    {
+      "path": "audio_jack_p1/2026-10-19/env_config_2026-10-19_17-35-47_494361.json",
+      "bytes": 2620,
+      "mtime_ns": 1792398947494893800,
+      "sha256": "a1dfaaaebf3711a5bd1a782cdd1b597421548381631bae51250108d189b6614f"
+    },
+    {
+      "path": "audio_jack_p1/2026-10-19/env_config_2026-10-19_17-38-02_397311.json",
+      "bytes": 2624,
+      "mtime_ns": 1792399082397602200,
+      "sha256": "c3b511f6dead2d293cbe017db32e582a6060440e340c6ceb9a2b221f5a669a86"
+    },
+    {
+      "path": "audio_jack_p1/2026-10-19/env_config_2026-10-19_17-39-00_259894.json",
+      "bytes": 2624,
+      "mtime_ns": 1792399140263462800,
+      "sha256": "c3b511f6dead2d293cbe017db32e582a6060440e340c6ceb9a2b221f5a669a86"
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "errors": [],
+    "comparison": "exact relative file set, sizes, SHA-256",
+    "reference_root": "/media/csilab/robot_data/default_sfm",
+    "reference_created_at_utc": "2026-10-24T07:11:48.377021+00:00"
+  }
+}

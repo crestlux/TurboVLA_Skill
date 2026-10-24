@@ -1,0 +1,99 @@
+{
+  "source_host": "csilab",
+  "source_root": "/home/csilab/share_projects/clean_share",
+  "snapshot": "csilab_source_snapshot/manifest.json",
+  "rpy": {
+    "selection_option": "observations[].keys[].wrap_angles",
+    "selectable_axes": [
+      "roll",
+      "pitch",
+      "yaw"
+    ],
+    "documented_example_axes": [
+      "roll",
+      "yaw"
+    ],
+    "default_right_template_enabled": false,
+    "interval": "[0, 2*pi)",
+    "formula": "minimum(remainder(angle,2*pi), nextafter(float32(2*pi), float32(0)))",
+    "scope": [
+      "current observations",
+      "next observations",
+      "InferencePreprocessor.observation"
+    ],
+    "processing_order": [
+      "select components",
+      "wrap selected Euler axes",
+      "normalize state"
+    ],
+    "not_changed": [
+      "raw observations",
+      "motion-trimming pose",
+      "action generation and coordinate transforms"
+    ],
+    "not_performed": [
+      "time-series unwrap",
+      "Euler singularity removal"
+    ],
+    "new_boundary": "0/2*pi; axes crossing zero can acquire jumps",
+    "source_lines": {
+      "preprocess/convert.py": [
+        65,
+        78,
+        308,
+        336,
+        441,
+        455,
+        540,
+        542
+      ],
+      "preprocess/inference.py": [
+        35,
+        40
+      ],
+      "preprocess/README.md": [
+        176,
+        207
+      ],
+      "tests/test_preprocess_angles.py": [
+        74,
+        86,
+        88,
+        113
+      ]
+    },
+    "full_cohort_audit": {
+      "demos": 450,
+      "frames": 143127,
+      "report": "rpy/report.json",
+      "current_state_raw_jumps_gt_pi": [
+        3744,
+        0,
+        3707
+      ],
+      "current_state_all_axes_wrapped_jumps_gt_pi": [
+        0,
+        3440,
+        0
+      ],
+      "current_state_roll_yaw_wrapped_jumps_gt_pi": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "vision": {
+    "pipeline": "native image -> crop -> optional rotation -> resize -> optional letterbox",
+    "source": "preprocess/convert.py:392-438",
+    "default_right_template_output_size": [
+      224,
+      224
+    ],
+    "default_right_template_crop": null,
+    "default_right_template_resize_mode": "stretch",
+    "historical_usb_crop_not_a_global_default": true
+  },
+  "training_preprocessing_applied": false,
+  "training_started": false
+}

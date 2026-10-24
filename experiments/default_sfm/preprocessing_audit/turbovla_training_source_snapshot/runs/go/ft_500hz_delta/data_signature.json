@@ -1,0 +1,281 @@
+{
+  "files": [
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-30-19_023254__a9eb1030ca__ep0000.hdf5",
+      "size": 67027594,
+      "mtime_ns": 1792259536542834535
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-30-46_307441__93bf597e43__ep0000.hdf5",
+      "size": 73533629,
+      "mtime_ns": 1792259539162839750
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-31-12_686762__75477f2721__ep0000.hdf5",
+      "size": 69988086,
+      "mtime_ns": 1792259541978845383
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-31-46_104073__8eac3b1191__ep0000.hdf5",
+      "size": 74629829,
+      "mtime_ns": 1792259544666850788
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-32-18_487222__0f334aad7c__ep0000.hdf5",
+      "size": 91521378,
+      "mtime_ns": 1792259547566856646
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-32-46_051264__3623df5b65__ep0000.hdf5",
+      "size": 73516857,
+      "mtime_ns": 1792259550978863575
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-33-51_151162__4db4574412__ep0000.hdf5",
+      "size": 70175060,
+      "mtime_ns": 1792259553810869358
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-34-19_379324__45826df6d7__ep0000.hdf5",
+      "size": 76253125,
+      "mtime_ns": 1792259556518874913
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-34-51_034436__73cf428522__ep0000.hdf5",
+      "size": 88274730,
+      "mtime_ns": 1792259559478881014
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-35-18_780395__8dfecb13b8__ep0000.hdf5",
+      "size": 74674802,
+      "mtime_ns": 1792259562810887916
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-36-30_896918__e7115929ad__ep0000.hdf5",
+      "size": 82333687,
+      "mtime_ns": 1792259565698893930
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-37-00_625468__ae8156b9e0__ep0000.hdf5",
+      "size": 84270853,
+      "mtime_ns": 1792259568774900365
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-37-52_797093__569ee69218__ep0000.hdf5",
+      "size": 78686056,
+      "mtime_ns": 1792259571838906808
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-38-21_829454__0d0f675aac__ep0000.hdf5",
+      "size": 82513851,
+      "mtime_ns": 1792259574746912951
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-38-51_242853__1105cf4be1__ep0000.hdf5",
+      "size": 83876083,
+      "mtime_ns": 1792259577798919429
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-39-21_338388__e6827a0739__ep0000.hdf5",
+      "size": 85682436,
+      "mtime_ns": 1792259580910926064
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-39-49_151149__1a3d139525__ep0000.hdf5",
+      "size": 77768986,
+      "mtime_ns": 1792259584034932757
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-40-16_924218__53510d1af3__ep0000.hdf5",
+      "size": 78058325,
+      "mtime_ns": 1792259586890938904
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-40-45_119988__1948bc830c__ep0000.hdf5",
+      "size": 79810332,
+      "mtime_ns": 1792259589762945112
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-41-43_140832__b89cf6e448__ep0000.hdf5",
+      "size": 73599560,
+      "mtime_ns": 1792259592690951469
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-42-19_530885__3fbd34a41b__ep0000.hdf5",
+      "size": 85573942,
+      "mtime_ns": 1792259595430957441
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-42-47_751847__ff1660c79b__ep0000.hdf5",
+      "size": 78475168,
+      "mtime_ns": 1792259598598964377
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-43-15_724423__66860a38de__ep0000.hdf5",
+      "size": 78378291,
+      "mtime_ns": 1792259601438970621
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-43-41_427994__91e6af929a__ep0000.hdf5",
+      "size": 69507245,
+      "mtime_ns": 1792259604270976874
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-44-09_713114__0a935f960d__ep0000.hdf5",
+      "size": 79140704,
+      "mtime_ns": 1792259606866982626
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-44-40_559262__ef5ad7a9ef__ep0000.hdf5",
+      "size": 88620790,
+      "mtime_ns": 1792259609818989194
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-45-07_430528__9b6cea8f9f__ep0000.hdf5",
+      "size": 73776185,
+      "mtime_ns": 1792259612994996288
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-45-34_621659__967a907cdd__ep0000.hdf5",
+      "size": 75783437,
+      "mtime_ns": 1792259615731002426
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-46-03_399978__0c520c18aa__ep0000.hdf5",
+      "size": 80833391,
+      "mtime_ns": 1792259618579008838
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-46-31_450034__21d6e465b5__ep0000.hdf5",
+      "size": 78214926,
+      "mtime_ns": 1792259621551015556
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-47-01_999390__07a3c32eac__ep0000.hdf5",
+      "size": 63553818,
+      "mtime_ns": 1792259624355021919
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-47-26_168196__979da6ce99__ep0000.hdf5",
+      "size": 63439488,
+      "mtime_ns": 1792259626679027210
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-47-52_971725__562cac8a96__ep0000.hdf5",
+      "size": 73520575,
+      "mtime_ns": 1792259629031032582
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-48-20_621585__36890ced1c__ep0000.hdf5",
+      "size": 77600569,
+      "mtime_ns": 1792259631743038796
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-48-49_364267__94c44e16bd__ep0000.hdf5",
+      "size": 79797502,
+      "mtime_ns": 1792259634535045216
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-49-16_957247__69ed47938f__ep0000.hdf5",
+      "size": 76530159,
+      "mtime_ns": 1792259637455051955
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-49-44_770351__325f67fe03__ep0000.hdf5",
+      "size": 77428964,
+      "mtime_ns": 1792259640227058375
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-50-11_405479__d9c101c091__ep0000.hdf5",
+      "size": 73333595,
+      "mtime_ns": 1792259643039064910
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-50-38_771170__12b980a441__ep0000.hdf5",
+      "size": 75548460,
+      "mtime_ns": 1792259645715071152
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-51-04_262929__1c07d82170__ep0000.hdf5",
+      "size": 69250279,
+      "mtime_ns": 1792259648475077610
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-51-34_383555__73c5d2d39e__ep0000.hdf5",
+      "size": 65805513,
+      "mtime_ns": 1792259651047083648
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-51-58_344850__a35aee2a9a__ep0000.hdf5",
+      "size": 63297258,
+      "mtime_ns": 1792259653435089270
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-52-22_624000__2afe588c70__ep0000.hdf5",
+      "size": 64644814,
+      "mtime_ns": 1792259655743094720
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-52-47_961021__6e236e83a4__ep0000.hdf5",
+      "size": 68269437,
+      "mtime_ns": 1792259658139100395
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-53-17_090493__81c724b831__ep0000.hdf5",
+      "size": 82102248,
+      "mtime_ns": 1792259660679106426
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-53-45_241022__c66ccd41c0__ep0000.hdf5",
+      "size": 78699286,
+      "mtime_ns": 1792259663679113575
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-54-08_562604__a5dac918d4__ep0000.hdf5",
+      "size": 61501332,
+      "mtime_ns": 1792259666459120219
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-54-32_903308__1ab10d150b__ep0000.hdf5",
+      "size": 65287736,
+      "mtime_ns": 1792259668711125619
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-54-58_794371__6a1591a509__ep0000.hdf5",
+      "size": 70923164,
+      "mtime_ns": 1792259671103131369
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_preflight_20261018/prepared/delta/1_demos_2026-10-16_15-55-25_580161__4f63e74063__ep0000.hdf5",
+      "size": 74712529,
+      "mtime_ns": 1792259673675137570
+    }
+  ],
+  "metadata_sha256": {
+    "normalization.json": "be72d7a883a9d952c230cd7824272b21b7312fe92a6d3dcfae6b5408bfb008c6",
+    "manifest.json": "01eb6cfc09a2f725b09345ee0028e4b42b78935a89dadea8127ef1291f113eaf",
+    "instructions.json": "b96d56bea0305b2e111e3e11925da8b6f64c81b798ee41272ceba1aeefd59b6e"
+  },
+  "camera_keys": [
+    "observations/image_head",
+    "observations/image_wrist_right"
+  ],
+  "state_key": "observations/state",
+  "mode": "delta",
+  "ft_history": {
+    "key": "observations/ft_history",
+    "history_length": 50,
+    "input_dim": 6,
+    "normalization": "raw physical measurements",
+    "resampling": {
+      "method": "causal_fir_decimate",
+      "num_taps": 21,
+      "cutoff_ratio": 0.4,
+      "rate_basis": "nominal; per-sample timestamps unavailable",
+      "source_hz": 500,
+      "target_hz": 500,
+      "source_length": 50
+    }
+  },
+  "instructions_sha256": "64eb66913c45ace2d511c65f3d23ca78d22289681e9e35196c552bd2c563ad4a"
+}

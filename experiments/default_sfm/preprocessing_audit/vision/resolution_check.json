@@ -1,0 +1,32 @@
+{
+  "checked_at_utc": "2026-10-24T09:24:46.179094+00:00",
+  "scope": "isolated CPU DINOv3 processor; calls actual loader resize-disabling method, extracted to avoid importing benchmark dependencies",
+  "processor_config_size": [
+    224,
+    224
+  ],
+  "input_shape": [
+    256,
+    256,
+    3
+  ],
+  "processor_default_output_shape": [
+    1,
+    3,
+    224,
+    224
+  ],
+  "loader_settings_output_shape": [
+    1,
+    3,
+    256,
+    256
+  ],
+  "loader_source_sha256": "7dffe5ab361cfa3cf9eeae25c3e35226ac41bc132f4ef9ac1016d7acbaf2b7cb",
+  "method_source_lines": [
+    119,
+    123
+  ],
+  "training_started": false,
+  "new_sfm_resolution_confirmed": false
+}

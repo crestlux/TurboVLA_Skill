@@ -1,0 +1,313 @@
+{
+  "passed": true,
+  "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held",
+  "source_metadata_sha256": {
+    "manifest.json": "c83721c0ef65074685c31161b88db6059a03a5828dc0722bc3d71e6db3e5b667",
+    "normalization.json": "eed0a76b687999727bf794d7af162d01c4ee18d9443c78d733e26f51ba35d63c",
+    "preprocessing_contract.json": "93026a0256bf87b27b70047e052c19bc34ff99e3c4594a9dcb6107a79843b69c"
+  },
+  "native_horizon": 5,
+  "frames": 8314,
+  "episodes": [
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00000.h5",
+      "source_bytes": 85335771,
+      "source_mtime_ns": 1792422247209959292,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-17-53_465623_episode_000.hdf5",
+      "frames": 261,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00001.h5",
+      "source_bytes": 85042347,
+      "source_mtime_ns": 1792422258742091749,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-18-38_581413_episode_000.hdf5",
+      "frames": 257,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00002.h5",
+      "source_bytes": 75459431,
+      "source_mtime_ns": 1792422269146211072,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-19-14_224691_episode_000.hdf5",
+      "frames": 228,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00003.h5",
+      "source_bytes": 71816265,
+      "source_mtime_ns": 1792422278802321669,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-19-54_844065_episode_000.hdf5",
+      "frames": 217,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00004.h5",
+      "source_bytes": 75533938,
+      "source_mtime_ns": 1792422288834436425,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-21-06_522139_episode_000.hdf5",
+      "frames": 228,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00005.h5",
+      "source_bytes": 81621158,
+      "source_mtime_ns": 1792422299522558523,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-21-42_960677_episode_000.hdf5",
+      "frames": 247,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00006.h5",
+      "source_bytes": 79044572,
+      "source_mtime_ns": 1792422310246680867,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-22-18_781368_episode_000.hdf5",
+      "frames": 239,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00007.h5",
+      "source_bytes": 78882231,
+      "source_mtime_ns": 1792422320886802093,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-22-54_752765_episode_000.hdf5",
+      "frames": 239,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00008.h5",
+      "source_bytes": 94980590,
+      "source_mtime_ns": 1792422333022940174,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-23-35_138704_episode_000.hdf5",
+      "frames": 288,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00009.h5",
+      "source_bytes": 80054321,
+      "source_mtime_ns": 1792422344219067383,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-24-11_714063_episode_000.hdf5",
+      "frames": 242,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00010.h5",
+      "source_bytes": 83952222,
+      "source_mtime_ns": 1792422355411194382,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-25-02_752438_episode_000.hdf5",
+      "frames": 254,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00011.h5",
+      "source_bytes": 78684960,
+      "source_mtime_ns": 1792422366071315195,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-25-38_732443_episode_000.hdf5",
+      "frames": 238,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00012.h5",
+      "source_bytes": 81982208,
+      "source_mtime_ns": 1792422376955438399,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-26-15_307013_episode_000.hdf5",
+      "frames": 248,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00013.h5",
+      "source_bytes": 104003524,
+      "source_mtime_ns": 1792422390335589656,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-26-58_882000_episode_000.hdf5",
+      "frames": 316,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00014.h5",
+      "source_bytes": 87781809,
+      "source_mtime_ns": 1792422402695729192,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-27-37_967547_episode_000.hdf5",
+      "frames": 266,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00015.h5",
+      "source_bytes": 82790017,
+      "source_mtime_ns": 1792422414039281879,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-28-15_491404_episode_000.hdf5",
+      "frames": 251,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00016.h5",
+      "source_bytes": 106225566,
+      "source_mtime_ns": 1792422427630588623,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-29-00_126792_episode_000.hdf5",
+      "frames": 323,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00017.h5",
+      "source_bytes": 83865718,
+      "source_mtime_ns": 1792422439513998454,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-29-38_471069_episode_000.hdf5",
+      "frames": 254,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00018.h5",
+      "source_bytes": 103710546,
+      "source_mtime_ns": 1792422452853353284,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-30-29_596101_episode_000.hdf5",
+      "frames": 315,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00019.h5",
+      "source_bytes": 94041148,
+      "source_mtime_ns": 1792422465852741751,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-31-11_517229_episode_000.hdf5",
+      "frames": 286,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00020.h5",
+      "source_bytes": 99077743,
+      "source_mtime_ns": 1792422479216130327,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-32-38_566105_episode_000.hdf5",
+      "frames": 301,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00021.h5",
+      "source_bytes": 103368304,
+      "source_mtime_ns": 1792422493115512425,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-33-22_074270_episode_000.hdf5",
+      "frames": 314,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00022.h5",
+      "source_bytes": 97269961,
+      "source_mtime_ns": 1792422506442936797,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-34-04_393956_episode_000.hdf5",
+      "frames": 296,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00023.h5",
+      "source_bytes": 103339468,
+      "source_mtime_ns": 1792422520318354549,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-34-48_372183_episode_000.hdf5",
+      "frames": 314,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00024.h5",
+      "source_bytes": 97339162,
+      "source_mtime_ns": 1792422533569814303,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-35-30_519058_episode_000.hdf5",
+      "frames": 295,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00025.h5",
+      "source_bytes": 104505803,
+      "source_mtime_ns": 1792422547549260684,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-36-14_949805_episode_000.hdf5",
+      "frames": 318,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00026.h5",
+      "source_bytes": 107582965,
+      "source_mtime_ns": 1792422561864710640,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-37-00_395538_episode_000.hdf5",
+      "frames": 327,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00027.h5",
+      "source_bytes": 112210430,
+      "source_mtime_ns": 1792422576676159038,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-37-47_472388_episode_000.hdf5",
+      "frames": 341,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00028.h5",
+      "source_bytes": 107830862,
+      "source_mtime_ns": 1792422591311630963,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-38-33_549595_episode_000.hdf5",
+      "frames": 328,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    },
+    {
+      "source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held/shard_00029.h5",
+      "source_bytes": 93380435,
+      "source_mtime_ns": 1792422604203179407,
+      "original": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-41-13_839215_episode_000.hdf5",
+      "frames": 283,
+      "ft_standardization_verified": true,
+      "state_action_right_slice_unchanged": true,
+      "images": "external links to unchanged source datasets"
+    }
+  ]
+}

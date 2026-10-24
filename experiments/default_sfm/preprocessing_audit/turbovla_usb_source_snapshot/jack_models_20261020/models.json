@@ -1,0 +1,218 @@
+{
+  "server_project_root": "/home/jack/TurboVLA/deploy/jack_models_20261020/server_code",
+  "server_python": "/home/jack/miniforge3/envs/turbovla-libero/bin/python",
+  "client_project_root": "/home/csilab/share_projects/clean_share",
+  "client_python": "/home/csilab/miniforge3/envs/hilserl/bin/python",
+  "client_install_path": "/home/csilab/share_projects/clean_share/team_codes/turbovla/jack_models_20261020",
+  "trainer_ip": "115.145.172.56",
+  "default_port": 45587,
+  "default_weights": "raw",
+  "instruction": "Insert the USB connector into the USB port.",
+  "gpu_uuids": {
+    "0": "GPU-1bb2706c-5988-67f4-6ca0-1dd0e962f41e",
+    "1": "GPU-7e7d7f97-c512-32b6-0a17-bfa6c8d19fe5"
+  },
+  "prepared_kst": "2026-10-21T15:23:59.849684+09:00",
+  "models": {
+    "jack_original_delta_no_ft_history": {
+      "description": "Jack 기존 / delta / FT history 미사용",
+      "ready": true,
+      "training_status": "completed",
+      "step": 10720,
+      "target_steps": 10720,
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_delta_no_ft_history/delta/checkpoint_010720.pt",
+      "checkpoint_sha256": "2490f48300cb110296582d3ea537668c1e8b8a3a5918e7b48b1cbc32aa443ea5",
+      "mode": "delta",
+      "dataset": "original",
+      "weights_available": [
+        "raw",
+        "ema"
+      ],
+      "bundle": "models/jack_original_delta_no_ft_history/bundles/delta",
+      "bundle_id": "72e2fffa080801d159f3c154626a7590584fc22c610bbc06a5a0f395b70d9e8d",
+      "client_config": "models/jack_original_delta_no_ft_history/client_configs/ff_usb.json",
+      "uses_ft_history": false,
+      "action_shape": [
+        50,
+        7
+      ],
+      "request_steps": 4,
+      "source_dataset": "/data/jack/jack_exp_demo_preprocessed/delta"
+    },
+    "jack_original_delta_gru500hz": {
+      "description": "Jack 기존 / delta / GRU 500Hz",
+      "ready": true,
+      "training_status": "completed",
+      "step": 10720,
+      "target_steps": 10720,
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_delta_gru500hz/delta/checkpoint_010720.pt",
+      "checkpoint_sha256": "134ee25f5b2c40d7397681a5cc8548db904797b05621f0cde33d7345477ad858",
+      "mode": "delta",
+      "dataset": "original",
+      "weights_available": [
+        "raw",
+        "ema"
+      ],
+      "bundle": "models/jack_original_delta_gru500hz/bundles/delta",
+      "bundle_id": "72e2fffa080801d159f3c154626a7590584fc22c610bbc06a5a0f395b70d9e8d",
+      "client_config": "models/jack_original_delta_gru500hz/client_configs/ff_usb.json",
+      "uses_ft_history": true,
+      "action_shape": [
+        50,
+        7
+      ],
+      "request_steps": 4,
+      "source_dataset": "/data/jack/jack_exp_demo_preprocessed/delta"
+    },
+    "jack_original_relative_no_ft_history": {
+      "description": "Jack 기존 / relative / FT history 미사용",
+      "ready": true,
+      "training_status": "completed",
+      "step": 10720,
+      "target_steps": 10720,
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_relative_no_ft_history/relative/checkpoint_010720.pt",
+      "checkpoint_sha256": "9b84e66d3bce2040128d8ce0ba29bc13d0de90e4908b773050143b8f8318adfd",
+      "mode": "relative",
+      "dataset": "original",
+      "weights_available": [
+        "raw",
+        "ema"
+      ],
+      "bundle": "models/jack_original_relative_no_ft_history/bundles/relative",
+      "bundle_id": "b12c55f15a650a798dead33765f8cb9aef3d094ba89bba8ff26957c165359bba",
+      "client_config": "models/jack_original_relative_no_ft_history/client_configs/ff_usb.json",
+      "uses_ft_history": false,
+      "action_shape": [
+        50,
+        7
+      ],
+      "request_steps": 4,
+      "source_dataset": "/data/jack/jack_exp_demo_preprocessed/relative"
+    },
+    "jack_original_relative_gru500hz": {
+      "description": "Jack 기존 / relative / GRU 500Hz",
+      "ready": true,
+      "training_status": "completed",
+      "step": 10720,
+      "target_steps": 10720,
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_relative_gru500hz/relative/checkpoint_010720.pt",
+      "checkpoint_sha256": "bb6d8a8f9e8dcd89d43e4be2f9ec1bf2006353b598ae93240e01329876d407b0",
+      "mode": "relative",
+      "dataset": "original",
+      "weights_available": [
+        "raw",
+        "ema"
+      ],
+      "bundle": "models/jack_original_relative_gru500hz/bundles/relative",
+      "bundle_id": "b12c55f15a650a798dead33765f8cb9aef3d094ba89bba8ff26957c165359bba",
+      "client_config": "models/jack_original_relative_gru500hz/client_configs/ff_usb.json",
+      "uses_ft_history": true,
+      "action_shape": [
+        50,
+        7
+      ],
+      "request_steps": 4,
+      "source_dataset": "/data/jack/jack_exp_demo_preprocessed/relative"
+    },
+    "jack_faflow_delta_no_ft_history": {
+      "description": "Jack FAFLOW / delta / FT history 미사용",
+      "ready": true,
+      "training_status": "completed",
+      "step": 10400,
+      "target_steps": 10400,
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_delta_no_ft_history/delta/checkpoint_010400.pt",
+      "checkpoint_sha256": "f7139d7d7b826ba34b0c5b31fe8f6ed88340d13737a9dc68a1d31a3f045779d2",
+      "mode": "delta",
+      "dataset": "faflow",
+      "weights_available": [
+        "raw",
+        "ema"
+      ],
+      "bundle": "models/jack_faflow_delta_no_ft_history/bundles/delta",
+      "bundle_id": "627e919e7a6f5f9a0708ea55ccf98e3f4b703979d264f2d795700f04a4a3e214",
+      "client_config": "models/jack_faflow_delta_no_ft_history/client_configs/ff_usb.json",
+      "uses_ft_history": false,
+      "action_shape": [
+        5,
+        7
+      ],
+      "request_steps": 4,
+      "source_dataset": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta"
+    },
+    "jack_faflow_delta_gru500hz": {
+      "description": "Jack FAFLOW / delta / GRU 500Hz",
+      "ready": true,
+      "training_status": "completed",
+      "step": 10400,
+      "target_steps": 10400,
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_delta_gru500hz/delta/checkpoint_010400.pt",
+      "checkpoint_sha256": "12c4f32f42aeb5c6d43205630fc6e9a439b8d1f6ff51491c40ef9453e3844959",
+      "mode": "delta",
+      "dataset": "faflow",
+      "weights_available": [
+        "raw",
+        "ema"
+      ],
+      "bundle": "models/jack_faflow_delta_gru500hz/bundles/delta",
+      "bundle_id": "627e919e7a6f5f9a0708ea55ccf98e3f4b703979d264f2d795700f04a4a3e214",
+      "client_config": "models/jack_faflow_delta_gru500hz/client_configs/ff_usb.json",
+      "uses_ft_history": true,
+      "action_shape": [
+        5,
+        7
+      ],
+      "request_steps": 4,
+      "source_dataset": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta"
+    },
+    "jack_faflow_relative_no_ft_history": {
+      "description": "Jack FAFLOW / relative / FT history 미사용",
+      "ready": true,
+      "training_status": "completed",
+      "step": 10400,
+      "target_steps": 10400,
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_relative_no_ft_history/relative/checkpoint_010400.pt",
+      "checkpoint_sha256": "e780b0537074a200d4b5f1c3d058a004dd1acab2369a87eaee7e8fb408376379",
+      "mode": "relative",
+      "dataset": "faflow",
+      "weights_available": [
+        "raw",
+        "ema"
+      ],
+      "bundle": "models/jack_faflow_relative_no_ft_history/bundles/relative",
+      "bundle_id": "80f82ed379a5f511870d858693bc9f50031d753ade2c48e202f3e7a9808b2d68",
+      "client_config": "models/jack_faflow_relative_no_ft_history/client_configs/ff_usb.json",
+      "uses_ft_history": false,
+      "action_shape": [
+        5,
+        7
+      ],
+      "request_steps": 4,
+      "source_dataset": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/relative"
+    },
+    "jack_faflow_relative_gru500hz": {
+      "description": "Jack FAFLOW / relative / GRU 500Hz",
+      "ready": true,
+      "training_status": "completed",
+      "step": 10400,
+      "target_steps": 10400,
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_relative_gru500hz/relative/checkpoint_010400.pt",
+      "checkpoint_sha256": "562f0dcbbd0830940ba12868a05d31a498c41ba0adbdb6050ff3fc129ebd4f09",
+      "mode": "relative",
+      "dataset": "faflow",
+      "weights_available": [
+        "raw",
+        "ema"
+      ],
+      "bundle": "models/jack_faflow_relative_gru500hz/bundles/relative",
+      "bundle_id": "80f82ed379a5f511870d858693bc9f50031d753ade2c48e202f3e7a9808b2d68",
+      "client_config": "models/jack_faflow_relative_gru500hz/client_configs/ff_usb.json",
+      "uses_ft_history": true,
+      "action_shape": [
+        5,
+        7
+      ],
+      "request_steps": 4,
+      "source_dataset": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/relative"
+    }
+  }
+}

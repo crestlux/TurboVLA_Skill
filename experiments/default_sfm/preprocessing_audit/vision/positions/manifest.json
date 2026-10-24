@@ -1,0 +1,293 @@
+{
+  "created_at_utc": "2026-10-24T09:32:14.886632+00:00",
+  "scope": "one first frame from one demo for each of 45 task/position folders",
+  "does_not_verify_full_trajectory_crop_coverage": true,
+  "extraction": "pickletools first named camera byte buffers; verified against full-load USB reference images",
+  "crop_reference_tlhw": {
+    "head_cam_d455": [
+      96,
+      128,
+      288,
+      384
+    ],
+    "wrist_cam_d405_a": [
+      72,
+      122,
+      336,
+      448
+    ]
+  },
+  "records": [
+    {
+      "folder": "audio_jack_p1",
+      "source": "audio_jack_p1/2026-10-19/1_demos_2026-10-19_17-40-21_330892.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "audio_jack_p2",
+      "source": "audio_jack_p2/2026-10-21/1_demos_2026-10-21_16-54-48_446719.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "audio_jack_p3",
+      "source": "audio_jack_p3/2026-10-22/1_demos_2026-10-22_16-33-13_590838.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "audio_jack_p4",
+      "source": "audio_jack_p4/2026-10-22/1_demos_2026-10-22_18-11-02_467927.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "audio_jack_p5",
+      "source": "audio_jack_p5/2026-10-22/1_demos_2026-10-22_20-42-42_791377.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "barlatch_p1",
+      "source": "barlatch_p1/2026-10-20/1_demos_2026-10-20_18-38-46_881955.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "barlatch_p2",
+      "source": "barlatch_p2/2026-10-20/1_demos_2026-10-20_19-58-21_668212.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "barlatch_p3",
+      "source": "barlatch_p3/2026-10-22/1_demos_2026-10-22_20-00-54_983840.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "barlatch_p4",
+      "source": "barlatch_p4/2026-10-22/1_demos_2026-10-22_19-12-45_327903.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "barlatch_p5",
+      "source": "barlatch_p5/2026-10-22/1_demos_2026-10-22_21-00-52_377630.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "bnc_p1",
+      "source": "bnc_p1/2026-10-19/1_demos_2026-10-19_18-46-13_485901.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "bnc_p2",
+      "source": "bnc_p2/2026-10-20/1_demos_2026-10-20_19-31-52_362060.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "bnc_p3",
+      "source": "bnc_p3/2026-10-21/1_demos_2026-10-21_19-19-09_819999.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "bnc_p4",
+      "source": "bnc_p4/2026-10-22/1_demos_2026-10-22_19-32-41_427738.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "bnc_p5",
+      "source": "bnc_p5/2026-10-23/1_demos_2026-10-23_17-29-40_030394.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "hdmi_p1",
+      "source": "hdmi_p1/2026-10-19/1_demos_2026-10-19_17-49-12_080506.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "hdmi_p2",
+      "source": "hdmi_p2/2026-10-20/1_demos_2026-10-20_20-13-22_422202.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "hdmi_p3",
+      "source": "hdmi_p3/2026-10-21/1_demos_2026-10-21_20-05-43_333673.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "hdmi_p4",
+      "source": "hdmi_p4/2026-10-22/1_demos_2026-10-22_18-43-58_500977.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "hdmi_p5",
+      "source": "hdmi_p5/2026-10-22/1_demos_2026-10-22_20-49-59_229711.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "knob_p1",
+      "source": "knob_p1/2026-10-20/1_demos_2026-10-20_18-26-33_442361.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "knob_p2",
+      "source": "knob_p2/2026-10-21/1_demos_2026-10-21_17-36-26_082691.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "knob_p3",
+      "source": "knob_p3/2026-10-21/1_demos_2026-10-21_19-11-31_814357.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "knob_p4",
+      "source": "knob_p4/2026-10-22/1_demos_2026-10-22_19-47-05_411509.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "knob_p5",
+      "source": "knob_p5/2026-10-22/1_demos_2026-10-22_20-28-50_562410.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "lan_p1",
+      "source": "lan_p1/2026-10-20/1_demos_2026-10-20_19-16-57_244675.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "lan_p2",
+      "source": "lan_p2/2026-10-20/1_demos_2026-10-20_19-48-15_260573.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "lan_p3",
+      "source": "lan_p3/2026-10-21/1_demos_2026-10-21_19-54-28_244785.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "lan_p4",
+      "source": "lan_p4/2026-10-22/1_demos_2026-10-22_18-01-43_203823.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "lan_p5",
+      "source": "lan_p5/2026-10-23/1_demos_2026-10-23_17-04-18_214834.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "outlet_p1",
+      "source": "outlet_p1/2026-10-20/1_demos_2026-10-20_18-59-48_900578.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "outlet_p2",
+      "source": "outlet_p2/2026-10-21/1_demos_2026-10-21_16-46-58_148745.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "outlet_p3",
+      "source": "outlet_p3/2026-10-21/1_demos_2026-10-21_19-42-10_612682.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "outlet_p4",
+      "source": "outlet_p4/2026-10-22/1_demos_2026-10-22_18-19-47_596166.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "outlet_p5",
+      "source": "outlet_p5/2026-10-22/1_demos_2026-10-22_20-35-44_134023.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "rotary_switch_p1",
+      "source": "rotary_switch_p1/2026-10-19/1_demos_2026-10-19_17-16-02_422413.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "rotary_switch_p2",
+      "source": "rotary_switch_p2/2026-10-21/1_demos_2026-10-21_17-05-34_776060.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "rotary_switch_p3",
+      "source": "rotary_switch_p3/2026-10-22/1_demos_2026-10-22_16-54-58_680374.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "rotary_switch_p4",
+      "source": "rotary_switch_p4/2026-10-22/1_demos_2026-10-22_19-22-55_600754.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "rotary_switch_p5",
+      "source": "rotary_switch_p5/2026-10-23/1_demos_2026-10-23_17-16-04_140211.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "usb_p1",
+      "source": "usb_p1/2026-10-20/1_demos_2026-10-20_18-10-52_902232.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "usb_p2",
+      "source": "usb_p2/2026-10-21/1_demos_2026-10-21_17-27-52_241793.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "usb_p3",
+      "source": "usb_p3/2026-10-21/1_demos_2026-10-21_17-56-15_179832.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "usb_p4",
+      "source": "usb_p4/2026-10-22/1_demos_2026-10-22_18-34-10_044569.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    },
+    {
+      "folder": "usb_p5",
+      "source": "usb_p5/2026-10-22/1_demos_2026-10-22_20-20-42_147921.pkl",
+      "frame_index": 0,
+      "bytes_read": 1848734
+    }
+  ],
+  "training_preprocessing_applied": false
+}

@@ -1,0 +1,73 @@
+{
+  "updated_at_utc": "2026-10-24T10:17:52.794548+00:00",
+  "status": "awaiting_preprocessing_decisions",
+  "confirmed_rpy": {
+    "wrap_angles": [
+      "roll",
+      "yaw"
+    ],
+    "pitch": "preserve signed original",
+    "apply_before_state_normalization": true,
+    "changes_delta_action_geometry": false
+  },
+  "decisions_before_conversion": [
+    {
+      "id": "normalization",
+      "status": "pending",
+      "proposal": {
+        "state": "per-channel standardization after wrapping roll/yaw",
+        "ft": "six shared channel mean/std pairs pooled across the 50-sample history; identical transform for flat/GRU/AdaLN variants",
+        "ft_std_floor": "review raw per-channel statistics before confirming; historical TurboVLA value was 0.01",
+        "action_pose": "same symlog_minmax recipe as verified USB training, temperature 20",
+        "gripper": "keep held labels at -1 and +1",
+        "statistics_scope": "fit once on selected frames from all 450 training demos, reuse across nine conditions, slice state columns without refitting, never reuse old USB statistics",
+        "reference": "turbovla_training_source_snapshot/runs/jack/faflow_delta_gru500hz/data_contract.json"
+      }
+    },
+    {
+      "id": "frame_selection",
+      "status": "pending",
+      "proposal": "Keep all frames initially; if stationary segments are trimmed, use the identical retained frame indices for all nine variants and reconstruct held targets before trimming."
+    },
+    {
+      "id": "task_instructions",
+      "status": "pending",
+      "tasks": [
+        "audio_jack",
+        "barlatch",
+        "bnc",
+        "hdmi",
+        "knob",
+        "lan",
+        "outlet",
+        "rotary_switch",
+        "usb"
+      ],
+      "requirement": "Confirm one English instruction per task, including the target and motion direction for knob, rotary_switch and barlatch."
+    }
+  ],
+  "automatic_checks_before_publishing_processed_data": [
+    "Current-observation FT alignment and zero/missing-window audit",
+    "Full-cohort held gripper command-receipt consistency",
+    "Delta conversion round-trip and five-step tail masks",
+    "Offline/inference transform parity and common normalization coefficients"
+  ],
+  "choices_that_can_wait": [
+    "Initialization and frozen/trainable modules",
+    "Optimizer, training budget and seeds",
+    "Image augmentation",
+    "AdaLN initialization details",
+    "Execution horizon",
+    "Separate evaluation protocol"
+  ],
+  "action_chunk_length_confirmed": 5,
+  "execution_horizon_required_to_preprocess": false,
+  "full_cohort_rpy_audit": {
+    "status": "passed",
+    "demos": 450,
+    "frames": 143127
+  },
+  "full_cohort_ft_and_receipt_audit_complete": false,
+  "training_preprocessing_applied": false,
+  "training_started": false
+}

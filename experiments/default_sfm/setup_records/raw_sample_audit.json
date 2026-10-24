@@ -1,0 +1,133 @@
+{
+  "file": "/data/crestlux/default_sfm/audio_jack_p1/2026-10-19/1_demos_2026-10-19_17-40-21_330892.pkl",
+  "scope": "One raw demo; not a full-cohort schema or timing audit",
+  "preprocessing_applied": false,
+  "frame_count": 349,
+  "observation_schema": {
+    "head_cam_d455": {
+      "shape": [
+        1,
+        480,
+        640,
+        3
+      ],
+      "dtype": "uint8"
+    },
+    "right_force_history": {
+      "shape": [
+        1,
+        50,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "right_state_history": {
+      "shape": [
+        1,
+        50,
+        19
+      ],
+      "dtype": "float32"
+    },
+    "state": {
+      "shape": [
+        1,
+        19
+      ],
+      "dtype": "float32"
+    },
+    "wrist_cam_d405_a": {
+      "shape": [
+        1,
+        480,
+        640,
+        3
+      ],
+      "dtype": "uint8"
+    }
+  },
+  "shapes_across_frames": {
+    "state": [
+      [
+        1,
+        19
+      ]
+    ],
+    "right_force_history": [
+      [
+        1,
+        50,
+        6
+      ]
+    ],
+    "right_state_history": [
+      [
+        1,
+        50,
+        19
+      ]
+    ]
+  },
+  "numeric_values_finite": {
+    "state": true,
+    "right_force_history": true,
+    "right_state_history": true,
+    "actions": true
+  },
+  "action_shape": [
+    7
+  ],
+  "action_format_counts": {
+    "absolute_tcp_xyz_rpy_gripper": 349
+  },
+  "observed_timestamp_delta_seconds": {
+    "min": 0.0683298110961914,
+    "median": 0.10000884532928467,
+    "max": 0.13312530517578125
+  },
+  "ft_sampling_hz": {
+    "value": 500,
+    "source": "user",
+    "per_sensor_sample_timestamps_verified": false
+  },
+  "frames_with_gripper_target_receipts": 349,
+  "state_field_layout_from_collection_code": [
+    {
+      "name": "right/gripper_pose",
+      "slice": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "right/tcp_force",
+      "slice": [
+        1,
+        4
+      ]
+    },
+    {
+      "name": "right/tcp_pose_xyz_rpy",
+      "slice": [
+        4,
+        10
+      ]
+    },
+    {
+      "name": "right/tcp_torque",
+      "slice": [
+        10,
+        13
+      ]
+    },
+    {
+      "name": "right/tcp_vel",
+      "slice": [
+        13,
+        19
+      ]
+    }
+  ],
+  "layout_source": "csilab:Real_Robo/legacy/replay_demo_to_video.py build_state_index + collection proprio_keys",
+  "note": "Raw state already contains 6 F/T components. GRU variants must decide whether to retain them."
+}

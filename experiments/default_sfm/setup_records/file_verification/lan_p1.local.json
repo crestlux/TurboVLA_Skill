@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-24T08:28:51.462222+00:00",
+  "root": "/data/crestlux/default_sfm",
+  "selection": "Nine named tasks, p1 through p5; test and usb_insert excluded",
+  "task_count": 1,
+  "folder_count": 1,
+  "demo_count": 10,
+  "file_count": 11,
+  "total_bytes": 12927886929,
+  "suffix_counts": {
+    ".pkl": 10,
+    ".json": 1
+  },
+  "excluded_top_level_entries": [
+    "audio_jack_p1",
+    "audio_jack_p2",
+    "audio_jack_p3",
+    "audio_jack_p4",
+    "audio_jack_p5",
+    "barlatch_p1",
+    "barlatch_p2",
+    "barlatch_p3",
+    "barlatch_p4",
+    "barlatch_p5",
+    "bnc_p1",
+    "bnc_p2",
+    "bnc_p3",
+    "bnc_p4",
+    "bnc_p5",
+    "hdmi_p1",
+    "hdmi_p2",
+    "hdmi_p3",
+    "hdmi_p4",
+    "hdmi_p5",
+    "knob_p1",
+    "knob_p2",
+    "knob_p3",
+    "knob_p4",
+    "knob_p5",
+    "lan_p2",
+    "lan_p3",
+    "lan_p4",
+    "lan_p5",
+    "outlet_p1",
+    "outlet_p2"
+  ],
+  "hash_algorithm": "sha256",
+  "folders": [
+    {
+      "folder": "lan_p1",
+      "task": "lan",
+      "position": 1,
+      "demo_count": 10,
+      "file_count": 11,
+      "total_bytes": 12927886929
+    }
+  ],
+  "files": [
+    {
+      "path": "lan_p1/2026-10-20/1_demos_2026-10-20_19-16-57_244675.pkl",
+      "bytes": 1257288985,
+      "mtime_ns": 1792491420658277100,
+      "sha256": "529373c9c251d833ebc5496b333ddaa592bfb9da70b4fd985c2c9b9c08b5e213"
+    },
+    {
+      "path": "lan_p1/2026-10-20/1_demos_2026-10-20_19-17-42_968816.pkl",
+      "bytes": 1179633106,
+      "mtime_ns": 1792491466288634800,
+      "sha256": "40cdb694f34f4321cb40046a3a2cc4bb92dbbabd86b02b9ba2ed9dc01652c529"
+    },
+    {
+      "path": "lan_p1/2026-10-20/1_demos_2026-10-20_19-21-01_764272.pkl",
+      "bytes": 1279475799,
+      "mtime_ns": 1792491665494492000,
+      "sha256": "01f29b424de39114dc001959f8287b0a5fbce1dd40feed72f8aa4e8ab45c7c21"
+    },
+    {
+      "path": "lan_p1/2026-10-20/1_demos_2026-10-20_19-21-51_651117.pkl",
+      "bytes": 1316454922,
+      "mtime_ns": 1792491715541611400,
+      "sha256": "30bd26259ea54ed030c49115c2a37dbc6d1c9ed117df97039a2e5c04d38201ef"
+    },
+    {
+      "path": "lan_p1/2026-10-20/1_demos_2026-10-20_19-22-59_598586.pkl",
+      "bytes": 1419996227,
+      "mtime_ns": 1792491783694014100,
+      "sha256": "bebeb5ea7f54d5181c2f00a6e58751a7fea13a66adcbe6cea4b39a321c46f9be"
+    },
+    {
+      "path": "lan_p1/2026-10-20/1_demos_2026-10-20_19-24-42_386133.pkl",
+      "bytes": 1349736027,
+      "mtime_ns": 1792491886452218500,
+      "sha256": "e979b4b1129f00600dbc90fe50d377cc9200f6e966f9447f3dadde118ff8dd15"
+    },
+    {
+      "path": "lan_p1/2026-10-20/1_demos_2026-10-20_19-25-28_940551.pkl",
+      "bytes": 1187028184,
+      "mtime_ns": 1792491932482980800,
+      "sha256": "044d6799f334912cbbf33a5572af0b260e00b590001dc4d21eb4a23c0d2f455f"
+    },
+    {
+      "path": "lan_p1/2026-10-20/1_demos_2026-10-20_19-26-17_838595.pkl",
+      "bytes": 1283173754,
+      "mtime_ns": 1792491981348526700,
+      "sha256": "8ad27098b86d03b383512a9319900488ff4edecde251e79c5850e38d6aff86d1"
+    },
+    {
+      "path": "lan_p1/2026-10-20/1_demos_2026-10-20_19-27-08_347745.pkl",
+      "bytes": 1349736076,
+      "mtime_ns": 1792492032265703800,
+      "sha256": "fc2217eb776cab68237aa1cf910642da195b9be8bbfb031a8ce997ad6b45d471"
+    },
+    {
+      "path": "lan_p1/2026-10-20/1_demos_2026-10-20_19-27-58_194612.pkl",
+      "bytes": 1305361232,
+      "mtime_ns": 1792492081846050300,
+      "sha256": "8b339e4bb3ab20bb1db00bac700e268e6f2bda24eb20ce33c760542451e2ddb3"
+    },
+    {
+      "path": "lan_p1/2026-10-20/env_config_2026-10-20_19-13-52_099354.json",
+      "bytes": 2617,
+      "mtime_ns": 1792491232111204100,
+      "sha256": "f4311b19a7eb304a0db8e3095fa59a417cee9d503e39cd8e83cc30f6be59979b"
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "errors": [],
+    "comparison": "exact relative file set, sizes, SHA-256",
+    "reference_root": "/media/csilab/robot_data/default_sfm",
+    "reference_created_at_utc": "2026-10-24T08:28:51.460594+00:00"
+  }
+}

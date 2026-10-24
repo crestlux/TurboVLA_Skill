@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "command": [
+    "/home/jack/miniforge3/envs/turbovla-libero/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests"
+  ],
+  "returncode": 0,
+  "summary": [
+    "118 passed, 2 warnings in 9.47s"
+  ],
+  "finished": "2026-10-18T22:06:26.531817"
+}

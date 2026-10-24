@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-24T08:19:36.596123+00:00",
+  "root": "/data/crestlux/default_sfm",
+  "selection": "Nine named tasks, p1 through p5; test and usb_insert excluded",
+  "task_count": 1,
+  "folder_count": 1,
+  "demo_count": 10,
+  "file_count": 13,
+  "total_bytes": 10846129407,
+  "suffix_counts": {
+    ".pkl": 10,
+    ".json": 3
+  },
+  "excluded_top_level_entries": [
+    "audio_jack_p1",
+    "audio_jack_p2",
+    "audio_jack_p3",
+    "audio_jack_p4",
+    "audio_jack_p5",
+    "barlatch_p1",
+    "barlatch_p2",
+    "barlatch_p3",
+    "barlatch_p4",
+    "barlatch_p5",
+    "bnc_p1",
+    "bnc_p2",
+    "bnc_p3",
+    "bnc_p4",
+    "bnc_p5",
+    "hdmi_p1",
+    "hdmi_p2",
+    "hdmi_p3",
+    "hdmi_p4",
+    "hdmi_p5",
+    "knob_p1",
+    "knob_p2",
+    "knob_p3",
+    "knob_p5",
+    "lan_p1",
+    "lan_p2"
+  ],
+  "hash_algorithm": "sha256",
+  "folders": [
+    {
+      "folder": "knob_p4",
+      "task": "knob",
+      "position": 4,
+      "demo_count": 10,
+      "file_count": 13,
+      "total_bytes": 10846129407
+    }
+  ],
+  "files": [
+    {
+      "path": "knob_p4/2026-10-22/1_demos_2026-10-22_19-47-05_411509.pkl",
+      "bytes": 1116784342,
+      "mtime_ns": 1792666028617648000,
+      "sha256": "28384442e01c15c1262fffae2b459cb5fdaf2a78338b390165e9f6e3e5e8088a"
+    },
+    {
+      "path": "knob_p4/2026-10-22/1_demos_2026-10-22_19-47-46_063422.pkl",
+      "bytes": 1046523163,
+      "mtime_ns": 1792666069246737600,
+      "sha256": "4286cc585d5ad5ea0c3987c9d7e4126309dbb0a3115aacbc4d50cfd5898f9b8a"
+    },
+    {
+      "path": "knob_p4/2026-10-22/1_demos_2026-10-22_19-48-27_619994.pkl",
+      "bytes": 1076106871,
+      "mtime_ns": 1792666110926034200,
+      "sha256": "190aef62823c2d89c0d0ae5dbced939d182eed447c1b99168f4bc637f96141b0"
+    },
+    {
+      "path": "knob_p4/2026-10-22/1_demos_2026-10-22_19-49-09_843585.pkl",
+      "bytes": 1094596646,
+      "mtime_ns": 1792666153166133100,
+      "sha256": "0a71881dad76ce83aab6149751ea0ac3e6fd54588dede99cb0b3a3a7a8d0d9e1"
+    },
+    {
+      "path": "knob_p4/2026-10-22/1_demos_2026-10-22_19-49-50_295338.pkl",
+      "bytes": 1024335397,
+      "mtime_ns": 1792666193448144200,
+      "sha256": "7977ee9f845be81327ae49b13f01ff4546b5d6afc5c078b08757fd6054899744"
+    },
+    {
+      "path": "knob_p4/2026-10-22/1_demos_2026-10-22_19-50-31_686743.pkl",
+      "bytes": 1065013008,
+      "mtime_ns": 1792666234956144800,
+      "sha256": "bfb505e6c9a3b9ac3ac3e6a4ac21107b681d373c6e9d0ef933449a3fd6484c90"
+    },
+    {
+      "path": "knob_p4/2026-10-22/1_demos_2026-10-22_19-55-10_838860.pkl",
+      "bytes": 1120482333,
+      "mtime_ns": 1792666514650787200,
+      "sha256": "5cd34b773590c3343f16806a80e83fc85f202cccb21d2559d76f9139d1d769d8"
+    },
+    {
+      "path": "knob_p4/2026-10-22/1_demos_2026-10-22_19-55-53_031292.pkl",
+      "bytes": 1068710969,
+      "mtime_ns": 1792666556671073000,
+      "sha256": "cff036506eb9e5acfc22da978f8091b4d7973db6af901ee3de653badd6b32d96"
+    },
+    {
+      "path": "knob_p4/2026-10-22/1_demos_2026-10-22_19-56-35_744937.pkl",
+      "bytes": 1109388480,
+      "mtime_ns": 1792666599563651500,
+      "sha256": "b832ca34079fbd79ce1c935a9e9009998e7631dd54b555935cb6bfb8b29c5dba"
+    },
+    {
+      "path": "knob_p4/2026-10-22/1_demos_2026-10-22_19-57-19_285194.pkl",
+      "bytes": 1124180344,
+      "mtime_ns": 1792666643094268500,
+      "sha256": "ede0259a4290a28df347d3d1d1ec570abab3943dd4cc1fd40b82e5eb7513a202"
+    },
+    {
+      "path": "knob_p4/2026-10-22/env_config_2026-10-22_19-46-07_218998.json",
+      "bytes": 2618,
+      "mtime_ns": 1792665967219616300,
+      "sha256": "9437c48665b07272b4d3d98cedcfeac0933f829eb7bc49534d55652d7c667327"
+    },
+    {
+      "path": "knob_p4/2026-10-22/env_config_2026-10-22_19-52-55_337951.json",
+      "bytes": 2618,
+      "mtime_ns": 1792666375338441100,
+      "sha256": "9437c48665b07272b4d3d98cedcfeac0933f829eb7bc49534d55652d7c667327"
+    },
+    {
+      "path": "knob_p4/2026-10-22/env_config_2026-10-22_19-54-22_362008.json",
+      "bytes": 2618,
+      "mtime_ns": 1792666462362379600,
+      "sha256": "9437c48665b07272b4d3d98cedcfeac0933f829eb7bc49534d55652d7c667327"
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "errors": [],
+    "comparison": "exact relative file set, sizes, SHA-256",
+    "reference_root": "/media/csilab/robot_data/default_sfm",
+    "reference_created_at_utc": "2026-10-24T08:19:36.592561+00:00"
+  }
+}

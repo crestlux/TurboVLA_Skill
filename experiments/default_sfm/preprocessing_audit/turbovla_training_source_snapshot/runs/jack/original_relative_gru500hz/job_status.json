@@ -1,0 +1,21 @@
+{
+  "mode": "relative",
+  "pid": 2133422,
+  "gpu": "GPU-7e7d7f97-c512-32b6-0a17-bfa6c8d19fe5",
+  "started_utc": "2026-10-19T21:25:00.030296+00:00",
+  "phase": "completed",
+  "training": {
+    "status": "completed",
+    "step": 10720,
+    "samples_seen": 683920,
+    "target_samples": 683920,
+    "target_steps": 10720,
+    "elapsed_seconds": 6512.460276342928,
+    "parameters": 216171565,
+    "remaining_steps": 0,
+    "remaining_samples": 0,
+    "remaining_seconds": 0.0,
+    "eta": "00:00:00"
+  },
+  "finished_utc": "2026-10-19T23:15:15.975375+00:00"
+}

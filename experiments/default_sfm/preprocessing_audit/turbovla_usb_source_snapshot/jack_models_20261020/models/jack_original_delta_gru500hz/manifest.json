@@ -1,0 +1,25 @@
+{
+  "description": "Jack 기존 / delta / GRU 500Hz",
+  "ready": true,
+  "training_status": "completed",
+  "step": 10720,
+  "target_steps": 10720,
+  "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_delta_gru500hz/delta/checkpoint_010720.pt",
+  "checkpoint_sha256": "134ee25f5b2c40d7397681a5cc8548db904797b05621f0cde33d7345477ad858",
+  "mode": "delta",
+  "dataset": "original",
+  "weights_available": [
+    "raw",
+    "ema"
+  ],
+  "bundle": "models/jack_original_delta_gru500hz/bundles/delta",
+  "bundle_id": "72e2fffa080801d159f3c154626a7590584fc22c610bbc06a5a0f395b70d9e8d",
+  "client_config": "models/jack_original_delta_gru500hz/client_configs/ff_usb.json",
+  "uses_ft_history": true,
+  "action_shape": [
+    50,
+    7
+  ],
+  "request_steps": 4,
+  "source_dataset": "/data/jack/jack_exp_demo_preprocessed/delta"
+}

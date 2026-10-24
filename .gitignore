@@ -59,3 +59,5 @@ MUJOCO_LOG.TXT
 /experiments/robotwin/setup_records/active-*.json
 /experiments/robotwin/**/resources.jsonl
 /experiments/robotwin/**/pid
+
+*.png

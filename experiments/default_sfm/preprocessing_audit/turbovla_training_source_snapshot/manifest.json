@@ -1,0 +1,798 @@
+{
+  "host": "tako@115.145.172.56",
+  "read_only_remote": true,
+  "captured_at_utc": "2026-10-24T09:50:05.783778+00:00",
+  "git_head": "",
+  "missing": [],
+  "run_source_candidates": [
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/__init__.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/vision_processing.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/data/__init__.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/data/libero_rlds.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/data/mixed_suite.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/data/suite_stats.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/data/real_robot.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/data/ft_history.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/evaluation/__init__.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/evaluation/policy.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/evaluation/suite_policy.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/evaluation/real_trajectory_metrics.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/evaluation/real_trajectories.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/models/__init__.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/models/action_head.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/models/configuration.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/models/text_encoder.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/models/turbovla.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/models/vision_encoder.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/models/components/__init__.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/models/components/fusion.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/models/components/transformer.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/models/components/utils.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/text/__init__.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/text/bert.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/training/__init__.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/training/pi05.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/training/train_mixed.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/training/trainer.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/training/real_robot.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/training/progress.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/deployment/clean_share_rpc.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/deployment/__init__.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/deployment/real_robot.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/deployment/clean_share_rpc_source.json",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/train.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/benchmark.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/plot.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/evaluate.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/compare_models.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/verify_checkpoint.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/launch.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/queue_after.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/serve.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/export_bundle.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/prepare_go.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/launch_go.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/preflight_go.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/log_progress.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/enable_ft_history.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/queue_ft_rates.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/summarize_runs.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/serve_catalog.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/run_eval_client.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/prepare_eval_models.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/install_eval_models.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/prepare_jack_ablation.py",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/queue_jack_ablation.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/__init__.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/vision_processing.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/data/__init__.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/data/libero_rlds.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/data/mixed_suite.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/data/suite_stats.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/data/real_robot.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/data/ft_history.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/evaluation/__init__.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/evaluation/policy.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/evaluation/suite_policy.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/evaluation/real_trajectory_metrics.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/evaluation/real_trajectories.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/models/__init__.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/models/action_head.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/models/configuration.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/models/text_encoder.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/models/turbovla.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/models/vision_encoder.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/models/components/__init__.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/models/components/fusion.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/models/components/transformer.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/models/components/utils.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/text/__init__.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/text/bert.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/training/__init__.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/training/pi05.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/training/train_mixed.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/training/trainer.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/training/real_robot.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/training/progress.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/deployment/clean_share_rpc.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/deployment/__init__.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/deployment/real_robot.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/deployment/clean_share_rpc_source.json",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/scripts/real_robot/train.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/scripts/real_robot/benchmark.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/scripts/real_robot/plot.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/scripts/real_robot/evaluate.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/scripts/real_robot/compare_models.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/scripts/real_robot/verify_checkpoint.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/scripts/real_robot/launch.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/scripts/real_robot/queue_after.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/scripts/real_robot/serve.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/scripts/real_robot/export_bundle.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/scripts/real_robot/prepare_go.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/scripts/real_robot/launch_go.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/scripts/real_robot/preflight_go.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/scripts/real_robot/log_progress.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/scripts/real_robot/enable_ft_history.py",
+    "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/scripts/real_robot/queue_ft_rates.py"
+  ],
+  "files": [
+    {
+      "remote_path": "/home/jack/TurboVLA/turbovla/models/action_head.py",
+      "local_path": "source/turbovla/models/action_head.py",
+      "sha256": "b9df20696d909bb720ccbaa003f203f8ee5de5aa09e113415d6242129399937c",
+      "bytes": 5279
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/turbovla/models/configuration.py",
+      "local_path": "source/turbovla/models/configuration.py",
+      "sha256": "1154bcb096e908e4c77d20715f13bdc8404e7058289e818c171444ddb76a2ba3",
+      "bytes": 8669
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/turbovla/models/turbovla.py",
+      "local_path": "source/turbovla/models/turbovla.py",
+      "sha256": "0c446af908160eb0350c8c059eaaca5ac282ff8ebd489841bd198644f9f8a8a8",
+      "bytes": 15264
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/turbovla/data/real_robot.py",
+      "local_path": "source/turbovla/data/real_robot.py",
+      "sha256": "9b79b1e7a0cbc9bb4667b991a7605f10eff33a2f938d3a50ab460a8c59882ee8",
+      "bytes": 27291
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/turbovla/data/ft_history.py",
+      "local_path": "source/turbovla/data/ft_history.py",
+      "sha256": "f7be166d4688b975957205f685e3cf377d8ea38dfbafdee8e5983baa8fec1616",
+      "bytes": 3249
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/turbovla/training/real_robot.py",
+      "local_path": "source/turbovla/training/real_robot.py",
+      "sha256": "5ae1c449c311810aee6289f605d719cc140db063884e7f3ac3cbe6d2beff2ff8",
+      "bytes": 20822
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/scripts/real_robot/enable_ft_history.py",
+      "local_path": "source/scripts/real_robot/enable_ft_history.py",
+      "sha256": "be08c334b68148b49669f164c181dfaa4b6010d82c2194facb7800c4513b9325",
+      "bytes": 2957
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/scripts/real_robot/prepare_jack_ablation.py",
+      "local_path": "source/scripts/real_robot/prepare_jack_ablation.py",
+      "sha256": "885b16a18ac7c5e3a0d559aa9addf1469adbaaceddcf6887cfeedfd2831483ba",
+      "bytes": 13087
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/scripts/real_robot/prepare_jack_models.py",
+      "local_path": "source/scripts/real_robot/prepare_jack_models.py",
+      "sha256": "e968771f296dfc3022fb4ed5c65a4355a8baf2fa4eb66bc9a3f0db7dd6f621e7",
+      "bytes": 18082
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/scripts/real_robot/prepare_go.py",
+      "local_path": "source/scripts/real_robot/prepare_go.py",
+      "sha256": "b463ba052c95455ca012e65374aef036750fd1c04204ec29cefd1b55174ac054",
+      "bytes": 22024
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/scripts/real_robot/summarize_runs.py",
+      "local_path": "source/scripts/real_robot/summarize_runs.py",
+      "sha256": "e0a82fb3a3bca4c016562b6132b0d7fae48ad235b3dc06b957aaed86b0ccea5d",
+      "bytes": 42851
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_delta_no_ft_history/delta/config.json",
+      "local_path": "runs/jack/original_delta_no_ft_history/config.json",
+      "sha256": "5a17111e78e9c08be31404b635e851e9308bd132c9648a1d6e7d220e11f0b757",
+      "bytes": 3126
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_delta_no_ft_history/delta/recipe.json",
+      "local_path": "runs/jack/original_delta_no_ft_history/recipe.json",
+      "sha256": "5a17111e78e9c08be31404b635e851e9308bd132c9648a1d6e7d220e11f0b757",
+      "bytes": 3126
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_delta_no_ft_history/delta/data_contract.json",
+      "local_path": "runs/jack/original_delta_no_ft_history/data_contract.json",
+      "sha256": "82844047f6fe5948f4c9feab9f926d3758525294d59be38409a13d1113227d23",
+      "bytes": 12514
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_delta_no_ft_history/delta/data_signature.json",
+      "local_path": "runs/jack/original_delta_no_ft_history/data_signature.json",
+      "sha256": "281aa9286dd5369c6390ac0900801782e4260029f9a62e3380f0bf9bbf078697",
+      "bytes": 6132
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_delta_no_ft_history/delta/training_status.json",
+      "local_path": "runs/jack/original_delta_no_ft_history/training_status.json",
+      "sha256": "1d90001a0cfe1cbe6dc7c42ab711a81076d24a620d3c8ee5321ff6a2a6135c6b",
+      "bytes": 290
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_delta_no_ft_history/delta/job_status.json",
+      "local_path": "runs/jack/original_delta_no_ft_history/job_status.json",
+      "sha256": "4a4c7804913f4a7e3133a0a3402c04f0fdccc46985bc4e4400f15f91cd00718c",
+      "bytes": 553
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_delta_gru500hz/delta/config.json",
+      "local_path": "runs/jack/original_delta_gru500hz/config.json",
+      "sha256": "a6087050632ce9d316f2ec7440d3ec3b088b8edfec1e0fcbd250e1a367510e80",
+      "bytes": 4081
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_delta_gru500hz/delta/recipe.json",
+      "local_path": "runs/jack/original_delta_gru500hz/recipe.json",
+      "sha256": "a6087050632ce9d316f2ec7440d3ec3b088b8edfec1e0fcbd250e1a367510e80",
+      "bytes": 4081
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_delta_gru500hz/delta/data_contract.json",
+      "local_path": "runs/jack/original_delta_gru500hz/data_contract.json",
+      "sha256": "21a4d4ae554cc047326d0de246654898d8cfd2a797c06f37b0f0b7762d1d3c4a",
+      "bytes": 13076
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_delta_gru500hz/delta/data_signature.json",
+      "local_path": "runs/jack/original_delta_gru500hz/data_signature.json",
+      "sha256": "8a73cebda2378bc2f1c7d9d71da3f4cac945c2c18151e4158069ed6a33e65878",
+      "bytes": 6543
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_delta_gru500hz/delta/training_status.json",
+      "local_path": "runs/jack/original_delta_gru500hz/training_status.json",
+      "sha256": "c32aebbd5ff364ea4de0f11680aed2b6a6606ef852e93809f25d1495110cf508",
+      "bytes": 290
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_delta_gru500hz/delta/job_status.json",
+      "local_path": "runs/jack/original_delta_gru500hz/job_status.json",
+      "sha256": "85433936322e9fea9ca1d3284ec30a67a21f78f860fb07b9b58a0c2ee41e6ca7",
+      "bytes": 553
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_relative_no_ft_history/relative/config.json",
+      "local_path": "runs/jack/original_relative_no_ft_history/config.json",
+      "sha256": "5f499b30bff9a141ebf90a3e4c825a4d62386e946305abdfba10a07f2567e2a7",
+      "bytes": 3135
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_relative_no_ft_history/relative/recipe.json",
+      "local_path": "runs/jack/original_relative_no_ft_history/recipe.json",
+      "sha256": "5f499b30bff9a141ebf90a3e4c825a4d62386e946305abdfba10a07f2567e2a7",
+      "bytes": 3135
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_relative_no_ft_history/relative/data_contract.json",
+      "local_path": "runs/jack/original_relative_no_ft_history/data_contract.json",
+      "sha256": "5bef94f6c0432d554b0941391ca6b28dd42f16ccafd80f45bda2ee7ea1c37dd3",
+      "bytes": 12536
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_relative_no_ft_history/relative/data_signature.json",
+      "local_path": "runs/jack/original_relative_no_ft_history/data_signature.json",
+      "sha256": "92448d4120d2261257c2e39b5d3f26e4174a0926e4043de193b4f2fc9422a5dd",
+      "bytes": 6225
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_relative_no_ft_history/relative/training_status.json",
+      "local_path": "runs/jack/original_relative_no_ft_history/training_status.json",
+      "sha256": "ffc271fe374860bdf979976d0bbbbd85258b2aaec93d9782422b7e93b51c9b2d",
+      "bytes": 290
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_relative_no_ft_history/relative/job_status.json",
+      "local_path": "runs/jack/original_relative_no_ft_history/job_status.json",
+      "sha256": "2b039e7b25d7e7b0749731725967305c8fde0a97346fe1ed282706ab940b8e48",
+      "bytes": 556
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_relative_gru500hz/relative/config.json",
+      "local_path": "runs/jack/original_relative_gru500hz/config.json",
+      "sha256": "362ced2acabf7abd1a9a377295b6b811b5a0e27228f657c0ab535108ee250a16",
+      "bytes": 4090
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_relative_gru500hz/relative/recipe.json",
+      "local_path": "runs/jack/original_relative_gru500hz/recipe.json",
+      "sha256": "362ced2acabf7abd1a9a377295b6b811b5a0e27228f657c0ab535108ee250a16",
+      "bytes": 4090
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_relative_gru500hz/relative/data_contract.json",
+      "local_path": "runs/jack/original_relative_gru500hz/data_contract.json",
+      "sha256": "9a673813d94a454d8424474c3653aadd057bb0b9b401f153bb830881527063c2",
+      "bytes": 13098
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_relative_gru500hz/relative/data_signature.json",
+      "local_path": "runs/jack/original_relative_gru500hz/data_signature.json",
+      "sha256": "30d433cc5251f5e1472d4259870572d4813b1b0eaa959cff60f6c929ac6b0689",
+      "bytes": 6636
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_relative_gru500hz/relative/training_status.json",
+      "local_path": "runs/jack/original_relative_gru500hz/training_status.json",
+      "sha256": "4afdd8aa87767021c1da32efff64b344a098a8181aa33b032b4eebefecea0bd0",
+      "bytes": 290
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_relative_gru500hz/relative/job_status.json",
+      "local_path": "runs/jack/original_relative_gru500hz/job_status.json",
+      "sha256": "77449982bb9910e29c1fdca9e38d1d7d88baa13e5681b9d401c8ca2973d809a0",
+      "bytes": 556
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_delta_no_ft_history/delta/config.json",
+      "local_path": "runs/jack/faflow_delta_no_ft_history/config.json",
+      "sha256": "1dc3d6daf4b5ffc79ec74a0798e7284dadcce705766416b2a17c52194e901b7f",
+      "bytes": 3175
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_delta_no_ft_history/delta/recipe.json",
+      "local_path": "runs/jack/faflow_delta_no_ft_history/recipe.json",
+      "sha256": "1dc3d6daf4b5ffc79ec74a0798e7284dadcce705766416b2a17c52194e901b7f",
+      "bytes": 3175
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_delta_no_ft_history/delta/data_contract.json",
+      "local_path": "runs/jack/faflow_delta_no_ft_history/data_contract.json",
+      "sha256": "5862e98c59b30fa278317287c719fe789432c127c3e263ba7fa34d1b21b2da9a",
+      "bytes": 11988
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_delta_no_ft_history/delta/data_signature.json",
+      "local_path": "runs/jack/faflow_delta_no_ft_history/data_signature.json",
+      "sha256": "024a846bb962d8521c9dd781cdd707e1f02ec839e96457151385766a911c0354",
+      "bytes": 6591
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_delta_no_ft_history/delta/training_status.json",
+      "local_path": "runs/jack/faflow_delta_no_ft_history/training_status.json",
+      "sha256": "d249592dbc45a1f1da085e54e90f8714d6ffeb37826b4e230605864d6b3df7aa",
+      "bytes": 290
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_delta_no_ft_history/delta/job_status.json",
+      "local_path": "runs/jack/faflow_delta_no_ft_history/job_status.json",
+      "sha256": "42a7051a8267eccdc3ff620ea796724b91078868b17a56aa7d6c07120801fc29",
+      "bytes": 553
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_delta_gru500hz/delta/config.json",
+      "local_path": "runs/jack/faflow_delta_gru500hz/config.json",
+      "sha256": "b125e334138170fc74526fee483f58c160d437d98ed54f702064818639fa3951",
+      "bytes": 4129
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_delta_gru500hz/delta/recipe.json",
+      "local_path": "runs/jack/faflow_delta_gru500hz/recipe.json",
+      "sha256": "b125e334138170fc74526fee483f58c160d437d98ed54f702064818639fa3951",
+      "bytes": 4129
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_delta_gru500hz/delta/data_contract.json",
+      "local_path": "runs/jack/faflow_delta_gru500hz/data_contract.json",
+      "sha256": "d25a07587dd141e3a8fc7fb415c77835a7ad7c737db99e44a95a1302804c9784",
+      "bytes": 12550
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_delta_gru500hz/delta/data_signature.json",
+      "local_path": "runs/jack/faflow_delta_gru500hz/data_signature.json",
+      "sha256": "2485ae0c7a38ad9a2baa0a746c04572f4d513f673aadc357089b0e68b511cbf8",
+      "bytes": 7002
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_delta_gru500hz/delta/training_status.json",
+      "local_path": "runs/jack/faflow_delta_gru500hz/training_status.json",
+      "sha256": "e385a83bbdd19aaedae36b59836c942f5319ced05a798d82e802ab5e860aeefd",
+      "bytes": 289
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_delta_gru500hz/delta/job_status.json",
+      "local_path": "runs/jack/faflow_delta_gru500hz/job_status.json",
+      "sha256": "b2232182e6b9d960ec45abdac53abc429b9ec98c85eee86cc37b3049c1ddc184",
+      "bytes": 552
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_relative_no_ft_history/relative/config.json",
+      "local_path": "runs/jack/faflow_relative_no_ft_history/config.json",
+      "sha256": "cad8f832f4903b4f7bf6c485d8a84ab7fe48f233b13a6c4f84335e24ed1ca67c",
+      "bytes": 3184
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_relative_no_ft_history/relative/recipe.json",
+      "local_path": "runs/jack/faflow_relative_no_ft_history/recipe.json",
+      "sha256": "cad8f832f4903b4f7bf6c485d8a84ab7fe48f233b13a6c4f84335e24ed1ca67c",
+      "bytes": 3184
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_relative_no_ft_history/relative/data_contract.json",
+      "local_path": "runs/jack/faflow_relative_no_ft_history/data_contract.json",
+      "sha256": "3f9c58fadcc071ee75d5406140127c7c011a62f4005281fd666e1942356f5717",
+      "bytes": 12035
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_relative_no_ft_history/relative/data_signature.json",
+      "local_path": "runs/jack/faflow_relative_no_ft_history/data_signature.json",
+      "sha256": "17621d51fad31d158d0d424b19a46b646d3c2c7105645e357b2c93bcee71391b",
+      "bytes": 6684
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_relative_no_ft_history/relative/training_status.json",
+      "local_path": "runs/jack/faflow_relative_no_ft_history/training_status.json",
+      "sha256": "e8f98fee229200419eb762ae730c0a8bdb89747a4d6d332a3c5c890d576f9f3c",
+      "bytes": 290
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_relative_no_ft_history/relative/job_status.json",
+      "local_path": "runs/jack/faflow_relative_no_ft_history/job_status.json",
+      "sha256": "a69003e76d14f3db4752bfaca0d8bf43745d5b21f044aa92f3fd74033f69fbff",
+      "bytes": 579
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_relative_gru500hz/relative/config.json",
+      "local_path": "runs/jack/faflow_relative_gru500hz/config.json",
+      "sha256": "3a28aaa71aa2544976ac72847ddca062b4ef74721730725d0a5b285393639824",
+      "bytes": 4138
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_relative_gru500hz/relative/recipe.json",
+      "local_path": "runs/jack/faflow_relative_gru500hz/recipe.json",
+      "sha256": "3a28aaa71aa2544976ac72847ddca062b4ef74721730725d0a5b285393639824",
+      "bytes": 4138
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_relative_gru500hz/relative/data_contract.json",
+      "local_path": "runs/jack/faflow_relative_gru500hz/data_contract.json",
+      "sha256": "4cae8741a661eff8e536747b06915f922b88e9d142eff87d17b37413ded10d0e",
+      "bytes": 12597
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_relative_gru500hz/relative/data_signature.json",
+      "local_path": "runs/jack/faflow_relative_gru500hz/data_signature.json",
+      "sha256": "5b3d2dfce3e92708d5faef32d812f479dc5ad11e49b781fc74b1b2fb624ec79b",
+      "bytes": 7095
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_relative_gru500hz/relative/training_status.json",
+      "local_path": "runs/jack/faflow_relative_gru500hz/training_status.json",
+      "sha256": "e5194d1c104036d3846eab98075fed7d1da4ec987bf0792483246d8c52dfede6",
+      "bytes": 291
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_relative_gru500hz/relative/job_status.json",
+      "local_path": "runs/jack/faflow_relative_gru500hz/job_status.json",
+      "sha256": "18cb4f55fc415f248f2d249663c88b87fa96a350951ba10f210f10324b274b7c",
+      "bytes": 557
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/ft_500hz/delta/config.json",
+      "local_path": "runs/go/ft_500hz_delta/config.json",
+      "sha256": "d2e5faa5731dfe6f60ebc332c01c0551b8d1f152849d9cbe984227e798e4f54e",
+      "bytes": 4128
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/ft_500hz/delta/recipe.json",
+      "local_path": "runs/go/ft_500hz_delta/recipe.json",
+      "sha256": "d2e5faa5731dfe6f60ebc332c01c0551b8d1f152849d9cbe984227e798e4f54e",
+      "bytes": 4128
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/ft_500hz/delta/data_contract.json",
+      "local_path": "runs/go/ft_500hz_delta/data_contract.json",
+      "sha256": "8d60cacb8f4a7f0a1700ce86647241762936f6ee3985294fa85e5b3564f438f0",
+      "bytes": 12543
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/ft_500hz/delta/data_signature.json",
+      "local_path": "runs/go/ft_500hz_delta/data_signature.json",
+      "sha256": "751049f5da0454a002d3f2eff8c68b80c4ff4735e9dc37e629500cccc042c196",
+      "bytes": 12775
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/ft_500hz/delta/training_status.json",
+      "local_path": "runs/go/ft_500hz_delta/training_status.json",
+      "sha256": "12082cab80bf8599912814d83ea060d8dfd8fb9446b539f00c84cd6ebadc8ed3",
+      "bytes": 290
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/ft_500hz/delta/job_status.json",
+      "local_path": "runs/go/ft_500hz_delta/job_status.json",
+      "sha256": "c90e49881def22cdd1f5eca689068f45b4386e680809979961cd3ddbf9f51f52",
+      "bytes": 553
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/ft_500hz/relative/config.json",
+      "local_path": "runs/go/ft_500hz_relative/config.json",
+      "sha256": "c85b4b746f73801e474f838dc8af97bf93107a84e8778d3f4fbfbde5bdf606a5",
+      "bytes": 4134
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/ft_500hz/relative/recipe.json",
+      "local_path": "runs/go/ft_500hz_relative/recipe.json",
+      "sha256": "c85b4b746f73801e474f838dc8af97bf93107a84e8778d3f4fbfbde5bdf606a5",
+      "bytes": 4134
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/ft_500hz/relative/data_contract.json",
+      "local_path": "runs/go/ft_500hz_relative/data_contract.json",
+      "sha256": "dbf62f2159c1155e446ac7b5a95ea7e8de82de1630dac9c3b9f02c13f4723ed4",
+      "bytes": 12539
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/ft_500hz/relative/data_signature.json",
+      "local_path": "runs/go/ft_500hz_relative/data_signature.json",
+      "sha256": "92dc779c97c9f8e16b4d98ba42ea46b0f805ce45a63ad798f4d0f64fdffa22ba",
+      "bytes": 12928
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/ft_500hz/relative/training_status.json",
+      "local_path": "runs/go/ft_500hz_relative/training_status.json",
+      "sha256": "f28b9d6007ada88371cbb9407826269400dd12a175aee14abb2ea11fcf4a8a5f",
+      "bytes": 290
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/ft_500hz/relative/job_status.json",
+      "local_path": "runs/go/ft_500hz_relative/job_status.json",
+      "sha256": "a662a9d6011c012b2606ce763dd3b79e05b9b26c64e4a9844eb409cbcab18019",
+      "bytes": 556
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/schedule.json",
+      "local_path": "runs/jack/schedule.json",
+      "sha256": "b410dd65577b9b901c46e27500e245737e9c73540dca51402451c3e96c704ad6",
+      "bytes": 10850
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/software_validation.json",
+      "local_path": "runs/jack/software_validation.json",
+      "sha256": "41aba42bb2689206e6c5b6df038a70380e09b4ca0ad7b2dd7a39bb148e441468",
+      "bytes": 1046
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/schedule.json",
+      "local_path": "runs/go/schedule.json",
+      "sha256": "96d4e46df6b03687e29ccdeb4271be817403f397fa0d7c78b79d5d8836e2f16c",
+      "bytes": 6433
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/software_validation.json",
+      "local_path": "runs/go/software_validation.json",
+      "sha256": "9d50805a6a31766e43b9b73c997091fee79f004cd215aad043e4135e4f724d70",
+      "bytes": 269
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/turbovla/models/vision_encoder.py",
+      "local_path": "source/turbovla/models/vision_encoder.py",
+      "sha256": "8235a357bbaf3a1aa1fad235cc2aa4ee930efa4e95d58d9a4e0fee4ec09fda98",
+      "bytes": 12552
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/turbovla/vision_processing.py",
+      "local_path": "source/turbovla/vision_processing.py",
+      "sha256": "f5e15bf7cda30377b8b77ba044bd6ad59cdfd405135859717b98b347ecb0e8eb",
+      "bytes": 2142
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/models/action_head.py",
+      "local_path": "training_snapshot/jack/turbovla/models/action_head.py",
+      "sha256": "b9df20696d909bb720ccbaa003f203f8ee5de5aa09e113415d6242129399937c",
+      "bytes": 5279
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/models/configuration.py",
+      "local_path": "training_snapshot/jack/turbovla/models/configuration.py",
+      "sha256": "1154bcb096e908e4c77d20715f13bdc8404e7058289e818c171444ddb76a2ba3",
+      "bytes": 8669
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/models/vision_encoder.py",
+      "local_path": "training_snapshot/jack/turbovla/models/vision_encoder.py",
+      "sha256": "8235a357bbaf3a1aa1fad235cc2aa4ee930efa4e95d58d9a4e0fee4ec09fda98",
+      "bytes": 12552
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/data/real_robot.py",
+      "local_path": "training_snapshot/jack/turbovla/data/real_robot.py",
+      "sha256": "9b79b1e7a0cbc9bb4667b991a7605f10eff33a2f938d3a50ab460a8c59882ee8",
+      "bytes": 27291
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/training/real_robot.py",
+      "local_path": "training_snapshot/jack/turbovla/training/real_robot.py",
+      "sha256": "5ae1c449c311810aee6289f605d719cc140db063884e7f3ac3cbe6d2beff2ff8",
+      "bytes": 20822
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/turbovla/vision_processing.py",
+      "local_path": "training_snapshot/jack/turbovla/vision_processing.py",
+      "sha256": "f5e15bf7cda30377b8b77ba044bd6ad59cdfd405135859717b98b347ecb0e8eb",
+      "bytes": 2142
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/train.py",
+      "local_path": "training_snapshot/jack/scripts/real_robot/train.py",
+      "sha256": "91ebd25cd0d12dd36e4f1a72d9d2813d884d42818d292d050ef6eb634aa342bd",
+      "bytes": 927
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/launch.py",
+      "local_path": "training_snapshot/jack/scripts/real_robot/launch.py",
+      "sha256": "20718185e19a8614efb80e3c65d671cfdfff91269830458f3a3d5d9a7be5e511",
+      "bytes": 10927
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/prepare_go.py",
+      "local_path": "training_snapshot/jack/scripts/real_robot/prepare_go.py",
+      "sha256": "b463ba052c95455ca012e65374aef036750fd1c04204ec29cefd1b55174ac054",
+      "bytes": 22024
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/prepare_jack_ablation.py",
+      "local_path": "training_snapshot/jack/scripts/real_robot/prepare_jack_ablation.py",
+      "sha256": "885b16a18ac7c5e3a0d559aa9addf1469adbaaceddcf6887cfeedfd2831483ba",
+      "bytes": 13087
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/queue_jack_ablation.py",
+      "local_path": "training_snapshot/jack/scripts/real_robot/queue_jack_ablation.py",
+      "sha256": "53d8fc87c80b7046c33da5e186f5db5550ddd010378bd3e20896916198aa781e",
+      "bytes": 5018
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/code/scripts/real_robot/enable_ft_history.py",
+      "local_path": "training_snapshot/jack/scripts/real_robot/enable_ft_history.py",
+      "sha256": "be08c334b68148b49669f164c181dfaa4b6010d82c2194facb7800c4513b9325",
+      "bytes": 2957
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/models/action_head.py",
+      "local_path": "training_snapshot/go/turbovla/models/action_head.py",
+      "sha256": "b9df20696d909bb720ccbaa003f203f8ee5de5aa09e113415d6242129399937c",
+      "bytes": 5279
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/models/configuration.py",
+      "local_path": "training_snapshot/go/turbovla/models/configuration.py",
+      "sha256": "1154bcb096e908e4c77d20715f13bdc8404e7058289e818c171444ddb76a2ba3",
+      "bytes": 8669
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/models/vision_encoder.py",
+      "local_path": "training_snapshot/go/turbovla/models/vision_encoder.py",
+      "sha256": "8235a357bbaf3a1aa1fad235cc2aa4ee930efa4e95d58d9a4e0fee4ec09fda98",
+      "bytes": 12552
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/data/real_robot.py",
+      "local_path": "training_snapshot/go/turbovla/data/real_robot.py",
+      "sha256": "9b79b1e7a0cbc9bb4667b991a7605f10eff33a2f938d3a50ab460a8c59882ee8",
+      "bytes": 27291
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/training/real_robot.py",
+      "local_path": "training_snapshot/go/turbovla/training/real_robot.py",
+      "sha256": "5ae1c449c311810aee6289f605d719cc140db063884e7f3ac3cbe6d2beff2ff8",
+      "bytes": 20822
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/turbovla/vision_processing.py",
+      "local_path": "training_snapshot/go/turbovla/vision_processing.py",
+      "sha256": "f5e15bf7cda30377b8b77ba044bd6ad59cdfd405135859717b98b347ecb0e8eb",
+      "bytes": 2142
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/scripts/real_robot/train.py",
+      "local_path": "training_snapshot/go/scripts/real_robot/train.py",
+      "sha256": "91ebd25cd0d12dd36e4f1a72d9d2813d884d42818d292d050ef6eb634aa342bd",
+      "bytes": 927
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/scripts/real_robot/launch.py",
+      "local_path": "training_snapshot/go/scripts/real_robot/launch.py",
+      "sha256": "20718185e19a8614efb80e3c65d671cfdfff91269830458f3a3d5d9a7be5e511",
+      "bytes": 10927
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/scripts/real_robot/prepare_go.py",
+      "local_path": "training_snapshot/go/scripts/real_robot/prepare_go.py",
+      "sha256": "b463ba052c95455ca012e65374aef036750fd1c04204ec29cefd1b55174ac054",
+      "bytes": 22024
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/code/scripts/real_robot/enable_ft_history.py",
+      "local_path": "training_snapshot/go/scripts/real_robot/enable_ft_history.py",
+      "sha256": "be08c334b68148b49669f164c181dfaa4b6010d82c2194facb7800c4513b9325",
+      "bytes": 2957
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/adapter_audit.json",
+      "local_path": "prepared/faflow/adapter_audit.json",
+      "sha256": "4d0b8204e63736a4299ab05c68035c9c06edb78fc90250db5f9e854868f0aefa",
+      "bytes": 14888
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/manifest.json",
+      "local_path": "prepared/faflow/manifest.json",
+      "sha256": "a56e12a7eec176d9dc259d94eaffd2bb752c8131dc246a877797538a9672863c",
+      "bytes": 5403
+    },
+    {
+      "remote_path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/normalization.json",
+      "local_path": "prepared/faflow/normalization.json",
+      "sha256": "11358ea66bc749e9c17ebc1a63533d215942bf83c5478023ff84deabc10d1eb6",
+      "bytes": 9571
+    }
+  ],
+  "verification": "all received and written source/config bytes match remote SHA-256",
+  "frozen_source_captured_at_utc": "2026-10-24T09:50:53.394443+00:00",
+  "prepared_files": [
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/adapter_audit.json",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/manifest.json",
+    "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/normalization.json"
+  ],
+  "resolved_vision_source": "source/turbovla/models/vision_encoder.py",
+  "current_vs_training_snapshot": [
+    {
+      "run": "jack",
+      "file": "turbovla/models/action_head.py",
+      "current_sha256": "b9df20696d909bb720ccbaa003f203f8ee5de5aa09e113415d6242129399937c",
+      "frozen_sha256": "b9df20696d909bb720ccbaa003f203f8ee5de5aa09e113415d6242129399937c",
+      "equal": true
+    },
+    {
+      "run": "jack",
+      "file": "turbovla/data/real_robot.py",
+      "current_sha256": "9b79b1e7a0cbc9bb4667b991a7605f10eff33a2f938d3a50ab460a8c59882ee8",
+      "frozen_sha256": "9b79b1e7a0cbc9bb4667b991a7605f10eff33a2f938d3a50ab460a8c59882ee8",
+      "equal": true
+    },
+    {
+      "run": "jack",
+      "file": "turbovla/training/real_robot.py",
+      "current_sha256": "5ae1c449c311810aee6289f605d719cc140db063884e7f3ac3cbe6d2beff2ff8",
+      "frozen_sha256": "5ae1c449c311810aee6289f605d719cc140db063884e7f3ac3cbe6d2beff2ff8",
+      "equal": true
+    },
+    {
+      "run": "jack",
+      "file": "turbovla/models/vision_encoder.py",
+      "current_sha256": "8235a357bbaf3a1aa1fad235cc2aa4ee930efa4e95d58d9a4e0fee4ec09fda98",
+      "frozen_sha256": "8235a357bbaf3a1aa1fad235cc2aa4ee930efa4e95d58d9a4e0fee4ec09fda98",
+      "equal": true
+    },
+    {
+      "run": "go",
+      "file": "turbovla/models/action_head.py",
+      "current_sha256": "b9df20696d909bb720ccbaa003f203f8ee5de5aa09e113415d6242129399937c",
+      "frozen_sha256": "b9df20696d909bb720ccbaa003f203f8ee5de5aa09e113415d6242129399937c",
+      "equal": true
+    },
+    {
+      "run": "go",
+      "file": "turbovla/data/real_robot.py",
+      "current_sha256": "9b79b1e7a0cbc9bb4667b991a7605f10eff33a2f938d3a50ab460a8c59882ee8",
+      "frozen_sha256": "9b79b1e7a0cbc9bb4667b991a7605f10eff33a2f938d3a50ab460a8c59882ee8",
+      "equal": true
+    },
+    {
+      "run": "go",
+      "file": "turbovla/training/real_robot.py",
+      "current_sha256": "5ae1c449c311810aee6289f605d719cc140db063884e7f3ac3cbe6d2beff2ff8",
+      "frozen_sha256": "5ae1c449c311810aee6289f605d719cc140db063884e7f3ac3cbe6d2beff2ff8",
+      "equal": true
+    },
+    {
+      "run": "go",
+      "file": "turbovla/models/vision_encoder.py",
+      "current_sha256": "8235a357bbaf3a1aa1fad235cc2aa4ee930efa4e95d58d9a4e0fee4ec09fda98",
+      "frozen_sha256": "8235a357bbaf3a1aa1fad235cc2aa4ee930efa4e95d58d9a4e0fee4ec09fda98",
+      "equal": true
+    }
+  ]
+}

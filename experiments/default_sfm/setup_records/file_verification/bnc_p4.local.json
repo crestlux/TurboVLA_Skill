@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-24T07:46:22.656107+00:00",
+  "root": "/data/crestlux/default_sfm",
+  "selection": "Nine named tasks, p1 through p5; test and usb_insert excluded",
+  "task_count": 1,
+  "folder_count": 1,
+  "demo_count": 10,
+  "file_count": 11,
+  "total_bytes": 13442094282,
+  "suffix_counts": {
+    ".pkl": 10,
+    ".json": 1
+  },
+  "excluded_top_level_entries": [
+    "audio_jack_p1",
+    "audio_jack_p2",
+    "audio_jack_p3",
+    "audio_jack_p4",
+    "audio_jack_p5",
+    "barlatch_p1",
+    "barlatch_p2",
+    "barlatch_p3",
+    "barlatch_p4",
+    "barlatch_p5",
+    "bnc_p1",
+    "bnc_p2",
+    "bnc_p3",
+    "bnc_p5",
+    "hdmi_p1",
+    "hdmi_p2"
+  ],
+  "hash_algorithm": "sha256",
+  "folders": [
+    {
+      "folder": "bnc_p4",
+      "task": "bnc",
+      "position": 4,
+      "demo_count": 10,
+      "file_count": 11,
+      "total_bytes": 13442094282
+    }
+  ],
+  "files": [
+    {
+      "path": "bnc_p4/2026-10-22/1_demos_2026-10-22_19-32-41_427738.pkl",
+      "bytes": 1294286680,
+      "mtime_ns": 1792665165167893200,
+      "sha256": "d6a08c6cced1d60d672677ffa56b02be9a77e3954d31d30811e96b662c30b6f1"
+    },
+    {
+      "path": "bnc_p4/2026-10-22/1_demos_2026-10-22_19-34-16_738418.pkl",
+      "bytes": 1290588789,
+      "mtime_ns": 1792665260653731400,
+      "sha256": "a738406c2b088fb6b993be64188553529ccd306bc7bb4c303943a862c779364f"
+    },
+    {
+      "path": "bnc_p4/2026-10-22/1_demos_2026-10-22_19-35-13_192182.pkl",
+      "bytes": 1297984651,
+      "mtime_ns": 1792665317285152800,
+      "sha256": "762b8b74e426383d507bff3070ff7f154b948a4e2e91536a3861957590b00a4a"
+    },
+    {
+      "path": "bnc_p4/2026-10-22/1_demos_2026-10-22_19-36-10_383394.pkl",
+      "bytes": 1312776515,
+      "mtime_ns": 1792665374333692600,
+      "sha256": "6bb6e6ce4f7448e7c1629dc427418d9db70449e87849d0ab894d8067706558d0"
+    },
+    {
+      "path": "bnc_p4/2026-10-22/1_demos_2026-10-22_19-37-56_646644.pkl",
+      "bytes": 1323870348,
+      "mtime_ns": 1792665480714803800,
+      "sha256": "fd2fd62603cb6254cba033dea9ab8663d7bedba4928888e73a7677d80e5d255c"
+    },
+    {
+      "path": "bnc_p4/2026-10-22/1_demos_2026-10-22_19-38-57_385788.pkl",
+      "bytes": 1416319383,
+      "mtime_ns": 1792665541726972600,
+      "sha256": "770e84d703cba8a89bbafb77978dca6f95d684c432d728e435bc9381a7719757"
+    },
+    {
+      "path": "bnc_p4/2026-10-22/1_demos_2026-10-22_19-41-17_941285.pkl",
+      "bytes": 1320172347,
+      "mtime_ns": 1792665682017009200,
+      "sha256": "bb6f147463f05e4bd9afc1ece8096006faebcf085fe0fb675b82990a647b73fa"
+    },
+    {
+      "path": "bnc_p4/2026-10-22/1_demos_2026-10-22_19-42-59_884922.pkl",
+      "bytes": 1431111257,
+      "mtime_ns": 1792665784226781400,
+      "sha256": "6f13fdf01c02427b397e1c408a93065a108c3cbde9455dac040a326fbceaa965"
+    },
+    {
+      "path": "bnc_p4/2026-10-22/1_demos_2026-10-22_19-44-40_060320.pkl",
+      "bytes": 1323870388,
+      "mtime_ns": 1792665883964248800,
+      "sha256": "8538a2115b9db89cc44668b3eef58c73c2b13f5cf196f319636d52597ea5eed3"
+    },
+    {
+      "path": "bnc_p4/2026-10-22/1_demos_2026-10-22_19-45-39_775587.pkl",
+      "bytes": 1431111307,
+      "mtime_ns": 1792665944161905900,
+      "sha256": "b046e116a6a916b973ad46b31b5291f54c17e2220ed7b5edfbafc678f18c6069"
+    },
+    {
+      "path": "bnc_p4/2026-10-22/env_config_2026-10-22_19-29-38_377515.json",
+      "bytes": 2617,
+      "mtime_ns": 1792664978378183100,
+      "sha256": "385f845c333add8845474e2ae7369604d3e6c65eba1604652a79ef305e36557f"
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "errors": [],
+    "comparison": "exact relative file set, sizes, SHA-256",
+    "reference_root": "/media/csilab/robot_data/default_sfm",
+    "reference_created_at_utc": "2026-10-24T07:46:22.652906+00:00"
+  }
+}

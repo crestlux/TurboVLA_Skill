@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-24T07:17:11.245393+00:00",
+  "root": "/data/crestlux/default_sfm",
+  "selection": "Nine named tasks, p1 through p5; test and usb_insert excluded",
+  "task_count": 1,
+  "folder_count": 1,
+  "demo_count": 10,
+  "file_count": 11,
+  "total_bytes": 10775857385,
+  "suffix_counts": {
+    ".pkl": 10,
+    ".json": 1
+  },
+  "excluded_top_level_entries": [
+    "audio_jack_p1",
+    "audio_jack_p2",
+    "audio_jack_p4",
+    "audio_jack_p5",
+    "barlatch_p1"
+  ],
+  "hash_algorithm": "sha256",
+  "folders": [
+    {
+      "folder": "audio_jack_p3",
+      "task": "audio_jack",
+      "position": 3,
+      "demo_count": 10,
+      "file_count": 11,
+      "total_bytes": 10775857385
+    }
+  ],
+  "files": [
+    {
+      "path": "audio_jack_p3/2026-10-22/1_demos_2026-10-22_16-33-13_590838.pkl",
+      "bytes": 1157462003,
+      "mtime_ns": 1792654396794973000,
+      "sha256": "98d202a815c901d4f3bfa00de09835320224d201f73e37a5105e2076affcd8ac"
+    },
+    {
+      "path": "audio_jack_p3/2026-10-22/1_demos_2026-10-22_16-34-36_355430.pkl",
+      "bytes": 1146367426,
+      "mtime_ns": 1792654479665079200,
+      "sha256": "2bbebf463c4964634ccb9a6f922610a7bf9a0952af4121766e68d69d29c31251"
+    },
+    {
+      "path": "audio_jack_p3/2026-10-22/1_demos_2026-10-22_16-35-19_551689.pkl",
+      "bytes": 1098293944,
+      "mtime_ns": 1792654522831811900,
+      "sha256": "4deb0324b0a45deb1f6390196cd67febfb9988943a1ffeb2eedbb51066853a2e"
+    },
+    {
+      "path": "audio_jack_p3/2026-10-22/1_demos_2026-10-22_16-37-43_638684.pkl",
+      "bytes": 1090898077,
+      "mtime_ns": 1792654666860878000,
+      "sha256": "1b060a3367ef1ce5ffa889a480c70cb4f96e8b35d99271f1e58c988ca8c37717"
+    },
+    {
+      "path": "audio_jack_p3/2026-10-22/1_demos_2026-10-22_16-38-26_059280.pkl",
+      "bytes": 1068710287,
+      "mtime_ns": 1792654709226724900,
+      "sha256": "26b1d8d2b4346b5f9fc264391f6d9f8bcdd973331a0ab6c79f6d4df264a7d6fb"
+    },
+    {
+      "path": "audio_jack_p3/2026-10-22/1_demos_2026-10-22_16-39-07_591890.pkl",
+      "bytes": 1035428665,
+      "mtime_ns": 1792654750742334000,
+      "sha256": "759fb75db923aa12c9fb650acc326642b7a195e62496f0f0680849ee747b5732"
+    },
+    {
+      "path": "audio_jack_p3/2026-10-22/1_demos_2026-10-22_16-39-49_693549.pkl",
+      "bytes": 1050220476,
+      "mtime_ns": 1792654792799945200,
+      "sha256": "25a5595f5c0bf1b0a0e1f85f50f0898ddfcaa9741b648fa3406cf3859602dfac"
+    },
+    {
+      "path": "audio_jack_p3/2026-10-22/1_demos_2026-10-22_16-40-31_816460.pkl",
+      "bytes": 1065012315,
+      "mtime_ns": 1792654835061053200,
+      "sha256": "0b14cbedcb2fa5e29bf079c51281856174560a585e8eb8d05ee81fd0867dcd24"
+    },
+    {
+      "path": "audio_jack_p3/2026-10-22/1_demos_2026-10-22_16-41-13_834689.pkl",
+      "bytes": 1050220567,
+      "mtime_ns": 1792654876737343400,
+      "sha256": "0f67aae6a807f8e2c34a6124a1c1aa2dbaa4cb4de3d0e5af07440b0c084efccd"
+    },
+    {
+      "path": "audio_jack_p3/2026-10-22/1_demos_2026-10-22_16-41-54_503094.pkl",
+      "bytes": 1013241001,
+      "mtime_ns": 1792654917491200200,
+      "sha256": "14c938eea357846c8a7e004c22f641777d4e5bfd0d1eb4ef780ba98f0090043e"
+    },
+    {
+      "path": "audio_jack_p3/2026-10-22/env_config_2026-10-22_16-32-10_951869.json",
+      "bytes": 2624,
+      "mtime_ns": 1792654330952557700,
+      "sha256": "6f0a45a4e73a1d3fd5b1fd28f74f227555745197f9156a9416b2d2d0262b7a98"
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "errors": [],
+    "comparison": "exact relative file set, sizes, SHA-256",
+    "reference_root": "/media/csilab/robot_data/default_sfm",
+    "reference_created_at_utc": "2026-10-24T07:17:11.242336+00:00"
+  }
+}

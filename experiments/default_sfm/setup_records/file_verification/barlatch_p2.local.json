@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-24T07:27:58.303366+00:00",
+  "root": "/data/crestlux/default_sfm",
+  "selection": "Nine named tasks, p1 through p5; test and usb_insert excluded",
+  "task_count": 1,
+  "folder_count": 1,
+  "demo_count": 10,
+  "file_count": 11,
+  "total_bytes": 12791069043,
+  "suffix_counts": {
+    ".pkl": 10,
+    ".json": 1
+  },
+  "excluded_top_level_entries": [
+    "audio_jack_p1",
+    "audio_jack_p2",
+    "audio_jack_p3",
+    "audio_jack_p4",
+    "audio_jack_p5",
+    "barlatch_p1",
+    "barlatch_p3",
+    "barlatch_p4",
+    "barlatch_p5"
+  ],
+  "hash_algorithm": "sha256",
+  "folders": [
+    {
+      "folder": "barlatch_p2",
+      "task": "barlatch",
+      "position": 2,
+      "demo_count": 10,
+      "file_count": 11,
+      "total_bytes": 12791069043
+    }
+  ],
+  "files": [
+    {
+      "path": "barlatch_p2/2026-10-20/1_demos_2026-10-20_19-58-21_668212.pkl",
+      "bytes": 1427392499,
+      "mtime_ns": 1792493905362856000,
+      "sha256": "45a236f58e49f8c12ef2db0985c85d195b95049f78de685285c34105bc86e23a"
+    },
+    {
+      "path": "barlatch_p2/2026-10-20/1_demos_2026-10-20_19-59-20_231796.pkl",
+      "bytes": 1331247215,
+      "mtime_ns": 1792493963824355300,
+      "sha256": "fc25405dd5b76651085410422e07b35dafbad6e788cdaf8ce0c4d1cbb614641d"
+    },
+    {
+      "path": "barlatch_p2/2026-10-20/1_demos_2026-10-20_20-01-39_201771.pkl",
+      "bytes": 1275778520,
+      "mtime_ns": 1792494102614473600,
+      "sha256": "f91f5618681d680a7c015964c6392f036dcabd9ef3d6152f0256f05a11df750b"
+    },
+    {
+      "path": "barlatch_p2/2026-10-20/1_demos_2026-10-20_20-02-37_042175.pkl",
+      "bytes": 1316455499,
+      "mtime_ns": 1792494160552091600,
+      "sha256": "377e7f37ad84f0441b5784464ab91284f094ad543ea789f15c9a5aa52bef6bc2"
+    },
+    {
+      "path": "barlatch_p2/2026-10-20/1_demos_2026-10-20_20-03-54_137319.pkl",
+      "bytes": 1235101461,
+      "mtime_ns": 1792494237338571100,
+      "sha256": "f2cccbc3951b7fa142060e43cee1122948f9a2358f8e28f1999f8c258b190a57"
+    },
+    {
+      "path": "barlatch_p2/2026-10-20/1_demos_2026-10-20_20-04-50_935289.pkl",
+      "bytes": 1286872307,
+      "mtime_ns": 1792494294299651300,
+      "sha256": "54b1fe9f23df6a13927a82138114ccb9480ec78ccb13e5239bee4d46f6d68ade"
+    },
+    {
+      "path": "barlatch_p2/2026-10-20/1_demos_2026-10-20_20-05-45_064411.pkl",
+      "bytes": 1187028724,
+      "mtime_ns": 1792494348107258400,
+      "sha256": "04aa4c773e2adeb4f9731a39f92178ed64e9749d91d25f94f1293f34411998ad"
+    },
+    {
+      "path": "barlatch_p2/2026-10-20/1_demos_2026-10-20_20-07-07_361058.pkl",
+      "bytes": 1253591106,
+      "mtime_ns": 1792494430835984100,
+      "sha256": "8e5382af9eef286ddb72e37ecfaa90050c1a603cb237964fb61fcd6af8955686"
+    },
+    {
+      "path": "barlatch_p2/2026-10-20/1_demos_2026-10-20_20-08-03_156362.pkl",
+      "bytes": 1231403772,
+      "mtime_ns": 1792494486385354800,
+      "sha256": "ada31a69958db10fb84d9f1b548decc56a282f176739ed4da0f93a3ca18ec925"
+    },
+    {
+      "path": "barlatch_p2/2026-10-20/1_demos_2026-10-20_20-08-59_240402.pkl",
+      "bytes": 1246195318,
+      "mtime_ns": 1792494542622785300,
+      "sha256": "c69da66f7dba9c1fcd2238de8bc0cf461eecf3f236a23598d1a647e7b19e6268"
+    },
+    {
+      "path": "barlatch_p2/2026-10-20/env_config_2026-10-20_19-55-39_173486.json",
+      "bytes": 2622,
+      "mtime_ns": 1792493739173882100,
+      "sha256": "92271cf0767bee3384af0d059594f7724115014309de3deffcd8f89f1742c474"
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "errors": [],
+    "comparison": "exact relative file set, sizes, SHA-256",
+    "reference_root": "/media/csilab/robot_data/default_sfm",
+    "reference_created_at_utc": "2026-10-24T07:27:58.300241+00:00"
+  }
+}

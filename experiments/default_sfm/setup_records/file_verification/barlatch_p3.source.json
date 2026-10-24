@@ -1,0 +1,84 @@
+{
+  "root": "/media/csilab/robot_data/default_sfm",
+  "created_at_utc": "2026-10-24T07:27:04.863360+00:00",
+  "hash_algorithm": "sha256",
+  "files": [
+    {
+      "path": "barlatch_p3/2026-10-22/1_demos_2026-10-22_20-00-54_983840.pkl",
+      "bytes": 1209233437,
+      "mtime_ns": 1792666858507348500,
+      "mode": 511,
+      "sha256": "bf71fe6b81b077587cafc8886b25b83dfe551f0bae198225cf3ffb3a3028a96f"
+    },
+    {
+      "path": "barlatch_p3/2026-10-22/1_demos_2026-10-22_20-02-59_935716.pkl",
+      "bytes": 1201837395,
+      "mtime_ns": 1792666983663122200,
+      "mode": 511,
+      "sha256": "e22531f6e02dd90ed038bbb9b9d06ef97e5f9d4d80c2a0dd89bd1e17b14db7c0"
+    },
+    {
+      "path": "barlatch_p3/2026-10-22/1_demos_2026-10-22_20-05-15_311725.pkl",
+      "bytes": 1268400783,
+      "mtime_ns": 1792667119084981300,
+      "mode": 511,
+      "sha256": "5a6df3026fd8e999d40f69293174f3c7b61e189edd4171e3dc70117b60abb4d7"
+    },
+    {
+      "path": "barlatch_p3/2026-10-22/1_demos_2026-10-22_20-06-10_356349.pkl",
+      "bytes": 1198139574,
+      "mtime_ns": 1792667173739257200,
+      "mode": 511,
+      "sha256": "ff9c3de0908cce4e031d57a3bb576bbd34c2a8421689efcdb0e942746c32b284"
+    },
+    {
+      "path": "barlatch_p3/2026-10-22/1_demos_2026-10-22_20-07-16_887441.pkl",
+      "bytes": 1238816955,
+      "mtime_ns": 1792667240504261700,
+      "mode": 511,
+      "sha256": "7922d467f00ab0e44f250f4fc64bb6bc91e2c2208772cfad67820020fe9a0388"
+    },
+    {
+      "path": "barlatch_p3/2026-10-22/1_demos_2026-10-22_20-08-12_955228.pkl",
+      "bytes": 1242515066,
+      "mtime_ns": 1792667296426453700,
+      "mode": 511,
+      "sha256": "f49c47e4981fbc63ae1cfc1f1ce6a5db95b07eb1313c122081670d1c029361c2"
+    },
+    {
+      "path": "barlatch_p3/2026-10-22/1_demos_2026-10-22_20-09-08_917219.pkl",
+      "bytes": 1235119174,
+      "mtime_ns": 1792667352645406600,
+      "mode": 511,
+      "sha256": "b8674c0a09e98f83fb2f6a73c2139b892794607d5a1ff93606d05330a29e0228"
+    },
+    {
+      "path": "barlatch_p3/2026-10-22/1_demos_2026-10-22_20-10-03_144939.pkl",
+      "bytes": 1183347750,
+      "mtime_ns": 1792667406555402200,
+      "mode": 511,
+      "sha256": "f5a9cb7022c9c7940a27739b94223085eedbda0f362357936aebd05aee569303"
+    },
+    {
+      "path": "barlatch_p3/2026-10-22/1_demos_2026-10-22_20-10-58_881873.pkl",
+      "bytes": 1235119214,
+      "mtime_ns": 1792667462343062700,
+      "mode": 511,
+      "sha256": "fd38b1c67a3707972ecd66847afaa511327e67f6b0d95b3b6aae10f302d87580"
+    },
+    {
+      "path": "barlatch_p3/2026-10-22/1_demos_2026-10-22_20-11-55_106678.pkl",
+      "bytes": 1272098754,
+      "mtime_ns": 1792667518714765800,
+      "mode": 511,
+      "sha256": "40e589630ecdf69abad211266b44efcc3b8003607409f3fb543c7e79e182ed77"
+    },
+    {
+      "path": "barlatch_p3/2026-10-22/env_config_2026-10-22_19-59-29_219368.json",
+      "bytes": 2622,
+      "mtime_ns": 1792666769239978200,
+      "mode": 511,
+      "sha256": "0f5077b8123c719957a2555ddf2b4be1053c11ef86c09b25f1f14dc69cc2e2f4"
+    }
+  ]
+}

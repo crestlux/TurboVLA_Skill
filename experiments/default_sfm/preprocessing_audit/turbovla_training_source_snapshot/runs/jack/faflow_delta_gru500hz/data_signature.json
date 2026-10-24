@@ -1,0 +1,180 @@
+{
+  "files": [
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00000.hdf5",
+      "size": 408585,
+      "mtime_ns": 1792424740661802168
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00001.hdf5",
+      "size": 402677,
+      "mtime_ns": 1792424740661802168
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00002.hdf5",
+      "size": 359844,
+      "mtime_ns": 1792424740661802168
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00003.hdf5",
+      "size": 343597,
+      "mtime_ns": 1792424740661802168
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00004.hdf5",
+      "size": 359844,
+      "mtime_ns": 1792424740661802168
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00005.hdf5",
+      "size": 387907,
+      "mtime_ns": 1792424740665802247
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00006.hdf5",
+      "size": 376091,
+      "mtime_ns": 1792424740665802247
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00007.hdf5",
+      "size": 376091,
+      "mtime_ns": 1792424740665802247
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00008.hdf5",
+      "size": 448464,
+      "mtime_ns": 1792424740665802247
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00009.hdf5",
+      "size": 380522,
+      "mtime_ns": 1792424740665802247
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00010.hdf5",
+      "size": 398246,
+      "mtime_ns": 1792424740669802327
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00011.hdf5",
+      "size": 374614,
+      "mtime_ns": 1792424740669802327
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00012.hdf5",
+      "size": 389384,
+      "mtime_ns": 1792424740669802327
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00013.hdf5",
+      "size": 489820,
+      "mtime_ns": 1792424740669802327
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00014.hdf5",
+      "size": 415970,
+      "mtime_ns": 1792424740669802327
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00015.hdf5",
+      "size": 393815,
+      "mtime_ns": 1792424740673802406
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00016.hdf5",
+      "size": 500159,
+      "mtime_ns": 1792424740673802406
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00017.hdf5",
+      "size": 398246,
+      "mtime_ns": 1792424740673802406
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00018.hdf5",
+      "size": 488343,
+      "mtime_ns": 1792424740673802406
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00019.hdf5",
+      "size": 445510,
+      "mtime_ns": 1792424740673802406
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00020.hdf5",
+      "size": 467665,
+      "mtime_ns": 1792424740677802486
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00021.hdf5",
+      "size": 486866,
+      "mtime_ns": 1792424740677802486
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00022.hdf5",
+      "size": 460280,
+      "mtime_ns": 1792424740677802486
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00023.hdf5",
+      "size": 486866,
+      "mtime_ns": 1792424740677802486
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00024.hdf5",
+      "size": 458803,
+      "mtime_ns": 1792424740677802486
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00025.hdf5",
+      "size": 492774,
+      "mtime_ns": 1792424740681802566
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00026.hdf5",
+      "size": 506067,
+      "mtime_ns": 1792424740681802566
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00027.hdf5",
+      "size": 526745,
+      "mtime_ns": 1792424740681802566
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00028.hdf5",
+      "size": 507544,
+      "mtime_ns": 1792424740681802566
+    },
+    {
+      "path": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta/shard_00029.hdf5",
+      "size": 441079,
+      "mtime_ns": 1792424740685802645
+    }
+  ],
+  "metadata_sha256": {
+    "normalization.json": "11358ea66bc749e9c17ebc1a63533d215942bf83c5478023ff84deabc10d1eb6",
+    "manifest.json": "a56e12a7eec176d9dc259d94eaffd2bb752c8131dc246a877797538a9672863c"
+  },
+  "camera_keys": [
+    "observations/image_head",
+    "observations/image_wrist_right"
+  ],
+  "state_key": "observations/state",
+  "mode": "delta",
+  "ft_history": {
+    "key": "observations/ft_history",
+    "history_length": 50,
+    "input_dim": 6,
+    "normalization": "raw physical measurements",
+    "resampling": {
+      "method": "causal_fir_decimate",
+      "num_taps": 21,
+      "cutoff_ratio": 0.4,
+      "rate_basis": "nominal; per-sample timestamps unavailable",
+      "source_hz": 500,
+      "target_hz": 500,
+      "source_length": 50
+    }
+  },
+  "instructions_sha256": "72734bf11efcc228ab256e8e63b219faf72d3accf47da2a5344180769f607543"
+}

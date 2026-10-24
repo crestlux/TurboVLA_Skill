@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "command": "USE_TF=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 /home/jack/miniforge3/envs/turbovla-libero/bin/python -m pytest -q tests",
+  "result": "123 passed, 2 warnings in 9.91s",
+  "target_roundtrip": {
+    "faflow_delta_target_check": {
+      "position_mm": 2.094958290399518e-05,
+      "rotation_deg": 9.50549201661488e-06,
+      "gripper_absolute_error": 1.1920928955078125e-07
+    },
+    "faflow_relative_target_check": {
+      "position_mm": 2.433800182188861e-05,
+      "rotation_deg": 9.535899152979255e-06,
+      "gripper_absolute_error": 1.1920928955078125e-07
+    },
+    "original_delta_target_check": {
+      "position_mm": 6.400548045348842e-06,
+      "rotation_deg": 2.180515146221751e-08,
+      "gripper_absolute_error": 1.1920928955078125e-07
+    },
+    "original_relative_target_check": {
+      "position_mm": 5.06978394696489e-05,
+      "rotation_deg": 2.3681158722865803e-07,
+      "gripper_absolute_error": 1.1920928955078125e-07
+    }
+  }
+}

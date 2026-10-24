@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-24T08:07:35.558928+00:00",
+  "root": "/data/crestlux/default_sfm",
+  "selection": "Nine named tasks, p1 through p5; test and usb_insert excluded",
+  "task_count": 1,
+  "folder_count": 1,
+  "demo_count": 10,
+  "file_count": 12,
+  "total_bytes": 10590967933,
+  "suffix_counts": {
+    ".pkl": 10,
+    ".json": 2
+  },
+  "excluded_top_level_entries": [
+    "audio_jack_p1",
+    "audio_jack_p2",
+    "audio_jack_p3",
+    "audio_jack_p4",
+    "audio_jack_p5",
+    "barlatch_p1",
+    "barlatch_p2",
+    "barlatch_p3",
+    "barlatch_p4",
+    "barlatch_p5",
+    "bnc_p1",
+    "bnc_p2",
+    "bnc_p3",
+    "bnc_p4",
+    "bnc_p5",
+    "hdmi_p1",
+    "hdmi_p2",
+    "hdmi_p4",
+    "hdmi_p5",
+    "knob_p1"
+  ],
+  "hash_algorithm": "sha256",
+  "folders": [
+    {
+      "folder": "hdmi_p3",
+      "task": "hdmi",
+      "position": 3,
+      "demo_count": 10,
+      "file_count": 12,
+      "total_bytes": 10590967933
+    }
+  ],
+  "files": [
+    {
+      "path": "hdmi_p3/2026-10-21/1_demos_2026-10-21_20-05-43_333673.pkl",
+      "bytes": 1198139454,
+      "mtime_ns": 1792580746959948500,
+      "sha256": "11dc84da59556d36dfec06efec6273df9a8c7fb5ab48653fa93a778ce5192315"
+    },
+    {
+      "path": "hdmi_p3/2026-10-21/1_demos_2026-10-21_20-07-08_003417.pkl",
+      "bytes": 1046523403,
+      "mtime_ns": 1792580831511689200,
+      "sha256": "a85963be5ba0565c86b13a72163e1d11d3e27702a4a7660496e605a479c614a7"
+    },
+    {
+      "path": "hdmi_p3/2026-10-21/1_demos_2026-10-21_20-07-45_546964.pkl",
+      "bytes": 954074388,
+      "mtime_ns": 1792580868525894000,
+      "sha256": "7bc2715b145c66cbbd21d394d38c4b49ff4ea7ac8fe33111ab9d736ca471d770"
+    },
+    {
+      "path": "hdmi_p3/2026-10-21/1_demos_2026-10-21_20-08-25_807894.pkl",
+      "bytes": 1072408920,
+      "mtime_ns": 1792580909177032300,
+      "sha256": "36931e8a7fe5b2cd6e60c14e9c33c75d78a7d59b17dcd116c2808c160933082b"
+    },
+    {
+      "path": "hdmi_p3/2026-10-21/1_demos_2026-10-21_20-09-03_529204.pkl",
+      "bytes": 965168151,
+      "mtime_ns": 1792580946466475400,
+      "sha256": "09184e636ba873d3b163d1e1e09a7ebfea8795b7448ce19aeea5ed3c065b68fe"
+    },
+    {
+      "path": "hdmi_p3/2026-10-21/1_demos_2026-10-21_20-09-41_303814.pkl",
+      "bytes": 968866202,
+      "mtime_ns": 1792580984294357900,
+      "sha256": "c58abc2987463cd863f6b15aada0587d783294aa76e6533b7e02b3b70afda5c5"
+    },
+    {
+      "path": "hdmi_p3/2026-10-21/1_demos_2026-10-21_20-10-22_787734.pkl",
+      "bytes": 1109388700,
+      "mtime_ns": 1792581026328316200,
+      "sha256": "3de7f75605a7388a5bcb9a4b169b90cd021ba5f22f4567764aec9add41442a70"
+    },
+    {
+      "path": "hdmi_p3/2026-10-21/1_demos_2026-10-21_20-13-01_542558.pkl",
+      "bytes": 1046523353,
+      "mtime_ns": 1792581184828989600,
+      "sha256": "b7fec3bc57548638c1256e1e23d5189e5655b34eeac5d41a97cfe58d43c6ccaa"
+    },
+    {
+      "path": "hdmi_p3/2026-10-21/1_demos_2026-10-21_20-14-21_532239.pkl",
+      "bytes": 1020637596,
+      "mtime_ns": 1792581264607993600,
+      "sha256": "4125d3668702a023fabe8241883f99a814c126302236c651e1857232072b8c2a"
+    },
+    {
+      "path": "hdmi_p3/2026-10-21/1_demos_2026-10-21_20-16-30_049171.pkl",
+      "bytes": 1209232530,
+      "mtime_ns": 1792581393852232900,
+      "sha256": "bde02a00ab340a995a6851a2100bf8b5b65699df83614da9ef6b347393be90c2"
+    },
+    {
+      "path": "hdmi_p3/2026-10-21/env_config_2026-10-21_20-02-51_326818.json",
+      "bytes": 2618,
+      "mtime_ns": 1792580571327170200,
+      "sha256": "41c537b55b73be7af7e31d3904b18e9330b83cd351809ab938551769c3c57bb5"
+    },
+    {
+      "path": "hdmi_p3/2026-10-21/env_config_2026-10-21_20-16-57_927888.json",
+      "bytes": 2618,
+      "mtime_ns": 1792581417928726800,
+      "sha256": "41c537b55b73be7af7e31d3904b18e9330b83cd351809ab938551769c3c57bb5"
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "errors": [],
+    "comparison": "exact relative file set, sizes, SHA-256",
+    "reference_root": "/media/csilab/robot_data/default_sfm",
+    "reference_created_at_utc": "2026-10-24T08:07:35.556241+00:00"
+  }
+}

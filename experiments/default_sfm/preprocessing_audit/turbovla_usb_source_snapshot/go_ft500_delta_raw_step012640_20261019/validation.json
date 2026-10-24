@@ -1,0 +1,103 @@
+{
+  "preprocess_module": "/home/csilab/share_projects/clean_share/team_codes/turbovla/go_ft500_delta_raw_step012640_20261019/runtime/preprocess/convert.py",
+  "checkpoint_step": 12640,
+  "weights": "raw",
+  "robot_constructed": false,
+  "image_pixel_errors": {
+    "image_wrist_right": 0,
+    "image_head": 0
+  },
+  "observation_max_abs_error": {
+    "state": 0,
+    "ft_history": 0,
+    "state_history": 0
+  },
+  "ground_truth_inverse_max_abs_error": 1.734723475976807e-18,
+  "recorded_queries": 12,
+  "full_resolution_image_recipe_passed": true,
+  "ft_zero_ablation_normalized_l1": 0.004481227602809668,
+  "rpc": {
+    "host": "115.145.172.56",
+    "port": 45587,
+    "health": {
+      "ok": true,
+      "protocol": "clean-share-policy-v2",
+      "transport": "http-npz",
+      "bundle_id": "325c2fef7854f8917d06506f5194102f615582365432fb1e0c616a4621168de9",
+      "observations": "preprocessed",
+      "actions": "normalized",
+      "action_shape": [
+        50,
+        7
+      ],
+      "action_contract": {
+        "mode": "delta",
+        "interpreter_mode": "delta",
+        "length": 50,
+        "sides": [
+          "right"
+        ],
+        "source_format": "absolute",
+        "action_period_s": 0.1,
+        "declared_formats": [
+          "absolute_tcp_xyz_rpy_gripper"
+        ],
+        "rotation_unit": "rad",
+        "translation_unit": "m",
+        "rotation_representation": "rotvec",
+        "pose_reference": "observations/state at each timestep",
+        "relative_action_frame_yaw_deg": 0.0,
+        "relative_gripper_action_mode": "absolute",
+        "padding": "zero_after_normalization",
+        "padding_mask": "action_mask",
+        "gripper": "original command, no relabeling"
+      },
+      "simulation_only": false,
+      "model": {
+        "model": "TurboVLA (DINOv3 + ACT)",
+        "checkpoint": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/ft_500hz/delta/checkpoint_012640.pt",
+        "step": 12640,
+        "weights": "raw",
+        "action_mode": "delta",
+        "action_shape": [
+          50,
+          7
+        ],
+        "precision": "bfloat16",
+        "device": "cuda",
+        "camera_order": [
+          "image_head",
+          "image_wrist_right"
+        ],
+        "uses_language": true,
+        "uses_ft_history": true,
+        "gripper_relabel": null,
+        "default_instruction": "Insert the USB connector into the USB port.",
+        "action_period_s": 0.1,
+        "ft_history_resampling": {
+          "method": "causal_fir_decimate",
+          "num_taps": 21,
+          "cutoff_ratio": 0.4,
+          "rate_basis": "nominal; per-sample timestamps unavailable",
+          "source_hz": 500,
+          "target_hz": 500,
+          "source_length": 50
+        },
+        "output_units": "normalized symlog_minmax; client performs inverse exactly once",
+        "bundle_id": "325c2fef7854f8917d06506f5194102f615582365432fb1e0c616a4621168de9"
+      }
+    },
+    "requests": 13,
+    "action_shape": [
+      50,
+      7
+    ],
+    "latency_s": {
+      "mean": 0.07017644809093326,
+      "p50": 0.06766054360195994,
+      "p95": 0.08130730000557376,
+      "maximum": 0.09467550599947572
+    }
+  },
+  "passed": true
+}

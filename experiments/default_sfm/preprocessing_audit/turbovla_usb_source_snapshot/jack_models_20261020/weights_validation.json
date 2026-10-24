@@ -1,0 +1,217 @@
+{
+  "server_started": false,
+  "robot_constructed": false,
+  "device": "cpu",
+  "precision": "float32",
+  "models": {
+    "jack_original_delta_no_ft_history": {
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_delta_no_ft_history/delta/checkpoint_010720.pt",
+      "step": 10720,
+      "weights": {
+        "raw": {
+          "shape": [
+            50,
+            7
+          ],
+          "finite": true,
+          "transport_roundtrip": true,
+          "inverse_roundtrip": true
+        },
+        "ema": {
+          "shape": [
+            50,
+            7
+          ],
+          "finite": true,
+          "transport_roundtrip": true,
+          "inverse_roundtrip": true
+        }
+      },
+      "passed": true
+    },
+    "jack_original_delta_gru500hz": {
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_delta_gru500hz/delta/checkpoint_010720.pt",
+      "step": 10720,
+      "weights": {
+        "raw": {
+          "shape": [
+            50,
+            7
+          ],
+          "finite": true,
+          "transport_roundtrip": true,
+          "inverse_roundtrip": true,
+          "ft_zero_change_l1": 0.002201469847932458
+        },
+        "ema": {
+          "shape": [
+            50,
+            7
+          ],
+          "finite": true,
+          "transport_roundtrip": true,
+          "inverse_roundtrip": true,
+          "ft_zero_change_l1": 0.0023405153769999743
+        }
+      },
+      "passed": true
+    },
+    "jack_original_relative_no_ft_history": {
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_relative_no_ft_history/relative/checkpoint_010720.pt",
+      "step": 10720,
+      "weights": {
+        "raw": {
+          "shape": [
+            50,
+            7
+          ],
+          "finite": true,
+          "transport_roundtrip": true,
+          "inverse_roundtrip": true
+        },
+        "ema": {
+          "shape": [
+            50,
+            7
+          ],
+          "finite": true,
+          "transport_roundtrip": true,
+          "inverse_roundtrip": true
+        }
+      },
+      "passed": true
+    },
+    "jack_original_relative_gru500hz": {
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_relative_gru500hz/relative/checkpoint_010720.pt",
+      "step": 10720,
+      "weights": {
+        "raw": {
+          "shape": [
+            50,
+            7
+          ],
+          "finite": true,
+          "transport_roundtrip": true,
+          "inverse_roundtrip": true,
+          "ft_zero_change_l1": 0.020799575373530388
+        },
+        "ema": {
+          "shape": [
+            50,
+            7
+          ],
+          "finite": true,
+          "transport_roundtrip": true,
+          "inverse_roundtrip": true,
+          "ft_zero_change_l1": 0.02110276184976101
+        }
+      },
+      "passed": true
+    },
+    "jack_faflow_delta_no_ft_history": {
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_delta_no_ft_history/delta/checkpoint_010400.pt",
+      "step": 10400,
+      "weights": {
+        "raw": {
+          "shape": [
+            5,
+            7
+          ],
+          "finite": true,
+          "transport_roundtrip": true,
+          "inverse_roundtrip": true
+        },
+        "ema": {
+          "shape": [
+            5,
+            7
+          ],
+          "finite": true,
+          "transport_roundtrip": true,
+          "inverse_roundtrip": true
+        }
+      },
+      "passed": true
+    },
+    "jack_faflow_delta_gru500hz": {
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_delta_gru500hz/delta/checkpoint_010400.pt",
+      "step": 10400,
+      "weights": {
+        "raw": {
+          "shape": [
+            5,
+            7
+          ],
+          "finite": true,
+          "transport_roundtrip": true,
+          "inverse_roundtrip": true,
+          "ft_zero_change_l1": 0.002961699618026614
+        },
+        "ema": {
+          "shape": [
+            5,
+            7
+          ],
+          "finite": true,
+          "transport_roundtrip": true,
+          "inverse_roundtrip": true,
+          "ft_zero_change_l1": 0.0030228286050260067
+        }
+      },
+      "passed": true
+    },
+    "jack_faflow_relative_no_ft_history": {
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_relative_no_ft_history/relative/checkpoint_010400.pt",
+      "step": 10400,
+      "weights": {
+        "raw": {
+          "shape": [
+            5,
+            7
+          ],
+          "finite": true,
+          "transport_roundtrip": true,
+          "inverse_roundtrip": true
+        },
+        "ema": {
+          "shape": [
+            5,
+            7
+          ],
+          "finite": true,
+          "transport_roundtrip": true,
+          "inverse_roundtrip": true
+        }
+      },
+      "passed": true
+    },
+    "jack_faflow_relative_gru500hz": {
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_relative_gru500hz/relative/checkpoint_010400.pt",
+      "step": 10400,
+      "weights": {
+        "raw": {
+          "shape": [
+            5,
+            7
+          ],
+          "finite": true,
+          "transport_roundtrip": true,
+          "inverse_roundtrip": true,
+          "ft_zero_change_l1": 0.0015916477423161268
+        },
+        "ema": {
+          "shape": [
+            5,
+            7
+          ],
+          "finite": true,
+          "transport_roundtrip": true,
+          "inverse_roundtrip": true,
+          "ft_zero_change_l1": 0.0014625272015109658
+        }
+      },
+      "passed": true
+    }
+  },
+  "passed": true
+}

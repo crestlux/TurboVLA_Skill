@@ -1,0 +1,12 @@
+{
+  "model": "TurboVLA",
+  "checkpoint": "/data/jack/turbovla_ff_usb_v2_runs/ff_usb_v2_turbovla_image_state_20261015_145439_c2f41c/delta/checkpoint_010016.pt",
+  "step": 10016,
+  "checkpoint_sha256": "8017754cf5871c5cd4beff3ead0e328aa3d99a47e645982e7962f769ab9e3587",
+  "bundle_id": "267433680c90fd1469e2911099d0218c20441b4ac50fbeefeb20d69026a57f89",
+  "action_shape": [
+    50,
+    7
+  ],
+  "gripper_relabel": null
+}

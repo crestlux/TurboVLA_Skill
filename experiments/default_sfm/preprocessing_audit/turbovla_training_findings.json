@@ -1,0 +1,217 @@
+{
+  "checked_at_utc": "2026-10-24T09:54:29.548107+00:00",
+  "host": "tako@115.145.172.56",
+  "remote_access": "read_only",
+  "source_root": "/home/jack/TurboVLA",
+  "snapshot": "turbovla_training_source_snapshot/manifest.json",
+  "saved_training_configs": [
+    {
+      "run": "runs/go/ft_500hz_delta",
+      "config": "runs/go/ft_500hz_delta/config.json",
+      "data_image_size": 224,
+      "model_image_size": 224,
+      "state_dim": 19,
+      "horizon": 50,
+      "ft_history": {
+        "enabled": true,
+        "history_length": 50,
+        "input_dim": 6,
+        "hidden_dim": 128,
+        "num_layers": 1,
+        "std_floor": 0.01
+      },
+      "status": "completed",
+      "step": 12640
+    },
+    {
+      "run": "runs/go/ft_500hz_relative",
+      "config": "runs/go/ft_500hz_relative/config.json",
+      "data_image_size": 224,
+      "model_image_size": 224,
+      "state_dim": 19,
+      "horizon": 50,
+      "ft_history": {
+        "enabled": true,
+        "history_length": 50,
+        "input_dim": 6,
+        "hidden_dim": 128,
+        "num_layers": 1,
+        "std_floor": 0.01
+      },
+      "status": "completed",
+      "step": 12640
+    },
+    {
+      "run": "runs/jack/faflow_delta_gru500hz",
+      "config": "runs/jack/faflow_delta_gru500hz/config.json",
+      "data_image_size": 224,
+      "model_image_size": 224,
+      "state_dim": 19,
+      "horizon": 5,
+      "ft_history": {
+        "enabled": true,
+        "history_length": 50,
+        "input_dim": 6,
+        "hidden_dim": 128,
+        "num_layers": 1,
+        "std_floor": 0.01
+      },
+      "status": "completed",
+      "step": 10400
+    },
+    {
+      "run": "runs/jack/faflow_delta_no_ft_history",
+      "config": "runs/jack/faflow_delta_no_ft_history/config.json",
+      "data_image_size": 224,
+      "model_image_size": 224,
+      "state_dim": 19,
+      "horizon": 5,
+      "ft_history": null,
+      "status": "completed",
+      "step": 10400
+    },
+    {
+      "run": "runs/jack/faflow_relative_gru500hz",
+      "config": "runs/jack/faflow_relative_gru500hz/config.json",
+      "data_image_size": 224,
+      "model_image_size": 224,
+      "state_dim": 19,
+      "horizon": 5,
+      "ft_history": {
+        "enabled": true,
+        "history_length": 50,
+        "input_dim": 6,
+        "hidden_dim": 128,
+        "num_layers": 1,
+        "std_floor": 0.01
+      },
+      "status": "completed",
+      "step": 10400
+    },
+    {
+      "run": "runs/jack/faflow_relative_no_ft_history",
+      "config": "runs/jack/faflow_relative_no_ft_history/config.json",
+      "data_image_size": 224,
+      "model_image_size": 224,
+      "state_dim": 19,
+      "horizon": 5,
+      "ft_history": null,
+      "status": "completed",
+      "step": 10400
+    },
+    {
+      "run": "runs/jack/original_delta_gru500hz",
+      "config": "runs/jack/original_delta_gru500hz/config.json",
+      "data_image_size": 224,
+      "model_image_size": 224,
+      "state_dim": 19,
+      "horizon": 50,
+      "ft_history": {
+        "enabled": true,
+        "history_length": 50,
+        "input_dim": 6,
+        "hidden_dim": 128,
+        "num_layers": 1,
+        "std_floor": 0.01
+      },
+      "status": "completed",
+      "step": 10720
+    },
+    {
+      "run": "runs/jack/original_delta_no_ft_history",
+      "config": "runs/jack/original_delta_no_ft_history/config.json",
+      "data_image_size": 224,
+      "model_image_size": 224,
+      "state_dim": 19,
+      "horizon": 50,
+      "ft_history": null,
+      "status": "completed",
+      "step": 10720
+    },
+    {
+      "run": "runs/jack/original_relative_gru500hz",
+      "config": "runs/jack/original_relative_gru500hz/config.json",
+      "data_image_size": 224,
+      "model_image_size": 224,
+      "state_dim": 19,
+      "horizon": 50,
+      "ft_history": {
+        "enabled": true,
+        "history_length": 50,
+        "input_dim": 6,
+        "hidden_dim": 128,
+        "num_layers": 1,
+        "std_floor": 0.01
+      },
+      "status": "completed",
+      "step": 10720
+    },
+    {
+      "run": "runs/jack/original_relative_no_ft_history",
+      "config": "runs/jack/original_relative_no_ft_history/config.json",
+      "data_image_size": 224,
+      "model_image_size": 224,
+      "state_dim": 19,
+      "horizon": 50,
+      "ft_history": null,
+      "status": "completed",
+      "step": 10720
+    }
+  ],
+  "all_checked_training_image_sizes": [
+    224,
+    224
+  ],
+  "checked_training_config_count": 10,
+  "historical_sources_match_current": true,
+  "gru": {
+    "source": "training_snapshot/jack/turbovla/models/action_head.py",
+    "class": "FTHistoryEncoder",
+    "input_shape": [
+      "B",
+      50,
+      6
+    ],
+    "pre_gru_input_projection": false,
+    "normalization": "per-channel training mean/std; scale clamped to std_floor=0.01 inside model",
+    "recurrent_module": "torch.nn.GRU",
+    "hidden_dim": 128,
+    "num_layers": 1,
+    "bidirectional": false,
+    "pooling": "last hidden only",
+    "reset": "fresh implicit zero h0 for every control window",
+    "projection": "Linear(128,256), LayerNorm(256)",
+    "output_shape": [
+      "B",
+      1,
+      256
+    ],
+    "fusion": "append one FT token alongside vision-language and state tokens in ACT decoder memory",
+    "zero_ft_windows": "retain as valid samples, not padding"
+  },
+  "faflow_comparison": {
+    "source": "/home/crestlux/project/faflow_final/utils/networks.py:173",
+    "same_as_turbovla": false,
+    "input": "Dense(6,128) then swish",
+    "hidden_dim": 128,
+    "pooling": "concatenate last hidden and temporal mean",
+    "output": "Dense(256,128)",
+    "normalization": "applied before the encoder"
+  },
+  "flat_history_baseline": {
+    "already_present_in_checked_usb_recipes": false,
+    "historical_no_ft_history": "19D state includes instantaneous six-axis FT, but no 50x6 history",
+    "new_user_requested": "remove six instantaneous FT state fields, flatten the entire 50x6 history and append 300 values to retained state"
+  },
+  "new_training_contract": {
+    "gru_reference_confirmed": "existing TurboVLA USB",
+    "image_size_confirmed": [
+      224,
+      224
+    ],
+    "historical_normalization_statistics_reused": false,
+    "historical_gru_implementation_imported_into_active_model": false,
+    "training_preprocessing_applied": false,
+    "training_started": false
+  }
+}

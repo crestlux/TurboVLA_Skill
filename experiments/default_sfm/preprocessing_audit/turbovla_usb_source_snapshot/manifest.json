@@ -1,0 +1,24 @@
+{
+  "model": "TurboVLA",
+  "checkpoint": "/data/jack/turbovla_ff_usb_v2_runs/ff_usb_v2_delta_gripper_latched_20261015_174955_25bb84/pauses/step007000_20261015/checkpoint_007000.pt",
+  "step": 7000,
+  "checkpoint_sha256": "288b33df6f4545e90032ac5c7f68c79f2ce01e3520f46be193a7ef4165f06b02",
+  "bundle_id": "6197498b3faf90273150ba3ceccb914d941bbbf4e67f885a1623482a43afbcbb",
+  "action_shape": [
+    50,
+    7
+  ],
+  "gripper_relabel": {
+    "method": "latched_command",
+    "close_threshold": -0.05,
+    "open_threshold": 0.05,
+    "initial_pose_threshold": 0.5
+  },
+  "model_source_matches_training_snapshot": true,
+  "server_source_sha256": {
+    "turbovla/deployment/clean_share_rpc.py": "929b1e229d43383a12d266af38c77a131218905a134c1bf9e071c37b9c3d3cb7",
+    "turbovla/deployment/real_robot.py": "5cffd4ac910dcb6502bb71729f477a27f56f737a3babb0f6641067c3db6da5c3",
+    "scripts/real_robot/serve.py": "3d5844591af44a4d171b9854972b3f44bc7fa681036bafd80c0fdd9384f1d0d3",
+    "scripts/real_robot/serve_ff_usb_v2_latched.sh": "a3eccc16e20a39312bfb2596a28fed59010e508749255fec838fda00b2983fb9"
+  }
+}

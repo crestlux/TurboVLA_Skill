@@ -1,0 +1,133 @@
+{
+  "root": "/media/csilab/robot_data/default_sfm",
+  "created_at_utc": "2026-10-24T08:50:50.337685+00:00",
+  "hash_algorithm": "sha256",
+  "files": [
+    {
+      "path": "usb_p3/2026-10-21/1_demos_2026-10-21_17-56-15_179832.pkl",
+      "bytes": 1024334798,
+      "mtime_ns": 1792572978433329700,
+      "mode": 511,
+      "sha256": "cf1173c1c22e9eddcb172a5f4905e762fc43be1d538cff4d14f5e492644b54c8"
+    },
+    {
+      "path": "usb_p3/2026-10-21/1_demos_2026-10-21_17-56-58_209369.pkl",
+      "bytes": 1124179664,
+      "mtime_ns": 1792573021930442600,
+      "mode": 511,
+      "sha256": "3526573f9d4fe1183e64b929a8542f26233fa5167eb537d44b9bf8e852490356"
+    },
+    {
+      "path": "usb_p3/2026-10-21/1_demos_2026-10-21_17-59-26_202891.pkl",
+      "bytes": 994751127,
+      "mtime_ns": 1792573169391233600,
+      "mode": 511,
+      "sha256": "10e6661a123841979da833b4a186c7dadcae21e7f687f83894d7dffb7ad85935"
+    },
+    {
+      "path": "usb_p3/2026-10-21/1_demos_2026-10-21_18-00-05_159883.pkl",
+      "bytes": 979959365,
+      "mtime_ns": 1792573208582769400,
+      "mode": 511,
+      "sha256": "7c1d6efad9ea73f311711483bd5a1de30763fb0f047178b62525f35d0f30a99f"
+    },
+    {
+      "path": "usb_p3/2026-10-21/1_demos_2026-10-21_18-00-45_456589.pkl",
+      "bytes": 1028032791,
+      "mtime_ns": 1792573248925045700,
+      "mode": 511,
+      "sha256": "564832ecb16376f10b839ffc058af7876b0140a2e85a60e5234839f5d467172f"
+    },
+    {
+      "path": "usb_p3/2026-10-21/1_demos_2026-10-21_18-01-26_802431.pkl",
+      "bytes": 1061314406,
+      "mtime_ns": 1792573290262565700,
+      "mode": 511,
+      "sha256": "f2c296d71441ec8866d0aae5b5c29c60d32497b33445d202de9a2b56ae279dc7"
+    },
+    {
+      "path": "usb_p3/2026-10-21/1_demos_2026-10-21_18-04-45_055196.pkl",
+      "bytes": 1224025221,
+      "mtime_ns": 1792573489565800000,
+      "mode": 511,
+      "sha256": "d22d2a89a9df6c9d9df8e5a84c3dbdb8b069bc5a986b568ae75358eae247fb40"
+    },
+    {
+      "path": "usb_p3/2026-10-21/1_demos_2026-10-21_19-06-43_712626.pkl",
+      "bytes": 1076107071,
+      "mtime_ns": 1792577207504515700,
+      "mode": 511,
+      "sha256": "7aad96caad48592e83ac34e33eccf89514b89e07d3891c290c24b9f6ba3dbe84"
+    },
+    {
+      "path": "usb_p3/2026-10-21/1_demos_2026-10-21_19-07-24_269552.pkl",
+      "bytes": 1020637696,
+      "mtime_ns": 1792577247709984900,
+      "mode": 511,
+      "sha256": "8eefc19071c8df46ba7039ceff123f90d0c03f02b3ba698c20738d604f445c6b"
+    },
+    {
+      "path": "usb_p3/2026-10-21/1_demos_2026-10-21_19-08-09_586281.pkl",
+      "bytes": 1201837715,
+      "mtime_ns": 1792577293513030500,
+      "mode": 511,
+      "sha256": "0578cb0dad19f1b4afd641928323640aaab433269bc5777ae3602e76ad79a91a"
+    },
+    {
+      "path": "usb_p3/2026-10-21/env_config_2026-10-21_17-49-55_561995.json",
+      "bytes": 2617,
+      "mtime_ns": 1792572595580786700,
+      "mode": 511,
+      "sha256": "a2140b7c7547cf6cdddee07867b212f52f6f228d680c10b4e2eac4d0dca35f75"
+    },
+    {
+      "path": "usb_p3/2026-10-21/env_config_2026-10-21_17-50-03_640517.json",
+      "bytes": 2617,
+      "mtime_ns": 1792572603640795800,
+      "mode": 511,
+      "sha256": "a2140b7c7547cf6cdddee07867b212f52f6f228d680c10b4e2eac4d0dca35f75"
+    },
+    {
+      "path": "usb_p3/2026-10-21/env_config_2026-10-21_17-50-20_247075.json",
+      "bytes": 2617,
+      "mtime_ns": 1792572620247802300,
+      "mode": 511,
+      "sha256": "a2140b7c7547cf6cdddee07867b212f52f6f228d680c10b4e2eac4d0dca35f75"
+    },
+    {
+      "path": "usb_p3/2026-10-21/env_config_2026-10-21_17-50-45_526159.json",
+      "bytes": 2617,
+      "mtime_ns": 1792572645526455400,
+      "mode": 511,
+      "sha256": "a2140b7c7547cf6cdddee07867b212f52f6f228d680c10b4e2eac4d0dca35f75"
+    },
+    {
+      "path": "usb_p3/2026-10-21/env_config_2026-10-21_17-53-24_653389.json",
+      "bytes": 2617,
+      "mtime_ns": 1792572804654144200,
+      "mode": 511,
+      "sha256": "a2140b7c7547cf6cdddee07867b212f52f6f228d680c10b4e2eac4d0dca35f75"
+    },
+    {
+      "path": "usb_p3/2026-10-21/env_config_2026-10-21_18-08-15_801848.json",
+      "bytes": 2617,
+      "mtime_ns": 1792573695802351700,
+      "mode": 511,
+      "sha256": "a2140b7c7547cf6cdddee07867b212f52f6f228d680c10b4e2eac4d0dca35f75"
+    },
+    {
+      "path": "usb_p3/2026-10-21/env_config_2026-10-21_18-11-20_277996.json",
+      "bytes": 2617,
+      "mtime_ns": 1792573880278654400,
+      "mode": 511,
+      "sha256": "a2140b7c7547cf6cdddee07867b212f52f6f228d680c10b4e2eac4d0dca35f75"
+    },
+    {
+      "path": "usb_p3/2026-10-21/env_config_2026-10-21_19-05-41_564472.json",
+      "bytes": 2617,
+      "mtime_ns": 1792577141564764300,
+      "mode": 511,
+      "sha256": "a2140b7c7547cf6cdddee07867b212f52f6f228d680c10b4e2eac4d0dca35f75"
+    }
+  ]
+}

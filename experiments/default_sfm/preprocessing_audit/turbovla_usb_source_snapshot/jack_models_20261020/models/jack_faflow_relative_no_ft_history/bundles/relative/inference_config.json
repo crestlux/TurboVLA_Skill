@@ -1,0 +1,249 @@
+{
+  "version": 1,
+  "observations": [
+    {
+      "source": "state",
+      "target": "state",
+      "type": "state",
+      "keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        {
+          "key": "right/tcp_pose",
+          "components": {
+            "x": true,
+            "y": true,
+            "z": true,
+            "roll": true,
+            "pitch": true,
+            "yaw": true
+          }
+        },
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ]
+    },
+    {
+      "source": "wrist_cam_d405_a",
+      "target": "image_wrist_right",
+      "type": "image",
+      "input_color": "rgb",
+      "pre_crop_resize": [
+        480,
+        640
+      ],
+      "pre_crop_interpolation": "linear",
+      "crop": [
+        72,
+        122,
+        336,
+        448
+      ],
+      "resize": [
+        224,
+        224
+      ],
+      "resize_mode": "letterbox",
+      "interpolation": "area"
+    },
+    {
+      "source": "head_cam_d455",
+      "target": "image_head",
+      "type": "image",
+      "input_color": "rgb",
+      "pre_crop_resize": [
+        480,
+        640
+      ],
+      "pre_crop_interpolation": "linear",
+      "crop": [
+        96,
+        128,
+        288,
+        384
+      ],
+      "resize": [
+        224,
+        224
+      ],
+      "resize_mode": "letterbox",
+      "interpolation": "area"
+    },
+    {
+      "source": "right_force_history",
+      "target": "ft_history",
+      "type": "array",
+      "sample_ndim": 2
+    }
+  ],
+  "collection_config": {
+    "robot": {
+      "is_sim": false,
+      "backend": "plaif",
+      "plaif": {
+        "platform": "monkey",
+        "task": "sku",
+        "wait_for_data": true,
+        "state_timeout": 10.0,
+        "velocity_filter_alpha": 0.25,
+        "follow_period": 0.1
+      },
+      "gripper": {
+        "right": {
+          "type": "dhgripper",
+          "port": "/dev/dh_gripper_right"
+        }
+      }
+    },
+    "train": {
+      "arm_type": "right",
+      "hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "server_rotation_unit": "rad",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "wrappers": {
+        "serlobs": {
+          "obs_horizon": 1
+        },
+        "keyboard": {
+          "enable": true,
+          "save_episodes": true,
+          "keys": {
+            "success": "ctrl_r",
+            "failure": "f9",
+            "skip": "f10",
+            "save_and_quit": "f12",
+            "toggle_rotation_lock": "caps_lock"
+          },
+          "env_name": "default_sfm",
+          "task_name": "usb_insert"
+        }
+      },
+      "policy_arm": "right",
+      "policy_action_period_s": 0.1
+    },
+    "env": {
+      "right": {
+        "robot_prefix": "right",
+        "reset_pose": [
+          0.295,
+          -0.264,
+          0.161,
+          -3.141592,
+          0.0,
+          3.141592
+        ],
+        "reset_pose_max": [
+          0.32,
+          -0.224,
+          0.163,
+          -3.141592,
+          0.0,
+          3.141592
+        ],
+        "xyz_clip_low": [
+          0.15,
+          -0.8,
+          0.0,
+          -1.6,
+          -1.6,
+          -1.6
+        ],
+        "xyz_clip_high": [
+          0.65,
+          0.2,
+          0.286,
+          1.6,
+          1.6,
+          1.6
+        ],
+        "spacemouse_action_scale": [
+          0.05,
+          0.05,
+          0.05,
+          0.0,
+          0.0,
+          0.1
+        ],
+        "spacemouse_symlog_temperature": 20.0,
+        "max_episode_length": 15000,
+        "display_image": false,
+        "gripper_control": {
+          "mode": "binary",
+          "teleop_backend": "toggle"
+        }
+      }
+    },
+    "cameras": {
+      "wrist_cam_d405_a": {
+        "type": "realsense",
+        "params": {
+          "serial_number": "260322274715",
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30,
+          "exposure": 7000
+        }
+      },
+      "head_cam_d455": {
+        "type": "realsense",
+        "params": {
+          "serial_number": "213522254901",
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30,
+          "exposure": 18
+        }
+      }
+    },
+    "_source_path": "/home/csilab/share_projects/clean_share/Real_Robo/configs/default_sfm.json"
+  },
+  "actions": {
+    "mode": "relative",
+    "interpreter_mode": "relative_tcp",
+    "length": 5,
+    "sides": [
+      "right"
+    ],
+    "source_format": "absolute",
+    "action_period_s": 0.1,
+    "declared_formats": [
+      "absolute_tcp_xyz_rpy_gripper"
+    ],
+    "rotation_unit": "rad",
+    "translation_unit": "m",
+    "rotation_representation": "rotvec",
+    "pose_reference": "observations/state at each timestep",
+    "relative_action_frame_yaw_deg": 0.0,
+    "relative_gripper_action_mode": "absolute",
+    "padding": "zero_after_normalization",
+    "padding_mask": "action_mask",
+    "gripper": "held desired state: -1 closed, +1 open; receipt target preferred",
+    "gripper_relabel": {
+      "method": "latched_command",
+      "close_threshold": -0.5,
+      "open_threshold": 0.5,
+      "closed": -1,
+      "open": 1,
+      "temporal_shift": 0,
+      "source_labels": "FAFLOW held receipt targets"
+    }
+  },
+  "normalization_file": "normalization.json",
+  "action_period_s": 0.1,
+  "jack_source_image_resize": [
+    224,
+    224
+  ]
+}

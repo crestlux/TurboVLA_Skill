@@ -1,0 +1,84 @@
+{
+  "root": "/media/csilab/robot_data/default_sfm",
+  "created_at_utc": "2026-10-24T08:45:02.268203+00:00",
+  "hash_algorithm": "sha256",
+  "files": [
+    {
+      "path": "rotary_switch_p3/2026-10-22/1_demos_2026-10-22_16-54-58_680374.pkl",
+      "bytes": 1028033268,
+      "mtime_ns": 1792655701388648600,
+      "mode": 511,
+      "sha256": "64cd6f3b822b4bb2f558da967653cad874755577756048167ed44ec3eeb896e1"
+    },
+    {
+      "path": "rotary_switch_p3/2026-10-22/1_demos_2026-10-22_16-55-42_160014.pkl",
+      "bytes": 1009543463,
+      "mtime_ns": 1792655744793789000,
+      "mode": 511,
+      "sha256": "79ef533658ee49c345b3573fdb09b92564e18f2ef178628ce9d77fafcfb1a831"
+    },
+    {
+      "path": "rotary_switch_p3/2026-10-22/1_demos_2026-10-22_16-56-27_235891.pkl",
+      "bytes": 1039127101,
+      "mtime_ns": 1792655790081638900,
+      "mode": 511,
+      "sha256": "2aaaed4cc2db310f77b6cb4723d6c6528734cd6ed823cbbd14dea43667ef5efd"
+    },
+    {
+      "path": "rotary_switch_p3/2026-10-22/1_demos_2026-10-22_16-57-11_817374.pkl",
+      "bytes": 1035429160,
+      "mtime_ns": 1792655834778783700,
+      "mode": 511,
+      "sha256": "80f121b4d6617a9ca6d250f0b1bddba29b48afee80222e70809d9c94f1d413dd"
+    },
+    {
+      "path": "rotary_switch_p3/2026-10-22/1_demos_2026-10-22_16-58-35_836017.pkl",
+      "bytes": 1028033208,
+      "mtime_ns": 1792655918740092900,
+      "mode": 511,
+      "sha256": "492595d28a66876506d86cd3e06be57f8941dd21582d2f15b38a1ec8c297acad"
+    },
+    {
+      "path": "rotary_switch_p3/2026-10-22/1_demos_2026-10-22_16-59-20_183950.pkl",
+      "bytes": 1028033258,
+      "mtime_ns": 1792655962989360600,
+      "mode": 511,
+      "sha256": "d6fc47d6272eda5c9460f71b08788d29ddf05ca83ea9c2f4c9ea10a64f8cbb81"
+    },
+    {
+      "path": "rotary_switch_p3/2026-10-22/1_demos_2026-10-22_17-00-05_001680.pkl",
+      "bytes": 1039127161,
+      "mtime_ns": 1792656007778756800,
+      "mode": 511,
+      "sha256": "a78c856e6047da526a6d688888d5ccd9586e02da480db86b5f6a572e468746d1"
+    },
+    {
+      "path": "rotary_switch_p3/2026-10-22/1_demos_2026-10-22_17-00-50_138603.pkl",
+      "bytes": 1046522933,
+      "mtime_ns": 1792656052987347800,
+      "mode": 511,
+      "sha256": "2c2e1f2756cd14dac96a7b6ef8ac152d07eeb22dccc9303a1a26a7e52b1d3db5"
+    },
+    {
+      "path": "rotary_switch_p3/2026-10-22/1_demos_2026-10-22_17-01-36_193648.pkl",
+      "bytes": 1057616936,
+      "mtime_ns": 1792656099147098600,
+      "mode": 511,
+      "sha256": "a824454e9dd2ffef66740cbd854989f9857b59944428e1474fd93fac32a1ea16"
+    },
+    {
+      "path": "rotary_switch_p3/2026-10-22/1_demos_2026-10-22_17-02-39_019346.pkl",
+      "bytes": 1172253757,
+      "mtime_ns": 1792656162276483200,
+      "mode": 511,
+      "sha256": "44303776efc4aa06d3c3913b834043c65216f8c17c8d83289a5547215bf09410"
+    },
+    {
+      "path": "rotary_switch_p3/2026-10-22/env_config_2026-10-22_16-49-29_298856.json",
+      "bytes": 2627,
+      "mtime_ns": 1792655369299148200,
+      "mode": 511,
+      "sha256": "d6cf07f33e0e7a5a625ec5aaaa92f866b33e52e928949c53122f3c23f6aefb09"
+    }
+  ]
+}

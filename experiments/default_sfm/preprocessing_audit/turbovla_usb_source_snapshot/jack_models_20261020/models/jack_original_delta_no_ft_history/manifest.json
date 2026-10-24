@@ -1,0 +1,25 @@
+{
+  "description": "Jack 기존 / delta / FT history 미사용",
+  "ready": true,
+  "training_status": "completed",
+  "step": 10720,
+  "target_steps": 10720,
+  "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_delta_no_ft_history/delta/checkpoint_010720.pt",
+  "checkpoint_sha256": "2490f48300cb110296582d3ea537668c1e8b8a3a5918e7b48b1cbc32aa443ea5",
+  "mode": "delta",
+  "dataset": "original",
+  "weights_available": [
+    "raw",
+    "ema"
+  ],
+  "bundle": "models/jack_original_delta_no_ft_history/bundles/delta",
+  "bundle_id": "72e2fffa080801d159f3c154626a7590584fc22c610bbc06a5a0f395b70d9e8d",
+  "client_config": "models/jack_original_delta_no_ft_history/client_configs/ff_usb.json",
+  "uses_ft_history": false,
+  "action_shape": [
+    50,
+    7
+  ],
+  "request_steps": 4,
+  "source_dataset": "/data/jack/jack_exp_demo_preprocessed/delta"
+}

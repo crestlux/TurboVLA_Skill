@@ -1,0 +1,91 @@
+{
+  "source_demo": "/data/crestlux/default_sfm/audio_jack_p1/2026-10-19/1_demos_2026-10-19_17-40-21_330892.pkl",
+  "camera": "head_cam_d455",
+  "pose_reference_frame": "cell base frame",
+  "state_indices_zero_based": {
+    "tcp_x": 4,
+    "tcp_y": 5,
+    "tcp_z": 6
+  },
+  "positive_directions_in_these_head_camera_images": {
+    "x": "Toward the front edge of the worktable; downward, with perspective-dependent lateral motion",
+    "y": "Toward image right"
+  },
+  "direction_evidence": "Measured state changes paired with actual fixed-camera observations; no camera calibration or pixel-to-meter transform was fitted",
+  "source_code_evidence": {
+    "base_frame": "source_snapshot/rb_env/envs/plaif_node.py:3-7",
+    "xyz_callback": "source_snapshot/rb_env/envs/plaif_node.py:281-300",
+    "xyz_preserved_by_orientation_conversion": "source_snapshot/rb_env/envs/wrappers.py:114-121",
+    "state_flattening": "source_snapshot/rb_env/envs/serl_obs_wrappers.py:63-68"
+  },
+  "position_unit": "meter (ROS Pose convention; no scale conversion in the observed state path)",
+  "unit_reference": "https://raw.githubusercontent.com/ros-infrastructure/rep/master/rep-0103.rst",
+  "figures": [
+    {
+      "axis": "x",
+      "frames": [
+        {
+          "frame": 30,
+          "xyz_m": [
+            0.2969893515110016,
+            -0.19741426408290863,
+            0.21911117434501648
+          ],
+          "image": "audio_jack_p1_f030_head_cam_d455.png",
+          "image_sha256": "91230c0787fa3c01d58817a90f42535033a89d89e3631af29e0493892dd65be7"
+        },
+        {
+          "frame": 60,
+          "xyz_m": [
+            0.42414143681526184,
+            -0.19829873740673065,
+            0.21839340031147003
+          ],
+          "image": "audio_jack_p1_f060_head_cam_d455.png",
+          "image_sha256": "cc32451c25934e352a180f263257a03910d4233a4762e2c1994c22108f872628"
+        }
+      ],
+      "delta_xyz_mm": [
+        127.15208530426025,
+        -0.8844733238220215,
+        -0.7177740335464478
+      ],
+      "figure": "x_direction.png"
+    },
+    {
+      "axis": "y",
+      "frames": [
+        {
+          "frame": 14,
+          "xyz_m": [
+            0.29689323902130127,
+            -0.2632339298725128,
+            0.2207888662815094
+          ],
+          "image": "audio_jack_p1_f014_head_cam_d455.png",
+          "image_sha256": "583025b7ce1f5743f84e86b84db8d3e3214144b4e723bcc24b802693cee92a9b"
+        },
+        {
+          "frame": 30,
+          "xyz_m": [
+            0.2969893515110016,
+            -0.19741426408290863,
+            0.21911117434501648
+          ],
+          "image": "audio_jack_p1_f030_head_cam_d455.png",
+          "image_sha256": "91230c0787fa3c01d58817a90f42535033a89d89e3631af29e0493892dd65be7"
+        }
+      ],
+      "delta_xyz_mm": [
+        0.09611248970031738,
+        65.81966578960419,
+        -1.67769193649292
+      ],
+      "figure": "y_direction.png"
+    }
+  ],
+  "raw_demo_modified": false,
+  "training_preprocessing_applied": false,
+  "training_started": false,
+  "source_demo_sha256": "3c5c910865708c00a15a44a2cad43120a71595f9fd9bd01f6249ded73501658b"
+}

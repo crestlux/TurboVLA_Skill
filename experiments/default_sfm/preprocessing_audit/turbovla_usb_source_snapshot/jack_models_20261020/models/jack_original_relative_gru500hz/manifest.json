@@ -1,0 +1,25 @@
+{
+  "description": "Jack 기존 / relative / GRU 500Hz",
+  "ready": true,
+  "training_status": "completed",
+  "step": 10720,
+  "target_steps": 10720,
+  "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_relative_gru500hz/relative/checkpoint_010720.pt",
+  "checkpoint_sha256": "bb6d8a8f9e8dcd89d43e4be2f9ec1bf2006353b598ae93240e01329876d407b0",
+  "mode": "relative",
+  "dataset": "original",
+  "weights_available": [
+    "raw",
+    "ema"
+  ],
+  "bundle": "models/jack_original_relative_gru500hz/bundles/relative",
+  "bundle_id": "b12c55f15a650a798dead33765f8cb9aef3d094ba89bba8ff26957c165359bba",
+  "client_config": "models/jack_original_relative_gru500hz/client_configs/ff_usb.json",
+  "uses_ft_history": true,
+  "action_shape": [
+    50,
+    7
+  ],
+  "request_steps": 4,
+  "source_dataset": "/data/jack/jack_exp_demo_preprocessed/relative"
+}

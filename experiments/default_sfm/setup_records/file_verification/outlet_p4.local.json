@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-24T08:39:29.782677+00:00",
+  "root": "/data/crestlux/default_sfm",
+  "selection": "Nine named tasks, p1 through p5; test and usb_insert excluded",
+  "task_count": 1,
+  "folder_count": 1,
+  "demo_count": 10,
+  "file_count": 11,
+  "total_bytes": 12480616029,
+  "suffix_counts": {
+    ".pkl": 10,
+    ".json": 1
+  },
+  "excluded_top_level_entries": [
+    "audio_jack_p1",
+    "audio_jack_p2",
+    "audio_jack_p3",
+    "audio_jack_p4",
+    "audio_jack_p5",
+    "barlatch_p1",
+    "barlatch_p2",
+    "barlatch_p3",
+    "barlatch_p4",
+    "barlatch_p5",
+    "bnc_p1",
+    "bnc_p2",
+    "bnc_p3",
+    "bnc_p4",
+    "bnc_p5",
+    "hdmi_p1",
+    "hdmi_p2",
+    "hdmi_p3",
+    "hdmi_p4",
+    "hdmi_p5",
+    "knob_p1",
+    "knob_p2",
+    "knob_p3",
+    "knob_p4",
+    "knob_p5",
+    "lan_p1",
+    "lan_p2",
+    "lan_p3",
+    "lan_p4",
+    "lan_p5",
+    "outlet_p1",
+    "outlet_p2",
+    "outlet_p3",
+    "outlet_p5",
+    "rotary_switch_p1",
+    "rotary_switch_p2",
+    "rotary_switch_p3",
+    "rotary_switch_p4"
+  ],
+  "hash_algorithm": "sha256",
+  "folders": [
+    {
+      "folder": "outlet_p4",
+      "task": "outlet",
+      "position": 4,
+      "demo_count": 10,
+      "file_count": 11,
+      "total_bytes": 12480616029
+    }
+  ],
+  "files": [
+    {
+      "path": "outlet_p4/2026-10-22/1_demos_2026-10-22_18-19-47_596166.pkl",
+      "bytes": 1183347013,
+      "mtime_ns": 1792660791029433300,
+      "sha256": "d1fa3ae62cf62e7f6f0957fe17de18879f2141716cf34c112c7525c9ba8b45db"
+    },
+    {
+      "path": "outlet_p4/2026-10-22/1_demos_2026-10-22_18-21-16_788934.pkl",
+      "bytes": 1235118432,
+      "mtime_ns": 1792660880626881600,
+      "sha256": "5b400cd508759aa04f2f85e6d52dbe73fcacc9cbc5807000255724b9a9348665"
+    },
+    {
+      "path": "outlet_p4/2026-10-22/1_demos_2026-10-22_18-23-30_355463.pkl",
+      "bytes": 1246212278,
+      "mtime_ns": 1792661014212150500,
+      "sha256": "a53231dae2c9c1b77224727d6053d129f0bb614824349ec1075b9deb8b0bd23b"
+    },
+    {
+      "path": "outlet_p4/2026-10-22/1_demos_2026-10-22_18-25-02_410967.pkl",
+      "bytes": 1209232705,
+      "mtime_ns": 1792661106096827500,
+      "sha256": "8673ce30d569d99142fbf2ccef7648941d0c11ef5ad8cefe186a36970be03bda"
+    },
+    {
+      "path": "outlet_p4/2026-10-22/1_demos_2026-10-22_18-25-48_137412.pkl",
+      "bytes": 1168555153,
+      "mtime_ns": 1792661151682394000,
+      "sha256": "cfcb173bfa1cb068e69b09a5114e547db2e4ac222bbb79a99f47995637f6d50b"
+    },
+    {
+      "path": "outlet_p4/2026-10-22/1_demos_2026-10-22_18-27-26_345219.pkl",
+      "bytes": 1338661179,
+      "mtime_ns": 1792661250519028700,
+      "sha256": "6309787b71b96da633795d05eb74c73ed0d11ab28116e502161fb95857ee9ab1"
+    },
+    {
+      "path": "outlet_p4/2026-10-22/1_demos_2026-10-22_18-29-45_822012.pkl",
+      "bytes": 1268400900,
+      "mtime_ns": 1792661389842092000,
+      "sha256": "70bc5949da70e1b3be77d5916d9d4461374d48bf52034675c82ec02a35bb31e0"
+    },
+    {
+      "path": "outlet_p4/2026-10-22/1_demos_2026-10-22_18-30-36_891908.pkl",
+      "bytes": 1338661228,
+      "mtime_ns": 1792661440907354000,
+      "sha256": "29d70e6aa715e44611d5dde4f87ffeccb6ed3e9ba0de6277570a7e8e703610bb"
+    },
+    {
+      "path": "outlet_p4/2026-10-22/1_demos_2026-10-22_18-31-25_973754.pkl",
+      "bytes": 1275795914,
+      "mtime_ns": 1792661489845694200,
+      "sha256": "fe1e79e41e8785be40841c20e1e4bdd049e692249e31e42c444f1639927e22a7"
+    },
+    {
+      "path": "outlet_p4/2026-10-22/1_demos_2026-10-22_18-32-13_408687.pkl",
+      "bytes": 1216628607,
+      "mtime_ns": 1792661537122540900,
+      "sha256": "8d416009a67993a247c351cc48147a338ad41cb44f6aea6da253117e64c3e197"
+    },
+    {
+      "path": "outlet_p4/2026-10-22/env_config_2026-10-22_18-19-05_983552.json",
+      "bytes": 2620,
+      "mtime_ns": 1792660745983894300,
+      "sha256": "4e3f6b6dca7b700fbb346a87bc2d944ca74900aeba060e538e8c458635dd30ab"
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "errors": [],
+    "comparison": "exact relative file set, sizes, SHA-256",
+    "reference_root": "/media/csilab/robot_data/default_sfm",
+    "reference_created_at_utc": "2026-10-24T08:39:29.779253+00:00"
+  }
+}

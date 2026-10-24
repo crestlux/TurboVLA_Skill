@@ -1,0 +1,511 @@
+{
+  "status": "verified",
+  "source_host": "csilab",
+  "source_root": "/media/csilab/robot_data/default_sfm",
+  "destination": "/data/crestlux/default_sfm",
+  "total_bytes": 529275940616,
+  "started_at_utc": "2026-10-24T07:19:08.874998+00:00",
+  "folders": {
+    "audio_jack_p2": {
+      "status": "verified",
+      "total_bytes": 11851972509,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T07:18:39.300359+00:00"
+      },
+      "reused_verified_folder": true
+    },
+    "audio_jack_p5": {
+      "status": "verified",
+      "total_bytes": 10106534077,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T07:24:41.923989+00:00"
+      }
+    },
+    "audio_jack_p1": {
+      "status": "verified",
+      "total_bytes": 11962737806,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T07:11:48.377021+00:00"
+      },
+      "reused_verified_folder": true
+    },
+    "audio_jack_p3": {
+      "status": "verified",
+      "total_bytes": 10775857385,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T07:17:11.242336+00:00"
+      },
+      "reused_verified_folder": true
+    },
+    "barlatch_p1": {
+      "status": "verified",
+      "total_bytes": 14240646661,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T07:31:00.792286+00:00"
+      }
+    },
+    "audio_jack_p4": {
+      "status": "verified",
+      "total_bytes": 9496364588,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T07:15:58.778575+00:00"
+      },
+      "reused_verified_folder": true
+    },
+    "barlatch_p2": {
+      "status": "verified",
+      "total_bytes": 12791069043,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T07:27:58.300241+00:00"
+      }
+    },
+    "barlatch_p3": {
+      "status": "verified",
+      "total_bytes": 12284630724,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T07:27:04.863360+00:00"
+      }
+    },
+    "barlatch_p4": {
+      "status": "verified",
+      "total_bytes": 9951216753,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T07:30:55.298442+00:00"
+      }
+    },
+    "barlatch_p5": {
+      "status": "verified",
+      "total_bytes": 12983545443,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T07:35:19.097480+00:00"
+      }
+    },
+    "bnc_p1": {
+      "status": "verified",
+      "total_bytes": 14473621893,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T07:37:32.586733+00:00"
+      }
+    },
+    "bnc_p2": {
+      "status": "verified",
+      "total_bytes": 16082210248,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T07:40:03.298099+00:00"
+      }
+    },
+    "bnc_p3": {
+      "status": "verified",
+      "total_bytes": 18600744897,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T07:41:51.501351+00:00"
+      }
+    },
+    "bnc_p4": {
+      "status": "verified",
+      "total_bytes": 13442094282,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T07:46:22.652906+00:00"
+      }
+    },
+    "bnc_p5": {
+      "status": "verified",
+      "total_bytes": 17299064042,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T07:52:34.677644+00:00"
+      }
+    },
+    "hdmi_p1": {
+      "status": "verified",
+      "total_bytes": 12365809598,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:00:02.528558+00:00"
+      }
+    },
+    "hdmi_p2": {
+      "status": "verified",
+      "total_bytes": 10712841067,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T07:57:49.275838+00:00"
+      }
+    },
+    "hdmi_p3": {
+      "status": "verified",
+      "total_bytes": 10590967933,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:07:35.556241+00:00"
+      }
+    },
+    "hdmi_p4": {
+      "status": "verified",
+      "total_bytes": 11482167263,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:11:54.700664+00:00"
+      }
+    },
+    "hdmi_p5": {
+      "status": "verified",
+      "total_bytes": 11715145726,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:13:04.869358+00:00"
+      }
+    },
+    "knob_p1": {
+      "status": "verified",
+      "total_bytes": 14588252663,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:18:26.481144+00:00"
+      }
+    },
+    "knob_p2": {
+      "status": "verified",
+      "total_bytes": 12192179925,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:16:13.583379+00:00"
+      }
+    },
+    "knob_p3": {
+      "status": "verified",
+      "total_bytes": 11031030561,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:19:17.662342+00:00"
+      }
+    },
+    "knob_p4": {
+      "status": "verified",
+      "total_bytes": 10846129407,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:19:36.592561+00:00"
+      }
+    },
+    "knob_p5": {
+      "status": "verified",
+      "total_bytes": 9966009531,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:22:32.676783+00:00"
+      }
+    },
+    "lan_p1": {
+      "status": "verified",
+      "total_bytes": 12927886929,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:28:51.460594+00:00"
+      }
+    },
+    "lan_p2": {
+      "status": "verified",
+      "total_bytes": 11219461923,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:25:23.702842+00:00"
+      }
+    },
+    "lan_p3": {
+      "status": "verified",
+      "total_bytes": 9966011421,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:25:07.176579+00:00"
+      }
+    },
+    "lan_p4": {
+      "status": "verified",
+      "total_bytes": 10346897400,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:27:51.031372+00:00"
+      }
+    },
+    "lan_p5": {
+      "status": "verified",
+      "total_bytes": 11116070530,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:31:07.334771+00:00"
+      }
+    },
+    "outlet_p1": {
+      "status": "verified",
+      "total_bytes": 12169824349,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:32:12.064811+00:00"
+      }
+    },
+    "outlet_p2": {
+      "status": "verified",
+      "total_bytes": 11374934323,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:34:09.696839+00:00"
+      }
+    },
+    "outlet_p3": {
+      "status": "verified",
+      "total_bytes": 10365384227,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:34:59.559088+00:00"
+      }
+    },
+    "outlet_p4": {
+      "status": "verified",
+      "total_bytes": 12480616029,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:39:29.779253+00:00"
+      }
+    },
+    "outlet_p5": {
+      "status": "verified",
+      "total_bytes": 10076949539,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:38:01.607200+00:00"
+      }
+    },
+    "rotary_switch_p1": {
+      "status": "verified",
+      "total_bytes": 8505193119,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:39:22.926755+00:00"
+      }
+    },
+    "rotary_switch_p2": {
+      "status": "verified",
+      "total_bytes": 11341649154,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:41:54.856356+00:00"
+      }
+    },
+    "rotary_switch_p3": {
+      "status": "verified",
+      "total_bytes": 10483722872,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:45:02.268203+00:00"
+      }
+    },
+    "rotary_switch_p4": {
+      "status": "verified",
+      "total_bytes": 9200530624,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:44:56.507499+00:00"
+      }
+    },
+    "rotary_switch_p5": {
+      "status": "verified",
+      "total_bytes": 14070737838,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:48:26.565691+00:00"
+      }
+    },
+    "usb_p1": {
+      "status": "verified",
+      "total_bytes": 10283882910,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:48:49.572220+00:00"
+      }
+    },
+    "usb_p2": {
+      "status": "verified",
+      "total_bytes": 10084346634,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:50:25.405346+00:00"
+      }
+    },
+    "usb_p3": {
+      "status": "verified",
+      "total_bytes": 10735200790,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:50:50.337685+00:00"
+      }
+    },
+    "usb_p4": {
+      "status": "verified",
+      "total_bytes": 10661221212,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:52:35.728544+00:00"
+      }
+    },
+    "usb_p5": {
+      "status": "verified",
+      "total_bytes": 10032574768,
+      "verification": {
+        "status": "verified",
+        "errors": [],
+        "comparison": "exact relative file set, sizes, SHA-256",
+        "reference_root": "/media/csilab/robot_data/default_sfm",
+        "reference_created_at_utc": "2026-10-24T08:52:56.952193+00:00"
+      }
+    }
+  },
+  "updated_at_utc": "2026-10-24T08:52:56.955924+00:00",
+  "finished_at_utc": "2026-10-24T08:52:57.131179+00:00"
+}

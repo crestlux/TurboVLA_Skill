@@ -1,0 +1,73 @@
+{
+  "root": "/media/csilab/robot_data/default_sfm",
+  "created_at_utc": "2026-10-24T07:15:58.778575+00:00",
+  "hash_algorithm": "sha256",
+  "files": [
+    {
+      "path": "audio_jack_p4/2026-10-22/1_demos_2026-10-22_18-11-02_467927.pkl",
+      "bytes": 983657956,
+      "mtime_ns": 1792660265331801300,
+      "sha256": "98ceb76946397aedda4d61b5f2d402e795e23b39f579d14d0279600283b98b8c"
+    },
+    {
+      "path": "audio_jack_p4/2026-10-22/1_demos_2026-10-22_18-11-41_630462.pkl",
+      "bytes": 1028032826,
+      "mtime_ns": 1792660304841705100,
+      "sha256": "1f41e36c029107ca45b6093e99949340a0700154161b1715e57bedeb430d7d48"
+    },
+    {
+      "path": "audio_jack_p4/2026-10-22/1_demos_2026-10-22_18-12-19_855579.pkl",
+      "bytes": 987355267,
+      "mtime_ns": 1792660342930770400,
+      "sha256": "ca33f67075839441fdedc5bef55bb3e4bc447133bbf882c31271ab8b906ad64d"
+    },
+    {
+      "path": "audio_jack_p4/2026-10-22/1_demos_2026-10-22_18-12-55_082307.pkl",
+      "bytes": 880114537,
+      "mtime_ns": 1792660377742551000,
+      "sha256": "fef5e521bbdd86873f3012baf78284bdf735b00f295e1779457103ff012ac544"
+    },
+    {
+      "path": "audio_jack_p4/2026-10-22/1_demos_2026-10-22_18-13-31_464662.pkl",
+      "bytes": 939281849,
+      "mtime_ns": 1792660414448561600,
+      "sha256": "944cb8df5945b55c88212373c96520bcb8155b5d59171c49155a8d5875a13a1f"
+    },
+    {
+      "path": "audio_jack_p4/2026-10-22/1_demos_2026-10-22_18-14-08_582304.pkl",
+      "bytes": 946677750,
+      "mtime_ns": 1792660451419399200,
+      "sha256": "2973c775374f3c09809e48ded16a20ce4e223e5e5d4eb32662417b034f94603a"
+    },
+    {
+      "path": "audio_jack_p4/2026-10-22/1_demos_2026-10-22_18-14-46_032655.pkl",
+      "bytes": 961469631,
+      "mtime_ns": 1792660489033846400,
+      "sha256": "0d6b1584c01e7a53d823eb7b5a7b5535882387de2efc5993f97901623889e077"
+    },
+    {
+      "path": "audio_jack_p4/2026-10-22/1_demos_2026-10-22_18-15-53_408217.pkl",
+      "bytes": 920792078,
+      "mtime_ns": 1792660556086619300,
+      "sha256": "004b8f248fdd825c9491b5a78518bbeab619ab1bb398e1e5a9f30d82dadc3f7b"
+    },
+    {
+      "path": "audio_jack_p4/2026-10-22/1_demos_2026-10-22_18-17-06_708795.pkl",
+      "bytes": 968865540,
+      "mtime_ns": 1792660629462564400,
+      "sha256": "f86fbeeb9206f3ca7b7287fca58a9fb6b89c16fba387e3bda85d1cac9c2d7e8c"
+    },
+    {
+      "path": "audio_jack_p4/2026-10-22/1_demos_2026-10-22_18-18-52_355148.pkl",
+      "bytes": 880114530,
+      "mtime_ns": 1792660734931346900,
+      "sha256": "99f51c4e33e9d901bcd7161be571810a4d4dfe966793bdada10b94cd8096ae0e"
+    },
+    {
+      "path": "audio_jack_p4/2026-10-22/env_config_2026-10-22_18-10-12_328428.json",
+      "bytes": 2624,
+      "mtime_ns": 1792660212329227800,
+      "sha256": "7dfa143e9e92bfd1606f76bef5dfc97ac7b8109b02acda4377291a7038701f48"
+    }
+  ]
+}

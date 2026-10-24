@@ -1,0 +1,188 @@
+# Planning record, NOT a runnable training configuration.
+status: awaiting_preprocessing_discussion
+training_started: false
+preprocessing_applied: false
+base_model: TurboVLA
+environment: turbovla-sfm
+dataset:
+  source_host: csilab
+  source_path: /home/csilab/share_projects/clean_share/demos/default_sfm
+  storage_path: /data/crestlux/default_sfm
+  project_link: data/default_sfm
+  excluded_folders: [test, usb_insert]  # Confirmed by the user, 2026-10-24.
+  task_count: 9
+  positions_per_task: 5
+  demos_per_position: 10
+  demo_count: 450
+  tasks: [audio_jack, barlatch, bnc, hdmi, knob, lan, outlet, rotary_switch, usb]
+  split:
+    policy: all_450_train_separate_evaluation  # Confirmed by the user, 2026-10-24.
+    training_demo_count: 450
+    held_out_demo_count: 0
+    evaluation_source: null  # Evaluation is separate; collection/rollout protocol is not yet specified.
+    evaluation_protocol: null
+  instruction_mapping: null
+  frame_selection: null  # Decide whether to trim stationary intervals before fitting common statistics.
+force_torque:
+  sensor_hz: 500  # User-provided sampling frequency; no resampling applied.
+  observed_history_shape: [1, 50, 6]  # Initial sample, not a processed dataset contract.
+  history_samples: 50
+  direct_embedding_input: flattened_full_history  # Confirmed by the user.
+  direct_embedding_dimension: 300
+  history_window_nominal_ms: 100
+  history_order: oldest_to_newest
+  channel_order: [Fx, Fy, Fz, Tx, Ty, Tz]
+  normalization: null
+  gru_implementation: existing_turbovla_usb  # Confirmed by the user, 2026-10-24.
+  gru_hidden_size: 128
+  gru_num_layers: 1
+  gru_bidirectional: false
+  gru_pooling: last_hidden
+  gru_output_dimension: 256
+  gru_output_projection: linear_then_layer_norm
+  gru_reset_policy: zero_each_50_sample_window
+  retain_raw_ft_in_state: false  # Common to all nine conditions.
+  removed_raw_state_indices: [1, 2, 3, 10, 11, 12]
+  gru_state_fusion: separate_act_memory_token
+  adaln_target_modules: act_decoder_layer_norms  # Confirmed by the user.
+  adaln_condition_source: same_gru_output_as_memory_token
+  adaln_retain_gru_memory_token: true
+  adaln_modulation: scale_and_shift
+  adaln_initialization: null
+  existing_turbovla_usb_gru_reference:
+    deployment_host: csilab
+    deployment_package: /home/csilab/share_projects/clean_share/team_codes/turbovla/jack_models_20261020
+    example_model: jack_faflow_delta_gru500hz
+    recorded_source_project: /home/jack/TurboVLA
+    checkpoint_recorded_complete: true
+    training_host: tako@115.145.172.56
+    implementation_source_available_locally: true
+    source_snapshot: experiments/default_sfm/preprocessing_audit/turbovla_training_source_snapshot
+    current_and_training_snapshot_sources_equal: true
+    historical_normalization: per_channel_training_mean_std_inside_model
+    historical_std_floor: 0.01
+    historical_statistics_reused: false
+state:
+  observed_raw_shape: [1, 19]
+  input_source: latest_observations_state
+  conditions:
+    - id: xy_keep
+      removed_position_components: []
+      removed_velocity_components: []
+      retained_raw_indices: [0, 4, 5, 6, 7, 8, 9, 13, 14, 15, 16, 17, 18]
+      dimension_after_ft_removal: 13
+    - id: xy_remove
+      removed_position_components: [x, y]
+      removed_velocity_components: []
+      retained_raw_indices: [0, 6, 7, 8, 9, 13, 14, 15, 16, 17, 18]
+      dimension_after_ft_removal: 11
+    - id: xy_vxy_remove
+      removed_position_components: [x, y]
+      removed_velocity_components: [vx, vy]  # Confirmed; preserve vz, wx, wy, wz.
+      retained_raw_indices: [0, 6, 7, 8, 9, 15, 16, 17, 18]
+      dimension_after_ft_removal: 9
+  representation: tcp_xyz_rpy_with_gripper_and_velocity
+  normalization: null
+  rpy:
+    requested_candidate: per_axis_modulo_2pi
+    final_boundary_policy: csilab_wrap_angles_per_axis  # User requested the existing selectable option.
+    wrap_angles: [roll, yaw]  # Confirmed by the user, 2026-10-24; preserve signed pitch.
+    reference_implementation:
+      host: csilab
+      path: /home/csilab/share_projects/clean_share/preprocess/convert.py
+      function: StateDecoder.selected
+      option: wrap_angles
+      supported_axes: [roll, pitch, yaw]
+      documented_example_axes: [roll, yaw]
+      default_template_enabled: false
+      applied_to: current_and_next_state_observations_and_inference
+      order: component_selection_then_angle_wrap_then_normalization
+      changes_action_generation: false
+    pitch_policy: preserve_original_signed_angle
+    audit_report: experiments/default_sfm/preprocessing_audit/rpy/report.json
+    audited_demos: 450
+    audited_frames: 143127
+    applied: false
+action:
+  observed_raw_dimension: 7
+  observed_info_format: absolute_tcp_xyz_rpy_gripper
+  training_representation: delta  # Confirmed by the user, 2026-10-24.
+  coordinate_frame: robot_base
+  reference_pose: measured_tcp_pose_at_each_action_timestep
+  translation: target_xyz_minus_measured_xyz
+  rotation: rotvec_target_rotation_times_measured_rotation_inverse
+  units: [m, m, m, rad, rad, rad, gripper_command]
+  divide_by_control_period: false
+  state_angle_wrapping_changes_action_generation: false
+  chunk_length: 5  # Confirmed by the user.
+  observed_control_period_s: 0.1
+  nominal_chunk_coverage_s: 0.5
+  execution_horizon: null
+  gripper_label_rule: held_command_target  # Confirmed by the user.
+  gripper_target_source: infos.command_receipts.right.gripper_target_percent
+  gripper_closed_label: -1
+  gripper_open_label: 1
+  gripper_zero_command_behavior: retain_last_command_target
+  gripper_initial_target: open  # All 450 demos start with observed gripper opening 1.0.
+  normalization: null
+vision:
+  observed_views: [head_cam_d455, wrist_cam_d405_a]
+  observed_shape_per_view: [1, 480, 640, 3]
+  processing_order: crop_native_original_then_resize
+  legacy_usb_crop_reference_tlhw:
+    head_cam_d455: [96, 128, 288, 384]
+    wrist_cam_d405_a: [72, 122, 336, 448]
+  crop_boxes_confirmed: true  # Existing USB crop bounds confirmed by the user.
+  crop_tlhw:
+    head_cam_d455: [96, 128, 288, 384]
+    wrist_cam_d405_a: [72, 122, 336, 448]
+  final_image_size: [224, 224]  # Confirmed by the user, 2026-10-24.
+  existing_turbovla_libero_training_image_size: [256, 256]  # Benchmark path, not USB training.
+  existing_turbovla_usb_bundle_image_size: [224, 224]  # Verified csilab deployment bundles for trained USB models.
+  existing_turbovla_usb_training_image_size: [224, 224]  # Verified saved model/data configs for 10 completed runs.
+  legacy_faflow_usb_image_size: [224, 224]
+  resize_mode: letterbox
+  interpolation: area
+  pad_value: 0
+  legacy_crop_content_size_hw: [168, 224]  # Recompute if crop aspect ratio changes.
+  legacy_crop_padding_tblr: [28, 28, 0, 0]
+  augmentation: null
+initialization:
+  available_vision_backbone: pretrained/backbones/dinov3-vitb16
+  available_text_backbone: pretrained/backbones/bert-base-uncased
+  policy_checkpoint: null
+  freeze_train_policy: null
+variants:
+  - id: ft_state_xy_keep
+    ft_method: state_embedding
+    remove_state_xy: false
+  - id: ft_state_xy_remove
+    ft_method: state_embedding
+    remove_state_xy: true
+  - id: ft_state_xy_vxy_remove
+    ft_method: state_embedding
+    remove_state_xy: true
+    remove_linear_velocity_xy: true
+  - id: ft_gru_xy_keep
+    ft_method: gru_embedding
+    remove_state_xy: false
+  - id: ft_gru_xy_remove
+    ft_method: gru_embedding
+    remove_state_xy: true
+  - id: ft_gru_xy_vxy_remove
+    ft_method: gru_embedding
+    remove_state_xy: true
+    remove_linear_velocity_xy: true
+  - id: ft_gru_adaln_xy_keep
+    ft_method: gru_embedding_adaln
+    remove_state_xy: false
+  - id: ft_gru_adaln_xy_remove
+    ft_method: gru_embedding_adaln
+    remove_state_xy: true
+  - id: ft_gru_adaln_xy_vxy_remove
+    ft_method: gru_embedding_adaln
+    remove_state_xy: true
+    remove_linear_velocity_xy: true
+logging:
+  future_training_wandb_mode: online
+  setup_created_wandb_run: false

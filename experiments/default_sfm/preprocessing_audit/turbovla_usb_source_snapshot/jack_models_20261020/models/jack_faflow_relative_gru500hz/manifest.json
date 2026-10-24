@@ -1,0 +1,25 @@
+{
+  "description": "Jack FAFLOW / relative / GRU 500Hz",
+  "ready": true,
+  "training_status": "completed",
+  "step": 10400,
+  "target_steps": 10400,
+  "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_relative_gru500hz/relative/checkpoint_010400.pt",
+  "checkpoint_sha256": "562f0dcbbd0830940ba12868a05d31a498c41ba0adbdb6050ff3fc129ebd4f09",
+  "mode": "relative",
+  "dataset": "faflow",
+  "weights_available": [
+    "raw",
+    "ema"
+  ],
+  "bundle": "models/jack_faflow_relative_gru500hz/bundles/relative",
+  "bundle_id": "80f82ed379a5f511870d858693bc9f50031d753ade2c48e202f3e7a9808b2d68",
+  "client_config": "models/jack_faflow_relative_gru500hz/client_configs/ff_usb.json",
+  "uses_ft_history": true,
+  "action_shape": [
+    5,
+    7
+  ],
+  "request_steps": 4,
+  "source_dataset": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/relative"
+}

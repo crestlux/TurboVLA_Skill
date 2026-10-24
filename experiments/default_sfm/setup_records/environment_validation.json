@@ -1,0 +1,66 @@
+{
+  "created_at_utc": "2026-10-24T06:59:36.969084+00:00",
+  "python": "3.10.22",
+  "executable": "/home/crestlux/miniforge3/envs/turbovla-sfm/bin/python",
+  "training_started": false,
+  "optimizer_steps": 0,
+  "packages": {
+    "torch": "2.6.0+cu124",
+    "torchvision": "0.21.0+cu124",
+    "transformers": "4.57.6",
+    "timm": "1.0.28",
+    "numpy": "1.26.4",
+    "h5py": "3.16.0",
+    "opencv-python-headless": "4.11.0.86",
+    "scipy": "1.15.3",
+    "imageio": "2.38.0",
+    "imageio-ffmpeg": "0.6.0",
+    "PyYAML": "6.0.3",
+    "wandb": "0.31.0"
+  },
+  "excluded_packages_absent": [
+    "libero",
+    "robosuite",
+    "mujoco",
+    "sapien",
+    "tensorflow",
+    "tensorflow-datasets",
+    "deepspeed"
+  ],
+  "cuda_runtime": "12.4",
+  "gpus": [
+    {
+      "index": 0,
+      "name": "NVIDIA GeForce RTX 3090",
+      "bf16_matmul": "passed",
+      "gru_forward": "passed"
+    },
+    {
+      "index": 1,
+      "name": "NVIDIA GeForce RTX 3090",
+      "bf16_matmul": "passed",
+      "gru_forward": "passed"
+    },
+    {
+      "index": 2,
+      "name": "NVIDIA GeForce RTX 3090",
+      "bf16_matmul": "passed",
+      "gru_forward": "passed"
+    }
+  ],
+  "status": "passed",
+  "turbovla_module": "/home/crestlux/project/TurboVLA-Research/turbovla/__init__.py",
+  "model_mode": "eval + inference_mode",
+  "synthetic_forward_shape": [
+    1,
+    2,
+    7
+  ],
+  "synthetic_dimensions_are_not_training_settings": true,
+  "pretrained_action_checkpoint_loaded": false,
+  "wandb": "import verified; no run created; future training must use online mode",
+  "backbones": {
+    "vision": "/data/crestlux/TurboVLA/models/dinov3-vitb16-pretrain-lvd1689m",
+    "text": "/data/crestlux/TurboVLA/models/bert-base-uncased"
+  }
+}

@@ -1,0 +1,302 @@
+{
+  "host": "csilab",
+  "root": "/home/csilab/share_projects/clean_share/team_codes/turbovla",
+  "captured_at_utc": "2026-10-24T09:37:41.050641+00:00",
+  "read_only_remote": true,
+  "files": [
+    {
+      "path": "original/manifest.json",
+      "bytes": 418,
+      "mtime_ns": 1792060382827913495,
+      "sha256": "f166270fddb601aaa47eba884438ee72f4871ffe9d3906793976d77694108160"
+    },
+    {
+      "path": "original/bundles/delta/inference_config.json",
+      "bytes": 5625,
+      "mtime_ns": 1792060382819913070,
+      "sha256": "bf172956ade558dd9cb3ed63e589e5ed116b8fee96b4214ccc7f9b524c54a927"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 1094,
+      "mtime_ns": 1792059995252643018,
+      "sha256": "338962befc232a5f8764f7ab997829ab05231fdb3053a3cd751f6a1fc4ad0fee"
+    },
+    {
+      "path": "bundles/delta/inference_config.json",
+      "bytes": 6262,
+      "mtime_ns": 1792059995244642560,
+      "sha256": "1ca1336498292acdab9357c6abcbe7658bbd965c2a460dafb26b1cd98db8c202"
+    },
+    {
+      "path": "jack_models_20261020/models.json",
+      "bytes": 9168,
+      "mtime_ns": 1792564268050909579,
+      "sha256": "d6fc0c899a7f589c59aabd1cfd827d1d4e762afa694fde1570a1e076c4c7888f"
+    },
+    {
+      "path": "jack_models_20261020/weights_validation.json",
+      "bytes": 5812,
+      "mtime_ns": 1792563959031746170,
+      "sha256": "7ae4207008a40a90e4cc3a1f68c81cdbf74495cc05eeebefbe3bc7acacd1f035"
+    },
+    {
+      "path": "jack_models_20261020/preprocessing_validation.json",
+      "bytes": 3004,
+      "mtime_ns": 1792563959031746170,
+      "sha256": "a3ce01a350046d5721de0386f95cc080151f15c750809eb94e41ac6e5b6f1cec"
+    },
+    {
+      "path": "jack_models_20261020/COMMANDS.md",
+      "bytes": 10434,
+      "mtime_ns": 1792564268013907985,
+      "sha256": "77786e7feccfc20bf52cd285484e1c422d17dfd18ea59bf3528bf4cbd0f6a2fe"
+    },
+    {
+      "path": "jack_models_20261020/runtime/preprocess/convert.py",
+      "bytes": 36908,
+      "mtime_ns": 1792563959030746128,
+      "sha256": "82bb89d16c179a2284403f6bd6c4ef80e1ce2b47f2f075372c6f8e5aa12a8332"
+    },
+    {
+      "path": "jack_models_20261020/runtime/preprocess/inference.py",
+      "bytes": 4779,
+      "mtime_ns": 1792564441759423565,
+      "sha256": "d8f4fc741bfefc957b02301f9dfadb8f9eb0502c81ad7bce25ba4b98621a9ee6"
+    },
+    {
+      "path": "go_models_20261019/models.json",
+      "bytes": 9963,
+      "mtime_ns": 1792393376628391458,
+      "sha256": "ebf090256360251bc57df620fae2e315a5cdafa4e86d8f97f5035fa2f5f23f20"
+    },
+    {
+      "path": "go_models_20261019/SERVER_COMMANDS.md",
+      "bytes": 3158,
+      "mtime_ns": 1792393376626391364,
+      "sha256": "1616661f1329d767f3f497ff78257aac41a71a20f94896e28a7c8874ca08ea4e"
+    },
+    {
+      "path": "go_models_20261019/serve_model.py",
+      "bytes": 2372,
+      "mtime_ns": 1792393376643392168,
+      "sha256": "af9b5f6a304ae18281bea3b36a0567e1223a8b6fbcfa3d67622dae843dc53594"
+    },
+    {
+      "path": "go_ft500_delta_raw_step012640_20261019/manifest.json",
+      "bytes": 2786,
+      "mtime_ns": 1792392554823437753,
+      "sha256": "3acf2c14bcedfe8856604a45e911a772d23c0c8f5f04f4731f672e7255a1118c"
+    },
+    {
+      "path": "go_ft500_delta_raw_step012640_20261019/validation.json",
+      "bytes": 3197,
+      "mtime_ns": 1792392488180699537,
+      "sha256": "eb3763ddfeb29524031945752a9cc5694fb112daa1a131f1d4ec29220d135cc1"
+    },
+    {
+      "path": "go_ft500_delta_raw_step012640_20261019/deployment_validation.json",
+      "bytes": 6157,
+      "mtime_ns": 1792392611187764261,
+      "sha256": "329ecd4602a5f50a592ee9964788ff64126e86a3590974b8dbdd147d386e1396"
+    },
+    {
+      "path": "go_ft500_delta_raw_step012640_20261019/bundles/delta/inference_config.json",
+      "bytes": 5155,
+      "mtime_ns": 1792392401501161382,
+      "sha256": "8190c1a6c9f1ddd8488146329be1b09372f4e44efd6dc0600279569286eca91b"
+    },
+    {
+      "path": "jack_models_20261020/models/jack_original_delta_no_ft_history/bundles/delta/inference_config.json",
+      "bytes": 5674,
+      "mtime_ns": 1792563959028746044,
+      "sha256": "c9c8d3ea87c1d08358bf966198bd89b78918f1b3e0d5021566d304ab03992b3f"
+    },
+    {
+      "path": "jack_models_20261020/models/jack_original_delta_no_ft_history/manifest.json",
+      "bytes": 894,
+      "mtime_ns": 1792564268013907985,
+      "sha256": "16a23a680c0ed7c01469133314fdbc7ee95ee53ab758538075a75f29062546a3"
+    },
+    {
+      "path": "jack_models_20261020/models/jack_original_delta_gru500hz/bundles/delta/inference_config.json",
+      "bytes": 5674,
+      "mtime_ns": 1792563959029746086,
+      "sha256": "c9c8d3ea87c1d08358bf966198bd89b78918f1b3e0d5021566d304ab03992b3f"
+    },
+    {
+      "path": "jack_models_20261020/models/jack_original_delta_gru500hz/manifest.json",
+      "bytes": 867,
+      "mtime_ns": 1792564268013907985,
+      "sha256": "44292c0867dba62d9799b7af4c6b97906013e7b2524954544fea6313927f0288"
+    },
+    {
+      "path": "jack_models_20261020/models/jack_original_relative_no_ft_history/bundles/relative/inference_config.json",
+      "bytes": 5684,
+      "mtime_ns": 1792563959029746086,
+      "sha256": "26a7b3fb135da6d69a96ba91b85f4884b1bebe78bf4bb0f00072d839b30d7f63"
+    },
+    {
+      "path": "jack_models_20261020/models/jack_original_relative_no_ft_history/manifest.json",
+      "bytes": 918,
+      "mtime_ns": 1792564268013907985,
+      "sha256": "6e2a292ad4d5c49ea20184cd7398b440c9f07dac1dc887de26b06e366fc876ce"
+    },
+    {
+      "path": "jack_models_20261020/models/jack_original_relative_gru500hz/bundles/relative/inference_config.json",
+      "bytes": 5684,
+      "mtime_ns": 1792563959029746086,
+      "sha256": "26a7b3fb135da6d69a96ba91b85f4884b1bebe78bf4bb0f00072d839b30d7f63"
+    },
+    {
+      "path": "jack_models_20261020/models/jack_original_relative_gru500hz/manifest.json",
+      "bytes": 891,
+      "mtime_ns": 1792564268013907985,
+      "sha256": "b42299472867a536e3b97b05dcf6c4d4e1fd146b4a49c032dc6adf0cfdd2b7e8"
+    },
+    {
+      "path": "jack_models_20261020/models/jack_faflow_delta_no_ft_history/bundles/delta/inference_config.json",
+      "bytes": 5428,
+      "mtime_ns": 1792563959029746086,
+      "sha256": "3ec374f7acec5ec9e44f815adf0201634d88b5b58d58058f75fa1334aca5ba5f"
+    },
+    {
+      "path": "jack_models_20261020/models/jack_faflow_delta_no_ft_history/manifest.json",
+      "bytes": 938,
+      "mtime_ns": 1792564268013907985,
+      "sha256": "dbb85bb057b0bf09aa77a40416908829e82c0346ce97876b5467096ab253a792"
+    },
+    {
+      "path": "jack_models_20261020/models/jack_faflow_delta_gru500hz/bundles/delta/inference_config.json",
+      "bytes": 5428,
+      "mtime_ns": 1792563959029746086,
+      "sha256": "3ec374f7acec5ec9e44f815adf0201634d88b5b58d58058f75fa1334aca5ba5f"
+    },
+    {
+      "path": "jack_models_20261020/models/jack_faflow_delta_gru500hz/manifest.json",
+      "bytes": 911,
+      "mtime_ns": 1792564268013907985,
+      "sha256": "1408c5b14e8cceecad99164e6ba888af1d3e16f4a7e2801bda267359f334316b"
+    },
+    {
+      "path": "jack_models_20261020/models/jack_faflow_relative_no_ft_history/bundles/relative/inference_config.json",
+      "bytes": 5438,
+      "mtime_ns": 1792563959029746086,
+      "sha256": "05126ff254c6fc2ee713aeb7e0155a89b0f72b3d52547a6aa40730feae1f5022"
+    },
+    {
+      "path": "jack_models_20261020/models/jack_faflow_relative_no_ft_history/manifest.json",
+      "bytes": 962,
+      "mtime_ns": 1792564268013907985,
+      "sha256": "a13948b3e2843d3c1d15c8481fd8864218dddf873c010282bb1b42480b617339"
+    },
+    {
+      "path": "jack_models_20261020/models/jack_faflow_relative_gru500hz/bundles/relative/inference_config.json",
+      "bytes": 5438,
+      "mtime_ns": 1792563959030746128,
+      "sha256": "05126ff254c6fc2ee713aeb7e0155a89b0f72b3d52547a6aa40730feae1f5022"
+    },
+    {
+      "path": "jack_models_20261020/models/jack_faflow_relative_gru500hz/manifest.json",
+      "bytes": 935,
+      "mtime_ns": 1792564268013907985,
+      "sha256": "88a60fe7f52d70897f56a3b706f7a1627a9fe54f2ea336205f39276a2c41201c"
+    },
+    {
+      "path": "go_models_20261019/models/go_latched_delta/bundles/delta/inference_config.json",
+      "bytes": 5737,
+      "mtime_ns": 1792393376627391411,
+      "sha256": "2a977d4c53ef312b8d7926691dd3ff18156a63c12385df405320ba4e30fbca70"
+    },
+    {
+      "path": "go_models_20261019/models/go_latched_delta/manifest.json",
+      "bytes": 1010,
+      "mtime_ns": 1792393376627391411,
+      "sha256": "8c414d61518a67f99f19477829896febbf65ef2acec65c5cce03bcc5bd122730"
+    },
+    {
+      "path": "go_models_20261019/models/go_latched_relative/bundles/relative/inference_config.json",
+      "bytes": 5747,
+      "mtime_ns": 1792393376627391411,
+      "sha256": "0c2d9fe6a222c60b1e58ac5521f5776890da1c81010ac69bb29187d93ecdcbdf"
+    },
+    {
+      "path": "go_models_20261019/models/go_latched_relative/manifest.json",
+      "bytes": 1013,
+      "mtime_ns": 1792393376627391411,
+      "sha256": "ed8d025d46a486a9f2631c208228356e7b1871c19c2a8b0e3a0e1de8c7909ca6"
+    },
+    {
+      "path": "go_models_20261019/models/go_original_delta/bundles/delta/inference_config.json",
+      "bytes": 5155,
+      "mtime_ns": 1792393376627391411,
+      "sha256": "8190c1a6c9f1ddd8488146329be1b09372f4e44efd6dc0600279569286eca91b"
+    },
+    {
+      "path": "go_models_20261019/models/go_original_delta/manifest.json",
+      "bytes": 512,
+      "mtime_ns": 1792393376628391458,
+      "sha256": "2625fa1dee4c4f49b069ee4bdb30266f15fbbfc0b6e1d069b50ce8746f649c4b"
+    },
+    {
+      "path": "go_models_20261019/models/go_original_relative/bundles/relative/inference_config.json",
+      "bytes": 5165,
+      "mtime_ns": 1792393376628391458,
+      "sha256": "9df87ea8a0555d6033ecaaffd8890762907d495e6f147fdaffa87ec64f7abf6e"
+    },
+    {
+      "path": "go_models_20261019/models/go_original_relative/manifest.json",
+      "bytes": 515,
+      "mtime_ns": 1792393376628391458,
+      "sha256": "4251c5947c5731f0d808a71593532a52d34190fe7a76770819f49bf3cbcae311"
+    },
+    {
+      "path": "go_models_20261019/models/go_ft500_delta/bundles/delta/inference_config.json",
+      "bytes": 5155,
+      "mtime_ns": 1792393376627391411,
+      "sha256": "8190c1a6c9f1ddd8488146329be1b09372f4e44efd6dc0600279569286eca91b"
+    },
+    {
+      "path": "go_models_20261019/models/go_ft500_delta/manifest.json",
+      "bytes": 500,
+      "mtime_ns": 1792393376627391411,
+      "sha256": "4db011537782573c915496a73dd486155a3d670b9aca227a9b4d2204a0209f55"
+    },
+    {
+      "path": "go_models_20261019/models/go_ft500_relative/bundles/relative/inference_config.json",
+      "bytes": 5165,
+      "mtime_ns": 1792393376627391411,
+      "sha256": "9df87ea8a0555d6033ecaaffd8890762907d495e6f147fdaffa87ec64f7abf6e"
+    },
+    {
+      "path": "go_models_20261019/models/go_ft500_relative/manifest.json",
+      "bytes": 503,
+      "mtime_ns": 1792393376627391411,
+      "sha256": "e4e33db1887dc7e8c745b1136ad5825306cc9f485d2ea51483f3725434171e9f"
+    },
+    {
+      "path": "go_models_20261019/models/go_ft100_delta/bundles/delta/inference_config.json",
+      "bytes": 5155,
+      "mtime_ns": 1792393376626391364,
+      "sha256": "8190c1a6c9f1ddd8488146329be1b09372f4e44efd6dc0600279569286eca91b"
+    },
+    {
+      "path": "go_models_20261019/models/go_ft100_delta/manifest.json",
+      "bytes": 500,
+      "mtime_ns": 1792393376626391364,
+      "sha256": "a258748b8ac2e11f58da5bdbdab0b78916656805091366c419d9d2579ba6dab2"
+    },
+    {
+      "path": "go_models_20261019/models/go_ft100_relative/bundles/relative/inference_config.json",
+      "bytes": 5165,
+      "mtime_ns": 1792393376626391364,
+      "sha256": "9df87ea8a0555d6033ecaaffd8890762907d495e6f147fdaffa87ec64f7abf6e"
+    },
+    {
+      "path": "go_models_20261019/models/go_ft100_relative/manifest.json",
+      "bytes": 503,
+      "mtime_ns": 1792393376627391411,
+      "sha256": "d0410b49167bace427ae25b7e671ef6458622bf0c792722d194faaeba37099c5"
+    }
+  ]
+}

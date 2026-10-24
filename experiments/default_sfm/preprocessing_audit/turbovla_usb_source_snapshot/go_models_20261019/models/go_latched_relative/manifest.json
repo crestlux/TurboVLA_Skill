@@ -1,0 +1,30 @@
+{
+  "model": "TurboVLA",
+  "checkpoint": "/home/jack/TurboVLA/outputs/go_runs/go_turbovla_color_jitter_20261018_025920/relative/checkpoint_012640.pt",
+  "step": 12640,
+  "checkpoint_sha256": "8ae02f06cbff7a52fb2c23f4b105dbd8737393d658a8c457fb0d907f019a8b0b",
+  "bundle_id": "9a159fd65bdc41f54c98436a21205c08a1435c3906ff5ac8af7af1c1eda9ab3a",
+  "action_shape": [
+    50,
+    7
+  ],
+  "gripper_relabel": {
+    "version": 1,
+    "method": "latched_command",
+    "close_threshold": -0.5,
+    "open_threshold": 0.5,
+    "initial_pose_threshold": 0.5,
+    "source": "source_actions[:, 6] in physical command units",
+    "closed_target": -1.0,
+    "open_target": 1.0,
+    "initial_state": "first retained measured gripper_pose >= initial_pose_threshold means open",
+    "timing": "apply the command at the same timestep; no lookahead",
+    "target_dataset": "gripper_targets",
+    "proprioception": "unchanged measured values"
+  },
+  "training_gripper_relabel": null,
+  "weights_available": [
+    "raw",
+    "ema"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-10-24T10:17:52.794548+00:00",
+  "planning_file": "experiment_plan.yaml",
+  "variant_count": 9,
+  "state_dimensions": [
+    13,
+    11,
+    9
+  ],
+  "flat_input_dimensions": [
+    313,
+    311,
+    309
+  ],
+  "image_size": [
+    224,
+    224
+  ],
+  "crop_bounds_confirmed": true,
+  "action_mode": "delta",
+  "action_horizon": 5,
+  "gripper_label_rule": "held_command_target",
+  "gru_reference": "existing_turbovla_usb",
+  "adaln_keeps_gru_token": true,
+  "source_snapshot_files_verified": 102,
+  "reference_cpu_inference": "passed",
+  "rpy_audit_demos": 450,
+  "rpy_audit_frames": 143127,
+  "optimizer_steps": 0,
+  "training_preprocessing_applied": false,
+  "training_started": false,
+  "active_model_variants_implemented": false,
+  "remaining_preprocessing_decisions": [
+    "Common state/FT/action normalization",
+    "Stationary-interval frame selection",
+    "Task instruction mapping"
+  ],
+  "planning_sha256": "0c0ae0a40c06741a53a1bbadad633b9b7bacea18102c0dcedd79463f03e886d1",
+  "rpy_wrap_angles": [
+    "roll",
+    "yaw"
+  ],
+  "pitch_policy": "preserve_original_signed_angle"
+}

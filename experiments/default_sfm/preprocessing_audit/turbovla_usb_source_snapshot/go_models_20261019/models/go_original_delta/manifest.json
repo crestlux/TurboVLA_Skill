@@ -1,0 +1,17 @@
+{
+  "model": "TurboVLA",
+  "checkpoint": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_runs/go_turbovla_color_jitter_20261018_200449/delta/checkpoint_012640.pt",
+  "step": 12640,
+  "checkpoint_sha256": "e9da7c16379a2d439e4aa4d757c7aaca53b39ff0c99528178e8270164f1657e5",
+  "bundle_id": "325c2fef7854f8917d06506f5194102f615582365432fb1e0c616a4621168de9",
+  "action_shape": [
+    50,
+    7
+  ],
+  "gripper_relabel": null,
+  "training_gripper_relabel": null,
+  "weights_available": [
+    "raw",
+    "ema"
+  ]
+}

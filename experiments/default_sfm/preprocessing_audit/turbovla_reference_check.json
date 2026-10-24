@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "scope": "synthetic CPU inference through exact copied reference definitions; no optimizer, training or raw-demo conversion",
+  "gru_output_shape": [
+    2,
+    1,
+    256
+  ],
+  "dtype": "torch.float32",
+  "fresh_window_repeat_equal": true,
+  "explicit_normalization_and_last_hidden_equal": true,
+  "temporal_reversal_changes_embedding": true,
+  "wrong_history_length_rejected": true,
+  "image_normalization_preserves_224": true,
+  "historical_config_used_only_for_reference_test": true,
+  "active_model_implementation_modified": false,
+  "training_started": false,
+  "training_preprocessing_applied": false
+}

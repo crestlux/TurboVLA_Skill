@@ -1,0 +1,180 @@
+{
+  "files": [
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-17-53_465623_episode_000.hdf5",
+      "size": 105383565,
+      "mtime_ns": 1792420626003158574
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-18-38_581413_episode_000.hdf5",
+      "size": 106758696,
+      "mtime_ns": 1792420626107161695
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-19-14_224691_episode_000.hdf5",
+      "size": 94429147,
+      "mtime_ns": 1792420626203164576
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-19-54_844065_episode_000.hdf5",
+      "size": 88217660,
+      "mtime_ns": 1792420626303167579
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-21-06_522139_episode_000.hdf5",
+      "size": 91612076,
+      "mtime_ns": 1792420626403170580
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-21-42_960677_episode_000.hdf5",
+      "size": 99330968,
+      "mtime_ns": 1792420626503173583
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-22-18_781368_episode_000.hdf5",
+      "size": 95933981,
+      "mtime_ns": 1792420626607176704
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-22-54_752765_episode_000.hdf5",
+      "size": 96168431,
+      "mtime_ns": 1792420626767181506
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-23-35_138704_episode_000.hdf5",
+      "size": 115544038,
+      "mtime_ns": 1792420626891185229
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-24-11_714063_episode_000.hdf5",
+      "size": 97043035,
+      "mtime_ns": 1792420626999188471
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-25-02_752438_episode_000.hdf5",
+      "size": 102602046,
+      "mtime_ns": 1792420627099191469
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-25-38_732443_episode_000.hdf5",
+      "size": 95741577,
+      "mtime_ns": 1792420627203194587
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-26-15_307013_episode_000.hdf5",
+      "size": 99911639,
+      "mtime_ns": 1792420627311197825
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-26-58_882000_episode_000.hdf5",
+      "size": 126592581,
+      "mtime_ns": 1792420627439201662
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-27-37_967547_episode_000.hdf5",
+      "size": 106532929,
+      "mtime_ns": 1792420627543204779
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-28-15_491404_episode_000.hdf5",
+      "size": 101094779,
+      "mtime_ns": 1792420627647207898
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-29-00_126792_episode_000.hdf5",
+      "size": 129287462,
+      "mtime_ns": 1792420627787212095
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-29-38_471069_episode_000.hdf5",
+      "size": 102096231,
+      "mtime_ns": 1792420627895215332
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-30-29_596101_episode_000.hdf5",
+      "size": 126162229,
+      "mtime_ns": 1792420628027219290
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-31-11_517229_episode_000.hdf5",
+      "size": 114393623,
+      "mtime_ns": 1792420628155223122
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-32-38_566105_episode_000.hdf5",
+      "size": 123464447,
+      "mtime_ns": 1792420628275226715
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-33-22_074270_episode_000.hdf5",
+      "size": 125266997,
+      "mtime_ns": 1792420628411230787
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-34-04_393956_episode_000.hdf5",
+      "size": 118418256,
+      "mtime_ns": 1792420628539234620
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-34-48_372183_episode_000.hdf5",
+      "size": 125211770,
+      "mtime_ns": 1792420628671238572
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-35-30_519058_episode_000.hdf5",
+      "size": 118377366,
+      "mtime_ns": 1792420628795242285
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-36-14_949805_episode_000.hdf5",
+      "size": 127178639,
+      "mtime_ns": 1792420628935246477
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-37-00_395538_episode_000.hdf5",
+      "size": 130726056,
+      "mtime_ns": 1792420629071250547
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-37-47_472388_episode_000.hdf5",
+      "size": 136294509,
+      "mtime_ns": 1792420629215254852
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-38-33_549595_episode_000.hdf5",
+      "size": 131156029,
+      "mtime_ns": 1792420629355259038
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/relative/1_demos_2026-10-19_20-41-13_839215_episode_000.hdf5",
+      "size": 113248519,
+      "mtime_ns": 1792420629475262627
+    }
+  ],
+  "metadata_sha256": {
+    "normalization.json": "95ebfab6c87ff403045a58825600912660be9be2f445fd5978cabf374348680c",
+    "manifest.json": "3767ae16a6cd30b37bdde3511009f6d5b140738c8440fced7ca4d6f6a6f02a15"
+  },
+  "camera_keys": [
+    "observations/image_head",
+    "observations/image_wrist_right"
+  ],
+  "state_key": "observations/state",
+  "mode": "relative",
+  "ft_history": {
+    "key": "observations/ft_history",
+    "history_length": 50,
+    "input_dim": 6,
+    "normalization": "raw physical measurements",
+    "resampling": {
+      "method": "causal_fir_decimate",
+      "num_taps": 21,
+      "cutoff_ratio": 0.4,
+      "rate_basis": "nominal; per-sample timestamps unavailable",
+      "source_hz": 500,
+      "target_hz": 500,
+      "source_length": 50
+    }
+  },
+  "instructions_sha256": "014548bf7ae582d7345f123aa4065bdb34db15e47bc05d0f41405e9824174bd1"
+}

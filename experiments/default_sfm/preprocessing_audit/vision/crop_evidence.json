@@ -1,0 +1,80 @@
+{
+  "source": {
+    "source_demo": "/data/crestlux/default_sfm/usb_p1/2026-10-20/1_demos_2026-10-20_18-10-52_902232.pkl",
+    "frame_count": 279,
+    "frame_indices": [
+      0,
+      139,
+      250,
+      251
+    ],
+    "peak_force_frame": 250,
+    "original_shape": [
+      480,
+      640,
+      3
+    ],
+    "raw_images_preserved": true,
+    "training_preprocessing_applied": false
+  },
+  "reference_runtime": "/home/crestlux/project/faflow_final/preprocessing/runtime.py:12-24,36-51",
+  "cameras": {
+    "head_cam_d455": {
+      "crop_tlhw": [
+        96,
+        128,
+        288,
+        384
+      ],
+      "crop_xyxy": [
+        128,
+        96,
+        512,
+        384
+      ],
+      "native_crop_shape": [
+        288,
+        384,
+        3
+      ],
+      "original": "usb_p1_f250_head_cam_d455_raw.png"
+    },
+    "wrist_cam_d405_a": {
+      "crop_tlhw": [
+        72,
+        122,
+        336,
+        448
+      ],
+      "crop_xyxy": [
+        122,
+        72,
+        570,
+        408
+      ],
+      "native_crop_shape": [
+        336,
+        448,
+        3
+      ],
+      "original": "usb_p1_f250_wrist_cam_d405_a_raw.png"
+    }
+  },
+  "comparison_output_shape": [
+    224,
+    224,
+    3
+  ],
+  "legacy_panel_is_simulation_on_current_raw_image": true,
+  "turbovla_usb_source": "turbovla_usb_source_snapshot/jack_models_20261020/models/jack_faflow_delta_gru500hz/bundles/delta/inference_config.json",
+  "turbovla_640_input_direct_crop_source": "turbovla_usb_source_snapshot/go_models_20261019/models/go_ft500_delta/bundles/delta/inference_config.json",
+  "all_verified_turbovla_usb_bundle_sizes": [
+    224,
+    224
+  ],
+  "comparison_scope": "same current native image through the two bundled runtime recipes; not a claim about historical raw image resolution",
+  "direct_pipeline": "native RGB -> crop -> resize224x168 INTER_AREA -> black padding28 top/bottom",
+  "training_preprocessing_applied": false,
+  "new_training_output_resolution_confirmed": true,
+  "new_training_crop_bounds_confirmed": true
+}

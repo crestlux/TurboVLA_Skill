@@ -1,0 +1,467 @@
+{
+  "episodes": 50,
+  "frames": 10090,
+  "valid_action_entries": 443250,
+  "action_contract": {
+    "mode": "relative",
+    "interpreter_mode": "relative_tcp",
+    "length": 50,
+    "sides": [
+      "right"
+    ],
+    "source_format": "absolute",
+    "action_period_s": 0.1,
+    "declared_formats": [
+      "absolute_tcp_xyz_rpy_gripper"
+    ],
+    "rotation_unit": "rad",
+    "translation_unit": "m",
+    "rotation_representation": "rotvec",
+    "pose_reference": "observations/state at each timestep",
+    "relative_action_frame_yaw_deg": 0.0,
+    "relative_gripper_action_mode": "absolute",
+    "padding": "zero_after_normalization",
+    "padding_mask": "action_mask",
+    "gripper": "original command, no relabeling"
+  },
+  "normalization": {
+    "version": 1,
+    "schema": {
+      "state_columns": {
+        "state": [
+          "right/gripper_pose/pos",
+          "right/tcp_force/fx",
+          "right/tcp_force/fy",
+          "right/tcp_force/fz",
+          "right/tcp_pose/x",
+          "right/tcp_pose/y",
+          "right/tcp_pose/z",
+          "right/tcp_pose/roll",
+          "right/tcp_pose/pitch",
+          "right/tcp_pose/yaw",
+          "right/tcp_torque/tx",
+          "right/tcp_torque/ty",
+          "right/tcp_torque/tz",
+          "right/tcp_vel/vx",
+          "right/tcp_vel/vy",
+          "right/tcp_vel/vz",
+          "right/tcp_vel/wx",
+          "right/tcp_vel/wy",
+          "right/tcp_vel/wz"
+        ]
+      },
+      "observations": [
+        {
+          "source": "state",
+          "target": "state",
+          "type": "state",
+          "keys": [
+            "right/gripper_pose",
+            "right/tcp_force",
+            {
+              "key": "right/tcp_pose",
+              "components": {
+                "x": true,
+                "y": true,
+                "z": true,
+                "roll": true,
+                "pitch": true,
+                "yaw": true
+              }
+            },
+            "right/tcp_torque",
+            "right/tcp_vel"
+          ]
+        },
+        {
+          "source": "wrist_cam_d405_a",
+          "target": "image_wrist_right",
+          "type": "image",
+          "input_color": "rgb",
+          "crop": [
+            72,
+            122,
+            336,
+            448
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear"
+        },
+        {
+          "source": "head_cam_d455",
+          "target": "image_head",
+          "type": "image",
+          "input_color": "rgb",
+          "crop": [
+            96,
+            128,
+            288,
+            384
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear"
+        },
+        {
+          "source": "right_force_history",
+          "target": "ft_history",
+          "type": "array",
+          "sample_ndim": 2
+        },
+        {
+          "source": "right_state_history",
+          "target": "state_history",
+          "type": "array",
+          "sample_ndim": 2
+        }
+      ],
+      "shapes": {
+        "ft_history": [
+          50,
+          6
+        ],
+        "image_head": [
+          224,
+          224,
+          3
+        ],
+        "image_wrist_right": [
+          224,
+          224,
+          3
+        ],
+        "state": [
+          19
+        ],
+        "state_history": [
+          50,
+          19
+        ]
+      },
+      "action_shape": [
+        50,
+        7
+      ],
+      "action": {
+        "mode": "relative",
+        "interpreter_mode": "relative_tcp",
+        "length": 50,
+        "sides": [
+          "right"
+        ],
+        "source_format": "absolute",
+        "action_period_s": 0.1,
+        "rotation_unit": "rad",
+        "translation_unit": "m",
+        "rotation_representation": "rotvec",
+        "pose_reference": "observations/state at each timestep",
+        "relative_action_frame_yaw_deg": 0.0,
+        "relative_gripper_action_mode": "absolute",
+        "padding": "zero_after_normalization",
+        "padding_mask": "action_mask",
+        "gripper": "original command, no relabeling"
+      }
+    },
+    "fit_scope": "Coefficients fitted on the reference relabeled GO bundle; reused unchanged for the gripper ablation. Observed ablation counts are in gripper_ablation.json.",
+    "observations": {
+      "state": {
+        "method": "standard",
+        "epsilon": 1e-06,
+        "temperature": 20.0,
+        "count": 10090,
+        "mean": [
+          0.5026042622664522,
+          -0.006080448574416923,
+          -0.17333018257482513,
+          0.8205298667767308,
+          0.3792769017375498,
+          -0.1464111465713373,
+          0.15118031823200911,
+          2.8437966092490585,
+          0.008777936236562964,
+          3.078386521103125,
+          -4.387521383429189e-06,
+          3.0929061175278796e-07,
+          -4.727759479745352e-08,
+          0.0018940773822425478,
+          0.008861819820900238,
+          0.0025551670778585236,
+          -0.000441807839790061,
+          -0.000293820318923502,
+          -0.00041919468862787316
+        ],
+        "std": [
+          0.3957144652675431,
+          0.1565633879367524,
+          0.6529882825611489,
+          3.234986830988996,
+          0.009860801340832047,
+          0.06756089521051614,
+          0.02290173841922095,
+          0.022051330334245976,
+          0.003910840183869675,
+          0.0027049874559344697,
+          0.0004407002603887338,
+          3.106639061636024e-05,
+          4.748751405857874e-06,
+          0.010058329718374918,
+          0.018661376901835162,
+          0.018475172583642424,
+          0.011849770036150028,
+          0.017802650577255948,
+          0.0169462351702933
+        ],
+        "min": [
+          0.17399999499320984,
+          -1.4841747283935547,
+          -6.921658039093018,
+          -0.6665652990341187,
+          0.3318084180355072,
+          -0.2680646777153015,
+          0.09624122083187103,
+          2.7969045639038086,
+          -0.00881122425198555,
+          3.0682759284973145,
+          -0.04427009075880051,
+          0.0,
+          -0.00047703093150630593,
+          -0.02227173186838627,
+          -0.022922499105334282,
+          -0.040034305304288864,
+          -0.04983773082494736,
+          -0.12508651614189148,
+          -0.07495275139808655
+        ],
+        "max": [
+          1.0,
+          4.3279876708984375,
+          1.62018883228302,
+          31.209196090698242,
+          0.40237945318222046,
+          -0.06941059976816177,
+          0.20701736211776733,
+          2.8843328952789307,
+          0.022757451981306076,
+          3.0837628841400146,
+          0.0,
+          0.0031207422725856304,
+          0.0,
+          0.07629912346601486,
+          0.07887165993452072,
+          0.07523415982723236,
+          0.04914060980081558,
+          0.08284080773591995,
+          0.06816765666007996
+        ],
+        "offset": [
+          0.5026042622664522,
+          -0.006080448574416923,
+          -0.17333018257482513,
+          0.8205298667767308,
+          0.3792769017375498,
+          -0.1464111465713373,
+          0.15118031823200911,
+          2.8437966092490585,
+          0.008777936236562964,
+          3.078386521103125,
+          -4.387521383429189e-06,
+          3.0929061175278796e-07,
+          -4.727759479745352e-08,
+          0.0018940773822425478,
+          0.008861819820900238,
+          0.0025551670778585236,
+          -0.000441807839790061,
+          -0.000293820318923502,
+          -0.00041919468862787316
+        ],
+        "scale": [
+          0.3957144652675431,
+          0.1565633879367524,
+          0.6529882825611489,
+          3.234986830988996,
+          0.009860801340832047,
+          0.06756089521051614,
+          0.02290173841922095,
+          0.022051330334245976,
+          0.003910840183869675,
+          0.0027049874559344697,
+          0.0004407002603887338,
+          3.106639061636024e-05,
+          4.748751405857874e-06,
+          0.010058329718374918,
+          0.018661376901835162,
+          0.018475172583642424,
+          0.011849770036150028,
+          0.017802650577255948,
+          0.0169462351702933
+        ]
+      },
+      "ft_history": {
+        "method": "none",
+        "epsilon": 1e-06,
+        "temperature": 20.0,
+        "count": 504500,
+        "mean": [
+          -0.007047042536887118,
+          -0.17622062503242752,
+          0.839501851786631,
+          -4.331430182718405e-06,
+          -8.982464058944945e-08,
+          -1.4600430677722903e-07
+        ],
+        "std": [
+          0.1557582173456128,
+          0.6548119661500735,
+          3.2959726642807037,
+          0.0004379668523539192,
+          0.0001736869208824197,
+          4.805007367412167e-05
+        ],
+        "min": [
+          -2.2974913120269775,
+          -7.779637813568115,
+          -0.6979842185974121,
+          -0.10240054875612259,
+          -0.08567646890878677,
+          -0.023887015879154205
+        ],
+        "max": [
+          4.848647117614746,
+          1.6586045026779175,
+          33.22805404663086,
+          0.0,
+          0.006485039833933115,
+          0.0
+        ],
+        "offset": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "actions": {
+      "method": "symlog_minmax",
+      "epsilon": 1e-06,
+      "temperature": 20.0,
+      "count": 443250,
+      "mean": [
+        -0.0015365912250228577,
+        0.023837231953012787,
+        0.0031425867066647117,
+        0.0006743216507135551,
+        -0.00040289775251662284,
+        0.0003198975429928763,
+        -0.376369994359842
+      ],
+      "std": [
+        0.007452498832136766,
+        0.034954241164828925,
+        0.028295280074984955,
+        0.0019199916742940481,
+        0.0017848476444235822,
+        0.0010589331010316834,
+        0.926469442208178
+      ],
+      "min": [
+        -0.04409168760105552,
+        -0.020034163942560957,
+        -0.07287291589850568,
+        -0.0046021011900504675,
+        -0.014585763958930945,
+        -0.004955304258037496,
+        -1.0
+      ],
+      "max": [
+        0.025796495402833013,
+        0.1488927742404434,
+        0.06787223556046826,
+        0.01489542187792683,
+        0.00869280589435756,
+        0.007696723132854371,
+        1.0
+      ],
+      "offset": [
+        -0.009147596099111255,
+        0.06442930514894121,
+        -0.0025003401690187124,
+        0.005146660343938181,
+        -0.0029464790322866925,
+        0.0013707094374084375,
+        0.0
+      ],
+      "scale": [
+        0.03494409150194427,
+        0.08446346909150218,
+        0.07037257572948696,
+        0.009748761533988648,
+        0.011639284926644252,
+        0.006326013695445934,
+        1.0
+      ]
+    },
+    "reused_from": "/data/jack/go_preprocessed/relative/normalization.json",
+    "reference_fit_scope": "retained training observations (F/T flattened across timestep and history samples); valid action chunk entries"
+  },
+  "split": "all training demonstrations; no held-out data",
+  "use_language": true,
+  "input": "two current RGB views, standardized current 19D state, task instruction, raw FT history encoded by GRU",
+  "unused": [
+    "next_observations",
+    "source_actions",
+    "future states"
+  ],
+  "sample_output_units": "stored symlog_minmax actions; inverse symlog, then multiply scale and add offset",
+  "instruction_sources": {
+    "default_instruction": 10090
+  },
+  "default_instruction": "Insert the USB connector into the USB port.",
+  "instructions": [
+    "Insert the USB connector into the USB port."
+  ],
+  "use_ft_history": true,
+  "ft_history_shape": [
+    50,
+    6
+  ],
+  "ft_history_order": "stored oldest to newest; newest last",
+  "ft_history_zero_handling": "all samples retained, including entirely zero windows",
+  "ft_history_normalization": "training mean/std stored and applied inside model",
+  "ft_history_resampling": {
+    "method": "causal_fir_decimate",
+    "num_taps": 21,
+    "cutoff_ratio": 0.4,
+    "rate_basis": "nominal; per-sample timestamps unavailable",
+    "source_hz": 500,
+    "target_hz": 500,
+    "source_length": 50
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "model": "TurboVLA",
+  "checkpoint": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/ft_500hz/delta/checkpoint_012640.pt",
+  "step": 12640,
+  "checkpoint_sha256": "07c534f52edb35d82ece41b44c977cd1abdb7f388a87e994f306fc2aae5cce2d",
+  "bundle_id": "325c2fef7854f8917d06506f5194102f615582365432fb1e0c616a4621168de9",
+  "action_shape": [
+    50,
+    7
+  ],
+  "gripper_relabel": null,
+  "training_gripper_relabel": null,
+  "weights_available": [
+    "raw",
+    "ema"
+  ]
+}

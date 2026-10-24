@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "scope": "one complete actual demo, plus existing USB preview from native RGB",
+  "source_demo": "audio_jack_p1/2026-10-19/1_demos_2026-10-19_17-40-21_330892.pkl",
+  "frame_count": 349,
+  "actual_function": "csilab preprocess.convert.StateDecoder.selected via transform_observation",
+  "wrapped_axes": [
+    "roll",
+    "yaw"
+  ],
+  "pitch_unchanged": true,
+  "raw_not_mutated": true,
+  "exact_array_match_with_audit_formula_after_float32_bound": true,
+  "template_wrap_default_enabled": false,
+  "raw_jumps_gt_pi": [
+    11,
+    0,
+    6
+  ],
+  "wrapped_jumps_gt_pi": [
+    0,
+    0,
+    0
+  ],
+  "image_sample_matches": {
+    "head_cam_d455": "exactly matches crop-native preview",
+    "wrist_cam_d405_a": "exactly matches crop-native preview"
+  },
+  "source_sha256": "e35f2f104b59c872054b91c705fa1d6f32259aec746ec9d1fe4e00a1f144cf01",
+  "training_preprocessing_applied": false,
+  "training_started": false
+}

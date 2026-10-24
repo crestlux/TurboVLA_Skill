@@ -1,0 +1,30 @@
+{
+  "source": "/data/crestlux/default_sfm/audio_jack_p1/2026-10-19/1_demos_2026-10-19_17-40-21_330892.pkl",
+  "source_sha256": "see setup_records/copy_manifest.json",
+  "frame_indices": [
+    0,
+    3,
+    14,
+    30,
+    60,
+    90,
+    120,
+    127,
+    150,
+    160,
+    180,
+    210,
+    240,
+    270,
+    300,
+    342,
+    348
+  ],
+  "views": [
+    "head_cam_d455",
+    "wrist_cam_d405_a"
+  ],
+  "image_operation": "Exact uint8 RGB arrays saved as PNG; no crop, resize, color transform, annotation or generated pixels",
+  "training_started": false,
+  "raw_data_modified": false
+}

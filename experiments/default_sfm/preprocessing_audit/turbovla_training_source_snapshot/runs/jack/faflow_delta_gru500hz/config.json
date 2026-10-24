@@ -1,0 +1,161 @@
+{
+  "experiment": "jack_exp_demo_turbovla_faflow_delta_gru500hz_ft_history_gru_500hz_nominal",
+  "data": {
+    "dataset_dir": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/prepared/faflow/delta",
+    "action_mode": "delta",
+    "horizon": 5,
+    "image_size": 224,
+    "camera_keys": [
+      "observations/image_head",
+      "observations/image_wrist_right"
+    ],
+    "expected_episodes": 30,
+    "expected_frames": 8314,
+    "preload_images": false,
+    "use_language": true,
+    "default_instruction": "Insert the USB connector into the USB port.",
+    "gripper_relabel": null,
+    "ft_history_resampling": {
+      "method": "causal_fir_decimate",
+      "num_taps": 21,
+      "cutoff_ratio": 0.4,
+      "rate_basis": "nominal; per-sample timestamps unavailable",
+      "source_hz": 500,
+      "target_hz": 500,
+      "source_length": 50
+    },
+    "use_ft_history": true,
+    "ft_history_length": 50,
+    "ft_history_dim": 6
+  },
+  "model": {
+    "name": "TurboVLA",
+    "compatibility_profile": "libero",
+    "use_language": true,
+    "text": {
+      "model_name_or_path": "/home/jack/TurboVLA/pretrained/backbones/bert-base-uncased",
+      "max_length": 32,
+      "padding_length": 16,
+      "padding_length_by_instruction": {},
+      "sub_sentence_present": true,
+      "frozen": true,
+      "force_eval_when_frozen": true,
+      "zero_padded_tokens": false,
+      "local_files_only": true,
+      "attention_implementation": null
+    },
+    "vision": {
+      "backbone_type": "dinov3",
+      "model_name_or_path": "/home/jack/TurboVLA/pretrained/backbones/dinov3-vitb16",
+      "resnet_weights": "IMAGENET1K_V2",
+      "resnet_output_stride": 16,
+      "load_pretrained": true,
+      "image_size": 224,
+      "num_views": 2,
+      "position_embedding": "view",
+      "encode_views_separately": true,
+      "frozen": false,
+      "local_files_only": true,
+      "attention_implementation": "sdpa",
+      "compute_precision": "bf16_autocast",
+      "feature_source": "last_hidden_state",
+      "position_init_std": 0.01,
+      "position_scale_init": 0.01,
+      "dropout": 0.1
+    },
+    "interaction": {
+      "hidden_dim": 256,
+      "nheads": 8,
+      "num_layers": 6,
+      "dim_feedforward": 2048,
+      "enhancer_inner_dim": 1024,
+      "text_dropout": 0.0,
+      "fusion_dropout": 0.0,
+      "fusion_droppath": 0.1,
+      "padding_strategy": "key_padding_mask",
+      "residual_style": "normalized",
+      "attention_backend": "manual",
+      "compute_precision": "fp32"
+    },
+    "action": {
+      "action_dim": 7,
+      "state_dim": 19,
+      "horizon": 5,
+      "num_state_tokens": 2,
+      "num_layers": 3,
+      "mlp_hidden_dim": 512,
+      "state_hidden_dim": 256,
+      "dropout": 0.1
+    },
+    "ft_history": {
+      "enabled": true,
+      "history_length": 50,
+      "input_dim": 6,
+      "hidden_dim": 128,
+      "num_layers": 1,
+      "mean": [
+        -0.01748803423419952,
+        -0.010621664225131042,
+        0.8692885340619599,
+        1.208870668785122e-06,
+        -1.1277004340040172e-05,
+        1.530797076865361e-09
+      ],
+      "std": [
+        0.21334478809348403,
+        0.13605931631423954,
+        3.729457746057028,
+        0.0005501093388101733,
+        0.0014427692811606382,
+        2.7172486230123602e-06
+      ],
+      "std_floor": 0.01
+    }
+  },
+  "images": {
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "color_jitter": {
+      "brightness": 0.2,
+      "contrast": 0.2,
+      "saturation": 0.2,
+      "hue": 0.02,
+      "padding_tblr": [
+        28,
+        28,
+        0,
+        0
+      ]
+    }
+  },
+  "train": {
+    "seed": 42,
+    "batch_size": 64,
+    "max_samples": 665120,
+    "num_workers": 2,
+    "learning_rate": 5e-05,
+    "vision_learning_rate": 1e-05,
+    "weight_decay": 1e-06,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "max_grad_norm": 1.0,
+    "amp": true,
+    "warmup_samples": 8000,
+    "min_lr_ratio": 0.01,
+    "ema_decay": 0.999,
+    "ema_reference_batch": 64,
+    "log_interval": 10,
+    "save_interval": 1000,
+    "keep_checkpoints": 2
+  }
+}

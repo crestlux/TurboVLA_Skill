@@ -1,0 +1,1028 @@
+{
+  "checked_at_utc": "2026-10-24T09:54:29.548107+00:00",
+  "scope": "csilab deployment bundles plus live training-server source, frozen source snapshots, and ten completed run configurations; checkpoint weight tensors not loaded",
+  "actual_turbovla_usb_model_bundle_output_size": [
+    224,
+    224
+  ],
+  "local_turbovla_libero_default_size": [
+    256,
+    256
+  ],
+  "correction": "The 256 benchmark default was not the USB training recipe. USB 500 Hz GRU experiments exist in a separate TurboVLA checkout.",
+  "server_source_project": "/home/jack/TurboVLA",
+  "records": [
+    {
+      "model": "jack_original_delta_no_ft_history",
+      "package": "jack_models_20261020",
+      "training_status_record": "completed",
+      "step_record": 10720,
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_delta_no_ft_history/delta/checkpoint_010720.pt",
+      "uses_ft_history": false,
+      "action_shape": [
+        50,
+        7
+      ],
+      "inference_config": "jack_models_20261020/models/jack_original_delta_no_ft_history/bundles/delta/inference_config.json",
+      "images": [
+        {
+          "source": "wrist_cam_d405_a",
+          "target": "image_wrist_right",
+          "type": "image",
+          "input_color": "rgb",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear",
+          "crop": [
+            72,
+            122,
+            336,
+            448
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area"
+        },
+        {
+          "source": "head_cam_d455",
+          "target": "image_head",
+          "type": "image",
+          "input_color": "rgb",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear",
+          "crop": [
+            96,
+            128,
+            288,
+            384
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area"
+        }
+      ],
+      "jack_source_image_resize": null
+    },
+    {
+      "model": "jack_original_delta_gru500hz",
+      "package": "jack_models_20261020",
+      "training_status_record": "completed",
+      "step_record": 10720,
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_delta_gru500hz/delta/checkpoint_010720.pt",
+      "uses_ft_history": true,
+      "action_shape": [
+        50,
+        7
+      ],
+      "inference_config": "jack_models_20261020/models/jack_original_delta_gru500hz/bundles/delta/inference_config.json",
+      "images": [
+        {
+          "source": "wrist_cam_d405_a",
+          "target": "image_wrist_right",
+          "type": "image",
+          "input_color": "rgb",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear",
+          "crop": [
+            72,
+            122,
+            336,
+            448
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area"
+        },
+        {
+          "source": "head_cam_d455",
+          "target": "image_head",
+          "type": "image",
+          "input_color": "rgb",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear",
+          "crop": [
+            96,
+            128,
+            288,
+            384
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area"
+        }
+      ],
+      "jack_source_image_resize": null
+    },
+    {
+      "model": "jack_original_relative_no_ft_history",
+      "package": "jack_models_20261020",
+      "training_status_record": "completed",
+      "step_record": 10720,
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_relative_no_ft_history/relative/checkpoint_010720.pt",
+      "uses_ft_history": false,
+      "action_shape": [
+        50,
+        7
+      ],
+      "inference_config": "jack_models_20261020/models/jack_original_relative_no_ft_history/bundles/relative/inference_config.json",
+      "images": [
+        {
+          "source": "wrist_cam_d405_a",
+          "target": "image_wrist_right",
+          "type": "image",
+          "input_color": "rgb",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear",
+          "crop": [
+            72,
+            122,
+            336,
+            448
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area"
+        },
+        {
+          "source": "head_cam_d455",
+          "target": "image_head",
+          "type": "image",
+          "input_color": "rgb",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear",
+          "crop": [
+            96,
+            128,
+            288,
+            384
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area"
+        }
+      ],
+      "jack_source_image_resize": null
+    },
+    {
+      "model": "jack_original_relative_gru500hz",
+      "package": "jack_models_20261020",
+      "training_status_record": "completed",
+      "step_record": 10720,
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/original_relative_gru500hz/relative/checkpoint_010720.pt",
+      "uses_ft_history": true,
+      "action_shape": [
+        50,
+        7
+      ],
+      "inference_config": "jack_models_20261020/models/jack_original_relative_gru500hz/bundles/relative/inference_config.json",
+      "images": [
+        {
+          "source": "wrist_cam_d405_a",
+          "target": "image_wrist_right",
+          "type": "image",
+          "input_color": "rgb",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear",
+          "crop": [
+            72,
+            122,
+            336,
+            448
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area"
+        },
+        {
+          "source": "head_cam_d455",
+          "target": "image_head",
+          "type": "image",
+          "input_color": "rgb",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear",
+          "crop": [
+            96,
+            128,
+            288,
+            384
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area"
+        }
+      ],
+      "jack_source_image_resize": null
+    },
+    {
+      "model": "jack_faflow_delta_no_ft_history",
+      "package": "jack_models_20261020",
+      "training_status_record": "completed",
+      "step_record": 10400,
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_delta_no_ft_history/delta/checkpoint_010400.pt",
+      "uses_ft_history": false,
+      "action_shape": [
+        5,
+        7
+      ],
+      "inference_config": "jack_models_20261020/models/jack_faflow_delta_no_ft_history/bundles/delta/inference_config.json",
+      "images": [
+        {
+          "source": "wrist_cam_d405_a",
+          "target": "image_wrist_right",
+          "type": "image",
+          "input_color": "rgb",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear",
+          "crop": [
+            72,
+            122,
+            336,
+            448
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area"
+        },
+        {
+          "source": "head_cam_d455",
+          "target": "image_head",
+          "type": "image",
+          "input_color": "rgb",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear",
+          "crop": [
+            96,
+            128,
+            288,
+            384
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area"
+        }
+      ],
+      "jack_source_image_resize": [
+        224,
+        224
+      ]
+    },
+    {
+      "model": "jack_faflow_delta_gru500hz",
+      "package": "jack_models_20261020",
+      "training_status_record": "completed",
+      "step_record": 10400,
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_delta_gru500hz/delta/checkpoint_010400.pt",
+      "uses_ft_history": true,
+      "action_shape": [
+        5,
+        7
+      ],
+      "inference_config": "jack_models_20261020/models/jack_faflow_delta_gru500hz/bundles/delta/inference_config.json",
+      "images": [
+        {
+          "source": "wrist_cam_d405_a",
+          "target": "image_wrist_right",
+          "type": "image",
+          "input_color": "rgb",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear",
+          "crop": [
+            72,
+            122,
+            336,
+            448
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area"
+        },
+        {
+          "source": "head_cam_d455",
+          "target": "image_head",
+          "type": "image",
+          "input_color": "rgb",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear",
+          "crop": [
+            96,
+            128,
+            288,
+            384
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area"
+        }
+      ],
+      "jack_source_image_resize": [
+        224,
+        224
+      ]
+    },
+    {
+      "model": "jack_faflow_relative_no_ft_history",
+      "package": "jack_models_20261020",
+      "training_status_record": "completed",
+      "step_record": 10400,
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_relative_no_ft_history/relative/checkpoint_010400.pt",
+      "uses_ft_history": false,
+      "action_shape": [
+        5,
+        7
+      ],
+      "inference_config": "jack_models_20261020/models/jack_faflow_relative_no_ft_history/bundles/relative/inference_config.json",
+      "images": [
+        {
+          "source": "wrist_cam_d405_a",
+          "target": "image_wrist_right",
+          "type": "image",
+          "input_color": "rgb",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear",
+          "crop": [
+            72,
+            122,
+            336,
+            448
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area"
+        },
+        {
+          "source": "head_cam_d455",
+          "target": "image_head",
+          "type": "image",
+          "input_color": "rgb",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear",
+          "crop": [
+            96,
+            128,
+            288,
+            384
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area"
+        }
+      ],
+      "jack_source_image_resize": [
+        224,
+        224
+      ]
+    },
+    {
+      "model": "jack_faflow_relative_gru500hz",
+      "package": "jack_models_20261020",
+      "training_status_record": "completed",
+      "step_record": 10400,
+      "checkpoint": "/home/jack/TurboVLA/outputs/jack_ablation_runs/jack_exp_demo_8way_20261020/faflow_relative_gru500hz/relative/checkpoint_010400.pt",
+      "uses_ft_history": true,
+      "action_shape": [
+        5,
+        7
+      ],
+      "inference_config": "jack_models_20261020/models/jack_faflow_relative_gru500hz/bundles/relative/inference_config.json",
+      "images": [
+        {
+          "source": "wrist_cam_d405_a",
+          "target": "image_wrist_right",
+          "type": "image",
+          "input_color": "rgb",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear",
+          "crop": [
+            72,
+            122,
+            336,
+            448
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area"
+        },
+        {
+          "source": "head_cam_d455",
+          "target": "image_head",
+          "type": "image",
+          "input_color": "rgb",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear",
+          "crop": [
+            96,
+            128,
+            288,
+            384
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area"
+        }
+      ],
+      "jack_source_image_resize": [
+        224,
+        224
+      ]
+    },
+    {
+      "model": "go_latched_delta",
+      "package": "go_models_20261019",
+      "training_status_record": "completed",
+      "step_record": 12640,
+      "checkpoint": "/home/jack/TurboVLA/outputs/go_runs/go_turbovla_color_jitter_20261018_025920/delta/checkpoint_012640.pt",
+      "uses_ft_history": false,
+      "action_shape": [
+        50,
+        7
+      ],
+      "inference_config": "go_models_20261019/models/go_latched_delta/bundles/delta/inference_config.json",
+      "images": [
+        {
+          "source": "wrist_cam_d405_a",
+          "target": "image_wrist_right",
+          "type": "image",
+          "input_color": "rgb",
+          "crop": [
+            72,
+            122,
+            336,
+            448
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear"
+        },
+        {
+          "source": "head_cam_d455",
+          "target": "image_head",
+          "type": "image",
+          "input_color": "rgb",
+          "crop": [
+            96,
+            128,
+            288,
+            384
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear"
+        }
+      ],
+      "jack_source_image_resize": null
+    },
+    {
+      "model": "go_latched_relative",
+      "package": "go_models_20261019",
+      "training_status_record": "completed",
+      "step_record": 12640,
+      "checkpoint": "/home/jack/TurboVLA/outputs/go_runs/go_turbovla_color_jitter_20261018_025920/relative/checkpoint_012640.pt",
+      "uses_ft_history": false,
+      "action_shape": [
+        50,
+        7
+      ],
+      "inference_config": "go_models_20261019/models/go_latched_relative/bundles/relative/inference_config.json",
+      "images": [
+        {
+          "source": "wrist_cam_d405_a",
+          "target": "image_wrist_right",
+          "type": "image",
+          "input_color": "rgb",
+          "crop": [
+            72,
+            122,
+            336,
+            448
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear"
+        },
+        {
+          "source": "head_cam_d455",
+          "target": "image_head",
+          "type": "image",
+          "input_color": "rgb",
+          "crop": [
+            96,
+            128,
+            288,
+            384
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear"
+        }
+      ],
+      "jack_source_image_resize": null
+    },
+    {
+      "model": "go_original_delta",
+      "package": "go_models_20261019",
+      "training_status_record": "completed",
+      "step_record": 12640,
+      "checkpoint": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_runs/go_turbovla_color_jitter_20261018_200449/delta/checkpoint_012640.pt",
+      "uses_ft_history": false,
+      "action_shape": [
+        50,
+        7
+      ],
+      "inference_config": "go_models_20261019/models/go_original_delta/bundles/delta/inference_config.json",
+      "images": [
+        {
+          "source": "wrist_cam_d405_a",
+          "target": "image_wrist_right",
+          "type": "image",
+          "input_color": "rgb",
+          "crop": [
+            72,
+            122,
+            336,
+            448
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear"
+        },
+        {
+          "source": "head_cam_d455",
+          "target": "image_head",
+          "type": "image",
+          "input_color": "rgb",
+          "crop": [
+            96,
+            128,
+            288,
+            384
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear"
+        }
+      ],
+      "jack_source_image_resize": null
+    },
+    {
+      "model": "go_original_relative",
+      "package": "go_models_20261019",
+      "training_status_record": "completed",
+      "step_record": 12640,
+      "checkpoint": "/home/jack/TurboVLA/outputs/go_no_gripper_relabel_runs/go_turbovla_color_jitter_20261018_200449/relative/checkpoint_012640.pt",
+      "uses_ft_history": false,
+      "action_shape": [
+        50,
+        7
+      ],
+      "inference_config": "go_models_20261019/models/go_original_relative/bundles/relative/inference_config.json",
+      "images": [
+        {
+          "source": "wrist_cam_d405_a",
+          "target": "image_wrist_right",
+          "type": "image",
+          "input_color": "rgb",
+          "crop": [
+            72,
+            122,
+            336,
+            448
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear"
+        },
+        {
+          "source": "head_cam_d455",
+          "target": "image_head",
+          "type": "image",
+          "input_color": "rgb",
+          "crop": [
+            96,
+            128,
+            288,
+            384
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear"
+        }
+      ],
+      "jack_source_image_resize": null
+    },
+    {
+      "model": "go_ft500_delta",
+      "package": "go_models_20261019",
+      "training_status_record": "completed",
+      "step_record": 12640,
+      "checkpoint": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/ft_500hz/delta/checkpoint_012640.pt",
+      "uses_ft_history": true,
+      "action_shape": [
+        50,
+        7
+      ],
+      "inference_config": "go_models_20261019/models/go_ft500_delta/bundles/delta/inference_config.json",
+      "images": [
+        {
+          "source": "wrist_cam_d405_a",
+          "target": "image_wrist_right",
+          "type": "image",
+          "input_color": "rgb",
+          "crop": [
+            72,
+            122,
+            336,
+            448
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear"
+        },
+        {
+          "source": "head_cam_d455",
+          "target": "image_head",
+          "type": "image",
+          "input_color": "rgb",
+          "crop": [
+            96,
+            128,
+            288,
+            384
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear"
+        }
+      ],
+      "jack_source_image_resize": null
+    },
+    {
+      "model": "go_ft500_relative",
+      "package": "go_models_20261019",
+      "training_status_record": "completed",
+      "step_record": 12640,
+      "checkpoint": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/ft_500hz/relative/checkpoint_012640.pt",
+      "uses_ft_history": true,
+      "action_shape": [
+        50,
+        7
+      ],
+      "inference_config": "go_models_20261019/models/go_ft500_relative/bundles/relative/inference_config.json",
+      "images": [
+        {
+          "source": "wrist_cam_d405_a",
+          "target": "image_wrist_right",
+          "type": "image",
+          "input_color": "rgb",
+          "crop": [
+            72,
+            122,
+            336,
+            448
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear"
+        },
+        {
+          "source": "head_cam_d455",
+          "target": "image_head",
+          "type": "image",
+          "input_color": "rgb",
+          "crop": [
+            96,
+            128,
+            288,
+            384
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear"
+        }
+      ],
+      "jack_source_image_resize": null
+    },
+    {
+      "model": "go_ft100_delta",
+      "package": "go_models_20261019",
+      "training_status_record": "completed",
+      "step_record": 12640,
+      "checkpoint": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/ft_100hz/delta/checkpoint_012640.pt",
+      "uses_ft_history": true,
+      "action_shape": [
+        50,
+        7
+      ],
+      "inference_config": "go_models_20261019/models/go_ft100_delta/bundles/delta/inference_config.json",
+      "images": [
+        {
+          "source": "wrist_cam_d405_a",
+          "target": "image_wrist_right",
+          "type": "image",
+          "input_color": "rgb",
+          "crop": [
+            72,
+            122,
+            336,
+            448
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear"
+        },
+        {
+          "source": "head_cam_d455",
+          "target": "image_head",
+          "type": "image",
+          "input_color": "rgb",
+          "crop": [
+            96,
+            128,
+            288,
+            384
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear"
+        }
+      ],
+      "jack_source_image_resize": null
+    },
+    {
+      "model": "go_ft100_relative",
+      "package": "go_models_20261019",
+      "training_status_record": "completed",
+      "step_record": 12640,
+      "checkpoint": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/ft_100hz/relative/checkpoint_012640.pt",
+      "uses_ft_history": true,
+      "action_shape": [
+        50,
+        7
+      ],
+      "inference_config": "go_models_20261019/models/go_ft100_relative/bundles/relative/inference_config.json",
+      "images": [
+        {
+          "source": "wrist_cam_d405_a",
+          "target": "image_wrist_right",
+          "type": "image",
+          "input_color": "rgb",
+          "crop": [
+            72,
+            122,
+            336,
+            448
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear"
+        },
+        {
+          "source": "head_cam_d455",
+          "target": "image_head",
+          "type": "image",
+          "input_color": "rgb",
+          "crop": [
+            96,
+            128,
+            288,
+            384
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear"
+        }
+      ],
+      "jack_source_image_resize": null
+    }
+  ],
+  "new_sfm_image_size_decided": false,
+  "training_preprocessing_applied": false,
+  "training_started": false,
+  "training_source_evidence": "turbovla_training_findings.json",
+  "actual_turbovla_usb_training_image_size": [
+    224,
+    224
+  ]
+}

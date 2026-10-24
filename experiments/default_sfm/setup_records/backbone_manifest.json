@@ -1,0 +1,58 @@
+{
+  "repository_base_commit": "e946c438b11a65e8ec30c715a1b84c7eefb1daac",
+  "backbones": {
+    "dinov3-vitb16": {
+      "link": "pretrained/backbones/dinov3-vitb16",
+      "resolved_path": "/data/crestlux/TurboVLA/models/dinov3-vitb16-pretrain-lvd1689m",
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 744,
+          "sha256": "3c9cc418f4622fd6d5587fd142b6f3cba0ba6a69f67ced907d8b7f26118451ec"
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 342662192,
+          "sha256": "9a21ac3df0c63839d62612dda6f454d816c25611cc7a52966ed5a5a94921dc8b"
+        },
+        {
+          "name": "preprocessor_config.json",
+          "bytes": 585,
+          "sha256": "960c41d1f3a7778b936365769a2d90550b318a6c0a53a0296957adacfe5e0dd7"
+        }
+      ]
+    },
+    "bert-base-uncased": {
+      "link": "pretrained/backbones/bert-base-uncased",
+      "resolved_path": "/data/crestlux/TurboVLA/models/bert-base-uncased",
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 570,
+          "sha256": "7160e1553ad2ca51d8c1cb066be533db31826e12d173824c1bb0cb1a4f187d20"
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 440449768,
+          "sha256": "68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3"
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 466062,
+          "sha256": "ce64fce797c24f68df90b40a3f74f579b336a493db14bd583fd520ea0d8c9a98"
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 48,
+          "sha256": "a025160ef0431f1a392f6f050c1310f4c5d9fb6f275932dbccba73c4d214bf10"
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+        }
+      ]
+    }
+  },
+  "policy_checkpoint_selected": false
+}

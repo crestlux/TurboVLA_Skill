@@ -1,0 +1,47 @@
+{
+  "model": {
+    "model": "TurboVLA",
+    "checkpoint": "/home/jack/TurboVLA/outputs/go_ft_rate_runs/go_ft_rate_gru_20261018_220702/ft_500hz/delta/checkpoint_012640.pt",
+    "step": 12640,
+    "checkpoint_sha256": "07c534f52edb35d82ece41b44c977cd1abdb7f388a87e994f306fc2aae5cce2d",
+    "bundle_id": "325c2fef7854f8917d06506f5194102f615582365432fb1e0c616a4621168de9",
+    "action_shape": [
+      50,
+      7
+    ],
+    "gripper_relabel": null
+  },
+  "weights": "raw",
+  "trainer_ip": "115.145.172.56",
+  "trainer_port": 45587,
+  "client_install_path": "/home/csilab/share_projects/clean_share/team_codes/turbovla/go_ft500_delta_raw_step012640_20261019",
+  "bundle_install_path": "/home/csilab/share_projects/clean_share/team_codes/turbovla/go_ft500_delta_raw_step012640_20261019/bundles/delta",
+  "default_instruction": "Insert the USB connector into the USB port.",
+  "request_steps": 5,
+  "control_hz": 10,
+  "ft_history_source_hz": 500,
+  "ft_history_model_hz": 500,
+  "ft_history_shape": [
+    50,
+    6
+  ],
+  "runtime_change": "Current Kingston preprocess package plus pre_crop_resize/pre_crop_interpolation support; isolated PYTHONPATH only.",
+  "files_sha256": {
+    "README.md": "98b7a236c2f00968468f917f9f2dbd7c18d30941b4493d5e69f3d8748be852bf",
+    "bundles/delta/inference_config.json": "8190c1a6c9f1ddd8488146329be1b09372f4e44efd6dc0600279569286eca91b",
+    "bundles/delta/normalization.json": "be72d7a883a9d952c230cd7824272b21b7312fe92a6d3dcfae6b5408bfb008c6",
+    "dry_run.sh": "5b6050d8b33d997e2cbcf8ea6a9a0dee91a51b8cf163afb374b3715dfa6b049c",
+    "fixtures/provenance.json": "944a7e8c4f57682e8496156ab856489286be240bffd05ee1c62f0fb38b40bf42",
+    "fixtures/raw_observations.npz": "d54ca04121599cfa078a8f4829a764accc6fb290f289eb72dd3adf4ef21346c2",
+    "fixtures/recorded_observations.hdf5": "94119da579a6d8f58944a59edee8a0410bb1062285969e9f008fffcbb33ee5f9",
+    "run_client.sh": "2683c5c6571f7f8f3c3fd4dc228b61d69b66d46dd1d0b6eff79c6983777ee1fd",
+    "runtime/preprocess/__init__.py": "58928177bdfa4e8244a2b1a17baa3283d689b62304d6a34fcf0bca3bbf9e4588",
+    "runtime/preprocess/action_chunks.py": "281248c73956177709ec9f8c614fa867687522ffc1ea4c36dca1875f5bd1abe4",
+    "runtime/preprocess/convert.py": "c869652df3c757b7625197912fcdff0eb87644e477cd761e9ef8965c426fc465",
+    "runtime/preprocess/gripper.py": "d919b6c358604123dc3af377fbe2aac12d8a70a7a616541a68e5e817ed5eb9da",
+    "runtime/preprocess/inference.py": "2bf2cda1bc3325393f598bec05d528775e485e69a587e0bf3e654ea8f66e8c0f",
+    "runtime/preprocess/normalization.py": "90acd3962d50d3eb3b0a6be6213ba8de00dedd00923072d39ace268ab3c79d03",
+    "verify_preprocessing.py": "5f30a0a36e8a1c89cc7bc7d7e1d09efa15d1f38b292ebea3aac728a6ab073fde"
+  },
+  "client_python": "/home/csilab/miniforge3/envs/hilserl/bin/python"
+}

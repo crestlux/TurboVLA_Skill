@@ -1,0 +1,460 @@
+{
+  "episodes": 30,
+  "frames": 8314,
+  "valid_action_entries": 41270,
+  "action_contract": {
+    "mode": "relative",
+    "interpreter_mode": "relative_tcp",
+    "length": 5,
+    "sides": [
+      "right"
+    ],
+    "source_format": "absolute",
+    "action_period_s": 0.1,
+    "declared_formats": [
+      "absolute_tcp_xyz_rpy_gripper"
+    ],
+    "rotation_unit": "rad",
+    "translation_unit": "m",
+    "rotation_representation": "rotvec",
+    "pose_reference": "observations/state at each timestep",
+    "relative_action_frame_yaw_deg": 0.0,
+    "relative_gripper_action_mode": "absolute",
+    "padding": "zero_after_normalization",
+    "padding_mask": "action_mask",
+    "gripper": "held desired state: -1 closed, +1 open; receipt target preferred",
+    "gripper_relabel": {
+      "method": "latched_command",
+      "close_threshold": -0.5,
+      "open_threshold": 0.5,
+      "closed": -1,
+      "open": 1,
+      "temporal_shift": 0,
+      "source_labels": "FAFLOW held receipt targets"
+    }
+  },
+  "normalization": {
+    "version": 1,
+    "schema": {
+      "state_columns": {
+        "state": [
+          "right/gripper_pose/pos",
+          "right/tcp_force/fx",
+          "right/tcp_force/fy",
+          "right/tcp_force/fz",
+          "right/tcp_pose/x",
+          "right/tcp_pose/y",
+          "right/tcp_pose/z",
+          "right/tcp_pose/roll",
+          "right/tcp_pose/pitch",
+          "right/tcp_pose/yaw",
+          "right/tcp_torque/tx",
+          "right/tcp_torque/ty",
+          "right/tcp_torque/tz",
+          "right/tcp_vel/vx",
+          "right/tcp_vel/vy",
+          "right/tcp_vel/vz",
+          "right/tcp_vel/wx",
+          "right/tcp_vel/wy",
+          "right/tcp_vel/wz"
+        ]
+      },
+      "observations": [
+        {
+          "source": "state",
+          "target": "state",
+          "type": "state",
+          "keys": [
+            "right/gripper_pose",
+            "right/tcp_force",
+            {
+              "key": "right/tcp_pose",
+              "components": {
+                "x": true,
+                "y": true,
+                "z": true,
+                "roll": true,
+                "pitch": true,
+                "yaw": true
+              }
+            },
+            "right/tcp_torque",
+            "right/tcp_vel"
+          ]
+        },
+        {
+          "source": "wrist_cam_d405_a",
+          "target": "image_wrist_right",
+          "type": "image",
+          "input_color": "rgb",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear",
+          "crop": [
+            72,
+            122,
+            336,
+            448
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area"
+        },
+        {
+          "source": "head_cam_d455",
+          "target": "image_head",
+          "type": "image",
+          "input_color": "rgb",
+          "pre_crop_resize": [
+            480,
+            640
+          ],
+          "pre_crop_interpolation": "linear",
+          "crop": [
+            96,
+            128,
+            288,
+            384
+          ],
+          "resize": [
+            224,
+            224
+          ],
+          "resize_mode": "letterbox",
+          "interpolation": "area"
+        },
+        {
+          "source": "right_force_history",
+          "target": "ft_history",
+          "type": "array",
+          "sample_ndim": 2
+        }
+      ],
+      "shapes": {
+        "ft_history": [
+          50,
+          6
+        ],
+        "image_head": [
+          224,
+          224,
+          3
+        ],
+        "image_wrist_right": [
+          224,
+          224,
+          3
+        ],
+        "state": [
+          19
+        ]
+      },
+      "action_shape": [
+        5,
+        7
+      ],
+      "action": {
+        "mode": "relative",
+        "interpreter_mode": "relative_tcp",
+        "length": 5,
+        "sides": [
+          "right"
+        ],
+        "source_format": "absolute",
+        "action_period_s": 0.1,
+        "declared_formats": [
+          "absolute_tcp_xyz_rpy_gripper"
+        ],
+        "rotation_unit": "rad",
+        "translation_unit": "m",
+        "rotation_representation": "rotvec",
+        "pose_reference": "observations/state at each timestep",
+        "relative_action_frame_yaw_deg": 0.0,
+        "relative_gripper_action_mode": "absolute",
+        "padding": "zero_after_normalization",
+        "padding_mask": "action_mask",
+        "gripper": "held desired state: -1 closed, +1 open; receipt target preferred",
+        "gripper_relabel": {
+          "method": "latched_command",
+          "close_threshold": -0.5,
+          "open_threshold": 0.5,
+          "closed": -1,
+          "open": 1,
+          "temporal_shift": 0,
+          "source_labels": "FAFLOW held receipt targets"
+        }
+      }
+    },
+    "actions": {
+      "count": 41270,
+      "epsilon": 1e-06,
+      "max": [
+        0.028217616564354377,
+        0.05435416492520347,
+        0.02565900098181583,
+        0.0016032770335420408,
+        0.002837327520194536,
+        0.007858122235201296,
+        1.0
+      ],
+      "mean": [
+        -0.0027372076080239365,
+        0.00330446017176504,
+        -0.00034037172058974354,
+        1.6677074606139345e-06,
+        -4.167564890278543e-06,
+        9.173014540425943e-06,
+        -0.13617639932154108
+      ],
+      "method": "symlog_minmax",
+      "min": [
+        -0.04903757972577299,
+        -0.008742860650809961,
+        -0.033818648915005446,
+        -0.0013703314462691588,
+        -0.0028930707464569754,
+        -0.002208537657451731,
+        -1.0
+      ],
+      "offset": [
+        -0.010409981580709306,
+        0.022805652137196757,
+        -0.0040798239665948074,
+        0.00011647279363644102,
+        -2.7871613131219683e-05,
+        0.0028247922888747826,
+        0.0
+      ],
+      "scale": [
+        0.03862759814506368,
+        0.031548512788006716,
+        0.02973882494841064,
+        0.0014868042399055997,
+        0.0028651991333257555,
+        0.005033329946326513,
+        1.0
+      ],
+      "std": [
+        0.008456552326342327,
+        0.007380063393457528,
+        0.006933086402401428,
+        0.0001869898506295206,
+        0.00027318444731225944,
+        0.00028361732818151615,
+        0.9906846058498235
+      ],
+      "temperature": 20.0
+    },
+    "observations": {
+      "state": {
+        "count": 8314,
+        "epsilon": 1e-06,
+        "max": [
+          1.0,
+          1.0489370822906494,
+          0.7584154009819031,
+          35.78587341308594,
+          0.49672093987464905,
+          0.014742247760295868,
+          0.2210279256105423,
+          3.141592502593994,
+          0.008021476678550243,
+          3.141592502593994,
+          0.0,
+          0.0,
+          0.0,
+          0.06840866059064865,
+          0.08098331838846207,
+          0.07333924621343613,
+          0.05985527113080025,
+          0.08875016868114471,
+          0.08200853317975998
+        ],
+        "mean": [
+          0.5465691594681633,
+          -0.017047690052797434,
+          -0.010289224442158426,
+          0.8543633103305442,
+          0.45508307302072754,
+          -0.11607327131950736,
+          0.17345250036772605,
+          0.15954154957823463,
+          0.0006005315456636247,
+          0.11276344880766552,
+          0.0,
+          0.0,
+          0.0,
+          0.005667024958645413,
+          0.00881044345751751,
+          0.0011677465241290868,
+          7.329903340026681e-05,
+          -0.00021003269851914161,
+          0.00014493060431599819
+        ],
+        "method": "standard",
+        "min": [
+          0.19099999964237213,
+          -4.5026164054870605,
+          -2.9873545169830322,
+          -4.094954013824463,
+          0.29517918825149536,
+          -0.26397231221199036,
+          0.10172485560178757,
+          -3.141592502593994,
+          -0.006272248923778534,
+          -3.141592264175415,
+          0.0,
+          0.0,
+          0.0,
+          -0.06524335592985153,
+          -0.034855976700782776,
+          -0.059984639286994934,
+          -0.06521234661340714,
+          -0.09869643300771713,
+          -0.10395291447639465
+        ],
+        "offset": [
+          0.5465691594681633,
+          -0.017047690052797434,
+          -0.010289224442158426,
+          0.8543633103305442,
+          0.45508307302072754,
+          -0.11607327131950736,
+          0.17345250036772605,
+          0.15954154957823463,
+          0.0006005315456636247,
+          0.11276344880766552,
+          0.0,
+          0.0,
+          0.0,
+          0.005667024958645413,
+          0.00881044345751751,
+          0.0011677465241290868,
+          7.329903340026681e-05,
+          -0.00021003269851914161,
+          0.00014493060431599819
+        ],
+        "scale": [
+          0.39442553082948656,
+          0.18599618474795662,
+          0.12795592983234158,
+          3.670196507998403,
+          0.0490454676596666,
+          0.09948350175931657,
+          0.02967022221914087,
+          3.136404615892201,
+          0.0022535934623609402,
+          3.1377090119889424,
+          1e-06,
+          1e-06,
+          1e-06,
+          0.01875944691769272,
+          0.018826325337714462,
+          0.020756516517852985,
+          0.012265725385122505,
+          0.018972833582966187,
+          0.017552164494752866
+        ],
+        "std": [
+          0.39442553082948656,
+          0.18599618474795662,
+          0.12795592983234158,
+          3.670196507998403,
+          0.0490454676596666,
+          0.09948350175931657,
+          0.02967022221914087,
+          3.136404615892201,
+          0.0022535934623609402,
+          3.1377090119889424,
+          0.0,
+          0.0,
+          0.0,
+          0.01875944691769272,
+          0.018826325337714462,
+          0.020756516517852985,
+          0.012265725385122505,
+          0.018972833582966187,
+          0.017552164494752866
+        ],
+        "temperature": 20.0
+      },
+      "ft_history": {
+        "count": 415700,
+        "epsilon": 1e-06,
+        "max": [
+          4.575657844543457,
+          2.073073148727417,
+          37.32633972167969,
+          0.2507988512516022,
+          0.03122839890420437,
+          0.0006750011234544218
+        ],
+        "mean": [
+          -0.01748803423419948,
+          -0.010621664225131016,
+          0.8692885340619615,
+          1.2088706687851206e-06,
+          -1.1277004340040162e-05,
+          1.5307970768653703e-09
+        ],
+        "method": "none",
+        "min": [
+          -9.521821975708008,
+          -5.089188098907471,
+          -6.014727592468262,
+          -0.00046151570859365165,
+          -0.3402508795261383,
+          -0.000744662422221154
+        ],
+        "offset": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "std": [
+          0.213344788093492,
+          0.13605931631424117,
+          3.729457746057038,
+          0.0005501093388098691,
+          0.0014427692811604881,
+          2.717248623011926e-06
+        ],
+        "temperature": 20.0
+      }
+    },
+    "fit_scope": "all retained training observations; FT uses every original 500Hz sample; pose uses valid native H=5 entries; adapter selects right arm, keeps native H=5; raw FT recovered from matching original history"
+  },
+  "split": "all training demonstrations; no held-out data",
+  "use_language": true,
+  "input": "two current RGB views, standardized current 19D state, task instruction",
+  "unused": [
+    "next_observations",
+    "ft_history",
+    "source_actions",
+    "future states"
+  ],
+  "sample_output_units": "stored symlog_minmax actions; inverse symlog, then multiply scale and add offset",
+  "instruction_sources": {
+    "default_instruction": 8314
+  },
+  "default_instruction": "Insert the USB connector into the USB port.",
+  "instructions": [
+    "Insert the USB connector into the USB port."
+  ]
+}

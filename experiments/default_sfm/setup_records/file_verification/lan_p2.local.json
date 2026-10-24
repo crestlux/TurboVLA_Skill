@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-24T08:25:23.745255+00:00",
+  "root": "/data/crestlux/default_sfm",
+  "selection": "Nine named tasks, p1 through p5; test and usb_insert excluded",
+  "task_count": 1,
+  "folder_count": 1,
+  "demo_count": 10,
+  "file_count": 11,
+  "total_bytes": 11219461923,
+  "suffix_counts": {
+    ".pkl": 10,
+    ".json": 1
+  },
+  "excluded_top_level_entries": [
+    "audio_jack_p1",
+    "audio_jack_p2",
+    "audio_jack_p3",
+    "audio_jack_p4",
+    "audio_jack_p5",
+    "barlatch_p1",
+    "barlatch_p2",
+    "barlatch_p3",
+    "barlatch_p4",
+    "barlatch_p5",
+    "bnc_p1",
+    "bnc_p2",
+    "bnc_p3",
+    "bnc_p4",
+    "bnc_p5",
+    "hdmi_p1",
+    "hdmi_p2",
+    "hdmi_p3",
+    "hdmi_p4",
+    "hdmi_p5",
+    "knob_p1",
+    "knob_p2",
+    "knob_p3",
+    "knob_p4",
+    "knob_p5",
+    "lan_p1",
+    "lan_p3",
+    "lan_p4",
+    "lan_p5"
+  ],
+  "hash_algorithm": "sha256",
+  "folders": [
+    {
+      "folder": "lan_p2",
+      "task": "lan",
+      "position": 2,
+      "demo_count": 10,
+      "file_count": 11,
+      "total_bytes": 11219461923
+    }
+  ],
+  "files": [
+    {
+      "path": "lan_p2/2026-10-20/1_demos_2026-10-20_19-48-15_260573.pkl",
+      "bytes": 965154664,
+      "mtime_ns": 1792493297885391200,
+      "sha256": "5335e33b65d0b3c17a01b482ae4a0d7844c34a7be94c2c74db755d5cbb2ec069"
+    },
+    {
+      "path": "lan_p2/2026-10-20/1_demos_2026-10-20_19-49-31_670079.pkl",
+      "bytes": 1120466822,
+      "mtime_ns": 1792493375044693200,
+      "sha256": "8985bc0f1938c8b3296cda6305db763dd74baa2abbc90fe30767f8b3fa262a45"
+    },
+    {
+      "path": "lan_p2/2026-10-20/1_demos_2026-10-20_19-50-14_534134.pkl",
+      "bytes": 1168539679,
+      "mtime_ns": 1792493417970547500,
+      "sha256": "86bd7afc11d86488a9ae2867478044fa141679a5df82e3e6adc8a938e846105b"
+    },
+    {
+      "path": "lan_p2/2026-10-20/1_demos_2026-10-20_19-50-55_031190.pkl",
+      "bytes": 1087185591,
+      "mtime_ns": 1792493458181803900,
+      "sha256": "e7c3bed48db200765b59eef22853e06b7f11a540b2cac8d5fc553e005216cdce"
+    },
+    {
+      "path": "lan_p2/2026-10-20/1_demos_2026-10-20_19-51-38_177480.pkl",
+      "bytes": 1201820650,
+      "mtime_ns": 1792493501796507700,
+      "sha256": "f848f780cfa5fbb0f204d76ace19188cf3233f6a1357560ec13d07f678ff67ee"
+    },
+    {
+      "path": "lan_p2/2026-10-20/1_demos_2026-10-20_19-52-21_140938.pkl",
+      "bytes": 1164841720,
+      "mtime_ns": 1792493544577703500,
+      "sha256": "81d377333593ad4b1c5cb9f623b2a21704c0252bee5d81a29f5e46647e1a0f93"
+    },
+    {
+      "path": "lan_p2/2026-10-20/1_demos_2026-10-20_19-53-02_596126.pkl",
+      "bytes": 1127862550,
+      "mtime_ns": 1792493585927558300,
+      "sha256": "88245dc016a5133a0b33098c904b89824966fca96806364e986357810403d24c"
+    },
+    {
+      "path": "lan_p2/2026-10-20/1_demos_2026-10-20_19-53-41_711065.pkl",
+      "bytes": 1024321178,
+      "mtime_ns": 1792493624655807600,
+      "sha256": "a9d9b38c4d88a46393ff9b4ec9a53fe105c9a14681f1f83764cf45fcacb2bce8"
+    },
+    {
+      "path": "lan_p2/2026-10-20/1_demos_2026-10-20_19-54-23_800341.pkl",
+      "bytes": 1168539539,
+      "mtime_ns": 1792493667369404600,
+      "sha256": "1a7582752d0d4d6d164cbdcc3b19faae852f1d593737aca3301c5694accd0042"
+    },
+    {
+      "path": "lan_p2/2026-10-20/1_demos_2026-10-20_19-55-07_552489.pkl",
+      "bytes": 1190726913,
+      "mtime_ns": 1792493711111976100,
+      "sha256": "42740b331dc961fcd0ce5e696087c2cea45ac05f1b56a93f1934b88c672c2edf"
+    },
+    {
+      "path": "lan_p2/2026-10-20/env_config_2026-10-20_19-46-28_878699.json",
+      "bytes": 2617,
+      "mtime_ns": 1792493188879446700,
+      "sha256": "e5a7f5f02cb257fb4a8dcadbb750ebb2b6beae0f7e79271bdd2ed34fa945250c"
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "errors": [],
+    "comparison": "exact relative file set, sizes, SHA-256",
+    "reference_root": "/media/csilab/robot_data/default_sfm",
+    "reference_created_at_utc": "2026-10-24T08:25:23.702842+00:00"
+  }
+}

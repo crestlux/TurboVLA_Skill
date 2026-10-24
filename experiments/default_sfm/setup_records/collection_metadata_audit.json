@@ -1,0 +1,2088 @@
+{
+  "config_count": 67,
+  "train_hz_counts": {
+    "10": 67
+  },
+  "action_chunk_mode_counts": {
+    "delta": 67
+  },
+  "configurations": [
+    {
+      "file": "audio_jack_p1/2026-10-19/env_config_2026-10-19_17-35-47_494361.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "audio_jack_p1/2026-10-19/env_config_2026-10-19_17-38-02_397311.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "audio_jack_p1/2026-10-19/env_config_2026-10-19_17-39-00_259894.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "audio_jack_p2/2026-10-21/env_config_2026-10-21_16-53-52_455538.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "audio_jack_p3/2026-10-22/env_config_2026-10-22_16-32-10_951869.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "audio_jack_p4/2026-10-22/env_config_2026-10-22_18-10-12_328428.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "audio_jack_p5/2026-10-22/env_config_2026-10-22_20-42-04_852130.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "barlatch_p1/2026-10-20/env_config_2026-10-20_18-36-33_059382.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "barlatch_p2/2026-10-20/env_config_2026-10-20_19-55-39_173486.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "barlatch_p3/2026-10-22/env_config_2026-10-22_19-59-29_219368.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "barlatch_p4/2026-10-22/env_config_2026-10-22_19-12-00_150020.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "barlatch_p5/2026-10-22/env_config_2026-10-22_21-00-07_803599.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "bnc_p1/2026-10-19/env_config_2026-10-19_18-44-47_877636.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "bnc_p1/2026-10-19/env_config_2026-10-19_19-01-31_897756.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "bnc_p2/2026-10-20/env_config_2026-10-20_19-30-35_299833.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "bnc_p3/2026-10-21/env_config_2026-10-21_19-18-06_301427.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "bnc_p4/2026-10-22/env_config_2026-10-22_19-29-38_377515.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "bnc_p5/2026-10-23/env_config_2026-10-23_17-27-30_381607.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "bnc_p5/2026-10-23/env_config_2026-10-23_17-28-45_502011.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "hdmi_p1/2026-10-19/env_config_2026-10-19_17-48-17_002805.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "hdmi_p2/2026-10-20/env_config_2026-10-20_20-09-18_324592.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "hdmi_p3/2026-10-21/env_config_2026-10-21_20-02-51_326818.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "hdmi_p3/2026-10-21/env_config_2026-10-21_20-16-57_927888.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "hdmi_p4/2026-10-22/env_config_2026-10-22_18-42-03_397939.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "hdmi_p5/2026-10-22/env_config_2026-10-22_20-49-13_920277.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "knob_p1/2026-10-20/env_config_2026-10-20_18-19-57_924014.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "knob_p2/2026-10-21/env_config_2026-10-21_17-35-36_720857.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "knob_p3/2026-10-21/env_config_2026-10-21_18-25-20_413381.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "knob_p3/2026-10-21/env_config_2026-10-21_18-27-08_441677.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "knob_p3/2026-10-21/env_config_2026-10-21_18-30-14_656571.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "knob_p3/2026-10-21/env_config_2026-10-21_18-34-47_986940.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "knob_p3/2026-10-21/env_config_2026-10-21_18-41-37_199311.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "knob_p3/2026-10-21/env_config_2026-10-21_19-09-21_292001.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "knob_p4/2026-10-22/env_config_2026-10-22_19-46-07_218998.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "knob_p4/2026-10-22/env_config_2026-10-22_19-52-55_337951.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "knob_p4/2026-10-22/env_config_2026-10-22_19-54-22_362008.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "knob_p5/2026-10-22/env_config_2026-10-22_20-27-16_566879.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "lan_p1/2026-10-20/env_config_2026-10-20_19-13-52_099354.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "lan_p2/2026-10-20/env_config_2026-10-20_19-46-28_878699.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "lan_p3/2026-10-21/env_config_2026-10-21_19-52-32_172881.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "lan_p4/2026-10-22/env_config_2026-10-22_17-59-17_476443.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "lan_p4/2026-10-22/env_config_2026-10-22_18-01-09_593665.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "lan_p5/2026-10-23/env_config_2026-10-23_17-02-39_753010.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "outlet_p1/2026-10-20/env_config_2026-10-20_18-54-20_286304.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "outlet_p1/2026-10-20/env_config_2026-10-20_19-05-55_613508.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "outlet_p1/2026-10-20/env_config_2026-10-20_19-07-38_725730.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "outlet_p2/2026-10-21/env_config_2026-10-21_16-45-02_744410.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "outlet_p3/2026-10-21/env_config_2026-10-21_19-41-12_848651.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "outlet_p4/2026-10-22/env_config_2026-10-22_18-19-05_983552.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "outlet_p5/2026-10-22/env_config_2026-10-22_20-35-00_158513.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "rotary_switch_p1/2026-10-19/env_config_2026-10-19_17-15-31_605142.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "rotary_switch_p2/2026-10-21/env_config_2026-10-21_17-03-26_344799.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "rotary_switch_p3/2026-10-22/env_config_2026-10-22_16-49-29_298856.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "rotary_switch_p4/2026-10-22/env_config_2026-10-22_19-21-17_026342.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "rotary_switch_p5/2026-10-23/env_config_2026-10-23_17-15-01_959819.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "usb_p1/2026-10-20/env_config_2026-10-20_18-09-19_961919.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "usb_p2/2026-10-21/env_config_2026-10-21_17-25-50_777720.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "usb_p3/2026-10-21/env_config_2026-10-21_17-49-55_561995.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "usb_p3/2026-10-21/env_config_2026-10-21_17-50-03_640517.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "usb_p3/2026-10-21/env_config_2026-10-21_17-50-20_247075.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "usb_p3/2026-10-21/env_config_2026-10-21_17-50-45_526159.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "usb_p3/2026-10-21/env_config_2026-10-21_17-53-24_653389.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "usb_p3/2026-10-21/env_config_2026-10-21_18-08-15_801848.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "usb_p3/2026-10-21/env_config_2026-10-21_18-11-20_277996.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "usb_p3/2026-10-21/env_config_2026-10-21_19-05-41_564472.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "usb_p4/2026-10-22/env_config_2026-10-22_18-32-50_813682.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    },
+    {
+      "file": "usb_p5/2026-10-22/env_config_2026-10-22_20-20-07_799029.json",
+      "train_hz": 10,
+      "action_chunk_mode": "delta",
+      "server_action_frame": "tcp",
+      "proprio_keys": [
+        "right/gripper_pose",
+        "right/tcp_force",
+        "right/tcp_pose",
+        "right/tcp_torque",
+        "right/tcp_vel"
+      ],
+      "arm_type": "right",
+      "policy_action_period_s": 0.1,
+      "cameras": {
+        "wrist_cam_d405_a": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        },
+        "head_cam_d455": {
+          "dim": [
+            640,
+            480
+          ],
+          "fps": 30
+        }
+      }
+    }
+  ]
+}

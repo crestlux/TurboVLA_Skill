@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-24T07:52:34.681032+00:00",
+  "root": "/data/crestlux/default_sfm",
+  "selection": "Nine named tasks, p1 through p5; test and usb_insert excluded",
+  "task_count": 1,
+  "folder_count": 1,
+  "demo_count": 10,
+  "file_count": 12,
+  "total_bytes": 17299064042,
+  "suffix_counts": {
+    ".pkl": 10,
+    ".json": 2
+  },
+  "excluded_top_level_entries": [
+    "audio_jack_p1",
+    "audio_jack_p2",
+    "audio_jack_p3",
+    "audio_jack_p4",
+    "audio_jack_p5",
+    "barlatch_p1",
+    "barlatch_p2",
+    "barlatch_p3",
+    "barlatch_p4",
+    "barlatch_p5",
+    "bnc_p1",
+    "bnc_p2",
+    "bnc_p3",
+    "bnc_p4",
+    "hdmi_p1",
+    "hdmi_p2",
+    "hdmi_p3"
+  ],
+  "hash_algorithm": "sha256",
+  "folders": [
+    {
+      "folder": "bnc_p5",
+      "task": "bnc",
+      "position": 5,
+      "demo_count": 10,
+      "file_count": 12,
+      "total_bytes": 17299064042
+    }
+  ],
+  "files": [
+    {
+      "path": "bnc_p5/2026-10-23/1_demos_2026-10-23_17-29-40_030394.pkl",
+      "bytes": 1826792394,
+      "mtime_ns": 1792744186027659800,
+      "sha256": "a09571ceafbed332ccb180c22f524ff60894646f29e8ae55e03a8a102f0a0082"
+    },
+    {
+      "path": "bnc_p5/2026-10-23/1_demos_2026-10-23_17-32-37_335083.pkl",
+      "bytes": 1545747708,
+      "mtime_ns": 1792744362335112100,
+      "sha256": "f9dcff2e3b2efc43abb3249ab0c67613786320d055d1614151c09067e7e85377"
+    },
+    {
+      "path": "bnc_p5/2026-10-23/1_demos_2026-10-23_17-37-49_731009.pkl",
+      "bytes": 1678873894,
+      "mtime_ns": 1792744675239145100,
+      "sha256": "d233cf5688ce6a69f238b9561ab9360bc43dd07015d3c1083373907ea8828738"
+    },
+    {
+      "path": "bnc_p5/2026-10-23/1_demos_2026-10-23_17-38-57_185949.pkl",
+      "bytes": 1697363899,
+      "mtime_ns": 1792744742604817200,
+      "sha256": "caf06911362e1dbc63b46d0dbd2042ce7e4898f368cb1eb028b2d659b557f68f"
+    },
+    {
+      "path": "bnc_p5/2026-10-23/1_demos_2026-10-23_17-40-02_566452.pkl",
+      "bytes": 1638196493,
+      "mtime_ns": 1792744807770341900,
+      "sha256": "038b2f0f80305addb2ca92f8a8ddb195b10e1eeab3a07a95213f605292f40055"
+    },
+    {
+      "path": "bnc_p5/2026-10-23/1_demos_2026-10-23_17-46-55_636312.pkl",
+      "bytes": 1926636961,
+      "mtime_ns": 1792745221167900400,
+      "sha256": "f07033538619b270b521120f8e5caa2be03004255461d03894b78c431a5c11a6"
+    },
+    {
+      "path": "bnc_p5/2026-10-23/1_demos_2026-10-23_17-51-01_687984.pkl",
+      "bytes": 1889657711,
+      "mtime_ns": 1792745466924971500,
+      "sha256": "c5244b3014f1c906d4d45b798d0b0e84f56c630ddde8f489194b490eebed0382"
+    },
+    {
+      "path": "bnc_p5/2026-10-23/1_demos_2026-10-23_17-52-11_658013.pkl",
+      "bytes": 1812000630,
+      "mtime_ns": 1792745536899314500,
+      "sha256": "02c6b19e381336a12c778f1ad61e6ba2a2b99e7e54144ec56da016714a89c4e6"
+    },
+    {
+      "path": "bnc_p5/2026-10-23/1_demos_2026-10-23_17-53-15_686569.pkl",
+      "bytes": 1604914884,
+      "mtime_ns": 1792745600231107700,
+      "sha256": "8a6d94c4cd3e64c4e688d941dba532ba85e2478afe3c46d1957697bb13d4b19e"
+    },
+    {
+      "path": "bnc_p5/2026-10-23/1_demos_2026-10-23_17-54-21_335699.pkl",
+      "bytes": 1678874234,
+      "mtime_ns": 1792745666121852600,
+      "sha256": "e7541b9e0b64f229bb39bfe2445bf0e0dc5902946118e3a29bb381d1fc662878"
+    },
+    {
+      "path": "bnc_p5/2026-10-23/env_config_2026-10-23_17-27-30_381607.json",
+      "bytes": 2617,
+      "mtime_ns": 1792744050382832700,
+      "sha256": "d0bc0c65529ed79f910584977eccaa4547114b3110776517844c498193fe3162"
+    },
+    {
+      "path": "bnc_p5/2026-10-23/env_config_2026-10-23_17-28-45_502011.json",
+      "bytes": 2617,
+      "mtime_ns": 1792744125502575100,
+      "sha256": "d0bc0c65529ed79f910584977eccaa4547114b3110776517844c498193fe3162"
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "errors": [],
+    "comparison": "exact relative file set, sizes, SHA-256",
+    "reference_root": "/media/csilab/robot_data/default_sfm",
+    "reference_created_at_utc": "2026-10-24T07:52:34.677644+00:00"
+  }
+}

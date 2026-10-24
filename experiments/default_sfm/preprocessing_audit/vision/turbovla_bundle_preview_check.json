@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "scope": "actual copied TurboVLA USB preprocessing image function with corresponding bundle settings on same native 640x480 frame",
+  "results": {
+    "native_640_input": {
+      "wrist_cam_d405_a": {
+        "output_shape": [
+          224,
+          224,
+          3
+        ],
+        "exact_preview_match": true
+      },
+      "head_cam_d455": {
+        "output_shape": [
+          224,
+          224,
+          3
+        ],
+        "exact_preview_match": true
+      }
+    },
+    "jack_faflow": {
+      "wrist_cam_d405_a": {
+        "output_shape": [
+          224,
+          224,
+          3
+        ],
+        "exact_preview_match": true
+      },
+      "head_cam_d455": {
+        "output_shape": [
+          224,
+          224,
+          3
+        ],
+        "exact_preview_match": true
+      }
+    }
+  },
+  "training_preprocessing_applied": false
+}

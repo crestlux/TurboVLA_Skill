@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-24T08:25:07.179204+00:00",
+  "root": "/data/crestlux/default_sfm",
+  "selection": "Nine named tasks, p1 through p5; test and usb_insert excluded",
+  "task_count": 1,
+  "folder_count": 1,
+  "demo_count": 10,
+  "file_count": 11,
+  "total_bytes": 9966011421,
+  "suffix_counts": {
+    ".pkl": 10,
+    ".json": 1
+  },
+  "excluded_top_level_entries": [
+    "audio_jack_p1",
+    "audio_jack_p2",
+    "audio_jack_p3",
+    "audio_jack_p4",
+    "audio_jack_p5",
+    "barlatch_p1",
+    "barlatch_p2",
+    "barlatch_p3",
+    "barlatch_p4",
+    "barlatch_p5",
+    "bnc_p1",
+    "bnc_p2",
+    "bnc_p3",
+    "bnc_p4",
+    "bnc_p5",
+    "hdmi_p1",
+    "hdmi_p2",
+    "hdmi_p3",
+    "hdmi_p4",
+    "hdmi_p5",
+    "knob_p1",
+    "knob_p2",
+    "knob_p3",
+    "knob_p4",
+    "knob_p5",
+    "lan_p1",
+    "lan_p2",
+    "lan_p4"
+  ],
+  "hash_algorithm": "sha256",
+  "folders": [
+    {
+      "folder": "lan_p3",
+      "task": "lan",
+      "position": 3,
+      "demo_count": 10,
+      "file_count": 11,
+      "total_bytes": 9966011421
+    }
+  ],
+  "files": [
+    {
+      "path": "lan_p3/2026-10-21/1_demos_2026-10-21_19-54-28_244785.pkl",
+      "bytes": 991053978,
+      "mtime_ns": 1792580071229456700,
+      "sha256": "8180328ebaf0dcfff19a1e13d2155f8be0e26ee285235300a8e9db83e8cad62a"
+    },
+    {
+      "path": "lan_p3/2026-10-21/1_demos_2026-10-21_19-55-29_606466.pkl",
+      "bytes": 1131576486,
+      "mtime_ns": 1792580133167746700,
+      "sha256": "0d235a7a16f4cc2c297713880bba94e374c48bd912ee8532b2c284ffbc79c962"
+    },
+    {
+      "path": "lan_p3/2026-10-21/1_demos_2026-10-21_19-56-06_618812.pkl",
+      "bytes": 924490685,
+      "mtime_ns": 1792580169679035200,
+      "sha256": "b338bbba197f18aadeb7124410e884a8aa29428d31a9498dd4d545350263a83e"
+    },
+    {
+      "path": "lan_p3/2026-10-21/1_demos_2026-10-21_19-56-43_212953.pkl",
+      "bytes": 924490625,
+      "mtime_ns": 1792580206401110100,
+      "sha256": "3c6b5be3caba7d0ff21440b3cfec351f036658dfd250d843b6cb8337370364de"
+    },
+    {
+      "path": "lan_p3/2026-10-21/1_demos_2026-10-21_19-58-42_512708.pkl",
+      "bytes": 917094745,
+      "mtime_ns": 1792580325428951200,
+      "sha256": "7bbff2587727c551b01cd8ebc0a234ab1cd04f10d56e8d8b5f0ad39cfa8f5556"
+    },
+    {
+      "path": "lan_p3/2026-10-21/1_demos_2026-10-21_19-59-26_085217.pkl",
+      "bytes": 1183347810,
+      "mtime_ns": 1792580370140775000,
+      "sha256": "067eed5301c1a3314d15982f7f427143699924c94c40094e9bc1ee6f6fcf87e5"
+    },
+    {
+      "path": "lan_p3/2026-10-21/1_demos_2026-10-21_20-00-04_634037.pkl",
+      "bytes": 972564143,
+      "mtime_ns": 1792580407880280700,
+      "sha256": "6a4c1f9b8fde3b5aad89439ff32940928db12d52793dbd084391c46b7221908f"
+    },
+    {
+      "path": "lan_p3/2026-10-21/1_demos_2026-10-21_20-00-44_842065.pkl",
+      "bytes": 1057617146,
+      "mtime_ns": 1792580448392318600,
+      "sha256": "3649ca88ceec0ce7d35f43e2121ead54e5a35a5b04a6156b4b1e4dd5151eafb9"
+    },
+    {
+      "path": "lan_p3/2026-10-21/1_demos_2026-10-21_20-01-22_795642.pkl",
+      "bytes": 965168241,
+      "mtime_ns": 1792580485888615000,
+      "sha256": "9b57a1dff9e0c194a1a56fabd3354214dfdd838802bb120a2984f891c10eb97f"
+    },
+    {
+      "path": "lan_p3/2026-10-21/1_demos_2026-10-21_20-02-37_123216.pkl",
+      "bytes": 898604945,
+      "mtime_ns": 1792580559959534700,
+      "sha256": "f0beb59340d3bfdadb62d489ab15e58e5d68b6e431f2e7b64b23ba80a117d144"
+    },
+    {
+      "path": "lan_p3/2026-10-21/env_config_2026-10-21_19-52-32_172881.json",
+      "bytes": 2617,
+      "mtime_ns": 1792579952173233200,
+      "sha256": "6b29245a0ebab67f3796b00e192f3539200a2345386d4cfaa8eecd8d371e42bd"
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "errors": [],
+    "comparison": "exact relative file set, sizes, SHA-256",
+    "reference_root": "/media/csilab/robot_data/default_sfm",
+    "reference_created_at_utc": "2026-10-24T08:25:07.176579+00:00"
+  }
+}

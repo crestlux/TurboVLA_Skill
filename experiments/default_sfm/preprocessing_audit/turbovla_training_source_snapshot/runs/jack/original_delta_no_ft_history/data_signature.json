@@ -1,0 +1,165 @@
+{
+  "files": [
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-17-53_465623_episode_000.hdf5",
+      "size": 104797796,
+      "mtime_ns": 1792420619830972461
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-18-38_581413_episode_000.hdf5",
+      "size": 106167900,
+      "mtime_ns": 1792420619906974762
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-19-14_224691_episode_000.hdf5",
+      "size": 93906294,
+      "mtime_ns": 1792420619966976580
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-19-54_844065_episode_000.hdf5",
+      "size": 87740542,
+      "mtime_ns": 1792420620038978759
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-21-06_522139_episode_000.hdf5",
+      "size": 91136810,
+      "mtime_ns": 1792420620110980938
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-21-42_960677_episode_000.hdf5",
+      "size": 98777700,
+      "mtime_ns": 1792420620182983114
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-22-18_781368_episode_000.hdf5",
+      "size": 95404786,
+      "mtime_ns": 1792420620270985776
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-22-54_752765_episode_000.hdf5",
+      "size": 95627162,
+      "mtime_ns": 1792420620358988437
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-23-35_138704_episode_000.hdf5",
+      "size": 114894796,
+      "mtime_ns": 1792420620470991825
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-24-11_714063_episode_000.hdf5",
+      "size": 96518224,
+      "mtime_ns": 1792420620558994488
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-25-02_752438_episode_000.hdf5",
+      "size": 102037770,
+      "mtime_ns": 1792420620654997390
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-25-38_732443_episode_000.hdf5",
+      "size": 95206143,
+      "mtime_ns": 1792420620743000053
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-26-15_307013_episode_000.hdf5",
+      "size": 99378346,
+      "mtime_ns": 1792420620839002955
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-26-58_882000_episode_000.hdf5",
+      "size": 125857152,
+      "mtime_ns": 1792420620955006464
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-27-37_967547_episode_000.hdf5",
+      "size": 105957425,
+      "mtime_ns": 1792420621055009487
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-28-15_491404_episode_000.hdf5",
+      "size": 100527331,
+      "mtime_ns": 1792420621151012386
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-29-00_126792_episode_000.hdf5",
+      "size": 128530050,
+      "mtime_ns": 1792420621279016253
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-29-38_471069_episode_000.hdf5",
+      "size": 101526557,
+      "mtime_ns": 1792420621383019395
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-30-29_596101_episode_000.hdf5",
+      "size": 125452633,
+      "mtime_ns": 1792420621507023140
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-31-11_517229_episode_000.hdf5",
+      "size": 113760744,
+      "mtime_ns": 1792420621623026645
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-32-38_566105_episode_000.hdf5",
+      "size": 122756649,
+      "mtime_ns": 1792420621735030028
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-33-22_074270_episode_000.hdf5",
+      "size": 124557775,
+      "mtime_ns": 1792420621851033533
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-34-04_393956_episode_000.hdf5",
+      "size": 117767195,
+      "mtime_ns": 1792420621967037037
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-34-48_372183_episode_000.hdf5",
+      "size": 124531863,
+      "mtime_ns": 1792420622087040658
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-35-30_519058_episode_000.hdf5",
+      "size": 117722894,
+      "mtime_ns": 1792420622207044279
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-36-14_949805_episode_000.hdf5",
+      "size": 126497780,
+      "mtime_ns": 1792420622331048019
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-37-00_395538_episode_000.hdf5",
+      "size": 129977831,
+      "mtime_ns": 1792420622459051882
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-37-47_472388_episode_000.hdf5",
+      "size": 135528046,
+      "mtime_ns": 1792420622591055864
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-38-33_549595_episode_000.hdf5",
+      "size": 130416365,
+      "mtime_ns": 1792420622719059726
+    },
+    {
+      "path": "/data/jack/jack_exp_demo_preprocessed/delta/1_demos_2026-10-19_20-41-13_839215_episode_000.hdf5",
+      "size": 112637544,
+      "mtime_ns": 1792420622831063105
+    }
+  ],
+  "metadata_sha256": {
+    "normalization.json": "a65ab2b40254ef9f793878a04e5f0ff5afeb56aedaf284d3bc35e867f2120904",
+    "manifest.json": "6e1080e87721f1a887fa3cc4d47a9a3d77b0753fa3801b6c671fb2020870711b"
+  },
+  "camera_keys": [
+    "observations/image_head",
+    "observations/image_wrist_right"
+  ],
+  "state_key": "observations/state",
+  "mode": "delta",
+  "instructions_sha256": "014548bf7ae582d7345f123aa4065bdb34db15e47bc05d0f41405e9824174bd1"
+}

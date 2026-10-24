@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-24T08:19:17.665667+00:00",
+  "root": "/data/crestlux/default_sfm",
+  "selection": "Nine named tasks, p1 through p5; test and usb_insert excluded",
+  "task_count": 1,
+  "folder_count": 1,
+  "demo_count": 10,
+  "file_count": 16,
+  "total_bytes": 11031030561,
+  "suffix_counts": {
+    ".pkl": 10,
+    ".json": 6
+  },
+  "excluded_top_level_entries": [
+    "audio_jack_p1",
+    "audio_jack_p2",
+    "audio_jack_p3",
+    "audio_jack_p4",
+    "audio_jack_p5",
+    "barlatch_p1",
+    "barlatch_p2",
+    "barlatch_p3",
+    "barlatch_p4",
+    "barlatch_p5",
+    "bnc_p1",
+    "bnc_p2",
+    "bnc_p3",
+    "bnc_p4",
+    "bnc_p5",
+    "hdmi_p1",
+    "hdmi_p2",
+    "hdmi_p3",
+    "hdmi_p4",
+    "hdmi_p5",
+    "knob_p1",
+    "knob_p2",
+    "knob_p4",
+    "knob_p5",
+    "lan_p1"
+  ],
+  "hash_algorithm": "sha256",
+  "folders": [
+    {
+      "folder": "knob_p3",
+      "task": "knob",
+      "position": 3,
+      "demo_count": 10,
+      "file_count": 16,
+      "total_bytes": 11031030561
+    }
+  ],
+  "files": [
+    {
+      "path": "knob_p3/2026-10-21/1_demos_2026-10-21_19-11-31_814357.pkl",
+      "bytes": 1264702052,
+      "mtime_ns": 1792577496145668500,
+      "sha256": "fcfe650dff7ef03bb362eaf5542ad555d45fd302a39ed06426e782e28cc6b103"
+    },
+    {
+      "path": "knob_p3/2026-10-21/1_demos_2026-10-21_19-12-13_567925.pkl",
+      "bytes": 1127877745,
+      "mtime_ns": 1792577537370455800,
+      "sha256": "eeb4af13f365ff2c890afdc3e7afd91787a5e0e035f729bfb2ae07e9c7497dd5"
+    },
+    {
+      "path": "knob_p3/2026-10-21/1_demos_2026-10-21_19-13-07_268448.pkl",
+      "bytes": 1083502333,
+      "mtime_ns": 1792577591023496900,
+      "sha256": "9610e468489b060a96591f34d03596c4188aaa37c89f30c31d59f9309a2237da"
+    },
+    {
+      "path": "knob_p3/2026-10-21/1_demos_2026-10-21_19-13-46_927381.pkl",
+      "bytes": 1068710529,
+      "mtime_ns": 1792577630544781200,
+      "sha256": "8e90f29c648ebc03340a3abc6ab7c234b63a92ca0b301e78dbd76ee54c83d201"
+    },
+    {
+      "path": "knob_p3/2026-10-21/1_demos_2026-10-21_19-14-29_954801.pkl",
+      "bytes": 1190742862,
+      "mtime_ns": 1792577673851180900,
+      "sha256": "9ddd7f12e1b83f3c4c3af10a9ec1a2e4f43000ac53133bec62741df44a956a59"
+    },
+    {
+      "path": "knob_p3/2026-10-21/1_demos_2026-10-21_19-15-07_606411.pkl",
+      "bytes": 998449360,
+      "mtime_ns": 1792577710966415400,
+      "sha256": "5a9bfca49d3559670013f41682214a1dbbfbea6dce21d9ee97ef48f34b911380"
+    },
+    {
+      "path": "knob_p3/2026-10-21/1_demos_2026-10-21_19-15-46_902019.pkl",
+      "bytes": 1065012518,
+      "mtime_ns": 1792577750576385700,
+      "sha256": "d6a1c458d5914aa718cd6e062e50eafaf7e1afd03f77675a13220fc43ac14cc7"
+    },
+    {
+      "path": "knob_p3/2026-10-21/1_demos_2026-10-21_19-16-25_983810.pkl",
+      "bytes": 1042824892,
+      "mtime_ns": 1792577789407448800,
+      "sha256": "2e013dec202d9b621440653f0fe7623ea8edf5085d6479d45db880e94a2ced15"
+    },
+    {
+      "path": "knob_p3/2026-10-21/1_demos_2026-10-21_19-17-06_533501.pkl",
+      "bytes": 1135273807,
+      "mtime_ns": 1792577830601590500,
+      "sha256": "8cdaf41abab9976cccb61f85ed6f08196f343f4fb66f667652d641a22e258b16"
+    },
+    {
+      "path": "knob_p3/2026-10-21/1_demos_2026-10-21_19-17-45_901230.pkl",
+      "bytes": 1053918755,
+      "mtime_ns": 1792577869366070800,
+      "sha256": "aff1c61d0358d91629ffc199748deba50f151b78228d11f0d5bbd215a773a731"
+    },
+    {
+      "path": "knob_p3/2026-10-21/env_config_2026-10-21_18-25-20_413381.json",
+      "bytes": 2618,
+      "mtime_ns": 1792574720664323100,
+      "sha256": "bf876c628a659c801ca5b4ad8940f9cb28aad8455c9e112189070565fb826359"
+    },
+    {
+      "path": "knob_p3/2026-10-21/env_config_2026-10-21_18-27-08_441677.json",
+      "bytes": 2618,
+      "mtime_ns": 1792574828441984500,
+      "sha256": "bf876c628a659c801ca5b4ad8940f9cb28aad8455c9e112189070565fb826359"
+    },
+    {
+      "path": "knob_p3/2026-10-21/env_config_2026-10-21_18-30-14_656571.json",
+      "bytes": 2618,
+      "mtime_ns": 1792575014656912700,
+      "sha256": "bf876c628a659c801ca5b4ad8940f9cb28aad8455c9e112189070565fb826359"
+    },
+    {
+      "path": "knob_p3/2026-10-21/env_config_2026-10-21_18-34-47_986940.json",
+      "bytes": 2618,
+      "mtime_ns": 1792575287987279000,
+      "sha256": "bf876c628a659c801ca5b4ad8940f9cb28aad8455c9e112189070565fb826359"
+    },
+    {
+      "path": "knob_p3/2026-10-21/env_config_2026-10-21_18-41-37_199311.json",
+      "bytes": 2618,
+      "mtime_ns": 1792575697199608300,
+      "sha256": "bf876c628a659c801ca5b4ad8940f9cb28aad8455c9e112189070565fb826359"
+    },
+    {
+      "path": "knob_p3/2026-10-21/env_config_2026-10-21_19-09-21_292001.json",
+      "bytes": 2618,
+      "mtime_ns": 1792577361294562100,
+      "sha256": "bf876c628a659c801ca5b4ad8940f9cb28aad8455c9e112189070565fb826359"
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "errors": [],
+    "comparison": "exact relative file set, sizes, SHA-256",
+    "reference_root": "/media/csilab/robot_data/default_sfm",
+    "reference_created_at_utc": "2026-10-24T08:19:17.662342+00:00"
+  }
+}

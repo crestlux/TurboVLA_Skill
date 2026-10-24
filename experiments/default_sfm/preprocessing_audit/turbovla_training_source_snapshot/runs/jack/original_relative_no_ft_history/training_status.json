@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "step": 10720,
+  "samples_seen": 683920,
+  "target_samples": 683920,
+  "target_steps": 10720,
+  "elapsed_seconds": 6569.324813815067,
+  "parameters": 216085805,
+  "remaining_steps": 0,
+  "remaining_samples": 0,
+  "remaining_seconds": 0.0,
+  "eta": "00:00:00"
+}

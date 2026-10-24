@@ -1,4 +1,4 @@
-# TurboVLA Research
+# TurboVLA Skill
 
 [![Upstream](https://img.shields.io/badge/Upstream-TurboVLA-181717?logo=github)](https://github.com/H-EmbodVis/TurboVLA)
 [![License](https://img.shields.io/badge/License-Apache%202.0-2563eb)](LICENSE)
@@ -13,6 +13,109 @@ suites for LIBERO-10.
 
 No project-specific performance claims are reported yet. Results published by the original TurboVLA project are upstream
 results, not results produced by this repository.
+
+## Real-robot default_sfm preparation
+
+The `default_sfm` work uses a separate `turbovla-sfm` environment without the LIBERO or RoboTwin dependencies.
+Training and preprocessing are deferred. The nine intended conditions cross three F/T methods
+(flattened 50×6 history with state, F/T GRU, F/T GRU + AdaLN) with three state inputs
+(keep XY, remove position XY, remove position XY and linear velocity Vx/Vy). They are recorded in
+[`experiments/default_sfm/experiment_plan.yaml`](experiments/default_sfm/experiment_plan.yaml).
+Entries set to `null` are undecided; this file is a planning record, not a training configuration.
+
+```bash
+# Activate the environment already prepared on this host.
+source scripts/default_sfm/activate_env.sh
+
+# Recreate the dependencies on another compatible GPU host if needed.
+bash scripts/default_sfm/setup_env.sh
+
+# Validate imports, CUDA and an offline forward pass; no optimizer or training.
+python scripts/default_sfm/check_environment.py \
+  --output experiments/default_sfm/setup_records/environment_validation.json
+
+# Inspect setup and copy/checksum progress.
+python scripts/default_sfm/status.py
+```
+
+The tested core is Python 3.10, PyTorch 2.6.0 + CUDA 12.4, torchvision 0.21.0,
+Transformers 4.57.6, timm 1.0.28 and NumPy 1.26.4. The PyTorch/torchvision pairing follows the
+[official installation matrix](https://pytorch.org/get-started/previous-versions/#v260).
+Exact installed versions and validation results are in `experiments/default_sfm/setup_records/`.
+The completed host setup and all-file copy verification are summarized in
+[`setup_summary.json`](experiments/default_sfm/setup_records/setup_summary.json).
+The activation script selects local DINOv3/BERT backbones and online W&B mode for future training;
+setup validation does not create a W&B run.
+
+Raw data is copied from `csilab:/home/csilab/share_projects/clean_share/demos/default_sfm`
+to `/data/crestlux/default_sfm` and exposed as `data/default_sfm`.
+The selected cohort has 45 task/position folders, 450 demo PKLs and 67 original JSON metadata files.
+Both `test` and `usb_insert` are excluded. Copies preserve the original bytes and dated subdirectories.
+Transfer progress is in `setup_records/transfer_status.json`; a successful complete transfer produces
+`setup_records/copy_manifest.json` with SHA-256 evidence for every file. Paths here are relative to
+`experiments/default_sfm/`.
+
+To resume an interrupted copy after activating the environment:
+
+```bash
+python scripts/default_sfm/copy_data.py \
+  --inventory experiments/default_sfm/setup_records/source_inventory.json
+```
+
+The copy helper requires `ssh` and `zstd` on both hosts. It hashes the source while streaming a losslessly
+compressed copy, compares an independently computed destination SHA-256, and publishes each complete file
+with an atomic rename. Verified folders are reused on resume; an unfinished file is transferred again.
+`python scripts/default_sfm/verify_readback.py` additionally reopens completed files and checks their SHA-256
+against the source records. It can run in another terminal during copying; its final evidence is
+`experiments/default_sfm/setup_records/readback_verification.json`.
+
+The raw data must remain unprocessed. The agreed design removes the six instantaneous F/T state fields
+in every condition, uses all 50×6 F/T samples, and predicts action chunks of length 5.
+The three remaining state dimensions are 13, 11 and 9; the flattened F/T condition has input dimensions
+313, 311 and 309. Linear velocity Vz and all angular velocities remain in the third condition.
+All 450 demonstrations will be used for training; evaluation will use separate data/rollouts.
+Actions are base-frame Delta increments from each timestep's measured TCP pose to its target,
+with rotation represented by `rotvec(R_target * R_measured.inv())`; state angle wrapping does not change them.
+Gripper labels will use held command targets from `infos.command_receipts.right.gripper_target_percent`
+(closed -1, open +1), retaining the target between commands. All 450 demos start with observed opening 1.0.
+The user selected retaining the same GRU memory token and adding F/T-conditioned scale/shift to the
+ACT decoder LayerNorms for the third method. The confirmed `wrap_angles: [roll, yaw]` maps roll/yaw
+into `[0, 2pi)` and preserves signed pitch. Preprocessing decisions still required are common normalization,
+stationary-interval handling and task instructions. Execution horizon is an inference setting and can be
+decided later without changing the confirmed action chunk length of 5.
+A sample has F/T `[1,50,6]`, state `[1,19]`, two RGB views and 7-D actions;
+the F/T sensor rate is 500 Hz, while the collection config records a 10 Hz control loop.
+The existing trainers are benchmark-specific; the custom loader, trainer and F/T/AdaLN variants will be
+implemented after the preprocessing contract is settled.
+
+The read-only preprocessing audit lives in `experiments/default_sfm/preprocessing_audit/`.
+It includes USB crop previews and an RPY boundary audit; preview images and diagnostic numeric extracts
+are not processed training data. The older USB crop bounds are present in both the separate FAFLOW project
+and the TurboVLA USB deployment bundles on `csilab`. This local repository currently has a general state
+projection, but no F/T-specific GRU or AdaLN module. The separate `/home/jack/TurboVLA` project has recorded
+completed USB training runs with a 500 Hz F/T GRU. Its source, training-time source snapshots and ten saved
+run configurations have been retrieved read-only through the user-authenticated SSH connection.
+The audited GRU/model/data/trainer sources match their training-time snapshots byte for byte.
+The user selected this TurboVLA GRU as the reference: one 128-unit layer, fresh zero state per window,
+last hidden state, then Linear + LayerNorm to one 256-D ACT memory token. This differs from FAFLOW's
+input projection and last-plus-mean pooling. Old USB normalization statistics will not be reused.
+The local TurboVLA LIBERO training path uses 256×256 images. Actual TurboVLA USB model bundles under
+`csilab:.../team_codes/turbovla` specify 224×224; the benchmark default must not be presented as their setting.
+Evidence is preserved in `preprocessing_audit/turbovla_usb_source_snapshot/` and
+`preprocessing_audit/turbovla_training_source_snapshot/`; the ten actual saved training configurations
+also set both model and dataset image size to 224. The user confirmed native-original crop followed by
+224×224 letterboxing for SFM, with the existing USB crop bounds: head `(top,left,height,width) =
+(96,128,288,384)`, wrist `(72,122,336,448)`. This yields 224×168 content and 28-pixel vertical padding.
+Previews do not modify the training data.
+The `csilab_source_snapshot` within the audit records the current remote preprocessing implementation.
+Its `wrap_angles` option independently maps selected state Euler angles into `[0, 2π)` before normalization,
+using the same transform for current/next observations and inference. It does not change action generation.
+The remote template leaves wrapping disabled; its documented example selects roll/yaw and preserves pitch.
+The user requested this per-axis option. The complete 450-demo / 143,127-frame audit found 3,744 roll and
+3,707 yaw jumps greater than pi in the current state. Mapping all axes introduces 3,440 pitch jumps;
+mapping only roll/yaw gives zero such jumps on all three axes. `[roll, yaw]` is the user-confirmed selection.
+The remaining preprocessing decisions and automatic data checks are recorded in
+[`preprocessing_review.json`](experiments/default_sfm/preprocessing_audit/preprocessing_review.json).
 
 ## Project status
 
@@ -61,8 +164,8 @@ Keep the benchmark repositories and datasets outside this repository:
 Set reusable paths after cloning:
 
 ```bash
-git clone https://github.com/jaemin720/TurboVLA-Research.git
-cd TurboVLA-Research
+git clone https://github.com/crestlux/TurboVLA_Skill.git
+cd TurboVLA_Skill
 
 export TURBOVLA_ROOT="$PWD"
 export LIBERO_ROOT=/absolute/path/to/LIBERO

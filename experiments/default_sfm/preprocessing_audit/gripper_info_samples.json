@@ -1,0 +1,92 @@
+{
+  "scope": "two representative raw demos; info semantics inspection only",
+  "demos": [
+    {
+      "path": "usb_p1/2026-10-20/1_demos_2026-10-20_18-10-52_902232.pkl",
+      "frames": 279,
+      "info_keys": [
+        "action_format",
+        "command_receipts",
+        "executed_action",
+        "intervene_action",
+        "keyboard",
+        "left1",
+        "left2",
+        "right1",
+        "right2",
+        "succeed"
+      ],
+      "gripper_target_percent_non_null_frames": 0,
+      "gripper_target_examples": [
+        null,
+        null,
+        null
+      ],
+      "events": [
+        {
+          "frame": 108,
+          "raw_gripper_command": -0.7896173596382141,
+          "gripper_target_percent": null,
+          "receipt_gripper_target_percent": 0.0
+        },
+        {
+          "frame": 254,
+          "raw_gripper_command": 0.9917526841163635,
+          "gripper_target_percent": null,
+          "receipt_gripper_target_percent": 100.0
+        }
+      ],
+      "source_stat_unchanged": true
+    },
+    {
+      "path": "outlet_p1/2026-10-20/1_demos_2026-10-20_18-59-48_900578.pkl",
+      "frames": 328,
+      "info_keys": [
+        "action_format",
+        "command_receipts",
+        "executed_action",
+        "intervene_action",
+        "keyboard",
+        "left1",
+        "left2",
+        "right1",
+        "right2",
+        "succeed"
+      ],
+      "gripper_target_percent_non_null_frames": 0,
+      "gripper_target_examples": [
+        null,
+        null,
+        null
+      ],
+      "events": [
+        {
+          "frame": 96,
+          "raw_gripper_command": -0.7913750410079956,
+          "gripper_target_percent": null,
+          "receipt_gripper_target_percent": 0.0
+        },
+        {
+          "frame": 262,
+          "raw_gripper_command": 0.9936774373054504,
+          "gripper_target_percent": null,
+          "receipt_gripper_target_percent": 100.0
+        },
+        {
+          "frame": 277,
+          "raw_gripper_command": -0.904109001159668,
+          "gripper_target_percent": null,
+          "receipt_gripper_target_percent": 0.0
+        },
+        {
+          "frame": 304,
+          "raw_gripper_command": 0.8166598677635193,
+          "gripper_target_percent": null,
+          "receipt_gripper_target_percent": 100.0
+        }
+      ],
+      "source_stat_unchanged": true
+    }
+  ],
+  "training_preprocessing_applied": false
+}

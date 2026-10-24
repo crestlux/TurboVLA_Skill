@@ -1,0 +1,256 @@
+{
+  "updated_at_utc": "2026-10-24T10:17:52.794548+00:00",
+  "variants": [
+    {
+      "id": "ft_state_xy_keep",
+      "ft_method": "state_embedding",
+      "remove_state_xy": false,
+      "state_condition": "xy_keep",
+      "remove_linear_velocity_xy": false
+    },
+    {
+      "id": "ft_state_xy_remove",
+      "ft_method": "state_embedding",
+      "remove_state_xy": true,
+      "state_condition": "xy_remove",
+      "remove_linear_velocity_xy": false
+    },
+    {
+      "id": "ft_state_xy_vxy_remove",
+      "ft_method": "state_embedding",
+      "remove_state_xy": true,
+      "remove_linear_velocity_xy": true,
+      "state_condition": "xy_vxy_remove"
+    },
+    {
+      "id": "ft_gru_xy_keep",
+      "ft_method": "gru_embedding",
+      "remove_state_xy": false,
+      "state_condition": "xy_keep",
+      "remove_linear_velocity_xy": false
+    },
+    {
+      "id": "ft_gru_xy_remove",
+      "ft_method": "gru_embedding",
+      "remove_state_xy": true,
+      "state_condition": "xy_remove",
+      "remove_linear_velocity_xy": false
+    },
+    {
+      "id": "ft_gru_xy_vxy_remove",
+      "ft_method": "gru_embedding",
+      "remove_state_xy": true,
+      "remove_linear_velocity_xy": true,
+      "state_condition": "xy_vxy_remove"
+    },
+    {
+      "id": "ft_gru_adaln_xy_keep",
+      "ft_method": "gru_embedding_adaln",
+      "remove_state_xy": false,
+      "state_condition": "xy_keep",
+      "remove_linear_velocity_xy": false
+    },
+    {
+      "id": "ft_gru_adaln_xy_remove",
+      "ft_method": "gru_embedding_adaln",
+      "remove_state_xy": true,
+      "state_condition": "xy_remove",
+      "remove_linear_velocity_xy": false
+    },
+    {
+      "id": "ft_gru_adaln_xy_vxy_remove",
+      "ft_method": "gru_embedding_adaln",
+      "remove_state_xy": true,
+      "remove_linear_velocity_xy": true,
+      "state_condition": "xy_vxy_remove"
+    }
+  ],
+  "state_conditions": [
+    {
+      "id": "xy_keep",
+      "removed_position_components": [],
+      "removed_velocity_components": [],
+      "retained_raw_indices": [
+        0,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "dimension_after_ft_removal": 13
+    },
+    {
+      "id": "xy_remove",
+      "removed_position_components": [
+        "x",
+        "y"
+      ],
+      "removed_velocity_components": [],
+      "retained_raw_indices": [
+        0,
+        6,
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "dimension_after_ft_removal": 11
+    },
+    {
+      "id": "xy_vxy_remove",
+      "removed_position_components": [
+        "x",
+        "y"
+      ],
+      "removed_velocity_components": [
+        "vx",
+        "vy"
+      ],
+      "retained_raw_indices": [
+        0,
+        6,
+        7,
+        8,
+        9,
+        15,
+        16,
+        17,
+        18
+      ],
+      "dimension_after_ft_removal": 9
+    }
+  ],
+  "ft_history_shape": [
+    50,
+    6
+  ],
+  "ft_flat_dim": 300,
+  "action_chunk_length": 5,
+  "training_started": false,
+  "preprocessing_applied": false,
+  "dataset_split": {
+    "policy": "all_450_train_separate_evaluation",
+    "training_demo_count": 450,
+    "held_out_demo_count": 0,
+    "evaluation_source": null,
+    "evaluation_protocol": null
+  },
+  "image_resolution": {
+    "new_training_output_size": [
+      224,
+      224
+    ],
+    "local_turbovla_libero_size": [
+      256,
+      256
+    ],
+    "verified_turbovla_usb_bundle_size": [
+      224,
+      224
+    ],
+    "legacy_faflow_usb_size": [
+      224,
+      224
+    ],
+    "verified_turbovla_usb_training_size": [
+      224,
+      224
+    ]
+  },
+  "action": {
+    "observed_raw_dimension": 7,
+    "observed_info_format": "absolute_tcp_xyz_rpy_gripper",
+    "training_representation": "delta",
+    "coordinate_frame": "robot_base",
+    "reference_pose": "measured_tcp_pose_at_each_action_timestep",
+    "translation": "target_xyz_minus_measured_xyz",
+    "rotation": "rotvec_target_rotation_times_measured_rotation_inverse",
+    "units": [
+      "m",
+      "m",
+      "m",
+      "rad",
+      "rad",
+      "rad",
+      "gripper_command"
+    ],
+    "divide_by_control_period": false,
+    "state_angle_wrapping_changes_action_generation": false,
+    "chunk_length": 5,
+    "observed_control_period_s": 0.1,
+    "nominal_chunk_coverage_s": 0.5,
+    "execution_horizon": null,
+    "gripper_label_rule": "held_command_target",
+    "gripper_target_source": "infos.command_receipts.right.gripper_target_percent",
+    "gripper_closed_label": -1,
+    "gripper_open_label": 1,
+    "gripper_zero_command_behavior": "retain_last_command_target",
+    "gripper_initial_target": "open",
+    "normalization": null
+  },
+  "vision_pipeline": {
+    "processing_order": "crop_native_original_then_resize",
+    "crop_tlhw": {
+      "head_cam_d455": [
+        96,
+        128,
+        288,
+        384
+      ],
+      "wrist_cam_d405_a": [
+        72,
+        122,
+        336,
+        448
+      ]
+    },
+    "final_image_size": [
+      224,
+      224
+    ],
+    "resize_mode": "letterbox",
+    "crop_boxes_confirmed": true,
+    "interpolation": "area",
+    "pad_value": 0
+  },
+  "gru_reference": {
+    "gru_implementation": "existing_turbovla_usb",
+    "gru_hidden_size": 128,
+    "gru_num_layers": 1,
+    "gru_bidirectional": false,
+    "gru_pooling": "last_hidden",
+    "gru_output_dimension": 256,
+    "gru_output_projection": "linear_then_layer_norm",
+    "gru_reset_policy": "zero_each_50_sample_window",
+    "gru_state_fusion": "separate_act_memory_token"
+  },
+  "rpy": {
+    "final_boundary_policy": "csilab_wrap_angles_per_axis",
+    "wrap_angles": [
+      "roll",
+      "yaw"
+    ],
+    "pitch_policy": "preserve_original_signed_angle",
+    "applied": false
+  },
+  "adaln": {
+    "adaln_target_modules": "act_decoder_layer_norms",
+    "adaln_condition_source": "same_gru_output_as_memory_token",
+    "adaln_retain_gru_memory_token": true,
+    "adaln_modulation": "scale_and_shift",
+    "adaln_initialization": null
+  }
+}
