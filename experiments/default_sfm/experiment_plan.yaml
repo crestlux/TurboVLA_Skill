@@ -1,6 +1,7 @@
 # Planning record, NOT a runnable training configuration.
-status: ready_for_training_not_started
-training_started: false
+status: formal_training_started
+training_started: true
+training_launch_record: experiments/default_sfm/training_runs/default_sfm_seed42/launch_record.json
 preprocessing_applied: true
 base_model: TurboVLA
 environment: turbovla-sfm
@@ -307,7 +308,7 @@ training:
   log_interval_steps: 10
   save_interval_steps: 1000
   keep_checkpoints: 2
-  formal_training_started: false
+  formal_training_started: true
 
 # Completion record; the immutable execution-time plan is in the output bundle.
 processed_output:

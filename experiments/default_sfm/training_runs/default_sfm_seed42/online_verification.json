@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-10-24T14:25:18.841283+00:00",
+  "scope": "initial online progress, not final synchronization",
+  "runs": [
+    {
+      "variant": "ft_gru_adaln_xy_keep",
+      "id": "m0bxscw4",
+      "url": "https://forge.coreweave.com/wandb/hemi0213-sungkyunkwan-university/TurboVLA_Skill/runs/m0bxscw4",
+      "mode": "online",
+      "state": "running",
+      "group": "default_sfm_9way_seed42",
+      "step": 110,
+      "samples_seen": 7040,
+      "loss": 0.14830726385116577,
+      "remote_microbatch": 64
+    },
+    {
+      "variant": "ft_gru_xy_keep",
+      "id": "u78hp0a1",
+      "url": "https://forge.coreweave.com/wandb/hemi0213-sungkyunkwan-university/TurboVLA_Skill/runs/u78hp0a1",
+      "mode": "online",
+      "state": "running",
+      "group": "default_sfm_9way_seed42",
+      "step": 110,
+      "samples_seen": 7040,
+      "loss": 0.14477752149105072,
+      "remote_microbatch": 64
+    },
+    {
+      "variant": "ft_state_xy_keep",
+      "id": "j3pjxo81",
+      "url": "https://forge.coreweave.com/wandb/hemi0213-sungkyunkwan-university/TurboVLA_Skill/runs/j3pjxo81",
+      "mode": "online",
+      "state": "running",
+      "group": "default_sfm_9way_seed42",
+      "step": 110,
+      "samples_seen": 7040,
+      "loss": 0.14574803411960602,
+      "remote_microbatch": 64
+    }
+  ]
+}

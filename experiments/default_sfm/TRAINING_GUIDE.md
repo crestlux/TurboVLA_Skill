@@ -6,6 +6,12 @@
 그 가중치는 본학습 초기값으로 사용할 수 없다. W&B 연결 검증 run은 optimizer step 0이다.
 최종 검증 결과는 [readiness.json](training_validation/readiness.json)에 기록한다.
 
+이후 사용자 승인에 따라 **2026-10-24 23:23 KST에 본학습을 시작했다.**
+[실행 기록과 운영 절차](training_runs/default_sfm_seed42/README.md)에 고정한 소스 커밋,
+실제 실행 명령, W&B run, 서비스와 모니터 접속 방법을 기록했다.
+`setup_records`·`training_validation`의 미시작 표시는 준비 시점의 이력이며 수정하지 않았다.
+실시간 상태는 `outputs/default_sfm_seed42/status.json`과 모니터에서 확인한다.
+
 ## 1. 동일하게 유지할 실험 계약
 
 공통 데이터는 `data/default_sfm_preprocessed`가 가리키는
@@ -136,16 +142,16 @@ W&B 전송과 주기적 checkpoint 저장을 제외한 smoke 처리량이므로 
 
 ## 5. 본학습 시작과 모니터링
 
-**아래 `--train` 명령은 본학습을 시작한다. 준비 검증 중에는 실행하지 않았다.**
+**현재 본학습은 실행 중이다. 동일한 그룹을 다시 시작하지 않는다.**
 현재 GPU 번호 0,1,2를 시작 시 UUID로 고정해 각 프로세스에 전달한다.
 세 GPU를 한 모델의 DDP에 묶는 방식이 아니라 서로 독립적인 9개 실험을 3개씩 실행하는 방식이다.
+사용자 systemd 서비스가 학습 프로세스를 유지하며 tmux는 상태와 로그를 보여준다.
+실행 코드는 검증 커밋 `8de13e5d0f229faef1f57e687da8151d1438e61e`의 별도 worktree에 고정했다.
+대기 중인 실험도 같은 worktree에서 시작한다. 새 실행에 필요한 전체 명령과 재개 절차는
+[실행 기록](training_runs/default_sfm_seed42/README.md)을 따른다.
 
 ```bash
-# 활성화된 turbovla-sfm 환경에서 실행한다. tmux는 이 환경을 물려받는다.
-tmux new-session -d -s sfm9 -c "$PWD" \
-  'python scripts/default_sfm/run_parallel.py --output outputs/default_sfm_seed42 --gpus 0,1,2 --jobs-per-gpu 1 --microbatch 64 --train'
-tmux split-window -h -t sfm9 -c "$PWD" \
-  'python scripts/default_sfm/monitor.py --run-dir outputs/default_sfm_seed42 --watch'
+systemctl --user status turbovla-sfm-seed42-20261024.service
 tmux attach -t sfm9
 ```
 
@@ -176,12 +182,16 @@ checkpoint에는 raw 가중치, EMA, AdamW, sampler cursor, Python/NumPy/torch/C
 GRU+AdaLN 검증 checkpoint 하나는 약 2.60GB다. 9개에서 2개씩 보관하면 약 47GB이고,
 동시 저장 시의 임시 파일·로그에 추가 공간이 필요하다.
 
-같은 그룹의 재개는 기존 출력 경로를 그대로 지정한다. 완료된 실험은 건너뛰고,
+같은 그룹의 재개는 기존 서비스가 중단된 경우에만 수행하며, 기존 출력 경로와 고정된 실행 소스를 그대로 지정한다.
+현재 실행의 서비스 재개 명령은 [실행 기록](training_runs/default_sfm_seed42/README.md)에 있다.
+완료된 실험은 건너뛰고,
 아직 시작하지 않은 대기 실험은 새로 시작하며, 중단된 실험은 각 `latest.pt`에서 이어간다.
 
 ```bash
-python scripts/default_sfm/run_parallel.py \
-  --output outputs/default_sfm_seed42 --gpus 0,1,2 --jobs-per-gpu 1 --microbatch 64 \
+/home/crestlux/miniforge3/envs/turbovla-sfm/bin/python \
+  /home/crestlux/project/TurboVLA-Research/tmp/default_sfm_seed42_source/scripts/default_sfm/run_parallel.py \
+  --output /home/crestlux/project/TurboVLA-Research/outputs/default_sfm_seed42 \
+  --gpus 0,1,2 --jobs-per-gpu 1 --microbatch 64 \
   --train --resume
 ```
 

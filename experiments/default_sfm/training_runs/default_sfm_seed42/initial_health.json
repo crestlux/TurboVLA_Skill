@@ -1,0 +1,145 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-10-24T14:26:24.490082+00:00",
+  "scope": "initial running snapshot; use output status.json and service for live status",
+  "active_count": 3,
+  "queued_count": 6,
+  "peak_gpu_used_gib": {
+    "0": 15.892578125,
+    "1": 15.916015625,
+    "2": 15.94140625
+  },
+  "checks": [
+    {
+      "variant": "ft_state_xy_keep",
+      "gpu": 0,
+      "pid": 308043,
+      "step": 245,
+      "metric": {
+        "step": 245,
+        "samples_seen": 15680,
+        "loss": 0.10033810883760452,
+        "gradient_norm": 1.424534797668457,
+        "update_seconds": 0.6231525982730091,
+        "samples_per_second": 102.70357562075188,
+        "peak_allocated_gib": 15.085805416107178,
+        "peak_reserved_gib": 15.548828125,
+        "learning_rates": {
+          "policy": 4.9999941645203076e-05,
+          "vision": 9.999988329040616e-06
+        }
+      },
+      "formal_training_started": true,
+      "config_matches_frozen_source": true,
+      "source_matches": true,
+      "gradient_validation": {
+        "status": "passed",
+        "norms": {
+          "vision": 0.19221404495627398,
+          "language_projection": 0.0070119828516740255,
+          "ft_gru": 0.0,
+          "adaln": 0.0
+        },
+        "bert_frozen": true
+      },
+      "wandb": {
+        "id": "j3pjxo81",
+        "entity": "hemi0213-sungkyunkwan-university",
+        "project": "TurboVLA_Skill",
+        "url": "https://forge.coreweave.com/wandb/hemi0213-sungkyunkwan-university/TurboVLA_Skill/runs/j3pjxo81",
+        "mode": "online",
+        "parent_run_id": null,
+        "initialized_at_utc": "2026-10-24T14:23:37.656363+00:00"
+      }
+    },
+    {
+      "variant": "ft_gru_xy_keep",
+      "gpu": 1,
+      "pid": 308044,
+      "step": 251,
+      "metric": {
+        "step": 251,
+        "samples_seen": 16064,
+        "loss": 0.12429274618625641,
+        "gradient_norm": 0.9364662766456604,
+        "update_seconds": 0.6150335450656712,
+        "samples_per_second": 104.05936475085484,
+        "peak_allocated_gib": 15.097411632537842,
+        "peak_reserved_gib": 15.5703125,
+        "learning_rates": {
+          "policy": 4.999993566383897e-05,
+          "vision": 9.999987132767795e-06
+        }
+      },
+      "formal_training_started": true,
+      "config_matches_frozen_source": true,
+      "source_matches": true,
+      "gradient_validation": {
+        "status": "passed",
+        "norms": {
+          "vision": 0.19192923297886483,
+          "language_projection": 0.00699132408493643,
+          "ft_gru": 0.0003796128028896107,
+          "adaln": 0.0
+        },
+        "bert_frozen": true
+      },
+      "wandb": {
+        "id": "u78hp0a1",
+        "entity": "hemi0213-sungkyunkwan-university",
+        "project": "TurboVLA_Skill",
+        "url": "https://forge.coreweave.com/wandb/hemi0213-sungkyunkwan-university/TurboVLA_Skill/runs/u78hp0a1",
+        "mode": "online",
+        "parent_run_id": null,
+        "initialized_at_utc": "2026-10-24T14:23:37.677180+00:00"
+      }
+    },
+    {
+      "variant": "ft_gru_adaln_xy_keep",
+      "gpu": 2,
+      "pid": 308045,
+      "step": 243,
+      "metric": {
+        "step": 243,
+        "samples_seen": 15552,
+        "loss": 0.10273806005716324,
+        "gradient_norm": 0.9264667630195618,
+        "update_seconds": 0.6393383899703622,
+        "samples_per_second": 100.10348354486713,
+        "peak_allocated_gib": 15.119948863983154,
+        "peak_reserved_gib": 15.595703125,
+        "learning_rates": {
+          "policy": 4.999994357415257e-05,
+          "vision": 9.999988714830514e-06
+        }
+      },
+      "formal_training_started": true,
+      "config_matches_frozen_source": true,
+      "source_matches": true,
+      "gradient_validation": {
+        "status": "passed",
+        "norms": {
+          "vision": 0.19047190981806744,
+          "language_projection": 0.006938276227245879,
+          "ft_gru": 0.0003767311785211852,
+          "adaln": 0.12299264784285244
+        },
+        "bert_frozen": true
+      },
+      "wandb": {
+        "id": "m0bxscw4",
+        "entity": "hemi0213-sungkyunkwan-university",
+        "project": "TurboVLA_Skill",
+        "url": "https://forge.coreweave.com/wandb/hemi0213-sungkyunkwan-university/TurboVLA_Skill/runs/m0bxscw4",
+        "mode": "online",
+        "parent_run_id": null,
+        "initialized_at_utc": "2026-10-24T14:23:37.966322+00:00"
+      }
+    }
+  ],
+  "tmux_visible_progress_verified": true,
+  "service_main_pid": 308002,
+  "systemd_active_state": "active",
+  "systemd_sub_state": "running",
+  "linger": true
+}

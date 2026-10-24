@@ -17,8 +17,10 @@ results, not results produced by this repository.
 ## Real-robot default_sfm preparation
 
 The `default_sfm` work uses a separate `turbovla-sfm` environment without the LIBERO or RoboTwin dependencies.
-Preprocessing of all 450 demonstrations is complete. The nine model variants and SFM trainer are implemented;
-formal training has not started. Disposable GPU smoke checks are recorded separately. The nine conditions cross three F/T methods
+Preprocessing of all 450 demonstrations is complete. Formal training started on 2026-10-24 at 23:23 KST:
+three experiments run concurrently and six are queued. The [launch record and monitoring instructions](experiments/default_sfm/training_runs/default_sfm_seed42/README.md)
+identify the frozen source, user service and online W&B runs. This is a launch snapshot; use the live monitor for current progress.
+Disposable GPU smoke checks are recorded separately. The nine conditions cross three F/T methods
 (flattened 50×6 history with state, F/T GRU, F/T GRU + AdaLN) with three state inputs
 (keep XY, remove position XY, remove position XY and linear velocity Vx/Vy). They are recorded in
 [`experiments/default_sfm/experiment_plan.yaml`](experiments/default_sfm/experiment_plan.yaml).

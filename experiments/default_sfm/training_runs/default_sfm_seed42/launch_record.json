@@ -1,0 +1,189 @@
+{
+  "status": "started_and_initial_progress_verified",
+  "prepared_at_utc": "2026-10-24T14:23:06.117843+00:00",
+  "user_authorized_formal_training": true,
+  "source_commit": "8de13e5d0f229faef1f57e687da8151d1438e61e",
+  "source_root": "/home/crestlux/project/TurboVLA-Research/tmp/default_sfm_seed42_source",
+  "working_checkout": "/home/crestlux/project/TurboVLA-Research",
+  "command": [
+    "/home/crestlux/miniforge3/envs/turbovla-sfm/bin/python",
+    "/home/crestlux/project/TurboVLA-Research/tmp/default_sfm_seed42_source/scripts/default_sfm/run_parallel.py",
+    "--config-dir",
+    "/home/crestlux/project/TurboVLA-Research/tmp/default_sfm_seed42_source/experiments/default_sfm/training_configs",
+    "--output",
+    "/home/crestlux/project/TurboVLA-Research/outputs/default_sfm_seed42",
+    "--gpus",
+    "0,1,2",
+    "--jobs-per-gpu",
+    "1",
+    "--microbatch",
+    "64",
+    "--train"
+  ],
+  "service": "turbovla-sfm-seed42-20261024.service",
+  "tmux_session": "sfm9",
+  "output": "/home/crestlux/project/TurboVLA-Research/outputs/default_sfm_seed42",
+  "launcher_log": "/home/crestlux/project/TurboVLA-Research/outputs/default_sfm_seed42_launcher.log",
+  "actual_batch_size": 64,
+  "effective_batch_size": 64,
+  "gradient_accumulation_steps": 1,
+  "jobs_per_gpu": 1,
+  "total_experiments": 9,
+  "wandb_mode": "online",
+  "wandb_group": "default_sfm_9way_seed42",
+  "max_samples_per_experiment": 11118800,
+  "config_sha256": {
+    "ft_gru_adaln_xy_keep.json": "11a6491932ae2513b29fcdf9ad8b74877dcf3dff9286198056216eae8b103fd5",
+    "ft_gru_adaln_xy_remove.json": "a17019f73903ce4d4493518dbbcb9c62d64edc16cf77fa53d53925af59693ee3",
+    "ft_gru_adaln_xy_vxy_remove.json": "8d579ef91ecbff990681af1c4f942c8a0f7f6fa60f9fc1c304a57c59b6ec0ce8",
+    "ft_gru_xy_keep.json": "fede2f6e4601c52e0a06625e16e1a792fc5e256ad184b861a6cea1851a6dadec",
+    "ft_gru_xy_remove.json": "a640b3b2416f314d41ff7cf8ae410df11e3de6a8a3a71e1b559d97df5e357492",
+    "ft_gru_xy_vxy_remove.json": "21fbc496b0b0014e213f122268630c4cafc92fa168bb10365f5c993777763baa",
+    "ft_state_xy_keep.json": "0b68b9d5a2532fae117cb5f3710cb919db093c0f59076410e97c072c909eca9e",
+    "ft_state_xy_remove.json": "3bd4433272adff424867fc1892429dbb2322e426d5003fbeb2145e97b0a88bfb",
+    "ft_state_xy_vxy_remove.json": "aa2ff242546413f6bf39e2fd714de0bf744b10d92131e5b454d1e9be35e012d6",
+    "index.json": "f37d6e39e54ce05855ecf30e5d92164b8bb2da8bb82ece688f3c740bb50aeef3"
+  },
+  "dataset_root": "/data/crestlux/default_sfm_processed/sfm_delta_h5_ftstd001_v1",
+  "started_at_utc": "2026-10-24T14:23:27.070114+00:00",
+  "service_started_at_kst": "2026-10-24T23:23:25+09:00",
+  "initial_progress_verified_at_utc": "2026-10-24T14:26:24.490082+00:00",
+  "service_main_pid": 308002,
+  "gpus": [
+    {
+      "index": 0,
+      "uuid": "GPU-3d54ec76-3a66-0628-188f-d33635dcc994",
+      "name": "NVIDIA GeForce RTX 3090",
+      "total_mib": 24576,
+      "used_mib": 16,
+      "utilization": 0
+    },
+    {
+      "index": 1,
+      "uuid": "GPU-90d19c4f-cb2b-8872-4b1c-f59534b57c1a",
+      "name": "NVIDIA GeForce RTX 3090",
+      "total_mib": 24576,
+      "used_mib": 16,
+      "utilization": 0
+    },
+    {
+      "index": 2,
+      "uuid": "GPU-dc585b7b-5734-2b3b-ecdf-957f7db0cf4e",
+      "name": "NVIDIA GeForce RTX 3090",
+      "total_mib": 24576,
+      "used_mib": 16,
+      "utilization": 0
+    }
+  ],
+  "queue": [
+    {
+      "variant": "ft_state_xy_keep",
+      "gpu": 0,
+      "gpu_uuid": "GPU-3d54ec76-3a66-0628-188f-d33635dcc994",
+      "output": "/home/crestlux/project/TurboVLA-Research/outputs/default_sfm_seed42/ft_state_xy_keep"
+    },
+    {
+      "variant": "ft_gru_xy_keep",
+      "gpu": 1,
+      "gpu_uuid": "GPU-90d19c4f-cb2b-8872-4b1c-f59534b57c1a",
+      "output": "/home/crestlux/project/TurboVLA-Research/outputs/default_sfm_seed42/ft_gru_xy_keep"
+    },
+    {
+      "variant": "ft_gru_adaln_xy_keep",
+      "gpu": 2,
+      "gpu_uuid": "GPU-dc585b7b-5734-2b3b-ecdf-957f7db0cf4e",
+      "output": "/home/crestlux/project/TurboVLA-Research/outputs/default_sfm_seed42/ft_gru_adaln_xy_keep"
+    },
+    {
+      "variant": "ft_state_xy_remove",
+      "gpu": 1,
+      "gpu_uuid": "GPU-90d19c4f-cb2b-8872-4b1c-f59534b57c1a",
+      "output": "/home/crestlux/project/TurboVLA-Research/outputs/default_sfm_seed42/ft_state_xy_remove"
+    },
+    {
+      "variant": "ft_gru_xy_remove",
+      "gpu": 2,
+      "gpu_uuid": "GPU-dc585b7b-5734-2b3b-ecdf-957f7db0cf4e",
+      "output": "/home/crestlux/project/TurboVLA-Research/outputs/default_sfm_seed42/ft_gru_xy_remove"
+    },
+    {
+      "variant": "ft_gru_adaln_xy_remove",
+      "gpu": 0,
+      "gpu_uuid": "GPU-3d54ec76-3a66-0628-188f-d33635dcc994",
+      "output": "/home/crestlux/project/TurboVLA-Research/outputs/default_sfm_seed42/ft_gru_adaln_xy_remove"
+    },
+    {
+      "variant": "ft_state_xy_vxy_remove",
+      "gpu": 2,
+      "gpu_uuid": "GPU-dc585b7b-5734-2b3b-ecdf-957f7db0cf4e",
+      "output": "/home/crestlux/project/TurboVLA-Research/outputs/default_sfm_seed42/ft_state_xy_vxy_remove"
+    },
+    {
+      "variant": "ft_gru_xy_vxy_remove",
+      "gpu": 0,
+      "gpu_uuid": "GPU-3d54ec76-3a66-0628-188f-d33635dcc994",
+      "output": "/home/crestlux/project/TurboVLA-Research/outputs/default_sfm_seed42/ft_gru_xy_vxy_remove"
+    },
+    {
+      "variant": "ft_gru_adaln_xy_vxy_remove",
+      "gpu": 1,
+      "gpu_uuid": "GPU-90d19c4f-cb2b-8872-4b1c-f59534b57c1a",
+      "output": "/home/crestlux/project/TurboVLA-Research/outputs/default_sfm_seed42/ft_gru_adaln_xy_vxy_remove"
+    }
+  ],
+  "initial_wandb_runs": [
+    {
+      "id": "j3pjxo81",
+      "entity": "hemi0213-sungkyunkwan-university",
+      "project": "TurboVLA_Skill",
+      "url": "https://forge.coreweave.com/wandb/hemi0213-sungkyunkwan-university/TurboVLA_Skill/runs/j3pjxo81",
+      "mode": "online",
+      "parent_run_id": null,
+      "initialized_at_utc": "2026-10-24T14:23:37.656363+00:00",
+      "variant": "ft_state_xy_keep"
+    },
+    {
+      "id": "u78hp0a1",
+      "entity": "hemi0213-sungkyunkwan-university",
+      "project": "TurboVLA_Skill",
+      "url": "https://forge.coreweave.com/wandb/hemi0213-sungkyunkwan-university/TurboVLA_Skill/runs/u78hp0a1",
+      "mode": "online",
+      "parent_run_id": null,
+      "initialized_at_utc": "2026-10-24T14:23:37.677180+00:00",
+      "variant": "ft_gru_xy_keep"
+    },
+    {
+      "id": "m0bxscw4",
+      "entity": "hemi0213-sungkyunkwan-university",
+      "project": "TurboVLA_Skill",
+      "url": "https://forge.coreweave.com/wandb/hemi0213-sungkyunkwan-university/TurboVLA_Skill/runs/m0bxscw4",
+      "mode": "online",
+      "parent_run_id": null,
+      "initialized_at_utc": "2026-10-24T14:23:37.966322+00:00",
+      "variant": "ft_gru_adaln_xy_keep"
+    }
+  ],
+  "runtime_verification": "initial_health.json",
+  "online_verification": "online_verification.json",
+  "service_properties": {
+    "Restart": "no",
+    "KillMode": "mixed",
+    "TimeoutStopSec": 240,
+    "RemainAfterExit": true,
+    "Type": "exec",
+    "StandardOutput": "append:/home/crestlux/project/TurboVLA-Research/outputs/default_sfm_seed42_launcher.log",
+    "StandardError": "inherit"
+  },
+  "service_environment": {
+    "USE_TF": "0",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "TOKENIZERS_PARALLELISM": "false",
+    "WANDB_MODE": "online",
+    "PYTHONUNBUFFERED": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4"
+  },
+  "linger_enabled": true
+}
