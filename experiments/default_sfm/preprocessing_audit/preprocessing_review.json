@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-10-24T11:12:37.785051+00:00",
-  "status": "awaiting_ft_normalization_discussion",
+  "updated_at_utc": "2026-10-24T11:35:32.025982+00:00",
+  "status": "preprocessing_implementation_validated",
   "confirmed_rpy": {
     "wrap_angles": [
       "roll",
@@ -13,7 +13,7 @@
   "decisions_before_conversion": [
     {
       "id": "normalization",
-      "status": "state_action_confirmed_ft_reopened",
+      "status": "confirmed_standard_ft_epsilon_0_01",
       "confirmed": {
         "state": {
           "method": "standard",
@@ -33,19 +33,18 @@
           "shared_across_all_nine_variants": true,
           "reuse_historical_usb_statistics": false,
           "fitted": false
+        },
+        "ft": {
+          "status": "confirmed",
+          "method": "standard",
+          "channel_statistics_count": 6,
+          "pool_history_samples": true,
+          "shared_across_variants": true,
+          "application_count": 1,
+          "std_floor": 0.01
         }
       },
-      "numerical_check_before_conversion": "Include intentional valid zero histories in channel statistics. Inspect full-cohort dispersion, then agree on the method and numerical floor. The temporary 1e-6 choice was withdrawn; no normalization was applied.",
-      "pending_ft": {
-        "status": "awaiting_user_discussion",
-        "method": null,
-        "previously_selected_method": "standard",
-        "channel_statistics_count": 6,
-        "pool_history_samples": true,
-        "shared_across_variants": true,
-        "application_count": 1,
-        "std_floor": null
-      }
+      "numerical_check_before_conversion": "Full numeric preflight passed. User selected FT epsilon=0.01 including all intentional zero histories; Tx and Ty std are below the floor."
     },
     {
       "id": "frame_selection",
@@ -176,12 +175,10 @@
     "demos": 450,
     "frames": 143127
   },
-  "full_cohort_ft_and_receipt_audit_complete": false,
+  "full_cohort_ft_and_receipt_audit_complete": true,
   "training_preprocessing_applied": false,
   "training_started": false,
-  "pending_user_preprocessing_decisions": [
-    "F/T normalization strategy and numerical scale floor (user discussion pending)"
-  ],
+  "pending_user_preprocessing_decisions": [],
   "completed_read_only_data_checks": [
     {
       "check": "RPY boundary audit",
@@ -224,6 +221,15 @@
       "all_zero_windows": 2330,
       "full_cohort_statistics": false,
       "production_statistics_fitted": false
+    },
+    {
+      "check": "Full-cohort F/T and held-receipt preflight",
+      "report": "full_numeric_preflight.json",
+      "demos": 450,
+      "frames": 143127,
+      "retained_frames": 138985,
+      "all_zero_ft_windows_retained": 111350,
+      "receipt_fallback_frames": 0
     }
   ],
   "ft_zero_history_policy": {

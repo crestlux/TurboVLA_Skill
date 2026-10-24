@@ -1,0 +1,20 @@
+{
+  "all_zero_ft_windows": 656,
+  "complete": true,
+  "data_contract_sha256": "1f91df9784acbff82daac44d921d4aee75713cad90509e1a49e1274e581043f5",
+  "elapsed_seconds": 13.879944300279021,
+  "episodes": 2,
+  "finished_at_utc": "2026-10-24T11:28:41.784062+00:00",
+  "frames": 695,
+  "normalization_sha256": "018151de64b6429456ca377f0a8b3b00d74daede944722c69b1379938c8c54c6",
+  "original_frames": 698,
+  "raw_config_sha256_verified": 67,
+  "raw_data_modified": false,
+  "raw_pkl_sha256_verified": 2,
+  "receipt_fallback_frames_all": 0,
+  "removed_initial_frames": 3,
+  "smoke_test": true,
+  "total_hdf5_bytes": 131132343,
+  "training_started": false,
+  "valid_action_entries": 3455
+}

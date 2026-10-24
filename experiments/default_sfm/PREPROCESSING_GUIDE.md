@@ -7,9 +7,9 @@
 ## 1. 현재 완료 범위와 이 문서의 용도
 
 이 문서는 다른 사람이 **확정한 전처리 규칙을 구현하고, 이미 완료한 데이터 검사를 재현**하기 위한 안내다.
-현재 `experiment_plan.yaml`은 계획 파일이며 실행 가능한 변환기 설정이 아니다.
-450개 데모를 학습용 파일로 변환하는 프로그램과 9개 모델 조건의 학습 경로는 아직 구현하지 않았다.
-따라서 이 문서에 존재하지 않는 변환 명령이나 학습 명령을 실행 가능한 것처럼 제시하지 않는다.
+`experiment_plan.yaml`은 전처리 프로그램이 읽는 확정 명세이며 학습 설정 파일은 아니다.
+450개를 변환하는 프로그램과 9개 조건의 공통 데이터 로더를 구현했다.
+F/T GRU·AdaLN 모델과 실제 학습 trainer는 별도 작업이며, 이 문서의 명령은 학습을 시작하지 않는다.
 
 | 항목 | 현재 상태 |
 |---|---|
@@ -18,18 +18,18 @@
 | RPY 검사 | 450개 / 143,127프레임 완료 |
 | 초기 정지 인덱스 진단 | 450개 완료. 제거 예정 4,142프레임, 유지 예정 138,985프레임 |
 | 이번 F/T 진단 | 각 task의 p1 첫 데모 1개씩, 총 9개만 예비 검사 |
-| 전체 F/T·receipt 검사 | 미완료 |
-| 학습용 변환 / 정규화 계수 확정·저장 | 미실행 |
+| 전체 F/T·receipt 검사 | 완료. 450개, 원본 143,127프레임 전부 receipt 있음 |
+| 학습용 변환 | 2개 smoke 변환 통과. 전체 450개 변환은 실행 기록 참조 |
 | optimizer step / 학습 | 0 / 미실행 |
 
-F/T 정규화 방식과 분모 정책은 다시 상의하기로 했다. `method`와 `std_floor`는 **미정(`null`)**이다.
-한때 선택했다가 철회한 `1e-6`을 확정값으로 사용하면 안 된다.
+최신 사용자 결정은 **F/T 6축별 standard, `epsilon=0.01`**이다.
+정상 0 이력을 통계에 포함하고, 전체 유지 구간에서 구한 같은 계수를 9개 조건에 적용한다.
 
 ## 2. 무엇을 누가 결정했는가
 
 “모든 세부 수치를 사용자가 개별 승인했다”는 뜻으로 이 계획을 해석하면 안 된다.
 실험 결정, 기존 구현에서 가져온 세부사항, 구현을 위해 정리한 사항을 아래처럼 구분한다.
-모든 항목은 아직 학습 데이터에 적용하지 않았다.
+구현과 실제 데이터 적용의 완료 여부는 첫 상태 표와 출력 bundle의 `manifest.json`으로 구분한다.
 
 | 항목 | 근거와 범위 |
 |---|---|
@@ -42,7 +42,7 @@ F/T 정규화 방식과 분모 정책은 다시 상의하기로 했다. `method`
 | roll·yaw만 `[0,2π)`, pitch 부호 유지 | 사용자 직접 확정 |
 | base-frame Delta, chunk 5, held gripper | 사용자 직접 확정 |
 | state 축별 standard, action `symlog_minmax` | 사용자 직접 확정 |
-| F/T 정규화 | 앞서 6축별 standard를 선택했으나 최신 지시로 다시 논의 중. 방식·분모 미정 |
+| F/T 정규화 | 사용자 최종 확정: 6축별 standard, 분모 하한 0.01 |
 | 전체가 0인 F/T 이력 | 사용자가 의도된 정상 입력이라고 확인. 유지하고 통계에 포함하며 제거·보간하지 않음 |
 | 초기 정지 판정과 앞 2프레임 보존 | 사용자가 “기존에 처리했던 것과 똑같이”로 확정 |
 | task별 9개 영문 문장, clockwise의 조작면 정면 기준 | 사용자 직접 제공·확정 |
@@ -56,7 +56,8 @@ F/T 정규화 방식과 분모 정책은 다시 상의하기로 했다. `method`
 환경 요청에 따라 `pyproject.toml`의 `real_robot` 의존성, 환경·복사·검사 도구, 문서와 감사 기록을 추가했다.
 GitHub 원격 변경과 push는 사용자 요청·승인 범위에서 수행했다.
 감사 시점의 `e946c43..7d82d00` 비교에서 `turbovla/`, `configs/`의 실제 모델·학습 코드는 변경되지 않았다.
-참조용 복사본은 `preprocessing_audit/*source*/` 아래에 있으며 실행 중인 모델 코드와 구별한다.
+이번에는 `turbovla/data/sfm_preprocessing.py`, `turbovla/data/default_sfm.py`와 전처리·검증 CLI를 추가했다.
+참조용 복사본은 감사 디렉터리에 있으며, 실제 모델 구조·학습 코드는 아직 변경하지 않았다.
 `.gitignore`의 기존 `*.png` 규칙은 유지했고, `.gitattributes`는 참조 파일의 바이트 보존용이다.
 
 근거: [변경 및 원본 확인 기록](preprocessing_audit/change_and_reference_audit.json).
@@ -74,7 +75,8 @@ GitHub 원격 변경과 push는 사용자 요청·승인 범위에서 수행했�
 | [normalization.py](preprocessing_audit/csilab_source_snapshot/preprocess/normalization.py) | population mean/std, symlog/minmax, mask 제외 통계 |
 | [action_chunks.py](preprocessing_audit/csilab_source_snapshot/preprocess/action_chunks.py) | 시점별 Delta, H=5로 설정할 chunk, tail mask |
 | [config_right_default.yaml](preprocessing_audit/csilab_source_snapshot/preprocess/configs/config_right_default.yaml) | 기존 초기 정지 설정, 일반 정규화 기본값 |
-| [gripper.py](preprocessing_audit/csilab_handoff_source/preprocess/gripper.py) | `label_version=1`의 명령 유지와 version 2의 구분 |
+| [최신 csilab gripper.py](preprocessing_audit/csilab_handoff_source/preprocess/gripper.py) | 명령 복원과 실제 next-state 라벨을 구분해야 함 |
+| [FAFLOW held 참조](preprocessing_audit/faflow_held_reference/gripper.py) | 이번 held 명령 라벨과 전체 프레임 대조에 사용하는 고정 버전 |
 | [episode_recording.py](preprocessing_audit/csilab_handoff_source/Real_Robo/episode_recording.py) | action 표현 encode/decode 경로 |
 
 파일별 해시는 [csilab_reference_recheck.json](preprocessing_audit/csilab_reference_recheck.json)에 있다.
@@ -127,7 +129,7 @@ F/T 500 Hz는 사용자 제공 센서 주기다. 50 samples는 명목상 약 100
 
 ## 5. 전처리 순서
 
-아래는 구현해야 할 순서다. 현재 실행된 것은 원본 복사 및 일부 읽기 전용 진단이다.
+아래 순서는 구현한 변환기의 처리 순서다. 완료 bundle은 전체 파일 검증 뒤에만 `manifest.json`의 `complete=true`로 게시한다.
 
 ```mermaid
 flowchart TD
@@ -188,23 +190,17 @@ no_motion: drop
 - 초기 관측 opening은 450개 모두 1.0이었다. 기존 로직의 초기 목표는 여기서 출발하며 같은 프레임의 receipt가 있으면 이를 우선한다.
 - 관측한 gripper 폭을 매 프레임 action 라벨로 치환하지 않는다.
 
-기존 FAFLOW held와 같은 의미를 csilab 코드에서 재현할 때의 명시적 옵션은 아래와 같다.
-이는 참조 함수의 옵션 예시이며 아직 SFM 변환기를 실행하는 설정 파일이 아니다.
+**이전 문서의 옵션 설명을 정정한다.** 최신 csilab의 `LegacyGripperLabels`는
+명령을 `commands`에 복원하지만 `mode=absolute`의 `labels`에는 **다음 관측값**을 넣는다.
+따라서 `label_version=1, mode=absolute`만 지정하면 held 라벨이 된다는 이전 설명은 잘못됐다.
 
-```yaml
-label_version: 1
-source_mode: binary
-mode: absolute
-command_range: [-1.0, 1.0]
-observation_range: [0.0, 1.0]
-grasp:
-  enabled: false
-```
+이번 구현은 위에서 확정한 receipt 기반 held 규칙을 직접 구현하며,
+[고정된 FAFLOW 참조](preprocessing_audit/faflow_held_reference/gripper.py)의 결과와 전 프레임을 대조한다.
+이 FAFLOW 버전은 `mode=absolute, grasp.enabled=false`에서 `labels=commands`다.
 
-기존 version 1 함수는 receipt가 없을 때 수집 설정의 binary command 기준을 사용하며,
-기준이 없으면 close ≤ -0.5 / open ≥ +0.5로 목표를 갱신하고 나머지는 유지한다.
-custom-width binary 기록은 receipt가 없으면 오류다. 이 분기를 실제로 사용하는 프레임 수를 기록해야 한다.
-이번 450개의 receipt 의미는 아직 전부 검증하지 않았다. 중간 목표값이 나타나면 임의로 ±1로 반올림하지 않는다.
+receipt가 없으면 기존 binary command 기준(close ≤ -0.5 / open ≥ +0.5)을 사용하며,
+custom-width 기록은 receipt 없이 복원하지 않는다. 중간 목표값은 임의로 ±1로 반올림하지 않고 오류로 보고한다.
+전체 450개 사전 검사에서 원본 143,127프레임 **모두 receipt가 있었고 fallback은 0개**였다.
 
 ### 5.3 이미지
 
@@ -252,50 +248,40 @@ wrapping 후 공통 state 축별 평균·표준편차를 계산한다. csilab �
 세 번째 조건에서도 vz와 wx·wy·wz는 남긴다. 이 제거는 **모델의 state 입력**에만 적용한다.
 초기 정지 검출이나 Delta 라벨 계산에 필요한 원래 x·y는 그대로 사용하며 action의 x·y를 제거하지 않는다.
 
-### 5.5 F/T: 확정 부분과 논의 중인 부분
+### 5.5 F/T: 확정된 공통 표준화
 
 현재 관측의 `right_force_history`에서 leading observation 차원만 제거해 `[50,6]`을 사용한다.
-순서는 기록된 oldest-to-newest, 채널 순서는 `[Fx,Fy,Fz,Tx,Ty,Tz]`다.
-원래 좌표계·시간 순서를 유지하고 새 필터·재샘플링·미래 관측 접합을 적용하지 않는다.
-
-앞서 합의한 출발점은 6축별 공통 standardization이었으나, 현재 최종 방식은 다시 논의 중이다.
-이 방식을 선택하면 전체 학습 데이터의 유지된 관측과 50개 history sample을 합쳐
-채널별 평균·표준편차 6쌍을 계산한다. 시간 위치별 300쌍을 별도로 계산하지 않는다.
-조건마다 정규화 계수를 바꾸거나 GRU 안에서 두 번 정규화하지 않아야 한다.
+시간 순서는 oldest-to-newest, 채널은 `[Fx,Fy,Fz,Tx,Ty,Tz]`다. 필터·보간·재샘플링을 추가하지 않는다.
+전체 학습 데이터의 유지된 관측과 50개 history sample을 합쳐 **6쌍**의 평균·population std를 계산한다.
+시간 위치마다 300쌍을 따로 계산하지 않는다. 정상 0도 전부 포함한다.
 
 ```text
-z[..., c] = (ft[..., c] - mean[c]) / max(std[c], floor[c])
+z[..., c] = (ft[..., c] - mean[c]) / max(std[c], 0.01)
 ```
 
-**정규화 방식과 분모 정책 및 `floor`는 현재 논의 중이다.** 기존 TurboVLA USB GRU의 하한은 0.01,
-csilab 일반 standard의 epsilon 기본값은 1e-6이다. 최신 사용자 지시는 상의 후 정하자는 것이므로
-어느 값을 자동으로 선택하지 않는다. 새 데이터의 6개 std가 모두 0.01 이상이면 두 하한은 같은 결과를 낸다.
+최신 사용자 답변으로 `epsilon=0.01`을 확정했다. 9개 조건에 같은 계수를 쓰고 정규화는 한 번만 한다.
+**저장된 F/T가 이미 정규화되므로 기존 USB GRU의 모델 내부 정규화를 다시 적용하면 안 된다.**
+모듈 구조의 GRU/Linear/LayerNorm은 그대로 재사용할 수 있지만 입력 정규화 위치는 이 계약을 따라야 한다.
 
-예비 검사 범위는 9개 task의 p1 첫 데모, 총 9/450개다. 초기 trim 후 2,971개 관측의 148,550개 F/T sample을 읽었다.
-이 중 `[50,6]` 전체가 0인 관측 window가 2,330개(약 78.4%)였다.
-채널별 population std는 대략 `[0.59668,0.58063,3.43952,0.01407,0.01036,0.04038]`이었다.
-이 **샘플 범위에서는** 두 하한의 분모가 같았다. 전체 450개 통계로 일반화하지 않는다.
+전체 숫자 사전 검사 결과는 다음과 같다. production 변환 후 이 계수와 다시 일치하는지 검사한다.
 
-사용자는 이 전체 0 window가 **의도된 정상 입력**임을 확인했다. 결측·미수신·불량으로 분류하지 않는다.
-원래 관측과 50개 sample을 그대로 유지하고, 선택할 정규화 방식의 통계에도 포함한다.
-0이라는 이유로 제거·보간·mask 처리하거나 nonzero 구간만으로 통계를 추정하지 않는다.
-전체 450개에서는 유한값·shape·채널별 분포·수집된 시간 정렬을 추가 검사한다.
-78.4%라는 수치는 이 9개 예비 샘플에 한정되며 전체 비율로 일반화하지 않는다.
-예비 통계는 학습용 `normalization.json`이 아니다.
-근거: [ft_standardization_pilot.json](preprocessing_audit/ft_standardization_pilot.json).
+| 축 | 전체 유지 구간의 std | 적용할 분모 |
+|---|---:|---:|
+| Fx | 0.3870765015 | 0.3870765015 |
+| Fy | 0.3791904228 | 0.3791904228 |
+| Fz | 3.3384654647 | 3.3384654647 |
+| Tx | 0.0079601053 | 0.01 |
+| Ty | 0.0044441420 | 0.01 |
+| Tz | 0.0518655978 | 0.0518655978 |
 
-논의할 주요 차이는 **평균을 뺄지, 물리적 0을 수치 0으로 유지할지**다.
-아래는 비교 설명이며 아직 적용할 방법을 선택한 것이 아니다. `epsilon`도 별도 미정이다.
+통계 표본 수는 축마다 **6,949,250개 = 138,985 × 50**이다.
+유지된 관측 중 `[50,6]` 전체가 0인 것은 **111,350개(약 80.12%)**이며 사용자가 확인한 정상 입력이다.
+제거·보간·결측 mask를 적용하지 않는다. 표준화 후 원래 0은 `-mean/scale`로 이동하며 그 의미는 유지된다.
+원래 0 window만 다시 숫자 0으로 강제하는 예외 처리를 넣지 않는다.
 
-| 후보 | 채널별 변환 | 원래 F/T=0의 표현 |
-|---|---|---|
-| 기존 축별 standard | `(x - mean) / max(std, epsilon)` | `-mean / max(std, epsilon)`이라는 고정 기준값 |
-| 평균을 빼지 않는 RMS scaling | `x / max(sqrt(mean(x²)), epsilon)` | 0 유지 |
-
-standard에서도 정상 0의 정보가 사라지는 것은 아니다. 모든 값에 같은 가역적인 affine 변환을 적용한다.
-반면 정규화 후 원래 0 window만 다시 0으로 강제하면 변환 규칙이 달라지므로 그런 예외 처리를 추가하지 않는다.
-RMS scaling은 물리적 0과 부호를 유지하지만 평균 0·분산 1을 보장하는 standardization은 아니다.
-두 방법 모두 정상 0을 포함한 공통 학습 구간으로 계수를 계산하고 9개 조건에 동일하게 적용해야 한다.
+근거: [전체 숫자 검사](preprocessing_audit/full_numeric_preflight.json).
+이전 [9개 예비 검사](preprocessing_audit/ft_standardization_pilot.json)의 78.4%는 표본 비율이며 전체 수치와 구분한다.
+센서별 timestamp는 원본에 없어서 실제 500 Hz 타이밍까지 검증한 것은 아니다. 관측 시간의 단조 증가는 검사한다.
 
 ### 5.6 Delta와 action chunk
 
@@ -357,7 +343,7 @@ flat은 `[50,6]`을 시간 순서대로 펼친 300차원을 state에 연결한�
 GRU는 기존 TurboVLA USB의 1-layer `GRU(6,128)`, window마다 zero hidden reset,
 마지막 hidden → Linear(128,256) → LayerNorm → `[B,1,256]` memory token 구조를 따른다.
 GRU+AdaLN은 이 token을 유지하고 같은 GRU 출력으로 ACT decoder LayerNorm의 scale·shift를 조건화한다.
-AdaLN 초기화와 학습 초기 가중치·동결 정책은 아직 미정이다. F/T 정규화 하한을 기존 GRU 값으로 몰래 고정하지 않는다.
+AdaLN 초기화와 학습 초기 가중치·동결 정책은 아직 미정이다. F/T 분모 하한은 사용자 확정값 0.01이다.
 
 ## 7. 지금 실행할 수 있는 재현 절차
 
@@ -479,19 +465,80 @@ python scripts/default_sfm/audit_ft_pilot.py \
 현재 원본의 기대 값은 `9 demos`, `2971 retained windows`, `2330 all-zero windows`다.
 일치하지 않으면 원본 버전·selection·시작 인덱스를 먼저 대조한다. 결과를 맞추기 위해 데이터를 수정하지 않는다.
 
-## 8. 실제 변환기 구현·배포 전에 남은 항목
+## 8. 전체 변환과 검증 실행
 
-1. 정상 0 window를 유지한 F/T 전체 450개 검사. 정규화 방식과 분모 정책은 상의 후 확정한다.
-2. 전체 receipt 의미와 held 라벨 재구성 검증. 샘플 2개 확인을 전체 검증으로 대신하지 않는다.
-3. 원본 RGB를 읽는 실제 변환기 구현. crop, wrap, Delta, held, mask와 공통 통계 적용을 연결한다.
-4. Delta → absolute 목표 복원, 정규화 역변환, 이미지 처리 및 offline/inference 일치 검사.
-5. 원본 외 별도 출력 경로에만 저장. 처리 코드 commit, 입력 해시, source indices, task instruction,
-   실제 정규화 계수·epsilon·channel order·단위·shape·action mask와 파일별 해시를 함께 배포한다.
-6. 9개 조건에서 동일 sample과 공통 변환을 사용하는지 확인한다. action chunk가 episode 경계를 넘지 않도록 검사한다.
+완료된 환경을 활성화한 뒤 저장소 root에서 실행한다. output은 **존재하지 않는 새 경로**여야 한다.
+프로그램은 원본 안에 출력하거나 기존 결과를 덮어쓰는 것을 거부한다.
 
-HDF5 컨테이너·파일 분할·최종 변환 CLI는 아직 SFM용 구현이 없다. csilab에서 사용하는 형식을 참고하되
-완료된 출력 bundle과 manifest가 생기기 전에는 “완전한 학습 데이터 재현 완료”라고 표시하지 않는다.
-현재 문서와 스크립트가 재현하는 범위는 확정 명세 및 완료된 숫자 진단이다.
+```bash
+python scripts/default_sfm/test_preprocessing.py -v
 
+python scripts/default_sfm/preprocess.py \
+  --raw-root /data/crestlux/default_sfm \
+  --output /data/crestlux/default_sfm_processed/sfm_delta_h5_ftstd001_v1 \
+  --workers 2
+
+python scripts/default_sfm/verify_preprocessed.py \
+  --dataset /data/crestlux/default_sfm_processed/sfm_delta_h5_ftstd001_v1 \
+  --numeric-preflight experiments/default_sfm/preprocessing_audit/full_numeric_preflight.json \
+  --rehash \
+  --output tmp/default_sfm_reproduction/processed_verification.json
+```
+
+full numeric preflight를 새로 만들려면 `preflight_numeric.py --output <새 JSON>`을 실행한다.
+`--limit-demos 2`는 별도 smoke 출력용이며 그 계수를 전체 학습에 재사용하지 않는다.
+450개 정상 변환의 기대 값은 유지 프레임 138,985개, valid action chunk 원소 690,425개다.
+다중 worker 로더 검사는 로컬 프로세스 IPC를 허용하는 환경에서 실행한다. GPU나 학습은 사용하지 않는다.
+
+변환기는 모든 원본 PKL을 일반 pickle reader로 읽으면서 SHA-256을 복사 manifest와 대조한다.
+이미지 바이트를 대체하는 `NumericAuditReader`는 숫자 사전 검사에서만 사용하며 실제 변환에는 사용하지 않는다.
+모든 유지 프레임의 이미지 결과를 csilab `image_sample`과 픽셀 단위로 비교하고 HDF5 재읽기 해시를 검사한다.
+held 라벨은 고정 FAFLOW 참조, 시작 인덱스는 csilab 참조 및 기존 전체 진단과 비교한다.
+정규화 뒤에는 실제 저장된 float32를 역변환하여 state, FT와 절대 action 목표 복원을 검사한다.
+
+처리 중에는 output의 `status.json`에서 단계와 완료 개수를 확인한다. `manifest.json`이 없거나
+`complete=true`가 아니면 완료 데이터로 사용하지 않는다. 실패 출력은 자동 덮어쓰기·삭제하지 않는다.
+
+## 9. 출력 bundle과 9개 조건의 데이터 로더
+
+공통 파일 450개를 저장하고 9개 조건에서 같은 파일을 읽는다. 9벌의 이미지 사본을 만들지 않는다.
+
+| 파일/배열 | 의미 |
+|---|---|
+| `episodes/episode_XXXX.h5` | episode 하나, 원본 및 source index 대응 유지 |
+| `observations/image_head`, `image_wrist_right` | `[T,224,224,3]`, RGB uint8, native crop 결과 |
+| `observations/state` | `[T,13]`, 순간 FT 제거·roll/yaw wrap·공통 standard 적용 |
+| `observations/ft_history` | `[T,50,6]`, 공통 standard와 floor 0.01 적용 완료 |
+| `actions`, `action_mask` | `[T,5,7]`, `[T,5]`; pose symlog_minmax, held gripper, tail zero |
+| `source_state`, `source_actions`, `ft_history_raw`, `delta_actions` | 역변환 검증을 위한 물리 단위 근거 |
+| `source_indices`, `timestamps`, `terminals` | 원본 frame 대응과 episode 경계 |
+| `normalization.json` | 전체 450개의 실제 공통 계수와 표본 수 |
+| `data_contract.json`, `inference_config.json` | shape, 순서, 역변환, 9개 조건 및 추론 입력 계약 |
+| `variants/*.json` | 공통 state에서 선택할 열과 flat/GRU 입력 구분 |
+| `manifest.json` | 완료 상태, task/배치/지시문, shard SHA-256, 통계 해시 |
+| `run.json`, `source_snapshot/` | 실행 명령, 코드 commit 및 실제 사용한 코드/명세 해시 |
+
+현재 관측만 학습 입력으로 저장하고 `next_observations` RGB는 중복 저장하지 않는다.
+원본 PKL에는 다음 관측이 그대로 남는다. 학습용 숫자는 float32, 감사용 원래 action 및 Delta는 원래 정밀도를 보존한다.
+HDF5의 LZF 압축은 무손실이며, RGB에 JPEG 등 추가 손실 압축을 적용하지 않는다.
+
+```python
+from turbovla.data.default_sfm import DefaultSFMDataset
+
+dataset = DefaultSFMDataset(
+    '/data/crestlux/default_sfm_processed/sfm_delta_h5_ftstd001_v1',
+    variant='ft_gru_xy_vxy_remove',
+)
+sample = dataset[0]
+# images: [2,3,224,224] uint8, camera order=[head,wrist]
+# state: [9], ft_history: [50,6], actions: [5,7], action_mask: [5]
+# instruction: task별 원문. images의 backbone tensor 정규화는 모델 단계에서 수행.
+dataset.close()
+```
+
+flat 조건은 state 뒤에 시간 순서대로 펼친 FT300을 연결한다. GRU 및 GRU+AdaLN 조건은
+state와 이미 정규화된 FT50×6을 별도로 반환한다. 별도의 dropout·FT 제거·증강을 추가하지 않는다.
+
+이 데이터 로더의 준비는 실제 GRU/AdaLN 모델과 trainer 구현 완료를 뜻하지 않는다.
 학습 초기 가중치·동결 범위, optimizer·학습량·seed·샘플링, 증강, AdaLN 초기화,
-실제 execution horizon과 별도 평가 성공 기준은 이후 학습·평가 단계에서 정한다.
+실제 execution horizon과 별도 평가 성공 기준은 이후 학습·평가 단계에서 정한다. 학습은 시작하지 않았다.

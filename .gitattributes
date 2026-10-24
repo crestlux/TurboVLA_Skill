@@ -15,5 +15,6 @@ scripts/robotwin/*.patch -text whitespace=-blank-at-eol,-blank-at-eof
 experiments/default_sfm/coordinate_audit/source_snapshot/** -text whitespace=-blank-at-eol,-blank-at-eof
 experiments/default_sfm/preprocessing_audit/csilab_source_snapshot/** -text whitespace=-blank-at-eol,-blank-at-eof
 experiments/default_sfm/preprocessing_audit/csilab_handoff_source/** -text whitespace=-blank-at-eol,-blank-at-eof
+experiments/default_sfm/preprocessing_audit/faflow_held_reference/** -text whitespace=-blank-at-eol,-blank-at-eof
 experiments/default_sfm/preprocessing_audit/turbovla_training_source_snapshot/** -text whitespace=-blank-at-eol,-blank-at-eof
 experiments/default_sfm/preprocessing_audit/turbovla_usb_source_snapshot/** -text whitespace=-blank-at-eol,-blank-at-eof

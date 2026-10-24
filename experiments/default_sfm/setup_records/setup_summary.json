@@ -1,5 +1,5 @@
 {
-  "status": "ready_for_ft_normalization_discussion",
+  "status": "preprocessing_implementation_validated",
   "completed_at_utc": "2026-10-24T08:53:54.178484+00:00",
   "environment": {
     "name": "turbovla-sfm",
@@ -62,13 +62,9 @@
   "wandb_run_created": false,
   "planned_experiment_count": 9,
   "experiment_plan": "experiments/default_sfm/experiment_plan.yaml",
-  "custom_dataset_trainer_and_ft_variants": "Implementation deferred until preprocessing and input contracts are decided",
-  "user_deferred_decisions": [
-    "F/T normalization strategy and numerical scale floor (user discussion pending)"
-  ],
-  "further_preprocessing_decisions": [
-    "F/T normalization strategy and numerical scale floor (user discussion pending)"
-  ],
+  "custom_dataset_trainer_and_ft_variants": "SFM preprocessing and nine dataset views implemented; model variants and trainer remain unimplemented; training not started",
+  "user_deferred_decisions": [],
+  "further_preprocessing_decisions": [],
   "artifact_sha256": {
     "environment_validation.json": "882d5f0927c0ab3063aae94b2e687ec3d7939f62561e5b20a8206c14a9994b77",
     "nccl_validation.json": "530ff6505af6468d36b083c4a2a915bb757259f72c381c7dbdc6c4f620ba5138",
@@ -82,7 +78,7 @@
     "pip-freeze.txt": "a80fdc3d1c4926a299ef53820bbb3e2cdf8664ee2ca413631a7baab2e1c928b8",
     "conda-explicit.txt": "4f3e2f6ca96cfa28e97f83fe62fe272d3173aed2475991b181ae674bf46ae689"
   },
-  "planning_updated_at_utc": "2026-10-24T11:12:37.785051+00:00",
+  "planning_updated_at_utc": "2026-10-24T11:35:32.025982+00:00",
   "confirmed_experiment_decisions": {
     "ft_history_shape": [
       50,
@@ -207,14 +203,13 @@
         "slice_common_statistics_for_each_condition": true
       },
       "ft": {
-        "status": "awaiting_user_discussion",
-        "method": null,
-        "previously_selected_method": "standard",
+        "status": "confirmed",
+        "method": "standard",
         "channel_statistics_count": 6,
         "pool_history_samples": true,
         "shared_across_variants": true,
         "application_count": 1,
-        "std_floor": null
+        "std_floor": 0.01
       },
       "action": {
         "method": "symlog_minmax",

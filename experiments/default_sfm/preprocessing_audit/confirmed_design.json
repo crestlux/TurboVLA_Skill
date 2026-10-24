@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-10-24T11:12:37.785051+00:00",
+  "updated_at_utc": "2026-10-24T11:35:32.025982+00:00",
   "variants": [
     {
       "id": "ft_state_xy_keep",
@@ -267,14 +267,13 @@
       "slice_common_statistics_for_each_condition": true
     },
     "ft": {
-      "status": "awaiting_user_discussion",
-      "method": null,
-      "previously_selected_method": "standard",
+      "status": "confirmed",
+      "method": "standard",
       "channel_statistics_count": 6,
       "pool_history_samples": true,
       "shared_across_variants": true,
       "application_count": 1,
-      "std_floor": null
+      "std_floor": 0.01
     },
     "action": {
       "method": "symlog_minmax",

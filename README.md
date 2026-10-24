@@ -75,7 +75,7 @@ The three remaining state dimensions are 13, 11 and 9; the flattened F/T conditi
 313, 311 and 309. Linear velocity Vz and all angular velocities remain in the third condition.
 The Korean [preprocessing and reproduction guide](experiments/default_sfm/PREPROCESSING_GUIDE.md)
 separates user decisions, inherited implementation details and pending work, with commands to reproduce
-the completed diagnostics. It does not claim that a training-data converter already exists.
+the diagnostics, full-cohort conversion command, shared HDF5 layout and nine dataset views.
 All 450 demonstrations will be used for training; evaluation will use separate data/rollouts.
 Actions are base-frame Delta increments from each timestep's measured TCP pose to its target,
 with rotation represented by `rotvec(R_target * R_measured.inv())`; state angle wrapping does not change them.
@@ -85,8 +85,7 @@ The user selected retaining the same GRU memory token and adding F/T-conditioned
 ACT decoder LayerNorms for the third method. The confirmed `wrap_angles: [roll, yaw]` maps roll/yaw
 into `[0, 2pi)` and preserves signed pitch. State components will use shared standardization statistics;
 actions will use the verified USB `symlog_minmax` recipe (temperature 20).
-The user reopened the F/T normalization discussion; its final method and standard-deviation floor remain
-unset. All-zero F/T histories are intentional valid inputs, as confirmed by the user; they are retained
+The user confirmed six-axis F/T standardization with a standard-deviation floor of 0.01. All-zero F/T histories are intentional valid inputs, as confirmed by the user; they are retained
 and included in statistics without removal or imputation.
 Statistics will be fitted once on the retained SFM frames and reused across the nine conditions.
 The user requested removal of each demo's initial stationary prefix. Historical csilab/FAFLOW settings
@@ -98,17 +97,17 @@ parameters, including two-frame preroll and the no-motion drop rule; see
 [`stationary_crop_history.json`](experiments/default_sfm/preprocessing_audit/stationary_crop_history.json).
 A read-only check on the cached numeric states of all 450 SFM demos detected a start in every demo.
 The confirmed rule would remove 4,142 initial frames, retaining 138,985 of 143,127 frames. These are
-diagnostic counts only; no training dataset or fitted normalization statistics have been produced.
+the full-cohort numeric preflight counts; completed conversion is recorded in the output manifest.
 The nine task instructions supplied by the user are recorded verbatim, without display labels or Markdown
 emphasis, in `dataset.instruction_mapping` of the experiment plan. Each task uses the same text for p1-p5
 and all nine variants. "Clockwise" is confirmed to mean a front view of the operated surface for BNC,
 rotary switch, knob and bar latch; this is recorded separately without rewriting the supplied text.
 Execution horizon and task-specific evaluation success criteria can be decided
-later without changing the confirmed action chunk length of 5. Data conversion and training have not started.
+later without changing the confirmed action chunk length of 5. The converter and nine dataset views are implemented; training has not started.
 A sample has F/T `[1,50,6]`, state `[1,19]`, two RGB views and 7-D actions;
 the F/T sensor rate is 500 Hz, while the collection config records a 10 Hz control loop.
-The existing trainers are benchmark-specific; the custom loader, trainer and F/T/AdaLN variants will be
-implemented after the preprocessing contract is settled.
+The custom SFM loader is `turbovla.data.default_sfm.DefaultSFMDataset`. The existing trainers are
+benchmark-specific; the SFM trainer and F/T/AdaLN model variants remain separate work.
 
 The read-only preprocessing audit lives in `experiments/default_sfm/preprocessing_audit/`.
 It includes USB crop previews and an RPY boundary audit; preview images and diagnostic numeric extracts

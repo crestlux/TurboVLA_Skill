@@ -1,5 +1,5 @@
 # Planning record, NOT a runnable training configuration.
-status: awaiting_ft_normalization_discussion
+status: preprocessing_implementation_in_progress
 training_started: false
 preprocessing_applied: false
 base_model: TurboVLA
@@ -86,14 +86,13 @@ force_torque:
     remove_or_impute: false
     confirmation_source: user
   normalization:
-    status: awaiting_user_discussion
-    method: null  # User reopened the F/T normalization decision before any application.
-    previously_selected_method: standard
+    status: confirmed
+    method: standard  # User confirmed axis-wise standardization including intentional zero histories.
     channel_statistics_count: 6
     pool_history_samples: true
     shared_across_variants: true
     application_count: 1
-    std_floor: null  # Temporary 1e-6 choice was withdrawn; no value has been applied.
+    std_floor: 0.01  # User explicitly selected the existing TurboVLA USB GRU floor.
   gru_implementation: existing_turbovla_usb  # Confirmed by the user, 2026-10-24.
   gru_hidden_size: 128
   gru_num_layers: 1

@@ -1,0 +1,6 @@
+{
+  "source": "/home/crestlux/project/faflow_final/third_party/clean_share_preprocess/gripper.py",
+  "local_reference": "experiments/default_sfm/preprocessing_audit/faflow_held_reference/gripper.py",
+  "sha256": "8bb71d9d3b689ba42dfa5432677d184feb8eac99a802483b6028fba731981c5d",
+  "purpose": "Pinned FAFLOW held command labels; newer csilab LegacyGripperLabels.labels uses next observed state instead."
+}

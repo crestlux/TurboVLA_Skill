@@ -31,19 +31,17 @@
   "training_preprocessing_applied": false,
   "training_started": false,
   "active_model_variants_implemented": false,
-  "remaining_preprocessing_decisions": [
-    "F/T normalization strategy and numerical scale floor (user discussion pending)"
-  ],
-  "planning_sha256": "2caadead1bf4f4f31cb95765c7ef571aa0b4ed7ead4922d057dbecb3faf08e92",
+  "remaining_preprocessing_decisions": [],
+  "planning_sha256": "4796153ac985adfe7f47266f18280939ea8ba2520321011c67ee90a84f8b5dac",
   "rpy_wrap_angles": [
     "roll",
     "yaw"
   ],
   "pitch_policy": "preserve_original_signed_angle",
-  "planning_updated_at_utc": "2026-10-24T11:12:37.785051+00:00",
+  "planning_updated_at_utc": "2026-10-24T11:35:32.025982+00:00",
   "normalization_methods": {
     "state": "standard",
-    "ft": null,
+    "ft": "standard",
     "action": "symlog_minmax"
   },
   "frame_selection_policy": "remove_initial_stationary_prefix",
@@ -77,7 +75,7 @@
       "max": 10.793793201446533
     }
   },
-  "ft_normalization_status": "awaiting_user_discussion",
+  "ft_normalization_status": "confirmed_standard_epsilon_0_01",
   "ft_zero_history_policy": {
     "semantics": "intentional_valid_input",
     "preserve": true,
