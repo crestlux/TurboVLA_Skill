@@ -1,0 +1,301 @@
+{
+  "all_shard_hashes_rechecked": true,
+  "checked_at_utc": "2026-10-24T12:51:11.014825+00:00",
+  "dataset": "/data/crestlux/default_sfm_processed/sfm_delta_h5_ftstd001_v1",
+  "episodes": 450,
+  "frames": 138985,
+  "image_frames_readback": 277970,
+  "independent_numeric_statistics_match": true,
+  "loader_batches": {
+    "ft_gru_adaln_xy_keep": {
+      "action_mask": [
+        3,
+        5
+      ],
+      "actions": [
+        3,
+        5,
+        7
+      ],
+      "episode_index": [
+        3
+      ],
+      "ft_history": [
+        3,
+        50,
+        6
+      ],
+      "images": [
+        3,
+        2,
+        3,
+        224,
+        224
+      ],
+      "source_index": [
+        3
+      ],
+      "state": [
+        3,
+        13
+      ]
+    },
+    "ft_gru_adaln_xy_remove": {
+      "action_mask": [
+        3,
+        5
+      ],
+      "actions": [
+        3,
+        5,
+        7
+      ],
+      "episode_index": [
+        3
+      ],
+      "ft_history": [
+        3,
+        50,
+        6
+      ],
+      "images": [
+        3,
+        2,
+        3,
+        224,
+        224
+      ],
+      "source_index": [
+        3
+      ],
+      "state": [
+        3,
+        11
+      ]
+    },
+    "ft_gru_adaln_xy_vxy_remove": {
+      "action_mask": [
+        3,
+        5
+      ],
+      "actions": [
+        3,
+        5,
+        7
+      ],
+      "episode_index": [
+        3
+      ],
+      "ft_history": [
+        3,
+        50,
+        6
+      ],
+      "images": [
+        3,
+        2,
+        3,
+        224,
+        224
+      ],
+      "source_index": [
+        3
+      ],
+      "state": [
+        3,
+        9
+      ]
+    },
+    "ft_gru_xy_keep": {
+      "action_mask": [
+        3,
+        5
+      ],
+      "actions": [
+        3,
+        5,
+        7
+      ],
+      "episode_index": [
+        3
+      ],
+      "ft_history": [
+        3,
+        50,
+        6
+      ],
+      "images": [
+        3,
+        2,
+        3,
+        224,
+        224
+      ],
+      "source_index": [
+        3
+      ],
+      "state": [
+        3,
+        13
+      ]
+    },
+    "ft_gru_xy_remove": {
+      "action_mask": [
+        3,
+        5
+      ],
+      "actions": [
+        3,
+        5,
+        7
+      ],
+      "episode_index": [
+        3
+      ],
+      "ft_history": [
+        3,
+        50,
+        6
+      ],
+      "images": [
+        3,
+        2,
+        3,
+        224,
+        224
+      ],
+      "source_index": [
+        3
+      ],
+      "state": [
+        3,
+        11
+      ]
+    },
+    "ft_gru_xy_vxy_remove": {
+      "action_mask": [
+        3,
+        5
+      ],
+      "actions": [
+        3,
+        5,
+        7
+      ],
+      "episode_index": [
+        3
+      ],
+      "ft_history": [
+        3,
+        50,
+        6
+      ],
+      "images": [
+        3,
+        2,
+        3,
+        224,
+        224
+      ],
+      "source_index": [
+        3
+      ],
+      "state": [
+        3,
+        9
+      ]
+    },
+    "ft_state_xy_keep": {
+      "action_mask": [
+        3,
+        5
+      ],
+      "actions": [
+        3,
+        5,
+        7
+      ],
+      "episode_index": [
+        3
+      ],
+      "images": [
+        3,
+        2,
+        3,
+        224,
+        224
+      ],
+      "source_index": [
+        3
+      ],
+      "state": [
+        3,
+        313
+      ]
+    },
+    "ft_state_xy_remove": {
+      "action_mask": [
+        3,
+        5
+      ],
+      "actions": [
+        3,
+        5,
+        7
+      ],
+      "episode_index": [
+        3
+      ],
+      "images": [
+        3,
+        2,
+        3,
+        224,
+        224
+      ],
+      "source_index": [
+        3
+      ],
+      "state": [
+        3,
+        311
+      ]
+    },
+    "ft_state_xy_vxy_remove": {
+      "action_mask": [
+        3,
+        5
+      ],
+      "actions": [
+        3,
+        5,
+        7
+      ],
+      "episode_index": [
+        3
+      ],
+      "images": [
+        3,
+        2,
+        3,
+        224,
+        224
+      ],
+      "source_index": [
+        3
+      ],
+      "state": [
+        3,
+        309
+      ]
+    }
+  },
+  "normalization_sha256": "654f0c0f5b1070379beedca7d0248594869faa73c122ef8dfdb67506e75daa9b",
+  "optimizer_steps": 0,
+  "sampled_variant_items": 12150,
+  "smoke_test": false,
+  "status": "passed",
+  "task_instructions": 9,
+  "training_started": false,
+  "variants": 9
+}

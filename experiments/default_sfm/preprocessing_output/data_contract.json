@@ -1,0 +1,390 @@
+{
+  "action_frame": "robot_base",
+  "action_padding": "zero_after_normalization",
+  "action_reference": "each corresponding action timestep observation, not chunk-start observation",
+  "action_rotation": "rotvec_rad",
+  "action_shape": [
+    5,
+    7
+  ],
+  "action_units": "meters_radians_held_gripper",
+  "dataset": "default_sfm",
+  "ft_hz": 500,
+  "ft_hz_basis": "user provided; per-sample timestamps unavailable",
+  "ft_normalized_in_dataset": true,
+  "ft_shape": [
+    50,
+    6
+  ],
+  "gripper_labels": "held command target from receipts, fallback to binary command latch",
+  "image_preprocessing": {
+    "augmentation": null,
+    "crop_boxes_confirmed": true,
+    "crop_tlhw": {
+      "head_cam_d455": [
+        96,
+        128,
+        288,
+        384
+      ],
+      "wrist_cam_d405_a": [
+        72,
+        122,
+        336,
+        448
+      ]
+    },
+    "existing_turbovla_libero_training_image_size": [
+      256,
+      256
+    ],
+    "existing_turbovla_usb_bundle_image_size": [
+      224,
+      224
+    ],
+    "existing_turbovla_usb_training_image_size": [
+      224,
+      224
+    ],
+    "final_image_size": [
+      224,
+      224
+    ],
+    "interpolation": "area",
+    "legacy_crop_content_size_hw": [
+      168,
+      224
+    ],
+    "legacy_crop_padding_tblr": [
+      28,
+      28,
+      0,
+      0
+    ],
+    "legacy_faflow_usb_image_size": [
+      224,
+      224
+    ],
+    "legacy_usb_crop_reference_tlhw": {
+      "head_cam_d455": [
+        96,
+        128,
+        288,
+        384
+      ],
+      "wrist_cam_d405_a": [
+        72,
+        122,
+        336,
+        448
+      ]
+    },
+    "observed_shape_per_view": [
+      1,
+      480,
+      640,
+      3
+    ],
+    "observed_views": [
+      "head_cam_d455",
+      "wrist_cam_d405_a"
+    ],
+    "pad_value": 0,
+    "processing_order": "crop_native_original_then_resize",
+    "resize_mode": "letterbox"
+  },
+  "instruction_mapping": {
+    "audio_jack": "Insert audio jack into audio port",
+    "barlatch": "Grasp bar latch and rotate clockwise",
+    "bnc": "Insert BNC connector and rotate clockwise",
+    "hdmi": "Insert HDMI connector into HDMI port",
+    "knob": "Grasp knob and rotate clockwise",
+    "lan": "Insert LAN cable into Ethernet port",
+    "outlet": "Insert adapter into outlet",
+    "rotary_switch": "Grasp rotary switch and rotate clockwise",
+    "usb": "Insert USB connector into USB port"
+  },
+  "model_must_not_normalize_ft_again": true,
+  "normalization_file": "normalization.json",
+  "normalization_sha256": "654f0c0f5b1070379beedca7d0248594869faa73c122ef8dfdb67506e75daa9b",
+  "normalized": true,
+  "observation_keys": [
+    "state",
+    "ft_history",
+    "image_head",
+    "image_wrist_right"
+  ],
+  "raw_state_indices": [
+    0,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "save_next_observations": false,
+  "shared_storage": true,
+  "source_code_sha256": {
+    "experiments/default_sfm/experiment_plan.yaml": "4796153ac985adfe7f47266f18280939ea8ba2520321011c67ee90a84f8b5dac",
+    "experiments/default_sfm/preprocessing_audit/csilab_reference_recheck.json": "41a22d960b86e5921532851707fa27aeea7286f54b4f48f3c0e140b58b56eb04",
+    "experiments/default_sfm/preprocessing_audit/csilab_source_snapshot/preprocess/convert.py": "e35f2f104b59c872054b91c705fa1d6f32259aec746ec9d1fe4e00a1f144cf01",
+    "experiments/default_sfm/preprocessing_audit/csilab_source_snapshot/preprocess/normalization.py": "6b9e5ea9c9a9dfe31f8d81734e395bdf2b28a0aa9ee7ea763fec4135aea25c92",
+    "experiments/default_sfm/preprocessing_audit/faflow_held_reference/gripper.py": "8bb71d9d3b689ba42dfa5432677d184feb8eac99a802483b6028fba731981c5d",
+    "experiments/default_sfm/preprocessing_audit/faflow_held_reference/source.json": "7dc6ed6e43ec83f3e0a0002f96dd2eadba7c35c2d88afd1b218d825d0d8e08f2",
+    "experiments/default_sfm/preprocessing_audit/initial_stationary_audit.json": "1a6965e8d47114d1549a9bc8743fe344257985ec25de4aa628264448812ad0be",
+    "experiments/default_sfm/setup_records/copy_manifest.json": "4fac2a70215dcd5a09513169ae34b0e8dcaca13ec59c9fe798c27252e1c6a3fb",
+    "scripts/default_sfm/audit_rpy.py": "040c9c72262ef7ac5725413b6ccfe4b75ff671cbc883d21815f3df28a3c70e56",
+    "scripts/default_sfm/preflight_numeric.py": "2ce1609f98294f9bdc36e58520985c7f35c5fec82796655a464eb6a84961d04f",
+    "scripts/default_sfm/preprocess.py": "036548bbced7c7e6855820f99e6cf356b8566b0e1d8442fed005c6b482cb92bc",
+    "scripts/default_sfm/requirements-reproduction.txt": "d170b210b2ebd68bbfd97a388ad5e3402c181436f2c5dba23aec65c4c43267ad",
+    "scripts/default_sfm/test_preprocessing.py": "2b6c3948843a207cf81dcce4f6a820e89558f79e216b43680a2c9512ff262ab2",
+    "scripts/default_sfm/verify_preprocessed.py": "7a1871f46d6b15991a77338aac463a5f3138faed87d9a42233d7ea0149cb8d1a",
+    "turbovla/data/default_sfm.py": "07ed45415df9a56f9410244a126de367fb83b59ebbc73ee601106581b300f925",
+    "turbovla/data/sfm_preprocessing.py": "ce06b5aa85edc9c7824b34402e89ab7fdadf4134cd7b23ad1c979e033fbd4464"
+  },
+  "split": "all_450_train_separate_evaluation",
+  "state_dim": 13,
+  "state_rpy": {
+    "applied": true,
+    "audit_report": "experiments/default_sfm/preprocessing_audit/rpy/report.json",
+    "audited_demos": 450,
+    "audited_frames": 143127,
+    "final_boundary_policy": "csilab_wrap_angles_per_axis",
+    "pitch_policy": "preserve_original_signed_angle",
+    "reference_implementation": {
+      "applied_to": "current_and_next_state_observations_and_inference",
+      "changes_action_generation": false,
+      "default_template_enabled": false,
+      "documented_example_axes": [
+        "roll",
+        "yaw"
+      ],
+      "function": "StateDecoder.selected",
+      "host": "csilab",
+      "option": "wrap_angles",
+      "order": "component_selection_then_angle_wrap_then_normalization",
+      "path": "/home/csilab/share_projects/clean_share/preprocess/convert.py",
+      "supported_axes": [
+        "roll",
+        "pitch",
+        "yaw"
+      ]
+    },
+    "requested_candidate": "per_axis_modulo_2pi",
+    "wrap_angles": [
+      "roll",
+      "yaw"
+    ]
+  },
+  "variants": {
+    "ft_gru_adaln_xy_keep": {
+      "ft_already_normalized": true,
+      "ft_method": "gru_embedding_adaln",
+      "id": "ft_gru_adaln_xy_keep",
+      "model_state_dim": 13,
+      "remove_state_xy": false,
+      "state_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "state_condition": "xy_keep",
+      "state_dim": 13
+    },
+    "ft_gru_adaln_xy_remove": {
+      "ft_already_normalized": true,
+      "ft_method": "gru_embedding_adaln",
+      "id": "ft_gru_adaln_xy_remove",
+      "model_state_dim": 11,
+      "remove_state_xy": true,
+      "state_columns": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "state_condition": "xy_remove",
+      "state_dim": 11
+    },
+    "ft_gru_adaln_xy_vxy_remove": {
+      "ft_already_normalized": true,
+      "ft_method": "gru_embedding_adaln",
+      "id": "ft_gru_adaln_xy_vxy_remove",
+      "model_state_dim": 9,
+      "remove_linear_velocity_xy": true,
+      "remove_state_xy": true,
+      "state_columns": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        9,
+        10,
+        11,
+        12
+      ],
+      "state_condition": "xy_vxy_remove",
+      "state_dim": 9
+    },
+    "ft_gru_xy_keep": {
+      "ft_already_normalized": true,
+      "ft_method": "gru_embedding",
+      "id": "ft_gru_xy_keep",
+      "model_state_dim": 13,
+      "remove_state_xy": false,
+      "state_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "state_condition": "xy_keep",
+      "state_dim": 13
+    },
+    "ft_gru_xy_remove": {
+      "ft_already_normalized": true,
+      "ft_method": "gru_embedding",
+      "id": "ft_gru_xy_remove",
+      "model_state_dim": 11,
+      "remove_state_xy": true,
+      "state_columns": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "state_condition": "xy_remove",
+      "state_dim": 11
+    },
+    "ft_gru_xy_vxy_remove": {
+      "ft_already_normalized": true,
+      "ft_method": "gru_embedding",
+      "id": "ft_gru_xy_vxy_remove",
+      "model_state_dim": 9,
+      "remove_linear_velocity_xy": true,
+      "remove_state_xy": true,
+      "state_columns": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        9,
+        10,
+        11,
+        12
+      ],
+      "state_condition": "xy_vxy_remove",
+      "state_dim": 9
+    },
+    "ft_state_xy_keep": {
+      "ft_already_normalized": true,
+      "ft_method": "state_embedding",
+      "id": "ft_state_xy_keep",
+      "model_state_dim": 313,
+      "remove_state_xy": false,
+      "state_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "state_condition": "xy_keep",
+      "state_dim": 13
+    },
+    "ft_state_xy_remove": {
+      "ft_already_normalized": true,
+      "ft_method": "state_embedding",
+      "id": "ft_state_xy_remove",
+      "model_state_dim": 311,
+      "remove_state_xy": true,
+      "state_columns": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "state_condition": "xy_remove",
+      "state_dim": 11
+    },
+    "ft_state_xy_vxy_remove": {
+      "ft_already_normalized": true,
+      "ft_method": "state_embedding",
+      "id": "ft_state_xy_vxy_remove",
+      "model_state_dim": 309,
+      "remove_linear_velocity_xy": true,
+      "remove_state_xy": true,
+      "state_columns": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        9,
+        10,
+        11,
+        12
+      ],
+      "state_condition": "xy_vxy_remove",
+      "state_dim": 9
+    }
+  },
+  "version": 1
+}

@@ -1,13 +1,22 @@
 #!/usr/bin/env python3
-"""Print environment and raw-data preparation status without starting training."""
+"""Print environment, raw-data and preprocessing status without starting training."""
 
 from __future__ import annotations
 
+import argparse
 import json
 from pathlib import Path
 
 root = Path(__file__).resolve().parents[2]
 records = root / "experiments/default_sfm/setup_records"
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--processed-root", type=Path,
+                    default=Path("/data/crestlux/default_sfm_processed/sfm_delta_h5_ftstd001_v1"))
+args = parser.parse_args()
+progress_file = args.processed_root / "status.json"
+progress = json.loads(progress_file.read_text()) if progress_file.exists() else {"phase": "not_started"}
+manifest_file = args.processed_root / "manifest.json"
+processed = json.loads(manifest_file.read_text()) if manifest_file.exists() else {}
 
 
 def load(name: str) -> dict:
@@ -44,7 +53,10 @@ print(
             "verified_percent": round(100 * verified_bytes / total, 2) if total else 0,
             "failed_folders": {name: row for name, row in folders.items() if row["status"] == "failed"},
             "training_started": False,
-            "preprocessing_applied": False,
+            "preprocessing_applied": progress.get("completed", 0) > 0,
+            "preprocessing_complete": processed.get("complete", False),
+            "processed_root": str(args.processed_root),
+            "preprocessing": progress,
         },
         indent=2,
     )

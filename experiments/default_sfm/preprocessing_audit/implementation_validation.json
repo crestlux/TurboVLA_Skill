@@ -1,0 +1,36 @@
+{
+  "unit_tests": {
+    "tests": 8,
+    "status": "passed"
+  },
+  "numeric_preflight": {
+    "demos": 450,
+    "status": "passed",
+    "report": "full_numeric_preflight.json"
+  },
+  "smoke_conversion": {
+    "demos": 2,
+    "status": "passed",
+    "report": "conversion_smoke_summary.json"
+  },
+  "loader_verification": {
+    "variants": 9,
+    "workers": 2,
+    "status": "passed",
+    "report": "conversion_smoke_verification.json"
+  },
+  "resolved_validation_issues": [
+    "Sandbox blocked the local IPC sockets used by PyTorch DataLoader; rerun outside the sandbox completed data loading.",
+    "Discarding a prefetched DataLoader iterator after one batch caused worker shutdown errors. The verification now drains a finite Subset completely; the accepted rerun completed without worker errors."
+  ],
+  "gripper_documentation_correction": "Current csilab LegacyGripperLabels.labels in absolute mode uses next observed opening. Held labels instead follow the pinned FAFLOW command-target version; all 143127 raw frames matched.",
+  "training_started": false,
+  "optimizer_steps": 0,
+  "committed_conversion_source_verification": {
+    "status": "passed",
+    "checked_at_utc": "2026-10-24T12:47:14.376725+00:00",
+    "commit": "9bebb80966ced629e484f8d7786ad93451d48ecb",
+    "files": 16,
+    "commit_blobs_equal_executed_source_snapshots": true
+  }
+}

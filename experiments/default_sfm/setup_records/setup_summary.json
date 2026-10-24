@@ -1,5 +1,5 @@
 {
-  "status": "preprocessing_implementation_validated",
+  "status": "preprocessing_complete_and_verified",
   "completed_at_utc": "2026-10-24T08:53:54.178484+00:00",
   "environment": {
     "name": "turbovla-sfm",
@@ -56,7 +56,7 @@
     "copy_process_exit_code": 0,
     "readback_process_exit_code": 0
   },
-  "preprocessing_applied": false,
+  "preprocessing_applied": true,
   "training_started": false,
   "optimizer_steps": 0,
   "wandb_run_created": false,
@@ -78,7 +78,7 @@
     "pip-freeze.txt": "a80fdc3d1c4926a299ef53820bbb3e2cdf8664ee2ca413631a7baab2e1c928b8",
     "conda-explicit.txt": "4f3e2f6ca96cfa28e97f83fe62fe272d3173aed2475991b181ae674bf46ae689"
   },
-  "planning_updated_at_utc": "2026-10-24T11:35:32.025982+00:00",
+  "planning_updated_at_utc": "2026-10-24T12:51:26.779299+00:00",
   "confirmed_experiment_decisions": {
     "ft_history_shape": [
       50,
@@ -193,7 +193,7 @@
         "yaw"
       ],
       "pitch_policy": "preserve_original_signed_angle",
-      "applied": false
+      "applied": true
     },
     "normalization": {
       "state": {
@@ -222,7 +222,7 @@
         "fit_scope": "retained_frames_from_all_450_training_demos",
         "shared_across_all_nine_variants": true,
         "reuse_historical_usb_statistics": false,
-        "fitted": false
+        "fitted": true
       }
     },
     "frame_selection": {
@@ -343,5 +343,14 @@
       "median": 0.6982412338256836,
       "max": 10.793793201446533
     }
+  },
+  "preprocessing_completed_at_utc": "2026-10-24T12:41:53.394155+00:00",
+  "preprocessing_verified_at_utc": "2026-10-24T12:51:11.014825+00:00",
+  "preprocessing_execution": "experiments/default_sfm/preprocessing_audit/preprocessing_execution.json",
+  "processed_output": {
+    "storage_path": "/data/crestlux/default_sfm_processed/sfm_delta_h5_ftstd001_v1",
+    "project_link": "data/default_sfm_preprocessed",
+    "execution_record": "experiments/default_sfm/preprocessing_audit/preprocessing_execution.json",
+    "verification_record": "experiments/default_sfm/preprocessing_audit/processed_verification.json"
   }
 }

@@ -1,7 +1,7 @@
 # Planning record, NOT a runnable training configuration.
-status: preprocessing_implementation_in_progress
+status: preprocessing_complete_and_verified
 training_started: false
-preprocessing_applied: false
+preprocessing_applied: true
 base_model: TurboVLA
 environment: turbovla-sfm
 dataset:
@@ -166,7 +166,7 @@ state:
     audit_report: experiments/default_sfm/preprocessing_audit/rpy/report.json
     audited_demos: 450
     audited_frames: 143127
-    applied: false
+    applied: true
 action:
   observed_raw_dimension: 7
   observed_info_format: absolute_tcp_xyz_rpy_gripper
@@ -198,7 +198,7 @@ common_normalization:
   fit_scope: retained_frames_from_all_450_training_demos
   shared_across_all_nine_variants: true
   reuse_historical_usb_statistics: false
-  fitted: false
+  fitted: true
 vision:
   observed_views: [head_cam_d455, wrist_cam_d405_a]
   observed_shape_per_view: [1, 480, 640, 3]
@@ -260,3 +260,10 @@ variants:
 logging:
   future_training_wandb_mode: online
   setup_created_wandb_run: false
+
+# Completion record; the immutable execution-time plan is in the output bundle.
+processed_output:
+  storage_path: /data/crestlux/default_sfm_processed/sfm_delta_h5_ftstd001_v1
+  project_link: data/default_sfm_preprocessed
+  execution_record: experiments/default_sfm/preprocessing_audit/preprocessing_execution.json
+  verification_record: experiments/default_sfm/preprocessing_audit/processed_verification.json

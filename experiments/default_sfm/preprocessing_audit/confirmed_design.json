@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-10-24T11:35:32.025982+00:00",
+  "updated_at_utc": "2026-10-24T12:51:26.779299+00:00",
   "variants": [
     {
       "id": "ft_state_xy_keep",
@@ -140,7 +140,7 @@
   "ft_flat_dim": 300,
   "action_chunk_length": 5,
   "training_started": false,
-  "preprocessing_applied": false,
+  "preprocessing_applied": true,
   "dataset_split": {
     "policy": "all_450_train_separate_evaluation",
     "training_demo_count": 450,
@@ -250,7 +250,7 @@
       "yaw"
     ],
     "pitch_policy": "preserve_original_signed_angle",
-    "applied": false
+    "applied": true
   },
   "adaln": {
     "adaln_target_modules": "act_decoder_layer_norms",
@@ -286,7 +286,7 @@
       "fit_scope": "retained_frames_from_all_450_training_demos",
       "shared_across_all_nine_variants": true,
       "reuse_historical_usb_statistics": false,
-      "fitted": false
+      "fitted": true
     }
   },
   "frame_selection": {
@@ -363,5 +363,6 @@
     "include_in_statistics": true,
     "remove_or_impute": false,
     "confirmation_source": "user"
-  }
+  },
+  "preprocessing_execution": "experiments/default_sfm/preprocessing_audit/preprocessing_execution.json"
 }

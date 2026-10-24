@@ -1,0 +1,474 @@
+{
+  "action": {
+    "chunk_length": 5,
+    "coordinate_frame": "robot_base",
+    "divide_by_control_period": false,
+    "execution_horizon": null,
+    "gripper_closed_label": -1,
+    "gripper_initial_target": "open",
+    "gripper_label_rule": "held_command_target",
+    "gripper_open_label": 1,
+    "gripper_target_source": "infos.command_receipts.right.gripper_target_percent",
+    "gripper_zero_command_behavior": "retain_last_command_target",
+    "nominal_chunk_coverage_s": 0.5,
+    "normalization": {
+      "epsilon": 1e-06,
+      "gripper": "preserve_held_minus_one_plus_one",
+      "method": "symlog_minmax",
+      "reference": "experiments/default_sfm/preprocessing_audit/turbovla_training_source_snapshot/runs/jack/faflow_delta_gru500hz/data_contract.json",
+      "temperature": 20.0
+    },
+    "observed_control_period_s": 0.1,
+    "observed_info_format": "absolute_tcp_xyz_rpy_gripper",
+    "observed_raw_dimension": 7,
+    "reference_pose": "measured_tcp_pose_at_each_action_timestep",
+    "rotation": "rotvec_target_rotation_times_measured_rotation_inverse",
+    "state_angle_wrapping_changes_action_generation": false,
+    "training_representation": "delta",
+    "translation": "target_xyz_minus_measured_xyz",
+    "units": [
+      "m",
+      "m",
+      "m",
+      "rad",
+      "rad",
+      "rad",
+      "gripper_command"
+    ]
+  },
+  "base_model": "TurboVLA",
+  "common_normalization": {
+    "fit_scope": "retained_frames_from_all_450_training_demos",
+    "fitted": false,
+    "reuse_historical_usb_statistics": false,
+    "shared_across_all_nine_variants": true
+  },
+  "dataset": {
+    "demo_count": 450,
+    "demos_per_position": 10,
+    "excluded_folders": [
+      "test",
+      "usb_insert"
+    ],
+    "frame_selection": {
+      "detect_before_state_ablation": true,
+      "detection_config": {
+        "consecutive_frames": 3,
+        "enabled": true,
+        "gripper_keys": [
+          "right/gripper_pose"
+        ],
+        "gripper_threshold": 0.02,
+        "no_motion": "drop",
+        "pose_keys": [
+          "right/tcp_pose"
+        ],
+        "pre_roll_frames": 2,
+        "rotation_threshold_rad": 0.01,
+        "translation_threshold_m": 0.01
+      },
+      "detection_parameters_confirmed": true,
+      "fit_normalization_after_trimming": true,
+      "historical_reference": {
+        "algorithm": "csilab_crop_start",
+        "audit": "experiments/default_sfm/preprocessing_audit/stationary_crop_history.json",
+        "consecutive_frames": 3,
+        "gripper_keys": [
+          "right/gripper_pose"
+        ],
+        "gripper_threshold": 0.02,
+        "no_motion": "drop",
+        "pose_keys": [
+          "right/tcp_pose"
+        ],
+        "pre_roll_frames": 2,
+        "rotation_threshold_rad": 0.01,
+        "translation_threshold_m": 0.01
+      },
+      "policy": "remove_initial_stationary_prefix",
+      "read_only_start_index_audit": "experiments/default_sfm/preprocessing_audit/initial_stationary_audit.json",
+      "reconstruct_held_targets_before_trimming": true,
+      "shared_source_indices_across_variants": true
+    },
+    "instruction_mapping": {
+      "audio_jack": "Insert audio jack into audio port",
+      "barlatch": "Grasp bar latch and rotate clockwise",
+      "bnc": "Insert BNC connector and rotate clockwise",
+      "hdmi": "Insert HDMI connector into HDMI port",
+      "knob": "Grasp knob and rotate clockwise",
+      "lan": "Insert LAN cable into Ethernet port",
+      "outlet": "Insert adapter into outlet",
+      "rotary_switch": "Grasp rotary switch and rotate clockwise",
+      "usb": "Insert USB connector into USB port"
+    },
+    "instruction_policy": {
+      "add_task_label_or_position_suffix_to_model_input": false,
+      "language": "en",
+      "preserve_user_wording": true,
+      "same_text_across_all_nine_variants": true,
+      "same_text_for_all_five_positions": true
+    },
+    "instruction_semantics": {
+      "clockwise_tasks": [
+        "bnc",
+        "rotary_switch",
+        "knob",
+        "barlatch"
+      ],
+      "clockwise_viewpoint": "front_view_of_each_operated_surface",
+      "clockwise_viewpoint_status": "confirmed"
+    },
+    "positions_per_task": 5,
+    "project_link": "data/default_sfm",
+    "source_host": "csilab",
+    "source_path": "/home/csilab/share_projects/clean_share/demos/default_sfm",
+    "split": {
+      "evaluation_protocol": null,
+      "evaluation_source": null,
+      "held_out_demo_count": 0,
+      "policy": "all_450_train_separate_evaluation",
+      "training_demo_count": 450
+    },
+    "storage_path": "/data/crestlux/default_sfm",
+    "task_count": 9,
+    "tasks": [
+      "audio_jack",
+      "barlatch",
+      "bnc",
+      "hdmi",
+      "knob",
+      "lan",
+      "outlet",
+      "rotary_switch",
+      "usb"
+    ]
+  },
+  "environment": "turbovla-sfm",
+  "force_torque": {
+    "adaln_condition_source": "same_gru_output_as_memory_token",
+    "adaln_initialization": null,
+    "adaln_modulation": "scale_and_shift",
+    "adaln_retain_gru_memory_token": true,
+    "adaln_target_modules": "act_decoder_layer_norms",
+    "channel_order": [
+      "Fx",
+      "Fy",
+      "Fz",
+      "Tx",
+      "Ty",
+      "Tz"
+    ],
+    "direct_embedding_dimension": 300,
+    "direct_embedding_input": "flattened_full_history",
+    "existing_turbovla_usb_gru_reference": {
+      "checkpoint_recorded_complete": true,
+      "current_and_training_snapshot_sources_equal": true,
+      "deployment_host": "csilab",
+      "deployment_package": "/home/csilab/share_projects/clean_share/team_codes/turbovla/jack_models_20261020",
+      "example_model": "jack_faflow_delta_gru500hz",
+      "historical_normalization": "per_channel_training_mean_std_inside_model",
+      "historical_statistics_reused": false,
+      "historical_std_floor": 0.01,
+      "implementation_source_available_locally": true,
+      "recorded_source_project": "/home/jack/TurboVLA",
+      "source_snapshot": "experiments/default_sfm/preprocessing_audit/turbovla_training_source_snapshot",
+      "training_host": "tako@115.145.172.56"
+    },
+    "gru_bidirectional": false,
+    "gru_hidden_size": 128,
+    "gru_implementation": "existing_turbovla_usb",
+    "gru_num_layers": 1,
+    "gru_output_dimension": 256,
+    "gru_output_projection": "linear_then_layer_norm",
+    "gru_pooling": "last_hidden",
+    "gru_reset_policy": "zero_each_50_sample_window",
+    "gru_state_fusion": "separate_act_memory_token",
+    "history_order": "oldest_to_newest",
+    "history_samples": 50,
+    "history_window_nominal_ms": 100,
+    "normalization": {
+      "application_count": 1,
+      "channel_statistics_count": 6,
+      "method": "standard",
+      "pool_history_samples": true,
+      "shared_across_variants": true,
+      "status": "confirmed",
+      "std_floor": 0.01
+    },
+    "observed_history_shape": [
+      1,
+      50,
+      6
+    ],
+    "removed_raw_state_indices": [
+      1,
+      2,
+      3,
+      10,
+      11,
+      12
+    ],
+    "retain_raw_ft_in_state": false,
+    "sensor_hz": 500,
+    "zero_history_policy": {
+      "confirmation_source": "user",
+      "include_in_statistics": true,
+      "preserve": true,
+      "remove_or_impute": false,
+      "semantics": "intentional_valid_input"
+    }
+  },
+  "initialization": {
+    "available_text_backbone": "pretrained/backbones/bert-base-uncased",
+    "available_vision_backbone": "pretrained/backbones/dinov3-vitb16",
+    "freeze_train_policy": null,
+    "policy_checkpoint": null
+  },
+  "logging": {
+    "future_training_wandb_mode": "online",
+    "setup_created_wandb_run": false
+  },
+  "preprocessing_applied": false,
+  "state": {
+    "conditions": [
+      {
+        "dimension_after_ft_removal": 13,
+        "id": "xy_keep",
+        "removed_position_components": [],
+        "removed_velocity_components": [],
+        "retained_raw_indices": [
+          0,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ]
+      },
+      {
+        "dimension_after_ft_removal": 11,
+        "id": "xy_remove",
+        "removed_position_components": [
+          "x",
+          "y"
+        ],
+        "removed_velocity_components": [],
+        "retained_raw_indices": [
+          0,
+          6,
+          7,
+          8,
+          9,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ]
+      },
+      {
+        "dimension_after_ft_removal": 9,
+        "id": "xy_vxy_remove",
+        "removed_position_components": [
+          "x",
+          "y"
+        ],
+        "removed_velocity_components": [
+          "vx",
+          "vy"
+        ],
+        "retained_raw_indices": [
+          0,
+          6,
+          7,
+          8,
+          9,
+          15,
+          16,
+          17,
+          18
+        ]
+      }
+    ],
+    "input_source": "latest_observations_state",
+    "normalization": {
+      "after_rpy_wrapping": true,
+      "fit_before_xy_ablation": true,
+      "method": "standard",
+      "slice_common_statistics_for_each_condition": true
+    },
+    "observed_raw_shape": [
+      1,
+      19
+    ],
+    "representation": "tcp_xyz_rpy_with_gripper_and_velocity",
+    "rpy": {
+      "applied": false,
+      "audit_report": "experiments/default_sfm/preprocessing_audit/rpy/report.json",
+      "audited_demos": 450,
+      "audited_frames": 143127,
+      "final_boundary_policy": "csilab_wrap_angles_per_axis",
+      "pitch_policy": "preserve_original_signed_angle",
+      "reference_implementation": {
+        "applied_to": "current_and_next_state_observations_and_inference",
+        "changes_action_generation": false,
+        "default_template_enabled": false,
+        "documented_example_axes": [
+          "roll",
+          "yaw"
+        ],
+        "function": "StateDecoder.selected",
+        "host": "csilab",
+        "option": "wrap_angles",
+        "order": "component_selection_then_angle_wrap_then_normalization",
+        "path": "/home/csilab/share_projects/clean_share/preprocess/convert.py",
+        "supported_axes": [
+          "roll",
+          "pitch",
+          "yaw"
+        ]
+      },
+      "requested_candidate": "per_axis_modulo_2pi",
+      "wrap_angles": [
+        "roll",
+        "yaw"
+      ]
+    }
+  },
+  "status": "preprocessing_implementation_in_progress",
+  "training_started": false,
+  "variants": [
+    {
+      "ft_method": "state_embedding",
+      "id": "ft_state_xy_keep",
+      "remove_state_xy": false
+    },
+    {
+      "ft_method": "state_embedding",
+      "id": "ft_state_xy_remove",
+      "remove_state_xy": true
+    },
+    {
+      "ft_method": "state_embedding",
+      "id": "ft_state_xy_vxy_remove",
+      "remove_linear_velocity_xy": true,
+      "remove_state_xy": true
+    },
+    {
+      "ft_method": "gru_embedding",
+      "id": "ft_gru_xy_keep",
+      "remove_state_xy": false
+    },
+    {
+      "ft_method": "gru_embedding",
+      "id": "ft_gru_xy_remove",
+      "remove_state_xy": true
+    },
+    {
+      "ft_method": "gru_embedding",
+      "id": "ft_gru_xy_vxy_remove",
+      "remove_linear_velocity_xy": true,
+      "remove_state_xy": true
+    },
+    {
+      "ft_method": "gru_embedding_adaln",
+      "id": "ft_gru_adaln_xy_keep",
+      "remove_state_xy": false
+    },
+    {
+      "ft_method": "gru_embedding_adaln",
+      "id": "ft_gru_adaln_xy_remove",
+      "remove_state_xy": true
+    },
+    {
+      "ft_method": "gru_embedding_adaln",
+      "id": "ft_gru_adaln_xy_vxy_remove",
+      "remove_linear_velocity_xy": true,
+      "remove_state_xy": true
+    }
+  ],
+  "vision": {
+    "augmentation": null,
+    "crop_boxes_confirmed": true,
+    "crop_tlhw": {
+      "head_cam_d455": [
+        96,
+        128,
+        288,
+        384
+      ],
+      "wrist_cam_d405_a": [
+        72,
+        122,
+        336,
+        448
+      ]
+    },
+    "existing_turbovla_libero_training_image_size": [
+      256,
+      256
+    ],
+    "existing_turbovla_usb_bundle_image_size": [
+      224,
+      224
+    ],
+    "existing_turbovla_usb_training_image_size": [
+      224,
+      224
+    ],
+    "final_image_size": [
+      224,
+      224
+    ],
+    "interpolation": "area",
+    "legacy_crop_content_size_hw": [
+      168,
+      224
+    ],
+    "legacy_crop_padding_tblr": [
+      28,
+      28,
+      0,
+      0
+    ],
+    "legacy_faflow_usb_image_size": [
+      224,
+      224
+    ],
+    "legacy_usb_crop_reference_tlhw": {
+      "head_cam_d455": [
+        96,
+        128,
+        288,
+        384
+      ],
+      "wrist_cam_d405_a": [
+        72,
+        122,
+        336,
+        448
+      ]
+    },
+    "observed_shape_per_view": [
+      1,
+      480,
+      640,
+      3
+    ],
+    "observed_views": [
+      "head_cam_d455",
+      "wrist_cam_d405_a"
+    ],
+    "pad_value": 0,
+    "processing_order": "crop_native_original_then_resize",
+    "resize_mode": "letterbox"
+  }
+}

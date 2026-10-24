@@ -17,7 +17,7 @@ results, not results produced by this repository.
 ## Real-robot default_sfm preparation
 
 The `default_sfm` work uses a separate `turbovla-sfm` environment without the LIBERO or RoboTwin dependencies.
-Training and preprocessing are deferred. The nine intended conditions cross three F/T methods
+Preprocessing of all 450 demonstrations is complete; training has not started. The nine intended conditions cross three F/T methods
 (flattened 50×6 history with state, F/T GRU, F/T GRU + AdaLN) with three state inputs
 (keep XY, remove position XY, remove position XY and linear velocity Vx/Vy). They are recorded in
 [`experiments/default_sfm/experiment_plan.yaml`](experiments/default_sfm/experiment_plan.yaml).
@@ -34,7 +34,7 @@ bash scripts/default_sfm/setup_env.sh
 python scripts/default_sfm/check_environment.py \
   --output experiments/default_sfm/setup_records/environment_validation.json
 
-# Inspect setup and copy/checksum progress.
+# Inspect setup, copy/checksum and preprocessing status.
 python scripts/default_sfm/status.py
 ```
 
@@ -79,15 +79,15 @@ the diagnostics, full-cohort conversion command, shared HDF5 layout and nine dat
 All 450 demonstrations will be used for training; evaluation will use separate data/rollouts.
 Actions are base-frame Delta increments from each timestep's measured TCP pose to its target,
 with rotation represented by `rotvec(R_target * R_measured.inv())`; state angle wrapping does not change them.
-Gripper labels will use held command targets from `infos.command_receipts.right.gripper_target_percent`
+Gripper labels use held command targets from `infos.command_receipts.right.gripper_target_percent`
 (closed -1, open +1), retaining the target between commands. All 450 demos start with observed opening 1.0.
 The user selected retaining the same GRU memory token and adding F/T-conditioned scale/shift to the
 ACT decoder LayerNorms for the third method. The confirmed `wrap_angles: [roll, yaw]` maps roll/yaw
-into `[0, 2pi)` and preserves signed pitch. State components will use shared standardization statistics;
-actions will use the verified USB `symlog_minmax` recipe (temperature 20).
+into `[0, 2pi)` and preserves signed pitch. State components use shared standardization statistics;
+actions use the verified USB `symlog_minmax` recipe (temperature 20).
 The user confirmed six-axis F/T standardization with a standard-deviation floor of 0.01. All-zero F/T histories are intentional valid inputs, as confirmed by the user; they are retained
 and included in statistics without removal or imputation.
-Statistics will be fitted once on the retained SFM frames and reused across the nine conditions.
+Statistics were fitted once on the retained SFM frames and are shared across the nine dataset views.
 The user requested removal of each demo's initial stationary prefix. Historical csilab/FAFLOW settings
 detect displacement from the first observation above 10 mm, rotation above 0.01 rad, or gripper opening
 change above 0.02 for three consecutive frames, then retain two preceding frames. The verified FAFLOW
@@ -96,8 +96,15 @@ results, not processing of the current 450 demos. The user confirmed exact reuse
 parameters, including two-frame preroll and the no-motion drop rule; see
 [`stationary_crop_history.json`](experiments/default_sfm/preprocessing_audit/stationary_crop_history.json).
 A read-only check on the cached numeric states of all 450 SFM demos detected a start in every demo.
-The confirmed rule would remove 4,142 initial frames, retaining 138,985 of 143,127 frames. These are
-the full-cohort numeric preflight counts; completed conversion is recorded in the output manifest.
+The completed conversion removed 4,142 initial frames, retaining 138,985 of 143,127 frames, exactly
+matching the independent full-cohort numeric preflight. The output contains 450 shared HDF5 files
+(26,336,538,496 bytes) at `/data/crestlux/default_sfm_processed/sfm_delta_h5_ftstd001_v1`.
+The local `data/default_sfm_preprocessed` symlink points to this output. Independent readback verified
+all 450 shard hashes, 277,970 image frames, 12,150 sampled variant items and two-worker batches for all nine views.
+The [execution record](experiments/default_sfm/preprocessing_audit/preprocessing_execution.json) and
+[verification report](experiments/default_sfm/preprocessing_audit/processed_verification.json) contain the evidence;
+[metadata snapshots](experiments/default_sfm/preprocessing_output/README.md) preserve the applied statistics and contract.
+Raw PKLs and processed HDF5 data are not uploaded to Git.
 The nine task instructions supplied by the user are recorded verbatim, without display labels or Markdown
 emphasis, in `dataset.instruction_mapping` of the experiment plan. Each task uses the same text for p1-p5
 and all nine variants. "Clockwise" is confirmed to mean a front view of the operated surface for BNC,

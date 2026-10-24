@@ -6,7 +6,7 @@
 
 ## 1. 현재 완료 범위와 이 문서의 용도
 
-이 문서는 다른 사람이 **확정한 전처리 규칙을 구현하고, 이미 완료한 데이터 검사를 재현**하기 위한 안내다.
+이 문서는 다른 사람이 **동일한 코드와 설정으로 450개 전처리 및 검증을 재현**하기 위한 안내다.
 `experiment_plan.yaml`은 전처리 프로그램이 읽는 확정 명세이며 학습 설정 파일은 아니다.
 450개를 변환하는 프로그램과 9개 조건의 공통 데이터 로더를 구현했다.
 F/T GRU·AdaLN 모델과 실제 학습 trainer는 별도 작업이며, 이 문서의 명령은 학습을 시작하지 않는다.
@@ -16,14 +16,18 @@ F/T GRU·AdaLN 모델과 실제 학습 trainer는 별도 작업이며, 이 문�
 | 환경 및 원본 복사 | 완료. 원본 PKL 450개, JSON 67개, 총 517개 파일 |
 | 복사 무결성 | 원격 송신·수신·디스크 재읽기 SHA-256 일치 기록 있음 |
 | RPY 검사 | 450개 / 143,127프레임 완료 |
-| 초기 정지 인덱스 진단 | 450개 완료. 제거 예정 4,142프레임, 유지 예정 138,985프레임 |
-| 이번 F/T 진단 | 각 task의 p1 첫 데모 1개씩, 총 9개만 예비 검사 |
+| 초기 정지 제거 | 450개 완료. 4,142프레임 제거, 138,985프레임 유지 |
+| 초기 F/T 예비 검사 | 9개 표본 검사. 아래 전체 검사로 범위 확대 |
 | 전체 F/T·receipt 검사 | 완료. 450개, 원본 143,127프레임 전부 receipt 있음 |
-| 학습용 변환 | 2개 smoke 변환 통과. 전체 450개 변환은 실행 기록 참조 |
+| 학습용 변환 | 450개 완료. 공통 HDF5 26,336,538,496 bytes, 정규화 및 저장 검증 통과 |
+| 독립 재읽기·로더 검증 | 450개 해시, 이미지 277,970장, 9개 조건 표본 12,150개 및 2-worker 배치 로딩 통과 |
 | optimizer step / 학습 | 0 / 미실행 |
 
 최신 사용자 결정은 **F/T 6축별 standard, `epsilon=0.01`**이다.
 정상 0 이력을 통계에 포함하고, 전체 유지 구간에서 구한 같은 계수를 9개 조건에 적용한다.
+실제 실행 결과와 파일 위치는 [10절](#10-완료된-v1-실행-기록),
+[실행 기록](preprocessing_audit/preprocessing_execution.json),
+[최종 검증 결과](preprocessing_audit/processed_verification.json)에서 확인할 수 있다.
 
 ## 2. 무엇을 누가 결정했는가
 
@@ -61,8 +65,8 @@ GitHub 원격 변경과 push는 사용자 요청·승인 범위에서 수행했�
 `.gitignore`의 기존 `*.png` 규칙은 유지했고, `.gitattributes`는 참조 파일의 바이트 보존용이다.
 
 근거: [변경 및 원본 확인 기록](preprocessing_audit/change_and_reference_audit.json).
-최근 검사는 517개 파일의 경로·크기·수정시각 비교이며, 전체 SHA-256 재계산은 이전 복사 검증 기록이다.
-최근 메타데이터 비교를 새로운 전체 내용 해시 검사로 표현하지 않는다.
+위 변경 감사는 전처리 구현 전의 시점 기록이다. 이번 전체 변환에서는 원본 PKL 450개와 JSON 67개의
+SHA-256을 다시 계산해 복사 manifest와 모두 대조했으며, 원본 파일을 수정하지 않았다.
 
 ## 3. csilab 참조와 그대로 복사하면 안 되는 기본값
 
@@ -178,7 +182,7 @@ no_motion: drop
 
 현재 450개 진단 결과는 [initial_stationary_audit.json](preprocessing_audit/initial_stationary_audit.json)에 있다.
 모든 데모에서 시작점이 검출됐고 제외된 데모는 0개다.
-프레임 수는 원래 143,127개에서 138,985개가 될 예정이다. 이 숫자는 아직 변환 결과가 아니다.
+실제 전체 변환에서도 143,127개 중 4,142개를 제거해 138,985개를 저장했으며 사전 진단과 일치했다.
 
 ### 5.2 held gripper
 
@@ -263,9 +267,9 @@ z[..., c] = (ft[..., c] - mean[c]) / max(std[c], 0.01)
 **저장된 F/T가 이미 정규화되므로 기존 USB GRU의 모델 내부 정규화를 다시 적용하면 안 된다.**
 모듈 구조의 GRU/Linear/LayerNorm은 그대로 재사용할 수 있지만 입력 정규화 위치는 이 계약을 따라야 한다.
 
-전체 숫자 사전 검사 결과는 다음과 같다. production 변환 후 이 계수와 다시 일치하는지 검사한다.
+전체 숫자 사전 검사 결과는 다음과 같다. 실제 전체 변환에서 계산한 계수와 정확히 일치했다.
 
-| 축 | 전체 유지 구간의 std | 적용할 분모 |
+| 축 | 전체 유지 구간의 std | 적용한 분모 |
 |---|---:|---:|
 | Fx | 0.3870765015 | 0.3870765015 |
 | Fy | 0.3791904228 | 0.3791904228 |
@@ -302,7 +306,7 @@ RPY의 성분별 차이를 action 회전으로 사용하지 않는다. state의 
 
 episode 끝의 부족한 항목은 기존 csilab처럼 mask=false로 두고 정규화 **후** 0으로 채운다.
 mask=false 항목은 통계와 loss에서 제외하며 다른 episode의 action으로 채우지 않는다.
-이 mask 규칙은 참조 코드에서 확인한 구현 세부사항이며 새 SFM 변환 결과는 아직 없다.
+전체 변환의 valid action chunk 원소는 690,425개이며, 저장된 모든 mask와 padding을 검사했다.
 
 ### 5.7 공통 정규화
 
@@ -469,17 +473,18 @@ python scripts/default_sfm/audit_ft_pilot.py \
 
 완료된 환경을 활성화한 뒤 저장소 root에서 실행한다. output은 **존재하지 않는 새 경로**여야 한다.
 프로그램은 원본 안에 출력하거나 기존 결과를 덮어쓰는 것을 거부한다.
+현재 호스트의 `sfm_delta_h5_ftstd001_v1`은 이미 완료된 결과이므로 재현 실행에서는 새 출력 경로를 사용한다.
 
 ```bash
 python scripts/default_sfm/test_preprocessing.py -v
 
 python scripts/default_sfm/preprocess.py \
   --raw-root /data/crestlux/default_sfm \
-  --output /data/crestlux/default_sfm_processed/sfm_delta_h5_ftstd001_v1 \
+  --output /data/crestlux/default_sfm_processed/sfm_delta_h5_ftstd001_reproduction \
   --workers 2
 
 python scripts/default_sfm/verify_preprocessed.py \
-  --dataset /data/crestlux/default_sfm_processed/sfm_delta_h5_ftstd001_v1 \
+  --dataset /data/crestlux/default_sfm_processed/sfm_delta_h5_ftstd001_reproduction \
   --numeric-preflight experiments/default_sfm/preprocessing_audit/full_numeric_preflight.json \
   --rehash \
   --output tmp/default_sfm_reproduction/processed_verification.json
@@ -487,7 +492,7 @@ python scripts/default_sfm/verify_preprocessed.py \
 
 full numeric preflight를 새로 만들려면 `preflight_numeric.py --output <새 JSON>`을 실행한다.
 `--limit-demos 2`는 별도 smoke 출력용이며 그 계수를 전체 학습에 재사용하지 않는다.
-450개 정상 변환의 기대 값은 유지 프레임 138,985개, valid action chunk 원소 690,425개다.
+완료된 v1의 검증 기준은 유지 프레임 138,985개, valid action chunk 원소 690,425개다.
 다중 worker 로더 검사는 로컬 프로세스 IPC를 허용하는 환경에서 실행한다. GPU나 학습은 사용하지 않는다.
 
 변환기는 모든 원본 PKL을 일반 pickle reader로 읽으면서 SHA-256을 복사 manifest와 대조한다.
@@ -542,3 +547,41 @@ state와 이미 정규화된 FT50×6을 별도로 반환한다. 별도의 dropou
 이 데이터 로더의 준비는 실제 GRU/AdaLN 모델과 trainer 구현 완료를 뜻하지 않는다.
 학습 초기 가중치·동결 범위, optimizer·학습량·seed·샘플링, 증강, AdaLN 초기화,
 실제 execution horizon과 별도 평가 성공 기준은 이후 학습·평가 단계에서 정한다. 학습은 시작하지 않았다.
+
+## 10. 완료된 v1 실행 기록
+
+전체 변환은 2026-10-24 20:39~21:41 KST에 실행됐으며 약 62.85분이 걸렸다.
+별도 재읽기·로더 검증은 같은 날 21:51 KST에 통과했다. 원본 변경과 optimizer step은 모두 0이다.
+
+| 항목 | 실제 결과 |
+|---|---|
+| 원본 | PKL 450개 + JSON 67개, SHA-256 모두 대조 |
+| episode / task / 배치 | 450 / 9 / task별 5배치, 배치마다 10개 |
+| 프레임 | 143,127 → 138,985, 초기 4,142개 제거 |
+| 정상 0 F/T 이력 | 유지 구간 111,350개, 삭제·보간 없이 통계에 포함 |
+| valid action chunk 원소 | 690,425개, H=5, 각 원소 7차원 |
+| 공통 출력 | HDF5 450개, 26,336,538,496 bytes (약 26.34 GB) |
+| state / F/T / action 통계 | 독립적인 전체 숫자 사전 검사와 정확히 일치 |
+| held 라벨 | 원본 전 프레임 receipt 있음, fallback 0, 고정 FAFLOW 참조와 일치 |
+| 이미지 | 모든 유지 프레임에서 csilab crop/resize 참조와 픽셀 일치 |
+| 독립 재읽기 | HDF5 SHA-256 450개, 이미지 277,970장 일치 |
+| 9개 데이터 입력 조건 | 표본 12,150개와 각 조건의 2-worker 배치 로딩 통과 |
+| 저장 action 역변환 최대 오차 | 위치 4.76e-9 m 미만, 회전 9.53e-9 rad 미만 |
+
+실제 출력은 `/data/crestlux/default_sfm_processed/sfm_delta_h5_ftstd001_v1`이고
+프로젝트에서는 `data/default_sfm_preprocessed` symlink로 접근한다. 원본 symlink는 `data/default_sfm`이다.
+진행 및 완료 상태는 `python scripts/default_sfm/status.py`로 확인한다.
+
+변환에 사용한 코드 커밋은 **`9bebb80966ced629e484f8d7786ad93451d48ecb`**이다.
+실행 당시 소스·설정 16개 파일의 해시가 해당 Git 커밋 및 출력의 `source_snapshot/`과 일치한다.
+현재 계획의 `preprocessing_applied`, `rpy.applied`, `common_normalization.fitted`는 완료 상태로 갱신했다.
+실행 당시 계획은 출력의 `preprocessing_config.json`에 원형대로 보존했으며 상태 필드 차이가 처리 규칙 변경은 아니다.
+
+Git에는 코드·문서와 [실제 출력 메타데이터](preprocessing_output/README.md)만 저장한다.
+다른 사람이 재현하려면 저장소, 450개 원본과 67개 JSON, 위 환경을 함께 전달하고 8절의 새 출력 경로로 실행한다.
+이미 완료된 결과를 바로 사용하려면 실제 출력 디렉터리 전체를 전달해야 한다.
+Git의 메타데이터 복사본에는 HDF5가 없으므로 로더 root로 사용할 수 없다.
+
+근거: [실행 요약 및 해시](preprocessing_audit/preprocessing_execution.json),
+[전체 검증](preprocessing_audit/processed_verification.json),
+[구현·smoke·소스 커밋 검증](preprocessing_audit/implementation_validation.json).

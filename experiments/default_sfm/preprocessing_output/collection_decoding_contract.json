@@ -1,0 +1,22 @@
+{
+  "env": {
+    "right": {
+      "gripper_control": {
+        "mode": "binary",
+        "teleop_backend": "toggle"
+      }
+    }
+  },
+  "gripper_interfaces": null,
+  "train": {
+    "arm_type": "right",
+    "hz": 10,
+    "proprio_keys": [
+      "right/gripper_pose",
+      "right/tcp_force",
+      "right/tcp_pose",
+      "right/tcp_torque",
+      "right/tcp_vel"
+    ]
+  }
+}
