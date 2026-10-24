@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-10-24T10:33:41.484247+00:00",
+  "updated_at_utc": "2026-10-24T10:41:25.704199+00:00",
   "variants": [
     {
       "id": "ft_state_xy_keep",
@@ -290,8 +290,23 @@
   },
   "frame_selection": {
     "policy": "remove_initial_stationary_prefix",
-    "detection_parameters_confirmed": false,
-    "detection_config": null,
+    "detection_parameters_confirmed": true,
+    "detection_config": {
+      "enabled": true,
+      "pose_keys": [
+        "right/tcp_pose"
+      ],
+      "gripper_keys": [
+        "right/gripper_pose"
+      ],
+      "translation_threshold_m": 0.01,
+      "rotation_threshold_rad": 0.01,
+      "gripper_threshold": 0.02,
+      "consecutive_frames": 3,
+      "pre_roll_frames": 2,
+      "no_motion": "drop"
+    },
+    "read_only_start_index_audit": "experiments/default_sfm/preprocessing_audit/initial_stationary_audit.json",
     "historical_reference": {
       "algorithm": "csilab_crop_start",
       "pose_keys": [
@@ -308,10 +323,37 @@
       "no_motion": "drop",
       "audit": "experiments/default_sfm/preprocessing_audit/stationary_crop_history.json"
     },
-    "proposed_pre_roll_frames": 0,
     "shared_source_indices_across_variants": true,
     "detect_before_state_ablation": true,
     "reconstruct_held_targets_before_trimming": true,
     "fit_normalization_after_trimming": true
+  },
+  "instruction_mapping": {
+    "audio_jack": "Insert audio jack into audio port",
+    "barlatch": "Grasp bar latch and rotate clockwise",
+    "bnc": "Insert BNC connector and rotate clockwise",
+    "hdmi": "Insert HDMI connector into HDMI port",
+    "knob": "Grasp knob and rotate clockwise",
+    "lan": "Insert LAN cable into Ethernet port",
+    "outlet": "Insert adapter into outlet",
+    "rotary_switch": "Grasp rotary switch and rotate clockwise",
+    "usb": "Insert USB connector into USB port"
+  },
+  "instruction_policy": {
+    "language": "en",
+    "same_text_for_all_five_positions": true,
+    "same_text_across_all_nine_variants": true,
+    "preserve_user_wording": true,
+    "add_task_label_or_position_suffix_to_model_input": false
+  },
+  "instruction_semantics": {
+    "clockwise_tasks": [
+      "bnc",
+      "rotary_switch",
+      "knob",
+      "barlatch"
+    ],
+    "clockwise_viewpoint": "front_view_of_each_operated_surface",
+    "clockwise_viewpoint_status": "confirmed"
   }
 }

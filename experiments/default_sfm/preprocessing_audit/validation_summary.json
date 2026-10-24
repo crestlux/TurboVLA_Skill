@@ -31,23 +31,48 @@
   "training_preprocessing_applied": false,
   "training_started": false,
   "active_model_variants_implemented": false,
-  "remaining_preprocessing_decisions": [
-    "Initial-stationary detection parameters and preroll (historical settings verified)",
-    "Task instruction mapping"
-  ],
-  "planning_sha256": "5a5da5e8c5280d1b309133e3d2118c37be68d90eaf6b395f8aeba129cfeee447",
+  "remaining_preprocessing_decisions": [],
+  "planning_sha256": "96e7dc1dfec395250025ff150577c65c3c132f33d4f65c27febb3c3170815912",
   "rpy_wrap_angles": [
     "roll",
     "yaw"
   ],
   "pitch_policy": "preserve_original_signed_angle",
-  "planning_updated_at_utc": "2026-10-24T10:33:41.484247+00:00",
+  "planning_updated_at_utc": "2026-10-24T10:41:25.704199+00:00",
   "normalization_methods": {
     "state": "standard",
     "ft": "standard",
     "action": "symlog_minmax"
   },
   "frame_selection_policy": "remove_initial_stationary_prefix",
-  "frame_selection_parameters_confirmed": false,
-  "stationary_history_audit": "stationary_crop_history.json"
+  "frame_selection_parameters_confirmed": true,
+  "stationary_history_audit": "stationary_crop_history.json",
+  "task_instruction_mapping": {
+    "status": "passed",
+    "tasks": 9,
+    "folders": 45,
+    "demos": 450,
+    "exact_user_text_without_display_markup": true,
+    "clockwise_viewpoint": "front_view_of_each_operated_surface"
+  },
+  "initial_stationary_audit": {
+    "status": "passed",
+    "report": "initial_stationary_audit.json",
+    "sha256": "1a6965e8d47114d1549a9bc8743fe344257985ec25de4aa628264448812ad0be",
+    "demos": 450,
+    "no_motion_demos": 0,
+    "original_frames": 143127,
+    "retained_frames": 138985,
+    "removed_initial_frames": 4142,
+    "removed_per_demo": {
+      "min": 1,
+      "median": 7.0,
+      "max": 108
+    },
+    "trimmed_prefix_duration_s": {
+      "min": 0.09203982353210449,
+      "median": 0.6982412338256836,
+      "max": 10.793793201446533
+    }
+  }
 }

@@ -1,5 +1,5 @@
 # Planning record, NOT a runnable training configuration.
-status: awaiting_preprocessing_discussion
+status: preprocessing_contract_confirmed_pending_data_checks
 training_started: false
 preprocessing_applied: false
 base_model: TurboVLA
@@ -21,11 +21,40 @@ dataset:
     held_out_demo_count: 0
     evaluation_source: null  # Evaluation is separate; collection/rollout protocol is not yet specified.
     evaluation_protocol: null
-  instruction_mapping: null
+  instruction_mapping:  # User-provided wording; display labels and Markdown emphasis are not model input.
+    audio_jack: Insert audio jack into audio port
+    barlatch: Grasp bar latch and rotate clockwise
+    bnc: Insert BNC connector and rotate clockwise
+    hdmi: Insert HDMI connector into HDMI port
+    knob: Grasp knob and rotate clockwise
+    lan: Insert LAN cable into Ethernet port
+    outlet: Insert adapter into outlet
+    rotary_switch: Grasp rotary switch and rotate clockwise
+    usb: Insert USB connector into USB port
+  instruction_policy:
+    language: en
+    same_text_for_all_five_positions: true
+    same_text_across_all_nine_variants: true
+    preserve_user_wording: true
+    add_task_label_or_position_suffix_to_model_input: false
+  instruction_semantics:
+    clockwise_tasks: [bnc, rotary_switch, knob, barlatch]
+    clockwise_viewpoint: front_view_of_each_operated_surface  # Confirmed by the user for all four tasks.
+    clockwise_viewpoint_status: confirmed
   frame_selection:
     policy: remove_initial_stationary_prefix  # User-confirmed; preserve later pauses and the final segment.
-    detection_parameters_confirmed: false  # User requested historical settings before choosing these.
-    detection_config: null
+    detection_parameters_confirmed: true  # User confirmed exact reuse of the historical preprocessing.
+    detection_config:
+      enabled: true
+      pose_keys: [right/tcp_pose]
+      gripper_keys: [right/gripper_pose]
+      translation_threshold_m: 0.01
+      rotation_threshold_rad: 0.01
+      gripper_threshold: 0.02
+      consecutive_frames: 3
+      pre_roll_frames: 2
+      no_motion: drop
+    read_only_start_index_audit: experiments/default_sfm/preprocessing_audit/initial_stationary_audit.json
     historical_reference:
       algorithm: csilab_crop_start
       pose_keys: [right/tcp_pose]
@@ -37,7 +66,6 @@ dataset:
       pre_roll_frames: 2
       no_motion: drop
       audit: experiments/default_sfm/preprocessing_audit/stationary_crop_history.json
-    proposed_pre_roll_frames: 0  # Previous proposal only; user requested a history audit instead of selecting it.
     shared_source_indices_across_variants: true
     detect_before_state_ablation: true
     reconstruct_held_targets_before_trimming: true

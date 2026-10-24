@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-10-24T10:33:41.484247+00:00",
-  "status": "awaiting_preprocessing_decisions",
+  "updated_at_utc": "2026-10-24T10:41:25.704199+00:00",
+  "status": "preprocessing_contract_confirmed_pending_data_checks",
   "confirmed_rpy": {
     "wrap_angles": [
       "roll",
@@ -47,7 +47,7 @@
     },
     {
       "id": "frame_selection",
-      "status": "initial_prefix_removal_confirmed_detection_parameters_pending",
+      "status": "confirmed_exact_historical_settings",
       "confirmed_policy": "remove_initial_stationary_prefix",
       "historical_audit": "stationary_crop_history.json",
       "historical_parameters": {
@@ -65,18 +65,50 @@
         "no_motion": "drop",
         "enabled": true
       },
-      "previous_zero_preroll_proposal_confirmed": false,
       "implementation_constraints": [
         "Detect starts from the same raw pose/gripper columns before XY ablation.",
         "Reuse identical retained source indices across all nine variants.",
         "Reconstruct held command targets from complete episodes before trimming.",
         "Fit common statistics only after frame selection.",
         "Preserve intermediate pauses/contact holds and terminal segments."
-      ]
+      ],
+      "confirmed_parameters": {
+        "enabled": true,
+        "pose_keys": [
+          "right/tcp_pose"
+        ],
+        "gripper_keys": [
+          "right/gripper_pose"
+        ],
+        "translation_threshold_m": 0.01,
+        "rotation_threshold_rad": 0.01,
+        "gripper_threshold": 0.02,
+        "consecutive_frames": 3,
+        "pre_roll_frames": 2,
+        "no_motion": "drop"
+      },
+      "read_only_start_index_audit": "initial_stationary_audit.json",
+      "audit_summary": {
+        "demos": 450,
+        "no_motion_demos": 0,
+        "original_frames": 143127,
+        "retained_frames": 138985,
+        "removed_initial_frames": 4142,
+        "removed_per_demo": {
+          "min": 1,
+          "median": 7.0,
+          "max": 108
+        },
+        "trimmed_prefix_duration_s": {
+          "min": 0.09203982353210449,
+          "median": 0.6982412338256836,
+          "max": 10.793793201446533
+        }
+      }
     },
     {
       "id": "task_instructions",
-      "status": "awaiting_user_mapping",
+      "status": "confirmed",
       "tasks": [
         "audio_jack",
         "barlatch",
@@ -88,14 +120,42 @@
         "rotary_switch",
         "usb"
       ],
-      "requirement": "Confirm one English instruction per task, including the target and motion direction for knob, rotary_switch and barlatch."
+      "instruction_mapping": {
+        "audio_jack": "Insert audio jack into audio port",
+        "barlatch": "Grasp bar latch and rotate clockwise",
+        "bnc": "Insert BNC connector and rotate clockwise",
+        "hdmi": "Insert HDMI connector into HDMI port",
+        "knob": "Grasp knob and rotate clockwise",
+        "lan": "Insert LAN cable into Ethernet port",
+        "outlet": "Insert adapter into outlet",
+        "rotary_switch": "Grasp rotary switch and rotate clockwise",
+        "usb": "Insert USB connector into USB port"
+      },
+      "instruction_policy": {
+        "language": "en",
+        "same_text_for_all_five_positions": true,
+        "same_text_across_all_nine_variants": true,
+        "preserve_user_wording": true,
+        "add_task_label_or_position_suffix_to_model_input": false
+      },
+      "instruction_semantics": {
+        "clockwise_tasks": [
+          "bnc",
+          "rotary_switch",
+          "knob",
+          "barlatch"
+        ],
+        "clockwise_viewpoint": "front_view_of_each_operated_surface",
+        "clockwise_viewpoint_status": "confirmed"
+      }
     }
   ],
   "automatic_checks_before_publishing_processed_data": [
     "Current-observation FT alignment and zero/missing-window audit",
     "Full-cohort held gripper command-receipt consistency",
     "Delta conversion round-trip and five-step tail masks",
-    "Offline/inference transform parity and common normalization coefficients"
+    "Offline/inference transform parity and common normalization coefficients",
+    "Per-channel F/T dispersion and numerical standard-deviation floor"
   ],
   "choices_that_can_wait": [
     "Initialization and frozen/trainable modules",
@@ -103,7 +163,9 @@
     "Image augmentation",
     "AdaLN initialization details",
     "Execution horizon",
-    "Separate evaluation protocol"
+    "Separate evaluation protocol",
+    "Task sampling weights shared across the nine variants",
+    "Task-specific evaluation success criteria, including rotation endpoints and final gripper state"
   ],
   "action_chunk_length_confirmed": 5,
   "execution_horizon_required_to_preprocess": false,
@@ -114,5 +176,41 @@
   },
   "full_cohort_ft_and_receipt_audit_complete": false,
   "training_preprocessing_applied": false,
-  "training_started": false
+  "training_started": false,
+  "pending_user_preprocessing_decisions": [],
+  "completed_read_only_data_checks": [
+    {
+      "check": "RPY boundary audit",
+      "demos": 450,
+      "frames": 143127,
+      "report": "rpy/report.json"
+    },
+    {
+      "check": "Initial-motion coverage and exact historical start-index rule",
+      "report": "initial_stationary_audit.json",
+      "summary": {
+        "demos": 450,
+        "no_motion_demos": 0,
+        "original_frames": 143127,
+        "retained_frames": 138985,
+        "removed_initial_frames": 4142,
+        "removed_per_demo": {
+          "min": 1,
+          "median": 7.0,
+          "max": 108
+        },
+        "trimmed_prefix_duration_s": {
+          "min": 0.09203982353210449,
+          "median": 0.6982412338256836,
+          "max": 10.793793201446533
+        }
+      }
+    },
+    {
+      "check": "User task-instruction coverage",
+      "task_count": 9,
+      "folder_count": 45,
+      "demo_count": 450
+    }
+  ]
 }

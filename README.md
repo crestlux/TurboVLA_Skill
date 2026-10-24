@@ -87,11 +87,18 @@ The user requested removal of each demo's initial stationary prefix. Historical 
 detect displacement from the first observation above 10 mm, rotation above 0.01 rad, or gripper opening
 change above 0.02 for three consecutive frames, then retain two preceding frames. The verified FAFLOW
 USB v3 manifest contains 50 demos, with 406 initial frames removed (10,090 to 9,684). These are historical
-results, not processing of the current 450 demos. Current detection parameters, including preroll, remain
-unconfirmed; see [`stationary_crop_history.json`](experiments/default_sfm/preprocessing_audit/stationary_crop_history.json).
-Task instructions are pending from the user. Execution horizon is an inference setting and can be
-decided later without changing the confirmed action chunk length of 5. Data conversion and training
-have not started.
+results, not processing of the current 450 demos. The user confirmed exact reuse of these detection
+parameters, including two-frame preroll and the no-motion drop rule; see
+[`stationary_crop_history.json`](experiments/default_sfm/preprocessing_audit/stationary_crop_history.json).
+A read-only check on the cached numeric states of all 450 SFM demos detected a start in every demo.
+The confirmed rule would remove 4,142 initial frames, retaining 138,985 of 143,127 frames. These are
+diagnostic counts only; no training dataset or fitted normalization statistics have been produced.
+The nine task instructions supplied by the user are recorded verbatim, without display labels or Markdown
+emphasis, in `dataset.instruction_mapping` of the experiment plan. Each task uses the same text for p1-p5
+and all nine variants. "Clockwise" is confirmed to mean a front view of the operated surface for BNC,
+rotary switch, knob and bar latch; this is recorded separately without rewriting the supplied text.
+Execution horizon and task-specific evaluation success criteria can be decided
+later without changing the confirmed action chunk length of 5. Data conversion and training have not started.
 A sample has F/T `[1,50,6]`, state `[1,19]`, two RGB views and 7-D actions;
 the F/T sensor rate is 500 Hz, while the collection config records a 10 Hz control loop.
 The existing trainers are benchmark-specific; the custom loader, trainer and F/T/AdaLN variants will be

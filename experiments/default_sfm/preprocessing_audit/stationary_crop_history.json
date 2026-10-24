@@ -122,9 +122,25 @@
   "current_sfm_decisions": {
     "demo_count": 450,
     "remove_initial_stationary_prefix": true,
-    "detection_parameters_confirmed": false,
-    "previous_zero_preroll_proposal_confirmed": false,
+    "detection_parameters_confirmed": true,
     "preprocessing_applied": false,
-    "training_started": false
+    "training_started": false,
+    "updated_at_utc": "2026-10-24T10:41:25.704199+00:00",
+    "confirmed_config": {
+      "enabled": true,
+      "pose_keys": [
+        "right/tcp_pose"
+      ],
+      "gripper_keys": [
+        "right/gripper_pose"
+      ],
+      "translation_threshold_m": 0.01,
+      "rotation_threshold_rad": 0.01,
+      "gripper_threshold": 0.02,
+      "consecutive_frames": 3,
+      "pre_roll_frames": 2,
+      "no_motion": "drop"
+    },
+    "read_only_start_index_audit": "initial_stationary_audit.json"
   }
 }
