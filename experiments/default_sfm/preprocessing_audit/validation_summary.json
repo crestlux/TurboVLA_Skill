@@ -31,17 +31,19 @@
   "training_preprocessing_applied": false,
   "training_started": false,
   "active_model_variants_implemented": false,
-  "remaining_preprocessing_decisions": [],
-  "planning_sha256": "96e7dc1dfec395250025ff150577c65c3c132f33d4f65c27febb3c3170815912",
+  "remaining_preprocessing_decisions": [
+    "F/T normalization strategy and numerical scale floor (user discussion pending)"
+  ],
+  "planning_sha256": "2caadead1bf4f4f31cb95765c7ef571aa0b4ed7ead4922d057dbecb3faf08e92",
   "rpy_wrap_angles": [
     "roll",
     "yaw"
   ],
   "pitch_policy": "preserve_original_signed_angle",
-  "planning_updated_at_utc": "2026-10-24T10:41:25.704199+00:00",
+  "planning_updated_at_utc": "2026-10-24T11:12:37.785051+00:00",
   "normalization_methods": {
     "state": "standard",
-    "ft": "standard",
+    "ft": null,
     "action": "symlog_minmax"
   },
   "frame_selection_policy": "remove_initial_stationary_prefix",
@@ -74,5 +76,13 @@
       "median": 0.6982412338256836,
       "max": 10.793793201446533
     }
+  },
+  "ft_normalization_status": "awaiting_user_discussion",
+  "ft_zero_history_policy": {
+    "semantics": "intentional_valid_input",
+    "preserve": true,
+    "include_in_statistics": true,
+    "remove_or_impute": false,
+    "confirmation_source": "user"
   }
 }

@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-10-24T10:41:25.704199+00:00",
-  "status": "preprocessing_contract_confirmed_pending_data_checks",
+  "updated_at_utc": "2026-10-24T11:12:37.785051+00:00",
+  "status": "awaiting_ft_normalization_discussion",
   "confirmed_rpy": {
     "wrap_angles": [
       "roll",
@@ -13,21 +13,13 @@
   "decisions_before_conversion": [
     {
       "id": "normalization",
-      "status": "methods_confirmed_statistics_not_fitted",
+      "status": "state_action_confirmed_ft_reopened",
       "confirmed": {
         "state": {
           "method": "standard",
           "after_rpy_wrapping": true,
           "fit_before_xy_ablation": true,
           "slice_common_statistics_for_each_condition": true
-        },
-        "ft": {
-          "method": "standard",
-          "channel_statistics_count": 6,
-          "pool_history_samples": true,
-          "shared_across_variants": true,
-          "application_count": 1,
-          "std_floor": null
         },
         "action": {
           "method": "symlog_minmax",
@@ -43,7 +35,17 @@
           "fitted": false
         }
       },
-      "numerical_check_before_conversion": "Inspect per-channel F/T dispersion before selecting a standard-deviation floor; historical TurboVLA floor is 0.01."
+      "numerical_check_before_conversion": "Include intentional valid zero histories in channel statistics. Inspect full-cohort dispersion, then agree on the method and numerical floor. The temporary 1e-6 choice was withdrawn; no normalization was applied.",
+      "pending_ft": {
+        "status": "awaiting_user_discussion",
+        "method": null,
+        "previously_selected_method": "standard",
+        "channel_statistics_count": 6,
+        "pool_history_samples": true,
+        "shared_across_variants": true,
+        "application_count": 1,
+        "std_floor": null
+      }
     },
     {
       "id": "frame_selection",
@@ -151,11 +153,11 @@
     }
   ],
   "automatic_checks_before_publishing_processed_data": [
-    "Current-observation FT alignment and zero/missing-window audit",
+    "Current-observation FT shapes, finite values, channel distributions and recorded timestamp alignment; intentional all-zero histories are valid",
     "Full-cohort held gripper command-receipt consistency",
     "Delta conversion round-trip and five-step tail masks",
     "Offline/inference transform parity and common normalization coefficients",
-    "Per-channel F/T dispersion and numerical standard-deviation floor"
+    "Per-channel F/T dispersion and agreed numerical scale floor"
   ],
   "choices_that_can_wait": [
     "Initialization and frozen/trainable modules",
@@ -177,7 +179,9 @@
   "full_cohort_ft_and_receipt_audit_complete": false,
   "training_preprocessing_applied": false,
   "training_started": false,
-  "pending_user_preprocessing_decisions": [],
+  "pending_user_preprocessing_decisions": [
+    "F/T normalization strategy and numerical scale floor (user discussion pending)"
+  ],
   "completed_read_only_data_checks": [
     {
       "check": "RPY boundary audit",
@@ -211,6 +215,22 @@
       "task_count": 9,
       "folder_count": 45,
       "demo_count": 450
+    },
+    {
+      "check": "F/T pilot with intentional valid zero histories",
+      "report": "ft_standardization_pilot.json",
+      "demos": 9,
+      "retained_windows": 2971,
+      "all_zero_windows": 2330,
+      "full_cohort_statistics": false,
+      "production_statistics_fitted": false
     }
-  ]
+  ],
+  "ft_zero_history_policy": {
+    "semantics": "intentional_valid_input",
+    "preserve": true,
+    "include_in_statistics": true,
+    "remove_or_impute": false,
+    "confirmation_source": "user"
+  }
 }

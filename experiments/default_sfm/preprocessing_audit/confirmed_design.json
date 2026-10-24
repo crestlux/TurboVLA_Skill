@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-10-24T10:41:25.704199+00:00",
+  "updated_at_utc": "2026-10-24T11:12:37.785051+00:00",
   "variants": [
     {
       "id": "ft_state_xy_keep",
@@ -267,7 +267,9 @@
       "slice_common_statistics_for_each_condition": true
     },
     "ft": {
-      "method": "standard",
+      "status": "awaiting_user_discussion",
+      "method": null,
+      "previously_selected_method": "standard",
       "channel_statistics_count": 6,
       "pool_history_samples": true,
       "shared_across_variants": true,
@@ -355,5 +357,12 @@
     ],
     "clockwise_viewpoint": "front_view_of_each_operated_surface",
     "clockwise_viewpoint_status": "confirmed"
+  },
+  "ft_zero_history_policy": {
+    "semantics": "intentional_valid_input",
+    "preserve": true,
+    "include_in_statistics": true,
+    "remove_or_impute": false,
+    "confirmation_source": "user"
   }
 }

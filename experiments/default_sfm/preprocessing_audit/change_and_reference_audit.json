@@ -1,0 +1,83 @@
+{
+  "checked_at_utc": "2026-10-24T10:50:56.707565+00:00",
+  "baseline_commit": "e946c43",
+  "decision_commit": "7d82d00bca5bb93e5ef57eb3114356c6c15beb2a",
+  "raw_metadata_now": {
+    "status": "passed",
+    "files": 517,
+    "demos": 450,
+    "bytes": 529275940616,
+    "comparison": "exact file paths, sizes and mtime_ns; not a fresh whole-dataset SHA-256 pass"
+  },
+  "prior_full_readback": {
+    "status": "verified",
+    "finished_at_utc": "2026-10-24T08:53:18.650368+00:00",
+    "file_count": 517,
+    "method": "SHA-256 from reopening each destination file after copying"
+  },
+  "active_model_or_training_diff": [],
+  "training_conversion_implemented": false,
+  "preprocessing_applied": false,
+  "training_started": false,
+  "optimizer_steps": 0,
+  "reference_recheck": "csilab_reference_recheck.json",
+  "disclosure": {
+    "user_confirmed": "Dataset selection, image crop/size, roll/yaw wrapping, state/FT ablations, Delta and held labels, H=5, state/action normalization, instructions, historical initial stationary rule and intentional valid zero F/T histories.",
+    "reference_inherited": "INTER_AREA and letterbox details, action symlog_minmax temperature=20 and epsilon=1e-6, GRU architecture, exact historical trimming constants.",
+    "assistant_recorded_implementation_details_not_applied": [
+      "Remove display labels and Markdown emphasis from the user instruction strings.",
+      "Use the same task text for p1-p5 and all nine variants.",
+      "Fit common statistics on retained frames and slice shared state coefficients for each ablation.",
+      "Reconstruct held targets before initial trimming.",
+      "Keep the recorded oldest-to-newest FT window ordering."
+    ],
+    "numerical_item_pending": "User reopened the F/T normalization strategy. Method and numerical floor remain null; the temporary 1e-6 selection was withdrawn before any application.",
+    "operational_changes": "Added real_robot optional dependencies and environment/copy/audit helpers, README and provenance records; updated Git remotes and committed/pushed within the user-authorized scope.",
+    "conversion_status": "No SFM training converter or active FT/AdaLN model variants have been implemented; no processed training dataset or fitted SFM normalization exists."
+  },
+  "portable_requirements": {
+    "path": "scripts/default_sfm/requirements-reproduction.txt",
+    "package_count": 77,
+    "sha256": "d170b210b2ebd68bbfd97a388ad5e3402c181436f2c5dba23aec65c4c43267ad",
+    "source": "Current installed distribution metadata; no packages installed, removed or upgraded."
+  },
+  "reproduction_check": {
+    "script": "scripts/default_sfm/reproduce_initial_stationary.py",
+    "status": "passed",
+    "demos": 450,
+    "per_demo_start_indices_match_reference": true,
+    "original_frames": 143127,
+    "retained_frames": 138985,
+    "removed_initial_frames": 4142,
+    "training_preprocessing_applied": false
+  },
+  "planning_updated_at_utc": "2026-10-24T11:12:37.785051+00:00",
+  "ft_zero_history_policy": {
+    "semantics": "intentional_valid_input",
+    "preserve": true,
+    "include_in_statistics": true,
+    "remove_or_impute": false,
+    "confirmation_source": "user"
+  },
+  "ft_pilot": {
+    "report": "ft_standardization_pilot.json",
+    "demos": 9,
+    "retained_windows": 2971,
+    "all_zero_windows": 2330,
+    "zero_semantics": "intentional_valid_input_confirmed_by_user",
+    "production_statistics_fitted": false
+  },
+  "handoff_validation": {
+    "checked_at_utc": "2026-10-24T11:13:40.063799+00:00",
+    "planning_records_consistent": true,
+    "guide_local_links_valid": true,
+    "python_scripts_parse": true,
+    "portable_requirements_match_installed_distributions": 77,
+    "pip_check": "No broken requirements found",
+    "csilab_reference_sha256_verified": 6,
+    "raw_paths_size_mtime_match_copy_manifest": 517,
+    "fresh_full_raw_sha256_pass": false,
+    "training_started": false,
+    "training_preprocessing_applied": false
+  }
+}

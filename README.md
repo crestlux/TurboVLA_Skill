@@ -73,6 +73,9 @@ The raw data must remain unprocessed. The agreed design removes the six instanta
 in every condition, uses all 50×6 F/T samples, and predicts action chunks of length 5.
 The three remaining state dimensions are 13, 11 and 9; the flattened F/T condition has input dimensions
 313, 311 and 309. Linear velocity Vz and all angular velocities remain in the third condition.
+The Korean [preprocessing and reproduction guide](experiments/default_sfm/PREPROCESSING_GUIDE.md)
+separates user decisions, inherited implementation details and pending work, with commands to reproduce
+the completed diagnostics. It does not claim that a training-data converter already exists.
 All 450 demonstrations will be used for training; evaluation will use separate data/rollouts.
 Actions are base-frame Delta increments from each timestep's measured TCP pose to its target,
 with rotation represented by `rotvec(R_target * R_measured.inv())`; state angle wrapping does not change them.
@@ -80,8 +83,11 @@ Gripper labels will use held command targets from `infos.command_receipts.right.
 (closed -1, open +1), retaining the target between commands. All 450 demos start with observed opening 1.0.
 The user selected retaining the same GRU memory token and adding F/T-conditioned scale/shift to the
 ACT decoder LayerNorms for the third method. The confirmed `wrap_angles: [roll, yaw]` maps roll/yaw
-into `[0, 2pi)` and preserves signed pitch. State components and the six F/T channels will use shared
-standardization statistics; actions will use the verified USB `symlog_minmax` recipe (temperature 20).
+into `[0, 2pi)` and preserves signed pitch. State components will use shared standardization statistics;
+actions will use the verified USB `symlog_minmax` recipe (temperature 20).
+The user reopened the F/T normalization discussion; its final method and standard-deviation floor remain
+unset. All-zero F/T histories are intentional valid inputs, as confirmed by the user; they are retained
+and included in statistics without removal or imputation.
 Statistics will be fitted once on the retained SFM frames and reused across the nine conditions.
 The user requested removal of each demo's initial stationary prefix. Historical csilab/FAFLOW settings
 detect displacement from the first observation above 10 mm, rotation above 0.01 rad, or gripper opening

@@ -1,0 +1,56 @@
+{
+  "checked_at_utc": "2026-10-24T10:50:59.119340+00:00",
+  "host": "csilab",
+  "root": "/home/csilab/share_projects/clean_share",
+  "read_only_remote": true,
+  "files": [
+    {
+      "path": "preprocess/convert.py",
+      "bytes": 41859,
+      "mtime_ns": 1792734615982286810,
+      "sha256": "e35f2f104b59c872054b91c705fa1d6f32259aec746ec9d1fe4e00a1f144cf01",
+      "local_reference": "experiments/default_sfm/preprocessing_audit/csilab_source_snapshot/preprocess/convert.py",
+      "comparison": "live_remote_matches_existing_snapshot"
+    },
+    {
+      "path": "preprocess/normalization.py",
+      "bytes": 13186,
+      "mtime_ns": 1792734615949285617,
+      "sha256": "6b9e5ea9c9a9dfe31f8d81734e395bdf2b28a0aa9ee7ea763fec4135aea25c92",
+      "local_reference": "experiments/default_sfm/preprocessing_audit/csilab_source_snapshot/preprocess/normalization.py",
+      "comparison": "live_remote_matches_existing_snapshot"
+    },
+    {
+      "path": "preprocess/action_chunks.py",
+      "bytes": 9366,
+      "mtime_ns": 1792734576248859739,
+      "sha256": "480bddd09650f496e599bb64b85c092fa7f043faa68605f929e68b867a33f85a",
+      "local_reference": "experiments/default_sfm/preprocessing_audit/csilab_source_snapshot/preprocess/action_chunks.py",
+      "comparison": "live_remote_matches_existing_snapshot"
+    },
+    {
+      "path": "preprocess/gripper.py",
+      "bytes": 22246,
+      "mtime_ns": 1792572449795117992,
+      "sha256": "fd0b618cd0c4c8163d899f8025074b927f53e64bad0fa16084f72af6ae28c210",
+      "local_reference": "experiments/default_sfm/preprocessing_audit/csilab_handoff_source/preprocess/gripper.py",
+      "comparison": "new_read_only_reference_snapshot"
+    },
+    {
+      "path": "preprocess/configs/config_right_default.yaml",
+      "bytes": 3846,
+      "mtime_ns": 1792734654340682796,
+      "sha256": "59785432d027a46842a7c5e0b6040103116adf5efa0b61c3c8969d39ac5d32e8",
+      "local_reference": "experiments/default_sfm/preprocessing_audit/csilab_source_snapshot/preprocess/configs/config_right_default.yaml",
+      "comparison": "live_remote_matches_existing_snapshot"
+    },
+    {
+      "path": "Real_Robo/episode_recording.py",
+      "bytes": 10443,
+      "mtime_ns": 1792560764470132880,
+      "sha256": "fc13c668f4db7f9e16c3276d1c956f86a0bc3fe3a57101a770f98a06066eddae",
+      "local_reference": "experiments/default_sfm/preprocessing_audit/csilab_handoff_source/Real_Robo/episode_recording.py",
+      "comparison": "new_read_only_reference_snapshot"
+    }
+  ]
+}

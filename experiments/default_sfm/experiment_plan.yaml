@@ -1,5 +1,5 @@
 # Planning record, NOT a runnable training configuration.
-status: preprocessing_contract_confirmed_pending_data_checks
+status: awaiting_ft_normalization_discussion
 training_started: false
 preprocessing_applied: false
 base_model: TurboVLA
@@ -79,13 +79,21 @@ force_torque:
   history_window_nominal_ms: 100
   history_order: oldest_to_newest
   channel_order: [Fx, Fy, Fz, Tx, Ty, Tz]
+  zero_history_policy:
+    semantics: intentional_valid_input  # Confirmed by the user; not missing sensor data.
+    preserve: true
+    include_in_statistics: true
+    remove_or_impute: false
+    confirmation_source: user
   normalization:
-    method: standard  # Confirmed by the user; one mean/std pair for each of the six channels.
+    status: awaiting_user_discussion
+    method: null  # User reopened the F/T normalization decision before any application.
+    previously_selected_method: standard
     channel_statistics_count: 6
     pool_history_samples: true
     shared_across_variants: true
     application_count: 1
-    std_floor: null  # Check raw channel statistics before choosing numerical stabilization.
+    std_floor: null  # Temporary 1e-6 choice was withdrawn; no value has been applied.
   gru_implementation: existing_turbovla_usb  # Confirmed by the user, 2026-10-24.
   gru_hidden_size: 128
   gru_num_layers: 1

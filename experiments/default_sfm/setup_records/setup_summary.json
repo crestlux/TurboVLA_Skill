@@ -1,5 +1,5 @@
 {
-  "status": "ready_for_preprocessing_checks",
+  "status": "ready_for_ft_normalization_discussion",
   "completed_at_utc": "2026-10-24T08:53:54.178484+00:00",
   "environment": {
     "name": "turbovla-sfm",
@@ -63,8 +63,12 @@
   "planned_experiment_count": 9,
   "experiment_plan": "experiments/default_sfm/experiment_plan.yaml",
   "custom_dataset_trainer_and_ft_variants": "Implementation deferred until preprocessing and input contracts are decided",
-  "user_deferred_decisions": [],
-  "further_preprocessing_decisions": [],
+  "user_deferred_decisions": [
+    "F/T normalization strategy and numerical scale floor (user discussion pending)"
+  ],
+  "further_preprocessing_decisions": [
+    "F/T normalization strategy and numerical scale floor (user discussion pending)"
+  ],
   "artifact_sha256": {
     "environment_validation.json": "882d5f0927c0ab3063aae94b2e687ec3d7939f62561e5b20a8206c14a9994b77",
     "nccl_validation.json": "530ff6505af6468d36b083c4a2a915bb757259f72c381c7dbdc6c4f620ba5138",
@@ -78,7 +82,7 @@
     "pip-freeze.txt": "a80fdc3d1c4926a299ef53820bbb3e2cdf8664ee2ca413631a7baab2e1c928b8",
     "conda-explicit.txt": "4f3e2f6ca96cfa28e97f83fe62fe272d3173aed2475991b181ae674bf46ae689"
   },
-  "planning_updated_at_utc": "2026-10-24T10:41:25.704199+00:00",
+  "planning_updated_at_utc": "2026-10-24T11:12:37.785051+00:00",
   "confirmed_experiment_decisions": {
     "ft_history_shape": [
       50,
@@ -203,7 +207,9 @@
         "slice_common_statistics_for_each_condition": true
       },
       "ft": {
-        "method": "standard",
+        "status": "awaiting_user_discussion",
+        "method": null,
+        "previously_selected_method": "standard",
         "channel_statistics_count": 6,
         "pool_history_samples": true,
         "shared_across_variants": true,
@@ -291,6 +297,13 @@
       ],
       "clockwise_viewpoint": "front_view_of_each_operated_surface",
       "clockwise_viewpoint_status": "confirmed"
+    },
+    "ft_zero_history_policy": {
+      "semantics": "intentional_valid_input",
+      "preserve": true,
+      "include_in_statistics": true,
+      "remove_or_impute": false,
+      "confirmation_source": "user"
     }
   },
   "full_rpy_audit": {
@@ -310,11 +323,11 @@
     "Task-specific evaluation success criteria, including rotation endpoints and final gripper state"
   ],
   "automatic_preprocessing_checks": [
-    "Current-observation FT alignment and zero/missing-window audit",
+    "Full-cohort F/T shape, finite-value, distribution and timestamp checks; preserve intentional valid zero histories",
     "Full-cohort held gripper command-receipt consistency",
     "Delta conversion round-trip and five-step tail masks",
-    "Offline/inference transform parity and common normalization coefficients",
-    "Per-channel F/T dispersion and numerical standard-deviation floor"
+    "Offline/inference transform parity and shared normalization coefficients",
+    "Per-channel F/T dispersion and agreed numerical scale floor"
   ],
   "initial_stationary_audit": {
     "status": "passed",
