@@ -67,6 +67,20 @@ class ActionHeadConfig:
     mlp_hidden_dim: int = 512
     state_hidden_dim: int = 256
     dropout: float = 0.1
+    # Optional independent initialization streams for controlled SFM ablations.
+    initialization_seed: int | None = None
+
+
+@dataclass
+class FTHistoryConfig:
+    enabled: bool = False
+    history_length: int = 50
+    input_dim: int = 6
+    hidden_dim: int = 128
+    num_layers: int = 1
+    input_normalization: str = "pre_normalized"
+    adaln: bool = False
+    adaln_initialization: str = "zero"
 
 
 @dataclass
@@ -77,6 +91,7 @@ class TurboVLAConfig:
     vision: VisionEncoderConfig = field(default_factory=VisionEncoderConfig)
     interaction: InteractionConfig = field(default_factory=InteractionConfig)
     action: ActionHeadConfig = field(default_factory=ActionHeadConfig)
+    ft_history: FTHistoryConfig = field(default_factory=FTHistoryConfig)
 
     def __post_init__(self) -> None:
         if self.name != "TurboVLA":
@@ -120,6 +135,15 @@ class TurboVLAConfig:
             raise ValueError("interaction.compute_precision must be fp32 or bf16_autocast")
         if self.action.action_dim < 1 or self.action.state_dim < 1 or self.action.horizon < 1:
             raise ValueError("action dimensions and horizon must be positive")
+        ft = self.ft_history
+        if ft.input_normalization != "pre_normalized":
+            raise ValueError("FT must already use the dataset's shared normalization; do not normalize twice")
+        if min(ft.history_length, ft.input_dim, ft.hidden_dim, ft.num_layers) < 1:
+            raise ValueError("FT dimensions must be positive")
+        if ft.adaln and not ft.enabled:
+            raise ValueError("AdaLN requires the FT GRU token")
+        if ft.adaln_initialization != "zero":
+            raise ValueError("Only the confirmed zero-initialized AdaLN is supported")
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -134,4 +158,5 @@ class TurboVLAConfig:
             vision=VisionEncoderConfig(**dict(data.get("vision", {}))),
             interaction=InteractionConfig(**dict(data.get("interaction", {}))),
             action=ActionHeadConfig(**dict(data.get("action", {}))),
+            ft_history=FTHistoryConfig(**dict(data.get("ft_history", {}))),
         )

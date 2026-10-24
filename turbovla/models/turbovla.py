@@ -93,7 +93,7 @@ class VisionLanguageInteraction(nn.Module):
 
 
 class TurboVLA(nn.Module):
-    """Shared TurboVLA architecture for LIBERO and RoboTwin."""
+    """Shared TurboVLA architecture, including real-robot FT conditioning."""
 
     def __init__(self, config: TurboVLAConfig) -> None:
         super().__init__()
@@ -137,6 +137,7 @@ class TurboVLA(nn.Module):
             hidden_dim=hidden_dim,
             nheads=config.interaction.nheads,
             dim_feedforward=config.interaction.dim_feedforward,
+            ft_history=config.ft_history,
         )
 
     def _normalize_samples(self, samples: torch.Tensor | Mapping[str, torch.Tensor]) -> torch.Tensor:
@@ -208,10 +209,11 @@ class TurboVLA(nn.Module):
         instructions: Sequence[str],
         samples: torch.Tensor | Mapping[str, torch.Tensor],
         state: torch.Tensor,
+        ft_history: torch.Tensor | None = None,
     ) -> torch.Tensor:
         condition = self.encode_condition(instructions, samples)
         action_dtype = self.action_head.decoder.action_queries.weight.dtype
-        return self.action_head(condition.to(dtype=action_dtype), state.to(dtype=action_dtype))
+        return self.action_head(condition.to(dtype=action_dtype), state.to(dtype=action_dtype), ft_history=ft_history)
 
     # Transitional read-only names used only by legacy checkpoint initialization.
     @property

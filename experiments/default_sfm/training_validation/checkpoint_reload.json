@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "checkpoint": "/home/crestlux/project/TurboVLA-Research/tmp/default_sfm_resume_b64_v2/split/latest.pt",
+  "checkpoint_sha256": "4742dc1b77915f3f325f799bc729dc3bcff5d692acdf844df341e1e9a408c453",
+  "variant": "ft_gru_adaln_xy_keep",
+  "checkpoint_step": 4,
+  "smoke_checkpoint": true,
+  "observation_indices": [
+    0,
+    138984
+  ],
+  "action_units": [
+    "m",
+    "m",
+    "m",
+    "rad",
+    "rad",
+    "rad",
+    "held_gripper"
+  ],
+  "model_config_source": "checkpoint",
+  "normalization_source": "checkpoint preprocessing bundle",
+  "robot_commands_sent": false,
+  "evaluation_success_measured": false,
+  "checkpoint_contents_restored_exactly": {
+    "tensor_count": 2892,
+    "tensor_elements": 650410566,
+    "mismatch_count": 0,
+    "first_mismatches": []
+  },
+  "results": {
+    "raw": {
+      "shape": [
+        2,
+        5,
+        7
+      ],
+      "finite": true,
+      "repeat_exact": true,
+      "normalized_abs_max": 0.32421875,
+      "inverse_normalization_finite": true
+    },
+    "ema": {
+      "shape": [
+        2,
+        5,
+        7
+      ],
+      "finite": true,
+      "repeat_exact": true,
+      "normalized_abs_max": 0.34375,
+      "inverse_normalization_finite": true
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-10-24T12:51:26.779299+00:00",
+  "updated_at_utc": "2026-10-24T14:03:46.715757+00:00",
   "variants": [
     {
       "id": "ft_state_xy_keep",
@@ -230,7 +230,18 @@
     "resize_mode": "letterbox",
     "crop_boxes_confirmed": true,
     "interpolation": "area",
-    "pad_value": 0
+    "pad_value": 0,
+    "training_augmentation": {
+      "stage": "training_only_after_loading_cropped_hdf5",
+      "color_jitter": {
+        "brightness": 0.2,
+        "contrast": 0.2,
+        "saturation": 0.2,
+        "hue": 0.02
+      },
+      "share_transform_between_current_views": true,
+      "preserve_black_padding": true
+    }
   },
   "gru_reference": {
     "gru_implementation": "existing_turbovla_usb",
@@ -257,7 +268,7 @@
     "adaln_condition_source": "same_gru_output_as_memory_token",
     "adaln_retain_gru_memory_token": true,
     "adaln_modulation": "scale_and_shift",
-    "adaln_initialization": null
+    "adaln_initialization": "zero_scale_and_shift"
   },
   "normalization": {
     "state": {
@@ -364,5 +375,59 @@
     "remove_or_impute": false,
     "confirmation_source": "user"
   },
-  "preprocessing_execution": "experiments/default_sfm/preprocessing_audit/preprocessing_execution.json"
+  "preprocessing_execution": "experiments/default_sfm/preprocessing_audit/preprocessing_execution.json",
+  "training": {
+    "config_directory": "experiments/default_sfm/training_configs",
+    "guide": "experiments/default_sfm/TRAINING_GUIDE.md",
+    "validation_record": "experiments/default_sfm/training_validation/readiness.json",
+    "seed": 42,
+    "sampling": "uniform_task_then_uniform_frame_with_replacement",
+    "task_probability": 0.1111111111111111,
+    "max_samples_per_experiment": 11118800,
+    "equivalent_dataset_passes": 80,
+    "optimizer_steps_per_experiment": 173732,
+    "final_batch_size": 16,
+    "batch_size": 64,
+    "microbatch_size": 64,
+    "gradient_accumulation_steps": 1,
+    "gpu_indices": [
+      0,
+      1,
+      2
+    ],
+    "experiments_per_gpu": 1,
+    "maximum_concurrent_experiments": 3,
+    "scheduling": "start_next_waiting_experiment_when_gpu_slot_finishes",
+    "optimizer": "AdamW",
+    "policy_learning_rate": 5e-05,
+    "vision_backbone_learning_rate": 1e-05,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "weight_decay": 1e-06,
+    "epsilon": 1e-08,
+    "gradient_clip_norm": 1.0,
+    "precision": "bf16_amp",
+    "loss": "masked_l1",
+    "warmup_samples": 8000,
+    "minimum_learning_rate_ratio": 0.01,
+    "ema_decay": 0.999,
+    "ema_reference_batch": 64,
+    "log_interval_steps": 10,
+    "save_interval_steps": 1000,
+    "keep_checkpoints": 2,
+    "formal_training_started": false
+  },
+  "initialization": {
+    "available_vision_backbone": "pretrained/backbones/dinov3-vitb16",
+    "available_text_backbone": "pretrained/backbones/bert-base-uncased",
+    "policy_checkpoint": null,
+    "freeze_train_policy": {
+      "vision_backbone": "pretrained_and_trainable",
+      "text_backbone": "pretrained_frozen_eval",
+      "other_modules": "newly_initialized_trainable",
+      "common_parameter_initialization": "shared_seeded_streams_across_nine_variants"
+    }
+  }
 }

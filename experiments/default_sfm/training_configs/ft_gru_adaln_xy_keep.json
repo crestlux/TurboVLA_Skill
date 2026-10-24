@@ -1,0 +1,151 @@
+{
+  "schema": "turbovla_sfm_training_v1",
+  "variant": "ft_gru_adaln_xy_keep",
+  "data": {
+    "root": "data/default_sfm_preprocessed",
+    "expected_frames": 138985,
+    "expected_episodes": 450,
+    "normalization_sha256": "654f0c0f5b1070379beedca7d0248594869faa73c122ef8dfdb67506e75daa9b",
+    "data_contract_sha256": "ab06c1c733e9325d8a1366422ca888ab0d80296ffa182904bf55593b15e724bc"
+  },
+  "model": {
+    "name": "TurboVLA",
+    "compatibility_profile": "libero",
+    "text": {
+      "model_name_or_path": "pretrained/backbones/bert-base-uncased",
+      "max_length": 32,
+      "padding_length": 16,
+      "padding_length_by_instruction": {},
+      "sub_sentence_present": true,
+      "frozen": true,
+      "force_eval_when_frozen": true,
+      "zero_padded_tokens": false,
+      "local_files_only": true,
+      "attention_implementation": null
+    },
+    "vision": {
+      "backbone_type": "dinov3",
+      "model_name_or_path": "pretrained/backbones/dinov3-vitb16",
+      "resnet_weights": "IMAGENET1K_V2",
+      "resnet_output_stride": 16,
+      "load_pretrained": true,
+      "image_size": 224,
+      "num_views": 2,
+      "position_embedding": "view",
+      "encode_views_separately": true,
+      "frozen": false,
+      "local_files_only": true,
+      "attention_implementation": "sdpa",
+      "compute_precision": "bf16_autocast",
+      "feature_source": "last_hidden_state",
+      "position_init_std": 0.01,
+      "position_scale_init": 0.01,
+      "dropout": 0.1
+    },
+    "interaction": {
+      "hidden_dim": 256,
+      "nheads": 8,
+      "num_layers": 6,
+      "dim_feedforward": 2048,
+      "enhancer_inner_dim": 1024,
+      "text_dropout": 0.0,
+      "fusion_dropout": 0.0,
+      "fusion_droppath": 0.1,
+      "padding_strategy": "key_padding_mask",
+      "residual_style": "normalized",
+      "attention_backend": "manual",
+      "compute_precision": "fp32"
+    },
+    "action": {
+      "action_dim": 7,
+      "state_dim": 13,
+      "horizon": 5,
+      "num_state_tokens": 2,
+      "num_layers": 3,
+      "mlp_hidden_dim": 512,
+      "state_hidden_dim": 256,
+      "dropout": 0.1,
+      "initialization_seed": 42
+    },
+    "ft_history": {
+      "enabled": true,
+      "history_length": 50,
+      "input_dim": 6,
+      "hidden_dim": 128,
+      "num_layers": 1,
+      "input_normalization": "pre_normalized",
+      "adaln": true,
+      "adaln_initialization": "zero"
+    }
+  },
+  "images": {
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "color_jitter": {
+      "brightness": 0.2,
+      "contrast": 0.2,
+      "saturation": 0.2,
+      "hue": 0.02,
+      "padding_tblr": [
+        28,
+        28,
+        0,
+        0
+      ]
+    }
+  },
+  "train": {
+    "seed": 42,
+    "max_samples": 11118800,
+    "num_workers": 2,
+    "learning_rate": 5e-05,
+    "vision_learning_rate": 1e-05,
+    "weight_decay": 1e-06,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "max_grad_norm": 1.0,
+    "amp": true,
+    "warmup_samples": 8000,
+    "min_lr_ratio": 0.01,
+    "ema_decay": 0.999,
+    "ema_reference_batch": 64,
+    "log_interval": 10,
+    "save_interval": 1000,
+    "keep_checkpoints": 2,
+    "effective_batch_size": 64,
+    "microbatch_size": 64,
+    "equivalent_dataset_passes": 80,
+    "sampling": "uniform_task_then_uniform_frame_with_replacement",
+    "epsilon": 1e-08,
+    "cpu_threads": 4
+  },
+  "wandb": {
+    "mode": "online",
+    "project": "TurboVLA_Skill",
+    "entity": null,
+    "group": "default_sfm_9way_seed42"
+  },
+  "initialization": {
+    "policy_checkpoint": null,
+    "pretrained_vision": true,
+    "pretrained_text": true,
+    "common_parameter_initialization": "shared seeded streams across all nine variants"
+  },
+  "confirmation": {
+    "recipe": "user confirmed existing USB settings",
+    "sampling": "user confirmed task uniform",
+    "effective_batch": 64,
+    "adaln_initialization": "zero",
+    "full_training_started": false
+  }
+}

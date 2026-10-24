@@ -9,7 +9,8 @@
 이 문서는 다른 사람이 **동일한 코드와 설정으로 450개 전처리 및 검증을 재현**하기 위한 안내다.
 `experiment_plan.yaml`은 전처리 프로그램이 읽는 확정 명세이며 학습 설정 파일은 아니다.
 450개를 변환하는 프로그램과 9개 조건의 공통 데이터 로더를 구현했다.
-F/T GRU·AdaLN 모델과 실제 학습 trainer는 별도 작업이며, 이 문서의 명령은 학습을 시작하지 않는다.
+F/T GRU·AdaLN 모델과 실제 학습 trainer도 구현했으며 [학습 안내](TRAINING_GUIDE.md)에 별도로 정리했다.
+이 문서의 전처리 명령은 학습을 시작하지 않는다.
 
 | 항목 | 현재 상태 |
 |---|---|
@@ -21,7 +22,7 @@ F/T GRU·AdaLN 모델과 실제 학습 trainer는 별도 작업이며, 이 문�
 | 전체 F/T·receipt 검사 | 완료. 450개, 원본 143,127프레임 전부 receipt 있음 |
 | 학습용 변환 | 450개 완료. 공통 HDF5 26,336,538,496 bytes, 정규화 및 저장 검증 통과 |
 | 독립 재읽기·로더 검증 | 450개 해시, 이미지 277,970장, 9개 조건 표본 12,150개 및 2-worker 배치 로딩 통과 |
-| optimizer step / 학습 | 0 / 미실행 |
+| 본학습 | 미실행. 별도 GPU smoke의 optimizer step과 W&B 연결 검증은 학습 안내에 기록 |
 
 최신 사용자 결정은 **F/T 6축별 standard, `epsilon=0.01`**이다.
 정상 0 이력을 통계에 포함하고, 전체 유지 구간에서 구한 같은 계수를 9개 조건에 적용한다.
@@ -61,7 +62,7 @@ F/T GRU·AdaLN 모델과 실제 학습 trainer는 별도 작업이며, 이 문�
 GitHub 원격 변경과 push는 사용자 요청·승인 범위에서 수행했다.
 감사 시점의 `e946c43..7d82d00` 비교에서 `turbovla/`, `configs/`의 실제 모델·학습 코드는 변경되지 않았다.
 이번에는 `turbovla/data/sfm_preprocessing.py`, `turbovla/data/default_sfm.py`와 전처리·검증 CLI를 추가했다.
-참조용 복사본은 감사 디렉터리에 있으며, 실제 모델 구조·학습 코드는 아직 변경하지 않았다.
+참조용 복사본은 감사 디렉터리에 보존했다. 이후 승인된 학습 준비에서 실제 FT GRU·AdaLN과 trainer를 구현했다.
 `.gitignore`의 기존 `*.png` 규칙은 유지했고, `.gitattributes`는 참조 파일의 바이트 보존용이다.
 
 근거: [변경 및 원본 확인 기록](preprocessing_audit/change_and_reference_audit.json).
@@ -218,7 +219,8 @@ custom-width 기록은 receipt 없이 복원하지 않는다. 중간 목표값�
 두 crop 모두 4:3이다. `cv2.INTER_AREA`로 width 224, height 168로 줄이고,
 위아래 28픽셀씩 0으로 채워 224×224 RGB를 만든다. 출력 HWC 기준 `[224,224,3]`이다.
 원본 전체를 먼저 224×224로 줄였다가 확대·crop하는 과거 FAFLOW 경로를 재사용하지 않는다.
-현재 설정에는 새로운 색상 변환·CLAHE·회전·이미지 증강을 추가하지 않았다. 학습 증강은 별도 미정이다.
+저장된 전처리 이미지에는 색상 증강·CLAHE·회전을 적용하지 않았다.
+이후 사용자가 승인한 기존 USB color jitter는 학습 시에만 적용하고 검정 padding을 보존한다.
 
 ### 5.4 state와 RPY
 
@@ -347,7 +349,8 @@ flat은 `[50,6]`을 시간 순서대로 펼친 300차원을 state에 연결한�
 GRU는 기존 TurboVLA USB의 1-layer `GRU(6,128)`, window마다 zero hidden reset,
 마지막 hidden → Linear(128,256) → LayerNorm → `[B,1,256]` memory token 구조를 따른다.
 GRU+AdaLN은 이 token을 유지하고 같은 GRU 출력으로 ACT decoder LayerNorm의 scale·shift를 조건화한다.
-AdaLN 초기화와 학습 초기 가중치·동결 정책은 아직 미정이다. F/T 분모 하한은 사용자 확정값 0.01이다.
+사용자는 AdaLN scale·shift 0 초기화, DINOv3 사전학습 가중치 학습, BERT 동결,
+그 외 모듈 새 초기화를 확정했다. F/T 분모 하한은 사용자 확정값 0.01이다.
 
 ## 7. 지금 실행할 수 있는 재현 절차
 
@@ -542,11 +545,11 @@ dataset.close()
 ```
 
 flat 조건은 state 뒤에 시간 순서대로 펼친 FT300을 연결한다. GRU 및 GRU+AdaLN 조건은
-state와 이미 정규화된 FT50×6을 별도로 반환한다. 별도의 dropout·FT 제거·증강을 추가하지 않는다.
+state와 이미 정규화된 FT50×6을 별도로 반환한다. 데이터 로더 내부에 dropout·FT 제거·증강을 추가하지 않는다.
 
-이 데이터 로더의 준비는 실제 GRU/AdaLN 모델과 trainer 구현 완료를 뜻하지 않는다.
-학습 초기 가중치·동결 범위, optimizer·학습량·seed·샘플링, 증강, AdaLN 초기화,
-실제 execution horizon과 별도 평가 성공 기준은 이후 학습·평가 단계에서 정한다. 학습은 시작하지 않았다.
+실제 GRU/AdaLN 모델과 trainer, 학습 설정, GPU queue와 모니터는 [학습 안내](TRAINING_GUIDE.md)에 있다.
+학습 설정은 확정했으며 batch 64·gradient accumulation 없이 GPU당 한 실험씩 진행한다.
+실제 execution horizon과 별도 평가 성공 기준은 평가/배포 단계에서 정한다. 본학습은 시작하지 않았다.
 
 ## 10. 완료된 v1 실행 기록
 

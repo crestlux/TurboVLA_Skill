@@ -1,0 +1,47 @@
+{
+  "saved_configs": [
+    {
+      "file": "experiments/default_sfm/preprocessing_audit/turbovla_training_source_snapshot/runs/go/ft_500hz_delta/config.json",
+      "batch_size": 64
+    },
+    {
+      "file": "experiments/default_sfm/preprocessing_audit/turbovla_training_source_snapshot/runs/go/ft_500hz_relative/config.json",
+      "batch_size": 64
+    },
+    {
+      "file": "experiments/default_sfm/preprocessing_audit/turbovla_training_source_snapshot/runs/jack/faflow_delta_gru500hz/config.json",
+      "batch_size": 64
+    },
+    {
+      "file": "experiments/default_sfm/preprocessing_audit/turbovla_training_source_snapshot/runs/jack/faflow_delta_no_ft_history/config.json",
+      "batch_size": 64
+    },
+    {
+      "file": "experiments/default_sfm/preprocessing_audit/turbovla_training_source_snapshot/runs/jack/faflow_relative_gru500hz/config.json",
+      "batch_size": 64
+    },
+    {
+      "file": "experiments/default_sfm/preprocessing_audit/turbovla_training_source_snapshot/runs/jack/faflow_relative_no_ft_history/config.json",
+      "batch_size": 64
+    },
+    {
+      "file": "experiments/default_sfm/preprocessing_audit/turbovla_training_source_snapshot/runs/jack/original_delta_gru500hz/config.json",
+      "batch_size": 64
+    },
+    {
+      "file": "experiments/default_sfm/preprocessing_audit/turbovla_training_source_snapshot/runs/jack/original_delta_no_ft_history/config.json",
+      "batch_size": 64
+    },
+    {
+      "file": "experiments/default_sfm/preprocessing_audit/turbovla_training_source_snapshot/runs/jack/original_relative_gru500hz/config.json",
+      "batch_size": 64
+    },
+    {
+      "file": "experiments/default_sfm/preprocessing_audit/turbovla_training_source_snapshot/runs/jack/original_relative_no_ft_history/config.json",
+      "batch_size": 64
+    }
+  ],
+  "trainer": "experiments/default_sfm/preprocessing_audit/turbovla_training_source_snapshot/training_snapshot/jack/turbovla/training/real_robot.py",
+  "behavior": "One complete batch forward, loss.backward and optimizer.step; no gradient accumulation",
+  "final_user_decision": "Match USB batch 64 without gradient accumulation; schedule one experiment per GPU"
+}

@@ -1,0 +1,19 @@
+{
+  "variants": [
+    "ft_gru_adaln_xy_keep",
+    "ft_gru_adaln_xy_remove",
+    "ft_gru_adaln_xy_vxy_remove",
+    "ft_gru_xy_keep",
+    "ft_gru_xy_remove",
+    "ft_gru_xy_vxy_remove",
+    "ft_state_xy_keep",
+    "ft_state_xy_remove",
+    "ft_state_xy_vxy_remove"
+  ],
+  "effective_batch_size": 64,
+  "microbatch_size": 64,
+  "max_samples": 11118800,
+  "optimizer_steps": 173732,
+  "sampling": "uniform_task_then_uniform_frame_with_replacement",
+  "note": "Microbatch is a resource setting. Full training has not started."
+}

@@ -30,15 +30,15 @@
   "optimizer_steps": 0,
   "training_preprocessing_applied": true,
   "training_started": false,
-  "active_model_variants_implemented": false,
+  "active_model_variants_implemented": true,
   "remaining_preprocessing_decisions": [],
-  "planning_sha256": "e93495df6230ab8190403dcce100c265c72ee6f7639384416734a9739dee0fe4",
+  "planning_sha256": "a9ae5958031a61b2c8f9664e0df6e8668b414fd660f65691e2f4d3282fa92e8d",
   "rpy_wrap_angles": [
     "roll",
     "yaw"
   ],
   "pitch_policy": "preserve_original_signed_angle",
-  "planning_updated_at_utc": "2026-10-24T12:51:26.779299+00:00",
+  "planning_updated_at_utc": "2026-10-24T14:03:46.715757+00:00",
   "normalization_methods": {
     "state": "standard",
     "ft": "standard",
@@ -384,5 +384,6 @@
     "task_instructions": 9,
     "training_started": false,
     "variants": 9
-  }
+  },
+  "training_readiness": "experiments/default_sfm/training_validation/readiness.json"
 }

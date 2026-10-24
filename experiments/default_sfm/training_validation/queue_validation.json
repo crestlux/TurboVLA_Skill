@@ -1,0 +1,673 @@
+{
+  "status": "passed",
+  "formal_training_started": false,
+  "mode": "smoke_queue",
+  "source_directory": "tmp/default_sfm_queue_b64_final",
+  "jobs_per_gpu": 1,
+  "maximum_concurrent_experiments": 3,
+  "total_variants": 9,
+  "all_jobs_finished": true,
+  "batch_size": 64,
+  "gradient_accumulation_steps": 1,
+  "smoke_optimizer_steps_per_variant": 3,
+  "peak_gpu_used_gib": {
+    "0": 15.935546875,
+    "1": 15.939453125,
+    "2": 15.935546875
+  },
+  "elapsed_seconds": 81.30864136107266,
+  "common_parameters_identical_at_initialization": true,
+  "gru_parameters_identical_at_initialization": true,
+  "shared_common_parameter_sha256": "957ddd3ed2ba5c9ec5c5aeeb2d107b04daff44aa9b7f444e7c1bdaa02072844b",
+  "shared_gru_parameter_sha256": "046542cc66d7bd440fad3f56c9953cbd8693b1b9e0ea6efd21a9929e4ad9dbd3",
+  "jobs": [
+    {
+      "variant": "ft_state_xy_keep",
+      "gpu": 0,
+      "exit_code": 0,
+      "optimizer_steps": 3,
+      "state_input_dimension": 313,
+      "batch_size": 64,
+      "gradient_accumulation_steps": 1,
+      "gradients": {
+        "status": "passed",
+        "norms": {
+          "vision": 0.1922153958181717,
+          "language_projection": 0.007012079092701966,
+          "ft_gru": 0.0,
+          "adaln": 0.0
+        },
+        "bert_frozen": true
+      },
+      "initialization": {
+        "parameter_sha256": {
+          "common": "957ddd3ed2ba5c9ec5c5aeeb2d107b04daff44aa9b7f444e7c1bdaa02072844b",
+          "state_projection": "d7b7921cf8d2a91837f37ce11995ee6d98afa7b833e59e8e8a1781db40ad76ba",
+          "ft_gru": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "adaln": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "instruction_token_lengths": {
+          "audio_jack": 8,
+          "barlatch": 8,
+          "bnc": 9,
+          "hdmi": 10,
+          "knob": 7,
+          "lan": 8,
+          "outlet": 7,
+          "rotary_switch": 8,
+          "usb": 8
+        },
+        "total_parameters": 216150137,
+        "trainable_parameters": 106667129
+      },
+      "source_sha256": {
+        "turbovla/__init__.py": "49aa6d519ba36294fd1ad047d27ac4ce152ec12feb3facce1f164956b007ad8b",
+        "turbovla/data/__init__.py": "00a2d5ed0abacf52a7ff252e9d034442bca59c130a330c8be77d5e73378bea88",
+        "turbovla/data/default_sfm.py": "07ed45415df9a56f9410244a126de367fb83b59ebbc73ee601106581b300f925",
+        "turbovla/data/libero_rlds.py": "7dffe5ab361cfa3cf9eeae25c3e35226ac41bc132f4ef9ac1016d7acbaf2b7cb",
+        "turbovla/data/mixed_suite.py": "c2c6f618b0f96cd978cbf38287c7c45e846a9d9086cdc328f79e805f1bbb36ee",
+        "turbovla/data/sfm_preprocessing.py": "ce06b5aa85edc9c7824b34402e89ab7fdadf4134cd7b23ad1c979e033fbd4464",
+        "turbovla/data/suite_stats.py": "bfa7bec2a0b5c4288582b36e7389c71665e160e1d3d21121e945ed1658c669a9",
+        "turbovla/evaluation/__init__.py": "b47f0240603167e1f5fcbfbb4ed267e738ffc3700ec26847c6b112749b35dbe5",
+        "turbovla/evaluation/policy.py": "d81d22b2efd6dcfd724041cd699bef010db4e49e1e9d0411b56c09f707bc0a77",
+        "turbovla/evaluation/suite_policy.py": "01158cc77855b62fbedd0a3d9bd75b9e7745d04bd91db90962b330ac9069bab9",
+        "turbovla/models/__init__.py": "d7e81175370226ea23afa64975b2c93e945c97848b3d4dbd625aebfb92592281",
+        "turbovla/models/action_head.py": "a99e56dda110670bef5e75e574ab9c9a34c8ee5687682ff7188be5ce9cb61faa",
+        "turbovla/models/components/__init__.py": "6a9fa5d5cafdaecb1f8552e39dfe9616e19bce0a28a46e6645a542bc654d3466",
+        "turbovla/models/components/fusion.py": "dbfaa45983ac7f6537abd3c73def4737a652e1199415bc323728c560eae72cfe",
+        "turbovla/models/components/transformer.py": "5e52a2eb38d17129a1ebe1f0121397784b5a2027a5eca67be039f8bdd3ad307f",
+        "turbovla/models/components/utils.py": "de972d84ea0b5136e2186c6514be38ff2eb09f59ff33c07a03208ac5ede89053",
+        "turbovla/models/configuration.py": "54a6071b5dedd494e8a1f8bc04467077f742ab4320bf0ee506a7164c7662e237",
+        "turbovla/models/text_encoder.py": "a73b531768755409f5e00565da69d730c8991c0db03b51418d4354680eba912a",
+        "turbovla/models/turbovla.py": "107542ac330774c368fc157fcfe695d665636aa658d15156c51844f32aaca551",
+        "turbovla/models/vision_encoder.py": "8235a357bbaf3a1aa1fad235cc2aa4ee930efa4e95d58d9a4e0fee4ec09fda98",
+        "turbovla/text/__init__.py": "df4a6ed2bb60a504aca35f0968f97fba7ae2e23f5b36e28fbd3d95d6a495ccb6",
+        "turbovla/text/bert.py": "bee78d8ab2351aa2009bcdf342d2c93a0b0b089ab38e71ca9ba45834fc942aa3",
+        "turbovla/training/__init__.py": "95e40bd76eff70303eae5382ef92aa5122d65889e91795c8d9fa7f5b4173e418",
+        "turbovla/training/pi05.py": "39b0863163037227457cb51cbf291144a29713b47089e4f6bb4f17ed1c82fbc6",
+        "turbovla/training/sfm.py": "0b8d5bfee5e73373da36a1613763dc082f0279b9f1a50f15e8c7b9252160d368",
+        "turbovla/training/sfm_utils.py": "7701fc77933a9817b196236b55e214454770020db2e0340760d002fc4535674e",
+        "turbovla/training/train_mixed.py": "edc1acf4d5f5dcf96e965e4185e7081a39ca2e8012ea12a967b51ca2d41f1d01",
+        "turbovla/training/trainer.py": "75841c21591ef48590257fe43acd5ac5fc6e4e5b7dc6cb9332d23ccc7a65904f",
+        "turbovla/vision_processing.py": "f5e15bf7cda30377b8b77ba044bd6ad59cdfd405135859717b98b347ecb0e8eb",
+        "scripts/default_sfm/train.py": "cf4d42916d2c153fbf9463c5cb139dffa77e50b28282bbad12d6ac3689940195"
+      }
+    },
+    {
+      "variant": "ft_gru_xy_keep",
+      "gpu": 1,
+      "exit_code": 0,
+      "optimizer_steps": 3,
+      "state_input_dimension": 13,
+      "batch_size": 64,
+      "gradient_accumulation_steps": 1,
+      "gradients": {
+        "status": "passed",
+        "norms": {
+          "vision": 0.19192923297886483,
+          "language_projection": 0.00699132408493643,
+          "ft_gru": 0.0003796128028896107,
+          "adaln": 0.0
+        },
+        "bert_frozen": true
+      },
+      "initialization": {
+        "parameter_sha256": {
+          "common": "957ddd3ed2ba5c9ec5c5aeeb2d107b04daff44aa9b7f444e7c1bdaa02072844b",
+          "state_projection": "a5595f5b3ea1e10c3298fdcee5a650538089b5a0765e2bb42eae8ffd4d0dcd9e",
+          "ft_gru": "046542cc66d7bd440fad3f56c9953cbd8693b1b9e0ea6efd21a9929e4ad9dbd3",
+          "adaln": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "instruction_token_lengths": {
+          "audio_jack": 8,
+          "barlatch": 8,
+          "bnc": 9,
+          "hdmi": 10,
+          "knob": 7,
+          "lan": 8,
+          "outlet": 7,
+          "rotary_switch": 8,
+          "usb": 8
+        },
+        "total_parameters": 216158497,
+        "trainable_parameters": 106675489
+      },
+      "source_sha256": {
+        "turbovla/__init__.py": "49aa6d519ba36294fd1ad047d27ac4ce152ec12feb3facce1f164956b007ad8b",
+        "turbovla/data/__init__.py": "00a2d5ed0abacf52a7ff252e9d034442bca59c130a330c8be77d5e73378bea88",
+        "turbovla/data/default_sfm.py": "07ed45415df9a56f9410244a126de367fb83b59ebbc73ee601106581b300f925",
+        "turbovla/data/libero_rlds.py": "7dffe5ab361cfa3cf9eeae25c3e35226ac41bc132f4ef9ac1016d7acbaf2b7cb",
+        "turbovla/data/mixed_suite.py": "c2c6f618b0f96cd978cbf38287c7c45e846a9d9086cdc328f79e805f1bbb36ee",
+        "turbovla/data/sfm_preprocessing.py": "ce06b5aa85edc9c7824b34402e89ab7fdadf4134cd7b23ad1c979e033fbd4464",
+        "turbovla/data/suite_stats.py": "bfa7bec2a0b5c4288582b36e7389c71665e160e1d3d21121e945ed1658c669a9",
+        "turbovla/evaluation/__init__.py": "b47f0240603167e1f5fcbfbb4ed267e738ffc3700ec26847c6b112749b35dbe5",
+        "turbovla/evaluation/policy.py": "d81d22b2efd6dcfd724041cd699bef010db4e49e1e9d0411b56c09f707bc0a77",
+        "turbovla/evaluation/suite_policy.py": "01158cc77855b62fbedd0a3d9bd75b9e7745d04bd91db90962b330ac9069bab9",
+        "turbovla/models/__init__.py": "d7e81175370226ea23afa64975b2c93e945c97848b3d4dbd625aebfb92592281",
+        "turbovla/models/action_head.py": "a99e56dda110670bef5e75e574ab9c9a34c8ee5687682ff7188be5ce9cb61faa",
+        "turbovla/models/components/__init__.py": "6a9fa5d5cafdaecb1f8552e39dfe9616e19bce0a28a46e6645a542bc654d3466",
+        "turbovla/models/components/fusion.py": "dbfaa45983ac7f6537abd3c73def4737a652e1199415bc323728c560eae72cfe",
+        "turbovla/models/components/transformer.py": "5e52a2eb38d17129a1ebe1f0121397784b5a2027a5eca67be039f8bdd3ad307f",
+        "turbovla/models/components/utils.py": "de972d84ea0b5136e2186c6514be38ff2eb09f59ff33c07a03208ac5ede89053",
+        "turbovla/models/configuration.py": "54a6071b5dedd494e8a1f8bc04467077f742ab4320bf0ee506a7164c7662e237",
+        "turbovla/models/text_encoder.py": "a73b531768755409f5e00565da69d730c8991c0db03b51418d4354680eba912a",
+        "turbovla/models/turbovla.py": "107542ac330774c368fc157fcfe695d665636aa658d15156c51844f32aaca551",
+        "turbovla/models/vision_encoder.py": "8235a357bbaf3a1aa1fad235cc2aa4ee930efa4e95d58d9a4e0fee4ec09fda98",
+        "turbovla/text/__init__.py": "df4a6ed2bb60a504aca35f0968f97fba7ae2e23f5b36e28fbd3d95d6a495ccb6",
+        "turbovla/text/bert.py": "bee78d8ab2351aa2009bcdf342d2c93a0b0b089ab38e71ca9ba45834fc942aa3",
+        "turbovla/training/__init__.py": "95e40bd76eff70303eae5382ef92aa5122d65889e91795c8d9fa7f5b4173e418",
+        "turbovla/training/pi05.py": "39b0863163037227457cb51cbf291144a29713b47089e4f6bb4f17ed1c82fbc6",
+        "turbovla/training/sfm.py": "0b8d5bfee5e73373da36a1613763dc082f0279b9f1a50f15e8c7b9252160d368",
+        "turbovla/training/sfm_utils.py": "7701fc77933a9817b196236b55e214454770020db2e0340760d002fc4535674e",
+        "turbovla/training/train_mixed.py": "edc1acf4d5f5dcf96e965e4185e7081a39ca2e8012ea12a967b51ca2d41f1d01",
+        "turbovla/training/trainer.py": "75841c21591ef48590257fe43acd5ac5fc6e4e5b7dc6cb9332d23ccc7a65904f",
+        "turbovla/vision_processing.py": "f5e15bf7cda30377b8b77ba044bd6ad59cdfd405135859717b98b347ecb0e8eb",
+        "scripts/default_sfm/train.py": "cf4d42916d2c153fbf9463c5cb139dffa77e50b28282bbad12d6ac3689940195"
+      }
+    },
+    {
+      "variant": "ft_gru_adaln_xy_keep",
+      "gpu": 2,
+      "exit_code": 0,
+      "optimizer_steps": 3,
+      "state_input_dimension": 13,
+      "batch_size": 64,
+      "gradient_accumulation_steps": 1,
+      "gradients": {
+        "status": "passed",
+        "norms": {
+          "vision": 0.19047193131432963,
+          "language_projection": 0.006938277021940575,
+          "ft_gru": 0.0003767312292094102,
+          "adaln": 0.12299229741841233
+        },
+        "bert_frozen": true
+      },
+      "initialization": {
+        "parameter_sha256": {
+          "common": "957ddd3ed2ba5c9ec5c5aeeb2d107b04daff44aa9b7f444e7c1bdaa02072844b",
+          "state_projection": "a5595f5b3ea1e10c3298fdcee5a650538089b5a0765e2bb42eae8ffd4d0dcd9e",
+          "ft_gru": "046542cc66d7bd440fad3f56c9953cbd8693b1b9e0ea6efd21a9929e4ad9dbd3",
+          "adaln": "3fd3426eb0a3da04d3d4ba5abb1b46ec9e0e9d5fd93b507579d565e159750fe3"
+        },
+        "instruction_token_lengths": {
+          "audio_jack": 8,
+          "barlatch": 8,
+          "bnc": 9,
+          "hdmi": 10,
+          "knob": 7,
+          "lan": 8,
+          "outlet": 7,
+          "rotary_switch": 8,
+          "usb": 8
+        },
+        "total_parameters": 217342753,
+        "trainable_parameters": 107859745
+      },
+      "source_sha256": {
+        "turbovla/__init__.py": "49aa6d519ba36294fd1ad047d27ac4ce152ec12feb3facce1f164956b007ad8b",
+        "turbovla/data/__init__.py": "00a2d5ed0abacf52a7ff252e9d034442bca59c130a330c8be77d5e73378bea88",
+        "turbovla/data/default_sfm.py": "07ed45415df9a56f9410244a126de367fb83b59ebbc73ee601106581b300f925",
+        "turbovla/data/libero_rlds.py": "7dffe5ab361cfa3cf9eeae25c3e35226ac41bc132f4ef9ac1016d7acbaf2b7cb",
+        "turbovla/data/mixed_suite.py": "c2c6f618b0f96cd978cbf38287c7c45e846a9d9086cdc328f79e805f1bbb36ee",
+        "turbovla/data/sfm_preprocessing.py": "ce06b5aa85edc9c7824b34402e89ab7fdadf4134cd7b23ad1c979e033fbd4464",
+        "turbovla/data/suite_stats.py": "bfa7bec2a0b5c4288582b36e7389c71665e160e1d3d21121e945ed1658c669a9",
+        "turbovla/evaluation/__init__.py": "b47f0240603167e1f5fcbfbb4ed267e738ffc3700ec26847c6b112749b35dbe5",
+        "turbovla/evaluation/policy.py": "d81d22b2efd6dcfd724041cd699bef010db4e49e1e9d0411b56c09f707bc0a77",
+        "turbovla/evaluation/suite_policy.py": "01158cc77855b62fbedd0a3d9bd75b9e7745d04bd91db90962b330ac9069bab9",
+        "turbovla/models/__init__.py": "d7e81175370226ea23afa64975b2c93e945c97848b3d4dbd625aebfb92592281",
+        "turbovla/models/action_head.py": "a99e56dda110670bef5e75e574ab9c9a34c8ee5687682ff7188be5ce9cb61faa",
+        "turbovla/models/components/__init__.py": "6a9fa5d5cafdaecb1f8552e39dfe9616e19bce0a28a46e6645a542bc654d3466",
+        "turbovla/models/components/fusion.py": "dbfaa45983ac7f6537abd3c73def4737a652e1199415bc323728c560eae72cfe",
+        "turbovla/models/components/transformer.py": "5e52a2eb38d17129a1ebe1f0121397784b5a2027a5eca67be039f8bdd3ad307f",
+        "turbovla/models/components/utils.py": "de972d84ea0b5136e2186c6514be38ff2eb09f59ff33c07a03208ac5ede89053",
+        "turbovla/models/configuration.py": "54a6071b5dedd494e8a1f8bc04467077f742ab4320bf0ee506a7164c7662e237",
+        "turbovla/models/text_encoder.py": "a73b531768755409f5e00565da69d730c8991c0db03b51418d4354680eba912a",
+        "turbovla/models/turbovla.py": "107542ac330774c368fc157fcfe695d665636aa658d15156c51844f32aaca551",
+        "turbovla/models/vision_encoder.py": "8235a357bbaf3a1aa1fad235cc2aa4ee930efa4e95d58d9a4e0fee4ec09fda98",
+        "turbovla/text/__init__.py": "df4a6ed2bb60a504aca35f0968f97fba7ae2e23f5b36e28fbd3d95d6a495ccb6",
+        "turbovla/text/bert.py": "bee78d8ab2351aa2009bcdf342d2c93a0b0b089ab38e71ca9ba45834fc942aa3",
+        "turbovla/training/__init__.py": "95e40bd76eff70303eae5382ef92aa5122d65889e91795c8d9fa7f5b4173e418",
+        "turbovla/training/pi05.py": "39b0863163037227457cb51cbf291144a29713b47089e4f6bb4f17ed1c82fbc6",
+        "turbovla/training/sfm.py": "0b8d5bfee5e73373da36a1613763dc082f0279b9f1a50f15e8c7b9252160d368",
+        "turbovla/training/sfm_utils.py": "7701fc77933a9817b196236b55e214454770020db2e0340760d002fc4535674e",
+        "turbovla/training/train_mixed.py": "edc1acf4d5f5dcf96e965e4185e7081a39ca2e8012ea12a967b51ca2d41f1d01",
+        "turbovla/training/trainer.py": "75841c21591ef48590257fe43acd5ac5fc6e4e5b7dc6cb9332d23ccc7a65904f",
+        "turbovla/vision_processing.py": "f5e15bf7cda30377b8b77ba044bd6ad59cdfd405135859717b98b347ecb0e8eb",
+        "scripts/default_sfm/train.py": "cf4d42916d2c153fbf9463c5cb139dffa77e50b28282bbad12d6ac3689940195"
+      }
+    },
+    {
+      "variant": "ft_state_xy_remove",
+      "gpu": 1,
+      "exit_code": 0,
+      "optimizer_steps": 3,
+      "state_input_dimension": 311,
+      "batch_size": 64,
+      "gradient_accumulation_steps": 1,
+      "gradients": {
+        "status": "passed",
+        "norms": {
+          "vision": 0.1927118948586814,
+          "language_projection": 0.007055511701960119,
+          "ft_gru": 0.0,
+          "adaln": 0.0
+        },
+        "bert_frozen": true
+      },
+      "initialization": {
+        "parameter_sha256": {
+          "common": "957ddd3ed2ba5c9ec5c5aeeb2d107b04daff44aa9b7f444e7c1bdaa02072844b",
+          "state_projection": "62ba21cfdcf67054f0279632894ff4dfe53bf040e3369afbccf7d08c6a0d60c6",
+          "ft_gru": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "adaln": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "instruction_token_lengths": {
+          "audio_jack": 8,
+          "barlatch": 8,
+          "bnc": 9,
+          "hdmi": 10,
+          "knob": 7,
+          "lan": 8,
+          "outlet": 7,
+          "rotary_switch": 8,
+          "usb": 8
+        },
+        "total_parameters": 216149621,
+        "trainable_parameters": 106666613
+      },
+      "source_sha256": {
+        "turbovla/__init__.py": "49aa6d519ba36294fd1ad047d27ac4ce152ec12feb3facce1f164956b007ad8b",
+        "turbovla/data/__init__.py": "00a2d5ed0abacf52a7ff252e9d034442bca59c130a330c8be77d5e73378bea88",
+        "turbovla/data/default_sfm.py": "07ed45415df9a56f9410244a126de367fb83b59ebbc73ee601106581b300f925",
+        "turbovla/data/libero_rlds.py": "7dffe5ab361cfa3cf9eeae25c3e35226ac41bc132f4ef9ac1016d7acbaf2b7cb",
+        "turbovla/data/mixed_suite.py": "c2c6f618b0f96cd978cbf38287c7c45e846a9d9086cdc328f79e805f1bbb36ee",
+        "turbovla/data/sfm_preprocessing.py": "ce06b5aa85edc9c7824b34402e89ab7fdadf4134cd7b23ad1c979e033fbd4464",
+        "turbovla/data/suite_stats.py": "bfa7bec2a0b5c4288582b36e7389c71665e160e1d3d21121e945ed1658c669a9",
+        "turbovla/evaluation/__init__.py": "b47f0240603167e1f5fcbfbb4ed267e738ffc3700ec26847c6b112749b35dbe5",
+        "turbovla/evaluation/policy.py": "d81d22b2efd6dcfd724041cd699bef010db4e49e1e9d0411b56c09f707bc0a77",
+        "turbovla/evaluation/suite_policy.py": "01158cc77855b62fbedd0a3d9bd75b9e7745d04bd91db90962b330ac9069bab9",
+        "turbovla/models/__init__.py": "d7e81175370226ea23afa64975b2c93e945c97848b3d4dbd625aebfb92592281",
+        "turbovla/models/action_head.py": "a99e56dda110670bef5e75e574ab9c9a34c8ee5687682ff7188be5ce9cb61faa",
+        "turbovla/models/components/__init__.py": "6a9fa5d5cafdaecb1f8552e39dfe9616e19bce0a28a46e6645a542bc654d3466",
+        "turbovla/models/components/fusion.py": "dbfaa45983ac7f6537abd3c73def4737a652e1199415bc323728c560eae72cfe",
+        "turbovla/models/components/transformer.py": "5e52a2eb38d17129a1ebe1f0121397784b5a2027a5eca67be039f8bdd3ad307f",
+        "turbovla/models/components/utils.py": "de972d84ea0b5136e2186c6514be38ff2eb09f59ff33c07a03208ac5ede89053",
+        "turbovla/models/configuration.py": "54a6071b5dedd494e8a1f8bc04467077f742ab4320bf0ee506a7164c7662e237",
+        "turbovla/models/text_encoder.py": "a73b531768755409f5e00565da69d730c8991c0db03b51418d4354680eba912a",
+        "turbovla/models/turbovla.py": "107542ac330774c368fc157fcfe695d665636aa658d15156c51844f32aaca551",
+        "turbovla/models/vision_encoder.py": "8235a357bbaf3a1aa1fad235cc2aa4ee930efa4e95d58d9a4e0fee4ec09fda98",
+        "turbovla/text/__init__.py": "df4a6ed2bb60a504aca35f0968f97fba7ae2e23f5b36e28fbd3d95d6a495ccb6",
+        "turbovla/text/bert.py": "bee78d8ab2351aa2009bcdf342d2c93a0b0b089ab38e71ca9ba45834fc942aa3",
+        "turbovla/training/__init__.py": "95e40bd76eff70303eae5382ef92aa5122d65889e91795c8d9fa7f5b4173e418",
+        "turbovla/training/pi05.py": "39b0863163037227457cb51cbf291144a29713b47089e4f6bb4f17ed1c82fbc6",
+        "turbovla/training/sfm.py": "0b8d5bfee5e73373da36a1613763dc082f0279b9f1a50f15e8c7b9252160d368",
+        "turbovla/training/sfm_utils.py": "7701fc77933a9817b196236b55e214454770020db2e0340760d002fc4535674e",
+        "turbovla/training/train_mixed.py": "edc1acf4d5f5dcf96e965e4185e7081a39ca2e8012ea12a967b51ca2d41f1d01",
+        "turbovla/training/trainer.py": "75841c21591ef48590257fe43acd5ac5fc6e4e5b7dc6cb9332d23ccc7a65904f",
+        "turbovla/vision_processing.py": "f5e15bf7cda30377b8b77ba044bd6ad59cdfd405135859717b98b347ecb0e8eb",
+        "scripts/default_sfm/train.py": "cf4d42916d2c153fbf9463c5cb139dffa77e50b28282bbad12d6ac3689940195"
+      }
+    },
+    {
+      "variant": "ft_gru_xy_remove",
+      "gpu": 2,
+      "exit_code": 0,
+      "optimizer_steps": 3,
+      "state_input_dimension": 11,
+      "batch_size": 64,
+      "gradient_accumulation_steps": 1,
+      "gradients": {
+        "status": "passed",
+        "norms": {
+          "vision": 0.19219651428646997,
+          "language_projection": 0.007021547504293873,
+          "ft_gru": 0.00038025591308609406,
+          "adaln": 0.0
+        },
+        "bert_frozen": true
+      },
+      "initialization": {
+        "parameter_sha256": {
+          "common": "957ddd3ed2ba5c9ec5c5aeeb2d107b04daff44aa9b7f444e7c1bdaa02072844b",
+          "state_projection": "4f3d7fcbdea1f4c7a3fba37d0662c8234127cfab49a168d869ad8893c9572140",
+          "ft_gru": "046542cc66d7bd440fad3f56c9953cbd8693b1b9e0ea6efd21a9929e4ad9dbd3",
+          "adaln": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "instruction_token_lengths": {
+          "audio_jack": 8,
+          "barlatch": 8,
+          "bnc": 9,
+          "hdmi": 10,
+          "knob": 7,
+          "lan": 8,
+          "outlet": 7,
+          "rotary_switch": 8,
+          "usb": 8
+        },
+        "total_parameters": 216157981,
+        "trainable_parameters": 106674973
+      },
+      "source_sha256": {
+        "turbovla/__init__.py": "49aa6d519ba36294fd1ad047d27ac4ce152ec12feb3facce1f164956b007ad8b",
+        "turbovla/data/__init__.py": "00a2d5ed0abacf52a7ff252e9d034442bca59c130a330c8be77d5e73378bea88",
+        "turbovla/data/default_sfm.py": "07ed45415df9a56f9410244a126de367fb83b59ebbc73ee601106581b300f925",
+        "turbovla/data/libero_rlds.py": "7dffe5ab361cfa3cf9eeae25c3e35226ac41bc132f4ef9ac1016d7acbaf2b7cb",
+        "turbovla/data/mixed_suite.py": "c2c6f618b0f96cd978cbf38287c7c45e846a9d9086cdc328f79e805f1bbb36ee",
+        "turbovla/data/sfm_preprocessing.py": "ce06b5aa85edc9c7824b34402e89ab7fdadf4134cd7b23ad1c979e033fbd4464",
+        "turbovla/data/suite_stats.py": "bfa7bec2a0b5c4288582b36e7389c71665e160e1d3d21121e945ed1658c669a9",
+        "turbovla/evaluation/__init__.py": "b47f0240603167e1f5fcbfbb4ed267e738ffc3700ec26847c6b112749b35dbe5",
+        "turbovla/evaluation/policy.py": "d81d22b2efd6dcfd724041cd699bef010db4e49e1e9d0411b56c09f707bc0a77",
+        "turbovla/evaluation/suite_policy.py": "01158cc77855b62fbedd0a3d9bd75b9e7745d04bd91db90962b330ac9069bab9",
+        "turbovla/models/__init__.py": "d7e81175370226ea23afa64975b2c93e945c97848b3d4dbd625aebfb92592281",
+        "turbovla/models/action_head.py": "a99e56dda110670bef5e75e574ab9c9a34c8ee5687682ff7188be5ce9cb61faa",
+        "turbovla/models/components/__init__.py": "6a9fa5d5cafdaecb1f8552e39dfe9616e19bce0a28a46e6645a542bc654d3466",
+        "turbovla/models/components/fusion.py": "dbfaa45983ac7f6537abd3c73def4737a652e1199415bc323728c560eae72cfe",
+        "turbovla/models/components/transformer.py": "5e52a2eb38d17129a1ebe1f0121397784b5a2027a5eca67be039f8bdd3ad307f",
+        "turbovla/models/components/utils.py": "de972d84ea0b5136e2186c6514be38ff2eb09f59ff33c07a03208ac5ede89053",
+        "turbovla/models/configuration.py": "54a6071b5dedd494e8a1f8bc04467077f742ab4320bf0ee506a7164c7662e237",
+        "turbovla/models/text_encoder.py": "a73b531768755409f5e00565da69d730c8991c0db03b51418d4354680eba912a",
+        "turbovla/models/turbovla.py": "107542ac330774c368fc157fcfe695d665636aa658d15156c51844f32aaca551",
+        "turbovla/models/vision_encoder.py": "8235a357bbaf3a1aa1fad235cc2aa4ee930efa4e95d58d9a4e0fee4ec09fda98",
+        "turbovla/text/__init__.py": "df4a6ed2bb60a504aca35f0968f97fba7ae2e23f5b36e28fbd3d95d6a495ccb6",
+        "turbovla/text/bert.py": "bee78d8ab2351aa2009bcdf342d2c93a0b0b089ab38e71ca9ba45834fc942aa3",
+        "turbovla/training/__init__.py": "95e40bd76eff70303eae5382ef92aa5122d65889e91795c8d9fa7f5b4173e418",
+        "turbovla/training/pi05.py": "39b0863163037227457cb51cbf291144a29713b47089e4f6bb4f17ed1c82fbc6",
+        "turbovla/training/sfm.py": "0b8d5bfee5e73373da36a1613763dc082f0279b9f1a50f15e8c7b9252160d368",
+        "turbovla/training/sfm_utils.py": "7701fc77933a9817b196236b55e214454770020db2e0340760d002fc4535674e",
+        "turbovla/training/train_mixed.py": "edc1acf4d5f5dcf96e965e4185e7081a39ca2e8012ea12a967b51ca2d41f1d01",
+        "turbovla/training/trainer.py": "75841c21591ef48590257fe43acd5ac5fc6e4e5b7dc6cb9332d23ccc7a65904f",
+        "turbovla/vision_processing.py": "f5e15bf7cda30377b8b77ba044bd6ad59cdfd405135859717b98b347ecb0e8eb",
+        "scripts/default_sfm/train.py": "cf4d42916d2c153fbf9463c5cb139dffa77e50b28282bbad12d6ac3689940195"
+      }
+    },
+    {
+      "variant": "ft_gru_adaln_xy_remove",
+      "gpu": 0,
+      "exit_code": 0,
+      "optimizer_steps": 3,
+      "state_input_dimension": 11,
+      "batch_size": 64,
+      "gradient_accumulation_steps": 1,
+      "gradients": {
+        "status": "passed",
+        "norms": {
+          "vision": 0.1907350752670723,
+          "language_projection": 0.0069683645770904,
+          "ft_gru": 0.0003773749742425667,
+          "adaln": 0.12289740569643201
+        },
+        "bert_frozen": true
+      },
+      "initialization": {
+        "parameter_sha256": {
+          "common": "957ddd3ed2ba5c9ec5c5aeeb2d107b04daff44aa9b7f444e7c1bdaa02072844b",
+          "state_projection": "4f3d7fcbdea1f4c7a3fba37d0662c8234127cfab49a168d869ad8893c9572140",
+          "ft_gru": "046542cc66d7bd440fad3f56c9953cbd8693b1b9e0ea6efd21a9929e4ad9dbd3",
+          "adaln": "3fd3426eb0a3da04d3d4ba5abb1b46ec9e0e9d5fd93b507579d565e159750fe3"
+        },
+        "instruction_token_lengths": {
+          "audio_jack": 8,
+          "barlatch": 8,
+          "bnc": 9,
+          "hdmi": 10,
+          "knob": 7,
+          "lan": 8,
+          "outlet": 7,
+          "rotary_switch": 8,
+          "usb": 8
+        },
+        "total_parameters": 217342237,
+        "trainable_parameters": 107859229
+      },
+      "source_sha256": {
+        "turbovla/__init__.py": "49aa6d519ba36294fd1ad047d27ac4ce152ec12feb3facce1f164956b007ad8b",
+        "turbovla/data/__init__.py": "00a2d5ed0abacf52a7ff252e9d034442bca59c130a330c8be77d5e73378bea88",
+        "turbovla/data/default_sfm.py": "07ed45415df9a56f9410244a126de367fb83b59ebbc73ee601106581b300f925",
+        "turbovla/data/libero_rlds.py": "7dffe5ab361cfa3cf9eeae25c3e35226ac41bc132f4ef9ac1016d7acbaf2b7cb",
+        "turbovla/data/mixed_suite.py": "c2c6f618b0f96cd978cbf38287c7c45e846a9d9086cdc328f79e805f1bbb36ee",
+        "turbovla/data/sfm_preprocessing.py": "ce06b5aa85edc9c7824b34402e89ab7fdadf4134cd7b23ad1c979e033fbd4464",
+        "turbovla/data/suite_stats.py": "bfa7bec2a0b5c4288582b36e7389c71665e160e1d3d21121e945ed1658c669a9",
+        "turbovla/evaluation/__init__.py": "b47f0240603167e1f5fcbfbb4ed267e738ffc3700ec26847c6b112749b35dbe5",
+        "turbovla/evaluation/policy.py": "d81d22b2efd6dcfd724041cd699bef010db4e49e1e9d0411b56c09f707bc0a77",
+        "turbovla/evaluation/suite_policy.py": "01158cc77855b62fbedd0a3d9bd75b9e7745d04bd91db90962b330ac9069bab9",
+        "turbovla/models/__init__.py": "d7e81175370226ea23afa64975b2c93e945c97848b3d4dbd625aebfb92592281",
+        "turbovla/models/action_head.py": "a99e56dda110670bef5e75e574ab9c9a34c8ee5687682ff7188be5ce9cb61faa",
+        "turbovla/models/components/__init__.py": "6a9fa5d5cafdaecb1f8552e39dfe9616e19bce0a28a46e6645a542bc654d3466",
+        "turbovla/models/components/fusion.py": "dbfaa45983ac7f6537abd3c73def4737a652e1199415bc323728c560eae72cfe",
+        "turbovla/models/components/transformer.py": "5e52a2eb38d17129a1ebe1f0121397784b5a2027a5eca67be039f8bdd3ad307f",
+        "turbovla/models/components/utils.py": "de972d84ea0b5136e2186c6514be38ff2eb09f59ff33c07a03208ac5ede89053",
+        "turbovla/models/configuration.py": "54a6071b5dedd494e8a1f8bc04467077f742ab4320bf0ee506a7164c7662e237",
+        "turbovla/models/text_encoder.py": "a73b531768755409f5e00565da69d730c8991c0db03b51418d4354680eba912a",
+        "turbovla/models/turbovla.py": "107542ac330774c368fc157fcfe695d665636aa658d15156c51844f32aaca551",
+        "turbovla/models/vision_encoder.py": "8235a357bbaf3a1aa1fad235cc2aa4ee930efa4e95d58d9a4e0fee4ec09fda98",
+        "turbovla/text/__init__.py": "df4a6ed2bb60a504aca35f0968f97fba7ae2e23f5b36e28fbd3d95d6a495ccb6",
+        "turbovla/text/bert.py": "bee78d8ab2351aa2009bcdf342d2c93a0b0b089ab38e71ca9ba45834fc942aa3",
+        "turbovla/training/__init__.py": "95e40bd76eff70303eae5382ef92aa5122d65889e91795c8d9fa7f5b4173e418",
+        "turbovla/training/pi05.py": "39b0863163037227457cb51cbf291144a29713b47089e4f6bb4f17ed1c82fbc6",
+        "turbovla/training/sfm.py": "0b8d5bfee5e73373da36a1613763dc082f0279b9f1a50f15e8c7b9252160d368",
+        "turbovla/training/sfm_utils.py": "7701fc77933a9817b196236b55e214454770020db2e0340760d002fc4535674e",
+        "turbovla/training/train_mixed.py": "edc1acf4d5f5dcf96e965e4185e7081a39ca2e8012ea12a967b51ca2d41f1d01",
+        "turbovla/training/trainer.py": "75841c21591ef48590257fe43acd5ac5fc6e4e5b7dc6cb9332d23ccc7a65904f",
+        "turbovla/vision_processing.py": "f5e15bf7cda30377b8b77ba044bd6ad59cdfd405135859717b98b347ecb0e8eb",
+        "scripts/default_sfm/train.py": "cf4d42916d2c153fbf9463c5cb139dffa77e50b28282bbad12d6ac3689940195"
+      }
+    },
+    {
+      "variant": "ft_state_xy_vxy_remove",
+      "gpu": 2,
+      "exit_code": 0,
+      "optimizer_steps": 3,
+      "state_input_dimension": 309,
+      "batch_size": 64,
+      "gradient_accumulation_steps": 1,
+      "gradients": {
+        "status": "passed",
+        "norms": {
+          "vision": 0.1920381201840992,
+          "language_projection": 0.007051369394798946,
+          "ft_gru": 0.0,
+          "adaln": 0.0
+        },
+        "bert_frozen": true
+      },
+      "initialization": {
+        "parameter_sha256": {
+          "common": "957ddd3ed2ba5c9ec5c5aeeb2d107b04daff44aa9b7f444e7c1bdaa02072844b",
+          "state_projection": "826d83ab2f12580e59c3fc6e24f130859c0e099839429076f9bf75063ee87b26",
+          "ft_gru": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "adaln": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "instruction_token_lengths": {
+          "audio_jack": 8,
+          "barlatch": 8,
+          "bnc": 9,
+          "hdmi": 10,
+          "knob": 7,
+          "lan": 8,
+          "outlet": 7,
+          "rotary_switch": 8,
+          "usb": 8
+        },
+        "total_parameters": 216149105,
+        "trainable_parameters": 106666097
+      },
+      "source_sha256": {
+        "turbovla/__init__.py": "49aa6d519ba36294fd1ad047d27ac4ce152ec12feb3facce1f164956b007ad8b",
+        "turbovla/data/__init__.py": "00a2d5ed0abacf52a7ff252e9d034442bca59c130a330c8be77d5e73378bea88",
+        "turbovla/data/default_sfm.py": "07ed45415df9a56f9410244a126de367fb83b59ebbc73ee601106581b300f925",
+        "turbovla/data/libero_rlds.py": "7dffe5ab361cfa3cf9eeae25c3e35226ac41bc132f4ef9ac1016d7acbaf2b7cb",
+        "turbovla/data/mixed_suite.py": "c2c6f618b0f96cd978cbf38287c7c45e846a9d9086cdc328f79e805f1bbb36ee",
+        "turbovla/data/sfm_preprocessing.py": "ce06b5aa85edc9c7824b34402e89ab7fdadf4134cd7b23ad1c979e033fbd4464",
+        "turbovla/data/suite_stats.py": "bfa7bec2a0b5c4288582b36e7389c71665e160e1d3d21121e945ed1658c669a9",
+        "turbovla/evaluation/__init__.py": "b47f0240603167e1f5fcbfbb4ed267e738ffc3700ec26847c6b112749b35dbe5",
+        "turbovla/evaluation/policy.py": "d81d22b2efd6dcfd724041cd699bef010db4e49e1e9d0411b56c09f707bc0a77",
+        "turbovla/evaluation/suite_policy.py": "01158cc77855b62fbedd0a3d9bd75b9e7745d04bd91db90962b330ac9069bab9",
+        "turbovla/models/__init__.py": "d7e81175370226ea23afa64975b2c93e945c97848b3d4dbd625aebfb92592281",
+        "turbovla/models/action_head.py": "a99e56dda110670bef5e75e574ab9c9a34c8ee5687682ff7188be5ce9cb61faa",
+        "turbovla/models/components/__init__.py": "6a9fa5d5cafdaecb1f8552e39dfe9616e19bce0a28a46e6645a542bc654d3466",
+        "turbovla/models/components/fusion.py": "dbfaa45983ac7f6537abd3c73def4737a652e1199415bc323728c560eae72cfe",
+        "turbovla/models/components/transformer.py": "5e52a2eb38d17129a1ebe1f0121397784b5a2027a5eca67be039f8bdd3ad307f",
+        "turbovla/models/components/utils.py": "de972d84ea0b5136e2186c6514be38ff2eb09f59ff33c07a03208ac5ede89053",
+        "turbovla/models/configuration.py": "54a6071b5dedd494e8a1f8bc04467077f742ab4320bf0ee506a7164c7662e237",
+        "turbovla/models/text_encoder.py": "a73b531768755409f5e00565da69d730c8991c0db03b51418d4354680eba912a",
+        "turbovla/models/turbovla.py": "107542ac330774c368fc157fcfe695d665636aa658d15156c51844f32aaca551",
+        "turbovla/models/vision_encoder.py": "8235a357bbaf3a1aa1fad235cc2aa4ee930efa4e95d58d9a4e0fee4ec09fda98",
+        "turbovla/text/__init__.py": "df4a6ed2bb60a504aca35f0968f97fba7ae2e23f5b36e28fbd3d95d6a495ccb6",
+        "turbovla/text/bert.py": "bee78d8ab2351aa2009bcdf342d2c93a0b0b089ab38e71ca9ba45834fc942aa3",
+        "turbovla/training/__init__.py": "95e40bd76eff70303eae5382ef92aa5122d65889e91795c8d9fa7f5b4173e418",
+        "turbovla/training/pi05.py": "39b0863163037227457cb51cbf291144a29713b47089e4f6bb4f17ed1c82fbc6",
+        "turbovla/training/sfm.py": "0b8d5bfee5e73373da36a1613763dc082f0279b9f1a50f15e8c7b9252160d368",
+        "turbovla/training/sfm_utils.py": "7701fc77933a9817b196236b55e214454770020db2e0340760d002fc4535674e",
+        "turbovla/training/train_mixed.py": "edc1acf4d5f5dcf96e965e4185e7081a39ca2e8012ea12a967b51ca2d41f1d01",
+        "turbovla/training/trainer.py": "75841c21591ef48590257fe43acd5ac5fc6e4e5b7dc6cb9332d23ccc7a65904f",
+        "turbovla/vision_processing.py": "f5e15bf7cda30377b8b77ba044bd6ad59cdfd405135859717b98b347ecb0e8eb",
+        "scripts/default_sfm/train.py": "cf4d42916d2c153fbf9463c5cb139dffa77e50b28282bbad12d6ac3689940195"
+      }
+    },
+    {
+      "variant": "ft_gru_xy_vxy_remove",
+      "gpu": 0,
+      "exit_code": 0,
+      "optimizer_steps": 3,
+      "state_input_dimension": 9,
+      "batch_size": 64,
+      "gradient_accumulation_steps": 1,
+      "gradients": {
+        "status": "passed",
+        "norms": {
+          "vision": 0.19191076885562844,
+          "language_projection": 0.007017842229277629,
+          "ft_gru": 0.0003789304174660892,
+          "adaln": 0.0
+        },
+        "bert_frozen": true
+      },
+      "initialization": {
+        "parameter_sha256": {
+          "common": "957ddd3ed2ba5c9ec5c5aeeb2d107b04daff44aa9b7f444e7c1bdaa02072844b",
+          "state_projection": "97dbaabf2f98df0d05c81c8d5bce7df196725a4a3bfc13ff1f2ec712e81647bd",
+          "ft_gru": "046542cc66d7bd440fad3f56c9953cbd8693b1b9e0ea6efd21a9929e4ad9dbd3",
+          "adaln": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "instruction_token_lengths": {
+          "audio_jack": 8,
+          "barlatch": 8,
+          "bnc": 9,
+          "hdmi": 10,
+          "knob": 7,
+          "lan": 8,
+          "outlet": 7,
+          "rotary_switch": 8,
+          "usb": 8
+        },
+        "total_parameters": 216157465,
+        "trainable_parameters": 106674457
+      },
+      "source_sha256": {
+        "turbovla/__init__.py": "49aa6d519ba36294fd1ad047d27ac4ce152ec12feb3facce1f164956b007ad8b",
+        "turbovla/data/__init__.py": "00a2d5ed0abacf52a7ff252e9d034442bca59c130a330c8be77d5e73378bea88",
+        "turbovla/data/default_sfm.py": "07ed45415df9a56f9410244a126de367fb83b59ebbc73ee601106581b300f925",
+        "turbovla/data/libero_rlds.py": "7dffe5ab361cfa3cf9eeae25c3e35226ac41bc132f4ef9ac1016d7acbaf2b7cb",
+        "turbovla/data/mixed_suite.py": "c2c6f618b0f96cd978cbf38287c7c45e846a9d9086cdc328f79e805f1bbb36ee",
+        "turbovla/data/sfm_preprocessing.py": "ce06b5aa85edc9c7824b34402e89ab7fdadf4134cd7b23ad1c979e033fbd4464",
+        "turbovla/data/suite_stats.py": "bfa7bec2a0b5c4288582b36e7389c71665e160e1d3d21121e945ed1658c669a9",
+        "turbovla/evaluation/__init__.py": "b47f0240603167e1f5fcbfbb4ed267e738ffc3700ec26847c6b112749b35dbe5",
+        "turbovla/evaluation/policy.py": "d81d22b2efd6dcfd724041cd699bef010db4e49e1e9d0411b56c09f707bc0a77",
+        "turbovla/evaluation/suite_policy.py": "01158cc77855b62fbedd0a3d9bd75b9e7745d04bd91db90962b330ac9069bab9",
+        "turbovla/models/__init__.py": "d7e81175370226ea23afa64975b2c93e945c97848b3d4dbd625aebfb92592281",
+        "turbovla/models/action_head.py": "a99e56dda110670bef5e75e574ab9c9a34c8ee5687682ff7188be5ce9cb61faa",
+        "turbovla/models/components/__init__.py": "6a9fa5d5cafdaecb1f8552e39dfe9616e19bce0a28a46e6645a542bc654d3466",
+        "turbovla/models/components/fusion.py": "dbfaa45983ac7f6537abd3c73def4737a652e1199415bc323728c560eae72cfe",
+        "turbovla/models/components/transformer.py": "5e52a2eb38d17129a1ebe1f0121397784b5a2027a5eca67be039f8bdd3ad307f",
+        "turbovla/models/components/utils.py": "de972d84ea0b5136e2186c6514be38ff2eb09f59ff33c07a03208ac5ede89053",
+        "turbovla/models/configuration.py": "54a6071b5dedd494e8a1f8bc04467077f742ab4320bf0ee506a7164c7662e237",
+        "turbovla/models/text_encoder.py": "a73b531768755409f5e00565da69d730c8991c0db03b51418d4354680eba912a",
+        "turbovla/models/turbovla.py": "107542ac330774c368fc157fcfe695d665636aa658d15156c51844f32aaca551",
+        "turbovla/models/vision_encoder.py": "8235a357bbaf3a1aa1fad235cc2aa4ee930efa4e95d58d9a4e0fee4ec09fda98",
+        "turbovla/text/__init__.py": "df4a6ed2bb60a504aca35f0968f97fba7ae2e23f5b36e28fbd3d95d6a495ccb6",
+        "turbovla/text/bert.py": "bee78d8ab2351aa2009bcdf342d2c93a0b0b089ab38e71ca9ba45834fc942aa3",
+        "turbovla/training/__init__.py": "95e40bd76eff70303eae5382ef92aa5122d65889e91795c8d9fa7f5b4173e418",
+        "turbovla/training/pi05.py": "39b0863163037227457cb51cbf291144a29713b47089e4f6bb4f17ed1c82fbc6",
+        "turbovla/training/sfm.py": "0b8d5bfee5e73373da36a1613763dc082f0279b9f1a50f15e8c7b9252160d368",
+        "turbovla/training/sfm_utils.py": "7701fc77933a9817b196236b55e214454770020db2e0340760d002fc4535674e",
+        "turbovla/training/train_mixed.py": "edc1acf4d5f5dcf96e965e4185e7081a39ca2e8012ea12a967b51ca2d41f1d01",
+        "turbovla/training/trainer.py": "75841c21591ef48590257fe43acd5ac5fc6e4e5b7dc6cb9332d23ccc7a65904f",
+        "turbovla/vision_processing.py": "f5e15bf7cda30377b8b77ba044bd6ad59cdfd405135859717b98b347ecb0e8eb",
+        "scripts/default_sfm/train.py": "cf4d42916d2c153fbf9463c5cb139dffa77e50b28282bbad12d6ac3689940195"
+      }
+    },
+    {
+      "variant": "ft_gru_adaln_xy_vxy_remove",
+      "gpu": 1,
+      "exit_code": 0,
+      "optimizer_steps": 3,
+      "state_input_dimension": 9,
+      "batch_size": 64,
+      "gradient_accumulation_steps": 1,
+      "gradients": {
+        "status": "passed",
+        "norms": {
+          "vision": 0.19046260467244616,
+          "language_projection": 0.006964885604465049,
+          "ft_gru": 0.0003760709941508546,
+          "adaln": 0.12261721990260603
+        },
+        "bert_frozen": true
+      },
+      "initialization": {
+        "parameter_sha256": {
+          "common": "957ddd3ed2ba5c9ec5c5aeeb2d107b04daff44aa9b7f444e7c1bdaa02072844b",
+          "state_projection": "97dbaabf2f98df0d05c81c8d5bce7df196725a4a3bfc13ff1f2ec712e81647bd",
+          "ft_gru": "046542cc66d7bd440fad3f56c9953cbd8693b1b9e0ea6efd21a9929e4ad9dbd3",
+          "adaln": "3fd3426eb0a3da04d3d4ba5abb1b46ec9e0e9d5fd93b507579d565e159750fe3"
+        },
+        "instruction_token_lengths": {
+          "audio_jack": 8,
+          "barlatch": 8,
+          "bnc": 9,
+          "hdmi": 10,
+          "knob": 7,
+          "lan": 8,
+          "outlet": 7,
+          "rotary_switch": 8,
+          "usb": 8
+        },
+        "total_parameters": 217341721,
+        "trainable_parameters": 107858713
+      },
+      "source_sha256": {
+        "turbovla/__init__.py": "49aa6d519ba36294fd1ad047d27ac4ce152ec12feb3facce1f164956b007ad8b",
+        "turbovla/data/__init__.py": "00a2d5ed0abacf52a7ff252e9d034442bca59c130a330c8be77d5e73378bea88",
+        "turbovla/data/default_sfm.py": "07ed45415df9a56f9410244a126de367fb83b59ebbc73ee601106581b300f925",
+        "turbovla/data/libero_rlds.py": "7dffe5ab361cfa3cf9eeae25c3e35226ac41bc132f4ef9ac1016d7acbaf2b7cb",
+        "turbovla/data/mixed_suite.py": "c2c6f618b0f96cd978cbf38287c7c45e846a9d9086cdc328f79e805f1bbb36ee",
+        "turbovla/data/sfm_preprocessing.py": "ce06b5aa85edc9c7824b34402e89ab7fdadf4134cd7b23ad1c979e033fbd4464",
+        "turbovla/data/suite_stats.py": "bfa7bec2a0b5c4288582b36e7389c71665e160e1d3d21121e945ed1658c669a9",
+        "turbovla/evaluation/__init__.py": "b47f0240603167e1f5fcbfbb4ed267e738ffc3700ec26847c6b112749b35dbe5",
+        "turbovla/evaluation/policy.py": "d81d22b2efd6dcfd724041cd699bef010db4e49e1e9d0411b56c09f707bc0a77",
+        "turbovla/evaluation/suite_policy.py": "01158cc77855b62fbedd0a3d9bd75b9e7745d04bd91db90962b330ac9069bab9",
+        "turbovla/models/__init__.py": "d7e81175370226ea23afa64975b2c93e945c97848b3d4dbd625aebfb92592281",
+        "turbovla/models/action_head.py": "a99e56dda110670bef5e75e574ab9c9a34c8ee5687682ff7188be5ce9cb61faa",
+        "turbovla/models/components/__init__.py": "6a9fa5d5cafdaecb1f8552e39dfe9616e19bce0a28a46e6645a542bc654d3466",
+        "turbovla/models/components/fusion.py": "dbfaa45983ac7f6537abd3c73def4737a652e1199415bc323728c560eae72cfe",
+        "turbovla/models/components/transformer.py": "5e52a2eb38d17129a1ebe1f0121397784b5a2027a5eca67be039f8bdd3ad307f",
+        "turbovla/models/components/utils.py": "de972d84ea0b5136e2186c6514be38ff2eb09f59ff33c07a03208ac5ede89053",
+        "turbovla/models/configuration.py": "54a6071b5dedd494e8a1f8bc04467077f742ab4320bf0ee506a7164c7662e237",
+        "turbovla/models/text_encoder.py": "a73b531768755409f5e00565da69d730c8991c0db03b51418d4354680eba912a",
+        "turbovla/models/turbovla.py": "107542ac330774c368fc157fcfe695d665636aa658d15156c51844f32aaca551",
+        "turbovla/models/vision_encoder.py": "8235a357bbaf3a1aa1fad235cc2aa4ee930efa4e95d58d9a4e0fee4ec09fda98",
+        "turbovla/text/__init__.py": "df4a6ed2bb60a504aca35f0968f97fba7ae2e23f5b36e28fbd3d95d6a495ccb6",
+        "turbovla/text/bert.py": "bee78d8ab2351aa2009bcdf342d2c93a0b0b089ab38e71ca9ba45834fc942aa3",
+        "turbovla/training/__init__.py": "95e40bd76eff70303eae5382ef92aa5122d65889e91795c8d9fa7f5b4173e418",
+        "turbovla/training/pi05.py": "39b0863163037227457cb51cbf291144a29713b47089e4f6bb4f17ed1c82fbc6",
+        "turbovla/training/sfm.py": "0b8d5bfee5e73373da36a1613763dc082f0279b9f1a50f15e8c7b9252160d368",
+        "turbovla/training/sfm_utils.py": "7701fc77933a9817b196236b55e214454770020db2e0340760d002fc4535674e",
+        "turbovla/training/train_mixed.py": "edc1acf4d5f5dcf96e965e4185e7081a39ca2e8012ea12a967b51ca2d41f1d01",
+        "turbovla/training/trainer.py": "75841c21591ef48590257fe43acd5ac5fc6e4e5b7dc6cb9332d23ccc7a65904f",
+        "turbovla/vision_processing.py": "f5e15bf7cda30377b8b77ba044bd6ad59cdfd405135859717b98b347ecb0e8eb",
+        "scripts/default_sfm/train.py": "cf4d42916d2c153fbf9463c5cb139dffa77e50b28282bbad12d6ac3689940195"
+      }
+    }
+  ]
+}

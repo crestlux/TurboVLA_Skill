@@ -17,6 +17,8 @@ progress_file = args.processed_root / "status.json"
 progress = json.loads(progress_file.read_text()) if progress_file.exists() else {"phase": "not_started"}
 manifest_file = args.processed_root / "manifest.json"
 processed = json.loads(manifest_file.read_text()) if manifest_file.exists() else {}
+readiness_file = root / 'experiments/default_sfm/training_validation/readiness.json'
+readiness = json.loads(readiness_file.read_text()) if readiness_file.exists() else {}
 
 
 def load(name: str) -> dict:
@@ -52,7 +54,10 @@ print(
             "total_bytes": total,
             "verified_percent": round(100 * verified_bytes / total, 2) if total else 0,
             "failed_folders": {name: row for name, row in folders.items() if row["status"] == "failed"},
-            "training_started": False,
+            "training_preparation": readiness.get('status', 'pending'),
+            "formal_training_started_at_preparation_check": readiness.get('formal_training_started', False),
+            "training_status_scope": "Preparation snapshot; use monitor.py for a live training group",
+            "wandb_online_validation": readiness.get('wandb_online_validation'),
             "preprocessing_applied": progress.get("completed", 0) > 0,
             "preprocessing_complete": processed.get("complete", False),
             "processed_root": str(args.processed_root),

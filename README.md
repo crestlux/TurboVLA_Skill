@@ -17,11 +17,18 @@ results, not results produced by this repository.
 ## Real-robot default_sfm preparation
 
 The `default_sfm` work uses a separate `turbovla-sfm` environment without the LIBERO or RoboTwin dependencies.
-Preprocessing of all 450 demonstrations is complete; training has not started. The nine intended conditions cross three F/T methods
+Preprocessing of all 450 demonstrations is complete. The nine model variants and SFM trainer are implemented;
+formal training has not started. Disposable GPU smoke checks are recorded separately. The nine conditions cross three F/T methods
 (flattened 50×6 history with state, F/T GRU, F/T GRU + AdaLN) with three state inputs
 (keep XY, remove position XY, remove position XY and linear velocity Vx/Vy). They are recorded in
 [`experiments/default_sfm/experiment_plan.yaml`](experiments/default_sfm/experiment_plan.yaml).
-Entries set to `null` are undecided; this file is a planning record, not a training configuration.
+Evaluation protocol and execution horizon remain open; `policy_checkpoint: null` deliberately means a newly initialized policy head.
+This file is a planning record, not a training configuration.
+Runnable configurations, validation evidence and start/resume/monitor commands are in the
+[Korean training guide](experiments/default_sfm/TRAINING_GUIDE.md).
+The final recipe uses **batch 64 without gradient accumulation**, matching the archived USB training.
+On this host's three RTX 3090 24GB GPUs, one experiment runs per GPU and the remaining experiments
+start automatically as GPU slots become free. All nine use task-uniform sampling and the same 11,118,800-observation budget.
 
 ```bash
 # Activate the environment already prepared on this host.
@@ -45,7 +52,8 @@ Exact installed versions and validation results are in `experiments/default_sfm/
 The completed host setup and all-file copy verification are summarized in
 [`setup_summary.json`](experiments/default_sfm/setup_records/setup_summary.json).
 The activation script selects local DINOv3/BERT backbones and online W&B mode for future training;
-setup validation does not create a W&B run.
+the separate, user-authorized online logging check created one setup-validation run with zero optimizer steps.
+Its [run and final-sync evidence](experiments/default_sfm/training_validation/wandb_online_check/result.json) is preserved.
 
 Raw data is copied from `csilab:/home/csilab/share_projects/clean_share/demos/default_sfm`
 to `/data/crestlux/default_sfm` and exposed as `data/default_sfm`.
@@ -113,14 +121,14 @@ Execution horizon and task-specific evaluation success criteria can be decided
 later without changing the confirmed action chunk length of 5. The converter and nine dataset views are implemented; training has not started.
 A sample has F/T `[1,50,6]`, state `[1,19]`, two RGB views and 7-D actions;
 the F/T sensor rate is 500 Hz, while the collection config records a 10 Hz control loop.
-The custom SFM loader is `turbovla.data.default_sfm.DefaultSFMDataset`. The existing trainers are
-benchmark-specific; the SFM trainer and F/T/AdaLN model variants remain separate work.
+The custom SFM loader is `turbovla.data.default_sfm.DefaultSFMDataset`; the trainer is
+`turbovla.training.sfm`, exposed through `scripts/default_sfm/train.py` and `run_parallel.py`.
 
 The read-only preprocessing audit lives in `experiments/default_sfm/preprocessing_audit/`.
 It includes USB crop previews and an RPY boundary audit; preview images and diagnostic numeric extracts
 are not processed training data. The older USB crop bounds are present in both the separate FAFLOW project
-and the TurboVLA USB deployment bundles on `csilab`. This local repository currently has a general state
-projection, but no F/T-specific GRU or AdaLN module. The separate `/home/jack/TurboVLA` project has recorded
+and the TurboVLA USB deployment bundles on `csilab`. The current repository implements the general state
+projection, reference USB F/T GRU and optional ACT AdaLN. The separate `/home/jack/TurboVLA` project has recorded
 completed USB training runs with a 500 Hz F/T GRU. Its source, training-time source snapshots and ten saved
 run configurations have been retrieved read-only through the user-authenticated SSH connection.
 The audited GRU/model/data/trainer sources match their training-time snapshots byte for byte.

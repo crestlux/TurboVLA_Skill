@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-10-24T12:51:26.779299+00:00",
+  "updated_at_utc": "2026-10-24T14:03:46.715757+00:00",
   "status": "preprocessing_complete_and_verified",
   "confirmed_rpy": {
     "wrap_angles": [
@@ -159,13 +159,8 @@
     "Per-channel F/T dispersion and agreed numerical scale floor"
   ],
   "choices_that_can_wait": [
-    "Initialization and frozen/trainable modules",
-    "Optimizer, training budget and seeds",
-    "Image augmentation",
-    "AdaLN initialization details",
     "Execution horizon",
     "Separate evaluation protocol",
-    "Task sampling weights shared across the nine variants",
     "Task-specific evaluation success criteria, including rotation endpoints and final gripper state"
   ],
   "action_chunk_length_confirmed": 5,
@@ -540,5 +535,6 @@
     "task_instructions": 9,
     "training_started": false,
     "variants": 9
-  }
+  },
+  "training_readiness": "experiments/default_sfm/training_validation/readiness.json"
 }

@@ -1,0 +1,114 @@
+{
+  "status": "failed",
+  "comparison": "bitwise exact for raw weights, EMA, AdamW, sampler and model/augmentation RNG",
+  "fields": [
+    "schema",
+    "config",
+    "data_signature",
+    "step",
+    "raw",
+    "ema",
+    "optimizer",
+    "sampler",
+    "rng",
+    "source_sha256",
+    "initial_parameter_sha256"
+  ],
+  "step": 4,
+  "samples_seen": 256,
+  "uninterrupted_sha256": "0aabdd6cbd5271fce8865ec84aa4350fd9837f7218ab97fde8b9e99e040f8ebe",
+  "resumed_sha256": "4742dc1b77915f3f325f799bc729dc3bcff5d692acdf844df341e1e9a408c453",
+  "loader_generator_equal": false,
+  "loader_generator_note": "A new DataLoader iterator consumes a worker base seed on resume. Workers only read deterministic HDF5; sampling and augmentation RNG are separate and checked.",
+  "formal_training_started": false,
+  "tensor_count": 2892,
+  "tensor_elements": 650410566,
+  "mismatch_count": 1872,
+  "first_mismatches": [
+    {
+      "path": "raw/view_embedding",
+      "max_abs_difference": 1.0244548320770264e-07
+    },
+    {
+      "path": "raw/text_encoder.text_projection.weight",
+      "max_abs_difference": 8.23289155960083e-07
+    },
+    {
+      "path": "raw/text_encoder.text_projection.bias",
+      "max_abs_difference": 7.597077456011903e-08
+    },
+    {
+      "path": "raw/vision_encoder.backbone.embeddings.cls_token",
+      "max_abs_difference": 2.9802322387695312e-08
+    },
+    {
+      "path": "raw/vision_encoder.backbone.embeddings.register_tokens",
+      "max_abs_difference": 2.514570951461792e-08
+    },
+    {
+      "path": "raw/vision_encoder.backbone.embeddings.patch_embeddings.weight",
+      "max_abs_difference": 1.4668330550193787e-07
+    },
+    {
+      "path": "raw/vision_encoder.backbone.embeddings.patch_embeddings.bias",
+      "max_abs_difference": 5.960464477539063e-08
+    },
+    {
+      "path": "raw/vision_encoder.backbone.layer.0.norm1.weight",
+      "max_abs_difference": 2.384185791015625e-07
+    },
+    {
+      "path": "raw/vision_encoder.backbone.layer.0.norm1.bias",
+      "max_abs_difference": 1.1920928955078125e-07
+    },
+    {
+      "path": "raw/vision_encoder.backbone.layer.0.attention.k_proj.weight",
+      "max_abs_difference": 1.8719583749771118e-07
+    },
+    {
+      "path": "raw/vision_encoder.backbone.layer.0.attention.v_proj.weight",
+      "max_abs_difference": 8.218921720981598e-08
+    },
+    {
+      "path": "raw/vision_encoder.backbone.layer.0.attention.v_proj.bias",
+      "max_abs_difference": 2.1878918232687283e-08
+    },
+    {
+      "path": "raw/vision_encoder.backbone.layer.0.attention.q_proj.weight",
+      "max_abs_difference": 1.7508864402770996e-07
+    },
+    {
+      "path": "raw/vision_encoder.backbone.layer.0.attention.q_proj.bias",
+      "max_abs_difference": 2.131801579707826e-08
+    },
+    {
+      "path": "raw/vision_encoder.backbone.layer.0.attention.o_proj.weight",
+      "max_abs_difference": 7.543712854385376e-08
+    },
+    {
+      "path": "raw/vision_encoder.backbone.layer.0.attention.o_proj.bias",
+      "max_abs_difference": 2.9802322387695312e-08
+    },
+    {
+      "path": "raw/vision_encoder.backbone.layer.0.layer_scale1.lambda1",
+      "max_abs_difference": 3.003515303134918e-08
+    },
+    {
+      "path": "raw/vision_encoder.backbone.layer.0.norm2.weight",
+      "max_abs_difference": 2.384185791015625e-07
+    },
+    {
+      "path": "raw/vision_encoder.backbone.layer.0.norm2.bias",
+      "max_abs_difference": 3.725290298461914e-08
+    },
+    {
+      "path": "raw/vision_encoder.backbone.layer.0.mlp.up_proj.weight",
+      "max_abs_difference": 2.086162567138672e-07
+    }
+  ],
+  "field_max_abs_difference": {
+    "raw": 1.8328428268432617e-06,
+    "ema": 7.450580596923828e-09,
+    "optimizer": 5.703768692910671e-05
+  }
+}

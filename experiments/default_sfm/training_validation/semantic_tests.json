@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "test_count": 7,
+  "command": "python scripts/default_sfm/test_training.py -v",
+  "script_sha256": "b9bedae858acbe1ef00d9d83357b1baf12bc34c4aaab585af31547bbfd7aa96a",
+  "checks": [
+    "original USB GRU parity on pre-normalized input and hidden reset",
+    "zero AdaLN parity and gradients",
+    "shared decoder and GRU initialization",
+    "task-uniform sampler and committed-cursor resumption",
+    "masked L1 accumulation denominator",
+    "shared-view image jitter and black padding",
+    "reject FT double normalization"
+  ],
+  "note": "Accumulation remains covered for historical smoke comparisons; the final formal recipe uses batch 64 without accumulation."
+}

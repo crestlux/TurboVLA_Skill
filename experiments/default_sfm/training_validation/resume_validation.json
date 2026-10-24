@@ -1,0 +1,34 @@
+{
+  "status": "state_restore_and_resume_passed",
+  "batch_size": 64,
+  "gradient_accumulation_steps": 1,
+  "protocol": "4 steps uninterrupted versus 2 saved + 2 resumed; independent 4-step repeat on the same GPU",
+  "checkpoint_contents_restored_exactly": true,
+  "restored_tensor_count": 2892,
+  "raw_and_ema_recorded_observation_forward": "passed",
+  "sampler_and_model_rng": "exactly restored",
+  "cuda_replay_bitwise_equal": false,
+  "independent_cuda_repeat_bitwise_equal": false,
+  "resumed_max_abs_difference": {
+    "raw": 1.8328428268432617e-06,
+    "ema": 7.450580596923828e-09,
+    "optimizer": 5.703768692910671e-05
+  },
+  "independent_repeat_max_abs_difference": {
+    "raw": 1.7844140529632568e-06,
+    "ema": 7.450580596923828e-09,
+    "optimizer": 0.00011537299724295735
+  },
+  "fourth_step_losses": {
+    "uninterrupted": 0.395556777715683,
+    "split": 0.3955402374267578,
+    "repeat": 0.39554691314697266
+  },
+  "interpretation": "Saving/loading preserves raw weights, EMA, AdamW, sampler and model/augmentation RNG exactly. Subsequent CUDA optimizer trajectories are not bitwise deterministic; independent uninterrupted repeats also differ. No deterministic-kernel or recipe changes were introduced. These measurements are not a general tolerance guarantee.",
+  "evidence": [
+    "checkpoint_reload.json",
+    "resume_bitwise_batch64.json",
+    "repeat_bitwise_batch64.json"
+  ],
+  "formal_training_started": false
+}

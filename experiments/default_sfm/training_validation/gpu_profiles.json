@@ -1,0 +1,250 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "status": "passed",
+      "jobs_per_gpu": 3,
+      "microbatch_size": 8,
+      "effective_batch_size": 64,
+      "peak_gpu_used_gib": {
+        "0": 15.6796875,
+        "1": 15.6796875,
+        "2": 15.6796875
+      },
+      "elapsed_seconds": 61.21787343081087,
+      "measured_samples": 6912,
+      "measurement_wall_seconds": 26.74060344696045,
+      "aggregate_samples_per_second": 258.48332157910494,
+      "measurement_scope": "earliest post-warmup update start to latest update completion; includes between-update data waits",
+      "source_directory": "tmp/default_sfm_parallel_j3_m8_v1",
+      "jobs": 9,
+      "smoke_steps": 15,
+      "profile_warmup": 3,
+      "command": [
+        "scripts/default_sfm/run_parallel.py",
+        "--output",
+        "tmp/default_sfm_parallel_j3_m8_v1",
+        "--jobs-per-gpu",
+        "3",
+        "--microbatch",
+        "8",
+        "--smoke-steps",
+        "15",
+        "--profile-warmup",
+        "3"
+      ],
+      "gpus": [
+        {
+          "index": 0,
+          "uuid": "GPU-3d54ec76-3a66-0628-188f-d33635dcc994",
+          "name": "NVIDIA GeForce RTX 3090",
+          "total_mib": 24576,
+          "used_mib": 16,
+          "utilization": 0
+        },
+        {
+          "index": 1,
+          "uuid": "GPU-90d19c4f-cb2b-8872-4b1c-f59534b57c1a",
+          "name": "NVIDIA GeForce RTX 3090",
+          "total_mib": 24576,
+          "used_mib": 16,
+          "utilization": 0
+        },
+        {
+          "index": 2,
+          "uuid": "GPU-dc585b7b-5734-2b3b-ecdf-957f7db0cf4e",
+          "name": "NVIDIA GeForce RTX 3090",
+          "total_mib": 24576,
+          "used_mib": 16,
+          "utilization": 0
+        }
+      ]
+    },
+    {
+      "status": "passed",
+      "jobs_per_gpu": 3,
+      "microbatch_size": 16,
+      "effective_batch_size": 64,
+      "peak_gpu_used_gib": {
+        "0": 20.484375,
+        "1": 20.484375,
+        "2": 20.484375
+      },
+      "elapsed_seconds": 90.1085748593323,
+      "measured_samples": 17280,
+      "measurement_wall_seconds": 57.8620662689209,
+      "aggregate_samples_per_second": 298.6412534887559,
+      "measurement_scope": "earliest post-warmup update start to latest update completion; includes between-update data waits",
+      "source_directory": "tmp/default_sfm_parallel_j3_m16_v1",
+      "jobs": 9,
+      "smoke_steps": 33,
+      "profile_warmup": 3,
+      "command": [
+        "scripts/default_sfm/run_parallel.py",
+        "--output",
+        "tmp/default_sfm_parallel_j3_m16_v1",
+        "--jobs-per-gpu",
+        "3",
+        "--microbatch",
+        "16",
+        "--smoke-steps",
+        "33",
+        "--profile-warmup",
+        "3"
+      ],
+      "gpus": [
+        {
+          "index": 0,
+          "uuid": "GPU-3d54ec76-3a66-0628-188f-d33635dcc994",
+          "name": "NVIDIA GeForce RTX 3090",
+          "total_mib": 24576,
+          "used_mib": 16,
+          "utilization": 0
+        },
+        {
+          "index": 1,
+          "uuid": "GPU-90d19c4f-cb2b-8872-4b1c-f59534b57c1a",
+          "name": "NVIDIA GeForce RTX 3090",
+          "total_mib": 24576,
+          "used_mib": 16,
+          "utilization": 0
+        },
+        {
+          "index": 2,
+          "uuid": "GPU-dc585b7b-5734-2b3b-ecdf-957f7db0cf4e",
+          "name": "NVIDIA GeForce RTX 3090",
+          "total_mib": 24576,
+          "used_mib": 16,
+          "utilization": 0
+        }
+      ]
+    },
+    {
+      "status": "passed",
+      "jobs_per_gpu": 2,
+      "microbatch_size": 32,
+      "effective_batch_size": 64,
+      "peak_gpu_used_gib": {
+        "0": 20.1025390625,
+        "1": 20.0771484375,
+        "2": 20.0615234375
+      },
+      "elapsed_seconds": 64.76189238484949,
+      "measured_samples": 11520,
+      "measurement_wall_seconds": 35.75088930130005,
+      "aggregate_samples_per_second": 322.22974659209626,
+      "measurement_scope": "earliest post-warmup update start to latest update completion; includes between-update data waits",
+      "source_directory": "tmp/default_sfm_parallel_j2_m32_v1",
+      "jobs": 6,
+      "smoke_steps": 33,
+      "profile_warmup": 3,
+      "command": [
+        "scripts/default_sfm/run_parallel.py",
+        "--output",
+        "tmp/default_sfm_parallel_j2_m32_v1",
+        "--jobs-per-gpu",
+        "2",
+        "--microbatch",
+        "32",
+        "--smoke-steps",
+        "33",
+        "--profile-warmup",
+        "3"
+      ],
+      "gpus": [
+        {
+          "index": 0,
+          "uuid": "GPU-3d54ec76-3a66-0628-188f-d33635dcc994",
+          "name": "NVIDIA GeForce RTX 3090",
+          "total_mib": 24576,
+          "used_mib": 16,
+          "utilization": 0
+        },
+        {
+          "index": 1,
+          "uuid": "GPU-90d19c4f-cb2b-8872-4b1c-f59534b57c1a",
+          "name": "NVIDIA GeForce RTX 3090",
+          "total_mib": 24576,
+          "used_mib": 16,
+          "utilization": 0
+        },
+        {
+          "index": 2,
+          "uuid": "GPU-dc585b7b-5734-2b3b-ecdf-957f7db0cf4e",
+          "name": "NVIDIA GeForce RTX 3090",
+          "total_mib": 24576,
+          "used_mib": 16,
+          "utilization": 0
+        }
+      ]
+    },
+    {
+      "status": "passed",
+      "jobs_per_gpu": 1,
+      "microbatch_size": 64,
+      "effective_batch_size": 64,
+      "peak_gpu_used_gib": {
+        "0": 15.892578125,
+        "1": 15.9140625,
+        "2": 15.94140625
+      },
+      "elapsed_seconds": 58.433289284817874,
+      "measured_samples": 9600,
+      "measurement_wall_seconds": 31.589528799057007,
+      "aggregate_samples_per_second": 303.89817021539665,
+      "measurement_scope": "earliest post-warmup update start to latest update completion; includes between-update data waits",
+      "source_directory": "tmp/default_sfm_parallel_j1_m64_v1",
+      "jobs": 3,
+      "smoke_steps": 53,
+      "profile_warmup": 3,
+      "command": [
+        "scripts/default_sfm/run_parallel.py",
+        "--output",
+        "tmp/default_sfm_parallel_j1_m64_v1",
+        "--jobs-per-gpu",
+        "1",
+        "--microbatch",
+        "64",
+        "--smoke-steps",
+        "53",
+        "--profile-warmup",
+        "3"
+      ],
+      "gpus": [
+        {
+          "index": 0,
+          "uuid": "GPU-3d54ec76-3a66-0628-188f-d33635dcc994",
+          "name": "NVIDIA GeForce RTX 3090",
+          "total_mib": 24576,
+          "used_mib": 16,
+          "utilization": 0
+        },
+        {
+          "index": 1,
+          "uuid": "GPU-90d19c4f-cb2b-8872-4b1c-f59534b57c1a",
+          "name": "NVIDIA GeForce RTX 3090",
+          "total_mib": 24576,
+          "used_mib": 16,
+          "utilization": 0
+        },
+        {
+          "index": 2,
+          "uuid": "GPU-dc585b7b-5734-2b3b-ecdf-957f7db0cf4e",
+          "name": "NVIDIA GeForce RTX 3090",
+          "total_mib": 24576,
+          "used_mib": 16,
+          "utilization": 0
+        }
+      ]
+    }
+  ],
+  "formal_training_started": false,
+  "selected": {
+    "jobs_per_gpu": 1,
+    "total_concurrent_jobs": 3,
+    "batch_size": 64,
+    "gradient_accumulation_steps": 1,
+    "selection_basis": "User explicitly required batch 64 without gradient accumulation and queue scheduling",
+    "expected_nine_run_hours_excluding_checkpoint_and_tracking_overhead": 91.46813875285288
+  }
+}
