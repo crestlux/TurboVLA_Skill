@@ -1,0 +1,130 @@
+{
+  "checked_at_utc": "2026-10-24T10:33:41.484247+00:00",
+  "status": "verified_historical_configuration_and_output_manifest",
+  "scope": "Read-only historical audit; no conversion of the current 450-demo SFM cohort.",
+  "historical_configuration": {
+    "pose_keys": [
+      "right/tcp_pose"
+    ],
+    "gripper_keys": [
+      "right/gripper_pose"
+    ],
+    "translation_threshold_m": 0.01,
+    "rotation_threshold_rad": 0.01,
+    "gripper_threshold": 0.02,
+    "consecutive_frames": 3,
+    "pre_roll_frames": 2,
+    "no_motion": "drop",
+    "enabled": true
+  },
+  "evidence_agreement": [
+    "csilab current template",
+    "FAFLOW USB v3 source config",
+    "FAFLOW effective processed config",
+    "FAFLOW deployed preprocessing contract",
+    "FAFLOW per-episode output manifest"
+  ],
+  "implementation_fallback_translation_threshold_m": 0.001,
+  "fallback_explanation": "1 mm is used only when translation_threshold_m is absent. All verified configs explicitly set 0.01 m (10 mm).",
+  "algorithm": {
+    "reference": "first measured observation of each demo",
+    "translation": "Euclidean norm of xyz displacement from the first observation",
+    "rotation": "SO(3) relative rotation magnitude from the first observation, not Euler component subtraction",
+    "gripper": "absolute observed opening change from the first observation",
+    "combination": "translation > 0.01 m OR rotation > 0.01 rad OR gripper change > 0.02",
+    "confirmation": "first sequence of 3 consecutive threshold-positive frames; different criteria may trigger different frames",
+    "detected_motion_frame": "first frame of that consecutive sequence, zero-based",
+    "start": "max(0, detected_motion_frame - 2)",
+    "retained": "all rows from start to the end",
+    "middle_pauses_removed": false,
+    "terminal_stationary_tail_removed": false,
+    "never_detected_motion": "drop episode under the historical config",
+    "physical_interpretation": "Displacement from the initial pose, not instantaneous velocity or action-command onset. Preroll can retain movement below the threshold as well as idle frames."
+  },
+  "verified_faflow_usb_v3_results": {
+    "dataset": "ff_usb_v3",
+    "demo_count": 50,
+    "skipped_demos": 0,
+    "original_frames": 10090,
+    "retained_frames": 9684,
+    "removed_initial_frames": 406,
+    "removed_per_demo": {
+      "min": 2,
+      "median": 8.0,
+      "max": 12
+    },
+    "all_starts_match_detected_minus_two": true,
+    "first_demo_example": {
+      "source": "/data/crestlux/faflow/ff_usb_v3/1_demos_2026-10-16_15-30-19_023254.pkl",
+      "original_frames": 184,
+      "detected_motion_frame": 10,
+      "start": 8,
+      "frames": 176
+    }
+  },
+  "turbovla_usb_gru_reference": {
+    "adapter_source": "/data/jack/jack_exp_demo_faflow_preprocessed/delta_500hz_held",
+    "prepared_episode_count": 30,
+    "prepared_frames": 8314,
+    "adapter_behavior": "Preserves the upstream FAFLOW source_indices, timestamps and frames; does not independently trim an initial prefix.",
+    "limitation": "The 50-demo Florida FAFLOW manifest is a different cohort from the 30-demo Jack TurboVLA run. Its removal counts are not attributed to the Jack run."
+  },
+  "sources": {
+    "csilab_config": {
+      "path": "/home/crestlux/project/TurboVLA-Research/experiments/default_sfm/preprocessing_audit/csilab_source_snapshot/preprocess/configs/config_right_default.yaml",
+      "sha256": "59785432d027a46842a7c5e0b6040103116adf5efa0b61c3c8969d39ac5d32e8"
+    },
+    "csilab_implementation": {
+      "path": "/home/crestlux/project/TurboVLA-Research/experiments/default_sfm/preprocessing_audit/csilab_source_snapshot/preprocess/convert.py",
+      "sha256": "e35f2f104b59c872054b91c705fa1d6f32259aec746ec9d1fe4e00a1f144cf01"
+    },
+    "faflow_config": {
+      "path": "/home/crestlux/project/faflow_final/configs/ff_usb_v3/delta_500hz_held.yaml",
+      "sha256": "6a5342046db8b34646099b3a6007073d68594c7396bd93a161026c493b25cb11"
+    },
+    "faflow_implementation": {
+      "path": "/home/crestlux/project/faflow_final/third_party/clean_share_preprocess/convert.py",
+      "sha256": "b303fd661ebd4ea4476c1252ab14f6108b8cf228bd4fb11003c89aec2441ffcf"
+    },
+    "faflow_preparation": {
+      "path": "/home/crestlux/project/faflow_final/preprocessing/prepare_ff_usb_v3.py",
+      "sha256": "90cd014caa94f3bc920f95b11bcc4515c101a1d48ee3e84133b319bddc0335c2"
+    },
+    "faflow_deployment_contract": {
+      "path": "/home/crestlux/project/faflow_final/deployment/bundles/delta_500hz_held/preprocessing_contract.json",
+      "sha256": "60573be96ff2caa223ec423662f9674779f78ac0b23b8fa3c1ec4ed3499c71e4"
+    },
+    "faflow_effective_config": {
+      "path": "/data/crestlux/faflow/ff_usb_v3_processed/delta_500hz_held/config.yaml",
+      "sha256": "240e3869846840a658d703b569f68084c3ab322ac3edad942187552ab0717896"
+    },
+    "faflow_source_manifest": {
+      "path": "/data/crestlux/faflow/ff_usb_v3_processed/source_manifest.json",
+      "sha256": "965404b260254eb4f5863ad21bffe7ca126b91179e7c579448f9ff24fd6a12fb"
+    },
+    "faflow_variant_manifest": {
+      "path": "/data/crestlux/faflow/ff_usb_v3_processed/delta_500hz_held/manifest.json",
+      "sha256": "de32ba2e5145491f521003647630a967e54da52490c6a4139e95a3c0a516f16f"
+    },
+    "faflow_preparation_manifest": {
+      "path": "/data/crestlux/faflow/ff_usb_v3_processed/preparation_manifest.json",
+      "sha256": "316a5665a679f2edff2da709471e532df1894abc85147ff9607b5b960738facd"
+    },
+    "turbovla_adapter": {
+      "path": "/home/crestlux/project/TurboVLA-Research/experiments/default_sfm/preprocessing_audit/turbovla_training_source_snapshot/source/scripts/real_robot/prepare_jack_ablation.py",
+      "sha256": "885b16a18ac7c5e3a0d559aa9addf1469adbaaceddcf6887cfeedfd2831483ba"
+    },
+    "turbovla_adapter_audit": {
+      "path": "/home/crestlux/project/TurboVLA-Research/experiments/default_sfm/preprocessing_audit/turbovla_training_source_snapshot/prepared/faflow/adapter_audit.json",
+      "sha256": "4d0b8204e63736a4299ab05c68035c9c06edb78fc90250db5f9e854868f0aefa"
+    }
+  },
+  "current_sfm_decisions": {
+    "demo_count": 450,
+    "remove_initial_stationary_prefix": true,
+    "detection_parameters_confirmed": false,
+    "previous_zero_preroll_proposal_confirmed": false,
+    "preprocessing_applied": false,
+    "training_started": false
+  }
+}

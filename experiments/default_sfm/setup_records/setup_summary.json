@@ -65,8 +65,7 @@
   "custom_dataset_trainer_and_ft_variants": "Implementation deferred until preprocessing and input contracts are decided",
   "user_deferred_decisions": [],
   "further_preprocessing_decisions": [
-    "Common state/FT/action normalization",
-    "Stationary-interval frame selection",
+    "Initial-stationary detection parameters and preroll (historical settings verified)",
     "Task instruction mapping"
   ],
   "artifact_sha256": {
@@ -82,7 +81,7 @@
     "pip-freeze.txt": "a80fdc3d1c4926a299ef53820bbb3e2cdf8664ee2ca413631a7baab2e1c928b8",
     "conda-explicit.txt": "4f3e2f6ca96cfa28e97f83fe62fe272d3173aed2475991b181ae674bf46ae689"
   },
-  "planning_updated_at_utc": "2026-10-24T10:17:52.794548+00:00",
+  "planning_updated_at_utc": "2026-10-24T10:33:41.484247+00:00",
   "confirmed_experiment_decisions": {
     "ft_history_shape": [
       50,
@@ -133,7 +132,13 @@
       "gripper_open_label": 1,
       "gripper_zero_command_behavior": "retain_last_command_target",
       "gripper_initial_target": "open",
-      "normalization": null
+      "normalization": {
+        "method": "symlog_minmax",
+        "temperature": 20.0,
+        "epsilon": 1e-06,
+        "gripper": "preserve_held_minus_one_plus_one",
+        "reference": "experiments/default_sfm/preprocessing_audit/turbovla_training_source_snapshot/runs/jack/faflow_delta_gru500hz/data_contract.json"
+      }
     },
     "image_output_size": [
       224,
@@ -192,6 +197,61 @@
       ],
       "pitch_policy": "preserve_original_signed_angle",
       "applied": false
+    },
+    "normalization": {
+      "state": {
+        "method": "standard",
+        "after_rpy_wrapping": true,
+        "fit_before_xy_ablation": true,
+        "slice_common_statistics_for_each_condition": true
+      },
+      "ft": {
+        "method": "standard",
+        "channel_statistics_count": 6,
+        "pool_history_samples": true,
+        "shared_across_variants": true,
+        "application_count": 1,
+        "std_floor": null
+      },
+      "action": {
+        "method": "symlog_minmax",
+        "temperature": 20.0,
+        "epsilon": 1e-06,
+        "gripper": "preserve_held_minus_one_plus_one",
+        "reference": "experiments/default_sfm/preprocessing_audit/turbovla_training_source_snapshot/runs/jack/faflow_delta_gru500hz/data_contract.json"
+      },
+      "common": {
+        "fit_scope": "retained_frames_from_all_450_training_demos",
+        "shared_across_all_nine_variants": true,
+        "reuse_historical_usb_statistics": false,
+        "fitted": false
+      }
+    },
+    "frame_selection": {
+      "policy": "remove_initial_stationary_prefix",
+      "detection_parameters_confirmed": false,
+      "detection_config": null,
+      "historical_reference": {
+        "algorithm": "csilab_crop_start",
+        "pose_keys": [
+          "right/tcp_pose"
+        ],
+        "gripper_keys": [
+          "right/gripper_pose"
+        ],
+        "translation_threshold_m": 0.01,
+        "rotation_threshold_rad": 0.01,
+        "gripper_threshold": 0.02,
+        "consecutive_frames": 3,
+        "pre_roll_frames": 2,
+        "no_motion": "drop",
+        "audit": "experiments/default_sfm/preprocessing_audit/stationary_crop_history.json"
+      },
+      "proposed_pre_roll_frames": 0,
+      "shared_source_indices_across_variants": true,
+      "detect_before_state_ablation": true,
+      "reconstruct_held_targets_before_trimming": true,
+      "fit_normalization_after_trimming": true
     }
   },
   "full_rpy_audit": {

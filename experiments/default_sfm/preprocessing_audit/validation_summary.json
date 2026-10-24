@@ -32,14 +32,22 @@
   "training_started": false,
   "active_model_variants_implemented": false,
   "remaining_preprocessing_decisions": [
-    "Common state/FT/action normalization",
-    "Stationary-interval frame selection",
+    "Initial-stationary detection parameters and preroll (historical settings verified)",
     "Task instruction mapping"
   ],
-  "planning_sha256": "0c0ae0a40c06741a53a1bbadad633b9b7bacea18102c0dcedd79463f03e886d1",
+  "planning_sha256": "5a5da5e8c5280d1b309133e3d2118c37be68d90eaf6b395f8aeba129cfeee447",
   "rpy_wrap_angles": [
     "roll",
     "yaw"
   ],
-  "pitch_policy": "preserve_original_signed_angle"
+  "pitch_policy": "preserve_original_signed_angle",
+  "planning_updated_at_utc": "2026-10-24T10:33:41.484247+00:00",
+  "normalization_methods": {
+    "state": "standard",
+    "ft": "standard",
+    "action": "symlog_minmax"
+  },
+  "frame_selection_policy": "remove_initial_stationary_prefix",
+  "frame_selection_parameters_confirmed": false,
+  "stationary_history_audit": "stationary_crop_history.json"
 }

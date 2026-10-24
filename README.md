@@ -80,9 +80,18 @@ Gripper labels will use held command targets from `infos.command_receipts.right.
 (closed -1, open +1), retaining the target between commands. All 450 demos start with observed opening 1.0.
 The user selected retaining the same GRU memory token and adding F/T-conditioned scale/shift to the
 ACT decoder LayerNorms for the third method. The confirmed `wrap_angles: [roll, yaw]` maps roll/yaw
-into `[0, 2pi)` and preserves signed pitch. Preprocessing decisions still required are common normalization,
-stationary-interval handling and task instructions. Execution horizon is an inference setting and can be
-decided later without changing the confirmed action chunk length of 5.
+into `[0, 2pi)` and preserves signed pitch. State components and the six F/T channels will use shared
+standardization statistics; actions will use the verified USB `symlog_minmax` recipe (temperature 20).
+Statistics will be fitted once on the retained SFM frames and reused across the nine conditions.
+The user requested removal of each demo's initial stationary prefix. Historical csilab/FAFLOW settings
+detect displacement from the first observation above 10 mm, rotation above 0.01 rad, or gripper opening
+change above 0.02 for three consecutive frames, then retain two preceding frames. The verified FAFLOW
+USB v3 manifest contains 50 demos, with 406 initial frames removed (10,090 to 9,684). These are historical
+results, not processing of the current 450 demos. Current detection parameters, including preroll, remain
+unconfirmed; see [`stationary_crop_history.json`](experiments/default_sfm/preprocessing_audit/stationary_crop_history.json).
+Task instructions are pending from the user. Execution horizon is an inference setting and can be
+decided later without changing the confirmed action chunk length of 5. Data conversion and training
+have not started.
 A sample has F/T `[1,50,6]`, state `[1,19]`, two RGB views and 7-D actions;
 the F/T sensor rate is 500 Hz, while the collection config records a 10 Hz control loop.
 The existing trainers are benchmark-specific; the custom loader, trainer and F/T/AdaLN variants will be

@@ -22,7 +22,26 @@ dataset:
     evaluation_source: null  # Evaluation is separate; collection/rollout protocol is not yet specified.
     evaluation_protocol: null
   instruction_mapping: null
-  frame_selection: null  # Decide whether to trim stationary intervals before fitting common statistics.
+  frame_selection:
+    policy: remove_initial_stationary_prefix  # User-confirmed; preserve later pauses and the final segment.
+    detection_parameters_confirmed: false  # User requested historical settings before choosing these.
+    detection_config: null
+    historical_reference:
+      algorithm: csilab_crop_start
+      pose_keys: [right/tcp_pose]
+      gripper_keys: [right/gripper_pose]
+      translation_threshold_m: 0.01
+      rotation_threshold_rad: 0.01
+      gripper_threshold: 0.02
+      consecutive_frames: 3
+      pre_roll_frames: 2
+      no_motion: drop
+      audit: experiments/default_sfm/preprocessing_audit/stationary_crop_history.json
+    proposed_pre_roll_frames: 0  # Previous proposal only; user requested a history audit instead of selecting it.
+    shared_source_indices_across_variants: true
+    detect_before_state_ablation: true
+    reconstruct_held_targets_before_trimming: true
+    fit_normalization_after_trimming: true
 force_torque:
   sensor_hz: 500  # User-provided sampling frequency; no resampling applied.
   observed_history_shape: [1, 50, 6]  # Initial sample, not a processed dataset contract.
@@ -32,7 +51,13 @@ force_torque:
   history_window_nominal_ms: 100
   history_order: oldest_to_newest
   channel_order: [Fx, Fy, Fz, Tx, Ty, Tz]
-  normalization: null
+  normalization:
+    method: standard  # Confirmed by the user; one mean/std pair for each of the six channels.
+    channel_statistics_count: 6
+    pool_history_samples: true
+    shared_across_variants: true
+    application_count: 1
+    std_floor: null  # Check raw channel statistics before choosing numerical stabilization.
   gru_implementation: existing_turbovla_usb  # Confirmed by the user, 2026-10-24.
   gru_hidden_size: 128
   gru_num_layers: 1
@@ -82,7 +107,11 @@ state:
       retained_raw_indices: [0, 6, 7, 8, 9, 15, 16, 17, 18]
       dimension_after_ft_removal: 9
   representation: tcp_xyz_rpy_with_gripper_and_velocity
-  normalization: null
+  normalization:
+    method: standard  # Confirmed by the user; independent statistics for each retained state component.
+    after_rpy_wrapping: true
+    fit_before_xy_ablation: true
+    slice_common_statistics_for_each_condition: true
   rpy:
     requested_candidate: per_axis_modulo_2pi
     final_boundary_policy: csilab_wrap_angles_per_axis  # User requested the existing selectable option.
@@ -124,7 +153,17 @@ action:
   gripper_open_label: 1
   gripper_zero_command_behavior: retain_last_command_target
   gripper_initial_target: open  # All 450 demos start with observed gripper opening 1.0.
-  normalization: null
+  normalization:
+    method: symlog_minmax  # User selected the verified USB recipe, with newly fitted SFM statistics.
+    temperature: 20.0
+    epsilon: 1.0e-6
+    gripper: preserve_held_minus_one_plus_one
+    reference: experiments/default_sfm/preprocessing_audit/turbovla_training_source_snapshot/runs/jack/faflow_delta_gru500hz/data_contract.json
+common_normalization:
+  fit_scope: retained_frames_from_all_450_training_demos
+  shared_across_all_nine_variants: true
+  reuse_historical_usb_statistics: false
+  fitted: false
 vision:
   observed_views: [head_cam_d455, wrist_cam_d405_a]
   observed_shape_per_view: [1, 480, 640, 3]

@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-10-24T10:17:52.794548+00:00",
+  "updated_at_utc": "2026-10-24T10:33:41.484247+00:00",
   "status": "awaiting_preprocessing_decisions",
   "confirmed_rpy": {
     "wrap_angles": [
@@ -13,25 +13,70 @@
   "decisions_before_conversion": [
     {
       "id": "normalization",
-      "status": "pending",
-      "proposal": {
-        "state": "per-channel standardization after wrapping roll/yaw",
-        "ft": "six shared channel mean/std pairs pooled across the 50-sample history; identical transform for flat/GRU/AdaLN variants",
-        "ft_std_floor": "review raw per-channel statistics before confirming; historical TurboVLA value was 0.01",
-        "action_pose": "same symlog_minmax recipe as verified USB training, temperature 20",
-        "gripper": "keep held labels at -1 and +1",
-        "statistics_scope": "fit once on selected frames from all 450 training demos, reuse across nine conditions, slice state columns without refitting, never reuse old USB statistics",
-        "reference": "turbovla_training_source_snapshot/runs/jack/faflow_delta_gru500hz/data_contract.json"
-      }
+      "status": "methods_confirmed_statistics_not_fitted",
+      "confirmed": {
+        "state": {
+          "method": "standard",
+          "after_rpy_wrapping": true,
+          "fit_before_xy_ablation": true,
+          "slice_common_statistics_for_each_condition": true
+        },
+        "ft": {
+          "method": "standard",
+          "channel_statistics_count": 6,
+          "pool_history_samples": true,
+          "shared_across_variants": true,
+          "application_count": 1,
+          "std_floor": null
+        },
+        "action": {
+          "method": "symlog_minmax",
+          "temperature": 20.0,
+          "epsilon": 1e-06,
+          "gripper": "preserve_held_minus_one_plus_one",
+          "reference": "experiments/default_sfm/preprocessing_audit/turbovla_training_source_snapshot/runs/jack/faflow_delta_gru500hz/data_contract.json"
+        },
+        "common": {
+          "fit_scope": "retained_frames_from_all_450_training_demos",
+          "shared_across_all_nine_variants": true,
+          "reuse_historical_usb_statistics": false,
+          "fitted": false
+        }
+      },
+      "numerical_check_before_conversion": "Inspect per-channel F/T dispersion before selecting a standard-deviation floor; historical TurboVLA floor is 0.01."
     },
     {
       "id": "frame_selection",
-      "status": "pending",
-      "proposal": "Keep all frames initially; if stationary segments are trimmed, use the identical retained frame indices for all nine variants and reconstruct held targets before trimming."
+      "status": "initial_prefix_removal_confirmed_detection_parameters_pending",
+      "confirmed_policy": "remove_initial_stationary_prefix",
+      "historical_audit": "stationary_crop_history.json",
+      "historical_parameters": {
+        "pose_keys": [
+          "right/tcp_pose"
+        ],
+        "gripper_keys": [
+          "right/gripper_pose"
+        ],
+        "translation_threshold_m": 0.01,
+        "rotation_threshold_rad": 0.01,
+        "gripper_threshold": 0.02,
+        "consecutive_frames": 3,
+        "pre_roll_frames": 2,
+        "no_motion": "drop",
+        "enabled": true
+      },
+      "previous_zero_preroll_proposal_confirmed": false,
+      "implementation_constraints": [
+        "Detect starts from the same raw pose/gripper columns before XY ablation.",
+        "Reuse identical retained source indices across all nine variants.",
+        "Reconstruct held command targets from complete episodes before trimming.",
+        "Fit common statistics only after frame selection.",
+        "Preserve intermediate pauses/contact holds and terminal segments."
+      ]
     },
     {
       "id": "task_instructions",
-      "status": "pending",
+      "status": "awaiting_user_mapping",
       "tasks": [
         "audio_jack",
         "barlatch",
